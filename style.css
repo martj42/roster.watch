@@ -1,0 +1,43 @@
+ @import url('https://fonts.googleapis.com/css2?family=Titillium+Web&display=swap')
+ @import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap');
+ @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@200&display=swap');
+ @import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+body {
+        font-family: 'Open Sans', sans-serif;
+  
+}
+
+h1.title {
+  visibility: hidden;
+  font-size: 0px;
+}
+
+.my-tbl {
+  margin-left: auto;
+  margin-right: auto;
+  background-color: rgba(0, 0, 0, 0);
+}
+
+div.main-container {
+  max-width: 1800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+body {
+  color: #1e036e;
+    background-image: url('FIBA_EuroBasket2022_Logo_Landscape_FC_Positive_Digital25.png');
+  background-repeat: no-repeat;
+     background-attachment: fixed;
+        background-position: center; 
+        background-size: contain;
+}
+
+.rt-thead {
+  background-color: #1e036e !important;
+  color: white;
+}
+
+.rt-td {
+    border-top: 2px solid #f2f2f2;
+}

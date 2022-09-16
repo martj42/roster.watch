@@ -15,9 +15,3 @@ h1.title {
 .my-tbl {
 s  background-color: rgba(0, 0, 0, 0);
 }
-
-.hidden {
-  font-size: 0.1;
-  content: "";
-
-}

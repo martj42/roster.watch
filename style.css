@@ -119,7 +119,7 @@ img.emoji {
  /* Three image containers (use 25% for four, and 50% for two, etc) */
 .column {
   float: left;
-  width: 1000px;
+  width: 33% !important;
   padding: 5px;
 }
 

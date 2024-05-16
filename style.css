@@ -147,13 +147,8 @@ header {
 
 .logo {
   cursor: pointer;
-
 }
 
-.logo img {
-  height: 50px; /* Adjust as needed */
-  vertical-align: middle; /* Align the logo vertically */
-}
 .nav__links a,
 .cta,
 .copyright-text,
@@ -268,18 +263,27 @@ img {
   max-height: 18px;
 }
 
+header {
+    display: flex;
+    align-items: center; /* Align items to the middle of the tallest item */
+    justify-content: space-between; /* Optional: Space out the children */
+}
+
+.logo img {
+    height: 50px; /* Adjust as needed */
+    vertical-align: middle; /* Align the logo vertically */
+    align-items: center;
+}
+
 nav ul {
-  display: flex;
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  align-items: baseline; /* Align items to the baseline of the tallest item */
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    align-items: center; /* Align items to the middle of the tallest item */
 }
 
 nav ul li {
-  margin-left: 20px; /* Space between nav items */
+    margin-left: 20px; /* Space between nav items */
 }
 
-.menu.cta {
-  margin-left: auto; /* Push the menu to the far right */
-}

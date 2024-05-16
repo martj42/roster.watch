@@ -147,8 +147,13 @@ header {
 
 .logo {
   cursor: pointer;
+
 }
 
+.logo img {
+  height: 50px; /* Adjust as needed */
+  vertical-align: middle; /* Align the logo vertically */
+}
 .nav__links a,
 .cta,
 .copyright-text,
@@ -268,6 +273,7 @@ nav ul {
   list-style: none;
   padding: 0;
   margin: 0;
+  align-items: baseline; /* Align items to the baseline of the tallest item */
 }
 
 nav ul li {

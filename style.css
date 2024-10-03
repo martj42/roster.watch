@@ -9,6 +9,8 @@ body {
 h1.title {
   visibility: hidden;
   font-size: 0px;
+  margin-top: 0px !important;
+
 }
 
 .my-tbl {

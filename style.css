@@ -146,6 +146,12 @@ header {
   padding: 10px 10%;
   background-color: #24252a;
 }
+footer {
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 10%;
+  background-color: #24252a;
+}
 
 .logo {
   cursor: pointer;

@@ -295,3 +295,30 @@ nav ul li {
     margin-left: 20px; /* Space between nav items */
 }
 
+.patreon-box {
+  background-color: #24252A; /* Success green */
+  color: white;
+  padding: 15px;
+  border-radius: 5px;
+  font-size: 16px;
+  margin: 20px auto; /* Centers the box horizontally */
+  border-radius: 5px;
+  font-size: 16px;
+  width: fit-content; /* Makes the box width match the content inside */
+  max-width: 90%; /* Optional: Limits the width to 90% of the page */
+  text-align: center; /* Centers text inside the box */
+}
+
+.patreon-box a.cta-button {
+  color: white;
+  background-color: #ff6f61; /* Button color */
+  padding: 10px 20px;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: bold;
+  
+}
+
+.patreon-box a.cta-button:hover {
+  background-color: #ff4c40; /* Hover effect */
+}

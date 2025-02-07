@@ -322,3 +322,8 @@ nav ul li {
 .patreon-box a.cta-button:hover {
   background-color: #ff4c40; /* Hover effect */
 }
+
+.reactable.html-widget {
+  display: flex;
+  justify-content: center;
+}

@@ -324,6 +324,6 @@ nav ul li {
 }
 
 .reactable.html-widget {
-  display: flex;
-  justify-content: center;
+  overflow-x: auto;
+  text-align: center;
 }

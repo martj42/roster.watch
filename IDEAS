@@ -1,0 +1,27 @@
+event:
+
+name 
+event count 
+date (in x days / x days ago)
+event avg elo (and rank) 
+event location 
+event location count
+ranked fighter count
+debutants
+
+fighter: 
+name 
+flag 
+age (at the time) 
+ufc rank
+ufc record 
+elo (at the time) 
+last 5
+
+fight weight class 
+elo rank at weight class 
+
+
+TOOLTIPS EVERYWHERE
+
+STICKY COLUMNS ON ROSTER!!!

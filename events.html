@@ -1,0 +1,2677 @@
+<!DOCTYPE html>
+
+<html lang="en" xml:lang="en">
+
+<head>
+
+<meta charset="utf-8" />
+<meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+
+
+
+
+<title>roster.watch</title>
+
+<script src="site_libs/header-attrs-2.29/header-attrs.js"></script>
+<script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="site_libs/bootstrap-3.3.5/css/bootstrap.min.css" rel="stylesheet" />
+<script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<style>h1 {font-size: 34px;}
+       h1.title {font-size: 38px;}
+       h2 {font-size: 30px;}
+       h3 {font-size: 24px;}
+       h4 {font-size: 18px;}
+       h5 {font-size: 16px;}
+       h6 {font-size: 12px;}
+       code {color: inherit; background-color: rgba(0, 0, 0, 0.04);}
+       pre:not([class]) { background-color: white }</style>
+<script src="site_libs/navigation-1.1/tabsets.js"></script>
+<link href="site_libs/highlightjs-9.12.0/default.css" rel="stylesheet" />
+<script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/site.webmanifest">
+<meta name="description" content="An up-to-date list of the full active UFC roster including biographical data, rankings, records, and more.">
+<!-- <meta property="og:title" content="roster.watch" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://www.roster.watch/" />
+<meta property="og:image" content="https://www.roster.watch/og_image.png" />
+<meta property="og:description" content="An up-to-date list of the full active UFC roster including biographical data, rankings, record, and more." />
+<script src="https://unpkg.com/twemoji@latest/dist/twemoji.min.js" crossorigin="anonymous"></script> 
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7299518767310567"
+     crossorigin="anonymous"></script> -->
+     <script data-goatcounter="https://rosterwatch.goatcounter.com/count"
+        async src="//gc.zgo.at/count.js"></script>
+
+<style type="text/css">
+  code{white-space: pre-wrap;}
+  span.smallcaps{font-variant: small-caps;}
+  span.underline{text-decoration: underline;}
+  div.column{display: inline-block; vertical-align: top; width: 50%;}
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  ul.task-list{list-style: none;}
+    </style>
+
+<style type="text/css">code{white-space: pre;}</style>
+<script type="text/javascript">
+if (window.hljs) {
+  hljs.configure({languages: []});
+  hljs.initHighlightingOnLoad();
+  if (document.readyState && document.readyState === "complete") {
+    window.setTimeout(function() { hljs.initHighlighting(); }, 0);
+  }
+}
+</script>
+
+
+
+
+
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+
+
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+img {
+  max-width:100%;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+.html-widget {
+  margin-bottom: 20px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+summary {
+  display: list-item;
+}
+details > summary > p:only-child {
+  display: inline;
+}
+pre code {
+  padding: 0;
+}
+</style>
+
+
+<style type="text/css">
+.dropdown-submenu {
+  position: relative;
+}
+.dropdown-submenu>.dropdown-menu {
+  top: 0;
+  left: 100%;
+  margin-top: -6px;
+  margin-left: -1px;
+  border-radius: 0 6px 6px 6px;
+}
+.dropdown-submenu:hover>.dropdown-menu {
+  display: block;
+}
+.dropdown-submenu>a:after {
+  display: block;
+  content: " ";
+  float: right;
+  width: 0;
+  height: 0;
+  border-color: transparent;
+  border-style: solid;
+  border-width: 5px 0 5px 5px;
+  border-left-color: #cccccc;
+  margin-top: 5px;
+  margin-right: -10px;
+}
+.dropdown-submenu:hover>a:after {
+  border-left-color: #adb5bd;
+}
+.dropdown-submenu.pull-left {
+  float: none;
+}
+.dropdown-submenu.pull-left>.dropdown-menu {
+  left: -100%;
+  margin-left: 10px;
+  border-radius: 6px 0 6px 6px;
+}
+</style>
+
+<script type="text/javascript">
+// manage active state of menu based on current page
+$(document).ready(function () {
+  // active menu anchor
+  href = window.location.pathname
+  href = href.substr(href.lastIndexOf('/') + 1)
+  if (href === "")
+    href = "index.html";
+  var menuAnchor = $('a[href="' + href + '"]');
+
+  // mark the anchor link active (and if it's in a dropdown, also mark that active)
+  var dropdown = menuAnchor.closest('li.dropdown');
+  if (window.bootstrap) { // Bootstrap 4+
+    menuAnchor.addClass('active');
+    dropdown.find('> .dropdown-toggle').addClass('active');
+  } else { // Bootstrap 3
+    menuAnchor.parent().addClass('active');
+    dropdown.addClass('active');
+  }
+
+  // Navbar adjustments
+  var navHeight = $(".navbar").first().height() + 15;
+  var style = document.createElement('style');
+  var pt = "padding-top: " + navHeight + "px; ";
+  var mt = "margin-top: -" + navHeight + "px; ";
+  var css = "";
+  // offset scroll position for anchor links (for fixed navbar)
+  for (var i = 1; i <= 6; i++) {
+    css += ".section h" + i + "{ " + pt + mt + "}\n";
+  }
+  style.innerHTML = "body {" + pt + "padding-bottom: 40px; }\n" + css;
+  document.head.appendChild(style);
+});
+</script>
+
+<!-- tabsets -->
+
+<style type="text/css">
+.tabset-dropdown > .nav-tabs {
+  display: inline-table;
+  max-height: 500px;
+  min-height: 44px;
+  overflow-y: auto;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs > li.active:before, .tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "\e259";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
+  content: "\e258";
+  font-family: 'Glyphicons Halflings';
+  border: none;
+}
+
+.tabset-dropdown > .nav-tabs > li.active {
+  display: block;
+}
+
+.tabset-dropdown > .nav-tabs > li > a,
+.tabset-dropdown > .nav-tabs > li > a:focus,
+.tabset-dropdown > .nav-tabs > li > a:hover {
+  border: none;
+  display: inline-block;
+  border-radius: 4px;
+  background-color: transparent;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li {
+  display: block;
+  float: none;
+}
+
+.tabset-dropdown > .nav-tabs > li {
+  display: none;
+}
+</style>
+
+<!-- code folding -->
+
+
+
+
+</head>
+
+<body>
+
+
+<div class="container-fluid main-container">
+
+
+
+<header>
+    <a class="logo" href="/"><img src="images/logo.svg" alt="logo"></a>
+    <nav>
+        <ul class="nav__links">
+            <li><a href="https://www.roster.watch/">Current Roster</a></li>
+            <li><a href="https://www.roster.watch/former.html">Former Roster</a></li>
+            <li><a href="https://www.roster.watch/events.html">Events</a></li>
+            <li><a href="https://www.roster.watch/log.html">Log</a></li>
+            <li><a href="https://www.roster.watch/glossary.html">Glossary</a></li>
+            <li><a href="mailto:rostertracker@gmail.com">Contact</a></li>
+            <li>
+                <a href="https://twitter.com/RosterTracker" class="twitter-follow-button" data-dnt="true" data-show-count="false">Follow on X</a>
+            </li>
+            <li><a href="https://www.patreon.com/bePatron?u=88266864">Support on Patreon</a></li>
+        </ul>
+    </nav>
+    <p class="menu cta">Menu</p>
+</header>
+
+<div class="overlay">
+    <a class="close">&times;</a>
+    <div class="overlay__content">
+        <a href="https://www.roster.watch/">Current Roster</a>
+        <a href="https://www.roster.watch/former.html">Former Roster</a>
+        <a href="https://www.roster.watch/events.html">Events</a>
+        <a href="https://www.roster.watch/log.html">Log</a>
+        <a href="https://www.roster.watch/glossary.html">Glossary</a>
+        <a href="mailto:rostertracker@gmail.com">Contact</a>
+                <a href="https://twitter.com/RosterTracker" class="twitter-follow-button" data-dnt="true" data-show-count="false">Follow on X</a>
+        <a href="https://www.patreon.com/bePatron?u=88266864">Support on Patreon</a>
+
+    </div>
+</div>
+<script type="text/javascript" src="mobile.js"></script>
+<div class="patreon-box"
+  <p>✨ Appreciate the content? Support us on Patreon!</p>
+  <a href="https://www.patreon.com/bePatron?u=88266864" class="cta-button">Become a Patron</a>
+</div>
+
+<div id="header">
+
+
+
+<h1 class="title toc-ignore">roster.watch</h1>
+
+</div>
+
+
+<h4>
+2025
+</h4>
+<p>
+<a href=20250329.html>UFC on ESPN: Moreno vs. Erceg</a>
+</p>
+<p>
+<a href=20250322.html>UFC Fight Night: Edwards vs. Della Maddalena</a>
+</p>
+<p>
+<a href=20250315.html>UFC Fight Night: Vettori vs. Dolidze 2</a>
+</p>
+<p>
+<a href=20250308.html>UFC 313: Pereira vs. Ankalaev</a>
+</p>
+<p>
+<a href=20250301.html>UFC Fight Night 253</a>
+</p>
+<p>
+<a href=20250222.html>UFC Fight Night: Cejudo vs. Song</a>
+</p>
+<p>
+<a href=20250215.html>UFC Fight Night: Cannonier vs. Rodrigues</a>
+</p>
+<p>
+<a href=20250208.html>UFC 312: du Plessis vs. Strickland 2</a>
+</p>
+<p>
+<a href=20250201.html>UFC Fight Night: Adesanya vs. Imavov</a>
+</p>
+<p>
+<a href=20250118.html>UFC 311: Makhachev vs. Moicano</a>
+</p>
+<p>
+<a href=20250111.html>UFC Fight Night: Dern vs. Ribas 2</a>
+</p>
+<h4>
+2024
+</h4>
+<p>
+<a href=20241214.html>UFC on ESPN: Covington vs. Buckley</a>
+</p>
+<p>
+<a href=20241207.html>UFC 310: Pantoja vs. Asakura</a>
+</p>
+<p>
+<a href=20241123.html>UFC Fight Night: Yan vs. Figueiredo</a>
+</p>
+<p>
+<a href=20241116.html>UFC 309: Jones vs. Miocic</a>
+</p>
+<p>
+<a href=20241109.html>UFC Fight Night: Magny vs. Prates</a>
+</p>
+<p>
+<a href=20241102.html>UFC Fight Night: Moreno vs. Albazi</a>
+</p>
+<p>
+<a href=20241026.html>UFC 308: Topuria vs. Holloway</a>
+</p>
+<p>
+<a href=20241019.html>UFC Fight Night: Hernandez vs. Pereira</a>
+</p>
+<p>
+<a href=20241012.html>UFC Fight Night: Royval vs. Taira</a>
+</p>
+<p>
+<a href=20241005.html>UFC 307: Pereira vs. Rountree Jr.</a>
+</p>
+<p>
+<a href=20240928.html>UFC Fight Night: Moicano vs. Saint Denis</a>
+</p>
+<p>
+<a href=20240914.html>UFC 306: O’Malley vs. Dvalishvili</a>
+</p>
+<p>
+<a href=20240907.html>UFC Fight Night: Burns vs. Brady</a>
+</p>
+<p>
+<a href=20240824.html>UFC on ESPN: Cannonier vs. Borralho</a>
+</p>
+<p>
+<a href=20240818.html>UFC 305: du Plessis vs. Adesanya</a>
+</p>
+<p>
+<a href=20240810.html>UFC on ESPN: Tybura vs. Spivac 2</a>
+</p>
+<p>
+<a href=20240803.html>UFC on ABC: Sandhagen vs. Nurmagomedov</a>
+</p>
+<p>
+<a href=20240727.html>UFC 304: Edwards vs. Muhammad 2</a>
+</p>
+<p>
+<a href=20240720.html>UFC on ESPN: Lemos vs. Jandiroba</a>
+</p>
+<p>
+<a href=20240713.html>UFC on ESPN: Namajunas vs. Cortez</a>
+</p>
+<p>
+<a href=20240629.html>UFC 303: Pereira vs. Procházka 2</a>
+</p>
+<p>
+<a href=20240622.html>UFC on ABC: Whittaker vs. Aliskerov</a>
+</p>
+<p>
+<a href=20240615.html>UFC on ESPN: Perez vs. Taira</a>
+</p>
+<p>
+<a href=20240608.html>UFC on ESPN: Cannonier vs. Imavov</a>
+</p>
+<p>
+<a href=20240601.html>UFC 302: Makhachev vs. Poirier</a>
+</p>
+<p>
+<a href=20240518.html>UFC Fight Night: Barboza vs. Murphy</a>
+</p>
+<p>
+<a href=20240511.html>UFC on ESPN: Lewis vs. Nascimento</a>
+</p>
+<p>
+<a href=20240504.html>UFC 301: Pantoja vs. Erceg</a>
+</p>
+<p>
+<a href=20240427.html>UFC on ESPN: Nicolau vs. Perez</a>
+</p>
+<p>
+<a href=20240413.html>UFC 300: Pereira vs. Hill</a>
+</p>
+<p>
+<a href=20240406.html>UFC Fight Night: Allen vs. Curtis 2</a>
+</p>
+<p>
+<a href=20240330.html>UFC on ESPN: Blanchfield vs. Fiorot</a>
+</p>
+<p>
+<a href=20240323.html>UFC on ESPN: Ribas vs. Namajunas</a>
+</p>
+<p>
+<a href=20240316.html>UFC Fight Night: Tuivasa vs. Tybura</a>
+</p>
+<p>
+<a href=20240309.html>UFC 299: O’Malley vs. Vera 2</a>
+</p>
+<p>
+<a href=20240302.html>UFC Fight Night: Rozenstruik vs. Gaziev</a>
+</p>
+<p>
+<a href=20240224.html>UFC Fight Night: Moreno vs. Royval 2</a>
+</p>
+<p>
+<a href=20240217.html>UFC 298: Volkanovski vs. Topuria</a>
+</p>
+<p>
+<a href=20240210.html>UFC Fight Night: Hermansson vs. Pyfer</a>
+</p>
+<p>
+<a href=20240203.html>UFC Fight Night: Dolidze vs. Imavov</a>
+</p>
+<p>
+<a href=20240120.html>UFC 297: Strickland vs. du Plessis</a>
+</p>
+<p>
+<a href=20240113.html>UFC Fight Night: Ankalaev vs. Walker 2</a>
+</p>
+<h4>
+2023
+</h4>
+<p>
+<a href=20231216.html>UFC 296: Edwards vs. Covington</a>
+</p>
+<p>
+<a href=20231209.html>UFC Fight Night: Song vs. Gutiérrez</a>
+</p>
+<p>
+<a href=20231202.html>UFC on ESPN: Dariush vs. Tsarukyan</a>
+</p>
+<p>
+<a href=20231118.html>UFC Fight Night: Allen vs. Craig</a>
+</p>
+<p>
+<a href=20231111.html>UFC 295: Procházka vs. Pereira</a>
+</p>
+<p>
+<a href=20231104.html>UFC Fight Night: Almeida vs. Lewis</a>
+</p>
+<p>
+<a href=20231021.html>UFC 294: Makhachev vs. Volkanovski 2</a>
+</p>
+<p>
+<a href=20231014.html>UFC Fight Night: Yusuff vs. Barboza</a>
+</p>
+<p>
+<a href=20231007.html>UFC Fight Night: Dawson vs. Green</a>
+</p>
+<p>
+<a href=20230923.html>UFC Fight Night: Fiziev vs. Gamrot</a>
+</p>
+<p>
+<a href=20230916.html>UFC Fight Night: Grasso vs. Shevchenko 2</a>
+</p>
+<p>
+<a href=20230910.html>UFC 293: Adesanya vs. Strickland</a>
+</p>
+<p>
+<a href=20230902.html>UFC Fight Night: Gane vs. Spivac</a>
+</p>
+<p>
+<a href=20230826.html>UFC Fight Night: Holloway vs. The Korean
+Zombie</a>
+</p>
+<p>
+<a href=20230819.html>UFC 292: Sterling vs. O’Malley</a>
+</p>
+<p>
+<a href=20230812.html>UFC on ESPN: Luque vs. dos Anjos</a>
+</p>
+<p>
+<a href=20230805.html>UFC on ESPN: Sandhagen vs. Font</a>
+</p>
+<p>
+<a href=20230729.html>UFC 291: Poirier vs. Gaethje 2</a>
+</p>
+<p>
+<a href=20230722.html>UFC Fight Night: Aspinall vs. Tybura</a>
+</p>
+<p>
+<a href=20230715.html>UFC on ESPN: Holm vs. Bueno Silva</a>
+</p>
+<p>
+<a href=20230708.html>UFC 290: Volkanovski vs. Rodríguez</a>
+</p>
+<p>
+<a href=20230701.html>UFC on ESPN: Strickland vs. Magomedov</a>
+</p>
+<p>
+<a href=20230624.html>UFC on ABC: Emmett vs. Topuria</a>
+</p>
+<p>
+<a href=20230617.html>UFC on ESPN: Vettori vs. Cannonier</a>
+</p>
+<p>
+<a href=20230610.html>UFC 289: Nunes vs. Aldana</a>
+</p>
+<p>
+<a href=20230603.html>UFC on ESPN: Kara-France vs. Albazi</a>
+</p>
+<p>
+<a href=20230520.html>UFC Fight Night: Dern vs. Hill</a>
+</p>
+<p>
+<a href=20230513.html>UFC on ABC: Rozenstruik vs. Almeida</a>
+</p>
+<p>
+<a href=20230506.html>UFC 288: Sterling vs. Cejudo</a>
+</p>
+<p>
+<a href=20230429.html>UFC on ESPN: Song vs. Simón</a>
+</p>
+<p>
+<a href=20230422.html>UFC Fight Night: Pavlovich vs. Blaydes</a>
+</p>
+<p>
+<a href=20230415.html>UFC on ESPN: Holloway vs. Allen</a>
+</p>
+<p>
+<a href=20230408.html>UFC 287: Pereira vs. Adesanya 2</a>
+</p>
+<p>
+<a href=20230325.html>UFC on ESPN: Vera vs. Sandhagen</a>
+</p>
+<p>
+<a href=20230318.html>UFC 286: Edwards vs. Usman 3</a>
+</p>
+<p>
+<a href=20230311.html>UFC Fight Night: Yan vs. Dvalishvili</a>
+</p>
+<p>
+<a href=20230304.html>UFC 285: Jones vs. Gane</a>
+</p>
+<p>
+<a href=20230225.html>UFC Fight Night: Muniz vs. Allen</a>
+</p>
+<p>
+<a href=20230218.html>UFC Fight Night: Andrade vs. Blanchfield</a>
+</p>
+<p>
+<a href=20230212.html>UFC 284: Makhachev vs. Volkanovski</a>
+</p>
+<p>
+<a href=20230204.html>UFC Fight Night: Lewis vs. Spivac</a>
+</p>
+<p>
+<a href=20230121.html>UFC 283: Teixeira vs. Hill</a>
+</p>
+<p>
+<a href=20230114.html>UFC Fight Night: Strickland vs. Imavov</a>
+</p>
+<h4>
+2022
+</h4>
+<p>
+<a href=20221217.html>UFC Fight Night: Cannonier vs. Strickland</a>
+</p>
+<p>
+<a href=20221210.html>UFC 282: Błachowicz vs. Ankalaev</a>
+</p>
+<p>
+<a href=20221203.html>UFC on ESPN: Thompson vs. Holland</a>
+</p>
+<p>
+<a href=20221119.html>UFC Fight Night: Nzechukwu vs. Cuțelaba</a>
+</p>
+<p>
+<a href=20221112.html>UFC 281: Adesanya vs. Pereira</a>
+</p>
+<p>
+<a href=20221105.html>UFC Fight Night: Rodriguez vs. Lemos</a>
+</p>
+<p>
+<a href=20221029.html>UFC Fight Night: Kattar vs. Allen</a>
+</p>
+<p>
+<a href=20221022.html>UFC 280: Oliveira vs. Makhachev</a>
+</p>
+<p>
+<a href=20221015.html>UFC Fight Night: Grasso vs. Araújo</a>
+</p>
+<p>
+<a href=20221001.html>UFC Fight Night: Dern vs. Yan</a>
+</p>
+<p>
+<a href=20220917.html>UFC Fight Night: Sandhagen vs. Song</a>
+</p>
+<p>
+<a href=20220910.html>UFC 279: Diaz vs. Ferguson</a>
+</p>
+<p>
+<a href=20220903.html>UFC Fight Night: Gane vs. Tuivasa</a>
+</p>
+<p>
+<a href=20220820.html>UFC 278: Usman vs. Edwards 2</a>
+</p>
+<p>
+<a href=20220813.html>UFC on ESPN: Vera vs. Cruz</a>
+</p>
+<p>
+<a href=20220806.html>UFC on ESPN: Santos vs. Hill</a>
+</p>
+<p>
+<a href=20220730.html>UFC 277: Peña vs. Nunes 2</a>
+</p>
+<p>
+<a href=20220723.html>UFC Fight Night: Blaydes vs. Aspinall</a>
+</p>
+<p>
+<a href=20220716.html>UFC on ABC: Ortega vs. Rodríguez</a>
+</p>
+<p>
+<a href=20220709.html>UFC on ESPN: dos Anjos vs. Fiziev</a>
+</p>
+<p>
+<a href=20220702.html>UFC 276: Adesanya vs. Cannonier</a>
+</p>
+<p>
+<a href=20220625.html>UFC on ESPN: Tsarukyan vs. Gamrot</a>
+</p>
+<p>
+<a href=20220618.html>UFC on ESPN: Kattar vs. Emmett</a>
+</p>
+<p>
+<a href=20220612.html>UFC 275: Teixeira vs. Procházka</a>
+</p>
+<p>
+<a href=20220604.html>UFC Fight Night: Volkov vs. Rozenstruik</a>
+</p>
+<p>
+<a href=20220521.html>UFC Fight Night: Holm vs. Vieira</a>
+</p>
+<p>
+<a href=20220514.html>UFC on ESPN: Błachowicz vs. Rakić</a>
+</p>
+<p>
+<a href=20220507.html>UFC 274: Oliveira vs. Gaethje</a>
+</p>
+<p>
+<a href=20220430.html>UFC on ESPN: Font vs. Vera</a>
+</p>
+<p>
+<a href=20220423.html>UFC Fight Night: Lemos vs. Andrade</a>
+</p>
+<p>
+<a href=20220416.html>UFC on ESPN: Luque vs. Muhammad 2</a>
+</p>
+<p>
+<a href=20220409.html>UFC 273: Volkanovski vs. The Korean Zombie</a>
+</p>
+<p>
+<a href=20220326.html>UFC on ESPN: Blaydes vs. Daukaus</a>
+</p>
+<p>
+<a href=20220319.html>UFC Fight Night: Volkov vs. Aspinall</a>
+</p>
+<p>
+<a href=20220312.html>UFC Fight Night: Santos vs. Ankalaev</a>
+</p>
+<p>
+<a href=20220305.html>UFC 272: Covington vs. Masvidal</a>
+</p>
+<p>
+<a href=20220226.html>UFC Fight Night: Makhachev vs. Green</a>
+</p>
+<p>
+<a href=20220219.html>UFC Fight Night: Walker vs. Hill</a>
+</p>
+<p>
+<a href=20220212.html>UFC 271: Adesanya vs. Whittaker 2</a>
+</p>
+<p>
+<a href=20220205.html>UFC Fight Night: Hermansson vs. Strickland</a>
+</p>
+<p>
+<a href=20220122.html>UFC 270: Ngannou vs. Gane</a>
+</p>
+<p>
+<a href=20220115.html>UFC on ESPN: Kattar vs. Chikadze</a>
+</p>
+<h4>
+2021
+</h4>
+<p>
+<a href=20211218.html>UFC Fight Night: Lewis vs. Daukaus</a>
+</p>
+<p>
+<a href=20211211.html>UFC 269: Oliveira vs. Poirier</a>
+</p>
+<p>
+<a href=20211204.html>UFC on ESPN: Font vs. Aldo</a>
+</p>
+<p>
+<a href=20211120.html>UFC Fight Night: Vieira vs. Tate</a>
+</p>
+<p>
+<a href=20211113.html>UFC Fight Night: Holloway vs. Rodríguez</a>
+</p>
+<p>
+<a href=20211106.html>UFC 268: Usman vs. Covington 2</a>
+</p>
+<p>
+<a href=20211030.html>UFC 267: Błachowicz vs. Teixeira</a>
+</p>
+<p>
+<a href=20211023.html>UFC Fight Night: Costa vs. Vettori</a>
+</p>
+<p>
+<a href=20211016.html>UFC Fight Night: Ladd vs. Dumont</a>
+</p>
+<p>
+<a href=20211009.html>UFC Fight Night: Dern vs. Rodriguez</a>
+</p>
+<p>
+<a href=20211002.html>UFC Fight Night: Santos vs. Walker</a>
+</p>
+<p>
+<a href=20210925.html>UFC 266: Volkanovski vs. Ortega</a>
+</p>
+<p>
+<a href=20210918.html>UFC Fight Night: Smith vs. Spann</a>
+</p>
+<p>
+<a href=20210904.html>UFC Fight Night: Brunson vs. Till</a>
+</p>
+<p>
+<a href=20210828.html>UFC on ESPN: Barboza vs. Chikadze</a>
+</p>
+<p>
+<a href=20210821.html>UFC on ESPN: Cannonier vs. Gastelum</a>
+</p>
+<p>
+<a href=20210807.html>UFC 265: Lewis vs. Gane</a>
+</p>
+<p>
+<a href=20210731.html>UFC on ESPN: Hall vs. Strickland</a>
+</p>
+<p>
+<a href=20210724.html>UFC on ESPN: Sandhagen vs. Dillashaw</a>
+</p>
+<p>
+<a href=20210717.html>UFC on ESPN: Makhachev vs. Moisés</a>
+</p>
+<p>
+<a href=20210710.html>UFC 264: Poirier vs. McGregor 3</a>
+</p>
+<p>
+<a href=20210626.html>UFC Fight Night: Gane vs. Volkov</a>
+</p>
+<p>
+<a href=20210619.html>UFC on ESPN: The Korean Zombie vs. Ige</a>
+</p>
+<p>
+<a href=20210612.html>UFC 263: Adesanya vs. Vettori 2</a>
+</p>
+<p>
+<a href=20210605.html>UFC Fight Night: Rozenstruik vs. Sakai</a>
+</p>
+<p>
+<a href=20210522.html>UFC Fight Night: Font vs. Garbrandt</a>
+</p>
+<p>
+<a href=20210515.html>UFC 262: Oliveira vs. Chandler</a>
+</p>
+<p>
+<a href=20210508.html>UFC on ESPN: Rodriguez vs. Waterson</a>
+</p>
+<p>
+<a href=20210501.html>UFC on ESPN: Reyes vs. Procházka</a>
+</p>
+<p>
+<a href=20210424.html>UFC 261: Usman vs. Masvidal 2</a>
+</p>
+<p>
+<a href=20210417.html>UFC on ESPN: Whittaker vs. Gastelum</a>
+</p>
+<p>
+<a href=20210410.html>UFC on ABC: Vettori vs. Holland</a>
+</p>
+<p>
+<a href=20210327.html>UFC 260: Miocic vs. Ngannou 2</a>
+</p>
+<p>
+<a href=20210320.html>UFC on ESPN: Brunson vs. Holland</a>
+</p>
+<p>
+<a href=20210313.html>UFC Fight Night: Edwards vs. Muhammad</a>
+</p>
+<p>
+<a href=20210306.html>UFC 259: Błachowicz vs. Adesanya</a>
+</p>
+<p>
+<a href=20210227.html>UFC Fight Night: Rozenstruik vs. Gane</a>
+</p>
+<p>
+<a href=20210220.html>UFC Fight Night: Blaydes vs. Lewis</a>
+</p>
+<p>
+<a href=20210213.html>UFC 258: Usman vs. Burns</a>
+</p>
+<p>
+<a href=20210206.html>UFC Fight Night: Overeem vs. Volkov</a>
+</p>
+<p>
+<a href=20210124.html>UFC 257: Poirier vs. McGregor 2</a>
+</p>
+<p>
+<a href=20210120.html>UFC on ESPN: Chiesa vs. Magny</a>
+</p>
+<p>
+<a href=20210116.html>UFC on ABC: Holloway vs. Kattar</a>
+</p>
+<h4>
+2020
+</h4>
+<p>
+<a href=20201219.html>UFC Fight Night: Thompson vs. Neal</a>
+</p>
+<p>
+<a href=20201212.html>UFC 256: Figueiredo vs. Moreno</a>
+</p>
+<p>
+<a href=20201205.html>UFC on ESPN: Hermansson vs. Vettori</a>
+</p>
+<p>
+<a href=20201128.html>UFC on ESPN: Smith vs. Clark</a>
+</p>
+<p>
+<a href=20201121.html>UFC 255: Figueiredo vs. Perez</a>
+</p>
+<p>
+<a href=20201114.html>UFC Fight Night: Felder vs. dos Anjos</a>
+</p>
+<p>
+<a href=20201107.html>UFC on ESPN: Santos vs. Teixeira</a>
+</p>
+<p>
+<a href=20201031.html>UFC Fight Night: Hall vs. Silva</a>
+</p>
+<p>
+<a href=20201024.html>UFC 254: Khabib vs. Gaethje</a>
+</p>
+<p>
+<a href=20201018.html>UFC Fight Night: Ortega vs. The Korean Zombie</a>
+</p>
+<p>
+<a href=20201011.html>UFC Fight Night: Moraes vs. Sandhagen</a>
+</p>
+<p>
+<a href=20201004.html>UFC on ESPN: Holm vs. Aldana</a>
+</p>
+<p>
+<a href=20200927.html>UFC 253: Adesanya vs. Costa</a>
+</p>
+<p>
+<a href=20200919.html>UFC Fight Night: Covington vs. Woodley</a>
+</p>
+<p>
+<a href=20200912.html>UFC Fight Night: Waterson vs. Hill</a>
+</p>
+<p>
+<a href=20200905.html>UFC Fight Night: Overeem vs. Sakai</a>
+</p>
+<p>
+<a href=20200829.html>UFC Fight Night: Smith vs. Rakić</a>
+</p>
+<p>
+<a href=20200822.html>UFC on ESPN: Munhoz vs. Edgar</a>
+</p>
+<p>
+<a href=20200815.html>UFC 252: Miocic vs. Cormier 3</a>
+</p>
+<p>
+<a href=20200808.html>UFC Fight Night: Lewis vs. Oleinik</a>
+</p>
+<p>
+<a href=20200801.html>UFC Fight Night: Brunson vs. Shahbazyan</a>
+</p>
+<p>
+<a href=20200726.html>UFC on ESPN: Whittaker vs. Till</a>
+</p>
+<p>
+<a href=20200719.html>UFC Fight Night: Figueiredo vs. Benavidez 2</a>
+</p>
+<p>
+<a href=20200716.html>UFC on ESPN: Kattar vs. Ige</a>
+</p>
+<p>
+<a href=20200712.html>UFC 251: Usman vs. Masvidal</a>
+</p>
+<p>
+<a href=20200627.html>UFC on ESPN: Poirier vs. Hooker</a>
+</p>
+<p>
+<a href=20200620.html>UFC on ESPN: Blaydes vs. Volkov</a>
+</p>
+<p>
+<a href=20200613.html>UFC on ESPN: Eye vs. Calvillo</a>
+</p>
+<p>
+<a href=20200606.html>UFC 250: Nunes vs. Spencer</a>
+</p>
+<p>
+<a href=20200530.html>UFC on ESPN: Woodley vs. Burns</a>
+</p>
+<p>
+<a href=20200516.html>UFC on ESPN: Overeem vs. Harris</a>
+</p>
+<p>
+<a href=20200513.html>UFC Fight Night: Smith vs. Teixeira</a>
+</p>
+<p>
+<a href=20200509.html>UFC 249: Ferguson vs. Gaethje</a>
+</p>
+<p>
+<a href=20200314.html>UFC Fight Night: Lee vs. Oliveira</a>
+</p>
+<p>
+<a href=20200307.html>UFC 248: Adesanya vs. Romero</a>
+</p>
+<p>
+<a href=20200229.html>UFC Fight Night: Benavidez vs. Figueiredo</a>
+</p>
+<p>
+<a href=20200223.html>UFC Fight Night: Felder vs. Hooker</a>
+</p>
+<p>
+<a href=20200215.html>UFC Fight Night: Anderson vs. Błachowicz 2</a>
+</p>
+<p>
+<a href=20200208.html>UFC 247: Jones vs. Reyes</a>
+</p>
+<p>
+<a href=20200125.html>UFC Fight Night: Blaydes vs. dos Santos</a>
+</p>
+<p>
+<a href=20200118.html>UFC 246: McGregor vs. Cowboy</a>
+</p>
+<h4>
+2019
+</h4>
+<p>
+<a href=20191221.html>UFC Fight Night: Edgar vs. The Korean Zombie</a>
+</p>
+<p>
+<a href=20191214.html>UFC 245: Usman vs. Covington</a>
+</p>
+<p>
+<a href=20191207.html>UFC on ESPN: Overeem vs. Rozenstruik</a>
+</p>
+<p>
+<a href=20191116.html>UFC Fight Night: Błachowicz vs. Jacaré</a>
+</p>
+<p>
+<a href=20191109.html>UFC Fight Night: Magomedsharipov vs. Kattar</a>
+</p>
+<p>
+<a href=20191102.html>UFC 244: Masvidal vs. Diaz</a>
+</p>
+<p>
+<a href=20191026.html>UFC Fight Night: Maia vs. Askren</a>
+</p>
+<p>
+<a href=20191018.html>UFC on ESPN: Reyes vs. Weidman</a>
+</p>
+<p>
+<a href=20191012.html>UFC Fight Night: Joanna vs. Waterson</a>
+</p>
+<p>
+<a href=20191006.html>UFC 243: Whittaker vs. Adesanya</a>
+</p>
+<p>
+<a href=20190928.html>UFC Fight Night: Hermansson vs. Cannonier</a>
+</p>
+<p>
+<a href=20190921.html>UFC Fight Night: Rodríguez vs. Stephens</a>
+</p>
+<p>
+<a href=20190914.html>UFC Fight Night: Cowboy vs. Gaethje</a>
+</p>
+<p>
+<a href=20190907.html>UFC 242: Khabib vs. Poirier</a>
+</p>
+<p>
+<a href=20190831.html>UFC Fight Night: Andrade vs. Zhang</a>
+</p>
+<p>
+<a href=20190817.html>UFC 241: Cormier vs. Miocic 2</a>
+</p>
+<p>
+<a href=20190810.html>UFC Fight Night: Shevchenko vs. Carmouche 2</a>
+</p>
+<p>
+<a href=20190803.html>UFC on ESPN: Covington vs. Lawler</a>
+</p>
+<p>
+<a href=20190727.html>UFC 240: Holloway vs. Edgar</a>
+</p>
+<p>
+<a href=20190720.html>UFC on ESPN: dos Anjos vs. Edwards</a>
+</p>
+<p>
+<a href=20190713.html>UFC Fight Night: de Randamie vs. Ladd</a>
+</p>
+<p>
+<a href=20190706.html>UFC 239: Jones vs. Santos</a>
+</p>
+<p>
+<a href=20190629.html>UFC on ESPN: Ngannou vs. dos Santos</a>
+</p>
+<p>
+<a href=20190622.html>UFC Fight Night: Moicano vs. The Korean Zombie</a>
+</p>
+<p>
+<a href=20190608.html>UFC 238: Cejudo vs. Moraes</a>
+</p>
+<p>
+<a href=20190601.html>UFC Fight Night: Gustafsson vs. Smith</a>
+</p>
+<p>
+<a href=20190518.html>UFC Fight Night: dos Anjos vs. Lee</a>
+</p>
+<p>
+<a href=20190511.html>UFC 237: Namajunas vs. Andrade</a>
+</p>
+<p>
+<a href=20190504.html>UFC Fight Night: Iaquinta vs. Cowboy</a>
+</p>
+<p>
+<a href=20190427.html>UFC Fight Night: Jacaré vs. Hermansson</a>
+</p>
+<p>
+<a href=20190420.html>UFC Fight Night: Overeem vs. Oleinik</a>
+</p>
+<p>
+<a href=20190413.html>UFC 236: Holloway vs. Poirier 2</a>
+</p>
+<p>
+<a href=20190330.html>UFC on ESPN: Barboza vs. Gaethje</a>
+</p>
+<p>
+<a href=20190323.html>UFC Fight Night: Thompson vs. Pettis</a>
+</p>
+<p>
+<a href=20190316.html>UFC Fight Night: Till vs. Masvidal</a>
+</p>
+<p>
+<a href=20190309.html>UFC Fight Night: Lewis vs. dos Santos</a>
+</p>
+<p>
+<a href=20190302.html>UFC 235: Jones vs. Smith</a>
+</p>
+<p>
+<a href=20190223.html>UFC Fight Night: Błachowicz vs. Santos</a>
+</p>
+<p>
+<a href=20190217.html>UFC on ESPN: Ngannou vs. Velasquez</a>
+</p>
+<p>
+<a href=20190210.html>UFC 234: Adesanya vs. Silva</a>
+</p>
+<p>
+<a href=20190202.html>UFC Fight Night: Assunção vs. Moraes 2</a>
+</p>
+<p>
+<a href=20190119.html>UFC Fight Night: Cejudo vs. Dillashaw</a>
+</p>
+<h4>
+2018
+</h4>
+<p>
+<a href=20181229.html>UFC 232: Jones vs. Gustafsson 2</a>
+</p>
+<p>
+<a href=20181215.html>UFC on Fox: Lee vs. Iaquinta 2</a>
+</p>
+<p>
+<a href=20181208.html>UFC 231: Holloway vs. Ortega</a>
+</p>
+<p>
+<a href=20181202.html>UFC Fight Night: dos Santos vs. Tuivasa</a>
+</p>
+<p>
+<a href=20181130.html>The Ultimate Fighter: Heavy Hitters</a>
+</p>
+<p>
+<a href=20181124.html>UFC Fight Night: Blaydes vs. Ngannou 2</a>
+</p>
+<p>
+<a href=20181117.html>UFC Fight Night: Magny vs. Ponzinibbio</a>
+</p>
+<p>
+<a href=20181110.html>UFC Fight Night: The Korean Zombie
+vs. Rodríguez</a>
+</p>
+<p>
+<a href=20181103.html>UFC 230: Cormier vs. Lewis</a>
+</p>
+<p>
+<a href=20181027.html>UFC Fight Night: Volkan vs. Smith</a>
+</p>
+<p>
+<a href=20181006.html>UFC 229: Khabib vs. McGregor</a>
+</p>
+<p>
+<a href=20180922.html>UFC Fight Night: Santos vs. Anders</a>
+</p>
+<p>
+<a href=20180915.html>UFC Fight Night: Hunt vs. Oleinik</a>
+</p>
+<p>
+<a href=20180908.html>UFC 228: Woodley vs. Till</a>
+</p>
+<p>
+<a href=20180825.html>UFC Fight Night: Gaethje vs. Vick</a>
+</p>
+<p>
+<a href=20180804.html>UFC 227: Dillashaw vs. Garbrandt 2</a>
+</p>
+<p>
+<a href=20180728.html>UFC on Fox: Alvarez vs. Poirier 2</a>
+</p>
+<p>
+<a href=20180722.html>UFC Fight Night: Shogun vs. Smith</a>
+</p>
+<p>
+<a href=20180714.html>UFC Fight Night: dos Santos vs. Ivanov</a>
+</p>
+<p>
+<a href=20180707.html>UFC 226: Miocic vs. Cormier</a>
+</p>
+<p>
+<a href=20180706.html>The Ultimate Fighter: Undefeated</a>
+</p>
+<p>
+<a href=20180623.html>UFC Fight Night: Cowboy vs. Edwards</a>
+</p>
+<p>
+<a href=20180609.html>UFC 225: Whittaker vs. Romero 2</a>
+</p>
+<p>
+<a href=20180601.html>UFC Fight Night: Rivera vs. Moraes</a>
+</p>
+<p>
+<a href=20180527.html>UFC Fight Night: Thompson vs. Till</a>
+</p>
+<p>
+<a href=20180519.html>UFC Fight Night: Maia vs. Usman</a>
+</p>
+<p>
+<a href=20180512.html>UFC 224: Nunes vs. Pennington</a>
+</p>
+<p>
+<a href=20180421.html>UFC Fight Night: Barboza vs. Lee</a>
+</p>
+<p>
+<a href=20180414.html>UFC on Fox: Poirier vs. Gaethje</a>
+</p>
+<p>
+<a href=20180407.html>UFC 223: Khabib vs. Iaquinta</a>
+</p>
+<p>
+<a href=20180317.html>UFC Fight Night: Werdum vs. Volkov</a>
+</p>
+<p>
+<a href=20180303.html>UFC 222: Cyborg vs. Kunitskaya</a>
+</p>
+<p>
+<a href=20180224.html>UFC on Fox: Emmett vs. Stephens</a>
+</p>
+<p>
+<a href=20180218.html>UFC Fight Night: Cowboy vs. Medeiros</a>
+</p>
+<p>
+<a href=20180211.html>UFC 221: Romero vs. Rockhold</a>
+</p>
+<p>
+<a href=20180203.html>UFC Fight Night: Machida vs. Anders</a>
+</p>
+<p>
+<a href=20180127.html>UFC on Fox: Jacaré vs. Brunson 2</a>
+</p>
+<p>
+<a href=20180120.html>UFC 220: Miocic vs. Ngannou</a>
+</p>
+<p>
+<a href=20180114.html>UFC Fight Night: Stephens vs. Choi</a>
+</p>
+<h4>
+2017
+</h4>
+<p>
+<a href=20171230.html>UFC 219: Cyborg vs. Holm</a>
+</p>
+<p>
+<a href=20171216.html>UFC on Fox: Lawler vs. dos Anjos</a>
+</p>
+<p>
+<a href=20171209.html>UFC Fight Night: Swanson vs. Ortega</a>
+</p>
+<p>
+<a href=20171202.html>UFC 218: Holloway vs. Aldo 2</a>
+</p>
+<p>
+<a href=20171201.html>The Ultimate Fighter: A New World Champion</a>
+</p>
+<p>
+<a href=20171125.html>UFC Fight Night: Bisping vs. Gastelum</a>
+</p>
+<p>
+<a href=20171119.html>UFC Fight Night: Werdum vs. Tybura</a>
+</p>
+<p>
+<a href=20171111.html>UFC Fight Night: Poirier vs. Pettis</a>
+</p>
+<p>
+<a href=20171104.html>UFC 217: Bisping vs. St-Pierre</a>
+</p>
+<p>
+<a href=20171028.html>UFC Fight Night: Brunson vs. Machida</a>
+</p>
+<p>
+<a href=20171021.html>UFC Fight Night: Cowboy vs. Till</a>
+</p>
+<p>
+<a href=20171007.html>UFC 216: Ferguson vs. Lee</a>
+</p>
+<p>
+<a href=20170923.html>UFC Fight Night: Saint Preux vs. Okami</a>
+</p>
+<p>
+<a href=20170916.html>UFC Fight Night: Rockhold vs. Branch</a>
+</p>
+<p>
+<a href=20170909.html>UFC 215: Nunes vs. Shevchenko 2</a>
+</p>
+<p>
+<a href=20170902.html>UFC Fight Night: Volkov vs. Struve</a>
+</p>
+<p>
+<a href=20170805.html>UFC Fight Night: Pettis vs. Moreno</a>
+</p>
+<p>
+<a href=20170729.html>UFC 214: Cormier vs. Jones 2</a>
+</p>
+<p>
+<a href=20170722.html>UFC on Fox: Weidman vs. Gastelum</a>
+</p>
+<p>
+<a href=20170716.html>UFC Fight Night: Nelson vs. Ponzinibbio</a>
+</p>
+<p>
+<a href=20170708.html>UFC 213: Romero vs. Whittaker</a>
+</p>
+<p>
+<a href=20170707.html>The Ultimate Fighter: Redemption</a>
+</p>
+<p>
+<a href=20170625.html>UFC Fight Night: Chiesa vs. Lee</a>
+</p>
+<p>
+<a href=20170617.html>UFC Fight Night: Holm vs. Correia</a>
+</p>
+<p>
+<a href=20170611.html>UFC Fight Night: Lewis vs. Hunt</a>
+</p>
+<p>
+<a href=20170603.html>UFC 212: Aldo vs. Holloway</a>
+</p>
+<p>
+<a href=20170528.html>UFC Fight Night: Gustafsson vs. Teixeira</a>
+</p>
+<p>
+<a href=20170513.html>UFC 211: Miocic vs dos Santos 2</a>
+</p>
+<p>
+<a href=20170422.html>UFC Fight Night: Swanson vs. Lobov</a>
+</p>
+<p>
+<a href=20170415.html>UFC on Fox: Johnson vs. Reis</a>
+</p>
+<p>
+<a href=20170408.html>UFC 210: Cormier vs Johnson 2</a>
+</p>
+<p>
+<a href=20170318.html>UFC Fight Night: Manuwa vs. Anderson</a>
+</p>
+<p>
+<a href=20170311.html>UFC Fight Night: Belfort vs. Gastelum</a>
+</p>
+<p>
+<a href=20170304.html>UFC 209: Woodley vs. Thompson 2</a>
+</p>
+<p>
+<a href=20170219.html>UFC Fight Night: Lewis vs. Browne</a>
+</p>
+<p>
+<a href=20170211.html>UFC 208: Holm vs. de Randamie</a>
+</p>
+<p>
+<a href=20170204.html>UFC Fight Night: Bermudez vs. The Korean
+Zombie</a>
+</p>
+<p>
+<a href=20170128.html>UFC on Fox: Shevchenko vs. Peña</a>
+</p>
+<p>
+<a href=20170115.html>UFC Fight Night: Rodríguez vs. Penn</a>
+</p>
+<h4>
+2016
+</h4>
+<p>
+<a href=20161230.html>UFC 207: Nunes vs. Rousey</a>
+</p>
+<p>
+<a href=20161217.html>UFC on Fox: VanZant vs. Waterson</a>
+</p>
+<p>
+<a href=20161210.html>UFC 206: Holloway vs. Pettis</a>
+</p>
+<p>
+<a href=20161209.html>UFC Fight Night: Lewis vs. Abdurakhimov</a>
+</p>
+<p>
+<a href=20161203.html>The Ultimate Fighter: Tournament of Champions</a>
+</p>
+<p>
+<a href=20161127.html>UFC Fight Night: Whittaker vs. Brunson</a>
+</p>
+<p>
+<a href=20161119.html>UFC Fight Night: Bader vs. Nogueira 2</a>
+</p>
+<p>
+<a href=20161119.html>UFC Fight Night: Mousasi vs. Hall 2</a>
+</p>
+<p>
+<a href=20161112.html>UFC 205: Alvarez vs. McGregor</a>
+</p>
+<p>
+<a href=20161105.html>The Ultimate Fighter: Latin America 3</a>
+</p>
+<p>
+<a href=20161008.html>UFC 204: Bisping vs. Henderson 2</a>
+</p>
+<p>
+<a href=20161001.html>UFC Fight Night: Lineker vs. Dodson</a>
+</p>
+<p>
+<a href=20160924.html>UFC Fight Night: Cyborg vs. Länsberg</a>
+</p>
+<p>
+<a href=20160917.html>UFC Fight Night: Poirier vs. Johnson</a>
+</p>
+<p>
+<a href=20160910.html>UFC 203: Miocic vs. Overeem</a>
+</p>
+<p>
+<a href=20160903.html>UFC Fight Night: Arlovski vs. Barnett</a>
+</p>
+<p>
+<a href=20160827.html>UFC on Fox: Maia vs Condit</a>
+</p>
+<p>
+<a href=20160820.html>UFC 202: Toti vs Safarbek</a>
+</p>
+<p>
+<a href=20160806.html>UFC Fight Night: Rodríguez vs Caceres</a>
+</p>
+<p>
+<a href=20160730.html>UFC 201: Lawler vs. Woodley</a>
+</p>
+<p>
+<a href=20160723.html>UFC on Fox: Holm vs. Shevchenko</a>
+</p>
+<p>
+<a href=20160713.html>UFC Fight Night: McDonald vs. Lineker</a>
+</p>
+<p>
+<a href=20160709.html>UFC 200: Tate vs Nunes</a>
+</p>
+<p>
+<a href=20160708.html>The Ultimate Fighter: Team Joanna vs. Team
+Cláudia</a>
+</p>
+<p>
+<a href=20160707.html>UFC Fight Night: dos Anjos vs. Alvarez</a>
+</p>
+<p>
+<a href=20160618.html>UFC Fight Night: MacDonald vs. Thompson</a>
+</p>
+<p>
+<a href=20160604.html>UFC 199: Rockhold vs. Bisping 2</a>
+</p>
+<p>
+<a href=20160529.html>UFC Fight Night: Almeida vs. Garbrandt</a>
+</p>
+<p>
+<a href=20160514.html>UFC 198: Werdum vs. Miocic</a>
+</p>
+<p>
+<a href=20160508.html>UFC Fight Night: Overeem vs. Arlovski</a>
+</p>
+<p>
+<a href=20160423.html>UFC 197: Jones vs. Saint Preux</a>
+</p>
+<p>
+<a href=20160416.html>UFC on Fox: Teixeira vs. Evans</a>
+</p>
+<p>
+<a href=20160410.html>UFC Fight Night: Rothwell vs. dos Santos</a>
+</p>
+<p>
+<a href=20160320.html>UFC Fight Night: Hunt vs. Mir</a>
+</p>
+<p>
+<a href=20160305.html>UFC 196: McGregor vs. Diaz</a>
+</p>
+<p>
+<a href=20160227.html>UFC Fight Night: Silva vs. Bisping</a>
+</p>
+<p>
+<a href=20160221.html>UFC Fight Night: Cowboy vs. Cowboy</a>
+</p>
+<p>
+<a href=20160206.html>UFC Fight Night: Hendricks vs. Thompson</a>
+</p>
+<p>
+<a href=20160130.html>UFC on Fox: Johnson vs. Bader</a>
+</p>
+<p>
+<a href=20160117.html>UFC Fight Night: Dillashaw vs. Cruz</a>
+</p>
+<p>
+<a href=20160102.html>UFC 195: Lawler vs. Condit</a>
+</p>
+<h4>
+2015
+</h4>
+<p>
+<a href=20151219.html>UFC on Fox: dos Anjos vs. Cowboy 2</a>
+</p>
+<p>
+<a href=20151212.html>UFC 194: Aldo vs. McGregor</a>
+</p>
+<p>
+<a href=20151211.html>The Ultimate Fighter: Team McGregor vs. Team
+Faber</a>
+</p>
+<p>
+<a href=20151210.html>UFC Fight Night: Namajunas vs. VanZant</a>
+</p>
+<p>
+<a href=20151128.html>UFC Fight Night: Henderson vs. Masvidal</a>
+</p>
+<p>
+<a href=20151121.html>The Ultimate Fighter: Latin America 2</a>
+</p>
+<p>
+<a href=20151114.html>UFC 193: Rousey vs. Holm</a>
+</p>
+<p>
+<a href=20151107.html>UFC Fight Night: Belfort vs. Henderson 3</a>
+</p>
+<p>
+<a href=20151024.html>UFC Fight Night: Holohan vs. Smolka</a>
+</p>
+<p>
+<a href=20151003.html>UFC 192: Cormier vs. Gustafsson</a>
+</p>
+<p>
+<a href=20150927.html>UFC Fight Night: Barnett vs. Nelson</a>
+</p>
+<p>
+<a href=20150905.html>UFC 191: Johnson vs Dodson 2</a>
+</p>
+<p>
+<a href=20150823.html>UFC Fight Night: Holloway vs. Oliveira</a>
+</p>
+<p>
+<a href=20150808.html>UFC Fight Night: Teixeira vs. Saint Preux</a>
+</p>
+<p>
+<a href=20150801.html>UFC 190: Rousey vs. Correia</a>
+</p>
+<p>
+<a href=20150725.html>UFC on Fox: Dillashaw vs. Barão 2</a>
+</p>
+<p>
+<a href=20150718.html>UFC Fight Night: Bisping vs. Leites</a>
+</p>
+<p>
+<a href=20150715.html>UFC Fight Night: Mir vs. Duffee</a>
+</p>
+<p>
+<a href=20150712.html>The Ultimate Fighter: American Top Team
+vs. Blackzilians</a>
+</p>
+<p>
+<a href=20150711.html>UFC 189: Mendes vs. McGregor</a>
+</p>
+<p>
+<a href=20150627.html>UFC Fight Night: Machida vs. Romero</a>
+</p>
+<p>
+<a href=20150620.html>UFC Fight Night: Jędrzejczyk vs. Penne</a>
+</p>
+<p>
+<a href=20150613.html>UFC 188: Velasquez vs. Werdum</a>
+</p>
+<p>
+<a href=20150606.html>UFC Fight Night: Boetsch vs. Henderson</a>
+</p>
+<p>
+<a href=20150530.html>UFC Fight Night: Condit vs. Alves</a>
+</p>
+<p>
+<a href=20150523.html>UFC 187: Johnson vs. Cormier</a>
+</p>
+<p>
+<a href=20150516.html>UFC Fight Night: Edgar vs. Faber</a>
+</p>
+<p>
+<a href=20150510.html>UFC Fight Night: Miocic vs. Hunt</a>
+</p>
+<p>
+<a href=20150425.html>UFC 186: Johnson vs. Horiguchi</a>
+</p>
+<p>
+<a href=20150418.html>UFC on Fox: Machida vs. Rockhold</a>
+</p>
+<p>
+<a href=20150411.html>UFC Fight Night: Gonzaga vs. Cro Cop 2</a>
+</p>
+<p>
+<a href=20150404.html>UFC Fight Night: Mendes vs. Lamas</a>
+</p>
+<p>
+<a href=20150321.html>UFC Fight Night: Maia vs. LaFlare</a>
+</p>
+<p>
+<a href=20150314.html>UFC 185: Pettis vs. dos Anjos</a>
+</p>
+<p>
+<a href=20150228.html>UFC 184: Rousey vs. Zingano</a>
+</p>
+<p>
+<a href=20150222.html>UFC Fight Night: Bigfoot vs. Mir</a>
+</p>
+<p>
+<a href=20150214.html>UFC Fight Night: Henderson vs. Thatch</a>
+</p>
+<p>
+<a href=20150131.html>UFC 183: Silva vs. Diaz</a>
+</p>
+<p>
+<a href=20150124.html>UFC on Fox: Gustafsson vs. Johnson</a>
+</p>
+<p>
+<a href=20150118.html>UFC Fight Night: McGregor vs Siver</a>
+</p>
+<p>
+<a href=20150103.html>UFC 182: Jones vs. Cormier</a>
+</p>
+<h4>
+2014
+</h4>
+<p>
+<a href=20141220.html>UFC Fight Night: Machida vs. Dollaway</a>
+</p>
+<p>
+<a href=20141213.html>UFC on Fox: dos Santos vs. Miocic</a>
+</p>
+<p>
+<a href=20141212.html>The Ultimate Fighter: A Champion Will Be
+Crowned</a>
+</p>
+<p>
+<a href=20141206.html>UFC 181: Hendricks vs. Lawler II</a>
+</p>
+<p>
+<a href=20141122.html>UFC Fight Night: Edgar vs. Swanson</a>
+</p>
+<p>
+<a href=20141115.html>UFC 180: Werdum vs. Hunt</a>
+</p>
+<p>
+<a href=20141108.html>UFC Fight Night: Shogun vs. Saint Preux</a>
+</p>
+<p>
+<a href=20141108.html>UFC Fight Night: Rockhold vs. Bisping</a>
+</p>
+<p>
+<a href=20141025.html>UFC 179: Aldo vs. Mendes 2</a>
+</p>
+<p>
+<a href=20141004.html>UFC Fight Night: MacDonald vs. Saffiedine</a>
+</p>
+<p>
+<a href=20141004.html>UFC Fight Night: Nelson vs. Story</a>
+</p>
+<p>
+<a href=20140927.html>UFC 178: Johnson vs. Cariaso</a>
+</p>
+<p>
+<a href=20140920.html>UFC Fight Night: Hunt vs. Nelson</a>
+</p>
+<p>
+<a href=20140913.html>UFC Fight Night: Bigfoot vs. Arlovski</a>
+</p>
+<p>
+<a href=20140905.html>UFC Fight Night: Jacaré vs. Mousasi</a>
+</p>
+<p>
+<a href=20140830.html>UFC 177: Dillashaw vs. Soto</a>
+</p>
+<p>
+<a href=20140823.html>UFC Fight Night: Henderson vs. dos Anjos</a>
+</p>
+<p>
+<a href=20140823.html>UFC Fight Night: Bisping vs. Le</a>
+</p>
+<p>
+<a href=20140816.html>UFC Fight Night: Bader vs. Saint Preux</a>
+</p>
+<p>
+<a href=20140726.html>UFC on Fox: Lawler vs Brown</a>
+</p>
+<p>
+<a href=20140719.html>UFC Fight Night: McGregor vs. Brandão</a>
+</p>
+<p>
+<a href=20140716.html>UFC Fight Night: Cowboy vs. Miller</a>
+</p>
+<p>
+<a href=20140706.html>The Ultimate Fighter: Team Edgar vs. Team Penn</a>
+</p>
+<p>
+<a href=20140705.html>UFC 175: Weidman vs. Machida</a>
+</p>
+<p>
+<a href=20140628.html>UFC Fight Night: Swanson vs. Stephens</a>
+</p>
+<p>
+<a href=20140628.html>UFC Fight Night: Te Huna vs. Marquardt</a>
+</p>
+<p>
+<a href=20140614.html>UFC 174: Johnson vs. Bagautinov</a>
+</p>
+<p>
+<a href=20140607.html>UFC Fight Night: Henderson vs. Khabilov</a>
+</p>
+<p>
+<a href=20140531.html>The Ultimate Fighter: Brazil 3</a>
+</p>
+<p>
+<a href=20140531.html>UFC Fight Night: Muñoz vs. Mousasi</a>
+</p>
+<p>
+<a href=20140524.html>UFC 173: Barão vs. Dillashaw</a>
+</p>
+<p>
+<a href=20140510.html>UFC Fight Night: Brown vs. Silva</a>
+</p>
+<p>
+<a href=20140426.html>UFC 172: Jones vs. Teixeira</a>
+</p>
+<p>
+<a href=20140419.html>UFC on Fox: Werdum vs. Browne</a>
+</p>
+<p>
+<a href=20140416.html>The Ultimate Fighter Nations: Canada
+vs. Australia</a>
+</p>
+<p>
+<a href=20140411.html>UFC Fight Night: Nogueira vs. Nelson</a>
+</p>
+<p>
+<a href=20140323.html>UFC Fight Night: Shogun vs. Henderson 2</a>
+</p>
+<p>
+<a href=20140315.html>UFC 171: Hendricks vs. Lawler</a>
+</p>
+<p>
+<a href=20140308.html>UFC Fight Night: Gustafsson vs. Manuwa</a>
+</p>
+<p>
+<a href=20140301.html>The Ultimate Fighter: China</a>
+</p>
+<p>
+<a href=20140222.html>UFC 170: Rousey vs. McMann</a>
+</p>
+<p>
+<a href=20140215.html>UFC Fight Night: Machida vs. Mousasi</a>
+</p>
+<p>
+<a href=20140201.html>UFC 169: Barão vs. Faber 2</a>
+</p>
+<p>
+<a href=20140125.html>UFC on Fox: Henderson vs. Thomson</a>
+</p>
+<p>
+<a href=20140115.html>UFC Fight Night: Rockhold vs. Philippou</a>
+</p>
+<p>
+<a href=20140104.html>UFC Fight Night: Saffiedine vs. Lim</a>
+</p>
+<h4>
+2013
+</h4>
+<p>
+<a href=20131228.html>UFC 168: Weidman vs. Silva 2</a>
+</p>
+<p>
+<a href=20131214.html>UFC on Fox: Johnson vs. Benavidez 2</a>
+</p>
+<p>
+<a href=20131207.html>UFC Fight Night: Hunt vs. Bigfoot</a>
+</p>
+<p>
+<a href=20131130.html>The Ultimate Fighter: Team Rousey vs. Team
+Tate</a>
+</p>
+<p>
+<a href=20131116.html>UFC 167: St-Pierre vs. Hendricks</a>
+</p>
+<p>
+<a href=20131109.html>UFC Fight Night: Belfort vs. Henderson 2</a>
+</p>
+<p>
+<a href=20131106.html>UFC: Fight for the Troops 3</a>
+</p>
+<p>
+<a href=20131026.html>UFC Fight Night: Machida vs. Muñoz</a>
+</p>
+<p>
+<a href=20131019.html>UFC 166: Velasquez vs. dos Santos III</a>
+</p>
+<p>
+<a href=20131009.html>UFC Fight Night: Maia vs. Shields</a>
+</p>
+<p>
+<a href=20130921.html>UFC 165: Jones vs. Gustafsson</a>
+</p>
+<p>
+<a href=20130904.html>UFC Fight Night: Teixeira vs. Bader</a>
+</p>
+<p>
+<a href=20130831.html>UFC 164: Henderson vs. Pettis 2</a>
+</p>
+<p>
+<a href=20130828.html>UFC Fight Night: Condit vs. Kampmann 2</a>
+</p>
+<p>
+<a href=20130817.html>UFC Fight Night: Shogun vs. Sonnen</a>
+</p>
+<p>
+<a href=20130803.html>UFC 163: Aldo vs. Korean Zombie</a>
+</p>
+<p>
+<a href=20130727.html>UFC on Fox: Johnson vs. Moraga</a>
+</p>
+<p>
+<a href=20130706.html>UFC 162: Silva vs. Weidman</a>
+</p>
+<p>
+<a href=20130615.html>UFC 161: Evans vs. Henderson</a>
+</p>
+<p>
+<a href=20130608.html>The Ultimate Fighter: Brazil 2</a>
+</p>
+<p>
+<a href=20130525.html>UFC 160: Velasquez vs. Bigfoot 2</a>
+</p>
+<p>
+<a href=20130518.html>UFC on FX: Belfort vs. Rockhold</a>
+</p>
+<p>
+<a href=20130427.html>UFC 159: Jones vs. Sonnen</a>
+</p>
+<p>
+<a href=20130420.html>UFC on Fox: Henderson vs. Melendez</a>
+</p>
+<p>
+<a href=20130413.html>The Ultimate Fighter: Team Jones vs. Team
+Sonnen</a>
+</p>
+<p>
+<a href=20130406.html>UFC on Fuel TV: Mousasi vs. Latifi</a>
+</p>
+<p>
+<a href=20130316.html>UFC 158: St-Pierre vs. Diaz</a>
+</p>
+<p>
+<a href=20130303.html>UFC on Fuel TV: Silva vs. Stann</a>
+</p>
+<p>
+<a href=20130223.html>UFC 157: Rousey vs. Carmouche</a>
+</p>
+<p>
+<a href=20130216.html>UFC on Fuel TV: Barão vs. McDonald</a>
+</p>
+<p>
+<a href=20130202.html>UFC 156: Aldo vs. Edgar</a>
+</p>
+<p>
+<a href=20130126.html>UFC on Fox: Johnson vs. Dodson</a>
+</p>
+<p>
+<a href=20130119.html>UFC on FX: Belfort vs. Bisping</a>
+</p>
+<h4>
+2012
+</h4>
+<p>
+<a href=20121229.html>UFC 155: dos Santos vs. Velasquez 2</a>
+</p>
+<p>
+<a href=20121215.html>The Ultimate Fighter: Team Carwin vs. Team
+Nelson</a>
+</p>
+<p>
+<a href=20121215.html>The Ultimate Fighter: The Smashes</a>
+</p>
+<p>
+<a href=20121208.html>UFC on Fox: Henderson vs. Diaz</a>
+</p>
+<p>
+<a href=20121117.html>UFC 154: St-Pierre vs. Condit</a>
+</p>
+<p>
+<a href=20121110.html>UFC on Fuel TV: Franklin vs. Le</a>
+</p>
+<p>
+<a href=20121013.html>UFC 153: Silva vs. Bonnar</a>
+</p>
+<p>
+<a href=20121005.html>UFC on FX: Browne vs. Bigfoot</a>
+</p>
+<p>
+<a href=20120929.html>UFC on Fuel TV: Struve vs. Miocic</a>
+</p>
+<p>
+<a href=20120922.html>UFC 152: Jones vs. Belfort</a>
+</p>
+<p>
+<a href=20120811.html>UFC 150: Henderson vs. Edgar II</a>
+</p>
+<p>
+<a href=20120804.html>UFC on Fox: Shogun vs. Vera</a>
+</p>
+<p>
+<a href=20120721.html>UFC 149: Faber vs. BarÃ£o</a>
+</p>
+<p>
+<a href=20120711.html>UFC on Fuel TV: Muñoz vs. Weidman</a>
+</p>
+<p>
+<a href=20120707.html>UFC 148: Silva vs. Sonnen II</a>
+</p>
+<p>
+<a href=20120623.html>UFC 147: Silva vs. Franklin II</a>
+</p>
+<p>
+<a href=20120622.html>UFC on FX: Maynard vs. Guida</a>
+</p>
+<p>
+<a href=20120608.html>UFC on FX: Johnson vs. McCall 2</a>
+</p>
+<p>
+<a href=20120601.html>The Ultimate Fighter: Live</a>
+</p>
+<p>
+<a href=20120526.html>UFC 146: dos Santos vs. Mir</a>
+</p>
+<p>
+<a href=20120515.html>UFC on Fuel TV: The Korean Zombie vs. Poirier</a>
+</p>
+<p>
+<a href=20120505.html>UFC on Fox: Diaz vs. Miller</a>
+</p>
+<p>
+<a href=20120421.html>UFC 145: Jones vs. Evans</a>
+</p>
+<p>
+<a href=20120414.html>UFC on Fuel TV: Gustafsson vs. Silva</a>
+</p>
+<p>
+<a href=20120303.html>UFC on FX: Alves vs. Kampmann</a>
+</p>
+<p>
+<a href=20120226.html>UFC 144: Edgar vs. Henderson</a>
+</p>
+<p>
+<a href=20120215.html>UFC on Fuel TV: Sanchez vs. Ellenberger</a>
+</p>
+<p>
+<a href=20120204.html>UFC 143: Diaz vs. Condit</a>
+</p>
+<p>
+<a href=20120128.html>UFC on Fox: Evans vs. Davis</a>
+</p>
+<p>
+<a href=20120120.html>UFC on FX: Guillard vs. Miller</a>
+</p>
+<p>
+<a href=20120114.html>UFC 142: Aldo vs. Mendes</a>
+</p>
+<h4>
+2011
+</h4>
+<p>
+<a href=20111230.html>UFC 141: Lesnar vs. Overeem</a>
+</p>
+<p>
+<a href=20111210.html>UFC 140: Jones vs. Machida</a>
+</p>
+<p>
+<a href=20111203.html>The Ultimate Fighter: Team Bisping vs. Team
+Miller</a>
+</p>
+<p>
+<a href=20111119.html>UFC 139: Shogun vs. Henderson</a>
+</p>
+<p>
+<a href=20111112.html>UFC on Fox: Velasquez vs. dos Santos</a>
+</p>
+<p>
+<a href=20111105.html>UFC 138: Leben vs. Muñoz</a>
+</p>
+<p>
+<a href=20111029.html>UFC 137: Penn vs. Diaz</a>
+</p>
+<p>
+<a href=20111008.html>UFC 136: Edgar vs. Maynard III</a>
+</p>
+<p>
+<a href=20111001.html>UFC Live: Cruz vs. Johnson</a>
+</p>
+<p>
+<a href=20110924.html>UFC 135: Jones vs. Rampage</a>
+</p>
+<p>
+<a href=20110917.html>UFC Fight Night: Shields vs. Ellenberger</a>
+</p>
+<p>
+<a href=20110827.html>UFC 134: Silva vs. Okami</a>
+</p>
+<p>
+<a href=20110814.html>UFC Live: Hardy vs. Lytle</a>
+</p>
+<p>
+<a href=20110806.html>UFC 133: Evans vs. Ortiz</a>
+</p>
+<p>
+<a href=20110702.html>UFC 132: Cruz vs. Faber</a>
+</p>
+<p>
+<a href=20110626.html>UFC Live: Kongo vs. Barry</a>
+</p>
+<p>
+<a href=20110611.html>UFC 131: dos Santos vs. Carwin</a>
+</p>
+<p>
+<a href=20110604.html>The Ultimate Fighter: Team Lesnar vs. Team dos
+Santos</a>
+</p>
+<p>
+<a href=20110528.html>UFC 130: Rampage vs. Hamill</a>
+</p>
+<p>
+<a href=20110430.html>UFC 129: St-Pierre vs. Shields</a>
+</p>
+<p>
+<a href=20110326.html>UFC Fight Night: Nogueira vs. Davis</a>
+</p>
+<p>
+<a href=20110319.html>UFC 128: Shogun vs Jones</a>
+</p>
+<p>
+<a href=20110303.html>UFC Live: Sanchez vs. Kampmann</a>
+</p>
+<p>
+<a href=20110227.html>UFC 127: Penn vs. Fitch</a>
+</p>
+<p>
+<a href=20110205.html>UFC 126: Silva vs. Belfort</a>
+</p>
+<p>
+<a href=20110122.html>UFC: Fight for the Troops 2</a>
+</p>
+<p>
+<a href=20110101.html>UFC 125: Resolution</a>
+</p>
+<h4>
+2010
+</h4>
+<p>
+<a href=20101211.html>UFC 124: St-Pierre vs. Koscheck 2</a>
+</p>
+<p>
+<a href=20101204.html>The Ultimate Fighter: Team GSP vs. Team
+Koscheck</a>
+</p>
+<p>
+<a href=20101120.html>UFC 123: Rampage vs. Machida</a>
+</p>
+<p>
+<a href=20101113.html>UFC 122: Marquardt vs. Okami</a>
+</p>
+<p>
+<a href=20101023.html>UFC 121: Lesnar vs. Velasquez</a>
+</p>
+<p>
+<a href=20101016.html>UFC 120: Bisping vs. Akiyama</a>
+</p>
+<p>
+<a href=20100925.html>UFC 119: Mir vs. Cro Cop</a>
+</p>
+<p>
+<a href=20100915.html>UFC Fight Night: Marquardt vs. Palhares</a>
+</p>
+<p>
+<a href=20100828.html>UFC 118: Edgar vs. Penn 2</a>
+</p>
+<p>
+<a href=20100807.html>UFC 117: Silva vs. Sonnen</a>
+</p>
+<p>
+<a href=20100801.html>UFC Live: Jones vs. Matyushenko</a>
+</p>
+<p>
+<a href=20100703.html>UFC 116: Lesnar vs. Carwin</a>
+</p>
+<p>
+<a href=20100619.html>The Ultimate Fighter: Team Liddell vs. Team
+Ortiz</a>
+</p>
+<p>
+<a href=20100612.html>UFC 115: Liddell vs. Franklin</a>
+</p>
+<p>
+<a href=20100529.html>UFC 114: Rampage vs. Evans</a>
+</p>
+<p>
+<a href=20100508.html>UFC 113: Machida vs. Shogun 2</a>
+</p>
+<p>
+<a href=20100410.html>UFC 112: Invincible</a>
+</p>
+<p>
+<a href=20100331.html>UFC Fight Night: Florian vs. Gomi</a>
+</p>
+<p>
+<a href=20100327.html>UFC 111: St-Pierre vs. Hardy</a>
+</p>
+<p>
+<a href=20100321.html>UFC Live: Vera vs. Jones</a>
+</p>
+<p>
+<a href=20100221.html>UFC 110: Nogueira vs. Velasquez</a>
+</p>
+<p>
+<a href=20100206.html>UFC 109: Relentless</a>
+</p>
+<p>
+<a href=20100111.html>UFC Fight Night: Maynard vs. Diaz</a>
+</p>
+<p>
+<a href=20100102.html>UFC 108: Evans vs. Silva</a>
+</p>
+<h4>
+2009
+</h4>
+<p>
+<a href=20091212.html>UFC 107: Penn vs. Sanchez</a>
+</p>
+<p>
+<a href=20091205.html>The Ultimate Fighter: Heavyweights</a>
+</p>
+<p>
+<a href=20091121.html>UFC 106: Ortiz vs. Griffin 2</a>
+</p>
+<p>
+<a href=20091114.html>UFC 105: Couture vs. Vera</a>
+</p>
+<p>
+<a href=20091024.html>UFC 104: Machida vs. Shogun</a>
+</p>
+<p>
+<a href=20090919.html>UFC 103: Franklin vs. Belfort</a>
+</p>
+<p>
+<a href=20090916.html>UFC Fight Night: Diaz vs. Guillard</a>
+</p>
+<p>
+<a href=20090829.html>UFC 102: Couture vs. Nogueira</a>
+</p>
+<p>
+<a href=20090808.html>UFC 101: Declaration</a>
+</p>
+<p>
+<a href=20090711.html>UFC 100</a>
+</p>
+<p>
+<a href=20090620.html>The Ultimate Fighter: United States vs. United
+Kingdom</a>
+</p>
+<p>
+<a href=20090613.html>UFC 99: The Comeback</a>
+</p>
+<p>
+<a href=20090523.html>UFC 98: Evans vs. Machida</a>
+</p>
+<p>
+<a href=20090418.html>UFC 97: Redemption</a>
+</p>
+<p>
+<a href=20090401.html>UFC Fight Night: Condit vs. Kampmann</a>
+</p>
+<p>
+<a href=20090307.html>UFC 96: Jackson vs. Jardine</a>
+</p>
+<p>
+<a href=20090221.html>UFC 95: Sanchez vs. Stevenson</a>
+</p>
+<p>
+<a href=20090207.html>UFC Fight Night: Lauzon vs. Stephens</a>
+</p>
+<p>
+<a href=20090131.html>UFC 94: St-Pierre vs. Penn 2</a>
+</p>
+<p>
+<a href=20090117.html>UFC 93: Franklin vs. Henderson</a>
+</p>
+<h4>
+2008
+</h4>
+<p>
+<a href=20081227.html>UFC 92: The Ultimate 2008</a>
+</p>
+<p>
+<a href=20081213.html>The Ultimate Fighter: Team Nogueira vs. Team
+Mir</a>
+</p>
+<p>
+<a href=20081210.html>UFC: Fight for the Troops</a>
+</p>
+<p>
+<a href=20081115.html>UFC 91: Couture vs. Lesnar</a>
+</p>
+<p>
+<a href=20081025.html>UFC 90: Silva vs. Côté</a>
+</p>
+<p>
+<a href=20081018.html>UFC 89: Bisping vs. Leben</a>
+</p>
+<p>
+<a href=20080917.html>UFC Fight Night: Diaz vs. Neer</a>
+</p>
+<p>
+<a href=20080906.html>UFC 88: Breakthrough</a>
+</p>
+<p>
+<a href=20080809.html>UFC 87: Seek and Destroy</a>
+</p>
+<p>
+<a href=20080719.html>UFC Fight Night: Silva vs. Irvin</a>
+</p>
+<p>
+<a href=20080705.html>UFC 86: Jackson vs. Griffin</a>
+</p>
+<p>
+<a href=20080621.html>The Ultimate Fighter: Team Rampage vs. Team
+Forrest</a>
+</p>
+<p>
+<a href=20080607.html>UFC 85: Bedlam</a>
+</p>
+<p>
+<a href=20080524.html>UFC 84: Ill Will</a>
+</p>
+<p>
+<a href=20080419.html>UFC 83: Serra vs. St-Pierre 2</a>
+</p>
+<p>
+<a href=20080402.html>UFC Fight Night: Florian vs. Lauzon</a>
+</p>
+<p>
+<a href=20080301.html>UFC 82: Pride of a Champion</a>
+</p>
+<p>
+<a href=20080202.html>UFC 81: Breaking Point</a>
+</p>
+<p>
+<a href=20080123.html>UFC Fight Night: Swick vs. Burkman</a>
+</p>
+<p>
+<a href=20080119.html>UFC 80: Rapid Fire</a>
+</p>
+<h4>
+2007
+</h4>
+<p>
+<a href=20071229.html>UFC 79: Nemesis</a>
+</p>
+<p>
+<a href=20071208.html>The Ultimate Fighter: Team Hughes vs. Team
+Serra</a>
+</p>
+<p>
+<a href=20071117.html>UFC 78: Validation</a>
+</p>
+<p>
+<a href=20071020.html>UFC 77: Hostile Territory</a>
+</p>
+<p>
+<a href=20070922.html>UFC 76: Knockout</a>
+</p>
+<p>
+<a href=20070919.html>UFC Fight Night: Thomas vs. Florian</a>
+</p>
+<p>
+<a href=20070908.html>UFC 75: Champion vs. Champion</a>
+</p>
+<p>
+<a href=20070825.html>UFC 74: Respect</a>
+</p>
+<p>
+<a href=20070707.html>UFC 73: Stacked</a>
+</p>
+<p>
+<a href=20070623.html>The Ultimate Fighter 5</a>
+</p>
+<p>
+<a href=20070616.html>UFC 72: Victory</a>
+</p>
+<p>
+<a href=20070612.html>UFC Fight Night: Stout vs. Fisher</a>
+</p>
+<p>
+<a href=20070526.html>UFC 71: Liddell vs. Jackson 2</a>
+</p>
+<p>
+<a href=20070421.html>UFC 70: Nations Collide</a>
+</p>
+<p>
+<a href=20070407.html>UFC 69: Shootout</a>
+</p>
+<p>
+<a href=20070405.html>2007 in UFC</a>
+</p>
+<p>
+<a href=20070303.html>UFC 68: The Uprising</a>
+</p>
+<p>
+<a href=20070203.html>UFC 67: All or Nothing</a>
+</p>
+<p>
+<a href=20070125.html>UFC Fight Night: Evans vs. Salmon</a>
+</p>
+<h4>
+2006
+</h4>
+<p>
+<a href=20061230.html>UFC 66: Liddell vs. Ortiz</a>
+</p>
+<p>
+<a href=20061213.html>UFC Fight Night: Sanchez vs. Riggs</a>
+</p>
+<p>
+<a href=20061118.html>UFC 65: Bad Intentions</a>
+</p>
+<p>
+<a href=20061111.html>The Ultimate Fighter 4</a>
+</p>
+<p>
+<a href=20061014.html>UFC 64: Unstoppable</a>
+</p>
+<p>
+<a href=20061010.html>UFC: Ortiz vs. Shamrock 3: The Final Chapter</a>
+</p>
+<p>
+<a href=20060923.html>UFC 63: Hughes vs. Penn 2</a>
+</p>
+<p>
+<a href=20060826.html>UFC 62: Liddell vs. Sobral</a>
+</p>
+<p>
+<a href=20060817.html>UFC Fight Night: Sanchez vs. Parisyan</a>
+</p>
+<p>
+<a href=20060708.html>UFC 61: Bitter Rivals</a>
+</p>
+<p>
+<a href=20060628.html>Ultimate Fight Night 5</a>
+</p>
+<p>
+<a href=20060624.html>The Ultimate Fighter 3</a>
+</p>
+<p>
+<a href=20060527.html>UFC 60: Hughes vs. Gracie</a>
+</p>
+<p>
+<a href=20060415.html>UFC 59: Reality Check</a>
+</p>
+<p>
+<a href=20060406.html>Ultimate Fight Night 4</a>
+</p>
+<p>
+<a href=20060304.html>UFC 58: USA vs. Canada</a>
+</p>
+<p>
+<a href=20060204.html>UFC 57: Liddell vs. Couture 3</a>
+</p>
+<p>
+<a href=20060116.html>Ultimate Fight Night 3</a>
+</p>
+<h4>
+2005
+</h4>
+<p>
+<a href=20051119.html>UFC 56: Full Force</a>
+</p>
+<p>
+<a href=20051105.html>The Ultimate Fighter 2</a>
+</p>
+<p>
+<a href=20051007.html>UFC 55: Fury</a>
+</p>
+<p>
+<a href=20051003.html>Ultimate Fight Night 2</a>
+</p>
+<p>
+<a href=20050820.html>UFC 54: Boiling Point</a>
+</p>
+<p>
+<a href=20050806.html>2005 in UFC</a>
+</p>
+<p>
+<a href=20050604.html>UFC 53: Heavy Hitters</a>
+</p>
+<p>
+<a href=20050416.html>UFC 52: Couture vs. Liddell 2</a>
+</p>
+<p>
+<a href=20050409.html>The Ultimate Fighter 1</a>
+</p>
+<p>
+<a href=20050205.html>UFC 51: Super Saturday</a>
+</p>
+<h4>
+2004
+</h4>
+<p>
+<a href=20041022.html>UFC 50: The War of ’04</a>
+</p>
+<p>
+<a href=20040821.html>UFC 49: Unfinished Business</a>
+</p>
+<p>
+<a href=20040619.html>UFC 48: Payback</a>
+</p>
+<p>
+<a href=20040402.html>UFC 47: It’s On!</a>
+</p>
+<p>
+<a href=20040131.html>UFC 46: Supernatural</a>
+</p>
+<h4>
+2003
+</h4>
+<p>
+<a href=20031121.html>UFC 45: Revolution</a>
+</p>
+<p>
+<a href=20030926.html>UFC 44: Undisputed</a>
+</p>
+<p>
+<a href=20030606.html>UFC 43: Meltdown</a>
+</p>
+<p>
+<a href=20030425.html>UFC 42: Sudden Impact</a>
+</p>
+<p>
+<a href=20030228.html>UFC 41: Onslaught</a>
+</p>
+<h4>
+2002
+</h4>
+<p>
+<a href=20021122.html>UFC 40: Vendetta</a>
+</p>
+<p>
+<a href=20020927.html>UFC 39: The Warriors Return</a>
+</p>
+<p>
+<a href=20020713.html>UFC 38: Brawl at the Hall</a>
+</p>
+<p>
+<a href=20020622.html>UFC 37.5: As Real As It Gets</a>
+</p>
+<p>
+<a href=20020510.html>UFC 37: High Impact</a>
+</p>
+<p>
+<a href=20020322.html>UFC 36: Worlds Collide</a>
+</p>
+<p>
+<a href=20020111.html>UFC 35: Throwdown</a>
+</p>
+<h4>
+2001
+</h4>
+<p>
+<a href=20011102.html>UFC 34: High Voltage</a>
+</p>
+<p>
+<a href=20010928.html>UFC 33: Victory in Vegas</a>
+</p>
+<p>
+<a href=20010629.html>UFC 32: Showdown in the Meadowlands</a>
+</p>
+<p>
+<a href=20010504.html>UFC 31: Locked and Loaded</a>
+</p>
+<p>
+<a href=20010223.html>UFC 30: Battle on the Boardwalk</a>
+</p>
+<h4>
+2000
+</h4>
+<p>
+<a href=20001216.html>UFC 29: Defense of the Belts</a>
+</p>
+<p>
+<a href=20001117.html>UFC 28: High Stakes</a>
+</p>
+<p>
+<a href=20000922.html>UFC 27: Ultimate Bad Boyz</a>
+</p>
+<p>
+<a href=20000609.html>UFC 26: Ultimate Field of Dreams</a>
+</p>
+<p>
+<a href=20000414.html>UFC 25: Ultimate Japan 3</a>
+</p>
+<p>
+<a href=20000310.html>UFC 24: First Defense</a>
+</p>
+<h4>
+1999
+</h4>
+<p>
+<a href=19991119.html>UFC 23: Ultimate Japan 2</a>
+</p>
+<p>
+<a href=19990924.html>UFC 22: Only One Can be Champion</a>
+</p>
+<p>
+<a href=19990716.html>UFC 21: Return of the Champions</a>
+</p>
+<p>
+<a href=19990507.html>UFC 20: Battle for the Gold</a>
+</p>
+<p>
+<a href=19990305.html>UFC 19: Ultimate Young Guns</a>
+</p>
+<p>
+<a href=19990108.html>UFC 18: The Road to the Heavyweight Title</a>
+</p>
+<h4>
+1998
+</h4>
+<p>
+<a href=19981016.html>UFC Brazil: Ultimate Brazil</a>
+</p>
+<p>
+<a href=19980515.html>UFC 17: Redemption</a>
+</p>
+<p>
+<a href=19980313.html>UFC 16: Battle in the Bayou</a>
+</p>
+<h4>
+1997
+</h4>
+<p>
+<a href=19971221.html>UFC Japan: Ultimate Japan</a>
+</p>
+<p>
+<a href=19971017.html>UFC 15: Collision Course</a>
+</p>
+<p>
+<a href=19970727.html>UFC 14: Showdown</a>
+</p>
+<p>
+<a href=19970530.html>UFC 13: The Ultimate Force</a>
+</p>
+<p>
+<a href=19970207.html>UFC 12: Judgement Day</a>
+</p>
+<h4>
+1996
+</h4>
+<p>
+<a href=19961207.html>Ultimate Ultimate 1996</a>
+</p>
+<p>
+<a href=19960920.html>UFC 11: The Proving Ground</a>
+</p>
+<p>
+<a href=19960712.html>UFC 10: The Tournament</a>
+</p>
+<p>
+<a href=19960517.html>UFC 9: Shamrock vs. Severn 2</a>
+</p>
+<p>
+<a href=19960216.html>UFC 8: Shamrock vs. Leopoldo</a>
+</p>
+<h4>
+1995
+</h4>
+<p>
+<a href=19951216.html>Ultimate Ultimate 1995</a>
+</p>
+<p>
+<a href=19950908.html>UFC 7</a>
+</p>
+<p>
+<a href=19950714.html>UFC 6: Shamrock vs. Severn</a>
+</p>
+<p>
+<a href=19950407.html>UFC 5: Gracie vs. Shamrock 2</a>
+</p>
+<h4>
+1994
+</h4>
+<p>
+<a href=19941216.html>UFC 4: Revenge of the Warriors</a>
+</p>
+<p>
+<a href=19940909.html>UFC 3: The American Dream</a>
+</p>
+<p>
+<a href=19940311.html>UFC 2: No Way Out</a>
+</p>
+<h4>
+1993
+</h4>
+<p>
+<a href=19931112.html>UFC 1: The Beginning</a>
+</p>
+
+<footer>
+  <div class="footer-container">
+    <p class="copyright-text">
+      Copyright © <span id="currentYear"></span> All Rights Reserved by 
+      <a href="#">roster.watch</a>
+    </p>
+<!--     <p class="browser-badge">
+      <a href="https://www.mozilla.org/en-US/firefox/">
+        <img src="firefox.png" title="Best viewed with Firefox" alt="Best viewed with Firefox"><br>
+        <small class="copyright-text">Best viewed with Firefox</small>
+      </a>
+    </p> 
+ -->  </div>
+</footer>
+
+<style>
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+}
+
+.copyright-text {
+  margin: 0 auto;
+}
+
+.browser-badge {
+  margin-left: auto;
+}
+</style>
+
+<script>
+  document.getElementById('currentYear').textContent = new Date().getFullYear();
+</script>
+
+
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.odd').parent('tbody').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- tabsets -->
+
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open');
+  });
+});
+</script>
+
+<!-- code folding -->
+
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>

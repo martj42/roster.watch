@@ -327,3 +327,16 @@ nav ul li {
   overflow-x: auto;
   text-align: center;
 }
+
+a {
+  color: inherit;  /* This makes links use the parent text color */
+  text-decoration: underline dotted;
+  
+}
+
+.result_description .rt-td-inner .rt-text-content {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  
+}

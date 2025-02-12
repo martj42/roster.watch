@@ -345,3 +345,19 @@ a .nav-arrow {
     text-decoration: none !important;
     display: inline-block;
 }
+
+.event-item {
+    margin: 8px 0;
+    display: flex;
+    gap: 1rem;
+}
+
+.event-date {
+    color: #666;
+    min-width: 100px;
+}
+
+.upcoming-events {
+    margin-bottom: 2rem;
+    padding-bottom: 1rem;
+}

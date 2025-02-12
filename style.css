@@ -340,3 +340,8 @@ a {
   transform: translateX(-50%);
   
 }
+
+a .nav-arrow {
+    text-decoration: none !important;
+    display: inline-block;
+}

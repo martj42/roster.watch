@@ -330,6 +330,7 @@ nav ul li {
 
 a {
   /*color: #36c;*/
+  color: inherit;
   text-decoration: underline;
   text-decoration-style: dotted;
   text-decoration-thickness: 1px;

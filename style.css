@@ -329,9 +329,10 @@ nav ul li {
 }
 
 a {
-  color: inherit;  /* This makes links use the parent text color */
-  text-decoration: underline dotted;
-  
+  /*color: #36c;*/
+  text-decoration: underline;
+  text-decoration-style: dotted;
+  text-decoration-thickness: 1px;
 }
 
 .result_description .rt-td-inner .rt-text-content {

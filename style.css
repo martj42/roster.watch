@@ -343,6 +343,12 @@ a {
   
 }
 
+.side_info .rt-td-inner .rt-text-content{
+  word-wrap: break-word;  /* or overflow-wrap: break-word; */
+  overflow: auto;
+  white-space: normal;
+}
+
 a .nav-arrow {
     text-decoration: none !important;
     display: inline-block;

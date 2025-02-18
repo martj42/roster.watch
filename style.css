@@ -369,3 +369,12 @@ a .nav-arrow {
     margin-bottom: 2rem;
     padding-bottom: 1rem;
 }
+
+.favorite-elo {
+  font-weight: bold;
+  color: #222;
+  text-shadow: 0 0 4px rgba(0, 0, 0, 0.3), 
+               0 0 6px rgba(0, 0, 0, 0.2);
+  position: relative;
+}
+

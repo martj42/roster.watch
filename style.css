@@ -373,8 +373,8 @@ a .nav-arrow {
 .favorite-elo {
   font-weight: bold;
   color: #222;
-text-shadow: 0 0 5px rgba(0, 150, 255, 0.7), 
-             0 0 8px rgba(0, 150, 255, 0.5);
-             position: relative;
+  text-shadow: 0 0 5px rgba(255, 215, 0, 0.7), 
+               0 0 8px rgba(255, 215, 0, 0.5);
+               position: relative;
 }
 

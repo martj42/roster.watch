@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+
+<html lang="en" xml:lang="en">
+
+<head>
+
+<meta charset="utf-8" />
+<meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+
+
+
+
+<title>roster.watch</title>
+
+<script src="fighter_libs/header-attrs-2.29/header-attrs.js"></script>
+<script src="fighter_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="fighter_libs/bootstrap-3.3.5/css/bootstrap.min.css" rel="stylesheet" />
+<script src="fighter_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="fighter_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="fighter_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<style>h1 {font-size: 34px;}
+       h1.title {font-size: 38px;}
+       h2 {font-size: 30px;}
+       h3 {font-size: 24px;}
+       h4 {font-size: 18px;}
+       h5 {font-size: 16px;}
+       h6 {font-size: 12px;}
+       code {color: inherit; background-color: rgba(0, 0, 0, 0.04);}
+       pre:not([class]) { background-color: white }</style>
+<script src="fighter_libs/navigation-1.1/tabsets.js"></script>
+<link href="fighter_libs/highlightjs-9.12.0/default.css" rel="stylesheet" />
+<script src="fighter_libs/highlightjs-9.12.0/highlight.js"></script>
+<link href="fighter_libs/htmltools-fill-0.5.8.1/fill.css" rel="stylesheet" />
+<script src="fighter_libs/htmlwidgets-1.6.4/htmlwidgets.js"></script>
+<script src="fighter_libs/plotly-binding-4.10.4/plotly.js"></script>
+<script src="fighter_libs/typedarray-0.1/typedarray.min.js"></script>
+<link href="fighter_libs/crosstalk-1.2.1/css/crosstalk.min.css" rel="stylesheet" />
+<script src="fighter_libs/crosstalk-1.2.1/js/crosstalk.min.js"></script>
+<link href="fighter_libs/plotly-htmlwidgets-css-2.11.1/plotly-htmlwidgets.css" rel="stylesheet" />
+<script src="fighter_libs/plotly-main-2.11.1/plotly-latest.min.js"></script>
+<script src="fighter_libs/core-js-2.5.3/shim.min.js"></script>
+<script src="fighter_libs/react-18.2.0/react.min.js"></script>
+<script src="fighter_libs/react-18.2.0/react-dom.min.js"></script>
+<script src="fighter_libs/reactwidget-2.0.0/react-tools.js"></script>
+<link href="fighter_libs/reactable-0.4.4/reactable.css" rel="stylesheet" />
+<script src="fighter_libs/reactable-binding-0.4.4/reactable.js"></script>
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/site.webmanifest">
+<meta name="description" content="An up-to-date list of the full active UFC roster including biographical data, rankings, records, and more.">
+<!-- <meta property="og:title" content="roster.watch" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://www.roster.watch/" />
+<meta property="og:image" content="https://www.roster.watch/og_image.png" />
+<meta property="og:description" content="An up-to-date list of the full active UFC roster including biographical data, rankings, record, and more." />
+<script src="https://unpkg.com/twemoji@latest/dist/twemoji.min.js" crossorigin="anonymous"></script> 
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7299518767310567"
+     crossorigin="anonymous"></script> -->
+     <script data-goatcounter="https://rosterwatch.goatcounter.com/count"
+        async src="//gc.zgo.at/count.js"></script>
+        <script defer src="https://cloud.umami.is/script.js" data-website-id="f0f3ed7e-e89c-4a29-a745-475e0b10271a"></script>
+
+<style type="text/css">
+  code{white-space: pre-wrap;}
+  span.smallcaps{font-variant: small-caps;}
+  span.underline{text-decoration: underline;}
+  div.column{display: inline-block; vertical-align: top; width: 50%;}
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  ul.task-list{list-style: none;}
+    </style>
+
+<style type="text/css">code{white-space: pre;}</style>
+<script type="text/javascript">
+if (window.hljs) {
+  hljs.configure({languages: []});
+  hljs.initHighlightingOnLoad();
+  if (document.readyState && document.readyState === "complete") {
+    window.setTimeout(function() { hljs.initHighlighting(); }, 0);
+  }
+}
+</script>
+
+
+
+
+
+
+<link rel="stylesheet" href="../style.css" type="text/css" />
+
+
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+img {
+  max-width:100%;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+.html-widget {
+  margin-bottom: 20px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+summary {
+  display: list-item;
+}
+details > summary > p:only-child {
+  display: inline;
+}
+pre code {
+  padding: 0;
+}
+</style>
+
+
+<style type="text/css">
+.dropdown-submenu {
+  position: relative;
+}
+.dropdown-submenu>.dropdown-menu {
+  top: 0;
+  left: 100%;
+  margin-top: -6px;
+  margin-left: -1px;
+  border-radius: 0 6px 6px 6px;
+}
+.dropdown-submenu:hover>.dropdown-menu {
+  display: block;
+}
+.dropdown-submenu>a:after {
+  display: block;
+  content: " ";
+  float: right;
+  width: 0;
+  height: 0;
+  border-color: transparent;
+  border-style: solid;
+  border-width: 5px 0 5px 5px;
+  border-left-color: #cccccc;
+  margin-top: 5px;
+  margin-right: -10px;
+}
+.dropdown-submenu:hover>a:after {
+  border-left-color: #adb5bd;
+}
+.dropdown-submenu.pull-left {
+  float: none;
+}
+.dropdown-submenu.pull-left>.dropdown-menu {
+  left: -100%;
+  margin-left: 10px;
+  border-radius: 6px 0 6px 6px;
+}
+</style>
+
+<script type="text/javascript">
+// manage active state of menu based on current page
+$(document).ready(function () {
+  // active menu anchor
+  href = window.location.pathname
+  href = href.substr(href.lastIndexOf('/') + 1)
+  if (href === "")
+    href = "index.html";
+  var menuAnchor = $('a[href="' + href + '"]');
+
+  // mark the anchor link active (and if it's in a dropdown, also mark that active)
+  var dropdown = menuAnchor.closest('li.dropdown');
+  if (window.bootstrap) { // Bootstrap 4+
+    menuAnchor.addClass('active');
+    dropdown.find('> .dropdown-toggle').addClass('active');
+  } else { // Bootstrap 3
+    menuAnchor.parent().addClass('active');
+    dropdown.addClass('active');
+  }
+
+  // Navbar adjustments
+  var navHeight = $(".navbar").first().height() + 15;
+  var style = document.createElement('style');
+  var pt = "padding-top: " + navHeight + "px; ";
+  var mt = "margin-top: -" + navHeight + "px; ";
+  var css = "";
+  // offset scroll position for anchor links (for fixed navbar)
+  for (var i = 1; i <= 6; i++) {
+    css += ".section h" + i + "{ " + pt + mt + "}\n";
+  }
+  style.innerHTML = "body {" + pt + "padding-bottom: 40px; }\n" + css;
+  document.head.appendChild(style);
+});
+</script>
+
+<!-- tabsets -->
+
+<style type="text/css">
+.tabset-dropdown > .nav-tabs {
+  display: inline-table;
+  max-height: 500px;
+  min-height: 44px;
+  overflow-y: auto;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs > li.active:before, .tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "\e259";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
+  content: "\e258";
+  font-family: 'Glyphicons Halflings';
+  border: none;
+}
+
+.tabset-dropdown > .nav-tabs > li.active {
+  display: block;
+}
+
+.tabset-dropdown > .nav-tabs > li > a,
+.tabset-dropdown > .nav-tabs > li > a:focus,
+.tabset-dropdown > .nav-tabs > li > a:hover {
+  border: none;
+  display: inline-block;
+  border-radius: 4px;
+  background-color: transparent;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li {
+  display: block;
+  float: none;
+}
+
+.tabset-dropdown > .nav-tabs > li {
+  display: none;
+}
+</style>
+
+<!-- code folding -->
+
+
+
+
+</head>
+
+<body>
+
+
+<div class="container-fluid main-container">
+
+
+
+<header>
+    <a class="logo" href="/"><img src="/images/logo.svg" alt="logo"></a>
+    <nav>
+        <ul class="nav__links">
+            <li><a href="/">Current Roster</a></li>
+            <li><a href="/former.html">Former Roster</a></li>
+            <li><a href="/events">Events</a></li>
+            <li><a href="/log.html">Log</a></li>
+            <li><a href="/glossary.html">Glossary</a></li>
+            <li><a href="mailto:rostertracker@gmail.com">Contact</a></li>
+            <li>
+                <a href="https://twitter.com/RosterTracker" class="twitter-follow-button" data-dnt="true" data-show-count="false">Follow on X</a>
+            </li>
+            <li><a href="https://www.patreon.com/bePatron?u=88266864">Support on Patreon</a></li>
+        </ul>
+    </nav>
+    <p class="menu cta">Menu</p>
+</header>
+
+<div class="overlay">
+    <a class="close">&times;</a>
+    <div class="overlay__content">
+        <a href="/">Current Roster</a>
+        <a href="/former.html">Former Roster</a>
+        <a href="/events">Events</a>
+        <a href="/log.html">Log</a>
+        <a href="/glossary.html">Glossary</a>
+        <a href="mailto:rostertracker@gmail.com">Contact</a>
+                <a href="https://twitter.com/RosterTracker" class="twitter-follow-button" data-dnt="true" data-show-count="false">Follow on X</a>
+        <a href="https://www.patreon.com/bePatron?u=88266864">Support on Patreon</a>
+
+    </div>
+</div>
+<script type="text/javascript" src="/mobile.js"></script>
+
+<div id="header">
+
+
+
+<h1 class="title toc-ignore">roster.watch</h1>
+
+</div>
+
+
+<article class="event-info" style="display: flex; flex-direction: column; align-items: center; justify-content: center; width: 100%; height: auto;"><div class="fighter-info" style="text-align: center; margin-bottom: 20px;"><h1 style='font-weight: bold; font-size: 1.1em; margin: 0;'>Urijah Faber 🇺🇸</h1><time datetime='1979-05-14'><p><span>1979-05-14</span><script>document.currentScript.parentElement.innerHTML = (function(){  const dob = new Date('1979-05-14');  const today = new Date();  let years = today.getFullYear() - dob.getFullYear();  const monthDiff = today.getMonth() - dob.getMonth();  if (monthDiff < 0 || (monthDiff === 0 && today.getDate() < dob.getDate())) {    years--;  }  const yearAnniversary = new Date(dob);  yearAnniversary.setFullYear(dob.getFullYear() + years);  const dayDiff = Math.floor((today - yearAnniversary) / (1000 * 60 * 60 * 24));  const isBirthday = today.getMonth() === dob.getMonth() && today.getDate() === dob.getDate();  let ageString = `${years} year${years !== 1 ? 's' : ''}`;  if (dayDiff > 0) {    ageString += ` ${dayDiff} day${dayDiff !== 1 ? 's' : ''}`;  }  return `${ageString}${isBirthday ? ' 🎂' : ''} <br><span class='event-date'> (${dob.toISOString().split('T')[0]}) </span>`;}());</script></p></time></div><div style="display: flex; justify-content: center; align-items: flex-start; gap: 40px; max-width: 600px; width: 100%;"><div class="event-details" style="width: 50%;"><div class='event-stats'><p><strong>Record:</strong> 11-7<br></p><p><strong>By Method:</strong></p><ul><li> KO/TKO: 1-2</li><li> Submission: 6-0</li><li> Decision: 4-5</li></ul><p><strong>By Elo:</strong></p><ul><li>As Favorite: 9-1</li><li>As Underdog: 2-6</li></ul><p><strong>By Weight Class:</strong></p><ul><li>Bantamweight: 11-6</li><li>Featherweight: 0-1</li></ul><p><strong>By Round:</strong></p><ul><li>Round 1: 2-1</li><li>Round 2: 3-0</li><li>Round 3: 5-2</li><li>Round 4: 1-0</li><li>Round 5: 0-4</li></ul></div></div><div class="rankings" style="width: 50%;"><p><strong>Status</strong> Former UFC Fighter</p><p><strong>Last 5:</strong> <span style='display: inline-block;width: 1.25em;
+height: 1.25em;
+line-height: 1.25em; font-size: 0.8em;
+ text-align: center; border-radius: 50%; background-color: crimson; color: white; font-weight: bold;'>L</span> <span style='display: inline-block;width: 1.25em;
+height: 1.25em;
+line-height: 1.25em; font-size: 0.8em;
+ text-align: center; border-radius: 50%; background-color: crimson; color: white; font-weight: bold;'>L</span> <span style='display: inline-block;width: 1.25em;
+height: 1.25em;
+line-height: 1.25em; font-size: 0.8em;
+ text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W</span> <span style='display: inline-block;width: 1.25em;
+height: 1.25em;
+line-height: 1.25em; font-size: 0.8em;
+ text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W</span> <span style='display: inline-block;width: 1.25em;
+height: 1.25em;
+line-height: 1.25em; font-size: 0.8em;
+ text-align: center; border-radius: 50%; background-color: crimson; color: white; font-weight: bold;'>L</span></p><p><strong>Elo:</strong> 2953</p><p><strong>Peak Elo:</strong> 3043<span class='event-date'> (2013-12-14)</span></p><p><strong>Bonuses:</strong> 4 (1 FOTN, 3 Performance)</p><p><strong>Avg Fight Time:</strong> 13m 38s</p><p><strong>Total Fight Time:</strong> 4h 5m 33s</p><br><strong>Peak Rankings: </strong><br>#1 Bantamweight<br>#13 Pound-for-Pound</div></div></article>
+<h2 style='font-size: 1em; margin: 0; text-align: center; font-weight: bold;'>Elo Rating & UFC Rankings</h2>
+<div style="display: flex; justify-content: center; width: 100%; margin-top: 20px; margin-bottom: 20px;">
+<div id="fighter-performance-chart" style="width: 100%; max-width: 600px; height: 750px;">
+<div class="plotly html-widget html-fill-item" id="htmlwidget-37b3961962cf829ab5f7" style="width:100%;height:400px;"></div>
+<script type="application/json" data-for="htmlwidget-37b3961962cf829ab5f7">{"x":{"data":[{"x":["2011-03-19","2011-07-02","2011-11-19","2012-07-21","2013-02-23","2013-04-13","2013-08-17","2013-12-14","2014-02-01","2014-07-05","2014-12-06","2015-05-16","2015-12-12","2016-06-04","2016-09-10","2016-12-17","2019-07-13","2019-12-14"],"y":[2876,2804,2904,2818,2864,2906,2970,3043,2963,2999,3024,2972,3030,2966,2861,2886,3017,2953],"mode":"lines+markers","line":{"color":"#d12d36","width":3,"shape":"hv"},"marker":{"color":"#d12d36","size":10,"line":{"color":"rgba(31,119,180,1)"}},"hoverinfo":["text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text"],"text":["2011-03-19 <br> 2876 Elo <br> Eddie Wineland <br> Win","2011-07-02 <br> 2804 Elo <br> Dominick Cruz <br> Loss","2011-11-19 <br> 2904 Elo <br> Brian Bowles <br> Win","2012-07-21 <br> 2818 Elo <br> Renan Barao <br> Loss","2013-02-23 <br> 2864 Elo <br> Ivan Menjivar <br> Win","2013-04-13 <br> 2906 Elo <br> Scott Jorgensen <br> Win","2013-08-17 <br> 2970 Elo <br> Iuri Alcantara <br> Win","2013-12-14 <br> 3043 Elo <br> Michael McDonald <br> Win","2014-02-01 <br> 2963 Elo <br> Renan Barao <br> Loss","2014-07-05 <br> 2999 Elo <br> Alex Caceres <br> Win","2014-12-06 <br> 3024 Elo <br> Francisco Rivera Jr. <br> Win","2015-05-16 <br> 2972 Elo <br> Frankie Edgar <br> Loss","2015-12-12 <br> 3030 Elo <br> Frankie Saenz <br> Win","2016-06-04 <br> 2966 Elo <br> Dominick Cruz <br> Loss","2016-09-10 <br> 2861 Elo <br> Jimmie Rivera <br> Loss","2016-12-17 <br> 2886 Elo <br> Brad Pickett <br> Win","2019-07-13 <br> 3017 Elo <br> Ricky Simon <br> Win","2019-12-14 <br> 2953 Elo <br> Petr Yan <br> Loss"],"name":"Elo","type":"scatter","error_y":{"color":"rgba(31,119,180,1)"},"error_x":{"color":"rgba(31,119,180,1)"},"xaxis":"x","yaxis":"y","frame":null},{"x":["2013-02-04","2013-02-11","2013-02-18","2013-02-25","2013-03-04","2013-03-18","2013-04-08","2013-04-15","2013-04-22","2013-04-29","2013-05-28","2013-06-10","2013-06-18","2013-07-08","2013-07-29","2013-08-05","2013-08-19","2013-08-30","2013-09-02","2013-09-06","2013-09-23","2013-10-11","2013-10-21","2013-10-28","2013-11-08","2013-11-11","2013-11-18","2013-12-03","2013-12-09","2013-12-16","2013-12-30","2014-01-07","2014-01-17","2014-01-27","2014-02-03","2014-02-17","2014-02-18","2014-02-24","2014-02-25","2014-03-03","2014-03-04","2014-03-10","2014-03-17","2014-03-24","2014-03-25","2014-04-14","2014-04-18","2014-04-21","2014-04-28","2014-05-05","2014-05-06","2014-05-12","2014-05-26","2014-05-28","2014-06-02","2014-06-09","2014-06-16","2014-06-30","2014-07-08","2014-07-21","2014-07-28","2014-08-18","2014-08-25","2014-09-01","2014-09-08","2014-09-09","2014-09-15","2014-09-22","2014-09-29","2014-10-06","2014-10-27","2014-11-10","2014-11-17","2014-11-24","2014-12-08","2014-12-15","2014-12-22","2015-01-05","2015-01-20","2015-01-26","2015-02-02","2015-02-16","2015-02-24","2015-03-02","2015-03-16","2015-03-23","2015-04-06","2015-04-13","2015-04-20","2015-04-27","2015-05-11","2015-05-25","2015-06-01","2015-06-08","2015-06-15","2015-06-22","2015-06-29","2015-07-13","2015-07-20","2015-07-27","2015-08-03","2015-08-10","2015-08-25","2015-09-07","2015-09-28","2015-10-05","2015-10-26","2015-11-09","2015-11-16","2015-11-23","2015-11-30","2015-12-14","2015-12-21","2016-01-04","2016-01-19","2016-02-01","2016-02-08","2016-02-23","2016-02-29","2016-03-07","2016-03-21","2016-04-12","2016-04-18","2016-04-25","2016-05-10","2016-05-16","2016-05-31","2016-06-06","2016-06-20","2016-07-11","2016-07-15","2016-07-27","2016-08-03","2016-08-09","2016-08-24","2016-08-31","2016-09-05","2016-09-14","2016-09-21","2016-09-26","2016-10-05","2016-10-12","2016-11-07","2016-11-16","2016-11-21","2016-11-30","2016-12-05","2016-12-14","2019-07-15","2019-07-22","2019-07-29","2019-08-05","2019-08-12","2019-08-19","2019-09-02","2019-09-09","2019-09-16","2019-09-23","2019-09-30","2019-10-07","2019-10-14","2019-10-21","2019-10-28","2019-11-04","2019-11-11","2019-11-18","2019-12-10"],"y":[3,3,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,3,3,3,3,3,3,3,3,3,2,3,3,3,3,3,2,2,2,2,2,2,2,2,2,2,2,6,7,7,7,7,7,7,7,7,7,7,14,14,14,14,14,14,14,14,14,14,14,14,14,14,12,12,12,12,12],"mode":"markers","marker":{"color":"rgba(102,194,165,1)","size":10,"opacity":0.80000000000000004,"line":{"color":"rgba(102,194,165,1)"}},"hoverinfo":["text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text"],"text":["2013-02-04 <br> 3 <br> Bantamweight","2013-02-11 <br> 3 <br> Bantamweight","2013-02-18 <br> 2 <br> Bantamweight","2013-02-25 <br> 2 <br> Bantamweight","2013-03-04 <br> 2 <br> Bantamweight","2013-03-18 <br> 2 <br> Bantamweight","2013-04-08 <br> 2 <br> Bantamweight","2013-04-15 <br> 2 <br> Bantamweight","2013-04-22 <br> 2 <br> Bantamweight","2013-04-29 <br> 2 <br> Bantamweight","2013-05-28 <br> 2 <br> Bantamweight","2013-06-10 <br> 2 <br> Bantamweight","2013-06-18 <br> 2 <br> Bantamweight","2013-07-08 <br> 2 <br> Bantamweight","2013-07-29 <br> 2 <br> Bantamweight","2013-08-05 <br> 2 <br> Bantamweight","2013-08-19 <br> 2 <br> Bantamweight","2013-08-30 <br> 2 <br> Bantamweight","2013-09-02 <br> 2 <br> Bantamweight","2013-09-06 <br> 2 <br> Bantamweight","2013-09-23 <br> 2 <br> Bantamweight","2013-10-11 <br> 2 <br> Bantamweight","2013-10-21 <br> 2 <br> Bantamweight","2013-10-28 <br> 2 <br> Bantamweight","2013-11-08 <br> 2 <br> Bantamweight","2013-11-11 <br> 2 <br> Bantamweight","2013-11-18 <br> 2 <br> Bantamweight","2013-12-03 <br> 2 <br> Bantamweight","2013-12-09 <br> 2 <br> Bantamweight","2013-12-16 <br> 2 <br> Bantamweight","2013-12-30 <br> 2 <br> Bantamweight","2014-01-07 <br> 1 <br> Bantamweight","2014-01-17 <br> 1 <br> Bantamweight","2014-01-27 <br> 1 <br> Bantamweight","2014-02-03 <br> 1 <br> Bantamweight","2014-02-17 <br> 1 <br> Bantamweight","2014-02-18 <br> 1 <br> Bantamweight","2014-02-24 <br> 1 <br> Bantamweight","2014-02-25 <br> 1 <br> Bantamweight","2014-03-03 <br> 1 <br> Bantamweight","2014-03-04 <br> 1 <br> Bantamweight","2014-03-10 <br> 1 <br> Bantamweight","2014-03-17 <br> 1 <br> Bantamweight","2014-03-24 <br> 1 <br> Bantamweight","2014-03-25 <br> 1 <br> Bantamweight","2014-04-14 <br> 1 <br> Bantamweight","2014-04-18 <br> 1 <br> Bantamweight","2014-04-21 <br> 1 <br> Bantamweight","2014-04-28 <br> 1 <br> Bantamweight","2014-05-05 <br> 1 <br> Bantamweight","2014-05-06 <br> 1 <br> Bantamweight","2014-05-12 <br> 1 <br> Bantamweight","2014-05-26 <br> 2 <br> Bantamweight","2014-05-28 <br> 2 <br> Bantamweight","2014-06-02 <br> 2 <br> Bantamweight","2014-06-09 <br> 2 <br> Bantamweight","2014-06-16 <br> 2 <br> Bantamweight","2014-06-30 <br> 2 <br> Bantamweight","2014-07-08 <br> 2 <br> Bantamweight","2014-07-21 <br> 2 <br> Bantamweight","2014-07-28 <br> 2 <br> Bantamweight","2014-08-18 <br> 2 <br> Bantamweight","2014-08-25 <br> 2 <br> Bantamweight","2014-09-01 <br> 2 <br> Bantamweight","2014-09-08 <br> 2 <br> Bantamweight","2014-09-09 <br> 2 <br> Bantamweight","2014-09-15 <br> 2 <br> Bantamweight","2014-09-22 <br> 2 <br> Bantamweight","2014-09-29 <br> 3 <br> Bantamweight","2014-10-06 <br> 3 <br> Bantamweight","2014-10-27 <br> 3 <br> Bantamweight","2014-11-10 <br> 3 <br> Bantamweight","2014-11-17 <br> 3 <br> Bantamweight","2014-11-24 <br> 3 <br> Bantamweight","2014-12-08 <br> 3 <br> Bantamweight","2014-12-15 <br> 3 <br> Bantamweight","2014-12-22 <br> 3 <br> Bantamweight","2015-01-05 <br> 3 <br> Bantamweight","2015-01-20 <br> 3 <br> Bantamweight","2015-01-26 <br> 3 <br> Bantamweight","2015-02-02 <br> 3 <br> Bantamweight","2015-02-16 <br> 3 <br> Bantamweight","2015-02-24 <br> 3 <br> Bantamweight","2015-03-02 <br> 3 <br> Bantamweight","2015-03-16 <br> 3 <br> Bantamweight","2015-03-23 <br> 3 <br> Bantamweight","2015-04-06 <br> 3 <br> Bantamweight","2015-04-13 <br> 3 <br> Bantamweight","2015-04-20 <br> 3 <br> Bantamweight","2015-04-27 <br> 3 <br> Bantamweight","2015-05-11 <br> 3 <br> Bantamweight","2015-05-25 <br> 4 <br> Bantamweight","2015-06-01 <br> 4 <br> Bantamweight","2015-06-08 <br> 4 <br> Bantamweight","2015-06-15 <br> 4 <br> Bantamweight","2015-06-22 <br> 4 <br> Bantamweight","2015-06-29 <br> 4 <br> Bantamweight","2015-07-13 <br> 4 <br> Bantamweight","2015-07-20 <br> 4 <br> Bantamweight","2015-07-27 <br> 4 <br> Bantamweight","2015-08-03 <br> 4 <br> Bantamweight","2015-08-10 <br> 4 <br> Bantamweight","2015-08-25 <br> 4 <br> Bantamweight","2015-09-07 <br> 4 <br> Bantamweight","2015-09-28 <br> 4 <br> Bantamweight","2015-10-05 <br> 4 <br> Bantamweight","2015-10-26 <br> 4 <br> Bantamweight","2015-11-09 <br> 4 <br> Bantamweight","2015-11-16 <br> 4 <br> Bantamweight","2015-11-23 <br> 4 <br> Bantamweight","2015-11-30 <br> 4 <br> Bantamweight","2015-12-14 <br> 3 <br> Bantamweight","2015-12-21 <br> 3 <br> Bantamweight","2016-01-04 <br> 3 <br> Bantamweight","2016-01-19 <br> 3 <br> Bantamweight","2016-02-01 <br> 3 <br> Bantamweight","2016-02-08 <br> 3 <br> Bantamweight","2016-02-23 <br> 3 <br> Bantamweight","2016-02-29 <br> 3 <br> Bantamweight","2016-03-07 <br> 3 <br> Bantamweight","2016-03-21 <br> 2 <br> Bantamweight","2016-04-12 <br> 3 <br> Bantamweight","2016-04-18 <br> 3 <br> Bantamweight","2016-04-25 <br> 3 <br> Bantamweight","2016-05-10 <br> 3 <br> Bantamweight","2016-05-16 <br> 3 <br> Bantamweight","2016-05-31 <br> 2 <br> Bantamweight","2016-06-06 <br> 2 <br> Bantamweight","2016-06-20 <br> 2 <br> Bantamweight","2016-07-11 <br> 2 <br> Bantamweight","2016-07-15 <br> 2 <br> Bantamweight","2016-07-27 <br> 2 <br> Bantamweight","2016-08-03 <br> 2 <br> Bantamweight","2016-08-09 <br> 2 <br> Bantamweight","2016-08-24 <br> 2 <br> Bantamweight","2016-08-31 <br> 2 <br> Bantamweight","2016-09-05 <br> 2 <br> Bantamweight","2016-09-14 <br> 6 <br> Bantamweight","2016-09-21 <br> 7 <br> Bantamweight","2016-09-26 <br> 7 <br> Bantamweight","2016-10-05 <br> 7 <br> Bantamweight","2016-10-12 <br> 7 <br> Bantamweight","2016-11-07 <br> 7 <br> Bantamweight","2016-11-16 <br> 7 <br> Bantamweight","2016-11-21 <br> 7 <br> Bantamweight","2016-11-30 <br> 7 <br> Bantamweight","2016-12-05 <br> 7 <br> Bantamweight","2016-12-14 <br> 7 <br> Bantamweight","2019-07-15 <br> 14 <br> Bantamweight","2019-07-22 <br> 14 <br> Bantamweight","2019-07-29 <br> 14 <br> Bantamweight","2019-08-05 <br> 14 <br> Bantamweight","2019-08-12 <br> 14 <br> Bantamweight","2019-08-19 <br> 14 <br> Bantamweight","2019-09-02 <br> 14 <br> Bantamweight","2019-09-09 <br> 14 <br> Bantamweight","2019-09-16 <br> 14 <br> Bantamweight","2019-09-23 <br> 14 <br> Bantamweight","2019-09-30 <br> 14 <br> Bantamweight","2019-10-07 <br> 14 <br> Bantamweight","2019-10-14 <br> 14 <br> Bantamweight","2019-10-21 <br> 14 <br> Bantamweight","2019-10-28 <br> 12 <br> Bantamweight","2019-11-04 <br> 12 <br> Bantamweight","2019-11-11 <br> 12 <br> Bantamweight","2019-11-18 <br> 12 <br> Bantamweight","2019-12-10 <br> 12 <br> Bantamweight"],"type":"scatter","name":"Bantamweight","textfont":{"color":"rgba(102,194,165,1)"},"error_y":{"color":"rgba(102,194,165,1)"},"error_x":{"color":"rgba(102,194,165,1)"},"line":{"color":"rgba(102,194,165,1)"},"xaxis":"x","yaxis":"y2","frame":null},{"x":["2013-12-30","2014-01-07","2014-01-17","2014-01-27","2014-02-03","2014-02-17","2014-02-18","2014-02-24","2014-02-25","2014-03-03","2014-03-04","2014-03-10","2014-03-17","2014-03-24","2014-03-25","2014-04-14","2014-04-18","2014-04-21","2014-04-28","2014-05-05","2014-05-06","2014-05-12"],"y":[14,14,13,13,13,14,14,14,14,15,15,15,15,15,15,14,15,15,15,15,15,15],"mode":"markers","marker":{"color":"rgba(141,160,203,1)","size":10,"opacity":0.80000000000000004,"line":{"color":"rgba(141,160,203,1)"}},"hoverinfo":["text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text"],"text":["2013-12-30 <br> 14 <br> Pound-for-Pound","2014-01-07 <br> 14 <br> Pound-for-Pound","2014-01-17 <br> 13 <br> Pound-for-Pound","2014-01-27 <br> 13 <br> Pound-for-Pound","2014-02-03 <br> 13 <br> Pound-for-Pound","2014-02-17 <br> 14 <br> Pound-for-Pound","2014-02-18 <br> 14 <br> Pound-for-Pound","2014-02-24 <br> 14 <br> Pound-for-Pound","2014-02-25 <br> 14 <br> Pound-for-Pound","2014-03-03 <br> 15 <br> Pound-for-Pound","2014-03-04 <br> 15 <br> Pound-for-Pound","2014-03-10 <br> 15 <br> Pound-for-Pound","2014-03-17 <br> 15 <br> Pound-for-Pound","2014-03-24 <br> 15 <br> Pound-for-Pound","2014-03-25 <br> 15 <br> Pound-for-Pound","2014-04-14 <br> 14 <br> Pound-for-Pound","2014-04-18 <br> 15 <br> Pound-for-Pound","2014-04-21 <br> 15 <br> Pound-for-Pound","2014-04-28 <br> 15 <br> Pound-for-Pound","2014-05-05 <br> 15 <br> Pound-for-Pound","2014-05-06 <br> 15 <br> Pound-for-Pound","2014-05-12 <br> 15 <br> Pound-for-Pound"],"type":"scatter","name":"Pound-for-Pound","textfont":{"color":"rgba(141,160,203,1)"},"error_y":{"color":"rgba(141,160,203,1)"},"error_x":{"color":"rgba(141,160,203,1)"},"line":{"color":"rgba(141,160,203,1)"},"xaxis":"x","yaxis":"y2","frame":null}],"layout":{"xaxis":{"domain":[0,1],"automargin":true,"anchor":"y2","gridcolor":"#e1e1e1","title":""},"yaxis2":{"domain":[0,0.38],"automargin":true,"range":[15.5,-0.5],"tickvals":[15,14,13,12,11,10,9,8,7,6,5,4,3,2,1,0],"ticktext":["15","14","13","12","11","10","9","8","7","6","5","4","3","2","1","C"],"gridcolor":"#e1e1e1","zeroline":false,"anchor":"x"},"yaxis":{"domain":[0.42000000000000004,1],"automargin":true,"gridcolor":"#e1e1e1","anchor":"x"},"annotations":[],"shapes":[],"images":[],"margin":{"b":40,"l":60,"t":0,"r":10},"hovermode":"closest","showlegend":true,"height":750,"legend":{"orientation":"h","xanchor":"center","x":0.5,"y":-100}},"attrs":{"24987f83cd9":{"x":{},"y":{},"mode":"lines+markers","line":{"color":"#d12d36","width":3,"shape":"hv"},"marker":{"size":10,"color":"#d12d36"},"hoverinfo":"text","text":{},"name":"Elo","alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"type":"scatter"},"249876fb7577":{"x":{},"y":{},"mode":"markers","marker":{"size":10,"opacity":0.80000000000000004},"hoverinfo":"text","text":{},"color":{},"alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"type":"scatter"}},"source":"A","config":{"modeBarButtonsToAdd":["hoverclosest","hovercompare"],"showSendToCloud":false,"displayModeBar":false},"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.20000000000000001,"selected":{"opacity":1},"debounce":0},"subplot":true,"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot","plotly_sunburstclick"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script>
+</div>
+</div>
+<h2 style='font-size: 1em; margin: 0; text-align: center; font-weight: bold;'>Bout History</h2>
+<div class="reactable html-widget html-fill-item" id="htmlwidget-7247677b6e01a411cf2f" style="width:auto;height:auto;"></div>
+<script type="application/json" data-for="htmlwidget-7247677b6e01a411cf2f">{"x":{"tag":{"name":"Reactable","attribs":{"data":{"event_date":["<br><span class = 'event-date'>2019-12-14<\/span><br><a href='/events/20191214.html'>UFC 245: Usman vs. Covington<\/a>","<br><span class = 'event-date'>2019-07-13<\/span><br><a href='/events/20190713.html'>UFC Fight Night: de Randamie vs. Ladd<\/a>","<br><span class = 'event-date'>2016-12-17<\/span><br><a href='/events/20161217.html'>UFC on Fox: VanZant vs. Waterson<\/a>","<br><span class = 'event-date'>2016-09-10<\/span><br><a href='/events/20160910.html'>UFC 203: Miocic vs. Overeem<\/a>","<br><span class = 'event-date'>2016-06-04<\/span><br><a href='/events/20160604.html'>UFC 199: Rockhold vs. Bisping 2<\/a>","<br><span class = 'event-date'>2015-12-12<\/span><br><a href='/events/20151212.html'>UFC 194: Aldo vs. McGregor<\/a>","<br><span class = 'event-date'>2015-05-16<\/span><br><a href='/events/20150516.html'>UFC Fight Night: Edgar vs. Faber<\/a>","<br><span class = 'event-date'>2014-12-06<\/span><br><a href='/events/20141206.html'>UFC 181: Hendricks vs. Lawler II<\/a>","<br><span class = 'event-date'>2014-07-05<\/span><br><a href='/events/20140705.html'>UFC 175: Weidman vs. Machida<\/a>","<br><span class = 'event-date'>2014-02-01<\/span><br><a href='/events/20140201.html'>UFC 169: Barão vs. Faber 2<\/a>","<br><span class = 'event-date'>2013-12-14<\/span><br><a href='/events/20131214.html'>UFC on Fox: Johnson vs. Benavidez 2<\/a>","<br><span class = 'event-date'>2013-08-17<\/span><br><a href='/events/20130817.html'>UFC Fight Night: Shogun vs. Sonnen<\/a>","<br><span class = 'event-date'>2013-04-13<\/span><br><a href='/events/20130413.html'>The Ultimate Fighter: Team Jones vs. Team Sonnen<\/a>","<br><span class = 'event-date'>2013-02-23<\/span><br><a href='/events/20130223.html'>UFC 157: Rousey vs. Carmouche<\/a>","<br><span class = 'event-date'>2012-07-21<\/span><br><a href='/events/20120721.html'>UFC 149: Faber vs. Barão<\/a>","<br><span class = 'event-date'>2011-11-19<\/span><br><a href='/events/20111119.html'>UFC 139: Shogun vs. Henderson<\/a>","<br><span class = 'event-date'>2011-07-02<\/span><br><a href='/events/20110702.html'>UFC 132: Cruz vs. Faber<\/a>","<br><span class = 'event-date'>2011-03-19<\/span><br><a href='/events/20110319.html'>UFC 128: Shogun vs Jones<\/a>"],"fighter_name":["<br> <b><span title='Performance of the Night' style='cursor: pointer;'>⭐ <\/span><a href=/fighters/petryan.html>Petr Yan<\/a><\/b> (26) 🇷🇺<br><span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> • 5-0<br>Elo: <span class = 'favorite-elo'>3148<\/span> • UFC rank: #4","<br> <b><span title='Performance of the Night' style='cursor: pointer;'>⭐ <\/span>Urijah Faber<\/b> (40) 🇺🇸<br><span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: crimson; color: white; font-weight: bold;'>L<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: crimson; color: white; font-weight: bold;'>L<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: crimson; color: white; font-weight: bold;'>L<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> • 10-6<br>Elo: 2886","<br> <b>Urijah Faber<\/b> (37) 🇺🇸<br><span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: crimson; color: white; font-weight: bold;'>L<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: crimson; color: white; font-weight: bold;'>L<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: crimson; color: white; font-weight: bold;'>L<\/span> • 9-6<br>Elo: <span class = 'favorite-elo'>2861<\/span> • UFC rank: #7","<br> <b><a href=/fighters/jimmierivera.html>Jimmie Rivera<\/a><\/b> (27) 🇺🇸<br><span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> • 3-0<br>Elo: 2948 • UFC rank: #12","<br> <b><a href=/fighters/dominickcruz.html>Dominick Cruz<\/a><\/b> (31) 🇺🇸<br><span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> • 4-0<br>Elo: <span class = 'favorite-elo'>3163<\/span> • UFC rank: Champ","<br> <b>Urijah Faber<\/b> (36) 🇺🇸<br><span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: crimson; color: white; font-weight: bold;'>L<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: crimson; color: white; font-weight: bold;'>L<\/span> • 8-4<br>Elo: <span class = 'favorite-elo'>2972<\/span> • UFC rank: #4","<br> <b><a href=/fighters/frankieedgar.html>Frankie Edgar<\/a><\/b> (33) 🇺🇸<br><span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: crimson; color: white; font-weight: bold;'>L<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: crimson; color: white; font-weight: bold;'>L<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> • 12-4-1<br>Elo: <span class = 'favorite-elo'>3206<\/span> • UFC rank: #2","<br> <b>Urijah Faber<\/b> (35) 🇺🇸<br><span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: crimson; color: white; font-weight: bold;'>L<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> • 7-3<br>Elo: <span class = 'favorite-elo'>2999<\/span> • UFC rank: #3","<br> <b>Urijah Faber<\/b> (35) 🇺🇸<br><span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: crimson; color: white; font-weight: bold;'>L<\/span> • 6-3<br>Elo: <span class = 'favorite-elo'>2963<\/span> • UFC rank: #2","<br> <b><a href=/fighters/renanbarao.html>Renan Barao<\/a><\/b> (27) 🇧🇷<br><span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> • 6-0<br>Elo: <span class = 'favorite-elo'>3115<\/span> • UFC rank: Champ","<br> <b><span title='Performance of the Night' style='cursor: pointer;'>⭐ <\/span>Urijah Faber<\/b> (34) 🇺🇸<br><span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: crimson; color: white; font-weight: bold;'>L<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> • 5-2<br>Elo: <span class = 'favorite-elo'>2970<\/span> • UFC rank: #2","<br> <b>Urijah Faber<\/b> (34) 🇺🇸<br><span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: crimson; color: white; font-weight: bold;'>L<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: crimson; color: white; font-weight: bold;'>L<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> • 4-2<br>Elo: <span class = 'favorite-elo'>2906<\/span> • UFC rank: #2","<br> <b>Urijah Faber<\/b> (33) 🇺🇸<br><span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: crimson; color: white; font-weight: bold;'>L<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: crimson; color: white; font-weight: bold;'>L<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> • 3-2<br>Elo: <span class = 'favorite-elo'>2864<\/span> • UFC rank: #2","<br> <b>Urijah Faber<\/b> (33) 🇺🇸<br><span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: crimson; color: white; font-weight: bold;'>L<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: crimson; color: white; font-weight: bold;'>L<\/span> • 2-2<br>Elo: <span class = 'favorite-elo'>2818<\/span> • UFC rank: #2","<br> <b><a href=/fighters/renanbarao.html>Renan Barao<\/a><\/b> (25) 🇧🇷<br><span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> • 3-0<br>Elo: <span class = 'favorite-elo'>2954<\/span>","<br> <b><span title='Performance of the Night' style='cursor: pointer;'>⭐ <\/span>Urijah Faber<\/b> (32) 🇺🇸<br><span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: crimson; color: white; font-weight: bold;'>L<\/span> • 1-1<br>Elo: 2804","<br> <b><a href=/fighters/dominickcruz.html>Dominick Cruz<\/a><\/b> (26) 🇺🇸<br>Debut 🔰<br>Elo: <span class = 'favorite-elo'>2975<\/span>","<br> <b>Urijah Faber<\/b> (31) 🇺🇸<br>Debut 🔰<br>Elo: <span class = 'favorite-elo'>2807<\/span>"],"result_description":["<span style='font-size: 0.8em;'>BANTAMWEIGHT<\/span><br>KO<br>R3<br>00:43","<span style='font-size: 0.8em;'>BANTAMWEIGHT<\/span><br>TKO<br>R1<br>00:46","<span style='font-size: 0.8em;'>BANTAMWEIGHT<\/span><br>DEC<br>R3<br>05:00","<span style='font-size: 0.8em;'>BANTAMWEIGHT<\/span><br>DEC<br>R3<br>05:00","<span style='font-size: 0.8em;'>BANTAMWEIGHT<\/span><br>DEC<br>R5<br>05:00","<span style='font-size: 0.8em;'>BANTAMWEIGHT<\/span><br>DEC<br>R3<br>05:00","<span style='font-size: 0.8em;'>FEATHERWEIGHT<\/span><br>DEC<br>R5<br>05:00","<span style='font-size: 0.8em;'>BANTAMWEIGHT<\/span><br>SUB<br>R2<br>01:34","<span style='font-size: 0.8em;'>BANTAMWEIGHT<\/span><br>SUB<br>R3<br>01:09","<span style='font-size: 0.8em;'>BANTAMWEIGHT<\/span><br>TKO<br>R1<br>03:42","<span style='font-size: 0.8em;'>BANTAMWEIGHT<\/span><br>SUB<br>R2<br>03:22","<span style='font-size: 0.8em;'>BANTAMWEIGHT<\/span><br>DEC<br>R3<br>05:00","<span style='font-size: 0.8em;'>BANTAMWEIGHT<\/span><br>SUB<br>R4<br>03:16","<span style='font-size: 0.8em;'>BANTAMWEIGHT<\/span><br>SUB<br>R1<br>04:34","<span style='font-size: 0.8em;'>BANTAMWEIGHT<\/span><br>DEC<br>R5<br>05:00","<span style='font-size: 0.8em;'>BANTAMWEIGHT<\/span><br>SUB<br>R2<br>01:27","<span style='font-size: 0.8em;'>BANTAMWEIGHT<\/span><br><span title='Fight of the Night' style='cursor: pointer;'>⭐<\/span>DEC<span title='Fight of the Night' style='cursor: pointer;'>⭐<\/span><br>R5<br>05:00","<span style='font-size: 0.8em;'>BANTAMWEIGHT<\/span><br>DEC<br>R3<br>05:00"],"opponent_fighter_name":["<br>🇺🇸 <b>Urijah Faber<\/b> (40)<br>11-6 • <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: crimson; color: white; font-weight: bold;'>L<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: crimson; color: white; font-weight: bold;'>L<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span><br>UFC rank: #12 • Elo: 3017","<br>🇺🇸 <b><a href=/fighters/rickysimon.html>Ricky Simon<\/a><\/b> (26)<br>3-0 • <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span><br>UFC rank: #15 • Elo: <span class = 'favorite-elo'>2999<\/span>","<br>🇬🇧 <b><a href=/fighters/bradpickett.html>Brad Pickett<\/a><\/b> (38)<br>5-7 • <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: crimson; color: white; font-weight: bold;'>L<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: crimson; color: white; font-weight: bold;'>L<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: crimson; color: white; font-weight: bold;'>L<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: crimson; color: white; font-weight: bold;'>L<\/span><br>Elo: 2523","<br>🇺🇸 <b>Urijah Faber<\/b> (37)<br>9-5 • <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: crimson; color: white; font-weight: bold;'>L<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: crimson; color: white; font-weight: bold;'>L<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span><br>UFC rank: #2 • Elo: <span class = 'favorite-elo'>2966<\/span>","<br>🇺🇸 <b>Urijah Faber<\/b> (37)<br>9-4 • <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: crimson; color: white; font-weight: bold;'>L<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: crimson; color: white; font-weight: bold;'>L<\/span><br>UFC rank: #2 • Elo: 3030","<br>🇺🇸 <b><a href=/fighters/frankiesaenz.html>Frankie Saenz<\/a><\/b> (35)<br>3-0 • <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span><br>UFC rank: #13 • Elo: 2816","<br>🇺🇸 <b>Urijah Faber<\/b> (36)<br>8-3 • <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: crimson; color: white; font-weight: bold;'>L<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span><br>UFC rank: #3 • Elo: 3024","<br>🇺🇸 <b><a href=/fighters/franciscoriverajr.html>Francisco Rivera Jr.<\/a><\/b> (33)<br>3-2 (1 NC) • <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: crimson; color: white; font-weight: bold;'>L<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: slategray; color: white; font-weight: bold;'>N<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span><br>UFC rank: #11 • Elo: 2661","<br>🇺🇸 <b><a href=/fighters/alexcaceres.html>Alex Caceres<\/a><\/b> (26)<br>5-3 (1 NC) • <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: slategray; color: white; font-weight: bold;'>N<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span><br>UFC rank: #11 • Elo: 2699","<br>🇺🇸 <b>Urijah Faber<\/b> (34)<br>6-2 • <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: crimson; color: white; font-weight: bold;'>L<\/span><br>UFC rank: #1 • Elo: 3043","<br>🇺🇸 <b><a href=/fighters/michaelmcdonald.html>Michael McDonald<\/a><\/b> (22)<br>5-1 • <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: crimson; color: white; font-weight: bold;'>L<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span><br>UFC rank: #3 • Elo: 2873","<br>🇧🇷 <b><a href=/fighters/iurialcantara.html>Iuri Alcantara<\/a><\/b> (33)<br>3-1 (1 NC) • <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: slategray; color: white; font-weight: bold;'>N<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: crimson; color: white; font-weight: bold;'>L<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span><br>Elo: 2775","<br>🇺🇸 <b><a href=/fighters/scottjorgensen.html>Scott Jorgensen<\/a><\/b> (30)<br>3-2 • <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: crimson; color: white; font-weight: bold;'>L<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: crimson; color: white; font-weight: bold;'>L<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span><br>UFC rank: #7 • Elo: 2637","<br>🇨🇦 🇸🇻 <b><a href=/fighters/ivanmenjivar.html>Ivan Menjivar<\/a><\/b> (30)<br>4-2 • <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: crimson; color: white; font-weight: bold;'>L<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span><br>UFC rank: #10 • Elo: 2605","<br>🇺🇸 <b>Urijah Faber<\/b> (33)<br>2-1 • <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: crimson; color: white; font-weight: bold;'>L<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span><br>Elo: 2904","<br>🇺🇸 <b><a href=/fighters/brianbowles.html>Brian Bowles<\/a><\/b> (31)<br>2-0 • <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span><br>Elo: 2804","<br>🇺🇸 <b>Urijah Faber<\/b> (32)<br>1-0 • <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span><br>Elo: 2876","<br>🇺🇸 <b><a href=/fighters/eddiewineland.html>Eddie Wineland<\/a><\/b> (26)<br>🔰 Debut<br>Elo: 2697"],"City":["<br>T-Mobile Arena<br>Las Vegas, Nevada<br>United States 🇺🇸","<br>Golden 1 Center<br>Sacramento, California<br>United States 🇺🇸","<br>Golden 1 Center<br>Sacramento, California<br>United States 🇺🇸","<br>Quicken Loans Arena<br>Cleveland, Ohio<br>United States 🇺🇸","<br>The Forum<br>Inglewood, California<br>United States 🇺🇸","<br>MGM Grand Garden Arena<br>Las Vegas, Nevada<br>United States 🇺🇸","<br>Mall of Asia Arena<br>Pasay<br>Philippines 🇵🇭","<br>Mandalay Bay Events Center<br>Las Vegas, Nevada<br>United States 🇺🇸","<br>Mandalay Bay Events Center<br>Las Vegas, Nevada<br>United States 🇺🇸","<br>Prudential Center<br>Newark, New Jersey<br>United States 🇺🇸","<br>Sleep Train Arena<br>Sacramento, California<br>United States 🇺🇸","<br>TD Garden<br>Boston, Massachusetts<br>United States 🇺🇸","<br>Mandalay Bay Events Center<br>Las Vegas, Nevada<br>United States 🇺🇸","<br>Honda Center<br>Anaheim, California<br>United States 🇺🇸","<br>Scotiabank Saddledome<br>Calgary<br>Canada 🇨🇦","<br>HP Pavilion<br>San Jose, California<br>United States 🇺🇸","<br>MGM Grand Garden Arena<br>Las Vegas, Nevada<br>United States 🇺🇸","<br>Prudential Center<br>Newark, New Jersey<br>United States 🇺🇸"]},"columns":[{"id":"event_date","name":"","type":"character","html":true,"width":200,"className":"side_info"},{"id":"fighter_name","name":"","type":"character","html":true,"width":240,"align":"right"},{"id":"result_description","name":"","type":"character","html":true,"width":50,"align":"center","className":"result_description"},{"id":"opponent_fighter_name","name":"","type":"character","html":true,"width":240,"align":"left"},{"id":"City","name":"","type":"character","cell":["<div style=\"white-space: nowrap; overflow: visible;\"><br>T-Mobile Arena<br>Las Vegas, Nevada<br>United States 🇺🇸<\/div>","<div style=\"white-space: nowrap; overflow: visible;\"><br>Golden 1 Center<br>Sacramento, California<br>United States 🇺🇸<\/div>","<div style=\"white-space: nowrap; overflow: visible;\"><br>Golden 1 Center<br>Sacramento, California<br>United States 🇺🇸<\/div>","<div style=\"white-space: nowrap; overflow: visible;\"><br>Quicken Loans Arena<br>Cleveland, Ohio<br>United States 🇺🇸<\/div>","<div style=\"white-space: nowrap; overflow: visible;\"><br>The Forum<br>Inglewood, California<br>United States 🇺🇸<\/div>","<div style=\"white-space: nowrap; overflow: visible;\"><br>MGM Grand Garden Arena<br>Las Vegas, Nevada<br>United States 🇺🇸<\/div>","<div style=\"white-space: nowrap; overflow: visible;\"><br>Mall of Asia Arena<br>Pasay<br>Philippines 🇵🇭<\/div>","<div style=\"white-space: nowrap; overflow: visible;\"><br>Mandalay Bay Events Center<br>Las Vegas, Nevada<br>United States 🇺🇸<\/div>","<div style=\"white-space: nowrap; overflow: visible;\"><br>Mandalay Bay Events Center<br>Las Vegas, Nevada<br>United States 🇺🇸<\/div>","<div style=\"white-space: nowrap; overflow: visible;\"><br>Prudential Center<br>Newark, New Jersey<br>United States 🇺🇸<\/div>","<div style=\"white-space: nowrap; overflow: visible;\"><br>Sleep Train Arena<br>Sacramento, California<br>United States 🇺🇸<\/div>","<div style=\"white-space: nowrap; overflow: visible;\"><br>TD Garden<br>Boston, Massachusetts<br>United States 🇺🇸<\/div>","<div style=\"white-space: nowrap; overflow: visible;\"><br>Mandalay Bay Events Center<br>Las Vegas, Nevada<br>United States 🇺🇸<\/div>","<div style=\"white-space: nowrap; overflow: visible;\"><br>Honda Center<br>Anaheim, California<br>United States 🇺🇸<\/div>","<div style=\"white-space: nowrap; overflow: visible;\"><br>Scotiabank Saddledome<br>Calgary<br>Canada 🇨🇦<\/div>","<div style=\"white-space: nowrap; overflow: visible;\"><br>HP Pavilion<br>San Jose, California<br>United States 🇺🇸<\/div>","<div style=\"white-space: nowrap; overflow: visible;\"><br>MGM Grand Garden Arena<br>Las Vegas, Nevada<br>United States 🇺🇸<\/div>","<div style=\"white-space: nowrap; overflow: visible;\"><br>Prudential Center<br>Newark, New Jersey<br>United States 🇺🇸<\/div>"],"html":true,"width":200,"className":"side_info"}],"sortable":false,"pagination":false,"defaultPageSize":100,"showPageInfo":false,"nowrap":true,"className":"event_bouts","inline":true,"theme":{"headerStyle":{"borderBottom":"none"}},"dataKey":"5488a476ec658c2bc8551cbb1d7b65d3"},"children":[]},"class":"reactR_markup"},"evals":[],"jsHooks":[]}</script>
+
+<footer>
+  <div class="footer-container">
+    <p class="copyright-text">
+      Copyright © <span id="currentYear"></span> All Rights Reserved by 
+      <a href="#">roster.watch</a>
+    </p>
+<!--     <p class="browser-badge">
+      <a href="https://www.mozilla.org/en-US/firefox/">
+        <img src="C:/Users/mart/Dropbox/R/roster.watch/firefox.png" title="Best viewed with Firefox" alt="Best viewed with Firefox"><br>
+        <small class="copyright-text">Best viewed with Firefox</small>
+      </a>
+    </p> 
+ -->  </div>
+</footer>
+
+<style>
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+}
+
+.copyright-text {
+  margin: 0 auto;
+}
+
+.browser-badge {
+  margin-left: auto;
+}
+</style>
+
+<script>
+  document.getElementById('currentYear').textContent = new Date().getFullYear();
+</script>
+
+
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.odd').parent('tbody').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- tabsets -->
+
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open');
+  });
+});
+</script>
+
+<!-- code folding -->
+
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>

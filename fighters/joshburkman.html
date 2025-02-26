@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+
+<html lang="en" xml:lang="en">
+
+<head>
+
+<meta charset="utf-8" />
+<meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+
+
+
+
+<title>roster.watch</title>
+
+<script src="fighter_libs/header-attrs-2.29/header-attrs.js"></script>
+<script src="fighter_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="fighter_libs/bootstrap-3.3.5/css/bootstrap.min.css" rel="stylesheet" />
+<script src="fighter_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="fighter_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="fighter_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<style>h1 {font-size: 34px;}
+       h1.title {font-size: 38px;}
+       h2 {font-size: 30px;}
+       h3 {font-size: 24px;}
+       h4 {font-size: 18px;}
+       h5 {font-size: 16px;}
+       h6 {font-size: 12px;}
+       code {color: inherit; background-color: rgba(0, 0, 0, 0.04);}
+       pre:not([class]) { background-color: white }</style>
+<script src="fighter_libs/navigation-1.1/tabsets.js"></script>
+<link href="fighter_libs/highlightjs-9.12.0/default.css" rel="stylesheet" />
+<script src="fighter_libs/highlightjs-9.12.0/highlight.js"></script>
+<link href="fighter_libs/htmltools-fill-0.5.8.1/fill.css" rel="stylesheet" />
+<script src="fighter_libs/htmlwidgets-1.6.4/htmlwidgets.js"></script>
+<script src="fighter_libs/plotly-binding-4.10.4/plotly.js"></script>
+<script src="fighter_libs/typedarray-0.1/typedarray.min.js"></script>
+<link href="fighter_libs/crosstalk-1.2.1/css/crosstalk.min.css" rel="stylesheet" />
+<script src="fighter_libs/crosstalk-1.2.1/js/crosstalk.min.js"></script>
+<link href="fighter_libs/plotly-htmlwidgets-css-2.11.1/plotly-htmlwidgets.css" rel="stylesheet" />
+<script src="fighter_libs/plotly-main-2.11.1/plotly-latest.min.js"></script>
+<script src="fighter_libs/core-js-2.5.3/shim.min.js"></script>
+<script src="fighter_libs/react-18.2.0/react.min.js"></script>
+<script src="fighter_libs/react-18.2.0/react-dom.min.js"></script>
+<script src="fighter_libs/reactwidget-2.0.0/react-tools.js"></script>
+<link href="fighter_libs/reactable-0.4.4/reactable.css" rel="stylesheet" />
+<script src="fighter_libs/reactable-binding-0.4.4/reactable.js"></script>
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/site.webmanifest">
+<meta name="description" content="An up-to-date list of the full active UFC roster including biographical data, rankings, records, and more.">
+<!-- <meta property="og:title" content="roster.watch" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://www.roster.watch/" />
+<meta property="og:image" content="https://www.roster.watch/og_image.png" />
+<meta property="og:description" content="An up-to-date list of the full active UFC roster including biographical data, rankings, record, and more." />
+<script src="https://unpkg.com/twemoji@latest/dist/twemoji.min.js" crossorigin="anonymous"></script> 
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7299518767310567"
+     crossorigin="anonymous"></script> -->
+     <script data-goatcounter="https://rosterwatch.goatcounter.com/count"
+        async src="//gc.zgo.at/count.js"></script>
+        <script defer src="https://cloud.umami.is/script.js" data-website-id="f0f3ed7e-e89c-4a29-a745-475e0b10271a"></script>
+
+<style type="text/css">
+  code{white-space: pre-wrap;}
+  span.smallcaps{font-variant: small-caps;}
+  span.underline{text-decoration: underline;}
+  div.column{display: inline-block; vertical-align: top; width: 50%;}
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  ul.task-list{list-style: none;}
+    </style>
+
+<style type="text/css">code{white-space: pre;}</style>
+<script type="text/javascript">
+if (window.hljs) {
+  hljs.configure({languages: []});
+  hljs.initHighlightingOnLoad();
+  if (document.readyState && document.readyState === "complete") {
+    window.setTimeout(function() { hljs.initHighlighting(); }, 0);
+  }
+}
+</script>
+
+
+
+
+
+
+<link rel="stylesheet" href="../style.css" type="text/css" />
+
+
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+img {
+  max-width:100%;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+.html-widget {
+  margin-bottom: 20px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+summary {
+  display: list-item;
+}
+details > summary > p:only-child {
+  display: inline;
+}
+pre code {
+  padding: 0;
+}
+</style>
+
+
+<style type="text/css">
+.dropdown-submenu {
+  position: relative;
+}
+.dropdown-submenu>.dropdown-menu {
+  top: 0;
+  left: 100%;
+  margin-top: -6px;
+  margin-left: -1px;
+  border-radius: 0 6px 6px 6px;
+}
+.dropdown-submenu:hover>.dropdown-menu {
+  display: block;
+}
+.dropdown-submenu>a:after {
+  display: block;
+  content: " ";
+  float: right;
+  width: 0;
+  height: 0;
+  border-color: transparent;
+  border-style: solid;
+  border-width: 5px 0 5px 5px;
+  border-left-color: #cccccc;
+  margin-top: 5px;
+  margin-right: -10px;
+}
+.dropdown-submenu:hover>a:after {
+  border-left-color: #adb5bd;
+}
+.dropdown-submenu.pull-left {
+  float: none;
+}
+.dropdown-submenu.pull-left>.dropdown-menu {
+  left: -100%;
+  margin-left: 10px;
+  border-radius: 6px 0 6px 6px;
+}
+</style>
+
+<script type="text/javascript">
+// manage active state of menu based on current page
+$(document).ready(function () {
+  // active menu anchor
+  href = window.location.pathname
+  href = href.substr(href.lastIndexOf('/') + 1)
+  if (href === "")
+    href = "index.html";
+  var menuAnchor = $('a[href="' + href + '"]');
+
+  // mark the anchor link active (and if it's in a dropdown, also mark that active)
+  var dropdown = menuAnchor.closest('li.dropdown');
+  if (window.bootstrap) { // Bootstrap 4+
+    menuAnchor.addClass('active');
+    dropdown.find('> .dropdown-toggle').addClass('active');
+  } else { // Bootstrap 3
+    menuAnchor.parent().addClass('active');
+    dropdown.addClass('active');
+  }
+
+  // Navbar adjustments
+  var navHeight = $(".navbar").first().height() + 15;
+  var style = document.createElement('style');
+  var pt = "padding-top: " + navHeight + "px; ";
+  var mt = "margin-top: -" + navHeight + "px; ";
+  var css = "";
+  // offset scroll position for anchor links (for fixed navbar)
+  for (var i = 1; i <= 6; i++) {
+    css += ".section h" + i + "{ " + pt + mt + "}\n";
+  }
+  style.innerHTML = "body {" + pt + "padding-bottom: 40px; }\n" + css;
+  document.head.appendChild(style);
+});
+</script>
+
+<!-- tabsets -->
+
+<style type="text/css">
+.tabset-dropdown > .nav-tabs {
+  display: inline-table;
+  max-height: 500px;
+  min-height: 44px;
+  overflow-y: auto;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs > li.active:before, .tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "\e259";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
+  content: "\e258";
+  font-family: 'Glyphicons Halflings';
+  border: none;
+}
+
+.tabset-dropdown > .nav-tabs > li.active {
+  display: block;
+}
+
+.tabset-dropdown > .nav-tabs > li > a,
+.tabset-dropdown > .nav-tabs > li > a:focus,
+.tabset-dropdown > .nav-tabs > li > a:hover {
+  border: none;
+  display: inline-block;
+  border-radius: 4px;
+  background-color: transparent;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li {
+  display: block;
+  float: none;
+}
+
+.tabset-dropdown > .nav-tabs > li {
+  display: none;
+}
+</style>
+
+<!-- code folding -->
+
+
+
+
+</head>
+
+<body>
+
+
+<div class="container-fluid main-container">
+
+
+
+<header>
+    <a class="logo" href="/"><img src="/images/logo.svg" alt="logo"></a>
+    <nav>
+        <ul class="nav__links">
+            <li><a href="/">Current Roster</a></li>
+            <li><a href="/former.html">Former Roster</a></li>
+            <li><a href="/events">Events</a></li>
+            <li><a href="/log.html">Log</a></li>
+            <li><a href="/glossary.html">Glossary</a></li>
+            <li><a href="mailto:rostertracker@gmail.com">Contact</a></li>
+            <li>
+                <a href="https://twitter.com/RosterTracker" class="twitter-follow-button" data-dnt="true" data-show-count="false">Follow on X</a>
+            </li>
+            <li><a href="https://www.patreon.com/bePatron?u=88266864">Support on Patreon</a></li>
+        </ul>
+    </nav>
+    <p class="menu cta">Menu</p>
+</header>
+
+<div class="overlay">
+    <a class="close">&times;</a>
+    <div class="overlay__content">
+        <a href="/">Current Roster</a>
+        <a href="/former.html">Former Roster</a>
+        <a href="/events">Events</a>
+        <a href="/log.html">Log</a>
+        <a href="/glossary.html">Glossary</a>
+        <a href="mailto:rostertracker@gmail.com">Contact</a>
+                <a href="https://twitter.com/RosterTracker" class="twitter-follow-button" data-dnt="true" data-show-count="false">Follow on X</a>
+        <a href="https://www.patreon.com/bePatron?u=88266864">Support on Patreon</a>
+
+    </div>
+</div>
+<script type="text/javascript" src="/mobile.js"></script>
+
+<div id="header">
+
+
+
+<h1 class="title toc-ignore">roster.watch</h1>
+
+</div>
+
+
+<article class="event-info" style="display: flex; flex-direction: column; align-items: center; justify-content: center; width: 100%; height: auto;"><div class="fighter-info" style="text-align: center; margin-bottom: 20px;"><h1 style='font-weight: bold; font-size: 1.1em; margin: 0;'>Josh Burkman 🇺🇸</h1><time datetime='1980-10-04'><p><span>1980-10-04</span><script>document.currentScript.parentElement.innerHTML = (function(){  const dob = new Date('1980-10-04');  const today = new Date();  let years = today.getFullYear() - dob.getFullYear();  const monthDiff = today.getMonth() - dob.getMonth();  if (monthDiff < 0 || (monthDiff === 0 && today.getDate() < dob.getDate())) {    years--;  }  const yearAnniversary = new Date(dob);  yearAnniversary.setFullYear(dob.getFullYear() + years);  const dayDiff = Math.floor((today - yearAnniversary) / (1000 * 60 * 60 * 24));  const isBirthday = today.getMonth() === dob.getMonth() && today.getDate() === dob.getDate();  let ageString = `${years} year${years !== 1 ? 's' : ''}`;  if (dayDiff > 0) {    ageString += ` ${dayDiff} day${dayDiff !== 1 ? 's' : ''}`;  }  return `${ageString}${isBirthday ? ' 🎂' : ''} <br><span class='event-date'> (${dob.toISOString().split('T')[0]}) </span>`;}());</script></p></time></div><div style="display: flex; justify-content: center; align-items: flex-start; gap: 40px; max-width: 600px; width: 100%;"><div class="event-details" style="width: 50%;"><div class='event-stats'><p><strong>Record:</strong> 6-12 (1 NC)<br></p><p><strong>By Method:</strong></p><ul><li> KO/TKO: 1-2</li><li> Submission: 1-5</li><li> Decision: 4-5</li></ul><p><strong>By Elo:</strong></p><ul><li>As Favorite: 4-5</li><li>As Underdog: 2-7 (1 NC)</li></ul><p><strong>By Weight Class:</strong></p><ul><li>Lightweight: 1-3</li><li>Welterweight: 5-9 (1 NC)</li></ul><p><strong>By Round:</strong></p><ul><li>Round 1: 2-3</li><li>Round 2: 0-2</li><li>Round 3: 4-7 (1 NC)</li></ul></div></div><div class="rankings" style="width: 50%;"><p><strong>Status</strong> Former UFC Fighter</p><p><strong>Last 5:</strong> <span style='display: inline-block;width: 1.25em;
+height: 1.25em;
+line-height: 1.25em; font-size: 0.8em;
+ text-align: center; border-radius: 50%; background-color: crimson; color: white; font-weight: bold;'>L</span> <span style='display: inline-block;width: 1.25em;
+height: 1.25em;
+line-height: 1.25em; font-size: 0.8em;
+ text-align: center; border-radius: 50%; background-color: crimson; color: white; font-weight: bold;'>L</span> <span style='display: inline-block;width: 1.25em;
+height: 1.25em;
+line-height: 1.25em; font-size: 0.8em;
+ text-align: center; border-radius: 50%; background-color: crimson; color: white; font-weight: bold;'>L</span> <span style='display: inline-block;width: 1.25em;
+height: 1.25em;
+line-height: 1.25em; font-size: 0.8em;
+ text-align: center; border-radius: 50%; background-color: crimson; color: white; font-weight: bold;'>L</span> <span style='display: inline-block;width: 1.25em;
+height: 1.25em;
+line-height: 1.25em; font-size: 0.8em;
+ text-align: center; border-radius: 50%; background-color: crimson; color: white; font-weight: bold;'>L</span></p><p><strong>Elo:</strong> 2396</p><p><strong>Peak Elo:</strong> 2910<span class='event-date'> (2015-01-03)</span></p><p><strong>Bonuses:</strong> 2 (2 FOTN, 0 Performance)</p><p><strong>Avg Fight Time:</strong> 10m 37s</p><p><strong>Total Fight Time:</strong> 3h 21m 48s</p></div></div></article>
+<h2 style='font-size: 1em; margin: 0; text-align: center; font-weight: bold;'>Elo Rating</h2>
+<div style="display: flex; justify-content: center; width: 100%; margin-top: 20px; margin-bottom: 20px;">
+<div id="fighter-performance-chart" style="width: 100%; max-width: 600px; height: 450px;">
+<div class="plotly html-widget html-fill-item" id="htmlwidget-db3046c4018dc95657ee" style="width:100%;height:400px;"></div>
+<script type="application/json" data-for="htmlwidget-db3046c4018dc95657ee">{"x":{"visdat":{"32b843c13e3e":["function () ","plotlyVisDat"]},"cur_data":"32b843c13e3e","attrs":{"32b843c13e3e":{"x":{},"y":{},"mode":"lines+markers","line":{"color":"#d12d36","width":3,"shape":"hv"},"marker":{"size":10,"color":"#d12d36"},"hoverinfo":"text","text":{},"name":"Elo","alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"type":"scatter"}},"layout":{"height":450,"margin":{"b":40,"l":60,"t":0,"r":10},"yaxis":{"domain":[0,1],"automargin":true,"gridcolor":"#e1e1e1","title":""},"showlegend":false,"legend":{"orientation":"h","xanchor":"center","x":0.5,"y":-100},"xaxis":{"domain":[0,1],"automargin":true,"title":"","gridcolor":"#e1e1e1"},"hovermode":"closest"},"source":"A","config":{"modeBarButtonsToAdd":["hoverclosest","hovercompare"],"showSendToCloud":false,"displayModeBar":false},"data":[{"x":["2005-11-05","2006-01-16","2006-04-06","2006-07-08","2007-01-25","2007-05-26","2007-10-20","2008-01-23","2008-06-21","2008-10-25","2015-01-03","2015-05-23","2015-08-23","2016-02-06","2016-05-29","2016-10-01","2017-03-11","2017-07-29","2018-02-18"],"y":[2673,2793,2636,2758,2815,2722,2722,2659,2559,2397,2910,2825,2713,2775,2663,2613,2579,2491,2449],"mode":"lines+markers","line":{"color":"#d12d36","width":3,"shape":"hv"},"marker":{"color":"#d12d36","size":10,"line":{"color":"rgba(31,119,180,1)"}},"hoverinfo":["text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text"],"text":["2005-11-05 <br> 2673 Elo <br> Sam Morgan <br> Win","2006-01-16 <br> 2793 Elo <br> Drew Fickett <br> Win","2006-04-06 <br> 2636 Elo <br> Jon Fitch <br> Loss","2006-07-08 <br> 2758 Elo <br> Josh Neer <br> Win","2007-01-25 <br> 2815 Elo <br> Chad Reiner <br> Win","2007-05-26 <br> 2722 Elo <br> Karo Parisyan <br> Loss","2007-10-20 <br> 2722 Elo <br> Forrest Petz <br> Win","2008-01-23 <br> 2659 Elo <br> Mike Swick <br> Loss","2008-06-21 <br> 2559 Elo <br> Dustin Hazelett <br> Loss","2008-10-25 <br> 2397 Elo <br> Pete Sell <br> Loss","2015-01-03 <br> 2910 Elo <br> Hector Lombard <br> No Contest","2015-05-23 <br> 2825 Elo <br> Dong Hyun Kim <br> Loss","2015-08-23 <br> 2713 Elo <br> Patrick Cote <br> Loss","2016-02-06 <br> 2775 Elo <br> KJ Noons <br> Win","2016-05-29 <br> 2663 Elo <br> Paul Felder <br> Loss","2016-10-01 <br> 2613 Elo <br> Zak Ottow <br> Loss","2017-03-11 <br> 2579 Elo <br> Michel Prazeres <br> Loss","2017-07-29 <br> 2491 Elo <br> Drew Dober <br> Loss","2018-02-18 <br> 2449 Elo <br> Alex Morono <br> Loss"],"name":"Elo","type":"scatter","error_y":{"color":"rgba(31,119,180,1)"},"error_x":{"color":"rgba(31,119,180,1)"},"xaxis":"x","yaxis":"y","frame":null}],"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.20000000000000001,"selected":{"opacity":1},"debounce":0},"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot","plotly_sunburstclick"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script>
+</div>
+</div>
+<h2 style='font-size: 1em; margin: 0; text-align: center; font-weight: bold;'>Bout History</h2>
+<div class="reactable html-widget html-fill-item" id="htmlwidget-b459b3103895c8520aa5" style="width:auto;height:auto;"></div>
+<script type="application/json" data-for="htmlwidget-b459b3103895c8520aa5">{"x":{"tag":{"name":"Reactable","attribs":{"data":{"event_date":["<br><span class = 'event-date'>2018-02-18<\/span><br><a href='/events/20180218.html'>UFC Fight Night: Cowboy vs. Medeiros<\/a>","<br><span class = 'event-date'>2017-07-29<\/span><br><a href='/events/20170729.html'>UFC 214: Cormier vs. Jones 2<\/a>","<br><span class = 'event-date'>2017-03-11<\/span><br><a href='/events/20170311.html'>UFC Fight Night: Belfort vs. Gastelum<\/a>","<br><span class = 'event-date'>2016-10-01<\/span><br><a href='/events/20161001.html'>UFC Fight Night: Lineker vs. Dodson<\/a>","<br><span class = 'event-date'>2016-05-29<\/span><br><a href='/events/20160529.html'>UFC Fight Night: Almeida vs. Garbrandt<\/a>","<br><span class = 'event-date'>2016-02-06<\/span><br><a href='/events/20160206.html'>UFC Fight Night: Hendricks vs. Thompson<\/a>","<br><span class = 'event-date'>2015-08-23<\/span><br><a href='/events/20150823.html'>UFC Fight Night: Holloway vs. Oliveira<\/a>","<br><span class = 'event-date'>2015-05-23<\/span><br><a href='/events/20150523.html'>UFC 187: Johnson vs. Cormier<\/a>","<br><span class = 'event-date'>2015-01-03<\/span><br><a href='/events/20150103.html'>UFC 182: Jones vs. Cormier<\/a>","<br><span class = 'event-date'>2008-10-25<\/span><br><a href='/events/20081025.html'>UFC 90: Silva vs. Côté<\/a>","<br><span class = 'event-date'>2008-06-21<\/span><br><a href='/events/20080621.html'>The Ultimate Fighter: Team Rampage vs. Team Forrest<\/a>","<br><span class = 'event-date'>2008-01-23<\/span><br><a href='/events/20080123.html'>UFC Fight Night: Swick vs. Burkman<\/a>","<br><span class = 'event-date'>2007-10-20<\/span><br><a href='/events/20071020.html'>UFC 77: Hostile Territory<\/a>","<br><span class = 'event-date'>2007-05-26<\/span><br><a href='/events/20070526.html'>UFC 71: Liddell vs. Jackson 2<\/a>","<br><span class = 'event-date'>2007-01-25<\/span><br><a href='/events/20070125.html'>UFC Fight Night: Evans vs. Salmon<\/a>","<br><span class = 'event-date'>2006-07-08<\/span><br><a href='/events/20060708.html'>UFC 61: Bitter Rivals<\/a>","<br><span class = 'event-date'>2006-04-06<\/span><br><a href='/events/20060406.html'>Ultimate Fight Night 4<\/a>","<br><span class = 'event-date'>2006-01-16<\/span><br><a href='/events/20060116.html'>Ultimate Fight Night 3<\/a>","<br><span class = 'event-date'>2005-11-05<\/span><br><a href='/events/20051105.html'>The Ultimate Fighter 2<\/a>"],"fighter_name":["<br> <b><a href=/fighters/alexmorono.html>Alex Morono<\/a><\/b> (27) 🇺🇸<br><span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: slategray; color: white; font-weight: bold;'>N<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: crimson; color: white; font-weight: bold;'>L<\/span> • 2-1 (1 NC)<br>Elo: <span class = 'favorite-elo'>2725<\/span>","<br> <b><a href=/fighters/drewdober.html>Drew Dober<\/a><\/b> (28) 🇺🇸<br><span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: slategray; color: white; font-weight: bold;'>N<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: crimson; color: white; font-weight: bold;'>L<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: crimson; color: white; font-weight: bold;'>L<\/span> • 3-4 (1 NC)<br>Elo: <span class = 'favorite-elo'>2620<\/span>","<br> <b><span title='Performance of the Night' style='cursor: pointer;'>⭐ <\/span><a href=/fighters/michelprazeres.html>Michel Prazeres<\/a><\/b> (35) 🇧🇷<br><span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: crimson; color: white; font-weight: bold;'>L<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> • 5-2<br>Elo: <span class = 'favorite-elo'>2885<\/span>","<br> <b><a href=/fighters/zakottow.html>Zak Ottow<\/a><\/b> (29) 🇺🇸<br>Debut 🔰<br>Elo: 2608","<br> <b><a href=/fighters/paulfelder.html>Paul Felder<\/a><\/b> (32) 🇺🇸<br><span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: crimson; color: white; font-weight: bold;'>L<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: crimson; color: white; font-weight: bold;'>L<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> • 3-2<br>Elo: 2732","<br> <b>Josh Burkman<\/b> (35) 🇺🇸<br><span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: crimson; color: white; font-weight: bold;'>L<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: crimson; color: white; font-weight: bold;'>L<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: slategray; color: white; font-weight: bold;'>N<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: crimson; color: white; font-weight: bold;'>L<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: crimson; color: white; font-weight: bold;'>L<\/span> • 5-7 (1 NC)<br>Elo: <span class = 'favorite-elo'>2713<\/span>","<br> <b><a href=/fighters/patrickcote.html>Patrick Cote<\/a><\/b> (35) 🇨🇦<br><span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: crimson; color: white; font-weight: bold;'>L<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> • 8-9<br>Elo: 2783","<br> <b><a href=/fighters/donghyunkim.html>Dong Hyun Kim<\/a><\/b> (33) 🇰🇷<br><span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: crimson; color: white; font-weight: bold;'>L<\/span> • 10-3 (1 NC)<br>Elo: <span class = 'favorite-elo'>2961<\/span> • UFC rank: #8","<br> <b><a href=/fighters/hectorlombard.html>Hector Lombard<\/a><\/b> (36) 🇨🇺<br><span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: crimson; color: white; font-weight: bold;'>L<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: crimson; color: white; font-weight: bold;'>L<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> • 3-2<br>Elo: <span class = 'favorite-elo'>3156<\/span> • UFC rank: #6","<br> <b><a href=/fighters/petesell.html>Pete Sell<\/a><\/b> (26) 🇺🇸<br><span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: crimson; color: white; font-weight: bold;'>L<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: crimson; color: white; font-weight: bold;'>L<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: crimson; color: white; font-weight: bold;'>L<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: crimson; color: white; font-weight: bold;'>L<\/span> • 1-4<br>Elo: 2306","<br> <b><span title='Performance of the Night' style='cursor: pointer;'>⭐ <\/span><a href=/fighters/dustinhazelett.html>Dustin Hazelett<\/a><\/b> (22) 🇺🇸<br><span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: crimson; color: white; font-weight: bold;'>L<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: crimson; color: white; font-weight: bold;'>L<\/span> • 3-2<br>Elo: <span class = 'favorite-elo'>2660<\/span>","<br> <b><a href=/fighters/mikeswick.html>Mike Swick<\/a><\/b> (28) 🇺🇸<br><span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: crimson; color: white; font-weight: bold;'>L<\/span> • 5-1<br>Elo: <span class = 'favorite-elo'>2732<\/span>","<br> <b>Josh Burkman<\/b> (27) 🇺🇸<br><span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: crimson; color: white; font-weight: bold;'>L<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: crimson; color: white; font-weight: bold;'>L<\/span> • 4-2<br>Elo: <span class = 'favorite-elo'>2722<\/span>","<br> <b><a href=/fighters/karoparisyan.html>Karo Parisyan<\/a><\/b> (24) 🇦🇲 🇺🇸<br><span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: crimson; color: white; font-weight: bold;'>L<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> • 6-2<br>Elo: <span class = 'favorite-elo'>2840<\/span>","<br> <b>Josh Burkman<\/b> (26) 🇺🇸<br><span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: crimson; color: white; font-weight: bold;'>L<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> • 3-1<br>Elo: <span class = 'favorite-elo'>2758<\/span>","<br> <b>Josh Burkman<\/b> (25) 🇺🇸<br><span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: crimson; color: white; font-weight: bold;'>L<\/span> • 2-1<br>Elo: 2636","<br> <b><a href=/fighters/jonfitch.html>Jon Fitch<\/a><\/b> (28) 🇺🇸<br><span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> • 1-0<br>Elo: 2569","<br> <b>Josh Burkman<\/b> (25) 🇺🇸<br><span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> • 1-0<br>Elo: 2673","<br> <b>Josh Burkman<\/b> (25) 🇺🇸<br>Debut 🔰<br>Elo: <span class = 'favorite-elo'>2624<\/span>"],"result_description":["<span style='font-size: 0.8em;'>WELTERWEIGHT<\/span><br>SUB<br>R1<br>02:12","<span style='font-size: 0.8em;'>LIGHTWEIGHT<\/span><br>KO<br>R1<br>03:04","<span style='font-size: 0.8em;'>LIGHTWEIGHT<\/span><br>SUB<br>R1<br>01:42","<span style='font-size: 0.8em;'>WELTERWEIGHT<\/span><br>DEC<br>R3<br>05:00","<span style='font-size: 0.8em;'>LIGHTWEIGHT<\/span><br>DEC<br>R3<br>05:00","<span style='font-size: 0.8em;'>LIGHTWEIGHT<\/span><br>DEC<br>R3<br>05:00","<span style='font-size: 0.8em;'>WELTERWEIGHT<\/span><br><span title='Fight of the Night' style='cursor: pointer;'>⭐<\/span>TKO<span title='Fight of the Night' style='cursor: pointer;'>⭐<\/span><br>R3<br>01:26","<span style='font-size: 0.8em;'>WELTERWEIGHT<\/span><br>SUB<br>R3<br>02:13","<span style='font-size: 0.8em;'>WELTERWEIGHT<\/span><br>NC<br>R3<br>05:00","<span style='font-size: 0.8em;'>WELTERWEIGHT<\/span><br>DEC<br>R3<br>05:00","<span style='font-size: 0.8em;'>WELTERWEIGHT<\/span><br><span title='Fight of the Night' style='cursor: pointer;'>⭐<\/span>SUB<span title='Fight of the Night' style='cursor: pointer;'>⭐<\/span><br>R2<br>04:46","<span style='font-size: 0.8em;'>WELTERWEIGHT<\/span><br>DEC<br>R3<br>05:00","<span style='font-size: 0.8em;'>WELTERWEIGHT<\/span><br>DEC<br>R3<br>05:00","<span style='font-size: 0.8em;'>WELTERWEIGHT<\/span><br>DEC<br>R3<br>05:00","<span style='font-size: 0.8em;'>WELTERWEIGHT<\/span><br>DEC<br>R3<br>05:00","<span style='font-size: 0.8em;'>WELTERWEIGHT<\/span><br>DEC<br>R3<br>05:00","<span style='font-size: 0.8em;'>WELTERWEIGHT<\/span><br>SUB<br>R2<br>04:57","<span style='font-size: 0.8em;'>WELTERWEIGHT<\/span><br>SUB<br>R1<br>01:07","<span style='font-size: 0.8em;'>WELTERWEIGHT<\/span><br>KO<br>R1<br>00:21"],"opponent_fighter_name":["<br>🇺🇸 <b>Josh Burkman<\/b> (37)<br>6-11 (1 NC) • <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: crimson; color: white; font-weight: bold;'>L<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: crimson; color: white; font-weight: bold;'>L<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: crimson; color: white; font-weight: bold;'>L<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: crimson; color: white; font-weight: bold;'>L<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span><br>Elo: 2491","<br>🇺🇸 <b>Josh Burkman<\/b> (36)<br>6-10 (1 NC) • <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: crimson; color: white; font-weight: bold;'>L<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: crimson; color: white; font-weight: bold;'>L<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: crimson; color: white; font-weight: bold;'>L<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: crimson; color: white; font-weight: bold;'>L<\/span><br>Elo: 2579","<br>🇺🇸 <b>Josh Burkman<\/b> (36)<br>6-9 (1 NC) • <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: crimson; color: white; font-weight: bold;'>L<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: crimson; color: white; font-weight: bold;'>L<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: crimson; color: white; font-weight: bold;'>L<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: crimson; color: white; font-weight: bold;'>L<\/span><br>Elo: 2613","<br>🇺🇸 <b>Josh Burkman<\/b> (35)<br>6-8 (1 NC) • <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: crimson; color: white; font-weight: bold;'>L<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: crimson; color: white; font-weight: bold;'>L<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: crimson; color: white; font-weight: bold;'>L<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: slategray; color: white; font-weight: bold;'>N<\/span><br>Elo: <span class = 'favorite-elo'>2663<\/span>","<br>🇺🇸 <b>Josh Burkman<\/b> (35)<br>6-7 (1 NC) • <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: crimson; color: white; font-weight: bold;'>L<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: crimson; color: white; font-weight: bold;'>L<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: slategray; color: white; font-weight: bold;'>N<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: crimson; color: white; font-weight: bold;'>L<\/span><br>Elo: <span class = 'favorite-elo'>2775<\/span>","<br>🇺🇸 <b><a href=/fighters/kjnoons.html>KJ Noons<\/a><\/b> (33)<br>2-2 (1 NC) • <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: crimson; color: white; font-weight: bold;'>L<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: slategray; color: white; font-weight: bold;'>N<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: crimson; color: white; font-weight: bold;'>L<\/span><br>Elo: 2576","<br>🇺🇸 <b>Josh Burkman<\/b> (34)<br>5-6 (1 NC) • <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: crimson; color: white; font-weight: bold;'>L<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: slategray; color: white; font-weight: bold;'>N<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: crimson; color: white; font-weight: bold;'>L<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: crimson; color: white; font-weight: bold;'>L<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: crimson; color: white; font-weight: bold;'>L<\/span><br>Elo: <span class = 'favorite-elo'>2825<\/span>","<br>🇺🇸 <b>Josh Burkman<\/b> (34)<br>5-5 (1 NC) • <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: slategray; color: white; font-weight: bold;'>N<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: crimson; color: white; font-weight: bold;'>L<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: crimson; color: white; font-weight: bold;'>L<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: crimson; color: white; font-weight: bold;'>L<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span><br>Elo: 2910","<br>🇺🇸 <b>Josh Burkman<\/b> (34)<br>5-5 • <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: crimson; color: white; font-weight: bold;'>L<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: crimson; color: white; font-weight: bold;'>L<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: crimson; color: white; font-weight: bold;'>L<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: crimson; color: white; font-weight: bold;'>L<\/span><br>Elo: 2910","<br>🇺🇸 <b>Josh Burkman<\/b> (28)<br>5-4 • <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: crimson; color: white; font-weight: bold;'>L<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: crimson; color: white; font-weight: bold;'>L<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: crimson; color: white; font-weight: bold;'>L<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span><br>Elo: <span class = 'favorite-elo'>2559<\/span>","<br>🇺🇸 <b>Josh Burkman<\/b> (27)<br>5-3 • <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: crimson; color: white; font-weight: bold;'>L<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: crimson; color: white; font-weight: bold;'>L<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span><br>Elo: 2659","<br>🇺🇸 <b>Josh Burkman<\/b> (27)<br>5-2 • <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: crimson; color: white; font-weight: bold;'>L<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: crimson; color: white; font-weight: bold;'>L<\/span><br>Elo: 2722","<br>🇺🇸 <b><a href=/fighters/forrestpetz.html>Forrest Petz<\/a><\/b> (32)<br>2-2 • <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: crimson; color: white; font-weight: bold;'>L<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: crimson; color: white; font-weight: bold;'>L<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span><br>Elo: 2599","<br>🇺🇸 <b>Josh Burkman<\/b> (26)<br>4-1 • <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: crimson; color: white; font-weight: bold;'>L<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span><br>Elo: 2815","<br>🇺🇸 <b><a href=/fighters/chadreiner.html>Chad Reiner<\/a><\/b> (25)<br>🔰 Debut<br>Elo: 2598","<br>🇺🇸 <b><a href=/fighters/joshneer.html>Josh Neer<\/a><\/b> (23)<br>2-1 • <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: crimson; color: white; font-weight: bold;'>L<\/span><br>Elo: <span class = 'favorite-elo'>2713<\/span>","<br>🇺🇸 <b>Josh Burkman<\/b> (25)<br>2-0 • <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span><br>Elo: <span class = 'favorite-elo'>2793<\/span>","<br>🇺🇸 <b><a href=/fighters/drewfickett.html>Drew Fickett<\/a><\/b> (26)<br>2-1 • <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: crimson; color: white; font-weight: bold;'>L<\/span><br>Elo: <span class = 'favorite-elo'>2741<\/span>","<br>🇺🇸 <b><a href=/fighters/sammorgan.html>Sam Morgan<\/a><\/b> (24)<br>🔰 Debut<br>Elo: 2430"],"City":["<br>Frank Erwin Center<br>Austin, Texas<br>United States 🇺🇸","<br>Honda Center<br>Anaheim, California<br>United States 🇺🇸","<br>Centro de Formação Olímpica do Nordeste<br>Fortaleza<br>Brazil 🇧🇷","<br>Moda Center<br>Portland, Oregon<br>United States 🇺🇸","<br>Mandalay Bay Events Center<br>Las Vegas, Nevada<br>United States 🇺🇸","<br>MGM Grand Garden Arena<br>Las Vegas, Nevada<br>United States 🇺🇸","<br>SaskTel Centre<br>Saskatoon<br>Canada 🇨🇦","<br>MGM Grand Garden Arena<br>Las Vegas, Nevada<br>United States 🇺🇸","<br>MGM Grand Garden Arena<br>Las Vegas, Nevada<br>United States 🇺🇸","<br>Allstate Arena<br>Rosemont, Illinois<br>United States 🇺🇸","<br>Palms Casino Resort<br>Las Vegas, Nevada<br>United States 🇺🇸","<br>Palms Casino Resort<br>Las Vegas, Nevada<br>United States 🇺🇸","<br>U.S. Bank Arena<br>Cincinnati, Ohio<br>United States 🇺🇸","<br>MGM Grand Garden Arena<br>Las Vegas, Nevada<br>United States 🇺🇸","<br>Seminole Hard Rock Hotel and Casino<br>Hollywood, Florida<br>United States 🇺🇸","<br>Mandalay Bay Events Center<br>Las Vegas, Nevada<br>United States 🇺🇸","<br>Hard Rock Hotel and Casino<br>Las Vegas, Nevada<br>United States 🇺🇸","<br>Hard Rock Hotel and Casino<br>Las Vegas, Nevada<br>United States 🇺🇸","<br>Hard Rock Hotel and Casino<br>Las Vegas, Nevada<br>United States 🇺🇸"]},"columns":[{"id":"event_date","name":"","type":"character","html":true,"width":200,"className":"side_info"},{"id":"fighter_name","name":"","type":"character","html":true,"width":240,"align":"right"},{"id":"result_description","name":"","type":"character","html":true,"width":50,"align":"center","className":"result_description"},{"id":"opponent_fighter_name","name":"","type":"character","html":true,"width":240,"align":"left"},{"id":"City","name":"","type":"character","cell":["<div style=\"white-space: nowrap; overflow: visible;\"><br>Frank Erwin Center<br>Austin, Texas<br>United States 🇺🇸<\/div>","<div style=\"white-space: nowrap; overflow: visible;\"><br>Honda Center<br>Anaheim, California<br>United States 🇺🇸<\/div>","<div style=\"white-space: nowrap; overflow: visible;\"><br>Centro de Formação Olímpica do Nordeste<br>Fortaleza<br>Brazil 🇧🇷<\/div>","<div style=\"white-space: nowrap; overflow: visible;\"><br>Moda Center<br>Portland, Oregon<br>United States 🇺🇸<\/div>","<div style=\"white-space: nowrap; overflow: visible;\"><br>Mandalay Bay Events Center<br>Las Vegas, Nevada<br>United States 🇺🇸<\/div>","<div style=\"white-space: nowrap; overflow: visible;\"><br>MGM Grand Garden Arena<br>Las Vegas, Nevada<br>United States 🇺🇸<\/div>","<div style=\"white-space: nowrap; overflow: visible;\"><br>SaskTel Centre<br>Saskatoon<br>Canada 🇨🇦<\/div>","<div style=\"white-space: nowrap; overflow: visible;\"><br>MGM Grand Garden Arena<br>Las Vegas, Nevada<br>United States 🇺🇸<\/div>","<div style=\"white-space: nowrap; overflow: visible;\"><br>MGM Grand Garden Arena<br>Las Vegas, Nevada<br>United States 🇺🇸<\/div>","<div style=\"white-space: nowrap; overflow: visible;\"><br>Allstate Arena<br>Rosemont, Illinois<br>United States 🇺🇸<\/div>","<div style=\"white-space: nowrap; overflow: visible;\"><br>Palms Casino Resort<br>Las Vegas, Nevada<br>United States 🇺🇸<\/div>","<div style=\"white-space: nowrap; overflow: visible;\"><br>Palms Casino Resort<br>Las Vegas, Nevada<br>United States 🇺🇸<\/div>","<div style=\"white-space: nowrap; overflow: visible;\"><br>U.S. Bank Arena<br>Cincinnati, Ohio<br>United States 🇺🇸<\/div>","<div style=\"white-space: nowrap; overflow: visible;\"><br>MGM Grand Garden Arena<br>Las Vegas, Nevada<br>United States 🇺🇸<\/div>","<div style=\"white-space: nowrap; overflow: visible;\"><br>Seminole Hard Rock Hotel and Casino<br>Hollywood, Florida<br>United States 🇺🇸<\/div>","<div style=\"white-space: nowrap; overflow: visible;\"><br>Mandalay Bay Events Center<br>Las Vegas, Nevada<br>United States 🇺🇸<\/div>","<div style=\"white-space: nowrap; overflow: visible;\"><br>Hard Rock Hotel and Casino<br>Las Vegas, Nevada<br>United States 🇺🇸<\/div>","<div style=\"white-space: nowrap; overflow: visible;\"><br>Hard Rock Hotel and Casino<br>Las Vegas, Nevada<br>United States 🇺🇸<\/div>","<div style=\"white-space: nowrap; overflow: visible;\"><br>Hard Rock Hotel and Casino<br>Las Vegas, Nevada<br>United States 🇺🇸<\/div>"],"html":true,"width":200,"className":"side_info"}],"sortable":false,"pagination":false,"defaultPageSize":100,"showPageInfo":false,"nowrap":true,"className":"event_bouts","inline":true,"theme":{"headerStyle":{"borderBottom":"none"}},"dataKey":"a8da2a0f86476f89d1000dd14f051d48"},"children":[]},"class":"reactR_markup"},"evals":[],"jsHooks":[]}</script>
+
+<footer>
+  <div class="footer-container">
+    <p class="copyright-text">
+      Copyright © <span id="currentYear"></span> All Rights Reserved by 
+      <a href="#">roster.watch</a>
+    </p>
+<!--     <p class="browser-badge">
+      <a href="https://www.mozilla.org/en-US/firefox/">
+        <img src="C:/Users/mart/Dropbox/R/roster.watch/firefox.png" title="Best viewed with Firefox" alt="Best viewed with Firefox"><br>
+        <small class="copyright-text">Best viewed with Firefox</small>
+      </a>
+    </p> 
+ -->  </div>
+</footer>
+
+<style>
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+}
+
+.copyright-text {
+  margin: 0 auto;
+}
+
+.browser-badge {
+  margin-left: auto;
+}
+</style>
+
+<script>
+  document.getElementById('currentYear').textContent = new Date().getFullYear();
+</script>
+
+
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.odd').parent('tbody').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- tabsets -->
+
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open');
+  });
+});
+</script>
+
+<!-- code folding -->
+
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>

@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+
+<html lang="en" xml:lang="en">
+
+<head>
+
+<meta charset="utf-8" />
+<meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+
+
+
+
+<title>roster.watch</title>
+
+<script src="fighter_libs/header-attrs-2.29/header-attrs.js"></script>
+<script src="fighter_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="fighter_libs/bootstrap-3.3.5/css/bootstrap.min.css" rel="stylesheet" />
+<script src="fighter_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="fighter_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="fighter_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<style>h1 {font-size: 34px;}
+       h1.title {font-size: 38px;}
+       h2 {font-size: 30px;}
+       h3 {font-size: 24px;}
+       h4 {font-size: 18px;}
+       h5 {font-size: 16px;}
+       h6 {font-size: 12px;}
+       code {color: inherit; background-color: rgba(0, 0, 0, 0.04);}
+       pre:not([class]) { background-color: white }</style>
+<script src="fighter_libs/navigation-1.1/tabsets.js"></script>
+<link href="fighter_libs/highlightjs-9.12.0/default.css" rel="stylesheet" />
+<script src="fighter_libs/highlightjs-9.12.0/highlight.js"></script>
+<link href="fighter_libs/htmltools-fill-0.5.8.1/fill.css" rel="stylesheet" />
+<script src="fighter_libs/htmlwidgets-1.6.4/htmlwidgets.js"></script>
+<script src="fighter_libs/plotly-binding-4.10.4/plotly.js"></script>
+<script src="fighter_libs/typedarray-0.1/typedarray.min.js"></script>
+<link href="fighter_libs/crosstalk-1.2.1/css/crosstalk.min.css" rel="stylesheet" />
+<script src="fighter_libs/crosstalk-1.2.1/js/crosstalk.min.js"></script>
+<link href="fighter_libs/plotly-htmlwidgets-css-2.11.1/plotly-htmlwidgets.css" rel="stylesheet" />
+<script src="fighter_libs/plotly-main-2.11.1/plotly-latest.min.js"></script>
+<script src="fighter_libs/core-js-2.5.3/shim.min.js"></script>
+<script src="fighter_libs/react-18.2.0/react.min.js"></script>
+<script src="fighter_libs/react-18.2.0/react-dom.min.js"></script>
+<script src="fighter_libs/reactwidget-2.0.0/react-tools.js"></script>
+<link href="fighter_libs/reactable-0.4.4/reactable.css" rel="stylesheet" />
+<script src="fighter_libs/reactable-binding-0.4.4/reactable.js"></script>
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/site.webmanifest">
+<meta name="description" content="An up-to-date list of the full active UFC roster including biographical data, rankings, records, and more.">
+<!-- <meta property="og:title" content="roster.watch" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://www.roster.watch/" />
+<meta property="og:image" content="https://www.roster.watch/og_image.png" />
+<meta property="og:description" content="An up-to-date list of the full active UFC roster including biographical data, rankings, record, and more." />
+<script src="https://unpkg.com/twemoji@latest/dist/twemoji.min.js" crossorigin="anonymous"></script> 
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7299518767310567"
+     crossorigin="anonymous"></script> -->
+     <script data-goatcounter="https://rosterwatch.goatcounter.com/count"
+        async src="//gc.zgo.at/count.js"></script>
+        <script defer src="https://cloud.umami.is/script.js" data-website-id="f0f3ed7e-e89c-4a29-a745-475e0b10271a"></script>
+
+<style type="text/css">
+  code{white-space: pre-wrap;}
+  span.smallcaps{font-variant: small-caps;}
+  span.underline{text-decoration: underline;}
+  div.column{display: inline-block; vertical-align: top; width: 50%;}
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  ul.task-list{list-style: none;}
+    </style>
+
+<style type="text/css">code{white-space: pre;}</style>
+<script type="text/javascript">
+if (window.hljs) {
+  hljs.configure({languages: []});
+  hljs.initHighlightingOnLoad();
+  if (document.readyState && document.readyState === "complete") {
+    window.setTimeout(function() { hljs.initHighlighting(); }, 0);
+  }
+}
+</script>
+
+
+
+
+
+
+<link rel="stylesheet" href="../style.css" type="text/css" />
+
+
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+img {
+  max-width:100%;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+.html-widget {
+  margin-bottom: 20px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+summary {
+  display: list-item;
+}
+details > summary > p:only-child {
+  display: inline;
+}
+pre code {
+  padding: 0;
+}
+</style>
+
+
+<style type="text/css">
+.dropdown-submenu {
+  position: relative;
+}
+.dropdown-submenu>.dropdown-menu {
+  top: 0;
+  left: 100%;
+  margin-top: -6px;
+  margin-left: -1px;
+  border-radius: 0 6px 6px 6px;
+}
+.dropdown-submenu:hover>.dropdown-menu {
+  display: block;
+}
+.dropdown-submenu>a:after {
+  display: block;
+  content: " ";
+  float: right;
+  width: 0;
+  height: 0;
+  border-color: transparent;
+  border-style: solid;
+  border-width: 5px 0 5px 5px;
+  border-left-color: #cccccc;
+  margin-top: 5px;
+  margin-right: -10px;
+}
+.dropdown-submenu:hover>a:after {
+  border-left-color: #adb5bd;
+}
+.dropdown-submenu.pull-left {
+  float: none;
+}
+.dropdown-submenu.pull-left>.dropdown-menu {
+  left: -100%;
+  margin-left: 10px;
+  border-radius: 6px 0 6px 6px;
+}
+</style>
+
+<script type="text/javascript">
+// manage active state of menu based on current page
+$(document).ready(function () {
+  // active menu anchor
+  href = window.location.pathname
+  href = href.substr(href.lastIndexOf('/') + 1)
+  if (href === "")
+    href = "index.html";
+  var menuAnchor = $('a[href="' + href + '"]');
+
+  // mark the anchor link active (and if it's in a dropdown, also mark that active)
+  var dropdown = menuAnchor.closest('li.dropdown');
+  if (window.bootstrap) { // Bootstrap 4+
+    menuAnchor.addClass('active');
+    dropdown.find('> .dropdown-toggle').addClass('active');
+  } else { // Bootstrap 3
+    menuAnchor.parent().addClass('active');
+    dropdown.addClass('active');
+  }
+
+  // Navbar adjustments
+  var navHeight = $(".navbar").first().height() + 15;
+  var style = document.createElement('style');
+  var pt = "padding-top: " + navHeight + "px; ";
+  var mt = "margin-top: -" + navHeight + "px; ";
+  var css = "";
+  // offset scroll position for anchor links (for fixed navbar)
+  for (var i = 1; i <= 6; i++) {
+    css += ".section h" + i + "{ " + pt + mt + "}\n";
+  }
+  style.innerHTML = "body {" + pt + "padding-bottom: 40px; }\n" + css;
+  document.head.appendChild(style);
+});
+</script>
+
+<!-- tabsets -->
+
+<style type="text/css">
+.tabset-dropdown > .nav-tabs {
+  display: inline-table;
+  max-height: 500px;
+  min-height: 44px;
+  overflow-y: auto;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs > li.active:before, .tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "\e259";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
+  content: "\e258";
+  font-family: 'Glyphicons Halflings';
+  border: none;
+}
+
+.tabset-dropdown > .nav-tabs > li.active {
+  display: block;
+}
+
+.tabset-dropdown > .nav-tabs > li > a,
+.tabset-dropdown > .nav-tabs > li > a:focus,
+.tabset-dropdown > .nav-tabs > li > a:hover {
+  border: none;
+  display: inline-block;
+  border-radius: 4px;
+  background-color: transparent;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li {
+  display: block;
+  float: none;
+}
+
+.tabset-dropdown > .nav-tabs > li {
+  display: none;
+}
+</style>
+
+<!-- code folding -->
+
+
+
+
+</head>
+
+<body>
+
+
+<div class="container-fluid main-container">
+
+
+
+<header>
+    <a class="logo" href="/"><img src="/images/logo.svg" alt="logo"></a>
+    <nav>
+        <ul class="nav__links">
+            <li><a href="/">Current Roster</a></li>
+            <li><a href="/former.html">Former Roster</a></li>
+            <li><a href="/events">Events</a></li>
+            <li><a href="/log.html">Log</a></li>
+            <li><a href="/glossary.html">Glossary</a></li>
+            <li><a href="mailto:rostertracker@gmail.com">Contact</a></li>
+            <li>
+                <a href="https://twitter.com/RosterTracker" class="twitter-follow-button" data-dnt="true" data-show-count="false">Follow on X</a>
+            </li>
+            <li><a href="https://www.patreon.com/bePatron?u=88266864">Support on Patreon</a></li>
+        </ul>
+    </nav>
+    <p class="menu cta">Menu</p>
+</header>
+
+<div class="overlay">
+    <a class="close">&times;</a>
+    <div class="overlay__content">
+        <a href="/">Current Roster</a>
+        <a href="/former.html">Former Roster</a>
+        <a href="/events">Events</a>
+        <a href="/log.html">Log</a>
+        <a href="/glossary.html">Glossary</a>
+        <a href="mailto:rostertracker@gmail.com">Contact</a>
+                <a href="https://twitter.com/RosterTracker" class="twitter-follow-button" data-dnt="true" data-show-count="false">Follow on X</a>
+        <a href="https://www.patreon.com/bePatron?u=88266864">Support on Patreon</a>
+
+    </div>
+</div>
+<script type="text/javascript" src="/mobile.js"></script>
+
+<div id="header">
+
+
+
+<h1 class="title toc-ignore">roster.watch</h1>
+
+</div>
+
+
+<article class="event-info" style="display: flex; flex-direction: column; align-items: center; justify-content: center; width: 100%; height: auto;"><div class="fighter-info" style="text-align: center; margin-bottom: 20px;"><h1 style='font-weight: bold; font-size: 1.1em; margin: 0;'>Sarah Moras 🇨🇦</h1><time datetime='1988-04-30'><p><span>1988-04-30</span><script>document.currentScript.parentElement.innerHTML = (function(){  const dob = new Date('1988-04-30');  const today = new Date();  let years = today.getFullYear() - dob.getFullYear();  const monthDiff = today.getMonth() - dob.getMonth();  if (monthDiff < 0 || (monthDiff === 0 && today.getDate() < dob.getDate())) {    years--;  }  const yearAnniversary = new Date(dob);  yearAnniversary.setFullYear(dob.getFullYear() + years);  const dayDiff = Math.floor((today - yearAnniversary) / (1000 * 60 * 60 * 24));  const isBirthday = today.getMonth() === dob.getMonth() && today.getDate() === dob.getDate();  let ageString = `${years} year${years !== 1 ? 's' : ''}`;  if (dayDiff > 0) {    ageString += ` ${dayDiff} day${dayDiff !== 1 ? 's' : ''}`;  }  return `${ageString}${isBirthday ? ' 🎂' : ''} <br><span class='event-date'> (${dob.toISOString().split('T')[0]}) </span>`;}());</script></p></time></div><div style="display: flex; justify-content: center; align-items: flex-start; gap: 40px; max-width: 600px; width: 100%;"><div class="event-details" style="width: 50%;"><div class='event-stats'><p><strong>Record:</strong> 3-6<br></p><p><strong>By Method:</strong></p><ul><li> KO/TKO: 1-1</li><li> Submission: 1-0</li><li> Decision: 1-5</li></ul><p><strong>By Elo:</strong></p><ul><li>As Favorite: 0-3</li><li>As Underdog: 3-3</li></ul><p><strong>By Weight Class:</strong></p><ul><li>Women's Bantamweight: 1-6</li></ul><p><strong>By Round:</strong></p><ul><li>Round 1: 1-0</li><li>Round 2: 0-1</li><li>Round 3: 2-5</li></ul></div></div><div class="rankings" style="width: 50%;"><p><strong>Status</strong> Former UFC Fighter</p><p><strong>Last 5:</strong> <span style='display: inline-block;width: 1.25em;
+height: 1.25em;
+line-height: 1.25em; font-size: 0.8em;
+ text-align: center; border-radius: 50%; background-color: crimson; color: white; font-weight: bold;'>L</span> <span style='display: inline-block;width: 1.25em;
+height: 1.25em;
+line-height: 1.25em; font-size: 0.8em;
+ text-align: center; border-radius: 50%; background-color: crimson; color: white; font-weight: bold;'>L</span> <span style='display: inline-block;width: 1.25em;
+height: 1.25em;
+line-height: 1.25em; font-size: 0.8em;
+ text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W</span> <span style='display: inline-block;width: 1.25em;
+height: 1.25em;
+line-height: 1.25em; font-size: 0.8em;
+ text-align: center; border-radius: 50%; background-color: crimson; color: white; font-weight: bold;'>L</span> <span style='display: inline-block;width: 1.25em;
+height: 1.25em;
+line-height: 1.25em; font-size: 0.8em;
+ text-align: center; border-radius: 50%; background-color: crimson; color: white; font-weight: bold;'>L</span></p><p><strong>Elo:</strong> 2227</p><p><strong>Peak Elo:</strong> 2487<span class='event-date'> (2017-09-09)</span></p><p><strong>Bonuses:</strong> 0 (0 FOTN, 0 Performance)</p><p><strong>Avg Fight Time:</strong> 12m 31s</p><p><strong>Total Fight Time:</strong> 1h 52m 39s</p><br><strong>Peak Rankings: </strong><br>#13 Women's Bantamweight</div></div></article>
+<h2 style='font-size: 1em; margin: 0; text-align: center; font-weight: bold;'>Elo Rating & UFC Rankings</h2>
+<div style="display: flex; justify-content: center; width: 100%; margin-top: 20px; margin-bottom: 20px;">
+<div id="fighter-performance-chart" style="width: 100%; max-width: 600px; height: 750px;">
+<div class="plotly html-widget html-fill-item" id="htmlwidget-68c014c790cb5c9a0ce5" style="width:100%;height:400px;"></div>
+<script type="application/json" data-for="htmlwidget-68c014c790cb5c9a0ce5">{"x":{"data":[{"x":["2014-07-06","2015-07-15","2017-09-09","2018-02-18","2018-10-27","2019-05-04","2019-09-07","2020-05-13","2021-01-16"],"y":[2486,2378,2487,2394,2261,2240,2413,2310,2227],"mode":"lines+markers","line":{"color":"#d12d36","width":3,"shape":"hv"},"marker":{"color":"#d12d36","size":10,"line":{"color":"rgba(31,119,180,1)"}},"hoverinfo":["text","text","text","text","text","text","text","text","text"],"text":["2014-07-06 <br> 2486 Elo <br> Alexis Dufresne <br> Win","2015-07-15 <br> 2378 Elo <br> Jessica Andrade <br> Loss","2017-09-09 <br> 2487 Elo <br> Ashlee Evans-Smith <br> Win","2018-02-18 <br> 2394 Elo <br> Lucie Pudilova <br> Loss","2018-10-27 <br> 2261 Elo <br> Talita Bernardo <br> Loss","2019-05-04 <br> 2240 Elo <br> Macy Chiasson <br> Loss","2019-09-07 <br> 2413 Elo <br> Liana Jojua <br> Win","2020-05-13 <br> 2310 Elo <br> Sijara Eubanks <br> Loss","2021-01-16 <br> 2227 Elo <br> Vanessa Melo <br> Loss"],"name":"Elo","type":"scatter","error_y":{"color":"rgba(31,119,180,1)"},"error_x":{"color":"rgba(31,119,180,1)"},"xaxis":"x","yaxis":"y","frame":null},{"x":["2017-12-13","2017-12-18","2018-01-01","2018-01-17","2018-01-24","2018-01-29","2018-02-07","2018-02-12","2018-02-21","2018-02-26","2018-03-05","2018-03-21","2018-04-11","2018-04-18","2018-04-23","2018-05-16","2018-05-23","2018-05-30","2018-06-06","2018-06-13","2018-06-26","2018-07-11","2018-07-16","2018-07-25","2018-08-01","2018-08-06","2018-08-29","2018-09-12","2018-09-19","2018-09-24"],"y":[14,14,15,14,14,14,13,13,15,15,15,14,14,14,13,13,13,14,14,14,14,14,14,14,14,14,14,14,14,14],"mode":"markers","marker":{"color":"rgba(252,141,98,1)","size":10,"opacity":0.80000000000000004,"line":{"color":"rgba(252,141,98,1)"}},"hoverinfo":["text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text"],"text":["2017-12-13 <br> 14 <br> Women's Bantamweight","2017-12-18 <br> 14 <br> Women's Bantamweight","2018-01-01 <br> 15 <br> Women's Bantamweight","2018-01-17 <br> 14 <br> Women's Bantamweight","2018-01-24 <br> 14 <br> Women's Bantamweight","2018-01-29 <br> 14 <br> Women's Bantamweight","2018-02-07 <br> 13 <br> Women's Bantamweight","2018-02-12 <br> 13 <br> Women's Bantamweight","2018-02-21 <br> 15 <br> Women's Bantamweight","2018-02-26 <br> 15 <br> Women's Bantamweight","2018-03-05 <br> 15 <br> Women's Bantamweight","2018-03-21 <br> 14 <br> Women's Bantamweight","2018-04-11 <br> 14 <br> Women's Bantamweight","2018-04-18 <br> 14 <br> Women's Bantamweight","2018-04-23 <br> 13 <br> Women's Bantamweight","2018-05-16 <br> 13 <br> Women's Bantamweight","2018-05-23 <br> 13 <br> Women's Bantamweight","2018-05-30 <br> 14 <br> Women's Bantamweight","2018-06-06 <br> 14 <br> Women's Bantamweight","2018-06-13 <br> 14 <br> Women's Bantamweight","2018-06-26 <br> 14 <br> Women's Bantamweight","2018-07-11 <br> 14 <br> Women's Bantamweight","2018-07-16 <br> 14 <br> Women's Bantamweight","2018-07-25 <br> 14 <br> Women's Bantamweight","2018-08-01 <br> 14 <br> Women's Bantamweight","2018-08-06 <br> 14 <br> Women's Bantamweight","2018-08-29 <br> 14 <br> Women's Bantamweight","2018-09-12 <br> 14 <br> Women's Bantamweight","2018-09-19 <br> 14 <br> Women's Bantamweight","2018-09-24 <br> 14 <br> Women's Bantamweight"],"type":"scatter","name":"Women's Bantamweight","textfont":{"color":"rgba(252,141,98,1)"},"error_y":{"color":"rgba(252,141,98,1)"},"error_x":{"color":"rgba(252,141,98,1)"},"line":{"color":"rgba(252,141,98,1)"},"xaxis":"x","yaxis":"y2","frame":null}],"layout":{"xaxis":{"domain":[0,1],"automargin":true,"anchor":"y2","gridcolor":"#e1e1e1","title":""},"yaxis2":{"domain":[0,0.38],"automargin":true,"range":[15.5,-0.5],"tickvals":[15,14,13,12,11,10,9,8,7,6,5,4,3,2,1,0],"ticktext":["15","14","13","12","11","10","9","8","7","6","5","4","3","2","1","C"],"gridcolor":"#e1e1e1","zeroline":false,"anchor":"x"},"yaxis":{"domain":[0.42000000000000004,1],"automargin":true,"gridcolor":"#e1e1e1","anchor":"x"},"annotations":[],"shapes":[],"images":[],"margin":{"b":40,"l":60,"t":0,"r":10},"hovermode":"closest","showlegend":true,"height":750,"legend":{"orientation":"h","xanchor":"center","x":0.5,"y":-100}},"attrs":{"32b8220d3c95":{"x":{},"y":{},"mode":"lines+markers","line":{"color":"#d12d36","width":3,"shape":"hv"},"marker":{"size":10,"color":"#d12d36"},"hoverinfo":"text","text":{},"name":"Elo","alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"type":"scatter"},"32b8d587329":{"x":{},"y":{},"mode":"markers","marker":{"size":10,"opacity":0.80000000000000004},"hoverinfo":"text","text":{},"color":{},"alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"type":"scatter"}},"source":"A","config":{"modeBarButtonsToAdd":["hoverclosest","hovercompare"],"showSendToCloud":false,"displayModeBar":false},"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.20000000000000001,"selected":{"opacity":1},"debounce":0},"subplot":true,"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot","plotly_sunburstclick"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script>
+</div>
+</div>
+<h2 style='font-size: 1em; margin: 0; text-align: center; font-weight: bold;'>Bout History</h2>
+<div class="reactable html-widget html-fill-item" id="htmlwidget-1ff8b50d7d302ee04928" style="width:auto;height:auto;"></div>
+<script type="application/json" data-for="htmlwidget-1ff8b50d7d302ee04928">{"x":{"tag":{"name":"Reactable","attribs":{"data":{"event_date":["<br><span class = 'event-date'>2021-01-16<\/span><br><a href='/events/20210116.html'>UFC on ABC: Holloway vs. Kattar<\/a>","<br><span class = 'event-date'>2020-05-13<\/span><br><a href='/events/20200513.html'>UFC Fight Night: Smith vs. Teixeira<\/a>","<br><span class = 'event-date'>2019-09-07<\/span><br><a href='/events/20190907.html'>UFC 242: Khabib  vs. Poirier<\/a>","<br><span class = 'event-date'>2019-05-04<\/span><br><a href='/events/20190504.html'>UFC Fight Night: Iaquinta vs. Cowboy<\/a>","<br><span class = 'event-date'>2018-10-27<\/span><br><a href='/events/20181027.html'>UFC Fight Night: Volkan vs. Smith<\/a>","<br><span class = 'event-date'>2018-02-18<\/span><br><a href='/events/20180218.html'>UFC Fight Night: Cowboy vs. Medeiros<\/a>","<br><span class = 'event-date'>2017-09-09<\/span><br><a href='/events/20170909.html'>UFC 215: Nunes vs. Shevchenko 2<\/a>","<br><span class = 'event-date'>2015-07-15<\/span><br><a href='/events/20150715.html'>UFC Fight Night:  Mir vs. Duffee<\/a>","<br><span class = 'event-date'>2014-07-06<\/span><br><a href='/events/20140706.html'>The Ultimate Fighter: Team Edgar vs. Team Penn<\/a>"],"fighter_name":["<br> <b><a href=/fighters/vanessamelo.html>Vanessa Melo<\/a><\/b> (32) 🇧🇷<br><span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: crimson; color: white; font-weight: bold;'>L<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: crimson; color: white; font-weight: bold;'>L<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: crimson; color: white; font-weight: bold;'>L<\/span> • 0-3<br>Elo: <span class = 'favorite-elo'>2370<\/span>","<br> <b><a href=/fighters/sijaraeubanks.html>Sijara Eubanks<\/a><\/b> (35) 🇺🇸<br><span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: crimson; color: white; font-weight: bold;'>L<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: crimson; color: white; font-weight: bold;'>L<\/span> • 2-2<br>Elo: 2403 • UFC rank: #15","<br> <b>Sarah Moras<\/b> (31) 🇨🇦<br><span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: crimson; color: white; font-weight: bold;'>L<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: crimson; color: white; font-weight: bold;'>L<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: crimson; color: white; font-weight: bold;'>L<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: crimson; color: white; font-weight: bold;'>L<\/span> • 2-4<br>Elo: 2240","<br> <b><span title='Performance of the Night' style='cursor: pointer;'>⭐ <\/span><a href=/fighters/macychiasson.html>Macy Chiasson<\/a><\/b> (27) 🇺🇸<br><span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> • 2-0<br>Elo: <span class = 'favorite-elo'>2633<\/span> • UFC rank: #14","<br> <b><a href=/fighters/talitabernardo.html>Talita Bernardo<\/a><\/b> (31) 🇧🇷<br><span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: crimson; color: white; font-weight: bold;'>L<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: crimson; color: white; font-weight: bold;'>L<\/span> • 0-2<br>Elo: 2277","<br> <b><a href=/fighters/luciepudilova.html>Lucie Pudilova<\/a><\/b> (23) 🇨🇿<br><span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: crimson; color: white; font-weight: bold;'>L<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> • 1-1<br>Elo: <span class = 'favorite-elo'>2510<\/span>","<br> <b>Sarah Moras<\/b> (29) 🇨🇦<br><span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: crimson; color: white; font-weight: bold;'>L<\/span> • 1-1<br>Elo: 2378","<br> <b><a href=/fighters/jessicaandrade.html>Jessica Andrade<\/a><\/b> (23) 🇧🇷<br><span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: crimson; color: white; font-weight: bold;'>L<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: crimson; color: white; font-weight: bold;'>L<\/span> • 3-2<br>Elo: 2457 • UFC rank: #13","<br> <b>Sarah Moras<\/b> (26) 🇨🇦<br>Debut 🔰<br>Elo: 2349"],"result_description":["<span style='font-size: 0.8em;'>WOMEN'S BANTAMWEIGHT<\/span><br>DEC<br>R3<br>05:00","<span style='font-size: 0.8em;'>WOMEN'S BANTAMWEIGHT<\/span><br>DEC<br>R3<br>05:00","<span style='font-size: 0.8em;'>CATCHWEIGHT (138 LB)<\/span><br>TKO<br>R3<br>02:26","<span style='font-size: 0.8em;'>WOMEN'S BANTAMWEIGHT<\/span><br>TKO<br>R2<br>02:22","<span style='font-size: 0.8em;'>WOMEN'S BANTAMWEIGHT<\/span><br>DEC<br>R3<br>05:00","<span style='font-size: 0.8em;'>WOMEN'S BANTAMWEIGHT<\/span><br>DEC<br>R3<br>05:00","<span style='font-size: 0.8em;'>WOMEN'S BANTAMWEIGHT<\/span><br>SUB<br>R1<br>02:51","<span style='font-size: 0.8em;'>WOMEN'S BANTAMWEIGHT<\/span><br>DEC<br>R3<br>05:00","<span style='font-size: 0.8em;'>CATCHWEIGHT (143 LB)<\/span><br>DEC<br>R3<br>05:00"],"opponent_fighter_name":["<br>🇨🇦 <b>Sarah Moras<\/b> (32)<br>3-5 • <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: crimson; color: white; font-weight: bold;'>L<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: crimson; color: white; font-weight: bold;'>L<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: crimson; color: white; font-weight: bold;'>L<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: crimson; color: white; font-weight: bold;'>L<\/span><br>Elo: 2310","<br>🇨🇦 <b>Sarah Moras<\/b> (32)<br>3-4 • <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: crimson; color: white; font-weight: bold;'>L<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: crimson; color: white; font-weight: bold;'>L<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: crimson; color: white; font-weight: bold;'>L<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span><br>Elo: <span class = 'favorite-elo'>2413<\/span>","<br>🇬🇪 <b><a href=/fighters/lianajojua.html>Liana Jojua<\/a><\/b> (24)<br>🔰 Debut<br>Elo: <span class = 'favorite-elo'>2559<\/span>","<br>🇨🇦 <b>Sarah Moras<\/b> (31)<br>2-3 • <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: crimson; color: white; font-weight: bold;'>L<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: crimson; color: white; font-weight: bold;'>L<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: crimson; color: white; font-weight: bold;'>L<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span><br>Elo: 2261","<br>🇨🇦 <b>Sarah Moras<\/b> (30)<br>2-2 • <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: crimson; color: white; font-weight: bold;'>L<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: crimson; color: white; font-weight: bold;'>L<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span><br>Elo: <span class = 'favorite-elo'>2394<\/span>","<br>🇨🇦 <b>Sarah Moras<\/b> (29)<br>2-1 • <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: crimson; color: white; font-weight: bold;'>L<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span><br>UFC rank: #13 • Elo: 2487","<br>🇺🇸 <b><a href=/fighters/ashleeevanssmith.html>Ashlee Evans-Smith<\/a><\/b> (30)<br>2-2 • <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: crimson; color: white; font-weight: bold;'>L<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: crimson; color: white; font-weight: bold;'>L<\/span><br>UFC rank: #15 • Elo: <span class = 'favorite-elo'>2410<\/span>","<br>🇨🇦 <b>Sarah Moras<\/b> (27)<br>1-0 • <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span><br>Elo: <span class = 'favorite-elo'>2486<\/span>","<br>🇺🇸 <b><a href=/fighters/alexisdufresne.html>Alexis Dufresne<\/a><\/b> (23)<br>🔰 Debut<br>Elo: <span class = 'favorite-elo'>2486<\/span>"],"City":["<br>Etihad Arena<br>Abu Dhabi<br>United Arab Emirates 🇦🇪","<br>VyStar Veterans Memorial Arena<br>Jacksonville, Florida<br>United States 🇺🇸","<br>The Arena, Yas Island<br>Abu Dhabi<br>United Arab Emirates 🇦🇪","<br>Canadian Tire Centre<br>Ottawa<br>Canada 🇨🇦","<br>Avenir Centre<br>Moncton<br>Canada 🇨🇦","<br>Frank Erwin Center<br>Austin, Texas<br>United States 🇺🇸","<br>Rogers Place<br>Edmonton<br>Canada 🇨🇦","<br>Valley View Casino Center<br>San Diego, California<br>United States 🇺🇸","<br>Mandalay Bay Events Center<br>Las Vegas, Nevada<br>United States 🇺🇸"]},"columns":[{"id":"event_date","name":"","type":"character","html":true,"width":200,"className":"side_info"},{"id":"fighter_name","name":"","type":"character","html":true,"width":240,"align":"right"},{"id":"result_description","name":"","type":"character","html":true,"width":50,"align":"center","className":"result_description"},{"id":"opponent_fighter_name","name":"","type":"character","html":true,"width":240,"align":"left"},{"id":"City","name":"","type":"character","cell":["<div style=\"white-space: nowrap; overflow: visible;\"><br>Etihad Arena<br>Abu Dhabi<br>United Arab Emirates 🇦🇪<\/div>","<div style=\"white-space: nowrap; overflow: visible;\"><br>VyStar Veterans Memorial Arena<br>Jacksonville, Florida<br>United States 🇺🇸<\/div>","<div style=\"white-space: nowrap; overflow: visible;\"><br>The Arena, Yas Island<br>Abu Dhabi<br>United Arab Emirates 🇦🇪<\/div>","<div style=\"white-space: nowrap; overflow: visible;\"><br>Canadian Tire Centre<br>Ottawa<br>Canada 🇨🇦<\/div>","<div style=\"white-space: nowrap; overflow: visible;\"><br>Avenir Centre<br>Moncton<br>Canada 🇨🇦<\/div>","<div style=\"white-space: nowrap; overflow: visible;\"><br>Frank Erwin Center<br>Austin, Texas<br>United States 🇺🇸<\/div>","<div style=\"white-space: nowrap; overflow: visible;\"><br>Rogers Place<br>Edmonton<br>Canada 🇨🇦<\/div>","<div style=\"white-space: nowrap; overflow: visible;\"><br>Valley View Casino Center<br>San Diego, California<br>United States 🇺🇸<\/div>","<div style=\"white-space: nowrap; overflow: visible;\"><br>Mandalay Bay Events Center<br>Las Vegas, Nevada<br>United States 🇺🇸<\/div>"],"html":true,"width":200,"className":"side_info"}],"sortable":false,"pagination":false,"defaultPageSize":100,"showPageInfo":false,"nowrap":true,"className":"event_bouts","inline":true,"theme":{"headerStyle":{"borderBottom":"none"}},"dataKey":"ee4b35b0c1b7f43a1a887d10de4cdb8a"},"children":[]},"class":"reactR_markup"},"evals":[],"jsHooks":[]}</script>
+
+<footer>
+  <div class="footer-container">
+    <p class="copyright-text">
+      Copyright © <span id="currentYear"></span> All Rights Reserved by 
+      <a href="#">roster.watch</a>
+    </p>
+<!--     <p class="browser-badge">
+      <a href="https://www.mozilla.org/en-US/firefox/">
+        <img src="C:/Users/mart/Dropbox/R/roster.watch/firefox.png" title="Best viewed with Firefox" alt="Best viewed with Firefox"><br>
+        <small class="copyright-text">Best viewed with Firefox</small>
+      </a>
+    </p> 
+ -->  </div>
+</footer>
+
+<style>
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+}
+
+.copyright-text {
+  margin: 0 auto;
+}
+
+.browser-badge {
+  margin-left: auto;
+}
+</style>
+
+<script>
+  document.getElementById('currentYear').textContent = new Date().getFullYear();
+</script>
+
+
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.odd').parent('tbody').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- tabsets -->
+
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open');
+  });
+});
+</script>
+
+<!-- code folding -->
+
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>

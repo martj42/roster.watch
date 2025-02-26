@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+
+<html lang="en" xml:lang="en">
+
+<head>
+
+<meta charset="utf-8" />
+<meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+
+
+
+
+<title>roster.watch</title>
+
+<script src="fighter_libs/header-attrs-2.29/header-attrs.js"></script>
+<script src="fighter_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="fighter_libs/bootstrap-3.3.5/css/bootstrap.min.css" rel="stylesheet" />
+<script src="fighter_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="fighter_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="fighter_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<style>h1 {font-size: 34px;}
+       h1.title {font-size: 38px;}
+       h2 {font-size: 30px;}
+       h3 {font-size: 24px;}
+       h4 {font-size: 18px;}
+       h5 {font-size: 16px;}
+       h6 {font-size: 12px;}
+       code {color: inherit; background-color: rgba(0, 0, 0, 0.04);}
+       pre:not([class]) { background-color: white }</style>
+<script src="fighter_libs/navigation-1.1/tabsets.js"></script>
+<link href="fighter_libs/highlightjs-9.12.0/default.css" rel="stylesheet" />
+<script src="fighter_libs/highlightjs-9.12.0/highlight.js"></script>
+<link href="fighter_libs/htmltools-fill-0.5.8.1/fill.css" rel="stylesheet" />
+<script src="fighter_libs/htmlwidgets-1.6.4/htmlwidgets.js"></script>
+<script src="fighter_libs/plotly-binding-4.10.4/plotly.js"></script>
+<script src="fighter_libs/typedarray-0.1/typedarray.min.js"></script>
+<link href="fighter_libs/crosstalk-1.2.1/css/crosstalk.min.css" rel="stylesheet" />
+<script src="fighter_libs/crosstalk-1.2.1/js/crosstalk.min.js"></script>
+<link href="fighter_libs/plotly-htmlwidgets-css-2.11.1/plotly-htmlwidgets.css" rel="stylesheet" />
+<script src="fighter_libs/plotly-main-2.11.1/plotly-latest.min.js"></script>
+<script src="fighter_libs/core-js-2.5.3/shim.min.js"></script>
+<script src="fighter_libs/react-18.2.0/react.min.js"></script>
+<script src="fighter_libs/react-18.2.0/react-dom.min.js"></script>
+<script src="fighter_libs/reactwidget-2.0.0/react-tools.js"></script>
+<link href="fighter_libs/reactable-0.4.4/reactable.css" rel="stylesheet" />
+<script src="fighter_libs/reactable-binding-0.4.4/reactable.js"></script>
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/site.webmanifest">
+<meta name="description" content="An up-to-date list of the full active UFC roster including biographical data, rankings, records, and more.">
+<!-- <meta property="og:title" content="roster.watch" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://www.roster.watch/" />
+<meta property="og:image" content="https://www.roster.watch/og_image.png" />
+<meta property="og:description" content="An up-to-date list of the full active UFC roster including biographical data, rankings, record, and more." />
+<script src="https://unpkg.com/twemoji@latest/dist/twemoji.min.js" crossorigin="anonymous"></script> 
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7299518767310567"
+     crossorigin="anonymous"></script> -->
+     <script data-goatcounter="https://rosterwatch.goatcounter.com/count"
+        async src="//gc.zgo.at/count.js"></script>
+        <script defer src="https://cloud.umami.is/script.js" data-website-id="f0f3ed7e-e89c-4a29-a745-475e0b10271a"></script>
+
+<style type="text/css">
+  code{white-space: pre-wrap;}
+  span.smallcaps{font-variant: small-caps;}
+  span.underline{text-decoration: underline;}
+  div.column{display: inline-block; vertical-align: top; width: 50%;}
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  ul.task-list{list-style: none;}
+    </style>
+
+<style type="text/css">code{white-space: pre;}</style>
+<script type="text/javascript">
+if (window.hljs) {
+  hljs.configure({languages: []});
+  hljs.initHighlightingOnLoad();
+  if (document.readyState && document.readyState === "complete") {
+    window.setTimeout(function() { hljs.initHighlighting(); }, 0);
+  }
+}
+</script>
+
+
+
+
+
+
+<link rel="stylesheet" href="../style.css" type="text/css" />
+
+
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+img {
+  max-width:100%;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+.html-widget {
+  margin-bottom: 20px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+summary {
+  display: list-item;
+}
+details > summary > p:only-child {
+  display: inline;
+}
+pre code {
+  padding: 0;
+}
+</style>
+
+
+<style type="text/css">
+.dropdown-submenu {
+  position: relative;
+}
+.dropdown-submenu>.dropdown-menu {
+  top: 0;
+  left: 100%;
+  margin-top: -6px;
+  margin-left: -1px;
+  border-radius: 0 6px 6px 6px;
+}
+.dropdown-submenu:hover>.dropdown-menu {
+  display: block;
+}
+.dropdown-submenu>a:after {
+  display: block;
+  content: " ";
+  float: right;
+  width: 0;
+  height: 0;
+  border-color: transparent;
+  border-style: solid;
+  border-width: 5px 0 5px 5px;
+  border-left-color: #cccccc;
+  margin-top: 5px;
+  margin-right: -10px;
+}
+.dropdown-submenu:hover>a:after {
+  border-left-color: #adb5bd;
+}
+.dropdown-submenu.pull-left {
+  float: none;
+}
+.dropdown-submenu.pull-left>.dropdown-menu {
+  left: -100%;
+  margin-left: 10px;
+  border-radius: 6px 0 6px 6px;
+}
+</style>
+
+<script type="text/javascript">
+// manage active state of menu based on current page
+$(document).ready(function () {
+  // active menu anchor
+  href = window.location.pathname
+  href = href.substr(href.lastIndexOf('/') + 1)
+  if (href === "")
+    href = "index.html";
+  var menuAnchor = $('a[href="' + href + '"]');
+
+  // mark the anchor link active (and if it's in a dropdown, also mark that active)
+  var dropdown = menuAnchor.closest('li.dropdown');
+  if (window.bootstrap) { // Bootstrap 4+
+    menuAnchor.addClass('active');
+    dropdown.find('> .dropdown-toggle').addClass('active');
+  } else { // Bootstrap 3
+    menuAnchor.parent().addClass('active');
+    dropdown.addClass('active');
+  }
+
+  // Navbar adjustments
+  var navHeight = $(".navbar").first().height() + 15;
+  var style = document.createElement('style');
+  var pt = "padding-top: " + navHeight + "px; ";
+  var mt = "margin-top: -" + navHeight + "px; ";
+  var css = "";
+  // offset scroll position for anchor links (for fixed navbar)
+  for (var i = 1; i <= 6; i++) {
+    css += ".section h" + i + "{ " + pt + mt + "}\n";
+  }
+  style.innerHTML = "body {" + pt + "padding-bottom: 40px; }\n" + css;
+  document.head.appendChild(style);
+});
+</script>
+
+<!-- tabsets -->
+
+<style type="text/css">
+.tabset-dropdown > .nav-tabs {
+  display: inline-table;
+  max-height: 500px;
+  min-height: 44px;
+  overflow-y: auto;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs > li.active:before, .tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "\e259";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
+  content: "\e258";
+  font-family: 'Glyphicons Halflings';
+  border: none;
+}
+
+.tabset-dropdown > .nav-tabs > li.active {
+  display: block;
+}
+
+.tabset-dropdown > .nav-tabs > li > a,
+.tabset-dropdown > .nav-tabs > li > a:focus,
+.tabset-dropdown > .nav-tabs > li > a:hover {
+  border: none;
+  display: inline-block;
+  border-radius: 4px;
+  background-color: transparent;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li {
+  display: block;
+  float: none;
+}
+
+.tabset-dropdown > .nav-tabs > li {
+  display: none;
+}
+</style>
+
+<!-- code folding -->
+
+
+
+
+</head>
+
+<body>
+
+
+<div class="container-fluid main-container">
+
+
+
+<header>
+    <a class="logo" href="/"><img src="/images/logo.svg" alt="logo"></a>
+    <nav>
+        <ul class="nav__links">
+            <li><a href="/">Current Roster</a></li>
+            <li><a href="/former.html">Former Roster</a></li>
+            <li><a href="/events">Events</a></li>
+            <li><a href="/log.html">Log</a></li>
+            <li><a href="/glossary.html">Glossary</a></li>
+            <li><a href="mailto:rostertracker@gmail.com">Contact</a></li>
+            <li>
+                <a href="https://twitter.com/RosterTracker" class="twitter-follow-button" data-dnt="true" data-show-count="false">Follow on X</a>
+            </li>
+            <li><a href="https://www.patreon.com/bePatron?u=88266864">Support on Patreon</a></li>
+        </ul>
+    </nav>
+    <p class="menu cta">Menu</p>
+</header>
+
+<div class="overlay">
+    <a class="close">&times;</a>
+    <div class="overlay__content">
+        <a href="/">Current Roster</a>
+        <a href="/former.html">Former Roster</a>
+        <a href="/events">Events</a>
+        <a href="/log.html">Log</a>
+        <a href="/glossary.html">Glossary</a>
+        <a href="mailto:rostertracker@gmail.com">Contact</a>
+                <a href="https://twitter.com/RosterTracker" class="twitter-follow-button" data-dnt="true" data-show-count="false">Follow on X</a>
+        <a href="https://www.patreon.com/bePatron?u=88266864">Support on Patreon</a>
+
+    </div>
+</div>
+<script type="text/javascript" src="/mobile.js"></script>
+
+<div id="header">
+
+
+
+<h1 class="title toc-ignore">roster.watch</h1>
+
+</div>
+
+
+<article class="event-info" style="display: flex; flex-direction: column; align-items: center; justify-content: center; width: 100%; height: auto;"><div class="fighter-info" style="text-align: center; margin-bottom: 20px;"><h1 style='font-weight: bold; font-size: 1.1em; margin: 0;'>Jeremy Horn 🇺🇸</h1><time datetime='1975-08-25'><p><span>1975-08-25</span><script>document.currentScript.parentElement.innerHTML = (function(){  const dob = new Date('1975-08-25');  const today = new Date();  let years = today.getFullYear() - dob.getFullYear();  const monthDiff = today.getMonth() - dob.getMonth();  if (monthDiff < 0 || (monthDiff === 0 && today.getDate() < dob.getDate())) {    years--;  }  const yearAnniversary = new Date(dob);  yearAnniversary.setFullYear(dob.getFullYear() + years);  const dayDiff = Math.floor((today - yearAnniversary) / (1000 * 60 * 60 * 24));  const isBirthday = today.getMonth() === dob.getMonth() && today.getDate() === dob.getDate();  let ageString = `${years} year${years !== 1 ? 's' : ''}`;  if (dayDiff > 0) {    ageString += ` ${dayDiff} day${dayDiff !== 1 ? 's' : ''}`;  }  return `${ageString}${isBirthday ? ' 🎂' : ''} <br><span class='event-date'> (${dob.toISOString().split('T')[0]}) </span>`;}());</script></p></time></div><div style="display: flex; justify-content: center; align-items: flex-start; gap: 40px; max-width: 600px; width: 100%;"><div class="event-details" style="width: 50%;"><div class='event-stats'><p><strong>Record:</strong> 6-7<br></p><p><strong>By Method:</strong></p><ul><li> KO/TKO: 2-1</li><li> Submission: 3-5</li><li> Decision: 1-1</li></ul><p><strong>By Elo:</strong></p><ul><li>As Favorite: 5-5</li><li>As Underdog: 1-2</li></ul><p><strong>By Weight Class:</strong></p><ul><li>Heavyweight: 1-0</li><li>Light Heavyweight: 0-3</li><li>Middleweight: 5-4</li></ul><p><strong>By Round:</strong></p><ul><li>Round 1: 3-2</li><li>Round 2: 1-1</li><li>Round 3: 1-1</li><li>Round 4: 0-1</li></ul></div></div><div class="rankings" style="width: 50%;"><p><strong>Status</strong> Former UFC Fighter</p><p><strong>Last 5:</strong> <span style='display: inline-block;width: 1.25em;
+height: 1.25em;
+line-height: 1.25em; font-size: 0.8em;
+ text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W</span> <span style='display: inline-block;width: 1.25em;
+height: 1.25em;
+line-height: 1.25em; font-size: 0.8em;
+ text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W</span> <span style='display: inline-block;width: 1.25em;
+height: 1.25em;
+line-height: 1.25em; font-size: 0.8em;
+ text-align: center; border-radius: 50%; background-color: crimson; color: white; font-weight: bold;'>L</span> <span style='display: inline-block;width: 1.25em;
+height: 1.25em;
+line-height: 1.25em; font-size: 0.8em;
+ text-align: center; border-radius: 50%; background-color: crimson; color: white; font-weight: bold;'>L</span> <span style='display: inline-block;width: 1.25em;
+height: 1.25em;
+line-height: 1.25em; font-size: 0.8em;
+ text-align: center; border-radius: 50%; background-color: crimson; color: white; font-weight: bold;'>L</span></p><p><strong>Elo:</strong> 2453</p><p><strong>Peak Elo:</strong> 2848<span class='event-date'> (2006-05-27)</span></p><p><strong>Bonuses:</strong> 0 (0 FOTN, 0 Performance)</p><p><strong>Avg Fight Time:</strong> 8m 31s</p><p><strong>Total Fight Time:</strong> 1h 50m 47s</p></div></div></article>
+<h2 style='font-size: 1em; margin: 0; text-align: center; font-weight: bold;'>Elo Rating</h2>
+<div style="display: flex; justify-content: center; width: 100%; margin-top: 20px; margin-bottom: 20px;">
+<div id="fighter-performance-chart" style="width: 100%; max-width: 600px; height: 450px;">
+<div class="plotly html-widget html-fill-item" id="htmlwidget-aa030423dd636e082911" style="width:100%;height:400px;"></div>
+<script type="application/json" data-for="htmlwidget-aa030423dd636e082911">{"x":{"visdat":{"32b855b45a61":["function () ","plotlyVisDat"]},"cur_data":"32b855b45a61","attrs":{"32b855b45a61":{"x":{},"y":{},"mode":"lines+markers","line":{"color":"#d12d36","width":3,"shape":"hv"},"marker":{"size":10,"color":"#d12d36"},"hoverinfo":"text","text":{},"name":"Elo","alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"type":"scatter"}},"layout":{"height":450,"margin":{"b":40,"l":60,"t":0,"r":10},"yaxis":{"domain":[0,1],"automargin":true,"gridcolor":"#e1e1e1","title":""},"showlegend":false,"legend":{"orientation":"h","xanchor":"center","x":0.5,"y":-100},"xaxis":{"domain":[0,1],"automargin":true,"title":"","gridcolor":"#e1e1e1"},"hovermode":"closest"},"source":"A","config":{"modeBarButtonsToAdd":["hoverclosest","hovercompare"],"showSendToCloud":false,"displayModeBar":false},"data":[{"x":["1998-05-15","1998-10-16","1999-03-05","1999-07-16","1999-09-24","2000-09-22","2001-02-23","2005-08-20","2005-11-19","2006-05-27","2008-02-02","2008-06-21","2009-01-17"],"y":[2381,2267,2583,2681,2704,2533,2284,2705,2792,2848,2648,2532,2400],"mode":"lines+markers","line":{"color":"#d12d36","width":3,"shape":"hv"},"marker":{"color":"#d12d36","size":10,"line":{"color":"rgba(31,119,180,1)"}},"hoverinfo":["text","text","text","text","text","text","text","text","text","text","text","text","text"],"text":["1998-05-15 <br> 2381 Elo <br> Frank Shamrock <br> Loss","1998-10-16 <br> 2267 Elo <br> Ebenezer Fontes Braga <br> Loss","1999-03-05 <br> 2583 Elo <br> Chuck Liddell <br> Win","1999-07-16 <br> 2681 Elo <br> Daiju Takase <br> Win","1999-09-24 <br> 2704 Elo <br> Jason Godsey <br> Win","2000-09-22 <br> 2533 Elo <br> Eugene Jackson <br> Win","2001-02-23 <br> 2284 Elo <br> Elvis Sinosic <br> Loss","2005-08-20 <br> 2705 Elo <br> Chuck Liddell <br> Loss","2005-11-19 <br> 2792 Elo <br> Trevor Prangley <br> Win","2006-05-27 <br> 2848 Elo <br> Chael Sonnen <br> Win","2008-02-02 <br> 2648 Elo <br> Nate Marquardt <br> Loss","2008-06-21 <br> 2532 Elo <br> Dean Lister <br> Loss","2009-01-17 <br> 2400 Elo <br> Rousimar Palhares <br> Loss"],"name":"Elo","type":"scatter","error_y":{"color":"rgba(31,119,180,1)"},"error_x":{"color":"rgba(31,119,180,1)"},"xaxis":"x","yaxis":"y","frame":null}],"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.20000000000000001,"selected":{"opacity":1},"debounce":0},"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot","plotly_sunburstclick"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script>
+</div>
+</div>
+<h2 style='font-size: 1em; margin: 0; text-align: center; font-weight: bold;'>Bout History</h2>
+<div class="reactable html-widget html-fill-item" id="htmlwidget-6a19ef4a4bc9e1c2845c" style="width:auto;height:auto;"></div>
+<script type="application/json" data-for="htmlwidget-6a19ef4a4bc9e1c2845c">{"x":{"tag":{"name":"Reactable","attribs":{"data":{"event_date":["<br><span class = 'event-date'>2009-01-17<\/span><br><a href='/events/20090117.html'>UFC 93: Franklin vs. Henderson<\/a>","<br><span class = 'event-date'>2008-06-21<\/span><br><a href='/events/20080621.html'>The Ultimate Fighter: Team Rampage vs. Team Forrest<\/a>","<br><span class = 'event-date'>2008-02-02<\/span><br><a href='/events/20080202.html'>UFC 81: Breaking Point<\/a>","<br><span class = 'event-date'>2006-05-27<\/span><br><a href='/events/20060527.html'>UFC 60: Hughes vs. Gracie<\/a>","<br><span class = 'event-date'>2005-11-19<\/span><br><a href='/events/20051119.html'>UFC 56: Full Force<\/a>","<br><span class = 'event-date'>2005-08-20<\/span><br><a href='/events/20050820.html'>UFC 54: Boiling Point<\/a>","<br><span class = 'event-date'>2001-02-23<\/span><br><a href='/events/20010223.html'>UFC 30: Battle on the Boardwalk<\/a>","<br><span class = 'event-date'>2000-09-22<\/span><br><a href='/events/20000922.html'>UFC 27: Ultimate Bad Boyz<\/a>","<br><span class = 'event-date'>1999-09-24<\/span><br><a href='/events/19990924.html'>UFC 22: Only One Can be Champion<\/a>","<br><span class = 'event-date'>1999-07-16<\/span><br><a href='/events/19990716.html'>UFC 21: Return of the Champions<\/a>","<br><span class = 'event-date'>1999-03-05<\/span><br><a href='/events/19990305.html'>UFC 19: Ultimate Young Guns<\/a>","<br><span class = 'event-date'>1998-10-16<\/span><br><a href='/events/19981016.html'>UFC Brazil: Ultimate Brazil<\/a>","<br><span class = 'event-date'>1998-05-15<\/span><br><a href='/events/19980515.html'>UFC 17: Redemption<\/a>"],"fighter_name":["<br> <b><a href=/fighters/rousimarpalhares.html>Rousimar Palhares<\/a><\/b> (28) 🇧🇷<br><span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: crimson; color: white; font-weight: bold;'>L<\/span> • 1-1<br>Elo: 2415","<br> <b><a href=/fighters/deanlister.html>Dean Lister<\/a><\/b> (32) 🇺🇸<br><span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: crimson; color: white; font-weight: bold;'>L<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> • 3-1<br>Elo: 2593","<br> <b><a href=/fighters/natemarquardt.html>Nate Marquardt<\/a><\/b> (28) 🇺🇸<br><span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: crimson; color: white; font-weight: bold;'>L<\/span> • 4-1<br>Elo: 2739","<br> <b>Jeremy Horn<\/b> (30) 🇺🇸<br><span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: crimson; color: white; font-weight: bold;'>L<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: crimson; color: white; font-weight: bold;'>L<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> • 5-4<br>Elo: <span class = 'favorite-elo'>2792<\/span>","<br> <b>Jeremy Horn<\/b> (30) 🇺🇸<br><span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: crimson; color: white; font-weight: bold;'>L<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: crimson; color: white; font-weight: bold;'>L<\/span> • 4-4<br>Elo: <span class = 'favorite-elo'>2705<\/span>","<br> <b><a href=/fighters/chuckliddell.html>Chuck Liddell<\/a><\/b> (35) 🇺🇸<br><span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: crimson; color: white; font-weight: bold;'>L<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> • 11-2<br>Elo: <span class = 'favorite-elo'>2962<\/span>","<br> <b><a href=/fighters/elvissinosic.html>Elvis Sinosic<\/a><\/b> (30) 🇦🇺<br>Debut 🔰<br>Elo: 2193","<br> <b>Jeremy Horn<\/b> (25) 🇺🇸<br><span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: crimson; color: white; font-weight: bold;'>L<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: crimson; color: white; font-weight: bold;'>L<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> • 3-2<br>Elo: <span class = 'favorite-elo'>2602<\/span>","<br> <b>Jeremy Horn<\/b> (24) 🇺🇸<br><span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: crimson; color: white; font-weight: bold;'>L<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: crimson; color: white; font-weight: bold;'>L<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> • 2-2<br>Elo: <span class = 'favorite-elo'>2681<\/span>","<br> <b>Jeremy Horn<\/b> (23) 🇺🇸<br><span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: crimson; color: white; font-weight: bold;'>L<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: crimson; color: white; font-weight: bold;'>L<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> • 1-2<br>Elo: <span class = 'favorite-elo'>2615<\/span>","<br> <b>Jeremy Horn<\/b> (23) 🇺🇸<br><span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: crimson; color: white; font-weight: bold;'>L<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: crimson; color: white; font-weight: bold;'>L<\/span> • 0-2<br>Elo: 2348","<br> <b><a href=/fighters/ebenezerfontesbraga.html>Ebenezer Fontes Braga<\/a><\/b> (29) 🇧🇷<br>Debut 🔰<br>Elo: 2168","<br> <b><a href=/fighters/frankshamrock.html>Frank Shamrock<\/a><\/b> (25) 🇺🇸<br><span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> • 2-0<br>Elo: <span class = 'favorite-elo'>2571<\/span>"],"result_description":["<span style='font-size: 0.8em;'>MIDDLEWEIGHT<\/span><br>DEC<br>R3<br>05:00","<span style='font-size: 0.8em;'>MIDDLEWEIGHT<\/span><br>SUB<br>R1<br>03:52","<span style='font-size: 0.8em;'>MIDDLEWEIGHT<\/span><br>SUB<br>R2<br>01:37","<span style='font-size: 0.8em;'>MIDDLEWEIGHT<\/span><br>SUB<br>R2<br>01:17","<span style='font-size: 0.8em;'>MIDDLEWEIGHT<\/span><br>DEC<br>R3<br>05:00","<span style='font-size: 0.8em;'>LIGHT HEAVYWEIGHT<\/span><br>TKO<br>R4<br>02:46","<span style='font-size: 0.8em;'>LIGHT HEAVYWEIGHT<\/span><br>SUB<br>R1<br>02:59","<span style='font-size: 0.8em;'>MIDDLEWEIGHT<\/span><br>SUB<br>R1<br>04:32","<span style='font-size: 0.8em;'>HEAVYWEIGHT<\/span><br>SUB<br>R1<br>02:08","<span style='font-size: 0.8em;'>MIDDLEWEIGHT<\/span><br>TKO<br>R1<br>04:41","<span style='font-size: 0.8em;'>MIDDLEWEIGHT<\/span><br>SUB<br><br>12:00","<span style='font-size: 0.8em;'>MIDDLEWEIGHT<\/span><br>SUB<br><br>03:27","<span style='font-size: 0.8em;'>LIGHT HEAVYWEIGHT<\/span><br>SUB<br><br>16:28"],"opponent_fighter_name":["<br>🇺🇸 <b>Jeremy Horn<\/b> (33)<br>6-6 • <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: crimson; color: white; font-weight: bold;'>L<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: crimson; color: white; font-weight: bold;'>L<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: crimson; color: white; font-weight: bold;'>L<\/span><br>Elo: <span class = 'favorite-elo'>2532<\/span>","<br>🇺🇸 <b>Jeremy Horn<\/b> (32)<br>6-5 • <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: crimson; color: white; font-weight: bold;'>L<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: crimson; color: white; font-weight: bold;'>L<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: crimson; color: white; font-weight: bold;'>L<\/span><br>Elo: <span class = 'favorite-elo'>2648<\/span>","<br>🇺🇸 <b>Jeremy Horn<\/b> (32)<br>6-4 • <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: crimson; color: white; font-weight: bold;'>L<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: crimson; color: white; font-weight: bold;'>L<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span><br>Elo: <span class = 'favorite-elo'>2752<\/span>","<br>🇺🇸 <b><a href=/fighters/chaelsonnen.html>Chael Sonnen<\/a><\/b> (29)<br>1-1 • <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: crimson; color: white; font-weight: bold;'>L<\/span><br>Elo: 2627","<br>🇿🇦 <b><a href=/fighters/trevorprangley.html>Trevor Prangley<\/a><\/b> (33)<br>2-0 • <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span><br>Elo: 2658","<br>🇺🇸 <b>Jeremy Horn<\/b> (29)<br>4-3 • <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: crimson; color: white; font-weight: bold;'>L<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span><br>Elo: 2751","<br>🇺🇸 <b>Jeremy Horn<\/b> (25)<br>4-2 • <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: crimson; color: white; font-weight: bold;'>L<\/span><br>Elo: <span class = 'favorite-elo'>2446<\/span>","<br>🇺🇸 <b><a href=/fighters/eugenejackson.html>Eugene Jackson<\/a><\/b> (30)<br>2-1 • <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: crimson; color: white; font-weight: bold;'>L<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span><br>Elo: 2305","<br>🇺🇸 <b><a href=/fighters/jasongodsey.html>Jason Godsey<\/a><\/b> (35)<br>0-1 • <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: crimson; color: white; font-weight: bold;'>L<\/span><br>Elo: 2206","<br>🇯🇵 <b><a href=/fighters/daijutakase.html>Daiju Takase<\/a><\/b> (21)<br>🔰 Debut<br>Elo: 2272","<br>🇺🇸 <b><a href=/fighters/chuckliddell.html>Chuck Liddell<\/a><\/b> (29)<br>1-0 • <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span><br>Elo: <span class = 'favorite-elo'>2483<\/span>","<br>🇺🇸 <b>Jeremy Horn<\/b> (23)<br>0-1 • <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: crimson; color: white; font-weight: bold;'>L<\/span><br>Elo: <span class = 'favorite-elo'>2381<\/span>","<br>🇺🇸 <b>Jeremy Horn<\/b> (22)<br>🔰 Debut<br>Elo: 2560"],"City":["<br>The O2<br>Dublin<br>Ireland 🇮🇪","<br>Palms Casino Resort<br>Las Vegas, Nevada<br>United States 🇺🇸","<br>Mandalay Bay Events Center<br>Las Vegas, Nevada<br>United States 🇺🇸","<br>Staples Center<br>Los Angeles, California<br>United States 🇺🇸","<br>MGM Grand Arena<br>Las Vegas, Nevada<br>United States 🇺🇸","<br>MGM Grand Arena<br>Las Vegas, Nevada<br>United States 🇺🇸","<br>Mark G. Etess Arena at Trump Taj Mahal<br>Atlantic City, New Jersey<br>United States 🇺🇸","<br>Lakefront Arena<br>New Orleans, Louisiana<br>United States 🇺🇸","<br>Lake Charles Civic Center<br>Lake Charles, Louisiana<br>United States 🇺🇸","<br>Five Seasons Events Center<br>Cedar Rapids, Iowa<br>United States 🇺🇸","<br>Casino Magic Bay St. Louis<br>Bay St. Louis, Mississippi<br>United States 🇺🇸","<br>Ginásio da Portuguesa<br>São Paulo<br>Brazil 🇧🇷","<br>Mobile Civic Center<br>Mobile, Alabama<br>United States 🇺🇸"]},"columns":[{"id":"event_date","name":"","type":"character","html":true,"width":200,"className":"side_info"},{"id":"fighter_name","name":"","type":"character","html":true,"width":240,"align":"right"},{"id":"result_description","name":"","type":"character","html":true,"width":50,"align":"center","className":"result_description"},{"id":"opponent_fighter_name","name":"","type":"character","html":true,"width":240,"align":"left"},{"id":"City","name":"","type":"character","cell":["<div style=\"white-space: nowrap; overflow: visible;\"><br>The O2<br>Dublin<br>Ireland 🇮🇪<\/div>","<div style=\"white-space: nowrap; overflow: visible;\"><br>Palms Casino Resort<br>Las Vegas, Nevada<br>United States 🇺🇸<\/div>","<div style=\"white-space: nowrap; overflow: visible;\"><br>Mandalay Bay Events Center<br>Las Vegas, Nevada<br>United States 🇺🇸<\/div>","<div style=\"white-space: nowrap; overflow: visible;\"><br>Staples Center<br>Los Angeles, California<br>United States 🇺🇸<\/div>","<div style=\"white-space: nowrap; overflow: visible;\"><br>MGM Grand Arena<br>Las Vegas, Nevada<br>United States 🇺🇸<\/div>","<div style=\"white-space: nowrap; overflow: visible;\"><br>MGM Grand Arena<br>Las Vegas, Nevada<br>United States 🇺🇸<\/div>","<div style=\"white-space: nowrap; overflow: visible;\"><br>Mark G. Etess Arena at Trump Taj Mahal<br>Atlantic City, New Jersey<br>United States 🇺🇸<\/div>","<div style=\"white-space: nowrap; overflow: visible;\"><br>Lakefront Arena<br>New Orleans, Louisiana<br>United States 🇺🇸<\/div>","<div style=\"white-space: nowrap; overflow: visible;\"><br>Lake Charles Civic Center<br>Lake Charles, Louisiana<br>United States 🇺🇸<\/div>","<div style=\"white-space: nowrap; overflow: visible;\"><br>Five Seasons Events Center<br>Cedar Rapids, Iowa<br>United States 🇺🇸<\/div>","<div style=\"white-space: nowrap; overflow: visible;\"><br>Casino Magic Bay St. Louis<br>Bay St. Louis, Mississippi<br>United States 🇺🇸<\/div>","<div style=\"white-space: nowrap; overflow: visible;\"><br>Ginásio da Portuguesa<br>São Paulo<br>Brazil 🇧🇷<\/div>","<div style=\"white-space: nowrap; overflow: visible;\"><br>Mobile Civic Center<br>Mobile, Alabama<br>United States 🇺🇸<\/div>"],"html":true,"width":200,"className":"side_info"}],"sortable":false,"pagination":false,"defaultPageSize":100,"showPageInfo":false,"nowrap":true,"className":"event_bouts","inline":true,"theme":{"headerStyle":{"borderBottom":"none"}},"dataKey":"f056bbc293ce34d0ae9a589a91568129"},"children":[]},"class":"reactR_markup"},"evals":[],"jsHooks":[]}</script>
+
+<footer>
+  <div class="footer-container">
+    <p class="copyright-text">
+      Copyright © <span id="currentYear"></span> All Rights Reserved by 
+      <a href="#">roster.watch</a>
+    </p>
+<!--     <p class="browser-badge">
+      <a href="https://www.mozilla.org/en-US/firefox/">
+        <img src="C:/Users/mart/Dropbox/R/roster.watch/firefox.png" title="Best viewed with Firefox" alt="Best viewed with Firefox"><br>
+        <small class="copyright-text">Best viewed with Firefox</small>
+      </a>
+    </p> 
+ -->  </div>
+</footer>
+
+<style>
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+}
+
+.copyright-text {
+  margin: 0 auto;
+}
+
+.browser-badge {
+  margin-left: auto;
+}
+</style>
+
+<script>
+  document.getElementById('currentYear').textContent = new Date().getFullYear();
+</script>
+
+
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.odd').parent('tbody').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- tabsets -->
+
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open');
+  });
+});
+</script>
+
+<!-- code folding -->
+
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>

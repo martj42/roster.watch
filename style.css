@@ -399,10 +399,3 @@ a .nav-arrow {
     text-decoration: none;
     display: block;
     white-space: nowrap; /* Keep on one line */}
-.dropdown:hover .dropdown-content { display: block; }
-
-@media (hover: hover) {
-    .dropdown:hover .dropdown-content {
-        display: block;
-    }
-}

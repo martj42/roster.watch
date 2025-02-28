@@ -10,3 +10,11 @@ menuOpen.addEventListener("click", () => {
 menuClose.addEventListener("click", () => {
   overlay.classList.remove("overlay--active");
 });
+// Toggle mobile dropdown
+document.querySelectorAll('.dropdown-mobile > a').forEach(item => {
+    item.addEventListener('click', function() {
+        const content = this.nextElementSibling;
+        content.style.display = content.style.display === 'block' ? 'none' : 'block';
+    });
+});
+

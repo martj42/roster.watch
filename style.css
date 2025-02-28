@@ -378,3 +378,25 @@ a .nav-arrow {
                position: relative;
 }
 
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #24252a;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
+    z-index: 1000;
+    left: 50%; /* Center under parent */
+    transform: translateX(-50%); /* Offset to truly center */
+    padding: 0; /* Remove any default padding */
+}
+.dropdown-content a {
+  color: #edf0f1;
+    padding: 12px 0; /* Vertical padding only, no left/right */
+    text-decoration: none;
+    display: block;
+    white-space: nowrap; /* Keep on one line */}
+.dropdown:hover .dropdown-content { display: block; }

@@ -10,18 +10,13 @@ menuOpen.addEventListener("click", () => {
 menuClose.addEventListener("click", () => {
   overlay.classList.remove("overlay--active");
 });
-// Toggle mobile dropdown
-document.querySelectorAll('.dropdown > a').forEach(item => {
+document.querySelectorAll('.dropdown-mobile > a').forEach(item => {
     item.addEventListener('click', function(event) {
         event.preventDefault(); // Prevents jumping to top if "#" is used
         const content = this.nextElementSibling;
 
-        // Close all other dropdowns first (optional, for better UX)
-        document.querySelectorAll('.dropdown-content').forEach(drop => {
-            if (drop !== content) drop.style.display = 'none';
-        });
-
-        // Toggle this one
-        content.style.display = content.style.display === 'block' ? 'none' : 'block';
+        if (content) {
+            content.style.display = content.style.display === 'block' ? 'none' : 'block';
+        }
     });
 });

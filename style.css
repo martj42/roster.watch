@@ -412,7 +412,7 @@ a .nav-arrow {
 }
 .dropdown-content-mobile a {
   color: #edf0f1;
-    padding: 12px 0; /* Vertical padding only, no left/right */
+    padding: 12px 0 12px 16px; /* Top, right, bottom, left */
     text-decoration: none;
     display: block;
     white-space: nowrap; /* Keep on one line */}

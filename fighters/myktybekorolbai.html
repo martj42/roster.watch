@@ -11,7 +11,7 @@
 
 
 
-<title>roster.watch</title>
+<title>Myktybek Orolbai UFC Record &amp; Stats · roster.watch</title>
 
 <script src="fighter_libs/header-attrs-2.29/header-attrs.js"></script>
 <script src="fighter_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
@@ -59,9 +59,9 @@
 <script src="https://unpkg.com/twemoji@latest/dist/twemoji.min.js" crossorigin="anonymous"></script> 
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7299518767310567"
      crossorigin="anonymous"></script> -->
-     <script data-goatcounter="https://rosterwatch.goatcounter.com/count"
+<script data-goatcounter="https://rosterwatch.goatcounter.com/count"
         async src="//gc.zgo.at/count.js"></script>
-        <script defer src="https://cloud.umami.is/script.js" data-website-id="f0f3ed7e-e89c-4a29-a745-475e0b10271a"></script>
+<script defer src="https://cloud.umami.is/script.js" data-website-id="f0f3ed7e-e89c-4a29-a745-475e0b10271a"></script>
 
 <style type="text/css">
   code{white-space: pre-wrap;}
@@ -266,13 +266,26 @@ $(document).ready(function () {
         <ul class="nav__links">
             <li><a href="/">Current Roster</a></li>
             <li><a href="/former.html">Former Roster</a></li>
+            <li class="dropdown">
+                <a href="#" onclick="return false;">Weight Classes</a>
+<ul class="dropdown-content">
+                    <li><a href="/heavyweight.html">Heavyweight</a></li>
+                    <li><a href="/lightheavyweight.html">Light Heavyweight</a></li>
+                    <li><a href="/middleweight.html">Middleweight</a></li>
+                    <li><a href="/welterweight.html">Welterweight</a></li>
+                    <li><a href="/lightweight.html">Lightweight</a></li>
+                    <li><a href="/featherweight.html">Featherweight</a></li>
+                    <li><a href="/bantamweight.html">Bantamweight</a></li>
+                    <li><a href="/flyweight.html">Flyweight</a></li>
+                    <li><a href="/womensbantamweight.html">Women's Bantamweight</a></li>
+                    <li><a href="/womensflyweight.html">Women's Flyweight</a></li>
+                    <li><a href="/womensstrawweight.html">Women's Strawweight</a></li>
+                </ul>
+            </li>
             <li><a href="/events">Events</a></li>
             <li><a href="/log.html">Log</a></li>
             <li><a href="/glossary.html">Glossary</a></li>
             <li><a href="mailto:rostertracker@gmail.com">Contact</a></li>
-            <li>
-                <a href="https://twitter.com/RosterTracker" class="twitter-follow-button" data-dnt="true" data-show-count="false">Follow on X</a>
-            </li>
             <li><a href="https://www.patreon.com/bePatron?u=88266864">Support on Patreon</a></li>
         </ul>
     </nav>
@@ -280,17 +293,31 @@ $(document).ready(function () {
 </header>
 
 <div class="overlay">
-    <a class="close">&times;</a>
+    <a class="close">×</a>
     <div class="overlay__content">
         <a href="/">Current Roster</a>
         <a href="/former.html">Former Roster</a>
+        <div class="dropdown-mobile">
+            <a href="#" onclick="return false;">Weight Classes</a>
+<div class="dropdown-content-mobile">
+                <a href="/heavyweight.html">Heavyweight</a>
+                <a href="/lightheavyweight.html">Light Heavyweight</a>
+                <a href="/middleweight.html">Middleweight</a>
+                <a href="/welterweight.html">Welterweight</a>
+                <a href="/lightweight.html">Lightweight</a>
+                <a href="/featherweight.html">Featherweight</a>
+                <a href="/bantamweight.html">Bantamweight</a>
+                <a href="/flyweight.html">Flyweight</a>
+                <a href="/womensbantamweight.html">Women's Bantamweight</a>
+                <a href="/womensflyweight.html">Women's Flyweight</a>
+                <a href="/womensstrawweight.html">Women's Strawweight</a>
+            </div>
+        </div>
         <a href="/events">Events</a>
         <a href="/log.html">Log</a>
         <a href="/glossary.html">Glossary</a>
         <a href="mailto:rostertracker@gmail.com">Contact</a>
-                <a href="https://twitter.com/RosterTracker" class="twitter-follow-button" data-dnt="true" data-show-count="false">Follow on X</a>
         <a href="https://www.patreon.com/bePatron?u=88266864">Support on Patreon</a>
-
     </div>
 </div>
 <script type="text/javascript" src="/mobile.js"></script>
@@ -299,7 +326,8 @@ $(document).ready(function () {
 
 
 
-<h1 class="title toc-ignore">roster.watch</h1>
+<h1 class="title toc-ignore">Myktybek Orolbai UFC Record &amp; Stats ·
+roster.watch</h1>
 
 </div>
 
@@ -317,13 +345,13 @@ line-height: 1.25em; font-size: 0.8em;
 <h2 style='font-size: 1em; margin: 0; text-align: center; font-weight: bold;'>Elo Rating</h2>
 <div style="display: flex; justify-content: center; width: 100%; margin-top: 20px; margin-bottom: 20px;">
 <div id="fighter-performance-chart" style="width: 100%; max-width: 600px; height: 450px;">
-<div class="plotly html-widget html-fill-item" id="htmlwidget-94bd3d17cd94e6fb33c6" style="width:100%;height:400px;"></div>
-<script type="application/json" data-for="htmlwidget-94bd3d17cd94e6fb33c6">{"x":{"visdat":{"151425ea9717":["function () ","plotlyVisDat"]},"cur_data":"151425ea9717","attrs":{"151425ea9717":{"x":{},"y":{},"mode":"lines+markers","line":{"color":"#d12d36","width":3,"shape":"hv"},"marker":{"size":10,"color":"#d12d36"},"hoverinfo":"text","text":{},"name":"Elo","alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"type":"scatter"}},"layout":{"height":450,"margin":{"b":40,"l":60,"t":0,"r":10},"yaxis":{"domain":[0,1],"automargin":true,"gridcolor":"#e1e1e1","title":""},"showlegend":false,"legend":{"orientation":"h","xanchor":"center","x":0.5,"y":-100},"xaxis":{"domain":[0,1],"automargin":true,"title":"","gridcolor":"#e1e1e1"},"hovermode":"closest"},"source":"A","config":{"modeBarButtonsToAdd":["hoverclosest","hovercompare"],"showSendToCloud":false,"displayModeBar":false},"data":[{"x":["2023-11-18","2024-05-04","2024-10-26"],"y":[2827,2924,2911],"mode":"lines+markers","line":{"color":"#d12d36","width":3,"shape":"hv"},"marker":{"color":"#d12d36","size":10,"line":{"color":"rgba(31,119,180,1)"}},"hoverinfo":["text","text","text"],"text":["2023-11-18 <br> 2827 Elo <br> Uros Medic <br> Win","2024-05-04 <br> 2924 Elo <br> Elves Brener <br> Win","2024-10-26 <br> 2911 Elo <br> Mateusz Rebecki <br> Loss"],"name":"Elo","type":"scatter","error_y":{"color":"rgba(31,119,180,1)"},"error_x":{"color":"rgba(31,119,180,1)"},"xaxis":"x","yaxis":"y","frame":null}],"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.20000000000000001,"selected":{"opacity":1},"debounce":0},"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot","plotly_sunburstclick"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script>
+<div class="plotly html-widget html-fill-item" id="htmlwidget-369c25182c4b7d99a87e" style="width:100%;height:400px;"></div>
+<script type="application/json" data-for="htmlwidget-369c25182c4b7d99a87e">{"x":{"visdat":{"337075a1c49":["function () ","plotlyVisDat"]},"cur_data":"337075a1c49","attrs":{"337075a1c49":{"x":{},"y":{},"mode":"lines+markers","line":{"color":"#d12d36","width":3,"shape":"hv"},"marker":{"size":10,"color":"#d12d36"},"hoverinfo":"text","text":{},"name":"Elo","alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"type":"scatter"}},"layout":{"height":450,"margin":{"b":40,"l":60,"t":0,"r":10},"yaxis":{"domain":[0,1],"automargin":true,"gridcolor":"#e1e1e1","title":""},"showlegend":false,"legend":{"orientation":"h","xanchor":"center","x":0.5,"y":-100},"xaxis":{"domain":[0,1],"automargin":true,"title":"","gridcolor":"#e1e1e1"},"hovermode":"closest"},"source":"A","config":{"modeBarButtonsToAdd":["hoverclosest","hovercompare"],"showSendToCloud":false,"displayModeBar":false},"data":[{"x":["2023-11-18","2024-05-04","2024-10-26"],"y":[2827,2924,2911],"mode":"lines+markers","line":{"color":"#d12d36","width":3,"shape":"hv"},"marker":{"color":"#d12d36","size":10,"line":{"color":"rgba(31,119,180,1)"}},"hoverinfo":["text","text","text"],"text":["2023-11-18 <br> 2827 Elo <br> Uros Medic <br> Win","2024-05-04 <br> 2924 Elo <br> Elves Brener <br> Win","2024-10-26 <br> 2911 Elo <br> Mateusz Rebecki <br> Loss"],"name":"Elo","type":"scatter","error_y":{"color":"rgba(31,119,180,1)"},"error_x":{"color":"rgba(31,119,180,1)"},"xaxis":"x","yaxis":"y","frame":null}],"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.20000000000000001,"selected":{"opacity":1},"debounce":0},"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot","plotly_sunburstclick"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script>
 </div>
 </div>
 <h2 style='font-size: 1em; margin: 0; text-align: center; font-weight: bold;'>Bout History</h2>
-<div class="reactable html-widget html-fill-item" id="htmlwidget-5f651a1a8f2b5e1fe2bf" style="width:auto;height:auto;"></div>
-<script type="application/json" data-for="htmlwidget-5f651a1a8f2b5e1fe2bf">{"x":{"tag":{"name":"Reactable","attribs":{"data":{"event_date":["<br><span class = 'event-date'>2024-10-26<\/span><br><a href='/events/20241026.html'>UFC 308: Topuria vs. Holloway<\/a>","<br><span class = 'event-date'>2024-05-04<\/span><br><a href='/events/20240504.html'>UFC 301: Pantoja vs. Erceg<\/a>","<br><span class = 'event-date'>2023-11-18<\/span><br><a href='/events/20231118.html'>UFC Fight Night: Allen vs. Craig<\/a>"],"fighter_name":["<br> <b><a href=/fighters/mateuszrebecki.html>Mateusz Rebecki<\/a><\/b> (32) 🇵🇱<br><span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: crimson; color: white; font-weight: bold;'>L<\/span> • 3-1<br>Elo: <span class = 'favorite-elo'>2997<\/span>","<br> <b>Myktybek Orolbai<\/b> (26) 🇰🇬<br><span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> • 1-0<br>Elo: <span class = 'favorite-elo'>2827<\/span>","<br> <b>Myktybek Orolbai<\/b> (25) 🇰🇬<br>Debut 🔰<br>Elo: 2680"],"result_description":["<span style='font-size: 0.8em;'>CATCHWEIGHT (160 LB)<\/span><br><span title='Fight of the Night' style='cursor: pointer;'>⭐<\/span>DEC<span title='Fight of the Night' style='cursor: pointer;'>⭐<\/span><br>R3<br>05:00","<span style='font-size: 0.8em;'>LIGHTWEIGHT<\/span><br>DEC<br>R3<br>05:00","<span style='font-size: 0.8em;'>WELTERWEIGHT<\/span><br>SUB<br>R2<br>04:12"],"opponent_fighter_name":["<br>🇰🇬 <b>Myktybek Orolbai<\/b> (26)<br>2-0 • <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span><br>Elo: 2924","<br>🇧🇷 <b><a href=/fighters/elvesbrener.html>Elves Brener<\/a><\/b> (26)<br>3-0 • <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span><br>Elo: 2818","<br>🇷🇸 <b><a href=/fighters/urosmedic.html>Uros Medic<\/a><\/b> (30)<br>3-1 • <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: crimson; color: white; font-weight: bold;'>L<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span><br>Elo: <span class = 'favorite-elo'>2857<\/span>"],"City":["<br>Etihad Arena<br>Abu Dhabi<br>United Arab Emirates 🇦🇪","<br>Farmasi Arena<br>Rio de Janeiro<br>Brazil 🇧🇷","<br>UFC Apex<br>Las Vegas, Nevada<br>United States 🇺🇸"]},"columns":[{"id":"event_date","name":"","type":"character","html":true,"width":200,"className":"side_info"},{"id":"fighter_name","name":"","type":"character","html":true,"width":240,"align":"right"},{"id":"result_description","name":"","type":"character","html":true,"width":50,"align":"center","className":"result_description"},{"id":"opponent_fighter_name","name":"","type":"character","html":true,"width":240,"align":"left"},{"id":"City","name":"","type":"character","cell":["<div style=\"white-space: nowrap; overflow: visible;\"><br>Etihad Arena<br>Abu Dhabi<br>United Arab Emirates 🇦🇪<\/div>","<div style=\"white-space: nowrap; overflow: visible;\"><br>Farmasi Arena<br>Rio de Janeiro<br>Brazil 🇧🇷<\/div>","<div style=\"white-space: nowrap; overflow: visible;\"><br>UFC Apex<br>Las Vegas, Nevada<br>United States 🇺🇸<\/div>"],"html":true,"width":200,"className":"side_info"}],"sortable":false,"pagination":false,"defaultPageSize":100,"showPageInfo":false,"nowrap":true,"className":"event_bouts","inline":true,"theme":{"headerStyle":{"borderBottom":"none"}},"dataKey":"7b774ce24230b6eb990a49daffc5c286"},"children":[]},"class":"reactR_markup"},"evals":[],"jsHooks":[]}</script>
+<div class="reactable html-widget html-fill-item" id="htmlwidget-fa0c7a47a53c0f70bc27" style="width:auto;height:auto;"></div>
+<script type="application/json" data-for="htmlwidget-fa0c7a47a53c0f70bc27">{"x":{"tag":{"name":"Reactable","attribs":{"data":{"event_date":["<br><span class = 'event-date'>2024-10-26<\/span><br><a href='/events/20241026.html'>UFC 308: Topuria vs. Holloway<\/a>","<br><span class = 'event-date'>2024-05-04<\/span><br><a href='/events/20240504.html'>UFC 301: Pantoja vs. Erceg<\/a>","<br><span class = 'event-date'>2023-11-18<\/span><br><a href='/events/20231118.html'>UFC Fight Night: Allen vs. Craig<\/a>"],"fighter_name":["<br> <b><a href=/fighters/mateuszrebecki.html>Mateusz Rebecki<\/a><\/b> (32) 🇵🇱<br><span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: crimson; color: white; font-weight: bold;'>L<\/span> • 3-1<br>Elo: <span class = 'favorite-elo'>2997<\/span>","<br> <b>Myktybek Orolbai<\/b> (26) 🇰🇬<br><span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> • 1-0<br>Elo: <span class = 'favorite-elo'>2827<\/span>","<br> <b>Myktybek Orolbai<\/b> (25) 🇰🇬<br>Debut 🔰<br>Elo: 2680"],"result_description":["<span style='font-size: 0.8em;'>CATCHWEIGHT (160 LB)<\/span><br><span title='Fight of the Night' style='cursor: pointer;'>⭐<\/span>DEC<span title='Fight of the Night' style='cursor: pointer;'>⭐<\/span><br>R3<br>05:00","<span style='font-size: 0.8em;'>LIGHTWEIGHT<\/span><br>DEC<br>R3<br>05:00","<span style='font-size: 0.8em;'>WELTERWEIGHT<\/span><br>SUB<br>R2<br>04:12"],"opponent_fighter_name":["<br>🇰🇬 <b>Myktybek Orolbai<\/b> (26)<br>2-0 • <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span><br>Elo: 2924","<br>🇧🇷 <b><a href=/fighters/elvesbrener.html>Elves Brener<\/a><\/b> (26)<br>3-0 • <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span><br>Elo: 2818","<br>🇷🇸 <b><a href=/fighters/urosmedic.html>Uros Medic<\/a><\/b> (30)<br>3-1 • <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: crimson; color: white; font-weight: bold;'>L<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span><br>Elo: <span class = 'favorite-elo'>2857<\/span>"],"City":["<br>Etihad Arena<br>Abu Dhabi<br>United Arab Emirates 🇦🇪","<br>Farmasi Arena<br>Rio de Janeiro<br>Brazil 🇧🇷","<br>UFC Apex<br>Las Vegas, Nevada<br>United States 🇺🇸"]},"columns":[{"id":"event_date","name":"","type":"character","html":true,"width":200,"className":"side_info"},{"id":"fighter_name","name":"","type":"character","html":true,"width":240,"align":"right"},{"id":"result_description","name":"","type":"character","html":true,"width":50,"align":"center","className":"result_description"},{"id":"opponent_fighter_name","name":"","type":"character","html":true,"width":240,"align":"left"},{"id":"City","name":"","type":"character","cell":["<div style=\"white-space: nowrap; overflow: visible;\"><br>Etihad Arena<br>Abu Dhabi<br>United Arab Emirates 🇦🇪<\/div>","<div style=\"white-space: nowrap; overflow: visible;\"><br>Farmasi Arena<br>Rio de Janeiro<br>Brazil 🇧🇷<\/div>","<div style=\"white-space: nowrap; overflow: visible;\"><br>UFC Apex<br>Las Vegas, Nevada<br>United States 🇺🇸<\/div>"],"html":true,"width":200,"className":"side_info"}],"sortable":false,"pagination":false,"defaultPageSize":100,"showPageInfo":false,"nowrap":true,"className":"event_bouts","inline":true,"theme":{"headerStyle":{"borderBottom":"none"}},"dataKey":"7b774ce24230b6eb990a49daffc5c286"},"children":[]},"class":"reactR_markup"},"evals":[],"jsHooks":[]}</script>
 
 <footer>
   <div class="footer-container">
@@ -333,7 +361,7 @@ line-height: 1.25em; font-size: 0.8em;
     </p>
 <!--     <p class="browser-badge">
       <a href="https://www.mozilla.org/en-US/firefox/">
-        <img src="/mnt/c/Users/mart/Dropbox/R/roster.watch/firefox.png" title="Best viewed with Firefox" alt="Best viewed with Firefox"><br>
+        <img src="C:/Users/mart/Dropbox/R/roster.watch/firefox.png" title="Best viewed with Firefox" alt="Best viewed with Firefox"><br>
         <small class="copyright-text">Best viewed with Firefox</small>
       </a>
     </p> 

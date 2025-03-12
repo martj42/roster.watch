@@ -6,12 +6,12 @@ body {
   
 }
 
-/*h1.title {
+h1.title {
   visibility: hidden;
   font-size: 0px;
   margin-top: 0px !important;
 
-}*/
+}
 
 .my-tbl {
   background-color: rgba(0, 0, 0, 0);

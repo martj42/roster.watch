@@ -267,9 +267,7 @@ footer {
     display: initial;
   }
 }
-img {
-  max-height: 18px;
-}
+
 
 header {
     display: flex;

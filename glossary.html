@@ -271,6 +271,7 @@ $(document).ready(function () {
             <li><a href="/events">Events</a></li>
             <li><a href="/log.html">Log</a></li>
             <li><a href="/glossary.html">Glossary</a></li>
+            <li><a href="javascript:void(0)" onclick="getRandomPage()">Random Page</a></li>
             <li><a href="mailto:rostertracker@gmail.com">Contact</a></li>
             <li><a href="https://www.patreon.com/bePatron?u=88266864">Support on Patreon</a></li>
         </ul>
@@ -302,14 +303,34 @@ $(document).ready(function () {
         <a href="/events">Events</a>
         <a href="/log.html">Log</a>
         <a href="/glossary.html">Glossary</a>
+        <a href="javascript:void(0)" onclick="getRandomPage()">Random Page</a>
         <a href="mailto:rostertracker@gmail.com">Contact</a>
         <a href="https://www.patreon.com/bePatron?u=88266864">Support on Patreon</a>
     </div>
 </div>
 <script type="text/javascript" src="/mobile.js"></script>
-<div class="patreon-box"
+    <script>
+      function getRandomPage() {
+        fetch('/sitemap.xml')
+          .then(response => response.text())
+          .then(xmlText => {
+            const parser = new DOMParser();
+            const xmlDoc = parser.parseFromString(xmlText, 'application/xml');
+            const urls = Array.from(xmlDoc.getElementsByTagName('loc')).map(loc => loc.textContent);
+            const randomPage = urls[Math.floor(Math.random() * urls.length)];
+            window.location.href = randomPage;
+          });
+      }
+    </script>
+<!--<div class="patreon-box"
   <p>✨ Appreciate the content? Support us on Patreon!</p>
   <a href="https://www.patreon.com/bePatron?u=88266864" class="cta-button">Become a Patron</a>
+</div>-->
+
+<div class="patreon-box"
+  <p><strong>The new <span style = "color:#05f">firewall</span> for the <span style = "color:#05f">modern Internet</span>.</strong></p>
+  <p>NextDNS protects you from all kinds of <strong>security threats</strong>, blocks <strong>ads and trackers on websites and in apps</strong> and provides a <strong>safe and supervised Internet for kids</strong> — on <strong>all devices</strong> and on <strong>all networks</strong>.</p>
+  <a href="https://nextdns.io/?from=c4nybned" class="cta-button">Try it now!</a>
 </div>
 
 <div id="header">

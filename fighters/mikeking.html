@@ -279,6 +279,7 @@ $(document).ready(function () {
             <li><a href="/events">Events</a></li>
             <li><a href="/log.html">Log</a></li>
             <li><a href="/glossary.html">Glossary</a></li>
+            <li><a href="javascript:void(0)" onclick="getRandomPage()">Random Page</a></li>
             <li><a href="mailto:rostertracker@gmail.com">Contact</a></li>
             <li><a href="https://www.patreon.com/bePatron?u=88266864">Support on Patreon</a></li>
         </ul>
@@ -310,11 +311,25 @@ $(document).ready(function () {
         <a href="/events">Events</a>
         <a href="/log.html">Log</a>
         <a href="/glossary.html">Glossary</a>
+        <a href="javascript:void(0)" onclick="getRandomPage()">Random Page</a>
         <a href="mailto:rostertracker@gmail.com">Contact</a>
         <a href="https://www.patreon.com/bePatron?u=88266864">Support on Patreon</a>
     </div>
 </div>
 <script type="text/javascript" src="/mobile.js"></script>
+    <script>
+      function getRandomPage() {
+        fetch('/sitemap.xml')
+          .then(response => response.text())
+          .then(xmlText => {
+            const parser = new DOMParser();
+            const xmlDoc = parser.parseFromString(xmlText, 'application/xml');
+            const urls = Array.from(xmlDoc.getElementsByTagName('loc')).map(loc => loc.textContent);
+            const randomPage = urls[Math.floor(Math.random() * urls.length)];
+            window.location.href = randomPage;
+          });
+      }
+    </script>
 
 <div id="header">
 
@@ -326,13 +341,13 @@ roster.watch</h1>
 </div>
 
 
-<article class="event-info" style="display: flex; flex-direction: column; align-items: center; justify-content: center; width: 100%; height: auto;"><div class="fighter-info" style="text-align: center; margin-bottom: 20px;"><h1 style='font-weight: bold; font-size: 1.1em; margin: 0;'>Mike King 🇺🇸</h1><time datetime='1983-08-04'><p><span>1983-08-04</span><script>document.currentScript.parentElement.innerHTML = (function(){  const dob = new Date('1983-08-04');  const today = new Date();  let years = today.getFullYear() - dob.getFullYear();  const monthDiff = today.getMonth() - dob.getMonth();  if (monthDiff < 0 || (monthDiff === 0 && today.getDate() < dob.getDate())) {    years--;  }  const yearAnniversary = new Date(dob);  yearAnniversary.setFullYear(dob.getFullYear() + years);  const dayDiff = Math.floor((today - yearAnniversary) / (1000 * 60 * 60 * 24));  const isBirthday = today.getMonth() === dob.getMonth() && today.getDate() === dob.getDate();  let ageString = `${years} year${years !== 1 ? 's' : ''}`;  if (dayDiff > 0) {    ageString += ` ${dayDiff} day${dayDiff !== 1 ? 's' : ''}`;  }  return `${ageString}${isBirthday ? ' 🎂' : ''} <br><span class='event-date'> (${dob.toISOString().split('T')[0]}) </span>`;}());</script></p></time></div><div style="display: flex; justify-content: center; align-items: flex-start; gap: 40px; max-width: 600px; width: 100%;"><div class="event-details" style="width: 50%;"><div class='event-stats'><p><strong>Record:</strong> 0-1<br></p><p><strong>By Method:</strong></p><ul><li> KO/TKO: 0-0</li><li> Submission: 0-1</li><li> Decision: 0-0</li></ul><p><strong>By Elo:</strong></p><ul><li>As Favorite: 0-0</li><li>As Underdog: 0-1</li></ul><p><strong>By Weight Class:</strong></p><ul><li>Middleweight: 0-1</li></ul><p><strong>By Round:</strong></p><ul><li>Round 2: 0-1</li></ul></div></div><div class="rankings" style="width: 50%;"><p><strong>Status</strong> Former UFC Fighter</p><p><strong>Last 5:</strong> <span style='display: inline-block;width: 1.25em;
+<article class="event-info" style="display: flex; flex-direction: column; align-items: center; justify-content: center; width: 100%; height: auto;"><div class="fighter-info" style="text-align: center; margin-bottom: 20px;"><h2 style='font-weight: bold; font-size: 1.1em; margin: 0;'>Mike King 🇺🇸</h2><time datetime='1983-08-04'><p><span>1983-08-04</span><script>document.currentScript.parentElement.innerHTML = (function(){  const dob = new Date('1983-08-04');  const today = new Date();  let years = today.getFullYear() - dob.getFullYear();  const monthDiff = today.getMonth() - dob.getMonth();  if (monthDiff < 0 || (monthDiff === 0 && today.getDate() < dob.getDate())) {    years--;  }  const yearAnniversary = new Date(dob);  yearAnniversary.setFullYear(dob.getFullYear() + years);  const dayDiff = Math.floor((today - yearAnniversary) / (1000 * 60 * 60 * 24));  const isBirthday = today.getMonth() === dob.getMonth() && today.getDate() === dob.getDate();  let ageString = `${years} year${years !== 1 ? 's' : ''}`;  if (dayDiff > 0) {    ageString += ` ${dayDiff} day${dayDiff !== 1 ? 's' : ''}`;  }  return `${ageString}${isBirthday ? ' 🎂' : ''} <br><span class='event-date'> (${dob.toISOString().split('T')[0]}) </span>`;}());</script></p></time></div><div style="display: flex; justify-content: center; align-items: flex-start; gap: 40px; max-width: 600px; width: 100%;"><div class="event-details" style="width: 50%;"><div class='event-stats'><p><strong>Record:</strong> 0-1<br></p><p><strong>By Method:</strong></p><ul><li> KO/TKO: 0-0</li><li> Submission: 0-1</li><li> Decision: 0-0</li></ul><p><strong>By Elo:</strong></p><ul><li>As Favorite: 0-0</li><li>As Underdog: 0-1</li></ul><p><strong>By Weight Class:</strong></p><ul><li>Middleweight: 0-1</li></ul><p><strong>By Round:</strong></p><ul><li>Round 2: 0-1</li></ul></div></div><div class="rankings" style="width: 50%;"><p><strong>Status:</strong> Former UFC Fighter</p><p><strong>Last 5:</strong> <span style='display: inline-block;width: 1.25em;
 height: 1.25em;
 line-height: 1.25em; font-size: 0.8em;
  text-align: center; border-radius: 50%; background-color: crimson; color: white; font-weight: bold;'>L</span></p><p><strong>Peak Elo:</strong> 2393<span class='event-date'> (2014-07-19)</span></p><p><strong>Bonuses:</strong> 1 (1 FOTN, 0 Performance)</p><p><strong>Avg Fight Time:</strong> 8m 33s</p><p><strong>Total Fight Time:</strong> 8m 33s</p></div></div></article>
 <h2 style='font-size: 1em; margin: 0; text-align: center; font-weight: bold;'>Bout History</h2>
-<div class="reactable html-widget html-fill-item" id="htmlwidget-3b59bbcc71a5e8979ee0" style="width:auto;height:auto;"></div>
-<script type="application/json" data-for="htmlwidget-3b59bbcc71a5e8979ee0">{"x":{"tag":{"name":"Reactable","attribs":{"data":{"event_date":["<br><span class = 'event-date'>2014-07-19<\/span><br><a href='/events/20140719.html'>UFC Fight Night: McGregor vs. Brandão<\/a>"],"fighter_name":["<br> <b><a href=/fighters/cathalpendred.html>Cathal Pendred<\/a><\/b> (26) 🇮🇪<br>Debut 🔰<br>Elo: <span class = 'favorite-elo'>2853<\/span>"],"result_description":["<span style='font-size: 0.8em;'>MIDDLEWEIGHT<\/span><br><span title='Fight of the Night' style='cursor: pointer;'>⭐<\/span>SUB<span title='Fight of the Night' style='cursor: pointer;'>⭐<\/span><br>R2<br>03:33"],"opponent_fighter_name":["<br>🇺🇸 <b>Mike King<\/b> (30)<br>🔰 Debut<br>Elo: 2407"],"City":["<br>3Arena<br>Dublin<br>Ireland 🇮🇪"]},"columns":[{"id":"event_date","name":"","type":"character","html":true,"width":200,"className":"side_info"},{"id":"fighter_name","name":"","type":"character","html":true,"width":240,"align":"right"},{"id":"result_description","name":"","type":"character","html":true,"width":50,"align":"center","className":"result_description"},{"id":"opponent_fighter_name","name":"","type":"character","html":true,"width":240,"align":"left"},{"id":"City","name":"","type":"character","cell":["<div style=\"white-space: nowrap; overflow: visible;\"><br>3Arena<br>Dublin<br>Ireland 🇮🇪<\/div>"],"html":true,"width":200,"className":"side_info"}],"sortable":false,"pagination":false,"defaultPageSize":100,"showPageInfo":false,"nowrap":true,"className":"event_bouts","inline":true,"theme":{"headerStyle":{"borderBottom":"none"}},"dataKey":"8f36f6a36c1983ed685f7ae481fbf6ae"},"children":[]},"class":"reactR_markup"},"evals":[],"jsHooks":[]}</script>
+<div class="reactable html-widget html-fill-item" id="htmlwidget-8479690c1ef1abf4f7ea" style="width:auto;height:auto;"></div>
+<script type="application/json" data-for="htmlwidget-8479690c1ef1abf4f7ea">{"x":{"tag":{"name":"Reactable","attribs":{"data":{"event_date":["<br><span class = 'event-date'>2014-07-19<\/span><br><a href='/events/20140719.html'>UFC Fight Night: McGregor vs. Brandão<\/a>"],"fighter_name":["<br> <b><a href=/fighters/cathalpendred.html>Cathal Pendred<\/a><\/b> (26) 🇮🇪<br>Debut 🔰<br>Elo: <span class = 'favorite-elo'>2853<\/span>"],"result_description":["<span style='font-size: 0.8em;'>MIDDLEWEIGHT<\/span><br><span title='Fight of the Night' style='cursor: pointer;'>⭐<\/span>SUB<span title='Fight of the Night' style='cursor: pointer;'>⭐<\/span><br>R2<br>03:33"],"opponent_fighter_name":["<br>🇺🇸 <b>Mike King<\/b> (30)<br>🔰 Debut<br>Elo: 2407"],"City":["<br>3Arena<br>Dublin<br>Ireland 🇮🇪"]},"columns":[{"id":"event_date","name":"","type":"character","html":true,"width":200,"className":"side_info"},{"id":"fighter_name","name":"","type":"character","html":true,"width":240,"align":"right"},{"id":"result_description","name":"","type":"character","html":true,"width":50,"align":"center","className":"result_description"},{"id":"opponent_fighter_name","name":"","type":"character","html":true,"width":240,"align":"left"},{"id":"City","name":"","type":"character","cell":["<div style=\"white-space: nowrap; overflow: visible;\"><br>3Arena<br>Dublin<br>Ireland 🇮🇪<\/div>"],"html":true,"width":200,"className":"side_info"}],"sortable":false,"pagination":false,"defaultPageSize":100,"showPageInfo":false,"nowrap":true,"className":"event_bouts","inline":true,"theme":{"headerStyle":{"borderBottom":"none"}},"dataKey":"8f36f6a36c1983ed685f7ae481fbf6ae"},"children":[]},"class":"reactR_markup"},"evals":[],"jsHooks":[]}</script>
 
 <footer>
   <div class="footer-container">

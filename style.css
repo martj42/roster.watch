@@ -390,6 +390,8 @@ a .nav-arrow {
     left: 50%; /* Center under parent */
     transform: translateX(-50%); /* Offset to truly center */
     padding: 0; /* Remove any default padding */
+    list-style-type: none; /* Remove bullet points */
+
 }
 .dropdown-content a {
   color: #edf0f1;
@@ -414,19 +416,6 @@ a .nav-arrow {
     text-decoration: none;
     display: block;
     white-space: nowrap; /* Keep on one line */}
-
-.dropdown-content {
-    display: none;
-    position: absolute;
-    background-color: #24252a;
-    min-width: 160px;
-    box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
-    z-index: 1000;
-    left: 50%;
-    transform: translateX(-50%);
-    padding: 0;
-    list-style-type: none; /* Remove bullet points */
-}
 
 .dropdown-content li {
     margin: 0;

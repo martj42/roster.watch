@@ -143,7 +143,7 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 10px 10%;
+  padding: 0px 10%;
   background-color: #24252a;
 }
 footer {
@@ -169,20 +169,30 @@ footer {
 }
 
 .nav__links {
-  list-style: none;
-  display: flex;
+    list-style: none;
+    display: flex;
+    width: 100%; /* Full width */
+  
 }
 
 .nav__links li {
-  padding: 0px 20px;
+    padding: 0; /* Remove existing padding */
+  
 }
 
 .nav__links li a {
-  transition: color 0.3s ease 0s;
+    display: block; /* Full block element */
+    width: 100%; /* Full width */
+    padding: 10px 20px; /* Maintained horizontal padding */
+    text-align: center; /* Center text */
+    box-sizing: border-box; /* Include padding in width */
+    transition: color 0.3s ease 0s, background-color 0.3s ease 0s; /* Added background transition */
+  
 }
 
 .nav__links li a:hover {
   color: #edf0f1;
+  background-color: #3a3b42; /* Similar to dropdown hover effect */
 }
 
 .cta {
@@ -287,10 +297,6 @@ nav ul {
     padding: 0;
     margin: 0;
     align-items: center; /* Align items to the middle of the tallest item */
-}
-
-nav ul li {
-    margin-left: 20px; /* Space between nav items */
 }
 
 .patreon-box {

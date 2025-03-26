@@ -439,3 +439,29 @@ a .nav-arrow {
 .dropdown-content li a:hover {
     background-color: #3a3b42; /* Add hover effect */
 }
+
+.new, 
+.out {
+  font-size: 0.8em;
+  color: gray;
+  font-weight: bold;
+  padding: 2px;
+}
+
+.up {
+  color: green;
+  font-size: 1.2em;
+}
+
+.down {
+  color: red;
+  font-size: 1.2em;
+}
+
+.rank-change {
+  font-size: 0.8em;
+  color: gray; 
+  font-weight: bold;
+  padding-right: 5px;
+
+}

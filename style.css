@@ -454,7 +454,7 @@ a .nav-arrow {
 }
 
 .down {
-  color: red;
+  color: #d30303;
   font-size: 1.2em;
 }
 
@@ -464,4 +464,19 @@ a .nav-arrow {
   font-weight: bold;
   padding-right: 5px;
 
+}
+
+.tuf {
+  color:#d30303;
+  font-weight:bold;
+}
+
+.cs {
+  color:#0fa4cd;
+  font-weight:bold;
+  font-size:0.9em;
+}
+
+.bmf{
+  color:gray;
 }

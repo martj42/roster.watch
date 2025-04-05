@@ -14,6 +14,9 @@
 }
 .emoji {
   font-family: Twemoji, sans-serif !important;
+  color: initial !important;
+  isolation: isolate;
+  display: inline-block;
 }
 
 body {

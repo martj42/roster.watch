@@ -14,9 +14,6 @@
 }
 .emoji {
   font-family: Twemoji, sans-serif !important;
-  color: initial !important;
-  isolation: isolate;
-  display: inline-block;
 }
 
 body {
@@ -457,22 +454,7 @@ a .nav-arrow {
 .dropdown-content li a:hover {
     background-color: #3a3b42; /* Add hover effect */
 }
-/* Fix for iOS top menu item being hidden */
-.overlay {
-  /* Add this to ensure safe area at top */
-  padding-top: env(safe-area-inset-top, 20px);
-  /* Make sure overflow is handled properly */
-  overflow-y: auto;
-  -webkit-overflow-scrolling: touch;
-}
 
-/* Fix for X button positioning */
-.close {
-  position: fixed; /* Instead of absolute */
-  top: env(safe-area-inset-top, 20px); /* Use safe area */
-  right: 20px;
-  z-index: 1001; /* Ensure it's above other elements */
-}
 .new, 
 .out {
   font-size: 0.8em;

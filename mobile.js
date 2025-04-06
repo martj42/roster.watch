@@ -7,6 +7,18 @@ menuOpen.addEventListener("click", () => {
   overlay.classList.add("overlay--active");
 });
 
+
+// Add iOS detection and special handling
+const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
+if (isIOS) {
+  // Force layout recalculation on menu open for iOS
+  menuOpen.addEventListener("click", () => {
+    setTimeout(() => {
+      window.scrollTo(0, 1);
+    }, 100);
+  });
+}
+
 menuClose.addEventListener("click", () => {
   overlay.classList.remove("overlay--active");
 });

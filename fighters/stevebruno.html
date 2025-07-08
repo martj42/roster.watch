@@ -11,7 +11,7 @@
 
 
 
-<title>Steve Bruno UFC Record &amp; Stats · roster.watch</title>
+<title>Steve Bruno UFC Record &amp; Stats: Interactive Charts · roster.watch</title>
 
 <script src="fighter_libs/header-attrs-2.29/header-attrs.js"></script>
 <script src="fighter_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
@@ -34,7 +34,7 @@
 <script src="fighter_libs/highlightjs-9.12.0/highlight.js"></script>
 <link href="fighter_libs/htmltools-fill-0.5.8.1/fill.css" rel="stylesheet" />
 <script src="fighter_libs/htmlwidgets-1.6.4/htmlwidgets.js"></script>
-<script src="fighter_libs/plotly-binding-4.10.4/plotly.js"></script>
+<script src="fighter_libs/plotly-binding-4.11.0/plotly.js"></script>
 <script src="fighter_libs/typedarray-0.1/typedarray.min.js"></script>
 <link href="fighter_libs/crosstalk-1.2.1/css/crosstalk.min.css" rel="stylesheet" />
 <script src="fighter_libs/crosstalk-1.2.1/js/crosstalk.min.js"></script>
@@ -284,9 +284,8 @@ $(document).ready(function () {
             </li>
             <li><a href="/events">Events</a></li>
             <li><a href="/log.html">Log</a></li>
-            <li><a href="/glossary.html">Glossary</a></li>
             <li><a href="javascript:void(0)" onclick="getRandomPage()">Random Page</a></li>
-            <li><a href="mailto:rostertracker@gmail.com">Contact</a></li>
+            <li><a href="https://rosterwatch.printify.me/">Merch</a></li>
             <li><a href="https://www.patreon.com/bePatron?u=88266864">Support on Patreon</a></li>
         </ul>
     </nav>
@@ -316,9 +315,8 @@ $(document).ready(function () {
         </div>
         <a href="/events">Events</a>
         <a href="/log.html">Log</a>
-        <a href="/glossary.html">Glossary</a>
         <a href="javascript:void(0)" onclick="getRandomPage()">Random Page</a>
-        <a href="mailto:rostertracker@gmail.com">Contact</a>
+        <a href="https://rosterwatch.printify.me/">Merch</a>
         <a href="https://www.patreon.com/bePatron?u=88266864">Support on Patreon</a>
     </div>
 </div>
@@ -341,12 +339,31 @@ $(document).ready(function () {
 
 
 
-<h1 class="title toc-ignore">Steve Bruno UFC Record &amp; Stats ·
-roster.watch</h1>
+<h1 class="title toc-ignore">Steve Bruno UFC Record &amp; Stats:
+Interactive Charts · roster.watch</h1>
 
 </div>
 
 
+<script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Steve Bruno",
+  "birthDate": "1981-11-03",
+  "nationality": "United States",
+  "memberOf": {
+    "@type": "SportsOrganization",
+    "name": "UFC",
+    "sport": "Mixed Martial Arts"
+  },
+  "additionalProperty": [
+    {
+      "@type": "PropertyValue",
+      "name": "UFC Record",
+      "value": "1-2"
+    }
+  ]
+}</script>
 <article class="event-info" style="display: flex; flex-direction: column; align-items: center; justify-content: center; width: 100%; height: auto;"><div class="fighter-info" style="text-align: center; margin-bottom: 20px;"><h2 style='font-weight: bold; font-size: 1.1em; margin: 0;'>Steve Bruno <span class='emoji'>🇺🇸</span></h2><time datetime='1981-11-03'><p><span>1981-11-03</span><script>document.currentScript.parentElement.innerHTML = (function(){  const dob = new Date('1981-11-03');  const today = new Date();  let years = today.getFullYear() - dob.getFullYear();  const monthDiff = today.getMonth() - dob.getMonth();  if (monthDiff < 0 || (monthDiff === 0 && today.getDate() < dob.getDate())) {    years--;  }  const yearAnniversary = new Date(dob);  yearAnniversary.setFullYear(dob.getFullYear() + years);  const dayDiff = Math.floor((today - yearAnniversary) / (1000 * 60 * 60 * 24));  const isBirthday = today.getMonth() === dob.getMonth() && today.getDate() === dob.getDate();  let ageString = `${years} year${years !== 1 ? 's' : ''}`;  if (dayDiff > 0) {    ageString += ` ${dayDiff} day${dayDiff !== 1 ? 's' : ''}`;  }  return `${ageString}${isBirthday ? ' 🎂' : ''} <br><span class='event-date'> (${dob.toISOString().split('T')[0]}) </span>`;}());</script></p></time></div><div style="display: flex; justify-content: center; align-items: flex-start; gap: 40px; max-width: 600px; width: 100%;"><div class="event-details" style="width: 50%;"><div class='event-stats'><p><strong>Record:</strong> 1-2<br></p><p><strong>By Method:</strong></p><ul><li> KO/TKO: 0-0</li><li> Submission: 1-0</li><li> Decision: 0-2</li></ul><p><strong>By Elo:</strong></p><ul><li>As Favorite: 1-1</li><li>As Underdog: 0-1</li></ul><p><strong>By Weight Class:</strong></p><ul><li>Welterweight: 1-2</li></ul><p><strong>By Round:</strong></p><ul><li>Round 2: 1-0</li><li>Round 3: 0-2</li></ul></div></div><div class="rankings" style="width: 50%;"><p><strong>Status:</strong> Former UFC Fighter</p><p><strong>Last 5:</strong> <span style='display: inline-block;width: 1.25em;
 height: 1.25em;
 line-height: 1.25em; font-size: 0.8em;
@@ -360,16 +377,28 @@ line-height: 1.25em; font-size: 0.8em;
 <h2 style='font-size: 1em; margin: 0; text-align: center; font-weight: bold;'>Elo Rating</h2>
 <div style="display: flex; justify-content: center; width: 100%; margin-top: 20px; margin-bottom: 20px;">
 <div id="fighter-performance-chart" style="width: 100%; max-width: 600px; height: 450px;">
-<div class="plotly html-widget html-fill-item" id="htmlwidget-bc8f3764c274da8099f7" style="width:100%;height:400px;"></div>
-<script type="application/json" data-for="htmlwidget-bc8f3764c274da8099f7">{"x":{"visdat":{"65a0133224f4":["function () ","plotlyVisDat"]},"cur_data":"65a0133224f4","attrs":{"65a0133224f4":{"x":{},"y":{},"mode":"lines+markers","line":{"color":"#d12d36","width":3,"shape":"hv"},"marker":{"size":10,"color":"#d12d36"},"hoverinfo":"text","text":{},"name":"Elo","alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"type":"scatter"}},"layout":{"height":450,"margin":{"b":40,"l":60,"t":0,"r":10},"yaxis":{"domain":[0,1],"automargin":true,"gridcolor":"#e1e1e1","title":""},"showlegend":false,"legend":{"orientation":"h","xanchor":"center","x":0.5,"y":-100},"xaxis":{"domain":[0,1],"automargin":true,"title":"","gridcolor":"#e1e1e1"},"hovermode":"closest"},"source":"A","config":{"modeBarButtonsToAdd":["hoverclosest","hovercompare"],"showSendToCloud":false,"displayModeBar":false},"data":[{"x":["2008-08-09","2008-12-10","2009-02-07"],"y":[2571,2640,2481],"mode":"lines+markers","line":{"color":"#d12d36","width":3,"shape":"hv"},"marker":{"color":"#d12d36","size":10,"line":{"color":"rgba(31,119,180,1)"}},"hoverinfo":["text","text","text"],"text":["2008-08-09 <br> 2571 Elo <br> Chris Wilson <br> Loss","2008-12-10 <br> 2640 Elo <br> Johnny Rees <br> Win","2009-02-07 <br> 2481 Elo <br> Matt Riddle <br> Loss"],"name":"Elo","type":"scatter","error_y":{"color":"rgba(31,119,180,1)"},"error_x":{"color":"rgba(31,119,180,1)"},"xaxis":"x","yaxis":"y","frame":null}],"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.20000000000000001,"selected":{"opacity":1},"debounce":0},"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot","plotly_sunburstclick"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script>
+<div class="plotly html-widget html-fill-item" id="htmlwidget-70f71f8ed15f2a5d61b5" style="width:100%;height:400px;"></div>
+<script type="application/json" data-for="htmlwidget-70f71f8ed15f2a5d61b5">{"x":{"visdat":{"3d801c1e1e08":["function () ","plotlyVisDat"]},"cur_data":"3d801c1e1e08","attrs":{"3d801c1e1e08":{"x":{},"y":{},"mode":"lines+markers","line":{"color":"#d12d36","width":3,"shape":"hv"},"marker":{"size":10,"color":"#d12d36"},"hoverinfo":"text","text":{},"name":"Elo","alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"type":"scatter"}},"layout":{"height":450,"margin":{"b":40,"l":60,"t":0,"r":10},"yaxis":{"domain":[0,1],"automargin":true,"gridcolor":"#e1e1e1","title":""},"showlegend":false,"legend":{"orientation":"h","xanchor":"center","x":0.5,"y":-100},"xaxis":{"domain":[0,1],"automargin":true,"title":"","gridcolor":"#e1e1e1"},"hovermode":"closest"},"source":"A","config":{"modeBarButtonsToAdd":["hoverclosest","hovercompare"],"showSendToCloud":false,"displayModeBar":false},"data":[{"x":["2008-08-09","2008-12-10","2009-02-07"],"y":[2571,2640,2481],"mode":"lines+markers","line":{"color":"#d12d36","width":3,"shape":"hv"},"marker":{"color":"#d12d36","size":10,"line":{"color":"rgba(31,119,180,1)"}},"hoverinfo":["text","text","text"],"text":["2008-08-09 <br> 2571 Elo <br> Chris Wilson <br> Loss","2008-12-10 <br> 2640 Elo <br> Johnny Rees <br> Win","2009-02-07 <br> 2481 Elo <br> Matt Riddle <br> Loss"],"name":"Elo","type":"scatter","error_y":{"color":"rgba(31,119,180,1)"},"error_x":{"color":"rgba(31,119,180,1)"},"xaxis":"x","yaxis":"y","frame":null}],"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.20000000000000001,"selected":{"opacity":1},"debounce":0},"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot","plotly_sunburstclick"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script>
 </div>
 </div>
 <h2 style='font-size: 1em; margin: 0; text-align: center; font-weight: bold;'>Bout History</h2>
-<div class="reactable html-widget html-fill-item" id="htmlwidget-93d94b6b8799ffb1934c" style="width:auto;height:auto;"></div>
-<script type="application/json" data-for="htmlwidget-93d94b6b8799ffb1934c">{"x":{"tag":{"name":"Reactable","attribs":{"data":{"event_date":["<br><span class = 'event-date'>2009-02-07<\/span><br><a href='/events/20090207.html'>UFC Fight Night: Lauzon vs. Stephens<\/a>","<br><span class = 'event-date'>2008-12-10<\/span><br><a href='/events/20081210.html'>UFC: Fight for the Troops<\/a>","<br><span class = 'event-date'>2008-08-09<\/span><br><a href='/events/20080809.html'>UFC 87: Seek and Destroy<\/a>"],"fighter_name":["<br> <b><a href=/fighters/mattriddle.html>Matt Riddle<\/a><\/b> (23)<span class = 'emoji'> 🇺🇸<\/span><br><span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> • 1-0<br>Elo: 2402","<br> <b>Steve Bruno<\/b> (27)<span class = 'emoji'> 🇺🇸<\/span><br><span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: crimson; color: white; font-weight: bold;'>L<\/span> • 0-1<br>Elo: <span class = 'favorite-elo'>2571<\/span>","<br> <b><a href=/fighters/chriswilson.html>Chris Wilson<\/a><\/b> (31)<span class = 'emoji'> 🇺🇸<\/span><br><span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: crimson; color: white; font-weight: bold;'>L<\/span> • 0-1<br>Elo: <span class = 'favorite-elo'>2703<\/span>"],"result_description":["<span style='font-size: 0.8em;'>WELTERWEIGHT<\/span><br>DEC<br>R3<br>05:00","<span style='font-size: 0.8em;'>WELTERWEIGHT<\/span><br>SUB<br>R2<br>03:44","<span style='font-size: 0.8em;'>WELTERWEIGHT<\/span><br>DEC<br>R3<br>05:00"],"opponent_fighter_name":["<br><span class='emoji'>🇺🇸 <\/span><b>Steve Bruno<\/b> (27)<br>1-1 • <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: crimson; color: white; font-weight: bold;'>L<\/span><br>Elo: <span class = 'favorite-elo'>2640<\/span>","<br><span class='emoji'>🇺🇸 <\/span><b><a href=/fighters/johnnyrees.html>Johnny Rees<\/a><\/b><br>0-1 • <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: crimson; color: white; font-weight: bold;'>L<\/span><br>Elo: 2459","<br><span class='emoji'>🇺🇸 <\/span><b>Steve Bruno<\/b> (26)<br>🔰 Debut<br>Elo: 2659"],"City":["<br>USF Sun Dome[1]<br>Tampa, Florida<br>United States 🇺🇸","<br>Cumberland County Crown Coliseum<br>Fayetteville, North Carolina<br>United States 🇺🇸","<br>Target Center<br>Minneapolis, Minnesota<br>United States 🇺🇸"]},"columns":[{"id":"event_date","name":"","type":"character","html":true,"width":200,"className":"side_info"},{"id":"fighter_name","name":"","type":"character","html":true,"width":240,"align":"right"},{"id":"result_description","name":"","type":"character","html":true,"width":50,"align":"center","className":"result_description"},{"id":"opponent_fighter_name","name":"","type":"character","html":true,"width":240,"align":"left"},{"id":"City","name":"","type":"character","cell":["<div style=\"white-space: nowrap; overflow: visible;\"><br>USF Sun Dome[1]<br>Tampa, Florida<br>United States 🇺🇸<\/div>","<div style=\"white-space: nowrap; overflow: visible;\"><br>Cumberland County Crown Coliseum<br>Fayetteville, North Carolina<br>United States 🇺🇸<\/div>","<div style=\"white-space: nowrap; overflow: visible;\"><br>Target Center<br>Minneapolis, Minnesota<br>United States 🇺🇸<\/div>"],"html":true,"width":200,"className":"side_info"}],"sortable":false,"pagination":false,"defaultPageSize":100,"showPageInfo":false,"nowrap":true,"className":"event_bouts","inline":true,"theme":{"headerStyle":{"borderBottom":"none"}},"dataKey":"0208f6a77b47e87a9868e3c119b307ab"},"children":[]},"class":"reactR_markup"},"evals":[],"jsHooks":[]}</script>
+<div class="reactable html-widget html-fill-item" id="htmlwidget-ef123a038e442ffae0a5" style="width:auto;height:auto;"></div>
+<script type="application/json" data-for="htmlwidget-ef123a038e442ffae0a5">{"x":{"tag":{"name":"Reactable","attribs":{"data":{"event_date":["<br><span class = 'event-date'>2009-02-07<\/span><br><a href='/events/20090207.html'>UFC Fight Night: Lauzon vs. Stephens<\/a>","<br><span class = 'event-date'>2008-12-10<\/span><br><a href='/events/20081210.html'>UFC: Fight for the Troops<\/a>","<br><span class = 'event-date'>2008-08-09<\/span><br><a href='/events/20080809.html'>UFC 87: Seek and Destroy<\/a>"],"fighter_name":["<br> <b><a href=/fighters/mattriddle.html>Matt Riddle<\/a><\/b> (23) <span class = 'emoji'>🇺🇸<\/span><br><span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> • 1-0<br>Elo: 2402","<br> <b>Steve Bruno<\/b> (27) <span class = 'emoji'>🇺🇸<\/span><br><span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: crimson; color: white; font-weight: bold;'>L<\/span> • 0-1<br>Elo: <span class = 'favorite-elo'>2571<\/span>","<br> <b><a href=/fighters/chriswilson.html>Chris Wilson<\/a><\/b> (31) <span class = 'emoji'>🇺🇸<\/span><br><span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: crimson; color: white; font-weight: bold;'>L<\/span> • 0-1<br>Elo: <span class = 'favorite-elo'>2703<\/span>"],"result_description":["<span style='font-size: 0.8em;'>WELTERWEIGHT<\/span><br>DEC<br>R3<br>05:00","<span style='font-size: 0.8em;'>WELTERWEIGHT<\/span><br>SUB<br>R2<br>03:44","<span style='font-size: 0.8em;'>WELTERWEIGHT<\/span><br>DEC<br>R3<br>05:00"],"opponent_fighter_name":["<br><span class='emoji'>🇺🇸<\/span> <b>Steve Bruno<\/b> (27)<br>1-1 • <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: crimson; color: white; font-weight: bold;'>L<\/span><br>Elo: <span class = 'favorite-elo'>2640<\/span>","<br><span class='emoji'>🇺🇸<\/span> <b><a href=/fighters/johnnyrees.html>Johnny Rees<\/a><\/b><br>0-1 • <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: crimson; color: white; font-weight: bold;'>L<\/span><br>Elo: 2459","<br><span class='emoji'>🇺🇸<\/span> <b>Steve Bruno<\/b> (26)<br>🔰 Debut<br>Elo: 2659"],"City":["<br>USF Sun Dome[1]<br>Tampa, Florida<br>United States <span class='emoji'>🇺🇸<\/span>","<br>Cumberland County Crown Coliseum<br>Fayetteville, North Carolina<br>United States <span class='emoji'>🇺🇸<\/span>","<br>Target Center<br>Minneapolis, Minnesota<br>United States <span class='emoji'>🇺🇸<\/span>"]},"columns":[{"id":"event_date","name":"","type":"character","html":true,"width":200,"className":"side_info"},{"id":"fighter_name","name":"","type":"character","html":true,"width":240,"align":"right"},{"id":"result_description","name":"","type":"character","html":true,"width":50,"align":"center","className":"result_description"},{"id":"opponent_fighter_name","name":"","type":"character","html":true,"width":240,"align":"left"},{"id":"City","name":"","type":"character","cell":["<div style=\"white-space: nowrap; overflow: visible;\"><br>USF Sun Dome[1]<br>Tampa, Florida<br>United States <span class='emoji'>🇺🇸<\/span><\/div>","<div style=\"white-space: nowrap; overflow: visible;\"><br>Cumberland County Crown Coliseum<br>Fayetteville, North Carolina<br>United States <span class='emoji'>🇺🇸<\/span><\/div>","<div style=\"white-space: nowrap; overflow: visible;\"><br>Target Center<br>Minneapolis, Minnesota<br>United States <span class='emoji'>🇺🇸<\/span><\/div>"],"html":true,"width":200,"className":"side_info"}],"sortable":false,"pagination":false,"defaultPageSize":100,"showPageInfo":false,"nowrap":true,"className":"event_bouts","inline":true,"theme":{"headerStyle":{"borderBottom":"none"}},"dataKey":"57964150a362ae61463ce7f7d5e4653c"},"children":[]},"class":"reactR_markup"},"evals":[],"jsHooks":[]}</script>
 
 <footer>
   <div class="footer-container">
+    <p class="copyright-text">
+        <a href="/glossary.html">Glossary</a>
+      <a href="mailto:rostertracker@gmail.com">Contact</a>
+    </p>
+<!--     <p class="browser-badge">
+      <a href="https://www.mozilla.org/en-US/firefox/">
+        <img src="C:/Users/mart/Dropbox/R/roster.watch/firefox.png" title="Best viewed with Firefox" alt="Best viewed with Firefox"><br>
+        <small class="copyright-text">Best viewed with Firefox</small>
+      </a>
+    </p> 
+ -->  </div>
+ <div class="footer-container">
     <p class="copyright-text">
       Copyright © <span id="currentYear"></span> All Rights Reserved by 
       <a href="#">roster.watch</a>

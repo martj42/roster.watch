@@ -11,7 +11,7 @@
 
 
 
-<title>Tony Fryklund UFC Record &amp; Stats · roster.watch</title>
+<title>Tony Fryklund UFC Record &amp; Stats: Interactive Charts · roster.watch</title>
 
 <script src="fighter_libs/header-attrs-2.29/header-attrs.js"></script>
 <script src="fighter_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
@@ -34,7 +34,7 @@
 <script src="fighter_libs/highlightjs-9.12.0/highlight.js"></script>
 <link href="fighter_libs/htmltools-fill-0.5.8.1/fill.css" rel="stylesheet" />
 <script src="fighter_libs/htmlwidgets-1.6.4/htmlwidgets.js"></script>
-<script src="fighter_libs/plotly-binding-4.10.4/plotly.js"></script>
+<script src="fighter_libs/plotly-binding-4.11.0/plotly.js"></script>
 <script src="fighter_libs/typedarray-0.1/typedarray.min.js"></script>
 <link href="fighter_libs/crosstalk-1.2.1/css/crosstalk.min.css" rel="stylesheet" />
 <script src="fighter_libs/crosstalk-1.2.1/js/crosstalk.min.js"></script>
@@ -284,9 +284,8 @@ $(document).ready(function () {
             </li>
             <li><a href="/events">Events</a></li>
             <li><a href="/log.html">Log</a></li>
-            <li><a href="/glossary.html">Glossary</a></li>
             <li><a href="javascript:void(0)" onclick="getRandomPage()">Random Page</a></li>
-            <li><a href="mailto:rostertracker@gmail.com">Contact</a></li>
+            <li><a href="https://rosterwatch.printify.me/">Merch</a></li>
             <li><a href="https://www.patreon.com/bePatron?u=88266864">Support on Patreon</a></li>
         </ul>
     </nav>
@@ -316,9 +315,8 @@ $(document).ready(function () {
         </div>
         <a href="/events">Events</a>
         <a href="/log.html">Log</a>
-        <a href="/glossary.html">Glossary</a>
         <a href="javascript:void(0)" onclick="getRandomPage()">Random Page</a>
-        <a href="mailto:rostertracker@gmail.com">Contact</a>
+        <a href="https://rosterwatch.printify.me/">Merch</a>
         <a href="https://www.patreon.com/bePatron?u=88266864">Support on Patreon</a>
     </div>
 </div>
@@ -341,12 +339,31 @@ $(document).ready(function () {
 
 
 
-<h1 class="title toc-ignore">Tony Fryklund UFC Record &amp; Stats ·
-roster.watch</h1>
+<h1 class="title toc-ignore">Tony Fryklund UFC Record &amp; Stats:
+Interactive Charts · roster.watch</h1>
 
 </div>
 
 
+<script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Tony Fryklund",
+  "birthDate": "1971-03-26",
+  "nationality": "United States",
+  "memberOf": {
+    "@type": "SportsOrganization",
+    "name": "UFC",
+    "sport": "Mixed Martial Arts"
+  },
+  "additionalProperty": [
+    {
+      "@type": "PropertyValue",
+      "name": "UFC Record",
+      "value": "2-2"
+    }
+  ]
+}</script>
 <article class="event-info" style="display: flex; flex-direction: column; align-items: center; justify-content: center; width: 100%; height: auto;"><div class="fighter-info" style="text-align: center; margin-bottom: 20px;"><h2 style='font-weight: bold; font-size: 1.1em; margin: 0;'>Tony Fryklund <span class='emoji'>🇺🇸</span></h2><time datetime='1971-03-26'><p><span>1971-03-26</span><script>document.currentScript.parentElement.innerHTML = (function(){  const dob = new Date('1971-03-26');  const today = new Date();  let years = today.getFullYear() - dob.getFullYear();  const monthDiff = today.getMonth() - dob.getMonth();  if (monthDiff < 0 || (monthDiff === 0 && today.getDate() < dob.getDate())) {    years--;  }  const yearAnniversary = new Date(dob);  yearAnniversary.setFullYear(dob.getFullYear() + years);  const dayDiff = Math.floor((today - yearAnniversary) / (1000 * 60 * 60 * 24));  const isBirthday = today.getMonth() === dob.getMonth() && today.getDate() === dob.getDate();  let ageString = `${years} year${years !== 1 ? 's' : ''}`;  if (dayDiff > 0) {    ageString += ` ${dayDiff} day${dayDiff !== 1 ? 's' : ''}`;  }  return `${ageString}${isBirthday ? ' 🎂' : ''} <br><span class='event-date'> (${dob.toISOString().split('T')[0]}) </span>`;}());</script></p></time></div><div style="display: flex; justify-content: center; align-items: flex-start; gap: 40px; max-width: 600px; width: 100%;"><div class="event-details" style="width: 50%;"><div class='event-stats'><p><strong>Record:</strong> 2-2<br></p><p><strong>By Method:</strong></p><ul><li> KO/TKO: 1-0</li><li> Submission: 1-2</li><li> Decision: 0-0</li></ul><p><strong>By Elo:</strong></p><ul><li>As Favorite: 1-1</li><li>As Underdog: 1-1</li></ul><p><strong>By Weight Class:</strong></p><ul><li>Middleweight: 2-1</li></ul><p><strong>By Round:</strong></p><ul><li>Round 1: 0-1</li><li>Round 2: 1-0</li></ul></div></div><div class="rankings" style="width: 50%;"><p><strong>Status:</strong> Former UFC Fighter</p><p><strong>Last 5:</strong> <span style='display: inline-block;width: 1.25em;
 height: 1.25em;
 line-height: 1.25em; font-size: 0.8em;
@@ -363,16 +380,28 @@ line-height: 1.25em; font-size: 0.8em;
 <h2 style='font-size: 1em; margin: 0; text-align: center; font-weight: bold;'>Elo Rating</h2>
 <div style="display: flex; justify-content: center; width: 100%; margin-top: 20px; margin-bottom: 20px;">
 <div id="fighter-performance-chart" style="width: 100%; max-width: 600px; height: 450px;">
-<div class="plotly html-widget html-fill-item" id="htmlwidget-4a8d1ecfc039d6154efc" style="width:100%;height:400px;"></div>
-<script type="application/json" data-for="htmlwidget-4a8d1ecfc039d6154efc">{"x":{"visdat":{"65a06be4402c":["function () ","plotlyVisDat"]},"cur_data":"65a06be4402c","attrs":{"65a06be4402c":{"x":{},"y":{},"mode":"lines+markers","line":{"color":"#d12d36","width":3,"shape":"hv"},"marker":{"size":10,"color":"#d12d36"},"hoverinfo":"text","text":{},"name":"Elo","alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"type":"scatter"}},"layout":{"height":450,"margin":{"b":40,"l":60,"t":0,"r":10},"yaxis":{"domain":[0,1],"automargin":true,"gridcolor":"#e1e1e1","title":""},"showlegend":false,"legend":{"orientation":"h","xanchor":"center","x":0.5,"y":-100},"xaxis":{"domain":[0,1],"automargin":true,"title":"","gridcolor":"#e1e1e1"},"hovermode":"closest"},"source":"A","config":{"modeBarButtonsToAdd":["hoverclosest","hovercompare"],"showSendToCloud":false,"displayModeBar":false},"data":[{"x":["1997-07-27","1997-07-27","2002-06-22","2004-10-22"],"y":[2200,2200,2497,2375],"mode":"lines+markers","line":{"color":"#d12d36","width":3,"shape":"hv"},"marker":{"color":"#d12d36","size":10,"line":{"color":"rgba(31,119,180,1)"}},"hoverinfo":["text","text","text","text"],"text":["1997-07-27 <br> 2200 Elo <br> Kevin Jackson <br> Loss","1997-07-27 <br> 2200 Elo <br> Donnie Chappell <br> Win","2002-06-22 <br> 2497 Elo <br> Rodrigo Ruas <br> Win","2004-10-22 <br> 2375 Elo <br> Ivan Salaverry <br> Loss"],"name":"Elo","type":"scatter","error_y":{"color":"rgba(31,119,180,1)"},"error_x":{"color":"rgba(31,119,180,1)"},"xaxis":"x","yaxis":"y","frame":null}],"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.20000000000000001,"selected":{"opacity":1},"debounce":0},"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot","plotly_sunburstclick"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script>
+<div class="plotly html-widget html-fill-item" id="htmlwidget-7db42ba950590bf3bcb0" style="width:100%;height:400px;"></div>
+<script type="application/json" data-for="htmlwidget-7db42ba950590bf3bcb0">{"x":{"visdat":{"3d8016c84f64":["function () ","plotlyVisDat"]},"cur_data":"3d8016c84f64","attrs":{"3d8016c84f64":{"x":{},"y":{},"mode":"lines+markers","line":{"color":"#d12d36","width":3,"shape":"hv"},"marker":{"size":10,"color":"#d12d36"},"hoverinfo":"text","text":{},"name":"Elo","alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"type":"scatter"}},"layout":{"height":450,"margin":{"b":40,"l":60,"t":0,"r":10},"yaxis":{"domain":[0,1],"automargin":true,"gridcolor":"#e1e1e1","title":""},"showlegend":false,"legend":{"orientation":"h","xanchor":"center","x":0.5,"y":-100},"xaxis":{"domain":[0,1],"automargin":true,"title":"","gridcolor":"#e1e1e1"},"hovermode":"closest"},"source":"A","config":{"modeBarButtonsToAdd":["hoverclosest","hovercompare"],"showSendToCloud":false,"displayModeBar":false},"data":[{"x":["1997-07-27","1997-07-27","2002-06-22","2004-10-22"],"y":[2200,2200,2497,2375],"mode":"lines+markers","line":{"color":"#d12d36","width":3,"shape":"hv"},"marker":{"color":"#d12d36","size":10,"line":{"color":"rgba(31,119,180,1)"}},"hoverinfo":["text","text","text","text"],"text":["1997-07-27 <br> 2200 Elo <br> Kevin Jackson <br> Loss","1997-07-27 <br> 2200 Elo <br> Donnie Chappell <br> Win","2002-06-22 <br> 2497 Elo <br> Rodrigo Ruas <br> Win","2004-10-22 <br> 2375 Elo <br> Ivan Salaverry <br> Loss"],"name":"Elo","type":"scatter","error_y":{"color":"rgba(31,119,180,1)"},"error_x":{"color":"rgba(31,119,180,1)"},"xaxis":"x","yaxis":"y","frame":null}],"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.20000000000000001,"selected":{"opacity":1},"debounce":0},"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot","plotly_sunburstclick"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script>
 </div>
 </div>
 <h2 style='font-size: 1em; margin: 0; text-align: center; font-weight: bold;'>Bout History</h2>
-<div class="reactable html-widget html-fill-item" id="htmlwidget-cede3a926f12ec43a319" style="width:auto;height:auto;"></div>
-<script type="application/json" data-for="htmlwidget-cede3a926f12ec43a319">{"x":{"tag":{"name":"Reactable","attribs":{"data":{"event_date":["<br><span class = 'event-date'>2004-10-22<\/span><br><a href='/events/20041022.html'>UFC 50: The War of '04<\/a>","<br><span class = 'event-date'>2002-06-22<\/span><br><a href='/events/20020622.html'>UFC 37.5: As Real As It Gets<\/a>","<br><span class = 'event-date'>1997-07-27<\/span><br><a href='/events/19970727.html'>UFC 14: Showdown<\/a>","<br><span class = 'event-date'>1997-07-27<\/span><br><a href='/events/19970727.html'>UFC 14: Showdown<\/a>"],"fighter_name":["<br> <b><a href=/fighters/ivansalaverry.html>Ivan Salaverry<\/a><\/b> (33)<span class = 'emoji'> 🇨🇦<\/span><br><span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: crimson; color: white; font-weight: bold;'>L<\/span> • 1-1<br>Elo: 2446","<br> <b>Tony Fryklund<\/b> (31)<span class = 'emoji'> 🇺🇸<\/span><br><span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: crimson; color: white; font-weight: bold;'>L<\/span> • 1-1<br>Elo: <span class = 'favorite-elo'>2461<\/span>","<br> <b><a href=/fighters/kevinjackson.html>Kevin Jackson<\/a><\/b> (32)<span class = 'emoji'> 🇺🇸<\/span><br>Debut 🔰<br>Elo: 2200","<br> <b>Tony Fryklund<\/b> (26)<span class = 'emoji'> 🇺🇸<\/span><br>Debut 🔰<br>Elo: 2200"],"result_description":["<span style='font-size: 0.8em;'>MIDDLEWEIGHT<\/span><br>SUB<br>R1<br>01:36","<span style='font-size: 0.8em;'>MIDDLEWEIGHT<\/span><br>TKO<br>R2<br>03:34","<span style='font-size: 0.8em;'><\/span><br>SUB<br><br>00:44","<span style='font-size: 0.8em;'>MIDDLEWEIGHT<\/span><br>SUB<br><br>01:31"],"opponent_fighter_name":["<br><span class='emoji'>🇺🇸 <\/span><b>Tony Fryklund<\/b> (33)<br>2-1 • <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: crimson; color: white; font-weight: bold;'>L<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span><br>Elo: <span class = 'favorite-elo'>2486<\/span>","<br><span class='emoji'>🇧🇷 <\/span><b><a href=/fighters/rodrigoruas.html>Rodrigo Ruas<\/a><\/b><br>🔰 Debut<br>Elo: 2200","<br><span class='emoji'>🇺🇸 <\/span><b>Tony Fryklund<\/b> (26)<br>🔰 Debut<br>Elo: 2200","<br><span class='emoji'>🇺🇸 <\/span><b><a href=/fighters/donniechappell.html>Donnie Chappell<\/a><\/b><br>🔰 Debut<br>Elo: 2200"],"City":["<br>Trump Plaza<br>Atlantic City, New Jersey<br>United States 🇺🇸","<br>Bellagio Hotel and Casino<br>Las Vegas, Nevada<br>United States 🇺🇸","<br>Boutwell Auditorium<br>Birmingham, Alabama<br>United States 🇺🇸","<br>Boutwell Auditorium<br>Birmingham, Alabama<br>United States 🇺🇸"]},"columns":[{"id":"event_date","name":"","type":"character","html":true,"width":200,"className":"side_info"},{"id":"fighter_name","name":"","type":"character","html":true,"width":240,"align":"right"},{"id":"result_description","name":"","type":"character","html":true,"width":50,"align":"center","className":"result_description"},{"id":"opponent_fighter_name","name":"","type":"character","html":true,"width":240,"align":"left"},{"id":"City","name":"","type":"character","cell":["<div style=\"white-space: nowrap; overflow: visible;\"><br>Trump Plaza<br>Atlantic City, New Jersey<br>United States 🇺🇸<\/div>","<div style=\"white-space: nowrap; overflow: visible;\"><br>Bellagio Hotel and Casino<br>Las Vegas, Nevada<br>United States 🇺🇸<\/div>","<div style=\"white-space: nowrap; overflow: visible;\"><br>Boutwell Auditorium<br>Birmingham, Alabama<br>United States 🇺🇸<\/div>","<div style=\"white-space: nowrap; overflow: visible;\"><br>Boutwell Auditorium<br>Birmingham, Alabama<br>United States 🇺🇸<\/div>"],"html":true,"width":200,"className":"side_info"}],"sortable":false,"pagination":false,"defaultPageSize":100,"showPageInfo":false,"nowrap":true,"className":"event_bouts","inline":true,"theme":{"headerStyle":{"borderBottom":"none"}},"dataKey":"7c811a02c91abb88e178ff6a94075cb3"},"children":[]},"class":"reactR_markup"},"evals":[],"jsHooks":[]}</script>
+<div class="reactable html-widget html-fill-item" id="htmlwidget-c66654e8dcd906882a50" style="width:auto;height:auto;"></div>
+<script type="application/json" data-for="htmlwidget-c66654e8dcd906882a50">{"x":{"tag":{"name":"Reactable","attribs":{"data":{"event_date":["<br><span class = 'event-date'>2004-10-22<\/span><br><a href='/events/20041022.html'>UFC 50: The War of '04<\/a>","<br><span class = 'event-date'>2002-06-22<\/span><br><a href='/events/20020622.html'>UFC 37.5: As Real As It Gets<\/a>","<br><span class = 'event-date'>1997-07-27<\/span><br><a href='/events/19970727.html'>UFC 14: Showdown<\/a>","<br><span class = 'event-date'>1997-07-27<\/span><br><a href='/events/19970727.html'>UFC 14: Showdown<\/a>"],"fighter_name":["<br> <b><a href=/fighters/ivansalaverry.html>Ivan Salaverry<\/a><\/b> (33) <span class = 'emoji'>🇨🇦<\/span><br><span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: crimson; color: white; font-weight: bold;'>L<\/span> • 1-1<br>Elo: 2446","<br> <b>Tony Fryklund<\/b> (31) <span class = 'emoji'>🇺🇸<\/span><br><span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: crimson; color: white; font-weight: bold;'>L<\/span> • 1-1<br>Elo: <span class = 'favorite-elo'>2461<\/span>","<br> <b><a href=/fighters/kevinjackson.html>Kevin Jackson<\/a><\/b> (32) <span class = 'emoji'>🇺🇸<\/span><br>Debut 🔰<br>Elo: 2200","<br> <b>Tony Fryklund<\/b> (26) <span class = 'emoji'>🇺🇸<\/span><br>Debut 🔰<br>Elo: 2200"],"result_description":["<span style='font-size: 0.8em;'>MIDDLEWEIGHT<\/span><br>SUB<br>R1<br>01:36","<span style='font-size: 0.8em;'>MIDDLEWEIGHT<\/span><br>TKO<br>R2<br>03:34","<span style='font-size: 0.8em;'><\/span><br>SUB<br><br>00:44","<span style='font-size: 0.8em;'>MIDDLEWEIGHT<\/span><br>SUB<br><br>01:31"],"opponent_fighter_name":["<br><span class='emoji'>🇺🇸<\/span> <b>Tony Fryklund<\/b> (33)<br>2-1 • <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: crimson; color: white; font-weight: bold;'>L<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span><br>Elo: <span class = 'favorite-elo'>2486<\/span>","<br><span class='emoji'>🇧🇷<\/span> <b><a href=/fighters/rodrigoruas.html>Rodrigo Ruas<\/a><\/b><br>🔰 Debut<br>Elo: 2200","<br><span class='emoji'>🇺🇸<\/span> <b>Tony Fryklund<\/b> (26)<br>🔰 Debut<br>Elo: 2200","<br><span class='emoji'>🇺🇸<\/span> <b><a href=/fighters/donniechappell.html>Donnie Chappell<\/a><\/b><br>🔰 Debut<br>Elo: 2200"],"City":["<br>Trump Plaza<br>Atlantic City, New Jersey<br>United States <span class='emoji'>🇺🇸<\/span>","<br>Bellagio Hotel and Casino<br>Las Vegas, Nevada<br>United States <span class='emoji'>🇺🇸<\/span>","<br>Boutwell Auditorium<br>Birmingham, Alabama<br>United States <span class='emoji'>🇺🇸<\/span>","<br>Boutwell Auditorium<br>Birmingham, Alabama<br>United States <span class='emoji'>🇺🇸<\/span>"]},"columns":[{"id":"event_date","name":"","type":"character","html":true,"width":200,"className":"side_info"},{"id":"fighter_name","name":"","type":"character","html":true,"width":240,"align":"right"},{"id":"result_description","name":"","type":"character","html":true,"width":50,"align":"center","className":"result_description"},{"id":"opponent_fighter_name","name":"","type":"character","html":true,"width":240,"align":"left"},{"id":"City","name":"","type":"character","cell":["<div style=\"white-space: nowrap; overflow: visible;\"><br>Trump Plaza<br>Atlantic City, New Jersey<br>United States <span class='emoji'>🇺🇸<\/span><\/div>","<div style=\"white-space: nowrap; overflow: visible;\"><br>Bellagio Hotel and Casino<br>Las Vegas, Nevada<br>United States <span class='emoji'>🇺🇸<\/span><\/div>","<div style=\"white-space: nowrap; overflow: visible;\"><br>Boutwell Auditorium<br>Birmingham, Alabama<br>United States <span class='emoji'>🇺🇸<\/span><\/div>","<div style=\"white-space: nowrap; overflow: visible;\"><br>Boutwell Auditorium<br>Birmingham, Alabama<br>United States <span class='emoji'>🇺🇸<\/span><\/div>"],"html":true,"width":200,"className":"side_info"}],"sortable":false,"pagination":false,"defaultPageSize":100,"showPageInfo":false,"nowrap":true,"className":"event_bouts","inline":true,"theme":{"headerStyle":{"borderBottom":"none"}},"dataKey":"b4264cd6b0ed30c82fddec91c8cdfd5a"},"children":[]},"class":"reactR_markup"},"evals":[],"jsHooks":[]}</script>
 
 <footer>
   <div class="footer-container">
+    <p class="copyright-text">
+        <a href="/glossary.html">Glossary</a>
+      <a href="mailto:rostertracker@gmail.com">Contact</a>
+    </p>
+<!--     <p class="browser-badge">
+      <a href="https://www.mozilla.org/en-US/firefox/">
+        <img src="C:/Users/mart/Dropbox/R/roster.watch/firefox.png" title="Best viewed with Firefox" alt="Best viewed with Firefox"><br>
+        <small class="copyright-text">Best viewed with Firefox</small>
+      </a>
+    </p> 
+ -->  </div>
+ <div class="footer-container">
     <p class="copyright-text">
       Copyright © <span id="currentYear"></span> All Rights Reserved by 
       <a href="#">roster.watch</a>

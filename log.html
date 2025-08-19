@@ -331,10 +331,35 @@ $(document).ready(function () {
   <a href="https://nextdns.io/?from=c4nybned" class="cta-button">Try it now!</a>
 </div>
 -->
+<script>
+fetch('https://ipinfo.io/json?token=59a347f61d88b8')
+  .then(res => res.json())
+  .then(data => {
+    console.log('Your country code:', data.country);
+    const allowedCountries = ['CY', 'FI', 'LV', 'PL', 'RS', 'LT', 'SI', 'IL', 'TR', 'IT', 'ES', 'BE', 'GR', 'GE', 'EE', 'GB', 'CZ', 'FR', 'BA', 'PT', 'DE', 'ME', 'SE', 'IS'];
+    if (allowedCountries.includes(data.country)) {
+          document.querySelector('.eurobasket-ad').style.display = 'block';
+          document.querySelector('.patreon-box').style.display = 'none';
+
+    } else {
+          document.querySelector('.patreon-box').style.display = 'block';
+    }
+  })
+  .catch(err => console.log('Geolocation failed', err));
+</script>
+
 <div class="patreon-box">
 <a href="https://rosterwatch.printify.me/">
-  <img src="/images/merch.png">
-</a><p>📢 Click <a href='https://www.roster.watch/log.html'>HERE</a> to sign up for e-mail notifications on UFC roster updates.</p>
+  <img src="/images/merch.png"></a>
+<p>📢 Click <a href='https://www.roster.watch/log.html'>HERE</a> to sign up for e-mail notifications on UFC roster updates.</p>
+</div>
+
+<div class="eurobasket-ad" style="display:none;">
+ <!--   <a href="https://youreurobasketgame.com">Play EuroBasket 2025 Predictions!</a> 
+ -->
+ <a href="https://rosterwatch.printify.me/">
+  <img src="/images/merch.png"></a>
+<p>📢 Click <a href='https://www.roster.watch/log.html'>HERE</a> to sign up for e-mail notifications on UFC roster updates.</p>
 </div>
 
 <div id="header">
@@ -354,6 +379,18 @@ Loading…
 <p>
 ❌ Fighter removed: 
 <a href="/fighters/julijastoliarenko.html">Julija Stoliarenko</a>
+</p>
+<p>
+✅ Fighter added: 
+<a href="/fighters/kyledaukaus.html">Kyle Daukaus</a>
+</p>
+<p>
+✅ Fighter added: 
+<a href="/fighters/uransatybaldiev.html">Uran Satybaldiev</a>
+</p>
+<p>
+✅ Fighter added: 
+<a href="/fighters/taiyilakenueraji.html">Taiyilake Nueraji</a>
 </p>
 <h4>2025-08-15</h4>
 <p>
@@ -5043,7 +5080,7 @@ Mike Diamond
 ✅ Fighter added: 
 <a href="/fighters/michealgillmore.html">Micheal Gillmore</a>
 </p>
-<p>Updated: 2025-08-18 19:57:26 PDT</p>
+<p>Updated: 2025-08-19 08:30:45 PDT</p>
 
 <footer>
   <div class="footer-container">

@@ -314,18 +314,15 @@ nav ul {
     align-items: center; /* Align items to the middle of the tallest item */
 }
 
-.patreon-box {
-  /* background-color: #24252A; /* Success green */
+.patreon-box, .eurobasket-ad {
   color: #24252A;
   padding: 15px;
   border-radius: 5px;
   font-size: 16px;
-  margin: 20px auto; /* Centers the box horizontally */
-  border-radius: 5px;
-  font-size: 16px;
-  width: fit-content; /* Makes the box width match the content inside */
-  max-width: 650px; /* Optional: Limits the width to 90% of the page */
-  text-align: center; /* Centers text inside the box */
+  margin: 20px auto;
+  width: fit-content;
+  max-width: 650px;
+  text-align: center;
 }
 
 .patreon-box a.cta-button {

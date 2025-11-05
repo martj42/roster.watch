@@ -371,7 +371,7 @@ nav ul {
 
 .patreon-box a.cta-button {
   color: white;
-  background-color: #05f;
+  background-color: #f96854;
   /* Button color */
   padding: 10px 20px;
   text-decoration: none;
@@ -381,7 +381,7 @@ nav ul {
 }
 
 .patreon-box a.cta-button:hover {
-  background-color: #05f;
+  background-color: #f96854;
   /* Hover effect */
 }
 

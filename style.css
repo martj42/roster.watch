@@ -23,7 +23,21 @@
 
 body {
   font-family: 'Open Sans', sans-serif;
-  background-color: #f7f5f0
+  background-color: #f7f5f0;
+  font-size: 14px;
+  line-height: 1.42857143;
+  color: #333;
+  margin: auto;
+  max-width: 1800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+h1 {
+  font-weight: bold;
+  font-size: 1.1em;
+  margin: 0;
+  display: inline;
 }
 
 h1.title {
@@ -423,9 +437,12 @@ a .nav-arrow {
   gap: 1rem;
 }
 
-.event-date {
+.event-date a {
   color: #666;
-  min-width: 100px;
+  text-decoration: none !important;
+  text-decoration-style: none !important;
+  text-decoration-thickness: 0px;
+
 }
 
 .upcoming-events {
@@ -557,4 +574,199 @@ a .nav-arrow {
 
 .bmf {
   color: gray;
+}
+
+.fighter-info {
+  text-align: center;
+}
+
+.dob .cake {
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}
+
+.date_of_birth,
+.peak-date {
+  color: #555;
+  font-size: 0.9rem;
+}
+
+h2 {
+  font-size: 1em;
+  margin: 20px 0 0 0;
+  text-align: center;
+  font-weight: bold;
+}
+
+.event-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.two-column-layout {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 40px;
+  max-width: 600px;
+  width: 100%;
+}
+
+.event-details,
+.rankings {
+  width: 50%;
+}
+
+p {
+  margin: 10px 0 0 0;
+}
+
+ul {
+  margin: 0;
+}
+
+.wldn-letter {
+  display: inline-block;
+  width: 1.25em;
+  height: 1.25em;
+  line-height: 1.25em;
+  font-size: 0.8em;
+  text-align: center;
+  border-radius: 50%;
+  color: white;
+  font-weight: bold;
+}
+
+.letter-W {
+  background-color: green;
+}
+
+.letter-L {
+  background-color: crimson;
+}
+
+.letter-N {
+  background-color: slategray;
+}
+
+.letter-D {
+  background-color: darkorange;
+}
+
+.chart-container {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  margin: 0;
+}
+
+#fighter-performance-chart {
+  width: 100%;
+  max-width: 600px;
+  max-height: 800px;
+}
+
+.bout-row {
+  display: flex;
+  align-items: flex-start;
+  padding: 8px 0;
+  border-bottom: 1px solid #eee;
+  white-space: nowrap;
+}
+
+.side_info {
+  width: 200px;
+  font-size: 0.9em;
+}
+
+.bout-venue {
+  white-space: nowrap;
+}
+
+.bout-fighter {
+  width: 250px;
+}
+
+.bout-left {
+  text-align: right;
+  padding-right: 10px;
+  white-space: nowrap;
+
+}
+
+.bout-right {
+  text-align: left;
+  padding-left: 10px;
+  white-space: nowrap;
+
+}
+
+.result_description {
+  width: 60px;
+  text-align: center;
+  display: inline;
+}
+
+.weightclass {
+  font-size: 0.8em;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  display: inline-flex;
+  align-items: center;
+  gap: 2px;
+}
+
+.fotn {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+@media (max-width: 768px) {
+    .bout-row {
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        scroll-snap-type: x mandatory;
+        white-space: normal;
+    }
+
+    .bout-row::before {
+        content: '';
+        flex: 1;
+        min-width: 20px;
+    }
+
+    .bout-fighter,
+    .result_description,
+    .side_info {
+        flex-shrink: 0;
+    }
+    .side_info {
+        width: auto;
+    }
+    .result_description {
+        position: relative;
+        scroll-snap-align: center;
+    }
+
+    .weightclass {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        top: 0;
+        /* adjust as needed */
+    }
+}
+
+.container {
+    padding-right: 15px;
+    padding-left: 15px;
 }

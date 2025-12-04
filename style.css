@@ -36,7 +36,7 @@ body {
 h1 {
   font-weight: bold;
   font-size: 1.1em;
-  margin: 0;
+  margin: 0 5px 0 0;
   display: inline;
 }
 
@@ -576,7 +576,7 @@ a .nav-arrow {
   color: gray;
 }
 
-.fighter-info {
+.fighter-name {
   text-align: center;
 }
 
@@ -602,7 +602,7 @@ h2 {
   font-weight: bold;
 }
 
-.event-info {
+.fighter-info {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -619,7 +619,7 @@ h2 {
   width: 100%;
 }
 
-.event-details,
+.fighter-details,
 .rankings {
   width: 50%;
 }
@@ -678,6 +678,7 @@ ul {
   align-items: flex-start;
   padding: 8px 0;
   border-bottom: 1px solid #eee;
+  justify-content: center;
   white-space: nowrap;
 }
 
@@ -736,6 +737,7 @@ ul {
         -webkit-overflow-scrolling: touch;
         scroll-snap-type: x mandatory;
         white-space: normal;
+        justify-content: normal;
     }
 
     .bout-row::before {

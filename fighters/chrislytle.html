@@ -1,492 +1,186 @@
-<!DOCTYPE html>
-
-<html lang="en" xml:lang="en">
-
-<head>
-
-<meta charset="utf-8" />
-<meta name="generator" content="pandoc" />
-<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
-
-
-
-
-<title>Chris Lytle UFC Record &amp; Stats: Interactive Charts · roster.watch</title>
-
-<script src="fighter_libs/header-attrs-2.29/header-attrs.js"></script>
-<script src="fighter_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<link href="fighter_libs/bootstrap-3.3.5/css/bootstrap.min.css" rel="stylesheet" />
-<script src="fighter_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
-<script src="fighter_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
-<script src="fighter_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
-<style>h1 {font-size: 34px;}
-       h1.title {font-size: 38px;}
-       h2 {font-size: 30px;}
-       h3 {font-size: 24px;}
-       h4 {font-size: 18px;}
-       h5 {font-size: 16px;}
-       h6 {font-size: 12px;}
-       code {color: inherit; background-color: rgba(0, 0, 0, 0.04);}
-       pre:not([class]) { background-color: white }</style>
-<script src="fighter_libs/navigation-1.1/tabsets.js"></script>
-<link href="fighter_libs/highlightjs-9.12.0/default.css" rel="stylesheet" />
-<script src="fighter_libs/highlightjs-9.12.0/highlight.js"></script>
-<link href="fighter_libs/htmltools-fill-0.5.8.1/fill.css" rel="stylesheet" />
-<script src="fighter_libs/htmlwidgets-1.6.4/htmlwidgets.js"></script>
-<script src="fighter_libs/plotly-binding-4.11.0/plotly.js"></script>
-<script src="fighter_libs/typedarray-0.1/typedarray.min.js"></script>
-<link href="fighter_libs/crosstalk-1.2.1/css/crosstalk.min.css" rel="stylesheet" />
-<script src="fighter_libs/crosstalk-1.2.1/js/crosstalk.min.js"></script>
-<link href="fighter_libs/plotly-htmlwidgets-css-2.11.1/plotly-htmlwidgets.css" rel="stylesheet" />
-<script src="fighter_libs/plotly-main-2.11.1/plotly-latest.min.js"></script>
-<script src="fighter_libs/core-js-2.5.3/shim.min.js"></script>
-<script src="fighter_libs/react-18.2.0/react.min.js"></script>
-<script src="fighter_libs/react-18.2.0/react-dom.min.js"></script>
-<script src="fighter_libs/reactwidget-2.0.0/react-tools.js"></script>
-<link href="fighter_libs/reactable-0.4.4/reactable.css" rel="stylesheet" />
-<script src="fighter_libs/reactable-binding-0.4.4/reactable.js"></script>
-<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-<link rel="manifest" href="/site.webmanifest">
-<meta name="description" content="An up-to-date list of the full active UFC roster including biographical data, rankings, records, and more.">
-<!-- <meta property="og:title" content="roster.watch" />
-<meta property="og:type" content="website" />
-<meta property="og:url" content="https://www.roster.watch/" />
-<meta property="og:image" content="https://www.roster.watch/og_image.png" />
-<meta property="og:description" content="An up-to-date list of the full active UFC roster including biographical data, rankings, record, and more." />
-<script src="https://unpkg.com/twemoji@latest/dist/twemoji.min.js" crossorigin="anonymous"></script> 
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7299518767310567"
-     crossorigin="anonymous"></script> -->
-<script data-goatcounter="https://rosterwatch.goatcounter.com/count"
-        async src="//gc.zgo.at/count.js"></script>
-<script defer src="/script.js" data-website-id="f0f3ed7e-e89c-4a29-a745-475e0b10271a"></script>
-
-<style type="text/css">
-  code{white-space: pre-wrap;}
-  span.smallcaps{font-variant: small-caps;}
-  span.underline{text-decoration: underline;}
-  div.column{display: inline-block; vertical-align: top; width: 50%;}
-  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
-  ul.task-list{list-style: none;}
-    </style>
-
-<style type="text/css">code{white-space: pre;}</style>
-<script type="text/javascript">
-if (window.hljs) {
-  hljs.configure({languages: []});
-  hljs.initHighlightingOnLoad();
-  if (document.readyState && document.readyState === "complete") {
-    window.setTimeout(function() { hljs.initHighlighting(); }, 0);
-  }
-}
-</script>
-
-
-
-
-
-
-<link rel="stylesheet" href="../style.css" type="text/css" />
-
-
-
-<style type = "text/css">
-.main-container {
-  max-width: 940px;
-  margin-left: auto;
-  margin-right: auto;
-}
-img {
-  max-width:100%;
-}
-.tabbed-pane {
-  padding-top: 12px;
-}
-.html-widget {
-  margin-bottom: 20px;
-}
-button.code-folding-btn:focus {
-  outline: none;
-}
-summary {
-  display: list-item;
-}
-details > summary > p:only-child {
-  display: inline;
-}
-pre code {
-  padding: 0;
-}
-</style>
-
-
-<style type="text/css">
-.dropdown-submenu {
-  position: relative;
-}
-.dropdown-submenu>.dropdown-menu {
-  top: 0;
-  left: 100%;
-  margin-top: -6px;
-  margin-left: -1px;
-  border-radius: 0 6px 6px 6px;
-}
-.dropdown-submenu:hover>.dropdown-menu {
-  display: block;
-}
-.dropdown-submenu>a:after {
-  display: block;
-  content: " ";
-  float: right;
-  width: 0;
-  height: 0;
-  border-color: transparent;
-  border-style: solid;
-  border-width: 5px 0 5px 5px;
-  border-left-color: #cccccc;
-  margin-top: 5px;
-  margin-right: -10px;
-}
-.dropdown-submenu:hover>a:after {
-  border-left-color: #adb5bd;
-}
-.dropdown-submenu.pull-left {
-  float: none;
-}
-.dropdown-submenu.pull-left>.dropdown-menu {
-  left: -100%;
-  margin-left: 10px;
-  border-radius: 6px 0 6px 6px;
-}
-</style>
-
-<script type="text/javascript">
-// manage active state of menu based on current page
-$(document).ready(function () {
-  // active menu anchor
-  href = window.location.pathname
-  href = href.substr(href.lastIndexOf('/') + 1)
-  if (href === "")
-    href = "index.html";
-  var menuAnchor = $('a[href="' + href + '"]');
-
-  // mark the anchor link active (and if it's in a dropdown, also mark that active)
-  var dropdown = menuAnchor.closest('li.dropdown');
-  if (window.bootstrap) { // Bootstrap 4+
-    menuAnchor.addClass('active');
-    dropdown.find('> .dropdown-toggle').addClass('active');
-  } else { // Bootstrap 3
-    menuAnchor.parent().addClass('active');
-    dropdown.addClass('active');
-  }
-
-  // Navbar adjustments
-  var navHeight = $(".navbar").first().height() + 15;
-  var style = document.createElement('style');
-  var pt = "padding-top: " + navHeight + "px; ";
-  var mt = "margin-top: -" + navHeight + "px; ";
-  var css = "";
-  // offset scroll position for anchor links (for fixed navbar)
-  for (var i = 1; i <= 6; i++) {
-    css += ".section h" + i + "{ " + pt + mt + "}\n";
-  }
-  style.innerHTML = "body {" + pt + "padding-bottom: 40px; }\n" + css;
-  document.head.appendChild(style);
-});
-</script>
-
-<!-- tabsets -->
-
-<style type="text/css">
-.tabset-dropdown > .nav-tabs {
-  display: inline-table;
-  max-height: 500px;
-  min-height: 44px;
-  overflow-y: auto;
-  border: 1px solid #ddd;
-  border-radius: 4px;
-}
-
-.tabset-dropdown > .nav-tabs > li.active:before, .tabset-dropdown > .nav-tabs.nav-tabs-open:before {
-  content: "\e259";
-  font-family: 'Glyphicons Halflings';
-  display: inline-block;
-  padding: 10px;
-  border-right: 1px solid #ddd;
-}
-
-.tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
-  content: "\e258";
-  font-family: 'Glyphicons Halflings';
-  border: none;
-}
-
-.tabset-dropdown > .nav-tabs > li.active {
-  display: block;
-}
-
-.tabset-dropdown > .nav-tabs > li > a,
-.tabset-dropdown > .nav-tabs > li > a:focus,
-.tabset-dropdown > .nav-tabs > li > a:hover {
-  border: none;
-  display: inline-block;
-  border-radius: 4px;
-  background-color: transparent;
-}
-
-.tabset-dropdown > .nav-tabs.nav-tabs-open > li {
-  display: block;
-  float: none;
-}
-
-.tabset-dropdown > .nav-tabs > li {
-  display: none;
-}
-</style>
-
-<!-- code folding -->
-
-
-
-
-</head>
-
-<body>
-
-
-<div class="container-fluid main-container">
-
-
-
-<header>
-    <a class="logo" href="/"><img src="/images/logo.svg" alt="logo"></a>
-    <nav>
-        <ul class="nav__links">
-            <li><a href="/">Current Roster</a></li>
-            <li><a href="/former.html">Former Roster</a></li>
-            <li class="dropdown">
-                <a href="#" onclick="return false;">Weight Classes</a>
-<ul class="dropdown-content">
-                    <li><a href="/heavyweight.html">Heavyweight</a></li>
-                    <li><a href="/lightheavyweight.html">Light Heavyweight</a></li>
-                    <li><a href="/middleweight.html">Middleweight</a></li>
-                    <li><a href="/welterweight.html">Welterweight</a></li>
-                    <li><a href="/lightweight.html">Lightweight</a></li>
-                    <li><a href="/featherweight.html">Featherweight</a></li>
-                    <li><a href="/bantamweight.html">Bantamweight</a></li>
-                    <li><a href="/flyweight.html">Flyweight</a></li>
-                    <li><a href="/womensbantamweight.html">Women's Bantamweight</a></li>
-                    <li><a href="/womensflyweight.html">Women's Flyweight</a></li>
-                    <li><a href="/womensstrawweight.html">Women's Strawweight</a></li>
-                </ul>
-            </li>
-            <li><a href="/events">Events</a></li>
-            <li><a href="/log.html">Log</a></li>
-            <li><a href="javascript:void(0)" onclick="getRandomPage()">Random Page</a></li>
-            <li><a href="https://rosterwatch.printify.me/">Merch</a></li>
-            <li><a href="https://www.patreon.com/bePatron?u=88266864">Support on Patreon</a></li>
-        </ul>
-    </nav>
-    <div class="menu cta">Menu</div>
-</header>
-
-<div class="overlay">
-    <a class="close">×</a>
-    <div class="overlay__content">
-        <a href="/">Current Roster</a>
-        <a href="/former.html">Former Roster</a>
-        <div class="dropdown-mobile">
-            <a href="#" onclick="return false;">Weight Classes</a>
-<div class="dropdown-content-mobile">
-                <a href="/heavyweight.html">Heavyweight</a>
-                <a href="/lightheavyweight.html">Light Heavyweight</a>
-                <a href="/middleweight.html">Middleweight</a>
-                <a href="/welterweight.html">Welterweight</a>
-                <a href="/lightweight.html">Lightweight</a>
-                <a href="/featherweight.html">Featherweight</a>
-                <a href="/bantamweight.html">Bantamweight</a>
-                <a href="/flyweight.html">Flyweight</a>
-                <a href="/womensbantamweight.html">Women's Bantamweight</a>
-                <a href="/womensflyweight.html">Women's Flyweight</a>
-                <a href="/womensstrawweight.html">Women's Strawweight</a>
-            </div>
-        </div>
-        <a href="/events">Events</a>
-        <a href="/log.html">Log</a>
-        <a href="javascript:void(0)" onclick="getRandomPage()">Random Page</a>
-        <a href="https://rosterwatch.printify.me/">Merch</a>
-        <a href="https://www.patreon.com/bePatron?u=88266864">Support on Patreon</a>
-    </div>
-</div>
-<script type="text/javascript" src="/mobile.js"></script>
-    <script>
-      function getRandomPage() {
-        fetch('/sitemap.xml')
-          .then(response => response.text())
-          .then(xmlText => {
-            const parser = new DOMParser();
-            const xmlDoc = parser.parseFromString(xmlText, 'application/xml');
-            const urls = Array.from(xmlDoc.getElementsByTagName('loc')).map(loc => loc.textContent);
-            const randomPage = urls[Math.floor(Math.random() * urls.length)];
-            window.location.href = randomPage;
-          });
-      }
-    </script>
-
-<div id="header">
-
-
-
-<h1 class="title toc-ignore">Chris Lytle UFC Record &amp; Stats:
-Interactive Charts · roster.watch</h1>
-
-</div>
-
-
-<script type="application/ld+json">{
-  "@context": "https://schema.org",
-  "@type": "Person",
-  "name": "Chris Lytle",
-  "birthDate": "1974-08-18",
-  "nationality": "United States",
-  "memberOf": {
-    "@type": "SportsOrganization",
-    "name": "UFC",
-    "sport": "Mixed Martial Arts"
-  },
-  "additionalProperty": [
-    {
-      "@type": "PropertyValue",
-      "name": "UFC Record",
-      "value": "10-10"
-    },
-    {
-      "@type": "PropertyValue",
-      "name": "Bonuses",
-      "value": "10"
-    }
-  ]
-}</script>
-<article class="event-info" style="display: flex; flex-direction: column; align-items: center; justify-content: center; width: 100%; height: auto;"><div class="fighter-info" style="text-align: center; margin-bottom: 20px;"><h2 style='font-weight: bold; font-size: 1.1em; margin: 0;'>Chris Lytle <span class='emoji'>🇺🇸</span></h2><time datetime='1974-08-18'><p><span>1974-08-18</span><script>document.currentScript.parentElement.innerHTML = (function(){  const dob = new Date('1974-08-18');  const today = new Date();  let years = today.getFullYear() - dob.getFullYear();  const monthDiff = today.getMonth() - dob.getMonth();  if (monthDiff < 0 || (monthDiff === 0 && today.getDate() < dob.getDate())) {    years--;  }  const yearAnniversary = new Date(dob);  yearAnniversary.setFullYear(dob.getFullYear() + years);  const dayDiff = Math.floor((today - yearAnniversary) / (1000 * 60 * 60 * 24));  const isBirthday = today.getMonth() === dob.getMonth() && today.getDate() === dob.getDate();  let ageString = `${years} year${years !== 1 ? 's' : ''}`;  if (dayDiff > 0) {    ageString += ` ${dayDiff} day${dayDiff !== 1 ? 's' : ''}`;  }  return `${ageString}${isBirthday ? ' 🎂' : ''} <br><span class='event-date'> (${dob.toISOString().split('T')[0]}) </span>`;}());</script></p></time></div><div style="display: flex; justify-content: center; align-items: flex-start; gap: 40px; max-width: 600px; width: 100%;"><div class="event-details" style="width: 50%;"><div class='event-stats'><p><strong>Record:</strong> 10-10<br></p><p><strong>By Method:</strong></p><ul><li> KO/TKO: 1-2</li><li> Submission: 6-0</li><li> Decision: 3-8</li></ul><p><strong>By Elo:</strong></p><ul><li>As Favorite: 9-3</li><li>As Underdog: 1-7</li></ul><p><strong>By Weight Class:</strong></p><ul><li>Lightweight: 0-1</li><li>Welterweight: 10-9</li></ul><p><strong>By Round:</strong></p><ul><li>Round 1: 3-0</li><li>Round 2: 3-3</li><li>Round 3: 4-7</li></ul></div></div><div class="rankings" style="width: 50%;"><p><strong>Status:</strong> Former UFC Fighter</p><p><strong>Last 5:</strong> <span style='display: inline-block;width: 1.25em;
-height: 1.25em;
-line-height: 1.25em; font-size: 0.8em;
- text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W</span> <span style='display: inline-block;width: 1.25em;
-height: 1.25em;
-line-height: 1.25em; font-size: 0.8em;
- text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W</span> <span style='display: inline-block;width: 1.25em;
-height: 1.25em;
-line-height: 1.25em; font-size: 0.8em;
- text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W</span> <span style='display: inline-block;width: 1.25em;
-height: 1.25em;
-line-height: 1.25em; font-size: 0.8em;
- text-align: center; border-radius: 50%; background-color: crimson; color: white; font-weight: bold;'>L</span> <span style='display: inline-block;width: 1.25em;
-height: 1.25em;
-line-height: 1.25em; font-size: 0.8em;
- text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W</span></p><p><strong>Peak Elo:</strong> 2910<span class='event-date'> (2010-09-25)</span></p><p><strong>Bonuses:</strong> 10 (6 FOTN, 4 Performance)</p><p><strong>Avg Fight Time:</strong> 10m 48s</p><p><strong>Total Fight Time:</strong> 3h 35m 59s</p></div></div></article>
-<h2 style='font-size: 1em; margin: 0; text-align: center; font-weight: bold;'>Elo Rating</h2>
-<div style="display: flex; justify-content: center; width: 100%; margin-top: 20px; margin-bottom: 20px;">
-<div id="fighter-performance-chart" style="width: 100%; max-width: 600px; height: 450px;">
-<div class="plotly html-widget html-fill-item" id="htmlwidget-67795682f222e8a315e9" style="width:100%;height:400px;"></div>
-<script type="application/json" data-for="htmlwidget-67795682f222e8a315e9">{"x":{"visdat":{"3d8018b229b9":["function () ","plotlyVisDat"]},"cur_data":"3d8018b229b9","attrs":{"3d8018b229b9":{"x":{},"y":{},"mode":"lines+markers","line":{"color":"#d12d36","width":3,"shape":"hv"},"marker":{"size":10,"color":"#d12d36"},"hoverinfo":"text","text":{},"name":"Elo","alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"type":"scatter"}},"layout":{"height":450,"margin":{"b":40,"l":60,"t":0,"r":10},"yaxis":{"domain":[0,1],"automargin":true,"gridcolor":"#e1e1e1","title":""},"showlegend":false,"legend":{"orientation":"h","xanchor":"center","x":0.5,"y":-100},"xaxis":{"domain":[0,1],"automargin":true,"title":"","gridcolor":"#e1e1e1"},"hovermode":"closest"},"source":"A","config":{"modeBarButtonsToAdd":["hoverclosest","hovercompare"],"showSendToCloud":false,"displayModeBar":false},"data":[{"x":["2000-11-17","2003-11-21","2004-04-02","2004-08-21","2005-02-05","2005-10-07","2006-11-11","2007-03-03","2007-07-07","2007-11-17","2008-02-02","2008-07-05","2008-10-18","2009-01-17","2009-06-20","2010-02-20","2010-07-03","2010-09-25","2011-02-26","2011-08-14"],"y":[2301,2379,2468,2593,2515,2452,2638,2603,2665,2614,2678,2637,2670,2659,2721,2740,2811,2910,2747,2835],"mode":"lines+markers","line":{"color":"#d12d36","width":3,"shape":"hv"},"marker":{"color":"#d12d36","size":10,"line":{"color":"rgba(31,119,180,1)"}},"hoverinfo":["text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text"],"text":["2000-11-17 <br> 2301 Elo <br> Ben Earwood <br> Loss","2003-11-21 <br> 2379 Elo <br> Robbie Lawler <br> Loss","2004-04-02 <br> 2468 Elo <br> Tiki Ghosn <br> Win","2004-08-21 <br> 2593 Elo <br> Ronald Jhun <br> Win","2005-02-05 <br> 2515 Elo <br> Karo Parisyan <br> Loss","2005-10-07 <br> 2452 Elo <br> Joe Riggs <br> Loss","2006-11-11 <br> 2638 Elo <br> Matt Serra <br> Loss","2007-03-03 <br> 2603 Elo <br> Matt Hughes <br> Loss","2007-07-07 <br> 2665 Elo <br> Jason Gilliam <br> Win","2007-11-17 <br> 2614 Elo <br> Thiago Alves <br> Loss","2008-02-02 <br> 2678 Elo <br> Kyle Bradley <br> Win","2008-07-05 <br> 2637 Elo <br> Josh Koscheck <br> Loss","2008-10-18 <br> 2670 Elo <br> Paul Taylor <br> Win","2009-01-17 <br> 2659 Elo <br> Marcus Davis <br> Loss","2009-06-20 <br> 2721 Elo <br> Kevin Burns <br> Win","2010-02-20 <br> 2740 Elo <br> Brian Foster <br> Win","2010-07-03 <br> 2811 Elo <br> Matt Brown <br> Win","2010-09-25 <br> 2910 Elo <br> Matt Serra <br> Win","2011-02-26 <br> 2747 Elo <br> Brian Ebersole <br> Loss","2011-08-14 <br> 2835 Elo <br> Dan Hardy <br> Win"],"name":"Elo","type":"scatter","error_y":{"color":"rgba(31,119,180,1)"},"error_x":{"color":"rgba(31,119,180,1)"},"xaxis":"x","yaxis":"y","frame":null}],"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.20000000000000001,"selected":{"opacity":1},"debounce":0},"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot","plotly_sunburstclick"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script>
-</div>
-</div>
-<h2 style='font-size: 1em; margin: 0; text-align: center; font-weight: bold;'>Bout History</h2>
-<div class="reactable html-widget html-fill-item" id="htmlwidget-ae3af179ec0ddf31cd8f" style="width:auto;height:auto;"></div>
-<script type="application/json" data-for="htmlwidget-ae3af179ec0ddf31cd8f">{"x":{"tag":{"name":"Reactable","attribs":{"data":{"event_date":["<br><span class = 'event-date'>2011-08-14<\/span><br><a href='/events/20110814.html'>UFC Live: Hardy vs. Lytle<\/a>","<br><span class = 'event-date'>2011-02-26<\/span><br><a href='/events/20110226.html'>UFC 127: Penn vs. Fitch<\/a>","<br><span class = 'event-date'>2010-09-25<\/span><br><a href='/events/20100925.html'>UFC 119: Mir vs. Cro Cop<\/a>","<br><span class = 'event-date'>2010-07-03<\/span><br><a href='/events/20100703.html'>UFC 116: Lesnar vs. Carwin<\/a>","<br><span class = 'event-date'>2010-02-20<\/span><br><a href='/events/20100220.html'>UFC 110: Nogueira vs. Velasquez<\/a>","<br><span class = 'event-date'>2009-06-20<\/span><br><a href='/events/20090620.html'>The Ultimate Fighter: United States vs. United Kingdom<\/a>","<br><span class = 'event-date'>2009-01-17<\/span><br><a href='/events/20090117.html'>UFC 93: Franklin vs. Henderson<\/a>","<br><span class = 'event-date'>2008-10-18<\/span><br><a href='/events/20081018.html'>UFC 89: Bisping vs. Leben<\/a>","<br><span class = 'event-date'>2008-07-05<\/span><br><a href='/events/20080705.html'>UFC 86: Jackson vs. Griffin<\/a>","<br><span class = 'event-date'>2008-02-02<\/span><br><a href='/events/20080202.html'>UFC 81: Breaking Point<\/a>","<br><span class = 'event-date'>2007-11-17<\/span><br><a href='/events/20071117.html'>UFC 78: Validation<\/a>","<br><span class = 'event-date'>2007-07-07<\/span><br><a href='/events/20070707.html'>UFC 73: Stacked<\/a>","<br><span class = 'event-date'>2007-03-03<\/span><br><a href='/events/20070303.html'>UFC 68: The Uprising<\/a>","<br><span class = 'event-date'>2006-11-11<\/span><br><a href='/events/20061111.html'>The Ultimate Fighter 4<\/a>","<br><span class = 'event-date'>2005-10-07<\/span><br><a href='/events/20051007.html'>UFC 55: Fury<\/a>","<br><span class = 'event-date'>2005-02-05<\/span><br><a href='/events/20050205.html'>UFC 51: Super Saturday<\/a>","<br><span class = 'event-date'>2004-08-21<\/span><br><a href='/events/20040821.html'>UFC 49: Unfinished Business<\/a>","<br><span class = 'event-date'>2004-04-02<\/span><br><a href='/events/20040402.html'>UFC 47: It’s On!<\/a>","<br><span class = 'event-date'>2003-11-21<\/span><br><a href='/events/20031121.html'>UFC 45: Revolution<\/a>","<br><span class = 'event-date'>2000-11-17<\/span><br><a href='/events/20001117.html'>UFC 28: High Stakes<\/a>"],"fighter_name":["<br> <b><span title='Performance of the Night' style='cursor: pointer;'>⭐ <\/span>Chris Lytle<\/b> (36) <span class = 'emoji'>🇺🇸<\/span><br><span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: crimson; color: white; font-weight: bold;'>L<\/span> • 9-10<br>Elo: <span class = 'favorite-elo'>2747<\/span>","<br> <b><a href=/fighters/brianebersole.html>Brian Ebersole<\/a><\/b> (30) <span class = 'emoji'>🇺🇸<\/span><br>Debut 🔰<br>Elo: 2651","<br> <b>Chris Lytle<\/b> (36) <span class = 'emoji'>🇺🇸<\/span><br><span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: crimson; color: white; font-weight: bold;'>L<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> • 8-9<br>Elo: <span class = 'favorite-elo'>2811<\/span>","<br> <b>Chris Lytle<\/b> (35) <span class = 'emoji'>🇺🇸<\/span><br><span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: crimson; color: white; font-weight: bold;'>L<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: crimson; color: white; font-weight: bold;'>L<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> • 7-9<br>Elo: <span class = 'favorite-elo'>2740<\/span>","<br> <b><span title='Performance of the Night' style='cursor: pointer;'>⭐ <\/span>Chris Lytle<\/b> (35) <span class = 'emoji'>🇺🇸<\/span><br><span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: crimson; color: white; font-weight: bold;'>L<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: crimson; color: white; font-weight: bold;'>L<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> • 6-9<br>Elo: <span class = 'favorite-elo'>2721<\/span>","<br> <b>Chris Lytle<\/b> (34) <span class = 'emoji'>🇺🇸<\/span><br><span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: crimson; color: white; font-weight: bold;'>L<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: crimson; color: white; font-weight: bold;'>L<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: crimson; color: white; font-weight: bold;'>L<\/span> • 5-9<br>Elo: <span class = 'favorite-elo'>2659<\/span>","<br> <b><a href=/fighters/marcusdavis.html>Marcus Davis<\/a><\/b> (35) <span class = 'emoji'>🇺🇸<\/span><br><span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: crimson; color: white; font-weight: bold;'>L<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> • 7-2<br>Elo: <span class = 'favorite-elo'>2753<\/span>","<br> <b>Chris Lytle<\/b> (34) <span class = 'emoji'>🇺🇸<\/span><br><span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: crimson; color: white; font-weight: bold;'>L<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: crimson; color: white; font-weight: bold;'>L<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: crimson; color: white; font-weight: bold;'>L<\/span> • 4-8<br>Elo: <span class = 'favorite-elo'>2637<\/span>","<br> <b><a href=/fighters/joshkoscheck.html>Josh Koscheck<\/a><\/b> (30) <span class = 'emoji'>🇺🇸<\/span><br><span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: crimson; color: white; font-weight: bold;'>L<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> • 8-2<br>Elo: <span class = 'favorite-elo'>2917<\/span>","<br> <b><span title='Performance of the Night' style='cursor: pointer;'>⭐ <\/span>Chris Lytle<\/b> (33) <span class = 'emoji'>🇺🇸<\/span><br><span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: crimson; color: white; font-weight: bold;'>L<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: crimson; color: white; font-weight: bold;'>L<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: crimson; color: white; font-weight: bold;'>L<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: crimson; color: white; font-weight: bold;'>L<\/span> • 3-7<br>Elo: <span class = 'favorite-elo'>2614<\/span>","<br> <b><a href=/fighters/thiagoalves.html>Thiago Alves<\/a><\/b> (24) <span class = 'emoji'>🇧🇷<\/span><br><span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: crimson; color: white; font-weight: bold;'>L<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> • 5-2<br>Elo: <span class = 'favorite-elo'>2853<\/span>","<br> <b><span title='Performance of the Night' style='cursor: pointer;'>⭐ <\/span>Chris Lytle<\/b> (32) <span class = 'emoji'>🇺🇸<\/span><br><span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: crimson; color: white; font-weight: bold;'>L<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: crimson; color: white; font-weight: bold;'>L<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: crimson; color: white; font-weight: bold;'>L<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: crimson; color: white; font-weight: bold;'>L<\/span> • 2-6<br>Elo: <span class = 'favorite-elo'>2603<\/span>","<br> <b><a href=/fighters/matthughes.html>Matt Hughes<\/a><\/b> (33) <span class = 'emoji'>🇺🇸<\/span><br><span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: crimson; color: white; font-weight: bold;'>L<\/span> • 14-3<br>Elo: <span class = 'favorite-elo'>2911<\/span>","<br> <b><a href=/fighters/mattserra.html>Matt Serra<\/a><\/b> (32) <span class = 'emoji'>🇺🇸<\/span><br><span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: crimson; color: white; font-weight: bold;'>L<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: crimson; color: white; font-weight: bold;'>L<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: crimson; color: white; font-weight: bold;'>L<\/span> • 4-4<br>Elo: <span class = 'favorite-elo'>2676<\/span>","<br> <b><a href=/fighters/joeriggs.html>Joe Riggs<\/a><\/b> (23) <span class = 'emoji'>🇺🇸<\/span><br><span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: crimson; color: white; font-weight: bold;'>L<\/span> • 1-1<br>Elo: <span class = 'favorite-elo'>2632<\/span>","<br> <b><a href=/fighters/karoparisyan.html>Karo Parisyan<\/a><\/b> (22) <span class = 'emoji'>🇦🇲 🇺🇸<\/span><br><span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: crimson; color: white; font-weight: bold;'>L<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> • 2-1<br>Elo: 2586","<br> <b>Chris Lytle<\/b> (30) <span class = 'emoji'>🇺🇸<\/span><br><span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: crimson; color: white; font-weight: bold;'>L<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: crimson; color: white; font-weight: bold;'>L<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> • 1-2<br>Elo: 2468","<br> <b>Chris Lytle<\/b> (29) <span class = 'emoji'>🇺🇸<\/span><br><span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: crimson; color: white; font-weight: bold;'>L<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: crimson; color: white; font-weight: bold;'>L<\/span> • 0-2<br>Elo: <span class = 'favorite-elo'>2379<\/span>","<br> <b><a href=/fighters/robbielawler.html>Robbie Lawler<\/a><\/b> (21) <span class = 'emoji'>🇺🇸<\/span><br><span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: crimson; color: white; font-weight: bold;'>L<\/span> • 3-1<br>Elo: 2426","<br> <b><a href=/fighters/benearwood.html>Ben Earwood<\/a><\/b><span class = 'emoji'> 🇺🇸<\/span><br>Debut 🔰<br>Elo: <span class = 'favorite-elo'>2459<\/span>"],"result_description":["<span style='font-size: 0.8em;'>WELTERWEIGHT<\/span><br><span title='Fight of the Night' style='cursor: pointer;'>⭐<\/span>SUB<span title='Fight of the Night' style='cursor: pointer;'>⭐<\/span><br>R3<br>04:16","<span style='font-size: 0.8em;'>WELTERWEIGHT<\/span><br><span title='Fight of the Night' style='cursor: pointer;'>⭐<\/span>DEC<span title='Fight of the Night' style='cursor: pointer;'>⭐<\/span><br>R3<br>05:00","<span style='font-size: 0.8em;'>WELTERWEIGHT<\/span><br>DEC<br>R3<br>05:00","<span style='font-size: 0.8em;'>WELTERWEIGHT<\/span><br>SUB<br>R2<br>02:02","<span style='font-size: 0.8em;'>WELTERWEIGHT<\/span><br>SUB<br>R1<br>01:41","<span style='font-size: 0.8em;'>WELTERWEIGHT<\/span><br><span title='Fight of the Night' style='cursor: pointer;'>⭐<\/span>DEC<span title='Fight of the Night' style='cursor: pointer;'>⭐<\/span><br>R3<br>05:00","<span style='font-size: 0.8em;'>WELTERWEIGHT<\/span><br><span title='Fight of the Night' style='cursor: pointer;'>⭐<\/span>DEC<span title='Fight of the Night' style='cursor: pointer;'>⭐<\/span><br>R3<br>05:00","<span style='font-size: 0.8em;'>WELTERWEIGHT<\/span><br><span title='Fight of the Night' style='cursor: pointer;'>⭐<\/span>DEC<span title='Fight of the Night' style='cursor: pointer;'>⭐<\/span><br>R3<br>05:00","<span style='font-size: 0.8em;'>WELTERWEIGHT<\/span><br>DEC<br>R3<br>05:00","<span style='font-size: 0.8em;'>WELTERWEIGHT<\/span><br>TKO<br>R1<br>00:33","<span style='font-size: 0.8em;'>WELTERWEIGHT<\/span><br><span title='Fight of the Night' style='cursor: pointer;'>⭐<\/span>TKO<span title='Fight of the Night' style='cursor: pointer;'>⭐<\/span><br>R2<br>05:00","<span style='font-size: 0.8em;'>WELTERWEIGHT<\/span><br>SUB<br>R1<br>02:15","<span style='font-size: 0.8em;'>WELTERWEIGHT<\/span><br>DEC<br>R3<br>05:00","<span style='font-size: 0.8em;'>WELTERWEIGHT<\/span><br>DEC<br>R3<br>05:00","<span style='font-size: 0.8em;'>WELTERWEIGHT<\/span><br>TKO<br>R2<br>02:00","<span style='font-size: 0.8em;'>WELTERWEIGHT<\/span><br>DEC<br>R3<br>05:00","<span style='font-size: 0.8em;'>WELTERWEIGHT<\/span><br>SUB<br>R2<br>01:17","<span style='font-size: 0.8em;'>WELTERWEIGHT<\/span><br>SUB<br>R2<br>01:55","<span style='font-size: 0.8em;'>WELTERWEIGHT<\/span><br>DEC<br>R3<br>05:00","<span style='font-size: 0.8em;'>LIGHTWEIGHT<\/span><br>DEC<br>R2<br>05:00"],"opponent_fighter_name":["<br><span class='emoji'>🇬🇧 🏴󠁧󠁢󠁥󠁮󠁧󠁿<\/span> <b><a href=/fighters/danhardy.html>Dan Hardy<\/a><\/b> (29)<br>4-3 • <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: crimson; color: white; font-weight: bold;'>L<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: crimson; color: white; font-weight: bold;'>L<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: crimson; color: white; font-weight: bold;'>L<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span><br>Elo: 2705","<br><span class='emoji'>🇺🇸<\/span> <b>Chris Lytle<\/b> (36)<br>9-9 • <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: crimson; color: white; font-weight: bold;'>L<\/span><br>Elo: <span class = 'favorite-elo'>2910<\/span>","<br><span class='emoji'>🇺🇸<\/span> <b><a href=/fighters/mattserra.html>Matt Serra<\/a><\/b> (36)<br>7-6 • <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: crimson; color: white; font-weight: bold;'>L<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: crimson; color: white; font-weight: bold;'>L<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span><br>Elo: 2808","<br><span class='emoji'>🇺🇸<\/span> <b><a href=/fighters/mattbrown.html>Matt Brown<\/a><\/b> (29)<br>4-2 • <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: crimson; color: white; font-weight: bold;'>L<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: crimson; color: white; font-weight: bold;'>L<\/span><br>Elo: 2637","<br><span class='emoji'>🇺🇸<\/span> <b><a href=/fighters/brianfoster.html>Brian Foster<\/a><\/b> (25)<br>1-1 • <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: crimson; color: white; font-weight: bold;'>L<\/span><br>Elo: 2333","<br><span class='emoji'>🇺🇸<\/span> <b><a href=/fighters/kevinburns.html>Kevin Burns<\/a><\/b> (29)<br>2-1 • <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: crimson; color: white; font-weight: bold;'>L<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span><br>Elo: 2518","<br><span class='emoji'>🇺🇸<\/span> <b>Chris Lytle<\/b> (34)<br>5-8 • <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: crimson; color: white; font-weight: bold;'>L<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: crimson; color: white; font-weight: bold;'>L<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span><br>Elo: 2670","<br><span class='emoji'>🇬🇧 🏴󠁧󠁢󠁥󠁮󠁧󠁿<\/span> <b><a href=/fighters/paultaylor.html>Paul Taylor<\/a><\/b> (28)<br>2-2 • <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: crimson; color: white; font-weight: bold;'>L<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: crimson; color: white; font-weight: bold;'>L<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span><br>Elo: 2354","<br><span class='emoji'>🇺🇸<\/span> <b>Chris Lytle<\/b> (33)<br>4-7 • <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: crimson; color: white; font-weight: bold;'>L<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: crimson; color: white; font-weight: bold;'>L<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: crimson; color: white; font-weight: bold;'>L<\/span><br>Elo: 2678","<br><span class='emoji'>🇺🇸<\/span> <b><a href=/fighters/kylebradley.html>Kyle Bradley<\/a><\/b> (25)<br>🔰 Debut<br>Elo: 2480","<br><span class='emoji'>🇺🇸<\/span> <b>Chris Lytle<\/b> (33)<br>3-6 • <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: crimson; color: white; font-weight: bold;'>L<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: crimson; color: white; font-weight: bold;'>L<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: crimson; color: white; font-weight: bold;'>L<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: crimson; color: white; font-weight: bold;'>L<\/span><br>Elo: 2665","<br><span class='emoji'>🇺🇸<\/span> <b><a href=/fighters/jasongilliam.html>Jason Gilliam<\/a><\/b> (34)<br>0-1 • <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: crimson; color: white; font-weight: bold;'>L<\/span><br>Elo: 2463","<br><span class='emoji'>🇺🇸<\/span> <b>Chris Lytle<\/b> (32)<br>2-5 • <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: crimson; color: white; font-weight: bold;'>L<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: crimson; color: white; font-weight: bold;'>L<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: crimson; color: white; font-weight: bold;'>L<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span><br>Elo: 2638","<br><span class='emoji'>🇺🇸<\/span> <b>Chris Lytle<\/b> (32)<br>2-4 • <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: crimson; color: white; font-weight: bold;'>L<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: crimson; color: white; font-weight: bold;'>L<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: crimson; color: white; font-weight: bold;'>L<\/span><br>Elo: 2670","<br><span class='emoji'>🇺🇸<\/span> <b>Chris Lytle<\/b> (31)<br>2-3 • <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: crimson; color: white; font-weight: bold;'>L<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: crimson; color: white; font-weight: bold;'>L<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: crimson; color: white; font-weight: bold;'>L<\/span><br>Elo: 2521","<br><span class='emoji'>🇺🇸<\/span> <b>Chris Lytle<\/b> (30)<br>2-2 • <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: crimson; color: white; font-weight: bold;'>L<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: crimson; color: white; font-weight: bold;'>L<\/span><br>Elo: <span class = 'favorite-elo'>2626<\/span>","<br><span class='emoji'>🇺🇸<\/span> <b><a href=/fighters/ronaldjhun.html>Ronald Jhun<\/a><\/b> (33)<br>🔰 Debut<br>Elo: <span class = 'favorite-elo'>2557<\/span>","<br><span class='emoji'>🇺🇸<\/span> <b><a href=/fighters/tikighosn.html>Tiki Ghosn<\/a><\/b> (27)<br>0-3 • <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: crimson; color: white; font-weight: bold;'>L<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: crimson; color: white; font-weight: bold;'>L<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: crimson; color: white; font-weight: bold;'>L<\/span><br>Elo: 2341","<br><span class='emoji'>🇺🇸<\/span> <b>Chris Lytle<\/b> (29)<br>0-1 • <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: crimson; color: white; font-weight: bold;'>L<\/span><br>Elo: <span class = 'favorite-elo'>2500<\/span>","<br><span class='emoji'>🇺🇸<\/span> <b>Chris Lytle<\/b> (26)<br>🔰 Debut<br>Elo: 2379"],"City":["<br>Bradley Center<br>Milwaukee, Wisconsin<br>United States <span class='emoji'>🇺🇸<\/span>","<br>Acer Arena<br>Sydney<br>Australia <span class='emoji'>🇦🇺<\/span>","<br>Conseco Fieldhouse<br>Indianapolis, Indiana<br>United States <span class='emoji'>🇺🇸<\/span>","<br>MGM Grand Garden Arena<br>Las Vegas, Nevada<br>United States <span class='emoji'>🇺🇸<\/span>","<br>Acer Arena<br>Sydney<br>Australia <span class='emoji'>🇦🇺<\/span>","<br>Pearl Concert Theater<br>Las Vegas, Nevada<br>United States <span class='emoji'>🇺🇸<\/span>","<br>The O2<br>Dublin<br>Ireland <span class='emoji'>🇮🇪<\/span>","<br>National Indoor Arena<br>Birmingham, England<br>United Kingdom <span class='emoji'>🇬🇧<\/span>","<br>Mandalay Bay Events Center<br>Las Vegas, Nevada<br>United States <span class='emoji'>🇺🇸<\/span>","<br>Mandalay Bay Events Center<br>Las Vegas, Nevada<br>United States <span class='emoji'>🇺🇸<\/span>","<br>Prudential Center<br>Newark, New Jersey<br>United States <span class='emoji'>🇺🇸<\/span>","<br>ARCO Arena<br>Sacramento, California<br>United States <span class='emoji'>🇺🇸<\/span>","<br>Nationwide Arena<br>Columbus, Ohio<br>United States <span class='emoji'>🇺🇸<\/span>","<br>Hard Rock Hotel and Casino<br>Las Vegas, Nevada<br>United States <span class='emoji'>🇺🇸<\/span>","<br>Mohegan Sun Arena<br>Uncasville, Connecticut<br>United States <span class='emoji'>🇺🇸<\/span>","<br>Mandalay Bay Events Center<br>Las Vegas, Nevada<br>United States <span class='emoji'>🇺🇸<\/span>","<br>MGM Grand Arena<br>Las Vegas, Nevada<br>United States <span class='emoji'>🇺🇸<\/span>","<br>Mandalay Bay Events Center<br>Las Vegas, Nevada<br>United States <span class='emoji'>🇺🇸<\/span>","<br>Mohegan Sun Arena<br>Uncasville, Connecticut<br>United States <span class='emoji'>🇺🇸<\/span>","<br>Mark G. Etess Arena at Trump Taj Mahal<br>Atlantic City, New Jersey<br>United States <span class='emoji'>🇺🇸<\/span>"]},"columns":[{"id":"event_date","name":"","type":"character","html":true,"width":200,"className":"side_info"},{"id":"fighter_name","name":"","type":"character","html":true,"width":240,"align":"right"},{"id":"result_description","name":"","type":"character","html":true,"width":50,"align":"center","className":"result_description"},{"id":"opponent_fighter_name","name":"","type":"character","html":true,"width":240,"align":"left"},{"id":"City","name":"","type":"character","cell":["<div style=\"white-space: nowrap; overflow: visible;\"><br>Bradley Center<br>Milwaukee, Wisconsin<br>United States <span class='emoji'>🇺🇸<\/span><\/div>","<div style=\"white-space: nowrap; overflow: visible;\"><br>Acer Arena<br>Sydney<br>Australia <span class='emoji'>🇦🇺<\/span><\/div>","<div style=\"white-space: nowrap; overflow: visible;\"><br>Conseco Fieldhouse<br>Indianapolis, Indiana<br>United States <span class='emoji'>🇺🇸<\/span><\/div>","<div style=\"white-space: nowrap; overflow: visible;\"><br>MGM Grand Garden Arena<br>Las Vegas, Nevada<br>United States <span class='emoji'>🇺🇸<\/span><\/div>","<div style=\"white-space: nowrap; overflow: visible;\"><br>Acer Arena<br>Sydney<br>Australia <span class='emoji'>🇦🇺<\/span><\/div>","<div style=\"white-space: nowrap; overflow: visible;\"><br>Pearl Concert Theater<br>Las Vegas, Nevada<br>United States <span class='emoji'>🇺🇸<\/span><\/div>","<div style=\"white-space: nowrap; overflow: visible;\"><br>The O2<br>Dublin<br>Ireland <span class='emoji'>🇮🇪<\/span><\/div>","<div style=\"white-space: nowrap; overflow: visible;\"><br>National Indoor Arena<br>Birmingham, England<br>United Kingdom <span class='emoji'>🇬🇧<\/span><\/div>","<div style=\"white-space: nowrap; overflow: visible;\"><br>Mandalay Bay Events Center<br>Las Vegas, Nevada<br>United States <span class='emoji'>🇺🇸<\/span><\/div>","<div style=\"white-space: nowrap; overflow: visible;\"><br>Mandalay Bay Events Center<br>Las Vegas, Nevada<br>United States <span class='emoji'>🇺🇸<\/span><\/div>","<div style=\"white-space: nowrap; overflow: visible;\"><br>Prudential Center<br>Newark, New Jersey<br>United States <span class='emoji'>🇺🇸<\/span><\/div>","<div style=\"white-space: nowrap; overflow: visible;\"><br>ARCO Arena<br>Sacramento, California<br>United States <span class='emoji'>🇺🇸<\/span><\/div>","<div style=\"white-space: nowrap; overflow: visible;\"><br>Nationwide Arena<br>Columbus, Ohio<br>United States <span class='emoji'>🇺🇸<\/span><\/div>","<div style=\"white-space: nowrap; overflow: visible;\"><br>Hard Rock Hotel and Casino<br>Las Vegas, Nevada<br>United States <span class='emoji'>🇺🇸<\/span><\/div>","<div style=\"white-space: nowrap; overflow: visible;\"><br>Mohegan Sun Arena<br>Uncasville, Connecticut<br>United States <span class='emoji'>🇺🇸<\/span><\/div>","<div style=\"white-space: nowrap; overflow: visible;\"><br>Mandalay Bay Events Center<br>Las Vegas, Nevada<br>United States <span class='emoji'>🇺🇸<\/span><\/div>","<div style=\"white-space: nowrap; overflow: visible;\"><br>MGM Grand Arena<br>Las Vegas, Nevada<br>United States <span class='emoji'>🇺🇸<\/span><\/div>","<div style=\"white-space: nowrap; overflow: visible;\"><br>Mandalay Bay Events Center<br>Las Vegas, Nevada<br>United States <span class='emoji'>🇺🇸<\/span><\/div>","<div style=\"white-space: nowrap; overflow: visible;\"><br>Mohegan Sun Arena<br>Uncasville, Connecticut<br>United States <span class='emoji'>🇺🇸<\/span><\/div>","<div style=\"white-space: nowrap; overflow: visible;\"><br>Mark G. Etess Arena at Trump Taj Mahal<br>Atlantic City, New Jersey<br>United States <span class='emoji'>🇺🇸<\/span><\/div>"],"html":true,"width":200,"className":"side_info"}],"sortable":false,"pagination":false,"defaultPageSize":100,"showPageInfo":false,"nowrap":true,"className":"event_bouts","inline":true,"theme":{"headerStyle":{"borderBottom":"none"}},"dataKey":"455f73059a906b840b53196c70ac699f"},"children":[]},"class":"reactR_markup"},"evals":[],"jsHooks":[]}</script>
-
-<footer>
-  <div class="footer-container">
-    <p class="copyright-text">
-        <a href="/glossary.html">Glossary</a>
-      <a href="mailto:rostertracker@gmail.com">Contact</a>
-    </p>
-<!--     <p class="browser-badge">
-      <a href="https://www.mozilla.org/en-US/firefox/">
-        <img src="C:/Users/mart/Dropbox/R/roster.watch/firefox.png" title="Best viewed with Firefox" alt="Best viewed with Firefox"><br>
-        <small class="copyright-text">Best viewed with Firefox</small>
-      </a>
-    </p> 
- -->  </div>
- <div class="footer-container">
-    <p class="copyright-text">
-      Copyright © <span id="currentYear"></span> All Rights Reserved by 
-      <a href="#">roster.watch</a>
-    </p>
-<!--     <p class="browser-badge">
-      <a href="https://www.mozilla.org/en-US/firefox/">
-        <img src="C:/Users/mart/Dropbox/R/roster.watch/firefox.png" title="Best viewed with Firefox" alt="Best viewed with Firefox"><br>
-        <small class="copyright-text">Best viewed with Firefox</small>
-      </a>
-    </p> 
- -->  </div>
-</footer>
-
-<style>
-.footer-container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1rem;
-}
-
-.copyright-text {
-  margin: 0 auto;
-}
-
-.browser-badge {
-  margin-left: auto;
-}
-</style>
-
-<script>
-  document.getElementById('currentYear').textContent = new Date().getFullYear();
-</script>
-
-
-
-</div>
-
-<script>
-
-// add bootstrap table styles to pandoc tables
-function bootstrapStylePandocTables() {
-  $('tr.odd').parent('tbody').parent('table').addClass('table table-condensed');
-}
-$(document).ready(function () {
-  bootstrapStylePandocTables();
-});
-
-
-</script>
-
-<!-- tabsets -->
-
-<script>
-$(document).ready(function () {
-  window.buildTabsets("TOC");
-});
-
-$(document).ready(function () {
-  $('.tabset-dropdown > .nav-tabs > li').click(function () {
-    $(this).parent().toggleClass('nav-tabs-open');
-  });
-});
-</script>
-
-<!-- code folding -->
-
-
-<!-- dynamically load mathjax for compatibility with self-contained -->
-<script>
-  (function () {
-    var script = document.createElement("script");
-    script.type = "text/javascript";
-    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
-    document.getElementsByTagName("head")[0].appendChild(script);
-  })();
-</script>
-
-</body>
-</html>
+<!doctype html><html lang=en><head><meta charset=UTF-8><meta name=viewport content="width=device-width,initial-scale=1"><title>Chris Lytle · roster.watch</title><link rel=stylesheet href=/style.css><link rel=apple-touch-icon sizes=180x180 href=/apple-touch-icon.png><link rel=icon type=image/png sizes=32x32 href=/favicon-32x32.png><link rel=icon type=image/png sizes=16x16 href=/favicon-16x16.png><link rel=manifest href=/site.webmanifest><meta name=description content="An up-to-date list of the full active UFC roster including biographical data, rankings, records, and more."><script data-goatcounter=https://rosterwatch.goatcounter.com/count async src=//gc.zgo.at/count.js></script><script defer src=/script.js data-website-id=f0f3ed7e-e89c-4a29-a745-475e0b10271a></script><script src=/age.js></script></head><body><div class=container><header><a class=logo href=/><img src=/images/logo.svg alt=logo></a><nav><ul class=nav__links><li><a href=/>Current Roster</a></li><li><a href=/former.html>Former Roster</a></li><li class=dropdown><a href=# onclick=return!1>Weight Classes</a><ul class=dropdown-content><li><a href=/heavyweight.html>Heavyweight</a></li><li><a href=/lightheavyweight.html>Light Heavyweight</a></li><li><a href=/middleweight.html>Middleweight</a></li><li><a href=/welterweight.html>Welterweight</a></li><li><a href=/lightweight.html>Lightweight</a></li><li><a href=/featherweight.html>Featherweight</a></li><li><a href=/bantamweight.html>Bantamweight</a></li><li><a href=/flyweight.html>Flyweight</a></li><li><a href=/womensbantamweight.html>Women's Bantamweight</a></li><li><a href=/womensflyweight.html>Women's Flyweight</a></li><li><a href=/womensstrawweight.html>Women's Strawweight</a></li></ul></li><li><a href=/events>Events</a></li><li><a href=/log.html>Log</a></li><li><a href=/fightlog.html>Fight Log</a></li><li><a href=javascript:void(0) onclick=getRandomPage()>Random Page</a></li><li><a href=https://rosterwatch.printify.me/>Merch</a></li><li><a href="https://www.patreon.com/bePatron?u=88266864">Support on Patreon</a></li></ul></nav><div class="menu cta">Menu</div></header><div class=overlay><a class=close>×</a><div class=overlay__content><a href=/>Current Roster</a>
+<a href=/former.html>Former Roster</a><div class=dropdown-mobile><a href=# onclick=return!1>Weight Classes</a><div class=dropdown-content-mobile><a href=/heavyweight.html>Heavyweight</a>
+<a href=/lightheavyweight.html>Light Heavyweight</a>
+<a href=/middleweight.html>Middleweight</a>
+<a href=/welterweight.html>Welterweight</a>
+<a href=/lightweight.html>Lightweight</a>
+<a href=/featherweight.html>Featherweight</a>
+<a href=/bantamweight.html>Bantamweight</a>
+<a href=/flyweight.html>Flyweight</a>
+<a href=/womensbantamweight.html>Women's Bantamweight</a>
+<a href=/womensflyweight.html>Women's Flyweight</a>
+<a href=/womensstrawweight.html>Women's Strawweight</a></div></div><a href=/events>Events</a>
+<a href=/log.html>Log</a>
+<a href=/fightlog.html>Fight Log</a>
+<a href=javascript:void(0) onclick=getRandomPage()>Random Page</a>
+<a href=https://rosterwatch.printify.me/>Merch</a>
+<a href="https://www.patreon.com/bePatron?u=88266864">Support on Patreon</a></div></div><script type=text/javascript src=/mobile.js></script><script>function getRandomPage(){fetch("/sitemap.xml").then(e=>e.text()).then(e=>{const n=new DOMParser,s=n.parseFromString(e,"application/xml"),t=Array.from(s.getElementsByTagName("loc")).map(e=>e.textContent),o=t[Math.floor(Math.random()*t.length)];window.location.href=o})}</script><main><div class=fighter-header><div class=fighter-name><div><h1>Chris Lytle</h1><span class=emoji>🇺🇸</span></div><time class=dob data-dob=1974-08-18><span class=age></span><div class=date_of_birth>(1974-08-18)</div></time></div></div><h2>Statistics</h2><article class=fighter-info><div class=two-column-layout><div class=fighter-details><div class=fighter-stats><p><strong>UFC Record:</strong> 10-10</p><p><strong>By Method:</strong></p><ul><li>KO/TKO: 1-2</li><li>Submission: 6-0</li><li>Decision: 3-8</li></ul><p><strong>By Elo:</strong></p><ul><li>As Favorite: 9-3</li><li>As Underdog: 1-7</li></ul><p><strong>By Weight Class:</strong></p><ul><li>Lightweight: 0-1</li><li>Welterweight: 10-9</li></ul><p><strong>By Round:</strong></p><ul><li>Round 1: 3-0</li><li>Round 2: 3-3</li><li>Round 3: 4-7</li></ul><p><strong>By Type:</strong></p><ul><li>Main Event: 1-1</li></ul></div></div><div class=rankings><p><strong>UFC Roster Status:</strong> Inactive</p><p><strong>Last 5:</strong>
+<span class="wldn-letter letter-W">W</span>
+<span class="wldn-letter letter-W">W</span>
+<span class="wldn-letter letter-W">W</span>
+<span class="wldn-letter letter-L">L</span>
+<span class="wldn-letter letter-W">W</span></p><p><strong>Peak Elo:</strong> 2910 <span class=peak-date>(2010-09-25)</span></p><p><strong>Avg Opponent Elo:</strong> 2603 (#1577)</p><p><strong>Bonuses:</strong> 10 (6 FOTN, 4
+Performance)</p><p><strong>Avg Fight Time:</strong> 10m 48s</p><p><strong>Total Fight Time:</strong> 3h 35m 59s</p><p><strong>Avg Time Between Fights:</strong> 141 days</p><p><strong>Avg Card Placement:</strong> 4.7</p></div></div></article><div class=chart-section><h2>Elo Rating & UFC Rankings</h2><div class=chart-container><div id=fighter-performance-chart data-rankings={} data-elo='[{"bout_order":1,"city":"Milwaukee, Wisconsin","country":"United States","country_emoji":"🇺🇸","event_date":"2011-08-14","event_name":"UFC Live: Hardy vs. Lytle","event_slug":"20110814","fight_of_the_night":true,"fighter":"Chris Lytle","fighter_age":36,"fighter_country":"🇺🇸","fighter_last5":"LWWWW","fighter_plot_rtg":2835,"fighter_record":"9-10","fighter_rtg":2747,"method":"SUB","opponent_age":29,"opponent_country":"🇬🇧 🏴󠁧󠁢󠁥󠁮󠁧󠁿","opponent_last5":"WWLLL","opponent_name":"Dan Hardy","opponent_record":"4-3","opponent_rtg":2705,"opponent_slug":"danhardy","perf_of_the_night":true,"result":"Win","round":3,"time":"04:16","venue":"Bradley Center","weight_class":"Welterweight"},{"bout_order":1,"city":"Sydney","country":"Australia","country_emoji":"🇦🇺","event_date":"2011-02-26","event_name":"UFC 127: Penn vs. Fitch","event_slug":"20110226","fight_of_the_night":true,"fighter":"Chris Lytle","fighter_age":36,"fighter_country":"🇺🇸","fighter_last5":"WWWWL","fighter_plot_rtg":2747,"fighter_record":"9-9","fighter_rtg":2910,"method":"DEC","opponent_age":30,"opponent_country":"🇺🇸","opponent_last5":"","opponent_name":"Brian Ebersole","opponent_record":"","opponent_rtg":2651,"opponent_slug":"brianebersole","result":"Loss","round":3,"time":"05:00","venue":"Acer Arena","weight_class":"Welterweight"},{"bout_order":1,"city":"Indianapolis, Indiana","country":"United States","country_emoji":"🇺🇸","event_date":"2010-09-25","event_name":"UFC 119: Mir vs. Cro Cop","event_slug":"20100925","fighter":"Chris Lytle","fighter_age":36,"fighter_country":"🇺🇸","fighter_last5":"WWWLW","fighter_plot_rtg":2910,"fighter_record":"8-9","fighter_rtg":2811,"method":"DEC","opponent_age":36,"opponent_country":"🇺🇸","opponent_last5":"WWLLW","opponent_name":"Matt Serra","opponent_record":"7-6","opponent_rtg":2808,"opponent_slug":"mattserra","result":"Win","round":3,"time":"05:00","venue":"Conseco Fieldhouse","weight_class":"Welterweight"},{"bout_order":1,"city":"Las Vegas, Nevada","country":"United States","country_emoji":"🇺🇸","event_date":"2010-07-03","event_name":"UFC 116: Lesnar vs. Carwin","event_slug":"20100703","fighter":"Chris Lytle","fighter_age":35,"fighter_country":"🇺🇸","fighter_last5":"WWLWL","fighter_plot_rtg":2811,"fighter_record":"7-9","fighter_rtg":2740,"method":"SUB","opponent_age":29,"opponent_country":"🇺🇸","opponent_last5":"LWWWL","opponent_name":"Matt Brown","opponent_record":"4-2","opponent_rtg":2637,"opponent_slug":"mattbrown","result":"Win","round":2,"time":"02:02","venue":"MGM Grand Garden Arena","weight_class":"Welterweight"},{"bout_order":1,"city":"Sydney","country":"Australia","country_emoji":"🇦🇺","event_date":"2010-02-20","event_name":"UFC 110: Nogueira vs. Velasquez","event_slug":"20100220","fighter":"Chris Lytle","fighter_age":35,"fighter_country":"🇺🇸","fighter_last5":"WLWLW","fighter_plot_rtg":2740,"fighter_record":"6-9","fighter_rtg":2721,"method":"SUB","opponent_age":25,"opponent_country":"🇺🇸","opponent_last5":"LW","opponent_name":"Brian Foster","opponent_record":"1-1","opponent_rtg":2333,"opponent_slug":"brianfoster","perf_of_the_night":true,"result":"Win","round":1,"time":"01:41","venue":"Acer Arena","weight_class":"Welterweight"},{"bout_order":1,"city":"Las Vegas, Nevada","country":"United States","country_emoji":"🇺🇸","event_date":"2009-06-20","event_name":"The Ultimate Fighter: United States vs. United Kingdom","event_slug":"20090620","fight_of_the_night":true,"fighter":"Chris Lytle","fighter_age":34,"fighter_country":"🇺🇸","fighter_last5":"LWLWL","fighter_plot_rtg":2721,"fighter_record":"5-9","fighter_rtg":2659,"method":"DEC","opponent_age":29,"opponent_country":"🇺🇸","opponent_last5":"WWL","opponent_name":"Kevin Burns","opponent_record":"2-1","opponent_rtg":2518,"opponent_slug":"kevinburns","result":"Win","round":3,"time":"05:00","venue":"Pearl Concert Theater","weight_class":"Welterweight"},{"bout_order":1,"city":"Dublin","country":"Ireland","country_emoji":"🇮🇪","event_date":"2009-01-17","event_name":"UFC 93: Franklin vs. Henderson","event_slug":"20090117","fight_of_the_night":true,"fighter":"Chris Lytle","fighter_age":34,"fighter_country":"🇺🇸","fighter_last5":"WLWLW","fighter_plot_rtg":2659,"fighter_record":"5-8","fighter_rtg":2670,"method":"DEC","opponent_age":35,"opponent_country":"🇺🇸","opponent_last5":"WWWLW","opponent_name":"Marcus Davis","opponent_record":"7-2","opponent_rtg":2753,"opponent_slug":"marcusdavis","result":"Loss","round":3,"time":"05:00","venue":"The O2","weight_class":"Welterweight"},{"bout_order":1,"city":"Birmingham, England","country":"United Kingdom","country_emoji":"🇬🇧","event_date":"2008-10-18","event_name":"UFC 89: Bisping vs. Leben","event_slug":"20081018","fight_of_the_night":true,"fighter":"Chris Lytle","fighter_age":34,"fighter_country":"🇺🇸","fighter_last5":"LWLWL","fighter_plot_rtg":2670,"fighter_record":"4-8","fighter_rtg":2637,"method":"DEC","opponent_age":28,"opponent_country":"🇬🇧 🏴󠁧󠁢󠁥󠁮󠁧󠁿","opponent_last5":"WLLW","opponent_name":"Paul Taylor","opponent_record":"2-2","opponent_rtg":2354,"opponent_slug":"paultaylor","result":"Win","round":3,"time":"05:00","venue":"National Indoor Arena","weight_class":"Welterweight"},{"bout_order":1,"city":"Las Vegas, Nevada","country":"United States","country_emoji":"🇺🇸","event_date":"2008-07-05","event_name":"UFC 86: Jackson vs. Griffin","event_slug":"20080705","fighter":"Chris Lytle","fighter_age":33,"fighter_country":"🇺🇸","fighter_last5":"WLWLL","fighter_plot_rtg":2637,"fighter_record":"4-7","fighter_rtg":2678,"method":"DEC","opponent_age":30,"opponent_country":"🇺🇸","opponent_last5":"WWWLW","opponent_name":"Josh Koscheck","opponent_record":"8-2","opponent_rtg":2917,"opponent_slug":"joshkoscheck","result":"Loss","round":3,"time":"05:00","venue":"Mandalay Bay Events Center","weight_class":"Welterweight"},{"bout_order":1,"city":"Las Vegas, Nevada","country":"United States","country_emoji":"🇺🇸","event_date":"2008-02-02","event_name":"UFC 81: Breaking Point","event_slug":"20080202","fighter":"Chris Lytle","fighter_age":33,"fighter_country":"🇺🇸","fighter_last5":"LWLLL","fighter_plot_rtg":2678,"fighter_record":"3-7","fighter_rtg":2614,"method":"TKO","opponent_age":25,"opponent_country":"🇺🇸","opponent_last5":"","opponent_name":"Kyle Bradley","opponent_record":"","opponent_rtg":2480,"opponent_slug":"kylebradley","perf_of_the_night":true,"result":"Win","round":1,"time":"00:33","venue":"Mandalay Bay Events Center","weight_class":"Welterweight"},{"bout_order":1,"city":"Newark, New Jersey","country":"United States","country_emoji":"🇺🇸","event_date":"2007-11-17","event_name":"UFC 78: Validation","event_slug":"20071117","fight_of_the_night":true,"fighter":"Chris Lytle","fighter_age":33,"fighter_country":"🇺🇸","fighter_last5":"WLLLL","fighter_plot_rtg":2614,"fighter_record":"3-6","fighter_rtg":2665,"method":"TKO","opponent_age":24,"opponent_country":"🇧🇷","opponent_last5":"WLWWW","opponent_name":"Thiago Alves","opponent_record":"5-2","opponent_rtg":2853,"opponent_slug":"thiagoalves","result":"Loss","round":2,"time":"05:00","venue":"Prudential Center","weight_class":"Welterweight"},{"bout_order":1,"city":"Sacramento, California","country":"United States","country_emoji":"🇺🇸","event_date":"2007-07-07","event_name":"UFC 73: Stacked","event_slug":"20070707","fighter":"Chris Lytle","fighter_age":32,"fighter_country":"🇺🇸","fighter_last5":"LLLLW","fighter_plot_rtg":2665,"fighter_record":"2-6","fighter_rtg":2603,"method":"SUB","opponent_age":34,"opponent_country":"🇺🇸","opponent_last5":"L","opponent_name":"Jason Gilliam","opponent_record":"0-1","opponent_rtg":2463,"opponent_slug":"jasongilliam","perf_of_the_night":true,"result":"Win","round":1,"time":"02:15","venue":"ARCO Arena","weight_class":"Welterweight"},{"bout_order":1,"city":"Columbus, Ohio","country":"United States","country_emoji":"🇺🇸","event_date":"2007-03-03","event_name":"UFC 68: The Uprising","event_slug":"20070303","fighter":"Chris Lytle","fighter_age":32,"fighter_country":"🇺🇸","fighter_last5":"LLLWW","fighter_plot_rtg":2603,"fighter_record":"2-5","fighter_rtg":2638,"method":"DEC","opponent_age":33,"opponent_country":"🇺🇸","opponent_last5":"WWWWL","opponent_name":"Matt Hughes","opponent_record":"14-3","opponent_rtg":2911,"opponent_slug":"matthughes","result":"Loss","round":3,"time":"05:00","venue":"Nationwide Arena","weight_class":"Welterweight"},{"bout_order":1,"city":"Las Vegas, Nevada","country":"United States","country_emoji":"🇺🇸","event_date":"2006-11-11","event_name":"The Ultimate Fighter 4","event_slug":"20061111","fighter":"Chris Lytle","fighter_age":32,"fighter_country":"🇺🇸","fighter_last5":"LLWWL","fighter_plot_rtg":2638,"fighter_record":"2-4","fighter_rtg":2670,"method":"DEC","opponent_age":32,"opponent_country":"🇺🇸","opponent_last5":"LLWWL","opponent_name":"Matt Serra","opponent_record":"4-4","opponent_rtg":2676,"opponent_slug":"mattserra","result":"Loss","round":3,"time":"05:00","venue":"Hard Rock Hotel and Casino","weight_class":"Welterweight"},{"bout_order":1,"city":"Uncasville, Connecticut","country":"United States","country_emoji":"🇺🇸","event_date":"2005-10-07","event_name":"UFC 55: Fury","event_slug":"20051007","fighter":"Chris Lytle","fighter_age":31,"fighter_country":"🇺🇸","fighter_last5":"LWWLL","fighter_plot_rtg":2452,"fighter_record":"2-3","fighter_rtg":2521,"method":"TKO","opponent_age":23,"opponent_country":"🇺🇸","opponent_last5":"WL","opponent_name":"Joe Riggs","opponent_record":"1-1","opponent_rtg":2632,"opponent_slug":"joeriggs","result":"Loss","round":2,"time":"02:00","venue":"Mohegan Sun Arena","weight_class":"Welterweight"},{"bout_order":1,"city":"Las Vegas, Nevada","country":"United States","country_emoji":"🇺🇸","event_date":"2005-02-05","event_name":"UFC 51: Super Saturday","event_slug":"20050205","fighter":"Chris Lytle","fighter_age":30,"fighter_country":"🇺🇸","fighter_last5":"WWLL","fighter_plot_rtg":2515,"fighter_record":"2-2","fighter_rtg":2626,"method":"DEC","opponent_age":22,"opponent_country":"🇦🇲 🇺🇸","opponent_last5":"WLW","opponent_name":"Karo Parisyan","opponent_record":"2-1","opponent_rtg":2586,"opponent_slug":"karoparisyan","result":"Loss","round":3,"time":"05:00","venue":"Mandalay Bay Events Center","weight_class":"Welterweight"},{"bout_order":1,"city":"Las Vegas, Nevada","country":"United States","country_emoji":"🇺🇸","event_date":"2004-08-21","event_name":"UFC 49: Unfinished Business","event_slug":"20040821","fighter":"Chris Lytle","fighter_age":30,"fighter_country":"🇺🇸","fighter_last5":"WLL","fighter_plot_rtg":2593,"fighter_record":"1-2","fighter_rtg":2468,"method":"SUB","opponent_age":33,"opponent_country":"🇺🇸","opponent_last5":"","opponent_name":"Ronald Jhun","opponent_record":"","opponent_rtg":2557,"opponent_slug":"ronaldjhun","result":"Win","round":2,"time":"01:17","venue":"MGM Grand Arena","weight_class":"Welterweight"},{"bout_order":1,"city":"Las Vegas, Nevada","country":"United States","country_emoji":"🇺🇸","event_date":"2004-04-02","event_name":"UFC 47: It’s On!","event_slug":"20040402","fighter":"Chris Lytle","fighter_age":29,"fighter_country":"🇺🇸","fighter_last5":"LL","fighter_plot_rtg":2468,"fighter_record":"0-2","fighter_rtg":2379,"method":"SUB","opponent_age":27,"opponent_country":"🇺🇸","opponent_last5":"LLL","opponent_name":"Tiki Ghosn","opponent_record":"0-3","opponent_rtg":2341,"opponent_slug":"tikighosn","result":"Win","round":2,"time":"01:55","venue":"Mandalay Bay Events Center","weight_class":"Welterweight"},{"bout_order":1,"city":"Uncasville, Connecticut","country":"United States","country_emoji":"🇺🇸","event_date":"2003-11-21","event_name":"UFC 45: Revolution","event_slug":"20031121","fighter":"Chris Lytle","fighter_age":29,"fighter_country":"🇺🇸","fighter_last5":"L","fighter_plot_rtg":2379,"fighter_record":"0-1","fighter_rtg":2500,"method":"DEC","opponent_age":21,"opponent_country":"🇺🇸","opponent_last5":"WWWL","opponent_name":"Robbie Lawler","opponent_record":"3-1","opponent_rtg":2426,"opponent_slug":"robbielawler","result":"Loss","round":3,"time":"05:00","venue":"Mohegan Sun Arena","weight_class":"Welterweight"},{"bout_order":1,"city":"Atlantic City, New Jersey","country":"United States","country_emoji":"🇺🇸","event_date":"2000-11-17","event_name":"UFC 28: High Stakes","event_slug":"20001117","fighter":"Chris Lytle","fighter_age":26,"fighter_country":"🇺🇸","fighter_last5":"","fighter_plot_rtg":2301,"fighter_record":"","fighter_rtg":2379,"method":"DEC","opponent_country":"🇺🇸","opponent_last5":"","opponent_name":"Ben Earwood","opponent_record":"","opponent_rtg":2459,"opponent_slug":"benearwood","result":"Loss","round":2,"time":"05:00","venue":"Mark G. Etess Arena at Trump Taj Mahal","weight_class":"Lightweight"}]'></div></div></div><script src=https://cdn.plot.ly/plotly-3.1.0.min.js></script><script>const chartElement=document.getElementById("fighter-performance-chart"),eloDataRaw=chartElement.dataset.elo,rankingsDataRaw=chartElement.dataset.rankings,eloData=eloDataRaw?JSON.parse(eloDataRaw):[],seen=new Map,eloDataFiltered=eloData.filter(e=>{const t=`${e.event_date}_${e.fighter_plot_rtg}`;return!seen.has(t)&&(seen.set(t,!0),!0)}),rankingsData=rankingsDataRaw?JSON.parse(rankingsDataRaw):[],hasElo=eloDataFiltered&&eloDataFiltered.length>1,hasRankings=rankingsData&&Object.keys(rankingsData).length>0,createEloTrace=(e="x",t="y")=>({x:eloDataFiltered.map(e=>e.event_date),y:eloDataFiltered.map(e=>e.fighter_plot_rtg),customdata:eloDataFiltered.map(e=>[e.opponent_name,e.result]),type:"scatter",mode:"lines+markers",line:{color:"#d4636a",width:3,shape:"vh"},marker:{size:10,color:"#d4636a"},hovertemplate:"%{x|%Y-%m-%d}<br>%{y} Elo<br>vs %{customdata[0]}<br>%{customdata[1]}<extra></extra>",name:"Elo",xaxis:e,yaxis:t}),createRankingsTraces=(e,t="x",n="y")=>{const s=["#65c1eb","#85ceb7","#fda481"],o={"Pound-for-Pound":"#FBBF24","Men's Pound-for-Pound":"#a4b3d5","Women's Pound-for-Pound":"#eca1cf"},a=["Pound-for-Pound","Men's Pound-for-Pound","Women's Pound-for-Pound","Flyweight","Bantamweight","Featherweight","Lightweight","Welterweight","Middleweight","Light Heavyweight","Heavyweight","Women's Flyweight","Women's Featherweight","Women's Strawweight","Women's Bantamweight"],r=a.filter(e=>rankingsData[e]);let i=0;return r.map(e=>{const a=rankingsData[e];let r;return o[e]?r=o[e]:(r=s[i%s.length],i++),{x:a.map(e=>e.date),y:a.map(e=>e.rank),type:"scatter",mode:"markers",marker:{size:10,opacity:.8,color:r},hovertemplate:a.map(t=>`${t.date}<br>${t.rank===0?"Champion":"#"+t.rank}<br>${e}<extra></extra>`),name:e,xaxis:t,yaxis:n}})};let traces=[],layout={margin:{t:0,b:0,l:30,r:0},width:600,paper_bgcolor:"#f7f5f0",plot_bgcolor:"#f7f5f0"},title="",height=450;hasElo&&hasRankings?(traces=[createEloTrace("x","y"),...createRankingsTraces(rankingsData,"x2","y2")],title="Elo Rating & UFC Rankings",height=800,layout={...layout,grid:{rows:2,columns:1,subplots:[["xy"],["x2y2"]],roworder:"top to bottom",ygap:.1},showlegend:!0,legend:{orientation:"h",xanchor:"center",x:.5,y:-.03},xaxis:{gridcolor:"#e1e1e1",title:"",matches:"x2"},yaxis:{gridcolor:"#e1e1e1",title:""},xaxis2:{gridcolor:"#e1e1e1",title:"",matches:"x"},yaxis2:{range:[15.5,-.5],tickvals:[15,14,13,12,11,10,9,8,7,6,5,4,3,2,1,0],ticktext:["15","14","13","12","11","10","9","8","7","6","5","4","3","2","1","C"],gridcolor:"#e1e1e1",zeroline:!1,title:""}},document.querySelector(".chart-section h2").textContent=title,chartElement.style.height=height+"px",layout.height=height,Plotly.newPlot("fighter-performance-chart",traces,layout,{displayModeBar:!1,responsive:!0})):hasElo?(traces=[createEloTrace()],title="Elo Rating",layout={...layout,showlegend:!1,legend:{orientation:"h",xanchor:"center",x:.5,y:-.1},margin:{t:0,b:50,l:30,r:0},xaxis:{gridcolor:"#e1e1e1",title:""},yaxis:{gridcolor:"#e1e1e1",title:""}},document.querySelector(".chart-section h2").textContent=title,chartElement.style.height=height+"px",layout.height=height,Plotly.newPlot("fighter-performance-chart",traces,layout,{displayModeBar:!1,responsive:!0})):hasRankings&&(traces=createRankingsTraces(rankingsData),title="UFC Rankings",layout={...layout,showlegend:!0,legend:{orientation:"h",xanchor:"center",x:.5,y:-.1},margin:{t:0,b:50,l:30,r:0},xaxis:{gridcolor:"#e1e1e1",title:""},yaxis:{range:[15.5,-.5],tickvals:[15,14,13,12,11,10,9,8,7,6,5,4,3,2,1,0],ticktext:["15","14","13","12","11","10","9","8","7","6","5","4","3","2","1","C"],gridcolor:"#e1e1e1",zeroline:!1,title:""}},document.querySelector(".chart-section h2").textContent=title,chartElement.style.height=height+"px",layout.height=height,Plotly.newPlot("fighter-performance-chart",traces,layout,{displayModeBar:!1,responsive:!0}))</script><div class=fight-results><h2>Bout History</h2><div class=event_bouts><div class=bout-row><div class="side_info bout-event"><br><span class=event-date><a href=/events/20110814.html>2011-08-14</a></span><br><span class=event-name><a href=/events/20110814.html>UFC Live: Hardy vs. Lytle</a></span></div><div class="bout-fighter bout-left"><br><span title='Performance of the Night' class=cursor-pointer>⭐
+</span><b>Chris Lytle</b> (36) <span class=emoji>🇺🇸</span><br><span class="wldn-letter letter-L">L</span>
+<span class="wldn-letter letter-W">W</span>
+<span class="wldn-letter letter-W">W</span>
+<span class="wldn-letter letter-W">W</span>
+<span class="wldn-letter letter-W">W</span>
+• 9-10<br>Elo: <span class=favorite-elo>2747</span></div><div class=result_description><span class=weightclass>WELTERWEIGHT</span><br><div class=fotn><span title='Fight of the Night' class=cursor-pointer>⭐</span>SUB<span title='Fight of the Night' class=cursor-pointer>⭐</span></div><br>R3<br>04:16</div><div class="bout-fighter bout-right"><br><span class=emoji>🇬🇧 🏴󠁧󠁢󠁥󠁮󠁧󠁿</span>
+<b><a href=/fighters/danhardy.html>Dan Hardy</a></b> (29)<br>4-3 •
+<span class="wldn-letter letter-W">W</span>
+<span class="wldn-letter letter-W">W</span>
+<span class="wldn-letter letter-L">L</span>
+<span class="wldn-letter letter-L">L</span>
+<span class="wldn-letter letter-L">L</span><br>Elo: 2705</div><div class="side_info bout-venue"><br>Bradley Center<br>Milwaukee, Wisconsin<br>United States <span class=emoji>🇺🇸</span></div></div><div class=bout-row><div class="side_info bout-event"><br><span class=event-date><a href=/events/20110226.html>2011-02-26</a></span><br><span class=event-name><a href=/events/20110226.html>UFC 127: Penn vs. Fitch</a></span></div><div class="bout-fighter bout-left"><br><b><a href=/fighters/brianebersole.html>Brian Ebersole</a></b> (30) <span class=emoji>🇺🇸</span><br>Debut 🔰<br>Elo: 2651</div><div class=result_description><span class=weightclass>WELTERWEIGHT</span><br><div class=fotn><span title='Fight of the Night' class=cursor-pointer>⭐</span>DEC<span title='Fight of the Night' class=cursor-pointer>⭐</span></div><br>R3<br>05:00</div><div class="bout-fighter bout-right"><br><span class=emoji>🇺🇸 </span><b>Chris Lytle</b> (36)<br>9-9 •
+<span class="wldn-letter letter-W">W</span>
+<span class="wldn-letter letter-W">W</span>
+<span class="wldn-letter letter-W">W</span>
+<span class="wldn-letter letter-W">W</span>
+<span class="wldn-letter letter-L">L</span><br>Elo: <span class=favorite-elo>2910</span></div><div class="side_info bout-venue"><br>Acer Arena<br>Sydney<br>Australia <span class=emoji>🇦🇺</span></div></div><div class=bout-row><div class="side_info bout-event"><br><span class=event-date><a href=/events/20100925.html>2010-09-25</a></span><br><span class=event-name><a href=/events/20100925.html>UFC 119: Mir vs. Cro Cop</a></span></div><div class="bout-fighter bout-left"><br><b>Chris Lytle</b> (36) <span class=emoji>🇺🇸</span><br><span class="wldn-letter letter-W">W</span>
+<span class="wldn-letter letter-W">W</span>
+<span class="wldn-letter letter-W">W</span>
+<span class="wldn-letter letter-L">L</span>
+<span class="wldn-letter letter-W">W</span>
+• 8-9<br>Elo: <span class=favorite-elo>2811</span></div><div class=result_description><span class=weightclass>WELTERWEIGHT</span><br>DEC<br>R3<br>05:00</div><div class="bout-fighter bout-right"><br><span class=emoji>🇺🇸</span>
+<b><a href=/fighters/mattserra.html>Matt Serra</a></b> (36)<br>7-6 •
+<span class="wldn-letter letter-W">W</span>
+<span class="wldn-letter letter-W">W</span>
+<span class="wldn-letter letter-L">L</span>
+<span class="wldn-letter letter-L">L</span>
+<span class="wldn-letter letter-W">W</span><br>Elo: 2808</div><div class="side_info bout-venue"><br>Conseco Fieldhouse<br>Indianapolis, Indiana<br>United States <span class=emoji>🇺🇸</span></div></div><div class=bout-row><div class="side_info bout-event"><br><span class=event-date><a href=/events/20100703.html>2010-07-03</a></span><br><span class=event-name><a href=/events/20100703.html>UFC 116: Lesnar vs. Carwin</a></span></div><div class="bout-fighter bout-left"><br><b>Chris Lytle</b> (35) <span class=emoji>🇺🇸</span><br><span class="wldn-letter letter-W">W</span>
+<span class="wldn-letter letter-W">W</span>
+<span class="wldn-letter letter-L">L</span>
+<span class="wldn-letter letter-W">W</span>
+<span class="wldn-letter letter-L">L</span>
+• 7-9<br>Elo: <span class=favorite-elo>2740</span></div><div class=result_description><span class=weightclass>WELTERWEIGHT</span><br>SUB<br>R2<br>02:02</div><div class="bout-fighter bout-right"><br><span class=emoji>🇺🇸</span>
+<b><a href=/fighters/mattbrown.html>Matt Brown</a></b> (29)<br>4-2 •
+<span class="wldn-letter letter-L">L</span>
+<span class="wldn-letter letter-W">W</span>
+<span class="wldn-letter letter-W">W</span>
+<span class="wldn-letter letter-W">W</span>
+<span class="wldn-letter letter-L">L</span><br>Elo: 2637</div><div class="side_info bout-venue"><br>MGM Grand Garden Arena<br>Las Vegas, Nevada<br>United States <span class=emoji>🇺🇸</span></div></div><div class=bout-row><div class="side_info bout-event"><br><span class=event-date><a href=/events/20100220.html>2010-02-20</a></span><br><span class=event-name><a href=/events/20100220.html>UFC 110: Nogueira vs. Velasquez</a></span></div><div class="bout-fighter bout-left"><br><span title='Performance of the Night' class=cursor-pointer>⭐
+</span><b>Chris Lytle</b> (35) <span class=emoji>🇺🇸</span><br><span class="wldn-letter letter-W">W</span>
+<span class="wldn-letter letter-L">L</span>
+<span class="wldn-letter letter-W">W</span>
+<span class="wldn-letter letter-L">L</span>
+<span class="wldn-letter letter-W">W</span>
+• 6-9<br>Elo: <span class=favorite-elo>2721</span></div><div class=result_description><span class=weightclass>WELTERWEIGHT</span><br>SUB<br>R1<br>01:41</div><div class="bout-fighter bout-right"><br><span class=emoji>🇺🇸</span>
+<b><a href=/fighters/brianfoster.html>Brian Foster</a></b> (25)<br>1-1 •
+<span class="wldn-letter letter-L">L</span>
+<span class="wldn-letter letter-W">W</span><br>Elo: 2333</div><div class="side_info bout-venue"><br>Acer Arena<br>Sydney<br>Australia <span class=emoji>🇦🇺</span></div></div><div class=bout-row><div class="side_info bout-event"><br><span class=event-date><a href=/events/20090620.html>2009-06-20</a></span><br><span class=event-name><a href=/events/20090620.html>The Ultimate Fighter: United States vs. United Kingdom</a></span></div><div class="bout-fighter bout-left"><br><b>Chris Lytle</b> (34) <span class=emoji>🇺🇸</span><br><span class="wldn-letter letter-L">L</span>
+<span class="wldn-letter letter-W">W</span>
+<span class="wldn-letter letter-L">L</span>
+<span class="wldn-letter letter-W">W</span>
+<span class="wldn-letter letter-L">L</span>
+• 5-9<br>Elo: <span class=favorite-elo>2659</span></div><div class=result_description><span class=weightclass>WELTERWEIGHT</span><br><div class=fotn><span title='Fight of the Night' class=cursor-pointer>⭐</span>DEC<span title='Fight of the Night' class=cursor-pointer>⭐</span></div><br>R3<br>05:00</div><div class="bout-fighter bout-right"><br><span class=emoji>🇺🇸</span>
+<b><a href=/fighters/kevinburns.html>Kevin Burns</a></b> (29)<br>2-1 •
+<span class="wldn-letter letter-W">W</span>
+<span class="wldn-letter letter-W">W</span>
+<span class="wldn-letter letter-L">L</span><br>Elo: 2518</div><div class="side_info bout-venue"><br>Pearl Concert Theater<br>Las Vegas, Nevada<br>United States <span class=emoji>🇺🇸</span></div></div><div class=bout-row><div class="side_info bout-event"><br><span class=event-date><a href=/events/20090117.html>2009-01-17</a></span><br><span class=event-name><a href=/events/20090117.html>UFC 93: Franklin vs. Henderson</a></span></div><div class="bout-fighter bout-left"><br><b><a href=/fighters/marcusdavis.html>Marcus Davis</a></b> (35) <span class=emoji>🇺🇸</span><br><span class="wldn-letter letter-W">W</span>
+<span class="wldn-letter letter-W">W</span>
+<span class="wldn-letter letter-W">W</span>
+<span class="wldn-letter letter-L">L</span>
+<span class="wldn-letter letter-W">W</span>
+• 7-2<br>Elo: 2753</div><div class=result_description><span class=weightclass>WELTERWEIGHT</span><br><div class=fotn><span title='Fight of the Night' class=cursor-pointer>⭐</span>DEC<span title='Fight of the Night' class=cursor-pointer>⭐</span></div><br>R3<br>05:00</div><div class="bout-fighter bout-right"><br><span class=emoji>🇺🇸 </span><b>Chris Lytle</b> (34)<br>5-8 •
+<span class="wldn-letter letter-W">W</span>
+<span class="wldn-letter letter-L">L</span>
+<span class="wldn-letter letter-W">W</span>
+<span class="wldn-letter letter-L">L</span>
+<span class="wldn-letter letter-W">W</span><br>Elo: 2670</div><div class="side_info bout-venue"><br>The O2<br>Dublin<br>Ireland <span class=emoji>🇮🇪</span></div></div><div class=bout-row><div class="side_info bout-event"><br><span class=event-date><a href=/events/20081018.html>2008-10-18</a></span><br><span class=event-name><a href=/events/20081018.html>UFC 89: Bisping vs. Leben</a></span></div><div class="bout-fighter bout-left"><br><b>Chris Lytle</b> (34) <span class=emoji>🇺🇸</span><br><span class="wldn-letter letter-L">L</span>
+<span class="wldn-letter letter-W">W</span>
+<span class="wldn-letter letter-L">L</span>
+<span class="wldn-letter letter-W">W</span>
+<span class="wldn-letter letter-L">L</span>
+• 4-8<br>Elo: <span class=favorite-elo>2637</span></div><div class=result_description><span class=weightclass>WELTERWEIGHT</span><br><div class=fotn><span title='Fight of the Night' class=cursor-pointer>⭐</span>DEC<span title='Fight of the Night' class=cursor-pointer>⭐</span></div><br>R3<br>05:00</div><div class="bout-fighter bout-right"><br><span class=emoji>🇬🇧 🏴󠁧󠁢󠁥󠁮󠁧󠁿</span>
+<b><a href=/fighters/paultaylor.html>Paul Taylor</a></b> (28)<br>2-2 •
+<span class="wldn-letter letter-W">W</span>
+<span class="wldn-letter letter-L">L</span>
+<span class="wldn-letter letter-L">L</span>
+<span class="wldn-letter letter-W">W</span><br>Elo: 2354</div><div class="side_info bout-venue"><br>National Indoor Arena<br>Birmingham, England<br>United Kingdom <span class=emoji>🇬🇧</span></div></div><div class=bout-row><div class="side_info bout-event"><br><span class=event-date><a href=/events/20080705.html>2008-07-05</a></span><br><span class=event-name><a href=/events/20080705.html>UFC 86: Jackson vs. Griffin</a></span></div><div class="bout-fighter bout-left"><br><b><a href=/fighters/joshkoscheck.html>Josh Koscheck</a></b> (30) <span class=emoji>🇺🇸</span><br><span class="wldn-letter letter-W">W</span>
+<span class="wldn-letter letter-W">W</span>
+<span class="wldn-letter letter-W">W</span>
+<span class="wldn-letter letter-L">L</span>
+<span class="wldn-letter letter-W">W</span>
+• 8-2<br>Elo: 2917</div><div class=result_description><span class=weightclass>WELTERWEIGHT</span><br>DEC<br>R3<br>05:00</div><div class="bout-fighter bout-right"><br><span class=emoji>🇺🇸 </span><b>Chris Lytle</b> (33)<br>4-7 •
+<span class="wldn-letter letter-W">W</span>
+<span class="wldn-letter letter-L">L</span>
+<span class="wldn-letter letter-W">W</span>
+<span class="wldn-letter letter-L">L</span>
+<span class="wldn-letter letter-L">L</span><br>Elo: 2678</div><div class="side_info bout-venue"><br>Mandalay Bay Events Center<br>Las Vegas, Nevada<br>United States <span class=emoji>🇺🇸</span></div></div><div class=bout-row><div class="side_info bout-event"><br><span class=event-date><a href=/events/20080202.html>2008-02-02</a></span><br><span class=event-name><a href=/events/20080202.html>UFC 81: Breaking Point</a></span></div><div class="bout-fighter bout-left"><br><span title='Performance of the Night' class=cursor-pointer>⭐
+</span><b>Chris Lytle</b> (33) <span class=emoji>🇺🇸</span><br><span class="wldn-letter letter-L">L</span>
+<span class="wldn-letter letter-W">W</span>
+<span class="wldn-letter letter-L">L</span>
+<span class="wldn-letter letter-L">L</span>
+<span class="wldn-letter letter-L">L</span>
+• 3-7<br>Elo: <span class=favorite-elo>2614</span></div><div class=result_description><span class=weightclass>WELTERWEIGHT</span><br>TKO<br>R1<br>00:33</div><div class="bout-fighter bout-right"><br><span class=emoji>🇺🇸</span>
+<b><a href=/fighters/kylebradley.html>Kyle Bradley</a></b> (25)<br>🔰 Debut<br>Elo: 2480</div><div class="side_info bout-venue"><br>Mandalay Bay Events Center<br>Las Vegas, Nevada<br>United States <span class=emoji>🇺🇸</span></div></div><div class=bout-row><div class="side_info bout-event"><br><span class=event-date><a href=/events/20071117.html>2007-11-17</a></span><br><span class=event-name><a href=/events/20071117.html>UFC 78: Validation</a></span></div><div class="bout-fighter bout-left"><br><b><a href=/fighters/thiagoalves.html>Thiago Alves</a></b> (24) <span class=emoji>🇧🇷</span><br><span class="wldn-letter letter-W">W</span>
+<span class="wldn-letter letter-L">L</span>
+<span class="wldn-letter letter-W">W</span>
+<span class="wldn-letter letter-W">W</span>
+<span class="wldn-letter letter-W">W</span>
+• 5-2<br>Elo: 2853</div><div class=result_description><span class=weightclass>WELTERWEIGHT</span><br><div class=fotn><span title='Fight of the Night' class=cursor-pointer>⭐</span>TKO<span title='Fight of the Night' class=cursor-pointer>⭐</span></div><br>R2<br>05:00</div><div class="bout-fighter bout-right"><br><span class=emoji>🇺🇸 </span><b>Chris Lytle</b> (33)<br>3-6 •
+<span class="wldn-letter letter-W">W</span>
+<span class="wldn-letter letter-L">L</span>
+<span class="wldn-letter letter-L">L</span>
+<span class="wldn-letter letter-L">L</span>
+<span class="wldn-letter letter-L">L</span><br>Elo: 2665</div><div class="side_info bout-venue"><br>Prudential Center<br>Newark, New Jersey<br>United States <span class=emoji>🇺🇸</span></div></div><div class=bout-row><div class="side_info bout-event"><br><span class=event-date><a href=/events/20070707.html>2007-07-07</a></span><br><span class=event-name><a href=/events/20070707.html>UFC 73: Stacked</a></span></div><div class="bout-fighter bout-left"><br><span title='Performance of the Night' class=cursor-pointer>⭐
+</span><b>Chris Lytle</b> (32) <span class=emoji>🇺🇸</span><br><span class="wldn-letter letter-L">L</span>
+<span class="wldn-letter letter-L">L</span>
+<span class="wldn-letter letter-L">L</span>
+<span class="wldn-letter letter-L">L</span>
+<span class="wldn-letter letter-W">W</span>
+• 2-6<br>Elo: <span class=favorite-elo>2603</span></div><div class=result_description><span class=weightclass>WELTERWEIGHT</span><br>SUB<br>R1<br>02:15</div><div class="bout-fighter bout-right"><br><span class=emoji>🇺🇸</span>
+<b><a href=/fighters/jasongilliam.html>Jason Gilliam</a></b> (34)<br>0-1 •
+<span class="wldn-letter letter-L">L</span><br>Elo: 2463</div><div class="side_info bout-venue"><br>ARCO Arena<br>Sacramento, California<br>United States <span class=emoji>🇺🇸</span></div></div><div class=bout-row><div class="side_info bout-event"><br><span class=event-date><a href=/events/20070303.html>2007-03-03</a></span><br><span class=event-name><a href=/events/20070303.html>UFC 68: The Uprising</a></span></div><div class="bout-fighter bout-left"><br><b><a href=/fighters/matthughes.html>Matt Hughes</a></b> (33) <span class=emoji>🇺🇸</span><br><span class="wldn-letter letter-W">W</span>
+<span class="wldn-letter letter-W">W</span>
+<span class="wldn-letter letter-W">W</span>
+<span class="wldn-letter letter-W">W</span>
+<span class="wldn-letter letter-L">L</span>
+• 14-3<br>Elo: 2911</div><div class=result_description><span class=weightclass>WELTERWEIGHT</span><br>DEC<br>R3<br>05:00</div><div class="bout-fighter bout-right"><br><span class=emoji>🇺🇸 </span><b>Chris Lytle</b> (32)<br>2-5 •
+<span class="wldn-letter letter-L">L</span>
+<span class="wldn-letter letter-L">L</span>
+<span class="wldn-letter letter-L">L</span>
+<span class="wldn-letter letter-W">W</span>
+<span class="wldn-letter letter-W">W</span><br>Elo: 2638</div><div class="side_info bout-venue"><br>Nationwide Arena<br>Columbus, Ohio<br>United States <span class=emoji>🇺🇸</span></div></div><div class=bout-row><div class="side_info bout-event"><br><span class=event-date><a href=/events/20061111.html>2006-11-11</a></span><br><span class=event-name><a href=/events/20061111.html>The Ultimate Fighter 4</a></span></div><div class="bout-fighter bout-left"><br><b><a href=/fighters/mattserra.html>Matt Serra</a></b> (32) <span class=emoji>🇺🇸</span><br><span class="wldn-letter letter-L">L</span>
+<span class="wldn-letter letter-L">L</span>
+<span class="wldn-letter letter-W">W</span>
+<span class="wldn-letter letter-W">W</span>
+<span class="wldn-letter letter-L">L</span>
+• 4-4<br>Elo: 2676</div><div class=result_description><span class=weightclass>WELTERWEIGHT</span><br>DEC<br>R3<br>05:00</div><div class="bout-fighter bout-right"><br><span class=emoji>🇺🇸 </span><b>Chris Lytle</b> (32)<br>2-4 •
+<span class="wldn-letter letter-L">L</span>
+<span class="wldn-letter letter-L">L</span>
+<span class="wldn-letter letter-W">W</span>
+<span class="wldn-letter letter-W">W</span>
+<span class="wldn-letter letter-L">L</span><br>Elo: 2670</div><div class="side_info bout-venue"><br>Hard Rock Hotel and Casino<br>Las Vegas, Nevada<br>United States <span class=emoji>🇺🇸</span></div></div><div class=bout-row><div class="side_info bout-event"><br><span class=event-date><a href=/events/20051007.html>2005-10-07</a></span><br><span class=event-name><a href=/events/20051007.html>UFC 55: Fury</a></span></div><div class="bout-fighter bout-left"><br><b><a href=/fighters/joeriggs.html>Joe Riggs</a></b> (23) <span class=emoji>🇺🇸</span><br><span class="wldn-letter letter-W">W</span>
+<span class="wldn-letter letter-L">L</span>
+• 1-1<br>Elo: 2632</div><div class=result_description><span class=weightclass>WELTERWEIGHT</span><br>TKO<br>R2<br>02:00</div><div class="bout-fighter bout-right"><br><span class=emoji>🇺🇸 </span><b>Chris Lytle</b> (31)<br>2-3 •
+<span class="wldn-letter letter-L">L</span>
+<span class="wldn-letter letter-W">W</span>
+<span class="wldn-letter letter-W">W</span>
+<span class="wldn-letter letter-L">L</span>
+<span class="wldn-letter letter-L">L</span><br>Elo: 2521</div><div class="side_info bout-venue"><br>Mohegan Sun Arena<br>Uncasville, Connecticut<br>United States <span class=emoji>🇺🇸</span></div></div><div class=bout-row><div class="side_info bout-event"><br><span class=event-date><a href=/events/20050205.html>2005-02-05</a></span><br><span class=event-name><a href=/events/20050205.html>UFC 51: Super Saturday</a></span></div><div class="bout-fighter bout-left"><br><b><a href=/fighters/karoparisyan.html>Karo Parisyan</a></b> (22) <span class=emoji>🇦🇲 🇺🇸</span><br><span class="wldn-letter letter-W">W</span>
+<span class="wldn-letter letter-L">L</span>
+<span class="wldn-letter letter-W">W</span>
+• 2-1<br>Elo: 2586</div><div class=result_description><span class=weightclass>WELTERWEIGHT</span><br>DEC<br>R3<br>05:00</div><div class="bout-fighter bout-right"><br><span class=emoji>🇺🇸 </span><b>Chris Lytle</b> (30)<br>2-2 •
+<span class="wldn-letter letter-W">W</span>
+<span class="wldn-letter letter-W">W</span>
+<span class="wldn-letter letter-L">L</span>
+<span class="wldn-letter letter-L">L</span><br>Elo: <span class=favorite-elo>2626</span></div><div class="side_info bout-venue"><br>Mandalay Bay Events Center<br>Las Vegas, Nevada<br>United States <span class=emoji>🇺🇸</span></div></div><div class=bout-row><div class="side_info bout-event"><br><span class=event-date><a href=/events/20040821.html>2004-08-21</a></span><br><span class=event-name><a href=/events/20040821.html>UFC 49: Unfinished Business</a></span></div><div class="bout-fighter bout-left"><br><b>Chris Lytle</b> (30) <span class=emoji>🇺🇸</span><br><span class="wldn-letter letter-W">W</span>
+<span class="wldn-letter letter-L">L</span>
+<span class="wldn-letter letter-L">L</span>
+• 1-2<br>Elo: 2468</div><div class=result_description><span class=weightclass>WELTERWEIGHT</span><br>SUB<br>R2<br>01:17</div><div class="bout-fighter bout-right"><br><span class=emoji>🇺🇸</span>
+<b><a href=/fighters/ronaldjhun.html>Ronald Jhun</a></b> (33)<br>🔰 Debut<br>Elo: 2557</div><div class="side_info bout-venue"><br>MGM Grand Arena<br>Las Vegas, Nevada<br>United States <span class=emoji>🇺🇸</span></div></div><div class=bout-row><div class="side_info bout-event"><br><span class=event-date><a href=/events/20040402.html>2004-04-02</a></span><br><span class=event-name><a href=/events/20040402.html>UFC 47: It’s On!</a></span></div><div class="bout-fighter bout-left"><br><b>Chris Lytle</b> (29) <span class=emoji>🇺🇸</span><br><span class="wldn-letter letter-L">L</span>
+<span class="wldn-letter letter-L">L</span>
+• 0-2<br>Elo: <span class=favorite-elo>2379</span></div><div class=result_description><span class=weightclass>WELTERWEIGHT</span><br>SUB<br>R2<br>01:55</div><div class="bout-fighter bout-right"><br><span class=emoji>🇺🇸</span>
+<b><a href=/fighters/tikighosn.html>Tiki Ghosn</a></b> (27)<br>0-3 •
+<span class="wldn-letter letter-L">L</span>
+<span class="wldn-letter letter-L">L</span>
+<span class="wldn-letter letter-L">L</span><br>Elo: 2341</div><div class="side_info bout-venue"><br>Mandalay Bay Events Center<br>Las Vegas, Nevada<br>United States <span class=emoji>🇺🇸</span></div></div><div class=bout-row><div class="side_info bout-event"><br><span class=event-date><a href=/events/20031121.html>2003-11-21</a></span><br><span class=event-name><a href=/events/20031121.html>UFC 45: Revolution</a></span></div><div class="bout-fighter bout-left"><br><b><a href=/fighters/robbielawler.html>Robbie Lawler</a></b> (21) <span class=emoji>🇺🇸</span><br><span class="wldn-letter letter-W">W</span>
+<span class="wldn-letter letter-W">W</span>
+<span class="wldn-letter letter-W">W</span>
+<span class="wldn-letter letter-L">L</span>
+• 3-1<br>Elo: 2426</div><div class=result_description><span class=weightclass>WELTERWEIGHT</span><br>DEC<br>R3<br>05:00</div><div class="bout-fighter bout-right"><br><span class=emoji>🇺🇸 </span><b>Chris Lytle</b> (29)<br>0-1 •
+<span class="wldn-letter letter-L">L</span><br>Elo: <span class=favorite-elo>2500</span></div><div class="side_info bout-venue"><br>Mohegan Sun Arena<br>Uncasville, Connecticut<br>United States <span class=emoji>🇺🇸</span></div></div><div class=bout-row><div class="side_info bout-event"><br><span class=event-date><a href=/events/20001117.html>2000-11-17</a></span><br><span class=event-name><a href=/events/20001117.html>UFC 28: High Stakes</a></span></div><div class="bout-fighter bout-left"><br><b><a href=/fighters/benearwood.html>Ben Earwood</a></b> <span class=emoji>🇺🇸</span><br>Debut 🔰<br>Elo: 2459</div><div class=result_description><span class=weightclass>LIGHTWEIGHT</span><br>DEC<br>R2<br>05:00</div><div class="bout-fighter bout-right"><br><span class=emoji>🇺🇸 </span><b>Chris Lytle</b> (26)<br>🔰 Debut<br>Elo: 2379</div><div class="side_info bout-venue"><br>Mark G. Etess Arena at Trump Taj Mahal<br>Atlantic City, New Jersey<br>United States <span class=emoji>🇺🇸</span></div></div></div></div></main><footer><div class=footer-container><p class=copyright-text><a href=/glossary.html>Glossary</a>
+<a href=mailto:rostertracker@gmail.com>Contact</a></p></div><div class=footer-container><p class=copyright-text>Copyright © <span id=currentYear></span> All Rights Reserved by
+<a href=#>roster.watch</a></p></div></footer><style>.footer-container{display:flex;justify-content:space-between;align-items:center;padding:1rem}.copyright-text{margin:0 auto}.browser-badge{margin-left:auto}</style><script>document.getElementById("currentYear").textContent=(new Date).getFullYear()</script></div></body></html>

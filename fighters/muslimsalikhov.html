@@ -1,506 +1,154 @@
-<!DOCTYPE html>
-
-<html lang="en" xml:lang="en">
-
-<head>
-
-<meta charset="utf-8" />
-<meta name="generator" content="pandoc" />
-<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
-
-
-
-
-<title>Muslim Salikhov UFC Record &amp; Stats: Interactive Charts · roster.watch</title>
-
-<script src="fighter_libs/header-attrs-2.30/header-attrs.js"></script>
-<script src="fighter_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<link href="fighter_libs/bootstrap-3.3.5/css/bootstrap.min.css" rel="stylesheet" />
-<script src="fighter_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
-<script src="fighter_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
-<script src="fighter_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
-<style>h1 {font-size: 34px;}
-       h1.title {font-size: 38px;}
-       h2 {font-size: 30px;}
-       h3 {font-size: 24px;}
-       h4 {font-size: 18px;}
-       h5 {font-size: 16px;}
-       h6 {font-size: 12px;}
-       code {color: inherit; background-color: rgba(0, 0, 0, 0.04);}
-       pre:not([class]) { background-color: white }</style>
-<script src="fighter_libs/navigation-1.1/tabsets.js"></script>
-<link href="fighter_libs/highlightjs-9.12.0/default.css" rel="stylesheet" />
-<script src="fighter_libs/highlightjs-9.12.0/highlight.js"></script>
-<link href="fighter_libs/htmltools-fill-0.5.8.1/fill.css" rel="stylesheet" />
-<script src="fighter_libs/htmlwidgets-1.6.4/htmlwidgets.js"></script>
-<script src="fighter_libs/plotly-binding-4.11.0/plotly.js"></script>
-<script src="fighter_libs/typedarray-0.1/typedarray.min.js"></script>
-<link href="fighter_libs/crosstalk-1.2.2/css/crosstalk.min.css" rel="stylesheet" />
-<script src="fighter_libs/crosstalk-1.2.2/js/crosstalk.min.js"></script>
-<link href="fighter_libs/plotly-htmlwidgets-css-2.11.1/plotly-htmlwidgets.css" rel="stylesheet" />
-<script src="fighter_libs/plotly-main-2.11.1/plotly-latest.min.js"></script>
-<script src="fighter_libs/core-js-2.5.3/shim.min.js"></script>
-<script src="fighter_libs/react-18.2.0/react.min.js"></script>
-<script src="fighter_libs/react-18.2.0/react-dom.min.js"></script>
-<script src="fighter_libs/reactwidget-2.0.0/react-tools.js"></script>
-<link href="fighter_libs/reactable-0.4.4/reactable.css" rel="stylesheet" />
-<script src="fighter_libs/reactable-binding-0.4.4/reactable.js"></script>
-<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-<link rel="manifest" href="/site.webmanifest">
-<meta name="description" content="An up-to-date list of the full active UFC roster including biographical data, rankings, records, and more.">
-<!-- <meta property="og:title" content="roster.watch" />
-<meta property="og:type" content="website" />
-<meta property="og:url" content="https://www.roster.watch/" />
-<meta property="og:image" content="https://www.roster.watch/og_image.png" />
-<meta property="og:description" content="An up-to-date list of the full active UFC roster including biographical data, rankings, record, and more." />
-<script src="https://unpkg.com/twemoji@latest/dist/twemoji.min.js" crossorigin="anonymous"></script> 
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7299518767310567"
-     crossorigin="anonymous"></script> -->
-<script data-goatcounter="https://rosterwatch.goatcounter.com/count"
-        async src="//gc.zgo.at/count.js"></script>
-<script defer src="/script.js" data-website-id="f0f3ed7e-e89c-4a29-a745-475e0b10271a"></script>
-<!-- <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7299518767310567"
-     crossorigin="anonymous"></script> -->
-
-<style type="text/css">
-  code{white-space: pre-wrap;}
-  span.smallcaps{font-variant: small-caps;}
-  span.underline{text-decoration: underline;}
-  div.column{display: inline-block; vertical-align: top; width: 50%;}
-  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
-  ul.task-list{list-style: none;}
-    </style>
-
-<style type="text/css">code{white-space: pre;}</style>
-<script type="text/javascript">
-if (window.hljs) {
-  hljs.configure({languages: []});
-  hljs.initHighlightingOnLoad();
-  if (document.readyState && document.readyState === "complete") {
-    window.setTimeout(function() { hljs.initHighlighting(); }, 0);
-  }
-}
-</script>
-
-
-
-
-
-
-<link rel="stylesheet" href="../style.css" type="text/css" />
-
-
-
-<style type = "text/css">
-.main-container {
-  max-width: 940px;
-  margin-left: auto;
-  margin-right: auto;
-}
-img {
-  max-width:100%;
-}
-.tabbed-pane {
-  padding-top: 12px;
-}
-.html-widget {
-  margin-bottom: 20px;
-}
-button.code-folding-btn:focus {
-  outline: none;
-}
-summary {
-  display: list-item;
-}
-details > summary > p:only-child {
-  display: inline;
-}
-pre code {
-  padding: 0;
-}
-</style>
-
-
-<style type="text/css">
-.dropdown-submenu {
-  position: relative;
-}
-.dropdown-submenu>.dropdown-menu {
-  top: 0;
-  left: 100%;
-  margin-top: -6px;
-  margin-left: -1px;
-  border-radius: 0 6px 6px 6px;
-}
-.dropdown-submenu:hover>.dropdown-menu {
-  display: block;
-}
-.dropdown-submenu>a:after {
-  display: block;
-  content: " ";
-  float: right;
-  width: 0;
-  height: 0;
-  border-color: transparent;
-  border-style: solid;
-  border-width: 5px 0 5px 5px;
-  border-left-color: #cccccc;
-  margin-top: 5px;
-  margin-right: -10px;
-}
-.dropdown-submenu:hover>a:after {
-  border-left-color: #adb5bd;
-}
-.dropdown-submenu.pull-left {
-  float: none;
-}
-.dropdown-submenu.pull-left>.dropdown-menu {
-  left: -100%;
-  margin-left: 10px;
-  border-radius: 6px 0 6px 6px;
-}
-</style>
-
-<script type="text/javascript">
-// manage active state of menu based on current page
-$(document).ready(function () {
-  // active menu anchor
-  href = window.location.pathname
-  href = href.substr(href.lastIndexOf('/') + 1)
-  if (href === "")
-    href = "index.html";
-  var menuAnchor = $('a[href="' + href + '"]');
-
-  // mark the anchor link active (and if it's in a dropdown, also mark that active)
-  var dropdown = menuAnchor.closest('li.dropdown');
-  if (window.bootstrap) { // Bootstrap 4+
-    menuAnchor.addClass('active');
-    dropdown.find('> .dropdown-toggle').addClass('active');
-  } else { // Bootstrap 3
-    menuAnchor.parent().addClass('active');
-    dropdown.addClass('active');
-  }
-
-  // Navbar adjustments
-  var navHeight = $(".navbar").first().height() + 15;
-  var style = document.createElement('style');
-  var pt = "padding-top: " + navHeight + "px; ";
-  var mt = "margin-top: -" + navHeight + "px; ";
-  var css = "";
-  // offset scroll position for anchor links (for fixed navbar)
-  for (var i = 1; i <= 6; i++) {
-    css += ".section h" + i + "{ " + pt + mt + "}\n";
-  }
-  style.innerHTML = "body {" + pt + "padding-bottom: 40px; }\n" + css;
-  document.head.appendChild(style);
-});
-</script>
-
-<!-- tabsets -->
-
-<style type="text/css">
-.tabset-dropdown > .nav-tabs {
-  display: inline-table;
-  max-height: 500px;
-  min-height: 44px;
-  overflow-y: auto;
-  border: 1px solid #ddd;
-  border-radius: 4px;
-}
-
-.tabset-dropdown > .nav-tabs > li.active:before, .tabset-dropdown > .nav-tabs.nav-tabs-open:before {
-  content: "\e259";
-  font-family: 'Glyphicons Halflings';
-  display: inline-block;
-  padding: 10px;
-  border-right: 1px solid #ddd;
-}
-
-.tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
-  content: "\e258";
-  font-family: 'Glyphicons Halflings';
-  border: none;
-}
-
-.tabset-dropdown > .nav-tabs > li.active {
-  display: block;
-}
-
-.tabset-dropdown > .nav-tabs > li > a,
-.tabset-dropdown > .nav-tabs > li > a:focus,
-.tabset-dropdown > .nav-tabs > li > a:hover {
-  border: none;
-  display: inline-block;
-  border-radius: 4px;
-  background-color: transparent;
-}
-
-.tabset-dropdown > .nav-tabs.nav-tabs-open > li {
-  display: block;
-  float: none;
-}
-
-.tabset-dropdown > .nav-tabs > li {
-  display: none;
-}
-</style>
-
-<!-- code folding -->
-
-
-
-
-</head>
-
-<body>
-
-
-<div class="container-fluid main-container">
-
-
-
-<header>
-    <a class="logo" href="/"><img src="/images/logo.svg" alt="logo"></a>
-    <nav>
-        <ul class="nav__links">
-            <li><a href="/">Current Roster</a></li>
-            <li><a href="/former.html">Former Roster</a></li>
-            <li class="dropdown">
-                <a href="#" onclick="return false;">Weight Classes</a>
-<ul class="dropdown-content">
-                    <li><a href="/heavyweight.html">Heavyweight</a></li>
-                    <li><a href="/lightheavyweight.html">Light Heavyweight</a></li>
-                    <li><a href="/middleweight.html">Middleweight</a></li>
-                    <li><a href="/welterweight.html">Welterweight</a></li>
-                    <li><a href="/lightweight.html">Lightweight</a></li>
-                    <li><a href="/featherweight.html">Featherweight</a></li>
-                    <li><a href="/bantamweight.html">Bantamweight</a></li>
-                    <li><a href="/flyweight.html">Flyweight</a></li>
-                    <li><a href="/womensbantamweight.html">Women's Bantamweight</a></li>
-                    <li><a href="/womensflyweight.html">Women's Flyweight</a></li>
-                    <li><a href="/womensstrawweight.html">Women's Strawweight</a></li>
-                </ul>
-            </li>
-            <li><a href="/events">Events</a></li>
-            <li><a href="/log.html">Log</a></li>
-            <li><a href="/fightlog.html">Fight Log</a></li>
-            <li><a href="javascript:void(0)" onclick="getRandomPage()">Random Page</a></li>
-            <li><a href="https://rosterwatch.printify.me/">Merch</a></li>
-            <li><a href="https://www.patreon.com/bePatron?u=88266864">Support on Patreon</a></li>
-        </ul>
-    </nav>
-    <div class="menu cta">Menu</div>
-</header>
-
-<div class="overlay">
-    <a class="close">×</a>
-    <div class="overlay__content">
-        <a href="/">Current Roster</a>
-        <a href="/former.html">Former Roster</a>
-        <div class="dropdown-mobile">
-            <a href="#" onclick="return false;">Weight Classes</a>
-<div class="dropdown-content-mobile">
-                <a href="/heavyweight.html">Heavyweight</a>
-                <a href="/lightheavyweight.html">Light Heavyweight</a>
-                <a href="/middleweight.html">Middleweight</a>
-                <a href="/welterweight.html">Welterweight</a>
-                <a href="/lightweight.html">Lightweight</a>
-                <a href="/featherweight.html">Featherweight</a>
-                <a href="/bantamweight.html">Bantamweight</a>
-                <a href="/flyweight.html">Flyweight</a>
-                <a href="/womensbantamweight.html">Women's Bantamweight</a>
-                <a href="/womensflyweight.html">Women's Flyweight</a>
-                <a href="/womensstrawweight.html">Women's Strawweight</a>
-            </div>
-        </div>
-        <a href="/events">Events</a>
-        <a href="/log.html">Log</a>
-        <a href="/fightlog.html">Fight Log</a>
-        <a href="javascript:void(0)" onclick="getRandomPage()">Random Page</a>
-        <a href="https://rosterwatch.printify.me/">Merch</a>
-        <a href="https://www.patreon.com/bePatron?u=88266864">Support on Patreon</a>
-    </div>
-</div>
-<script type="text/javascript" src="/mobile.js"></script>
-    <script>
-      function getRandomPage() {
-        fetch('/sitemap.xml')
-          .then(response => response.text())
-          .then(xmlText => {
-            const parser = new DOMParser();
-            const xmlDoc = parser.parseFromString(xmlText, 'application/xml');
-            const urls = Array.from(xmlDoc.getElementsByTagName('loc')).map(loc => loc.textContent);
-            const randomPage = urls[Math.floor(Math.random() * urls.length)];
-            window.location.href = randomPage;
-          });
-      }
-    </script>
-
-<div id="header">
-
-
-
-<h1 class="title toc-ignore">Muslim Salikhov UFC Record &amp; Stats:
-Interactive Charts · roster.watch</h1>
-
-</div>
-
-
-<script type="application/ld+json">{
-  "@context": "https://schema.org",
-  "@type": "Person",
-  "name": "Muslim Salikhov",
-  "birthDate": "1984-06-09",
-  "nationality": "Russia",
-  "memberOf": {
-    "@type": "SportsOrganization",
-    "name": "UFC",
-    "sport": "Mixed Martial Arts"
-  },
-  "additionalProperty": [
-    {
-      "@type": "PropertyValue",
-      "name": "UFC Record",
-      "value": "9-5"
-    },
-    {
-      "@type": "PropertyValue",
-      "name": "Current Elo Rating",
-      "value": "2893"
-    },
-    {
-      "@type": "PropertyValue",
-      "name": "Peak UFC Ranking",
-      "value": "#14 Welterweight"
-    },
-    {
-      "@type": "PropertyValue",
-      "name": "Bonuses",
-      "value": "4"
-    }
-  ]
-}</script>
-<article class="event-info" style="display: flex; flex-direction: column; align-items: center; justify-content: center; width: 100%; height: auto;"><div class="fighter-info" style="text-align: center; margin-bottom: 20px;"><h2 style='font-weight: bold; font-size: 1.1em; margin: 0;'>Muslim Salikhov <span class='emoji'>🇷🇺</span></h2><time datetime='1984-06-09'><p><span>1984-06-09</span><script>document.currentScript.parentElement.innerHTML = (function(){  const dob = new Date('1984-06-09');  const today = new Date();  let years = today.getFullYear() - dob.getFullYear();  const monthDiff = today.getMonth() - dob.getMonth();  if (monthDiff < 0 || (monthDiff === 0 && today.getDate() < dob.getDate())) {    years--;  }  const yearAnniversary = new Date(dob);  yearAnniversary.setFullYear(dob.getFullYear() + years);  const dayDiff = Math.floor((today - yearAnniversary) / (1000 * 60 * 60 * 24));  const isBirthday = today.getMonth() === dob.getMonth() && today.getDate() === dob.getDate();  let ageString = `${years} year${years !== 1 ? 's' : ''}`;  if (dayDiff > 0) {    ageString += ` ${dayDiff} day${dayDiff !== 1 ? 's' : ''}`;  }  return `${ageString}${isBirthday ? ' 🎂' : ''} <br><span class='event-date'> (${dob.toISOString().split('T')[0]}) </span>`;}());</script></p></time></div><div style="display: flex; justify-content: center; align-items: flex-start; gap: 40px; max-width: 600px; width: 100%;"><div class="event-details" style="width: 50%;"><div class='event-stats'><p><strong>Record:</strong> 9-5<br></p><p><strong>By Method:</strong></p><ul><li> KO/TKO: 5-3</li><li> Submission: 0-1</li><li> Decision: 4-1</li></ul><p><strong>By Elo:</strong></p><ul><li>As Favorite: 4-4</li><li>As Underdog: 5-1</li></ul><p><strong>By Weight Class:</strong></p><ul><li>Welterweight: 9-5</li></ul><p><strong>By Round:</strong></p><ul><li>Round 1: 3-2</li><li>Round 2: 1-2</li><li>Round 3: 5-1</li></ul></div></div><div class="rankings" style="width: 50%;"><p><strong>UFC Roster Status:</strong> Active</p><p><strong>Last 5:</strong> <span style='display: inline-block;width: 1.25em;
-height: 1.25em;
-line-height: 1.25em; font-size: 0.8em;
- text-align: center; border-radius: 50%; background-color: crimson; color: white; font-weight: bold;'>L</span> <span style='display: inline-block;width: 1.25em;
-height: 1.25em;
-line-height: 1.25em; font-size: 0.8em;
- text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W</span> <span style='display: inline-block;width: 1.25em;
-height: 1.25em;
-line-height: 1.25em; font-size: 0.8em;
- text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W</span> <span style='display: inline-block;width: 1.25em;
-height: 1.25em;
-line-height: 1.25em; font-size: 0.8em;
- text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W</span> <span style='display: inline-block;width: 1.25em;
-height: 1.25em;
-line-height: 1.25em; font-size: 0.8em;
- text-align: center; border-radius: 50%; background-color: crimson; color: white; font-weight: bold;'>L</span></p><p><strong>Elo:</strong> 2893</p><p><strong>Peak Elo:</strong> 3107<span class='event-date'> (2021-06-05)</span></p><p><strong>Bonuses:</strong> 4 (0 FOTN, 4 Performance)</p><p><strong>Avg Fight Time:</strong> 9m 2s</p><p><strong>Total Fight Time:</strong> 2h 6m 32s</p><br><strong>Peak Rankings: </strong><br>#14 Welterweight</div></div></article>
-<h2 style='font-size: 1em; margin: 0; text-align: center; font-weight: bold;'>Elo Rating & UFC Rankings</h2>
-<div style="display: flex; justify-content: center; width: 100%; margin-top: 20px; margin-bottom: 20px;">
-<div id="fighter-performance-chart" style="width: 100%; max-width: 600px; height: 750px;">
-<div class="plotly html-widget html-fill-item" id="htmlwidget-7b80891620114da400d8" style="width:100%;height:400px;"></div>
-<script type="application/json" data-for="htmlwidget-7b80891620114da400d8">{"x":{"data":[{"x":["2017-11-25","2018-04-14","2019-09-07","2019-10-26","2020-07-11","2021-06-05","2022-07-16","2022-11-19","2023-06-17","2024-02-03","2024-07-13","2024-11-23","2025-07-26","2025-11-08"],"y":[2627,2769,2860,2912,2989,3107,2966,3015,2886,2813,2888,2947,3064,2893],"mode":"lines+markers","line":{"color":"#d12d36","width":3,"shape":"hv"},"marker":{"color":"#d12d36","size":10,"line":{"color":"rgba(31,119,180,1)"}},"hoverinfo":["text","text","text","text","text","text","text","text","text","text","text","text","text","text"],"text":["2017-11-25 <br> 2627 Elo <br> Alex Garcia <br> Loss","2018-04-14 <br> 2769 Elo <br> Ricky Rainey <br> Win","2019-09-07 <br> 2860 Elo <br> Nordine Taleb <br> Win","2019-10-26 <br> 2912 Elo <br> Laureano Staropoli <br> Win","2020-07-11 <br> 2989 Elo <br> Elizeu Zaleski dos Santos <br> Win","2021-06-05 <br> 3107 Elo <br> Francisco Trinaldo <br> Win","2022-07-16 <br> 2966 Elo <br> Li Jingliang <br> Loss","2022-11-19 <br> 3015 Elo <br> Andre Fialho <br> Win","2023-06-17 <br> 2886 Elo <br> Nicolas Dalby <br> Loss","2024-02-03 <br> 2813 Elo <br> Randy Brown <br> Loss","2024-07-13 <br> 2888 Elo <br> Santiago Ponzinibbio <br> Win","2024-11-23 <br> 2947 Elo <br> Song Kenan <br> Win","2025-07-26 <br> 3064 Elo <br> Carlos Leal <br> Win","2025-11-08 <br> 2893 Elo <br> Uros Medic <br> Loss"],"name":"Elo","type":"scatter","error_y":{"color":"rgba(31,119,180,1)"},"error_x":{"color":"rgba(31,119,180,1)"},"xaxis":"x","yaxis":"y","frame":null},{"x":["2021-06-07","2021-06-14","2021-06-21","2021-06-28","2021-07-12","2021-07-19","2021-07-26","2021-08-02","2021-08-09","2021-08-23","2021-08-30","2021-09-06","2021-09-20","2021-09-27","2021-10-04","2021-10-11","2021-10-25","2021-11-02","2021-11-08","2021-11-15","2021-11-23","2021-12-06","2021-12-13","2021-12-20","2022-01-17","2022-01-24"],"y":[15,15,15,15,15,15,15,15,15,14,14,14,14,14,14,14,15,15,15,15,15,15,15,15,15,15],"mode":"markers","marker":{"color":"rgba(252,141,98,1)","size":10,"opacity":0.80000000000000004,"line":{"color":"rgba(252,141,98,1)"}},"hoverinfo":["text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text"],"text":["2021-06-07 <br> 15 <br> Welterweight","2021-06-14 <br> 15 <br> Welterweight","2021-06-21 <br> 15 <br> Welterweight","2021-06-28 <br> 15 <br> Welterweight","2021-07-12 <br> 15 <br> Welterweight","2021-07-19 <br> 15 <br> Welterweight","2021-07-26 <br> 15 <br> Welterweight","2021-08-02 <br> 15 <br> Welterweight","2021-08-09 <br> 15 <br> Welterweight","2021-08-23 <br> 14 <br> Welterweight","2021-08-30 <br> 14 <br> Welterweight","2021-09-06 <br> 14 <br> Welterweight","2021-09-20 <br> 14 <br> Welterweight","2021-09-27 <br> 14 <br> Welterweight","2021-10-04 <br> 14 <br> Welterweight","2021-10-11 <br> 14 <br> Welterweight","2021-10-25 <br> 15 <br> Welterweight","2021-11-02 <br> 15 <br> Welterweight","2021-11-08 <br> 15 <br> Welterweight","2021-11-15 <br> 15 <br> Welterweight","2021-11-23 <br> 15 <br> Welterweight","2021-12-06 <br> 15 <br> Welterweight","2021-12-13 <br> 15 <br> Welterweight","2021-12-20 <br> 15 <br> Welterweight","2022-01-17 <br> 15 <br> Welterweight","2022-01-24 <br> 15 <br> Welterweight"],"type":"scatter","name":"Welterweight","textfont":{"color":"rgba(252,141,98,1)"},"error_y":{"color":"rgba(252,141,98,1)"},"error_x":{"color":"rgba(252,141,98,1)"},"line":{"color":"rgba(252,141,98,1)"},"xaxis":"x","yaxis":"y2","frame":null}],"layout":{"xaxis":{"domain":[0,1],"automargin":true,"anchor":"y2","gridcolor":"#e1e1e1","title":""},"yaxis2":{"domain":[0,0.38],"automargin":true,"range":[15.5,-0.5],"tickvals":[15,14,13,12,11,10,9,8,7,6,5,4,3,2,1,0],"ticktext":["15","14","13","12","11","10","9","8","7","6","5","4","3","2","1","C"],"gridcolor":"#e1e1e1","zeroline":false,"anchor":"x"},"yaxis":{"domain":[0.42000000000000004,1],"automargin":true,"gridcolor":"#e1e1e1","anchor":"x"},"annotations":[],"shapes":[],"images":[],"margin":{"b":40,"l":60,"t":0,"r":10},"hovermode":"closest","showlegend":true,"height":750,"legend":{"orientation":"h","xanchor":"center","x":0.5,"y":-100}},"attrs":{"1f74780e7454":{"x":{},"y":{},"mode":"lines+markers","line":{"color":"#d12d36","width":3,"shape":"hv"},"marker":{"size":10,"color":"#d12d36"},"hoverinfo":"text","text":{},"name":"Elo","alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"type":"scatter"},"1f7448a72a2c":{"x":{},"y":{},"mode":"markers","marker":{"size":10,"opacity":0.80000000000000004},"hoverinfo":"text","text":{},"color":{},"alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"type":"scatter"}},"source":"A","config":{"modeBarButtonsToAdd":["hoverclosest","hovercompare"],"showSendToCloud":false,"displayModeBar":false},"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.20000000000000001,"selected":{"opacity":1},"debounce":0},"subplot":true,"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot","plotly_sunburstclick"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script>
-</div>
-</div>
-<h2 style='font-size: 1em; margin: 0; text-align: center; font-weight: bold;'>Bout History</h2>
-<div class="reactable html-widget html-fill-item" id="htmlwidget-063ce64a02f7fec0f915" style="width:auto;height:auto;"></div>
-<script type="application/json" data-for="htmlwidget-063ce64a02f7fec0f915">{"x":{"tag":{"name":"Reactable","attribs":{"data":{"event_date":["<br><span class = 'event-date'>2025-11-08<\/span><br><a href='/events/20251108.html'>UFC Fight Night: Bonfim vs. Brown<\/a>","<br><span class = 'event-date'>2025-07-26<\/span><br><a href='/events/20250726.html'>UFC on ABC: Whittaker vs. de Ridder<\/a>","<br><span class = 'event-date'>2024-11-23<\/span><br><a href='/events/20241123.html'>UFC Fight Night: Yan vs. Figueiredo<\/a>","<br><span class = 'event-date'>2024-07-13<\/span><br><a href='/events/20240713.html'>UFC on ESPN: Namajunas vs. Cortez<\/a>","<br><span class = 'event-date'>2024-02-03<\/span><br><a href='/events/20240203.html'>UFC Fight Night: Dolidze vs. Imavov<\/a>","<br><span class = 'event-date'>2023-06-17<\/span><br><a href='/events/20230617.html'>UFC on ESPN: Vettori vs. Cannonier<\/a>","<br><span class = 'event-date'>2022-11-19<\/span><br><a href='/events/20221119.html'>UFC Fight Night: Nzechukwu vs. Cuțelaba<\/a>","<br><span class = 'event-date'>2022-07-16<\/span><br><a href='/events/20220716.html'>UFC on ABC: Ortega vs. Rodríguez<\/a>","<br><span class = 'event-date'>2021-06-05<\/span><br><a href='/events/20210605.html'>UFC Fight Night: Rozenstruik vs. Sakai<\/a>","<br><span class = 'event-date'>2020-07-11<\/span><br><a href='/events/20200711.html'>UFC 251: Usman vs. Masvidal<\/a>","<br><span class = 'event-date'>2019-10-26<\/span><br><a href='/events/20191026.html'>UFC Fight Night: Maia vs. Askren<\/a>","<br><span class = 'event-date'>2019-09-07<\/span><br><a href='/events/20190907.html'>UFC 242: Khabib  vs. Poirier<\/a>","<br><span class = 'event-date'>2018-04-14<\/span><br><a href='/events/20180414.html'>UFC on Fox: Poirier vs. Gaethje<\/a>","<br><span class = 'event-date'>2017-11-25<\/span><br><a href='/events/20171125.html'>UFC Fight Night: Bisping vs. Gastelum<\/a>"],"fighter_name":["<br> <b><a href=/fighters/urosmedic.html>Uros Medic<\/a><\/b> (32) <span class = 'emoji'>🇷🇸<\/span><br><span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: crimson; color: white; font-weight: bold;'>L<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: crimson; color: white; font-weight: bold;'>L<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> • 5-3<br>Elo: 2754","<br> <b><span title='Performance of the Night' style='cursor: pointer;'>⭐ <\/span>Muslim Salikhov<\/b> (41) <span class = 'emoji'>🇷🇺<\/span><br><span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: crimson; color: white; font-weight: bold;'>L<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: crimson; color: white; font-weight: bold;'>L<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> • 8-4<br>Elo: 2947","<br> <b><span title='Performance of the Night' style='cursor: pointer;'>⭐ <\/span>Muslim Salikhov<\/b> (40) <span class = 'emoji'>🇷🇺<\/span><br><span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: crimson; color: white; font-weight: bold;'>L<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: crimson; color: white; font-weight: bold;'>L<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: crimson; color: white; font-weight: bold;'>L<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> • 7-4<br>Elo: <span class = 'favorite-elo'>2888<\/span>","<br> <b>Muslim Salikhov<\/b> (40) <span class = 'emoji'>🇷🇺<\/span><br><span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: crimson; color: white; font-weight: bold;'>L<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: crimson; color: white; font-weight: bold;'>L<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: crimson; color: white; font-weight: bold;'>L<\/span> • 6-4<br>Elo: 2813","<br> <b><span title='Performance of the Night' style='cursor: pointer;'>⭐ <\/span><a href=/fighters/randybrown.html>Randy Brown<\/a><\/b> (33) <span class = 'emoji'>🇯🇲 🇺🇸<\/span><br><span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: crimson; color: white; font-weight: bold;'>L<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> • 11-5<br>Elo: <span class = 'favorite-elo'>2982<\/span>","<br> <b><a href=/fighters/nicolasdalby.html>Nicolas Dalby<\/a><\/b> (38) <span class = 'emoji'>🇩🇰<\/span><br><span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: slategray; color: white; font-weight: bold;'>N<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: crimson; color: white; font-weight: bold;'>L<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> • 5-3-1 (1 NC)<br>Elo: 2910","<br> <b><span title='Performance of the Night' style='cursor: pointer;'>⭐ <\/span>Muslim Salikhov<\/b> (38) <span class = 'emoji'>🇷🇺<\/span><br><span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: crimson; color: white; font-weight: bold;'>L<\/span> • 5-2<br>Elo: <span class = 'favorite-elo'>2966<\/span>","<br> <b><span title='Performance of the Night' style='cursor: pointer;'>⭐ <\/span><a href=/fighters/lijingliang.html>Li Jingliang<\/a><\/b> (34) <span class = 'emoji'>🇨🇳<\/span><br><span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: crimson; color: white; font-weight: bold;'>L<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: crimson; color: white; font-weight: bold;'>L<\/span> • 10-5<br>Elo: 2953 • UFC rank: #14","<br> <b>Muslim Salikhov<\/b> (36) <span class = 'emoji'>🇷🇺<\/span><br><span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: crimson; color: white; font-weight: bold;'>L<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> • 4-1<br>Elo: 2989","<br> <b>Muslim Salikhov<\/b> (36) <span class = 'emoji'>🇷🇺<\/span><br><span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: crimson; color: white; font-weight: bold;'>L<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> • 3-1<br>Elo: 2912","<br> <b>Muslim Salikhov<\/b> (35) <span class = 'emoji'>🇷🇺<\/span><br><span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: crimson; color: white; font-weight: bold;'>L<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> • 2-1<br>Elo: <span class = 'favorite-elo'>2860<\/span>","<br> <b><span title='Performance of the Night' style='cursor: pointer;'>⭐ <\/span>Muslim Salikhov<\/b> (35) <span class = 'emoji'>🇷🇺<\/span><br><span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: crimson; color: white; font-weight: bold;'>L<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> • 1-1<br>Elo: <span class = 'favorite-elo'>2769<\/span>","<br> <b>Muslim Salikhov<\/b> (33) <span class = 'emoji'>🇷🇺<\/span><br><span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: crimson; color: white; font-weight: bold;'>L<\/span> • 0-1<br>Elo: 2627","<br> <b><a href=/fighters/alexgarcia.html>Alex Garcia<\/a><\/b> (30) <span class = 'emoji'>🇩🇴<\/span><br><span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: crimson; color: white; font-weight: bold;'>L<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: crimson; color: white; font-weight: bold;'>L<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: crimson; color: white; font-weight: bold;'>L<\/span> • 4-3<br>Elo: 2658"],"result_description":["<span style='font-size: 0.8em;'>WELTERWEIGHT<\/span><br>TKO<br>R1<br>1:03","<span style='font-size: 0.8em;'>WELTERWEIGHT<\/span><br>KO<br>R1<br>00:42","<span style='font-size: 0.8em;'>WELTERWEIGHT<\/span><br>KO<br>R1<br>03:49","<span style='font-size: 0.8em;'>WELTERWEIGHT<\/span><br>DEC<br>R3<br>05:00","<span style='font-size: 0.8em;'>WELTERWEIGHT<\/span><br>KO<br>R1<br>03:17","<span style='font-size: 0.8em;'>WELTERWEIGHT<\/span><br>DEC<br>R3<br>05:00","<span style='font-size: 0.8em;'>WELTERWEIGHT<\/span><br>TKO<br>R3<br>01:03","<span style='font-size: 0.8em;'>WELTERWEIGHT<\/span><br>TKO<br>R2<br>04:38","<span style='font-size: 0.8em;'>WELTERWEIGHT<\/span><br>DEC<br>R3<br>05:00","<span style='font-size: 0.8em;'>WELTERWEIGHT<\/span><br>DEC<br>R3<br>05:00","<span style='font-size: 0.8em;'>WELTERWEIGHT<\/span><br>DEC<br>R3<br>05:00","<span style='font-size: 0.8em;'>WELTERWEIGHT<\/span><br>KO<br>R1<br>04:26","<span style='font-size: 0.8em;'>WELTERWEIGHT<\/span><br>KO<br>R2<br>04:12","<span style='font-size: 0.8em;'>WELTERWEIGHT<\/span><br>SUB<br>R2<br>03:22"],"opponent_fighter_name":["<br><span class='emoji'>🇷🇺<\/span> <b>Muslim Salikhov<\/b> (41)<br>9-4 • <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: crimson; color: white; font-weight: bold;'>L<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: crimson; color: white; font-weight: bold;'>L<\/span><br>Elo: <span class = 'favorite-elo'>3064<\/span>","<br><span class='emoji'>🇧🇷<\/span> <b><a href=/fighters/carlosleal.html>Carlos Leal<\/a><\/b> (31)<br>1-1 • <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: crimson; color: white; font-weight: bold;'>L<\/span><br>Elo: <span class = 'favorite-elo'>3007<\/span>","<br><span class='emoji'>🇨🇳<\/span> <b><a href=/fighters/songkenan.html>Song Kenan<\/a><\/b> (34)<br>6-4 • <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: crimson; color: white; font-weight: bold;'>L<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: crimson; color: white; font-weight: bold;'>L<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: crimson; color: white; font-weight: bold;'>L<\/span><br>Elo: 2735","<br><span class='emoji'>🇦🇷<\/span> <b><a href=/fighters/santiagoponzinibbio.html>Santiago Ponzinibbio<\/a><\/b> (37)<br>11-6 • <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: crimson; color: white; font-weight: bold;'>L<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: crimson; color: white; font-weight: bold;'>L<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: crimson; color: white; font-weight: bold;'>L<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span><br>Elo: <span class = 'favorite-elo'>2967<\/span>","<br><span class='emoji'>🇷🇺<\/span> <b>Muslim Salikhov<\/b> (39)<br>6-3 • <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: crimson; color: white; font-weight: bold;'>L<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: crimson; color: white; font-weight: bold;'>L<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span><br>Elo: 2886","<br><span class='emoji'>🇷🇺<\/span> <b>Muslim Salikhov<\/b> (39)<br>6-2 • <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: crimson; color: white; font-weight: bold;'>L<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span><br>Elo: <span class = 'favorite-elo'>3015<\/span>","<br><span class='emoji'>🇵🇹<\/span> <b><a href=/fighters/andrefialho.html>Andre Fialho<\/a><\/b> (28)<br>2-2 • <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: crimson; color: white; font-weight: bold;'>L<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: crimson; color: white; font-weight: bold;'>L<\/span><br>Elo: 2773","<br><span class='emoji'>🇷🇺<\/span> <b>Muslim Salikhov<\/b> (38)<br>5-1 • <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span><br>Elo: <span class = 'favorite-elo'>3107<\/span>","<br><span class='emoji'>🇧🇷<\/span> <b><a href=/fighters/franciscotrinaldo.html>Francisco Trinaldo<\/a><\/b> (42)<br>16-6 • <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: crimson; color: white; font-weight: bold;'>L<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span><br>Elo: <span class = 'favorite-elo'>3053<\/span>","<br><span class='emoji'>🇧🇷<\/span> <b><a href=/fighters/elizeuzaleskidossantos.html>Elizeu Zaleski dos Santos<\/a><\/b> (33)<br>8-2 • <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: crimson; color: white; font-weight: bold;'>L<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span><br>Elo: <span class = 'favorite-elo'>3074<\/span>","<br><span class='emoji'>🇦🇷<\/span> <b><a href=/fighters/laureanostaropoli.html>Laureano Staropoli<\/a><\/b> (26)<br>2-0 • <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span><br>Elo: 2677","<br><span class='emoji'>🇫🇷<\/span> <b><a href=/fighters/nordinetaleb.html>Nordine Taleb<\/a><\/b> (37)<br>7-4 • <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: crimson; color: white; font-weight: bold;'>L<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: crimson; color: white; font-weight: bold;'>L<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span><br>Elo: 2737","<br><span class='emoji'>🇺🇸<\/span> <b><a href=/fighters/rickyrainey.html>Ricky Rainey<\/a><\/b> (34)<br>🔰 Debut<br>Elo: <span class = 'favorite-elo'>2784<\/span>","<br><span class='emoji'>🇷🇺<\/span> <b>Muslim Salikhov<\/b> (33)<br>🔰 Debut<br>Elo: <span class = 'favorite-elo'>2753<\/span>"],"City":["<br>UFC Apex<br>Las Vegas, Nevada<br>United States <span class='emoji'>🇺🇸<\/span>","<br>Etihad Arena<br>Abu Dhabi<br>United Arab Emirates <span class='emoji'>🇦🇪<\/span>","<br>Galaxy Arena<br>Macau<br>China <span class='emoji'>🇨🇳<\/span>","<br>Ball Arena<br>Denver, Colorado<br>United States <span class='emoji'>🇺🇸<\/span>","<br>UFC Apex<br>Las Vegas, Nevada<br>United States <span class='emoji'>🇺🇸<\/span>","<br>UFC Apex<br>Las Vegas, Nevada<br>United States <span class='emoji'>🇺🇸<\/span>","<br>UFC Apex<br>Las Vegas, Nevada<br>United States <span class='emoji'>🇺🇸<\/span>","<br>UBS Arena<br>Elmont, New York<br>United States <span class='emoji'>🇺🇸<\/span>","<br>UFC Apex<br>Las Vegas, Nevada<br>United States <span class='emoji'>🇺🇸<\/span>","<br>du Forum<br>Abu Dhabi<br>United Arab Emirates <span class='emoji'>🇦🇪<\/span>","<br>Singapore Indoor Stadium<br>Singapore<br>Singapore <span class='emoji'>🇸🇬<\/span>","<br>The Arena, Yas Island<br>Abu Dhabi<br>United Arab Emirates <span class='emoji'>🇦🇪<\/span>","<br>Gila River Arena<br>Glendale, Arizona<br>United States <span class='emoji'>🇺🇸<\/span>","<br>Mercedes Benz Arena<br>Shanghai<br>China <span class='emoji'>🇨🇳<\/span>"]},"columns":[{"id":"event_date","name":"","type":"character","html":true,"width":200,"className":"side_info"},{"id":"fighter_name","name":"","type":"character","html":true,"width":240,"align":"right"},{"id":"result_description","name":"","type":"character","html":true,"width":50,"align":"center","className":"result_description"},{"id":"opponent_fighter_name","name":"","type":"character","html":true,"width":240,"align":"left"},{"id":"City","name":"","type":"character","cell":["<div style=\"white-space: nowrap; overflow: visible;\"><br>UFC Apex<br>Las Vegas, Nevada<br>United States <span class='emoji'>🇺🇸<\/span><\/div>","<div style=\"white-space: nowrap; overflow: visible;\"><br>Etihad Arena<br>Abu Dhabi<br>United Arab Emirates <span class='emoji'>🇦🇪<\/span><\/div>","<div style=\"white-space: nowrap; overflow: visible;\"><br>Galaxy Arena<br>Macau<br>China <span class='emoji'>🇨🇳<\/span><\/div>","<div style=\"white-space: nowrap; overflow: visible;\"><br>Ball Arena<br>Denver, Colorado<br>United States <span class='emoji'>🇺🇸<\/span><\/div>","<div style=\"white-space: nowrap; overflow: visible;\"><br>UFC Apex<br>Las Vegas, Nevada<br>United States <span class='emoji'>🇺🇸<\/span><\/div>","<div style=\"white-space: nowrap; overflow: visible;\"><br>UFC Apex<br>Las Vegas, Nevada<br>United States <span class='emoji'>🇺🇸<\/span><\/div>","<div style=\"white-space: nowrap; overflow: visible;\"><br>UFC Apex<br>Las Vegas, Nevada<br>United States <span class='emoji'>🇺🇸<\/span><\/div>","<div style=\"white-space: nowrap; overflow: visible;\"><br>UBS Arena<br>Elmont, New York<br>United States <span class='emoji'>🇺🇸<\/span><\/div>","<div style=\"white-space: nowrap; overflow: visible;\"><br>UFC Apex<br>Las Vegas, Nevada<br>United States <span class='emoji'>🇺🇸<\/span><\/div>","<div style=\"white-space: nowrap; overflow: visible;\"><br>du Forum<br>Abu Dhabi<br>United Arab Emirates <span class='emoji'>🇦🇪<\/span><\/div>","<div style=\"white-space: nowrap; overflow: visible;\"><br>Singapore Indoor Stadium<br>Singapore<br>Singapore <span class='emoji'>🇸🇬<\/span><\/div>","<div style=\"white-space: nowrap; overflow: visible;\"><br>The Arena, Yas Island<br>Abu Dhabi<br>United Arab Emirates <span class='emoji'>🇦🇪<\/span><\/div>","<div style=\"white-space: nowrap; overflow: visible;\"><br>Gila River Arena<br>Glendale, Arizona<br>United States <span class='emoji'>🇺🇸<\/span><\/div>","<div style=\"white-space: nowrap; overflow: visible;\"><br>Mercedes Benz Arena<br>Shanghai<br>China <span class='emoji'>🇨🇳<\/span><\/div>"],"html":true,"width":200,"className":"side_info"}],"sortable":false,"pagination":false,"defaultPageSize":100,"showPageInfo":false,"nowrap":true,"className":"event_bouts","inline":true,"theme":{"headerStyle":{"borderBottom":"none"}},"dataKey":"bf04d85e70a2ebcee1c8c84986efef78"},"children":[]},"class":"reactR_markup"},"evals":[],"jsHooks":[]}</script>
-
-<footer>
-  <div class="footer-container">
-    <p class="copyright-text">
-        <a href="/glossary.html">Glossary</a>
-      <a href="mailto:rostertracker@gmail.com">Contact</a>
-    </p>
-<!--     <p class="browser-badge">
-      <a href="https://www.mozilla.org/en-US/firefox/">
-        <img src="C:/Users/mart/Dropbox/R/roster.watch/firefox.png" title="Best viewed with Firefox" alt="Best viewed with Firefox"><br>
-        <small class="copyright-text">Best viewed with Firefox</small>
-      </a>
-    </p> 
- -->  </div>
- <div class="footer-container">
-    <p class="copyright-text">
-      Copyright © <span id="currentYear"></span> All Rights Reserved by 
-      <a href="#">roster.watch</a>
-    </p>
-<!--     <p class="browser-badge">
-      <a href="https://www.mozilla.org/en-US/firefox/">
-        <img src="C:/Users/mart/Dropbox/R/roster.watch/firefox.png" title="Best viewed with Firefox" alt="Best viewed with Firefox"><br>
-        <small class="copyright-text">Best viewed with Firefox</small>
-      </a>
-    </p> 
- -->  </div>
-</footer>
-
-<style>
-.footer-container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1rem;
-}
-
-.copyright-text {
-  margin: 0 auto;
-}
-
-.browser-badge {
-  margin-left: auto;
-}
-</style>
-
-<script>
-  document.getElementById('currentYear').textContent = new Date().getFullYear();
-</script>
-
-
-
-</div>
-
-<script>
-
-// add bootstrap table styles to pandoc tables
-function bootstrapStylePandocTables() {
-  $('tr.odd').parent('tbody').parent('table').addClass('table table-condensed');
-}
-$(document).ready(function () {
-  bootstrapStylePandocTables();
-});
-
-
-</script>
-
-<!-- tabsets -->
-
-<script>
-$(document).ready(function () {
-  window.buildTabsets("TOC");
-});
-
-$(document).ready(function () {
-  $('.tabset-dropdown > .nav-tabs > li').click(function () {
-    $(this).parent().toggleClass('nav-tabs-open');
-  });
-});
-</script>
-
-<!-- code folding -->
-
-
-<!-- dynamically load mathjax for compatibility with self-contained -->
-<script>
-  (function () {
-    var script = document.createElement("script");
-    script.type = "text/javascript";
-    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
-    document.getElementsByTagName("head")[0].appendChild(script);
-  })();
-</script>
-
-</body>
-</html>
+<!doctype html><html lang=en><head><meta charset=UTF-8><meta name=viewport content="width=device-width,initial-scale=1"><title>Muslim Salikhov · roster.watch</title><link rel=stylesheet href=/style.css><link rel=apple-touch-icon sizes=180x180 href=/apple-touch-icon.png><link rel=icon type=image/png sizes=32x32 href=/favicon-32x32.png><link rel=icon type=image/png sizes=16x16 href=/favicon-16x16.png><link rel=manifest href=/site.webmanifest><meta name=description content="An up-to-date list of the full active UFC roster including biographical data, rankings, records, and more."><script data-goatcounter=https://rosterwatch.goatcounter.com/count async src=//gc.zgo.at/count.js></script><script defer src=/script.js data-website-id=f0f3ed7e-e89c-4a29-a745-475e0b10271a></script><script src=/age.js></script></head><body><div class=container><header><a class=logo href=/><img src=/images/logo.svg alt=logo></a><nav><ul class=nav__links><li><a href=/>Current Roster</a></li><li><a href=/former.html>Former Roster</a></li><li class=dropdown><a href=# onclick=return!1>Weight Classes</a><ul class=dropdown-content><li><a href=/heavyweight.html>Heavyweight</a></li><li><a href=/lightheavyweight.html>Light Heavyweight</a></li><li><a href=/middleweight.html>Middleweight</a></li><li><a href=/welterweight.html>Welterweight</a></li><li><a href=/lightweight.html>Lightweight</a></li><li><a href=/featherweight.html>Featherweight</a></li><li><a href=/bantamweight.html>Bantamweight</a></li><li><a href=/flyweight.html>Flyweight</a></li><li><a href=/womensbantamweight.html>Women's Bantamweight</a></li><li><a href=/womensflyweight.html>Women's Flyweight</a></li><li><a href=/womensstrawweight.html>Women's Strawweight</a></li></ul></li><li><a href=/events>Events</a></li><li><a href=/log.html>Log</a></li><li><a href=/fightlog.html>Fight Log</a></li><li><a href=javascript:void(0) onclick=getRandomPage()>Random Page</a></li><li><a href=https://rosterwatch.printify.me/>Merch</a></li><li><a href="https://www.patreon.com/bePatron?u=88266864">Support on Patreon</a></li></ul></nav><div class="menu cta">Menu</div></header><div class=overlay><a class=close>×</a><div class=overlay__content><a href=/>Current Roster</a>
+<a href=/former.html>Former Roster</a><div class=dropdown-mobile><a href=# onclick=return!1>Weight Classes</a><div class=dropdown-content-mobile><a href=/heavyweight.html>Heavyweight</a>
+<a href=/lightheavyweight.html>Light Heavyweight</a>
+<a href=/middleweight.html>Middleweight</a>
+<a href=/welterweight.html>Welterweight</a>
+<a href=/lightweight.html>Lightweight</a>
+<a href=/featherweight.html>Featherweight</a>
+<a href=/bantamweight.html>Bantamweight</a>
+<a href=/flyweight.html>Flyweight</a>
+<a href=/womensbantamweight.html>Women's Bantamweight</a>
+<a href=/womensflyweight.html>Women's Flyweight</a>
+<a href=/womensstrawweight.html>Women's Strawweight</a></div></div><a href=/events>Events</a>
+<a href=/log.html>Log</a>
+<a href=/fightlog.html>Fight Log</a>
+<a href=javascript:void(0) onclick=getRandomPage()>Random Page</a>
+<a href=https://rosterwatch.printify.me/>Merch</a>
+<a href="https://www.patreon.com/bePatron?u=88266864">Support on Patreon</a></div></div><script type=text/javascript src=/mobile.js></script><script>function getRandomPage(){fetch("/sitemap.xml").then(e=>e.text()).then(e=>{const n=new DOMParser,s=n.parseFromString(e,"application/xml"),t=Array.from(s.getElementsByTagName("loc")).map(e=>e.textContent),o=t[Math.floor(Math.random()*t.length)];window.location.href=o})}</script><main><div class=fighter-header><div class=fighter-name><div><h1>Muslim Salikhov</h1><span class=emoji>🇷🇺</span></div><time class=dob data-dob=1984-06-09><span class=age></span><div class=date_of_birth>(1984-06-09)</div></time></div></div><h2>Statistics</h2><article class=fighter-info><div class=two-column-layout><div class=fighter-details><div class=fighter-stats><p><strong>UFC Record:</strong> 9-5</p><p><strong>By Method:</strong></p><ul><li>KO/TKO: 5-3</li><li>Submission: 0-1</li><li>Decision: 4-1</li></ul><p><strong>By Elo:</strong></p><ul><li>As Favorite: 4-4</li><li>As Underdog: 5-1</li></ul><p><strong>By Weight Class:</strong></p><ul><li>Welterweight: 9-5</li></ul><p><strong>By Round:</strong></p><ul><li>Round 1: 3-2</li><li>Round 2: 1-2</li><li>Round 3: 5-1</li></ul></div></div><div class=rankings><p><strong>UFC Roster Status:</strong> Active</p><p><strong>Last 5:</strong>
+<span class="wldn-letter letter-L">L</span>
+<span class="wldn-letter letter-W">W</span>
+<span class="wldn-letter letter-W">W</span>
+<span class="wldn-letter letter-W">W</span>
+<span class="wldn-letter letter-L">L</span></p><p><strong>Elo:</strong> 2893</p><p><strong>Peak Elo:</strong> 3107 <span class=peak-date>(2021-06-05)</span></p><p><strong>Avg Opponent Elo:</strong> 2862 (#234)</p><p><strong>Bonuses:</strong> 4 (0 FOTN, 4
+Performance)</p><p><strong>Avg Fight Time:</strong> 9m 2s</p><p><strong>Total Fight Time:</strong> 2h 6m 32s</p><p><strong>Avg Time Between Fights:</strong> 210 days</p><p><strong>Avg Card Placement:</strong> 5.1</p><p><strong>Peak Rankings:</strong></p><div>#14 Welterweight</div></div></div></article><div class=chart-section><h2>Elo Rating & UFC Rankings</h2><div class=chart-container><div id=fighter-performance-chart data-rankings='{"Welterweight":[{"date":"2021-06-07","rank":15},{"date":"2021-06-14","rank":15},{"date":"2021-06-21","rank":15},{"date":"2021-06-28","rank":15},{"date":"2021-07-12","rank":15},{"date":"2021-07-19","rank":15},{"date":"2021-07-26","rank":15},{"date":"2021-08-02","rank":15},{"date":"2021-08-09","rank":15},{"date":"2021-08-23","rank":14},{"date":"2021-08-30","rank":14},{"date":"2021-09-06","rank":14},{"date":"2021-09-20","rank":14},{"date":"2021-09-27","rank":14},{"date":"2021-10-04","rank":14},{"date":"2021-10-11","rank":14},{"date":"2021-10-25","rank":15},{"date":"2021-11-02","rank":15},{"date":"2021-11-08","rank":15},{"date":"2021-11-15","rank":15},{"date":"2021-11-23","rank":15},{"date":"2021-12-06","rank":15},{"date":"2021-12-13","rank":15},{"date":"2021-12-20","rank":15},{"date":"2022-01-17","rank":15},{"date":"2022-01-24","rank":15}]}' data-elo='[{"bout_order":1,"city":"Las Vegas, Nevada","country":"United States","country_emoji":"🇺🇸","event_date":"2025-11-08","event_name":"UFC Fight Night: Bonfim vs. Brown","event_slug":"20251108","fighter":"Muslim Salikhov","fighter_age":41,"fighter_country":"🇷🇺","fighter_last5":"WWWLL","fighter_plot_rtg":2893,"fighter_record":"9-4","fighter_rtg":3064,"method":"TKO","opponent_age":32,"opponent_country":"🇷🇸","opponent_last5":"WLWLW","opponent_name":"Uros Medic","opponent_record":"5-3","opponent_rtg":2754,"opponent_slug":"urosmedic","result":"Loss","round":1,"time":"1:03","venue":"UFC Apex","weight_class":"Welterweight"},{"bout_order":1,"city":"Abu Dhabi","country":"United Arab Emirates","country_emoji":"🇦🇪","event_date":"2025-07-26","event_name":"UFC on ABC: Whittaker vs. de Ridder","event_slug":"20250726","fighter":"Muslim Salikhov","fighter_age":41,"fighter_country":"🇷🇺","fighter_last5":"WWLLW","fighter_plot_rtg":3064,"fighter_record":"8-4","fighter_rtg":2947,"method":"KO","opponent_age":31,"opponent_country":"🇧🇷","opponent_last5":"LW","opponent_name":"Carlos Leal","opponent_record":"1-1","opponent_rtg":3007,"opponent_slug":"carlosleal","perf_of_the_night":true,"result":"Win","round":1,"time":"00:42","venue":"Etihad Arena","weight_class":"Welterweight"},{"bout_order":1,"city":"Macau","country":"China","country_emoji":"🇨🇳","event_date":"2024-11-23","event_name":"UFC Fight Night: Yan vs. Figueiredo","event_slug":"20241123","fighter":"Muslim Salikhov","fighter_age":40,"fighter_country":"🇷🇺","fighter_last5":"WLLWL","fighter_plot_rtg":2947,"fighter_record":"7-4","fighter_rtg":2888,"method":"KO","opponent_age":34,"opponent_country":"🇨🇳","opponent_last5":"LLWLW","opponent_name":"Song Kenan","opponent_record":"6-4","opponent_rtg":2735,"opponent_slug":"songkenan","perf_of_the_night":true,"result":"Win","round":1,"time":"03:49","venue":"Galaxy Arena","weight_class":"Welterweight"},{"bout_order":1,"city":"Denver, Colorado","country":"United States","country_emoji":"🇺🇸","event_date":"2024-07-13","event_name":"UFC on ESPN: Namajunas vs. Cortez","event_slug":"20240713","fighter":"Muslim Salikhov","fighter_age":40,"fighter_country":"🇷🇺","fighter_last5":"LLWLW","fighter_plot_rtg":2888,"fighter_record":"6-4","fighter_rtg":2813,"method":"DEC","opponent_age":37,"opponent_country":"🇦🇷","opponent_last5":"WLLWL","opponent_name":"Santiago Ponzinibbio","opponent_record":"11-6","opponent_rtg":2967,"opponent_slug":"santiagoponzinibbio","result":"Win","round":3,"time":"05:00","venue":"Ball Arena","weight_class":"Welterweight"},{"bout_order":1,"city":"Las Vegas, Nevada","country":"United States","country_emoji":"🇺🇸","event_date":"2024-02-03","event_name":"UFC Fight Night: Dolidze vs. Imavov","event_slug":"20240203","fighter":"Muslim Salikhov","fighter_age":39,"fighter_country":"🇷🇺","fighter_last5":"LWLWW","fighter_plot_rtg":2813,"fighter_record":"6-3","fighter_rtg":2886,"method":"KO","opp_bonus":true,"opp_perf_of_the_night":true,"opponent_age":33,"opponent_country":"🇯🇲 🇺🇸","opponent_last5":"WWWLW","opponent_name":"Randy Brown","opponent_record":"11-5","opponent_rtg":2982,"opponent_slug":"randybrown","result":"Loss","round":1,"time":"03:17","venue":"UFC Apex","weight_class":"Welterweight"},{"bout_order":1,"city":"Las Vegas, Nevada","country":"United States","country_emoji":"🇺🇸","event_date":"2023-06-17","event_name":"UFC on ESPN: Vettori vs. Cannonier","event_slug":"20230617","fighter":"Muslim Salikhov","fighter_age":39,"fighter_country":"🇷🇺","fighter_last5":"WLWWW","fighter_plot_rtg":2886,"fighter_record":"6-2","fighter_rtg":3015,"method":"DEC","opponent_age":38,"opponent_country":"🇩🇰","opponent_last5":"NWLWW","opponent_name":"Nicolas Dalby","opponent_record":"5-3-1 (1 NC)","opponent_rtg":2910,"opponent_slug":"nicolasdalby","result":"Loss","round":3,"time":"05:00","venue":"UFC Apex","weight_class":"Welterweight"},{"bout_order":1,"city":"Las Vegas, Nevada","country":"United States","country_emoji":"🇺🇸","event_date":"2022-11-19","event_name":"UFC Fight Night: Nzechukwu vs. Cuțelaba","event_slug":"20221119","fighter":"Muslim Salikhov","fighter_age":38,"fighter_country":"🇷🇺","fighter_last5":"LWWWW","fighter_plot_rtg":3015,"fighter_record":"5-2","fighter_rtg":2966,"method":"TKO","opponent_age":28,"opponent_country":"🇵🇹","opponent_last5":"LWWL","opponent_name":"Andre Fialho","opponent_record":"2-2","opponent_rtg":2773,"opponent_slug":"andrefialho","perf_of_the_night":true,"result":"Win","round":3,"time":"01:03","venue":"UFC Apex","weight_class":"Welterweight"},{"bout_order":1,"city":"Elmont, New York","country":"United States","country_emoji":"🇺🇸","event_date":"2022-07-16","event_name":"UFC on ABC: Ortega vs. Rodríguez","event_slug":"20220716","fighter":"Muslim Salikhov","fighter_age":38,"fighter_country":"🇷🇺","fighter_last5":"WWWWW","fighter_plot_rtg":2966,"fighter_record":"5-1","fighter_rtg":3107,"method":"TKO","opp_bonus":true,"opp_perf_of_the_night":true,"opponent_age":34,"opponent_country":"🇨🇳","opponent_last5":"WWLWL","opponent_name":"Li Jingliang","opponent_rank":14,"opponent_record":"10-5","opponent_rtg":2953,"opponent_slug":"lijingliang","result":"Loss","round":2,"time":"04:38","venue":"UBS Arena","weight_class":"Welterweight"},{"bout_order":1,"city":"Las Vegas, Nevada","country":"United States","country_emoji":"🇺🇸","event_date":"2021-06-05","event_name":"UFC Fight Night: Rozenstruik vs. Sakai","event_slug":"20210605","fighter":"Muslim Salikhov","fighter_age":36,"fighter_country":"🇷🇺","fighter_last5":"WWWWL","fighter_plot_rtg":3107,"fighter_record":"4-1","fighter_rtg":2989,"method":"DEC","opponent_age":42,"opponent_country":"🇧🇷","opponent_last5":"WLWWW","opponent_name":"Francisco Trinaldo","opponent_record":"16-6","opponent_rtg":3053,"opponent_slug":"franciscotrinaldo","result":"Win","round":3,"time":"05:00","venue":"UFC Apex","weight_class":"Welterweight"},{"bout_order":1,"city":"Abu Dhabi","country":"United Arab Emirates","country_emoji":"🇦🇪","event_date":"2020-07-11","event_name":"UFC 251: Usman vs. Masvidal","event_slug":"20200711","fighter":"Muslim Salikhov","fighter_age":36,"fighter_country":"🇷🇺","fighter_last5":"WWWL","fighter_plot_rtg":2989,"fighter_record":"3-1","fighter_rtg":2912,"method":"DEC","opponent_age":33,"opponent_country":"🇧🇷","opponent_last5":"WWWLW","opponent_name":"Elizeu Zaleski dos Santos","opponent_record":"8-2","opponent_rtg":3074,"opponent_slug":"elizeuzaleskidossantos","result":"Win","round":3,"time":"05:00","venue":"du Forum","weight_class":"Welterweight"},{"bout_order":1,"city":"Singapore","country":"Singapore","country_emoji":"🇸🇬","event_date":"2019-10-26","event_name":"UFC Fight Night: Maia vs. Askren","event_slug":"20191026","fighter":"Muslim Salikhov","fighter_age":35,"fighter_country":"🇷🇺","fighter_last5":"WWL","fighter_plot_rtg":2912,"fighter_record":"2-1","fighter_rtg":2860,"method":"DEC","opponent_age":26,"opponent_country":"🇦🇷","opponent_last5":"WW","opponent_name":"Laureano Staropoli","opponent_record":"2-0","opponent_rtg":2677,"opponent_slug":"laureanostaropoli","result":"Win","round":3,"time":"05:00","venue":"Singapore Indoor Stadium","weight_class":"Welterweight"},{"bout_order":1,"city":"Abu Dhabi","country":"United Arab Emirates","country_emoji":"🇦🇪","event_date":"2019-09-07","event_name":"UFC 242: Khabib  vs. Poirier","event_slug":"20190907","fighter":"Muslim Salikhov","fighter_age":35,"fighter_country":"🇷🇺","fighter_last5":"WL","fighter_plot_rtg":2860,"fighter_record":"1-1","fighter_rtg":2769,"method":"KO","opponent_age":37,"opponent_country":"🇫🇷","opponent_last5":"WWLLW","opponent_name":"Nordine Taleb","opponent_record":"7-4","opponent_rtg":2737,"opponent_slug":"nordinetaleb","perf_of_the_night":true,"result":"Win","round":1,"time":"04:26","venue":"The Arena, Yas Island","weight_class":"Welterweight"},{"bout_order":1,"city":"Glendale, Arizona","country":"United States","country_emoji":"🇺🇸","event_date":"2018-04-14","event_name":"UFC on Fox: Poirier vs. Gaethje","event_slug":"20180414","fighter":"Muslim Salikhov","fighter_age":33,"fighter_country":"🇷🇺","fighter_last5":"L","fighter_plot_rtg":2769,"fighter_record":"0-1","fighter_rtg":2627,"method":"KO","opponent_age":34,"opponent_country":"🇺🇸","opponent_last5":"","opponent_name":"Ricky Rainey","opponent_record":"","opponent_rtg":2784,"opponent_slug":"rickyrainey","result":"Win","round":2,"time":"04:12","venue":"Gila River Arena","weight_class":"Welterweight"},{"bout_order":1,"city":"Shanghai","country":"China","country_emoji":"🇨🇳","event_date":"2017-11-25","event_name":"UFC Fight Night: Bisping vs. Gastelum","event_slug":"20171125","fighter":"Muslim Salikhov","fighter_age":33,"fighter_country":"🇷🇺","fighter_last5":"","fighter_plot_rtg":2627,"fighter_record":"","fighter_rtg":2753,"method":"SUB","opponent_age":30,"opponent_country":"🇩🇴","opponent_last5":"LWLWL","opponent_name":"Alex Garcia","opponent_record":"4-3","opponent_rtg":2658,"opponent_slug":"alexgarcia","result":"Loss","round":2,"time":"03:22","venue":"Mercedes Benz Arena","weight_class":"Welterweight"}]'></div></div></div><script src=https://cdn.plot.ly/plotly-3.1.0.min.js></script><script>const chartElement=document.getElementById("fighter-performance-chart"),eloDataRaw=chartElement.dataset.elo,rankingsDataRaw=chartElement.dataset.rankings,eloData=eloDataRaw?JSON.parse(eloDataRaw):[],seen=new Map,eloDataFiltered=eloData.filter(e=>{const t=`${e.event_date}_${e.fighter_plot_rtg}`;return!seen.has(t)&&(seen.set(t,!0),!0)}),rankingsData=rankingsDataRaw?JSON.parse(rankingsDataRaw):[],hasElo=eloDataFiltered&&eloDataFiltered.length>1,hasRankings=rankingsData&&Object.keys(rankingsData).length>0,createEloTrace=(e="x",t="y")=>({x:eloDataFiltered.map(e=>e.event_date),y:eloDataFiltered.map(e=>e.fighter_plot_rtg),customdata:eloDataFiltered.map(e=>[e.opponent_name,e.result]),type:"scatter",mode:"lines+markers",line:{color:"#d4636a",width:3,shape:"vh"},marker:{size:10,color:"#d4636a"},hovertemplate:"%{x|%Y-%m-%d}<br>%{y} Elo<br>vs %{customdata[0]}<br>%{customdata[1]}<extra></extra>",name:"Elo",xaxis:e,yaxis:t}),createRankingsTraces=(e,t="x",n="y")=>{const s=["#65c1eb","#85ceb7","#fda481"],o={"Pound-for-Pound":"#FBBF24","Men's Pound-for-Pound":"#a4b3d5","Women's Pound-for-Pound":"#eca1cf"},a=["Pound-for-Pound","Men's Pound-for-Pound","Women's Pound-for-Pound","Flyweight","Bantamweight","Featherweight","Lightweight","Welterweight","Middleweight","Light Heavyweight","Heavyweight","Women's Flyweight","Women's Featherweight","Women's Strawweight","Women's Bantamweight"],r=a.filter(e=>rankingsData[e]);let i=0;return r.map(e=>{const a=rankingsData[e];let r;return o[e]?r=o[e]:(r=s[i%s.length],i++),{x:a.map(e=>e.date),y:a.map(e=>e.rank),type:"scatter",mode:"markers",marker:{size:10,opacity:.8,color:r},hovertemplate:a.map(t=>`${t.date}<br>${t.rank===0?"Champion":"#"+t.rank}<br>${e}<extra></extra>`),name:e,xaxis:t,yaxis:n}})};let traces=[],layout={margin:{t:0,b:0,l:30,r:0},width:600,paper_bgcolor:"#f7f5f0",plot_bgcolor:"#f7f5f0"},title="",height=450;hasElo&&hasRankings?(traces=[createEloTrace("x","y"),...createRankingsTraces(rankingsData,"x2","y2")],title="Elo Rating & UFC Rankings",height=800,layout={...layout,grid:{rows:2,columns:1,subplots:[["xy"],["x2y2"]],roworder:"top to bottom",ygap:.1},showlegend:!0,legend:{orientation:"h",xanchor:"center",x:.5,y:-.03},xaxis:{gridcolor:"#e1e1e1",title:"",matches:"x2"},yaxis:{gridcolor:"#e1e1e1",title:""},xaxis2:{gridcolor:"#e1e1e1",title:"",matches:"x"},yaxis2:{range:[15.5,-.5],tickvals:[15,14,13,12,11,10,9,8,7,6,5,4,3,2,1,0],ticktext:["15","14","13","12","11","10","9","8","7","6","5","4","3","2","1","C"],gridcolor:"#e1e1e1",zeroline:!1,title:""}},document.querySelector(".chart-section h2").textContent=title,chartElement.style.height=height+"px",layout.height=height,Plotly.newPlot("fighter-performance-chart",traces,layout,{displayModeBar:!1,responsive:!0})):hasElo?(traces=[createEloTrace()],title="Elo Rating",layout={...layout,showlegend:!1,legend:{orientation:"h",xanchor:"center",x:.5,y:-.1},margin:{t:0,b:50,l:30,r:0},xaxis:{gridcolor:"#e1e1e1",title:""},yaxis:{gridcolor:"#e1e1e1",title:""}},document.querySelector(".chart-section h2").textContent=title,chartElement.style.height=height+"px",layout.height=height,Plotly.newPlot("fighter-performance-chart",traces,layout,{displayModeBar:!1,responsive:!0})):hasRankings&&(traces=createRankingsTraces(rankingsData),title="UFC Rankings",layout={...layout,showlegend:!0,legend:{orientation:"h",xanchor:"center",x:.5,y:-.1},margin:{t:0,b:50,l:30,r:0},xaxis:{gridcolor:"#e1e1e1",title:""},yaxis:{range:[15.5,-.5],tickvals:[15,14,13,12,11,10,9,8,7,6,5,4,3,2,1,0],ticktext:["15","14","13","12","11","10","9","8","7","6","5","4","3","2","1","C"],gridcolor:"#e1e1e1",zeroline:!1,title:""}},document.querySelector(".chart-section h2").textContent=title,chartElement.style.height=height+"px",layout.height=height,Plotly.newPlot("fighter-performance-chart",traces,layout,{displayModeBar:!1,responsive:!0}))</script><div class=fight-results><h2>Bout History</h2><div class=event_bouts><div class=bout-row><div class="side_info bout-event"><br><span class=event-date><a href=/events/20251108.html>2025-11-08</a></span><br><span class=event-name><a href=/events/20251108.html>UFC Fight Night: Bonfim vs. Brown</a></span></div><div class="bout-fighter bout-left"><br><b><a href=/fighters/urosmedic.html>Uros Medic</a></b> (32) <span class=emoji>🇷🇸</span><br><span class="wldn-letter letter-W">W</span>
+<span class="wldn-letter letter-L">L</span>
+<span class="wldn-letter letter-W">W</span>
+<span class="wldn-letter letter-L">L</span>
+<span class="wldn-letter letter-W">W</span>
+• 5-3<br>Elo: 2754</div><div class=result_description><span class=weightclass>WELTERWEIGHT</span><br>TKO<br>R1<br>1:03</div><div class="bout-fighter bout-right"><br><span class=emoji>🇷🇺 </span><b>Muslim Salikhov</b> (41)<br>9-4 •
+<span class="wldn-letter letter-W">W</span>
+<span class="wldn-letter letter-W">W</span>
+<span class="wldn-letter letter-W">W</span>
+<span class="wldn-letter letter-L">L</span>
+<span class="wldn-letter letter-L">L</span><br>Elo: <span class=favorite-elo>3064</span></div><div class="side_info bout-venue"><br>UFC Apex<br>Las Vegas, Nevada<br>United States <span class=emoji>🇺🇸</span></div></div><div class=bout-row><div class="side_info bout-event"><br><span class=event-date><a href=/events/20250726.html>2025-07-26</a></span><br><span class=event-name><a href=/events/20250726.html>UFC on ABC: Whittaker vs. de Ridder</a></span></div><div class="bout-fighter bout-left"><br><span title='Performance of the Night' class=cursor-pointer>⭐
+</span><b>Muslim Salikhov</b> (41) <span class=emoji>🇷🇺</span><br><span class="wldn-letter letter-W">W</span>
+<span class="wldn-letter letter-W">W</span>
+<span class="wldn-letter letter-L">L</span>
+<span class="wldn-letter letter-L">L</span>
+<span class="wldn-letter letter-W">W</span>
+• 8-4<br>Elo: 2947</div><div class=result_description><span class=weightclass>WELTERWEIGHT</span><br>KO<br>R1<br>00:42</div><div class="bout-fighter bout-right"><br><span class=emoji>🇧🇷</span>
+<b><a href=/fighters/carlosleal.html>Carlos Leal</a></b> (31)<br>1-1 •
+<span class="wldn-letter letter-L">L</span>
+<span class="wldn-letter letter-W">W</span><br>Elo: 3007</div><div class="side_info bout-venue"><br>Etihad Arena<br>Abu Dhabi<br>United Arab Emirates <span class=emoji>🇦🇪</span></div></div><div class=bout-row><div class="side_info bout-event"><br><span class=event-date><a href=/events/20241123.html>2024-11-23</a></span><br><span class=event-name><a href=/events/20241123.html>UFC Fight Night: Yan vs. Figueiredo</a></span></div><div class="bout-fighter bout-left"><br><span title='Performance of the Night' class=cursor-pointer>⭐
+</span><b>Muslim Salikhov</b> (40) <span class=emoji>🇷🇺</span><br><span class="wldn-letter letter-W">W</span>
+<span class="wldn-letter letter-L">L</span>
+<span class="wldn-letter letter-L">L</span>
+<span class="wldn-letter letter-W">W</span>
+<span class="wldn-letter letter-L">L</span>
+• 7-4<br>Elo: <span class=favorite-elo>2888</span></div><div class=result_description><span class=weightclass>WELTERWEIGHT</span><br>KO<br>R1<br>03:49</div><div class="bout-fighter bout-right"><br><span class=emoji>🇨🇳</span>
+<b><a href=/fighters/songkenan.html>Song Kenan</a></b> (34)<br>6-4 •
+<span class="wldn-letter letter-L">L</span>
+<span class="wldn-letter letter-L">L</span>
+<span class="wldn-letter letter-W">W</span>
+<span class="wldn-letter letter-L">L</span>
+<span class="wldn-letter letter-W">W</span><br>Elo: 2735</div><div class="side_info bout-venue"><br>Galaxy Arena<br>Macau<br>China <span class=emoji>🇨🇳</span></div></div><div class=bout-row><div class="side_info bout-event"><br><span class=event-date><a href=/events/20240713.html>2024-07-13</a></span><br><span class=event-name><a href=/events/20240713.html>UFC on ESPN: Namajunas vs. Cortez</a></span></div><div class="bout-fighter bout-left"><br><b>Muslim Salikhov</b> (40) <span class=emoji>🇷🇺</span><br><span class="wldn-letter letter-L">L</span>
+<span class="wldn-letter letter-L">L</span>
+<span class="wldn-letter letter-W">W</span>
+<span class="wldn-letter letter-L">L</span>
+<span class="wldn-letter letter-W">W</span>
+• 6-4<br>Elo: 2813</div><div class=result_description><span class=weightclass>WELTERWEIGHT</span><br>DEC<br>R3<br>05:00</div><div class="bout-fighter bout-right"><br><span class=emoji>🇦🇷</span>
+<b><a href=/fighters/santiagoponzinibbio.html>Santiago Ponzinibbio</a></b> (37)<br>11-6 •
+<span class="wldn-letter letter-W">W</span>
+<span class="wldn-letter letter-L">L</span>
+<span class="wldn-letter letter-L">L</span>
+<span class="wldn-letter letter-W">W</span>
+<span class="wldn-letter letter-L">L</span><br>Elo: 2967</div><div class="side_info bout-venue"><br>Ball Arena<br>Denver, Colorado<br>United States <span class=emoji>🇺🇸</span></div></div><div class=bout-row><div class="side_info bout-event"><br><span class=event-date><a href=/events/20240203.html>2024-02-03</a></span><br><span class=event-name><a href=/events/20240203.html>UFC Fight Night: Dolidze vs. Imavov</a></span></div><div class="bout-fighter bout-left"><br><span title='Performance of the Night' class=cursor-pointer>⭐
+</span><b><a href=/fighters/randybrown.html>Randy Brown</a></b> (33) <span class=emoji>🇯🇲 🇺🇸</span><br><span class="wldn-letter letter-W">W</span>
+<span class="wldn-letter letter-W">W</span>
+<span class="wldn-letter letter-W">W</span>
+<span class="wldn-letter letter-L">L</span>
+<span class="wldn-letter letter-W">W</span>
+• 11-5<br>Elo: 2982</div><div class=result_description><span class=weightclass>WELTERWEIGHT</span><br>KO<br>R1<br>03:17</div><div class="bout-fighter bout-right"><br><span class=emoji>🇷🇺 </span><b>Muslim Salikhov</b> (39)<br>6-3 •
+<span class="wldn-letter letter-L">L</span>
+<span class="wldn-letter letter-W">W</span>
+<span class="wldn-letter letter-L">L</span>
+<span class="wldn-letter letter-W">W</span>
+<span class="wldn-letter letter-W">W</span><br>Elo: 2886</div><div class="side_info bout-venue"><br>UFC Apex<br>Las Vegas, Nevada<br>United States <span class=emoji>🇺🇸</span></div></div><div class=bout-row><div class="side_info bout-event"><br><span class=event-date><a href=/events/20230617.html>2023-06-17</a></span><br><span class=event-name><a href=/events/20230617.html>UFC on ESPN: Vettori vs. Cannonier</a></span></div><div class="bout-fighter bout-left"><br><b><a href=/fighters/nicolasdalby.html>Nicolas Dalby</a></b> (38) <span class=emoji>🇩🇰</span><br><span class="wldn-letter letter-N">N</span>
+<span class="wldn-letter letter-W">W</span>
+<span class="wldn-letter letter-L">L</span>
+<span class="wldn-letter letter-W">W</span>
+<span class="wldn-letter letter-W">W</span>
+• 5-3-1 (1 NC)<br>Elo: 2910</div><div class=result_description><span class=weightclass>WELTERWEIGHT</span><br>DEC<br>R3<br>05:00</div><div class="bout-fighter bout-right"><br><span class=emoji>🇷🇺 </span><b>Muslim Salikhov</b> (39)<br>6-2 •
+<span class="wldn-letter letter-W">W</span>
+<span class="wldn-letter letter-L">L</span>
+<span class="wldn-letter letter-W">W</span>
+<span class="wldn-letter letter-W">W</span>
+<span class="wldn-letter letter-W">W</span><br>Elo: <span class=favorite-elo>3015</span></div><div class="side_info bout-venue"><br>UFC Apex<br>Las Vegas, Nevada<br>United States <span class=emoji>🇺🇸</span></div></div><div class=bout-row><div class="side_info bout-event"><br><span class=event-date><a href=/events/20221119.html>2022-11-19</a></span><br><span class=event-name><a href=/events/20221119.html>UFC Fight Night: Nzechukwu vs. Cuțelaba</a></span></div><div class="bout-fighter bout-left"><br><span title='Performance of the Night' class=cursor-pointer>⭐
+</span><b>Muslim Salikhov</b> (38) <span class=emoji>🇷🇺</span><br><span class="wldn-letter letter-L">L</span>
+<span class="wldn-letter letter-W">W</span>
+<span class="wldn-letter letter-W">W</span>
+<span class="wldn-letter letter-W">W</span>
+<span class="wldn-letter letter-W">W</span>
+• 5-2<br>Elo: <span class=favorite-elo>2966</span></div><div class=result_description><span class=weightclass>WELTERWEIGHT</span><br>TKO<br>R3<br>01:03</div><div class="bout-fighter bout-right"><br><span class=emoji>🇵🇹</span>
+<b><a href=/fighters/andrefialho.html>Andre Fialho</a></b> (28)<br>2-2 •
+<span class="wldn-letter letter-L">L</span>
+<span class="wldn-letter letter-W">W</span>
+<span class="wldn-letter letter-W">W</span>
+<span class="wldn-letter letter-L">L</span><br>Elo: 2773</div><div class="side_info bout-venue"><br>UFC Apex<br>Las Vegas, Nevada<br>United States <span class=emoji>🇺🇸</span></div></div><div class=bout-row><div class="side_info bout-event"><br><span class=event-date><a href=/events/20220716.html>2022-07-16</a></span><br><span class=event-name><a href=/events/20220716.html>UFC on ABC: Ortega vs. Rodríguez</a></span></div><div class="bout-fighter bout-left"><br><span title='Performance of the Night' class=cursor-pointer>⭐
+</span><b><a href=/fighters/lijingliang.html>Li Jingliang</a></b> (34) <span class=emoji>🇨🇳</span><br><span class="wldn-letter letter-W">W</span>
+<span class="wldn-letter letter-W">W</span>
+<span class="wldn-letter letter-L">L</span>
+<span class="wldn-letter letter-W">W</span>
+<span class="wldn-letter letter-L">L</span>
+• 10-5<br>Elo: 2953
+• UFC rank: #14</div><div class=result_description><span class=weightclass>WELTERWEIGHT</span><br>TKO<br>R2<br>04:38</div><div class="bout-fighter bout-right"><br><span class=emoji>🇷🇺 </span><b>Muslim Salikhov</b> (38)<br>5-1 •
+<span class="wldn-letter letter-W">W</span>
+<span class="wldn-letter letter-W">W</span>
+<span class="wldn-letter letter-W">W</span>
+<span class="wldn-letter letter-W">W</span>
+<span class="wldn-letter letter-W">W</span><br>Elo: <span class=favorite-elo>3107</span></div><div class="side_info bout-venue"><br>UBS Arena<br>Elmont, New York<br>United States <span class=emoji>🇺🇸</span></div></div><div class=bout-row><div class="side_info bout-event"><br><span class=event-date><a href=/events/20210605.html>2021-06-05</a></span><br><span class=event-name><a href=/events/20210605.html>UFC Fight Night: Rozenstruik vs. Sakai</a></span></div><div class="bout-fighter bout-left"><br><b>Muslim Salikhov</b> (36) <span class=emoji>🇷🇺</span><br><span class="wldn-letter letter-W">W</span>
+<span class="wldn-letter letter-W">W</span>
+<span class="wldn-letter letter-W">W</span>
+<span class="wldn-letter letter-W">W</span>
+<span class="wldn-letter letter-L">L</span>
+• 4-1<br>Elo: 2989</div><div class=result_description><span class=weightclass>WELTERWEIGHT</span><br>DEC<br>R3<br>05:00</div><div class="bout-fighter bout-right"><br><span class=emoji>🇧🇷</span>
+<b><a href=/fighters/franciscotrinaldo.html>Francisco Trinaldo</a></b> (42)<br>16-6 •
+<span class="wldn-letter letter-W">W</span>
+<span class="wldn-letter letter-L">L</span>
+<span class="wldn-letter letter-W">W</span>
+<span class="wldn-letter letter-W">W</span>
+<span class="wldn-letter letter-W">W</span><br>Elo: 3053</div><div class="side_info bout-venue"><br>UFC Apex<br>Las Vegas, Nevada<br>United States <span class=emoji>🇺🇸</span></div></div><div class=bout-row><div class="side_info bout-event"><br><span class=event-date><a href=/events/20200711.html>2020-07-11</a></span><br><span class=event-name><a href=/events/20200711.html>UFC 251: Usman vs. Masvidal</a></span></div><div class="bout-fighter bout-left"><br><b>Muslim Salikhov</b> (36) <span class=emoji>🇷🇺</span><br><span class="wldn-letter letter-W">W</span>
+<span class="wldn-letter letter-W">W</span>
+<span class="wldn-letter letter-W">W</span>
+<span class="wldn-letter letter-L">L</span>
+• 3-1<br>Elo: 2912</div><div class=result_description><span class=weightclass>WELTERWEIGHT</span><br>DEC<br>R3<br>05:00</div><div class="bout-fighter bout-right"><br><span class=emoji>🇧🇷</span>
+<b><a href=/fighters/elizeuzaleskidossantos.html>Elizeu Zaleski dos Santos</a></b> (33)<br>8-2 •
+<span class="wldn-letter letter-W">W</span>
+<span class="wldn-letter letter-W">W</span>
+<span class="wldn-letter letter-W">W</span>
+<span class="wldn-letter letter-L">L</span>
+<span class="wldn-letter letter-W">W</span><br>Elo: 3074</div><div class="side_info bout-venue"><br>du Forum<br>Abu Dhabi<br>United Arab Emirates <span class=emoji>🇦🇪</span></div></div><div class=bout-row><div class="side_info bout-event"><br><span class=event-date><a href=/events/20191026.html>2019-10-26</a></span><br><span class=event-name><a href=/events/20191026.html>UFC Fight Night: Maia vs. Askren</a></span></div><div class="bout-fighter bout-left"><br><b>Muslim Salikhov</b> (35) <span class=emoji>🇷🇺</span><br><span class="wldn-letter letter-W">W</span>
+<span class="wldn-letter letter-W">W</span>
+<span class="wldn-letter letter-L">L</span>
+• 2-1<br>Elo: <span class=favorite-elo>2860</span></div><div class=result_description><span class=weightclass>WELTERWEIGHT</span><br>DEC<br>R3<br>05:00</div><div class="bout-fighter bout-right"><br><span class=emoji>🇦🇷</span>
+<b><a href=/fighters/laureanostaropoli.html>Laureano Staropoli</a></b> (26)<br>2-0 •
+<span class="wldn-letter letter-W">W</span>
+<span class="wldn-letter letter-W">W</span><br>Elo: 2677</div><div class="side_info bout-venue"><br>Singapore Indoor Stadium<br>Singapore<br>Singapore <span class=emoji>🇸🇬</span></div></div><div class=bout-row><div class="side_info bout-event"><br><span class=event-date><a href=/events/20190907.html>2019-09-07</a></span><br><span class=event-name><a href=/events/20190907.html>UFC 242: Khabib vs. Poirier</a></span></div><div class="bout-fighter bout-left"><br><span title='Performance of the Night' class=cursor-pointer>⭐
+</span><b>Muslim Salikhov</b> (35) <span class=emoji>🇷🇺</span><br><span class="wldn-letter letter-W">W</span>
+<span class="wldn-letter letter-L">L</span>
+• 1-1<br>Elo: <span class=favorite-elo>2769</span></div><div class=result_description><span class=weightclass>WELTERWEIGHT</span><br>KO<br>R1<br>04:26</div><div class="bout-fighter bout-right"><br><span class=emoji>🇫🇷</span>
+<b><a href=/fighters/nordinetaleb.html>Nordine Taleb</a></b> (37)<br>7-4 •
+<span class="wldn-letter letter-W">W</span>
+<span class="wldn-letter letter-W">W</span>
+<span class="wldn-letter letter-L">L</span>
+<span class="wldn-letter letter-L">L</span>
+<span class="wldn-letter letter-W">W</span><br>Elo: 2737</div><div class="side_info bout-venue"><br>The Arena, Yas Island<br>Abu Dhabi<br>United Arab Emirates <span class=emoji>🇦🇪</span></div></div><div class=bout-row><div class="side_info bout-event"><br><span class=event-date><a href=/events/20180414.html>2018-04-14</a></span><br><span class=event-name><a href=/events/20180414.html>UFC on Fox: Poirier vs. Gaethje</a></span></div><div class="bout-fighter bout-left"><br><b>Muslim Salikhov</b> (33) <span class=emoji>🇷🇺</span><br><span class="wldn-letter letter-L">L</span>
+• 0-1<br>Elo: 2627</div><div class=result_description><span class=weightclass>WELTERWEIGHT</span><br>KO<br>R2<br>04:12</div><div class="bout-fighter bout-right"><br><span class=emoji>🇺🇸</span>
+<b><a href=/fighters/rickyrainey.html>Ricky Rainey</a></b> (34)<br>🔰 Debut<br>Elo: 2784</div><div class="side_info bout-venue"><br>Gila River Arena<br>Glendale, Arizona<br>United States <span class=emoji>🇺🇸</span></div></div><div class=bout-row><div class="side_info bout-event"><br><span class=event-date><a href=/events/20171125.html>2017-11-25</a></span><br><span class=event-name><a href=/events/20171125.html>UFC Fight Night: Bisping vs. Gastelum</a></span></div><div class="bout-fighter bout-left"><br><b><a href=/fighters/alexgarcia.html>Alex Garcia</a></b> (30) <span class=emoji>🇩🇴</span><br><span class="wldn-letter letter-L">L</span>
+<span class="wldn-letter letter-W">W</span>
+<span class="wldn-letter letter-L">L</span>
+<span class="wldn-letter letter-W">W</span>
+<span class="wldn-letter letter-L">L</span>
+• 4-3<br>Elo: 2658</div><div class=result_description><span class=weightclass>WELTERWEIGHT</span><br>SUB<br>R2<br>03:22</div><div class="bout-fighter bout-right"><br><span class=emoji>🇷🇺 </span><b>Muslim Salikhov</b> (33)<br>🔰 Debut<br>Elo: <span class=favorite-elo>2753</span></div><div class="side_info bout-venue"><br>Mercedes Benz Arena<br>Shanghai<br>China <span class=emoji>🇨🇳</span></div></div></div></div></main><footer><div class=footer-container><p class=copyright-text><a href=/glossary.html>Glossary</a>
+<a href=mailto:rostertracker@gmail.com>Contact</a></p></div><div class=footer-container><p class=copyright-text>Copyright © <span id=currentYear></span> All Rights Reserved by
+<a href=#>roster.watch</a></p></div></footer><style>.footer-container{display:flex;justify-content:space-between;align-items:center;padding:1rem}.copyright-text{margin:0 auto}.browser-badge{margin-left:auto}</style><script>document.getElementById("currentYear").textContent=(new Date).getFullYear()</script></div></body></html>

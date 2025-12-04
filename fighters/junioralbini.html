@@ -1,497 +1,60 @@
-<!DOCTYPE html>
-
-<html lang="en" xml:lang="en">
-
-<head>
-
-<meta charset="utf-8" />
-<meta name="generator" content="pandoc" />
-<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
-
-
-
-
-<title>Junior Albini UFC Record &amp; Stats: Interactive Charts · roster.watch</title>
-
-<script src="fighter_libs/header-attrs-2.29/header-attrs.js"></script>
-<script src="fighter_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<link href="fighter_libs/bootstrap-3.3.5/css/bootstrap.min.css" rel="stylesheet" />
-<script src="fighter_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
-<script src="fighter_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
-<script src="fighter_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
-<style>h1 {font-size: 34px;}
-       h1.title {font-size: 38px;}
-       h2 {font-size: 30px;}
-       h3 {font-size: 24px;}
-       h4 {font-size: 18px;}
-       h5 {font-size: 16px;}
-       h6 {font-size: 12px;}
-       code {color: inherit; background-color: rgba(0, 0, 0, 0.04);}
-       pre:not([class]) { background-color: white }</style>
-<script src="fighter_libs/navigation-1.1/tabsets.js"></script>
-<link href="fighter_libs/highlightjs-9.12.0/default.css" rel="stylesheet" />
-<script src="fighter_libs/highlightjs-9.12.0/highlight.js"></script>
-<link href="fighter_libs/htmltools-fill-0.5.8.1/fill.css" rel="stylesheet" />
-<script src="fighter_libs/htmlwidgets-1.6.4/htmlwidgets.js"></script>
-<script src="fighter_libs/plotly-binding-4.11.0/plotly.js"></script>
-<script src="fighter_libs/typedarray-0.1/typedarray.min.js"></script>
-<link href="fighter_libs/crosstalk-1.2.1/css/crosstalk.min.css" rel="stylesheet" />
-<script src="fighter_libs/crosstalk-1.2.1/js/crosstalk.min.js"></script>
-<link href="fighter_libs/plotly-htmlwidgets-css-2.11.1/plotly-htmlwidgets.css" rel="stylesheet" />
-<script src="fighter_libs/plotly-main-2.11.1/plotly-latest.min.js"></script>
-<script src="fighter_libs/core-js-2.5.3/shim.min.js"></script>
-<script src="fighter_libs/react-18.2.0/react.min.js"></script>
-<script src="fighter_libs/react-18.2.0/react-dom.min.js"></script>
-<script src="fighter_libs/reactwidget-2.0.0/react-tools.js"></script>
-<link href="fighter_libs/reactable-0.4.4/reactable.css" rel="stylesheet" />
-<script src="fighter_libs/reactable-binding-0.4.4/reactable.js"></script>
-<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-<link rel="manifest" href="/site.webmanifest">
-<meta name="description" content="An up-to-date list of the full active UFC roster including biographical data, rankings, records, and more.">
-<!-- <meta property="og:title" content="roster.watch" />
-<meta property="og:type" content="website" />
-<meta property="og:url" content="https://www.roster.watch/" />
-<meta property="og:image" content="https://www.roster.watch/og_image.png" />
-<meta property="og:description" content="An up-to-date list of the full active UFC roster including biographical data, rankings, record, and more." />
-<script src="https://unpkg.com/twemoji@latest/dist/twemoji.min.js" crossorigin="anonymous"></script> 
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7299518767310567"
-     crossorigin="anonymous"></script> -->
-<script data-goatcounter="https://rosterwatch.goatcounter.com/count"
-        async src="//gc.zgo.at/count.js"></script>
-<script defer src="/script.js" data-website-id="f0f3ed7e-e89c-4a29-a745-475e0b10271a"></script>
-
-<style type="text/css">
-  code{white-space: pre-wrap;}
-  span.smallcaps{font-variant: small-caps;}
-  span.underline{text-decoration: underline;}
-  div.column{display: inline-block; vertical-align: top; width: 50%;}
-  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
-  ul.task-list{list-style: none;}
-    </style>
-
-<style type="text/css">code{white-space: pre;}</style>
-<script type="text/javascript">
-if (window.hljs) {
-  hljs.configure({languages: []});
-  hljs.initHighlightingOnLoad();
-  if (document.readyState && document.readyState === "complete") {
-    window.setTimeout(function() { hljs.initHighlighting(); }, 0);
-  }
-}
-</script>
-
-
-
-
-
-
-<link rel="stylesheet" href="../style.css" type="text/css" />
-
-
-
-<style type = "text/css">
-.main-container {
-  max-width: 940px;
-  margin-left: auto;
-  margin-right: auto;
-}
-img {
-  max-width:100%;
-}
-.tabbed-pane {
-  padding-top: 12px;
-}
-.html-widget {
-  margin-bottom: 20px;
-}
-button.code-folding-btn:focus {
-  outline: none;
-}
-summary {
-  display: list-item;
-}
-details > summary > p:only-child {
-  display: inline;
-}
-pre code {
-  padding: 0;
-}
-</style>
-
-
-<style type="text/css">
-.dropdown-submenu {
-  position: relative;
-}
-.dropdown-submenu>.dropdown-menu {
-  top: 0;
-  left: 100%;
-  margin-top: -6px;
-  margin-left: -1px;
-  border-radius: 0 6px 6px 6px;
-}
-.dropdown-submenu:hover>.dropdown-menu {
-  display: block;
-}
-.dropdown-submenu>a:after {
-  display: block;
-  content: " ";
-  float: right;
-  width: 0;
-  height: 0;
-  border-color: transparent;
-  border-style: solid;
-  border-width: 5px 0 5px 5px;
-  border-left-color: #cccccc;
-  margin-top: 5px;
-  margin-right: -10px;
-}
-.dropdown-submenu:hover>a:after {
-  border-left-color: #adb5bd;
-}
-.dropdown-submenu.pull-left {
-  float: none;
-}
-.dropdown-submenu.pull-left>.dropdown-menu {
-  left: -100%;
-  margin-left: 10px;
-  border-radius: 6px 0 6px 6px;
-}
-</style>
-
-<script type="text/javascript">
-// manage active state of menu based on current page
-$(document).ready(function () {
-  // active menu anchor
-  href = window.location.pathname
-  href = href.substr(href.lastIndexOf('/') + 1)
-  if (href === "")
-    href = "index.html";
-  var menuAnchor = $('a[href="' + href + '"]');
-
-  // mark the anchor link active (and if it's in a dropdown, also mark that active)
-  var dropdown = menuAnchor.closest('li.dropdown');
-  if (window.bootstrap) { // Bootstrap 4+
-    menuAnchor.addClass('active');
-    dropdown.find('> .dropdown-toggle').addClass('active');
-  } else { // Bootstrap 3
-    menuAnchor.parent().addClass('active');
-    dropdown.addClass('active');
-  }
-
-  // Navbar adjustments
-  var navHeight = $(".navbar").first().height() + 15;
-  var style = document.createElement('style');
-  var pt = "padding-top: " + navHeight + "px; ";
-  var mt = "margin-top: -" + navHeight + "px; ";
-  var css = "";
-  // offset scroll position for anchor links (for fixed navbar)
-  for (var i = 1; i <= 6; i++) {
-    css += ".section h" + i + "{ " + pt + mt + "}\n";
-  }
-  style.innerHTML = "body {" + pt + "padding-bottom: 40px; }\n" + css;
-  document.head.appendChild(style);
-});
-</script>
-
-<!-- tabsets -->
-
-<style type="text/css">
-.tabset-dropdown > .nav-tabs {
-  display: inline-table;
-  max-height: 500px;
-  min-height: 44px;
-  overflow-y: auto;
-  border: 1px solid #ddd;
-  border-radius: 4px;
-}
-
-.tabset-dropdown > .nav-tabs > li.active:before, .tabset-dropdown > .nav-tabs.nav-tabs-open:before {
-  content: "\e259";
-  font-family: 'Glyphicons Halflings';
-  display: inline-block;
-  padding: 10px;
-  border-right: 1px solid #ddd;
-}
-
-.tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
-  content: "\e258";
-  font-family: 'Glyphicons Halflings';
-  border: none;
-}
-
-.tabset-dropdown > .nav-tabs > li.active {
-  display: block;
-}
-
-.tabset-dropdown > .nav-tabs > li > a,
-.tabset-dropdown > .nav-tabs > li > a:focus,
-.tabset-dropdown > .nav-tabs > li > a:hover {
-  border: none;
-  display: inline-block;
-  border-radius: 4px;
-  background-color: transparent;
-}
-
-.tabset-dropdown > .nav-tabs.nav-tabs-open > li {
-  display: block;
-  float: none;
-}
-
-.tabset-dropdown > .nav-tabs > li {
-  display: none;
-}
-</style>
-
-<!-- code folding -->
-
-
-
-
-</head>
-
-<body>
-
-
-<div class="container-fluid main-container">
-
-
-
-<header>
-    <a class="logo" href="/"><img src="/images/logo.svg" alt="logo"></a>
-    <nav>
-        <ul class="nav__links">
-            <li><a href="/">Current Roster</a></li>
-            <li><a href="/former.html">Former Roster</a></li>
-            <li class="dropdown">
-                <a href="#" onclick="return false;">Weight Classes</a>
-<ul class="dropdown-content">
-                    <li><a href="/heavyweight.html">Heavyweight</a></li>
-                    <li><a href="/lightheavyweight.html">Light Heavyweight</a></li>
-                    <li><a href="/middleweight.html">Middleweight</a></li>
-                    <li><a href="/welterweight.html">Welterweight</a></li>
-                    <li><a href="/lightweight.html">Lightweight</a></li>
-                    <li><a href="/featherweight.html">Featherweight</a></li>
-                    <li><a href="/bantamweight.html">Bantamweight</a></li>
-                    <li><a href="/flyweight.html">Flyweight</a></li>
-                    <li><a href="/womensbantamweight.html">Women's Bantamweight</a></li>
-                    <li><a href="/womensflyweight.html">Women's Flyweight</a></li>
-                    <li><a href="/womensstrawweight.html">Women's Strawweight</a></li>
-                </ul>
-            </li>
-            <li><a href="/events">Events</a></li>
-            <li><a href="/log.html">Log</a></li>
-            <li><a href="javascript:void(0)" onclick="getRandomPage()">Random Page</a></li>
-            <li><a href="https://rosterwatch.printify.me/">Merch</a></li>
-            <li><a href="https://www.patreon.com/bePatron?u=88266864">Support on Patreon</a></li>
-        </ul>
-    </nav>
-    <div class="menu cta">Menu</div>
-</header>
-
-<div class="overlay">
-    <a class="close">×</a>
-    <div class="overlay__content">
-        <a href="/">Current Roster</a>
-        <a href="/former.html">Former Roster</a>
-        <div class="dropdown-mobile">
-            <a href="#" onclick="return false;">Weight Classes</a>
-<div class="dropdown-content-mobile">
-                <a href="/heavyweight.html">Heavyweight</a>
-                <a href="/lightheavyweight.html">Light Heavyweight</a>
-                <a href="/middleweight.html">Middleweight</a>
-                <a href="/welterweight.html">Welterweight</a>
-                <a href="/lightweight.html">Lightweight</a>
-                <a href="/featherweight.html">Featherweight</a>
-                <a href="/bantamweight.html">Bantamweight</a>
-                <a href="/flyweight.html">Flyweight</a>
-                <a href="/womensbantamweight.html">Women's Bantamweight</a>
-                <a href="/womensflyweight.html">Women's Flyweight</a>
-                <a href="/womensstrawweight.html">Women's Strawweight</a>
-            </div>
-        </div>
-        <a href="/events">Events</a>
-        <a href="/log.html">Log</a>
-        <a href="javascript:void(0)" onclick="getRandomPage()">Random Page</a>
-        <a href="https://rosterwatch.printify.me/">Merch</a>
-        <a href="https://www.patreon.com/bePatron?u=88266864">Support on Patreon</a>
-    </div>
-</div>
-<script type="text/javascript" src="/mobile.js"></script>
-    <script>
-      function getRandomPage() {
-        fetch('/sitemap.xml')
-          .then(response => response.text())
-          .then(xmlText => {
-            const parser = new DOMParser();
-            const xmlDoc = parser.parseFromString(xmlText, 'application/xml');
-            const urls = Array.from(xmlDoc.getElementsByTagName('loc')).map(loc => loc.textContent);
-            const randomPage = urls[Math.floor(Math.random() * urls.length)];
-            window.location.href = randomPage;
-          });
-      }
-    </script>
-
-<div id="header">
-
-
-
-<h1 class="title toc-ignore">Junior Albini UFC Record &amp; Stats:
-Interactive Charts · roster.watch</h1>
-
-</div>
-
-
-<script type="application/ld+json">{
-  "@context": "https://schema.org",
-  "@type": "Person",
-  "name": "Junior Albini",
-  "birthDate": "1991-03-15",
-  "nationality": "Brazil",
-  "memberOf": {
-    "@type": "SportsOrganization",
-    "name": "UFC",
-    "sport": "Mixed Martial Arts"
-  },
-  "additionalProperty": [
-    {
-      "@type": "PropertyValue",
-      "name": "UFC Record",
-      "value": "1-4"
-    },
-    {
-      "@type": "PropertyValue",
-      "name": "Peak UFC Ranking",
-      "value": "#11 Heavyweight"
-    },
-    {
-      "@type": "PropertyValue",
-      "name": "Bonuses",
-      "value": "1"
-    }
-  ]
-}</script>
-<article class="event-info" style="display: flex; flex-direction: column; align-items: center; justify-content: center; width: 100%; height: auto;"><div class="fighter-info" style="text-align: center; margin-bottom: 20px;"><h2 style='font-weight: bold; font-size: 1.1em; margin: 0;'>Junior Albini <span class='emoji'>🇧🇷</span></h2><time datetime='1991-03-15'><p><span>1991-03-15</span><script>document.currentScript.parentElement.innerHTML = (function(){  const dob = new Date('1991-03-15');  const today = new Date();  let years = today.getFullYear() - dob.getFullYear();  const monthDiff = today.getMonth() - dob.getMonth();  if (monthDiff < 0 || (monthDiff === 0 && today.getDate() < dob.getDate())) {    years--;  }  const yearAnniversary = new Date(dob);  yearAnniversary.setFullYear(dob.getFullYear() + years);  const dayDiff = Math.floor((today - yearAnniversary) / (1000 * 60 * 60 * 24));  const isBirthday = today.getMonth() === dob.getMonth() && today.getDate() === dob.getDate();  let ageString = `${years} year${years !== 1 ? 's' : ''}`;  if (dayDiff > 0) {    ageString += ` ${dayDiff} day${dayDiff !== 1 ? 's' : ''}`;  }  return `${ageString}${isBirthday ? ' 🎂' : ''} <br><span class='event-date'> (${dob.toISOString().split('T')[0]}) </span>`;}());</script></p></time></div><div style="display: flex; justify-content: center; align-items: flex-start; gap: 40px; max-width: 600px; width: 100%;"><div class="event-details" style="width: 50%;"><div class='event-stats'><p><strong>Record:</strong> 1-4<br></p><p><strong>By Method:</strong></p><ul><li> KO/TKO: 1-2</li><li> Submission: 0-1</li><li> Decision: 0-1</li></ul><p><strong>By Elo:</strong></p><ul><li>As Favorite: 0-2</li><li>As Underdog: 1-2</li></ul><p><strong>By Weight Class:</strong></p><ul><li>Heavyweight: 1-4</li></ul><p><strong>By Round:</strong></p><ul><li>Round 1: 1-2</li><li>Round 2: 0-1</li><li>Round 3: 0-1</li></ul></div></div><div class="rankings" style="width: 50%;"><p><strong>Status:</strong> Former UFC Fighter</p><p><strong>Last 5:</strong> <span style='display: inline-block;width: 1.25em;
-height: 1.25em;
-line-height: 1.25em; font-size: 0.8em;
- text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W</span> <span style='display: inline-block;width: 1.25em;
-height: 1.25em;
-line-height: 1.25em; font-size: 0.8em;
- text-align: center; border-radius: 50%; background-color: crimson; color: white; font-weight: bold;'>L</span> <span style='display: inline-block;width: 1.25em;
-height: 1.25em;
-line-height: 1.25em; font-size: 0.8em;
- text-align: center; border-radius: 50%; background-color: crimson; color: white; font-weight: bold;'>L</span> <span style='display: inline-block;width: 1.25em;
-height: 1.25em;
-line-height: 1.25em; font-size: 0.8em;
- text-align: center; border-radius: 50%; background-color: crimson; color: white; font-weight: bold;'>L</span> <span style='display: inline-block;width: 1.25em;
-height: 1.25em;
-line-height: 1.25em; font-size: 0.8em;
- text-align: center; border-radius: 50%; background-color: crimson; color: white; font-weight: bold;'>L</span></p><p><strong>Peak Elo:</strong> 2748<span class='event-date'> (2017-07-22)</span></p><p><strong>Bonuses:</strong> 1 (0 FOTN, 1 Performance)</p><p><strong>Avg Fight Time:</strong> 5m 50s</p><p><strong>Total Fight Time:</strong> 29m 8s</p><br><strong>Peak Rankings: </strong><br>#11 Heavyweight</div></div></article>
-<h2 style='font-size: 1em; margin: 0; text-align: center; font-weight: bold;'>Elo Rating & UFC Rankings</h2>
-<div style="display: flex; justify-content: center; width: 100%; margin-top: 20px; margin-bottom: 20px;">
-<div id="fighter-performance-chart" style="width: 100%; max-width: 600px; height: 750px;">
-<div class="plotly html-widget html-fill-item" id="htmlwidget-5bcfb833d04e697c830a" style="width:100%;height:400px;"></div>
-<script type="application/json" data-for="htmlwidget-5bcfb833d04e697c830a">{"x":{"data":[{"x":["2017-07-22","2017-11-11","2018-05-12","2019-02-02","2019-06-29"],"y":[2748,2623,2571,2444,2401],"mode":"lines+markers","line":{"color":"#d12d36","width":3,"shape":"hv"},"marker":{"color":"#d12d36","size":10,"line":{"color":"rgba(31,119,180,1)"}},"hoverinfo":["text","text","text","text","text"],"text":["2017-07-22 <br> 2748 Elo <br> Tim Johnson <br> Win","2017-11-11 <br> 2623 Elo <br> Andrei Arlovski <br> Loss","2018-05-12 <br> 2571 Elo <br> Aleksei Oleinik <br> Loss","2019-02-02 <br> 2444 Elo <br> Jairzinho Rozenstruik <br> Loss","2019-06-29 <br> 2401 Elo <br> Maurice Greene <br> Loss"],"name":"Elo","type":"scatter","error_y":{"color":"rgba(31,119,180,1)"},"error_x":{"color":"rgba(31,119,180,1)"},"xaxis":"x","yaxis":"y","frame":null},{"x":["2017-07-26","2017-08-02","2017-08-07","2017-09-04","2017-09-13","2017-09-20","2017-09-25","2017-10-09","2017-10-23","2017-10-30","2017-11-08","2017-11-13","2017-11-20","2017-11-29","2017-12-06","2017-12-13","2017-12-18","2018-01-01","2018-01-17","2018-01-24","2018-01-29","2018-02-07","2018-02-12","2018-02-21","2018-02-26","2018-03-05","2018-03-21","2018-04-11","2018-04-18","2018-04-23","2018-05-23","2018-05-30","2018-06-06","2018-06-13","2018-06-26"],"y":[14,13,13,12,12,11,11,11,11,11,12,13,13,13,13,13,13,13,13,13,13,14,14,14,14,13,14,14,14,14,15,15,15,15,15],"mode":"markers","marker":{"color":"rgba(252,141,98,1)","size":10,"opacity":0.80000000000000004,"line":{"color":"rgba(252,141,98,1)"}},"hoverinfo":["text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text"],"text":["2017-07-26 <br> 14 <br> Heavyweight","2017-08-02 <br> 13 <br> Heavyweight","2017-08-07 <br> 13 <br> Heavyweight","2017-09-04 <br> 12 <br> Heavyweight","2017-09-13 <br> 12 <br> Heavyweight","2017-09-20 <br> 11 <br> Heavyweight","2017-09-25 <br> 11 <br> Heavyweight","2017-10-09 <br> 11 <br> Heavyweight","2017-10-23 <br> 11 <br> Heavyweight","2017-10-30 <br> 11 <br> Heavyweight","2017-11-08 <br> 12 <br> Heavyweight","2017-11-13 <br> 13 <br> Heavyweight","2017-11-20 <br> 13 <br> Heavyweight","2017-11-29 <br> 13 <br> Heavyweight","2017-12-06 <br> 13 <br> Heavyweight","2017-12-13 <br> 13 <br> Heavyweight","2017-12-18 <br> 13 <br> Heavyweight","2018-01-01 <br> 13 <br> Heavyweight","2018-01-17 <br> 13 <br> Heavyweight","2018-01-24 <br> 13 <br> Heavyweight","2018-01-29 <br> 13 <br> Heavyweight","2018-02-07 <br> 14 <br> Heavyweight","2018-02-12 <br> 14 <br> Heavyweight","2018-02-21 <br> 14 <br> Heavyweight","2018-02-26 <br> 14 <br> Heavyweight","2018-03-05 <br> 13 <br> Heavyweight","2018-03-21 <br> 14 <br> Heavyweight","2018-04-11 <br> 14 <br> Heavyweight","2018-04-18 <br> 14 <br> Heavyweight","2018-04-23 <br> 14 <br> Heavyweight","2018-05-23 <br> 15 <br> Heavyweight","2018-05-30 <br> 15 <br> Heavyweight","2018-06-06 <br> 15 <br> Heavyweight","2018-06-13 <br> 15 <br> Heavyweight","2018-06-26 <br> 15 <br> Heavyweight"],"type":"scatter","name":"Heavyweight","textfont":{"color":"rgba(252,141,98,1)"},"error_y":{"color":"rgba(252,141,98,1)"},"error_x":{"color":"rgba(252,141,98,1)"},"line":{"color":"rgba(252,141,98,1)"},"xaxis":"x","yaxis":"y2","frame":null}],"layout":{"xaxis":{"domain":[0,1],"automargin":true,"anchor":"y2","gridcolor":"#e1e1e1","title":""},"yaxis2":{"domain":[0,0.38],"automargin":true,"range":[15.5,-0.5],"tickvals":[15,14,13,12,11,10,9,8,7,6,5,4,3,2,1,0],"ticktext":["15","14","13","12","11","10","9","8","7","6","5","4","3","2","1","C"],"gridcolor":"#e1e1e1","zeroline":false,"anchor":"x"},"yaxis":{"domain":[0.42000000000000004,1],"automargin":true,"gridcolor":"#e1e1e1","anchor":"x"},"annotations":[],"shapes":[],"images":[],"margin":{"b":40,"l":60,"t":0,"r":10},"hovermode":"closest","showlegend":true,"height":750,"legend":{"orientation":"h","xanchor":"center","x":0.5,"y":-100}},"attrs":{"3d8053574998":{"x":{},"y":{},"mode":"lines+markers","line":{"color":"#d12d36","width":3,"shape":"hv"},"marker":{"size":10,"color":"#d12d36"},"hoverinfo":"text","text":{},"name":"Elo","alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"type":"scatter"},"3d807bed7dd4":{"x":{},"y":{},"mode":"markers","marker":{"size":10,"opacity":0.80000000000000004},"hoverinfo":"text","text":{},"color":{},"alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"type":"scatter"}},"source":"A","config":{"modeBarButtonsToAdd":["hoverclosest","hovercompare"],"showSendToCloud":false,"displayModeBar":false},"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.20000000000000001,"selected":{"opacity":1},"debounce":0},"subplot":true,"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot","plotly_sunburstclick"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script>
-</div>
-</div>
-<h2 style='font-size: 1em; margin: 0; text-align: center; font-weight: bold;'>Bout History</h2>
-<div class="reactable html-widget html-fill-item" id="htmlwidget-2846b986fd3825bdb913" style="width:auto;height:auto;"></div>
-<script type="application/json" data-for="htmlwidget-2846b986fd3825bdb913">{"x":{"tag":{"name":"Reactable","attribs":{"data":{"event_date":["<br><span class = 'event-date'>2019-06-29<\/span><br><a href='/events/20190629.html'>UFC on ESPN: Ngannou vs. dos Santos<\/a>","<br><span class = 'event-date'>2019-02-02<\/span><br><a href='/events/20190202.html'>UFC Fight Night: Assunção vs. Moraes 2<\/a>","<br><span class = 'event-date'>2018-05-12<\/span><br><a href='/events/20180512.html'>UFC 224: Nunes vs. Pennington<\/a>","<br><span class = 'event-date'>2017-11-11<\/span><br><a href='/events/20171111.html'>UFC Fight Night: Poirier vs. Pettis<\/a>","<br><span class = 'event-date'>2017-07-22<\/span><br><a href='/events/20170722.html'>UFC on Fox: Weidman vs. Gastelum<\/a>"],"fighter_name":["<br> <b><a href=/fighters/mauricegreene.html>Maurice Greene<\/a><\/b> (32) <span class = 'emoji'>🇺🇸<\/span><br><span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> • 2-0<br>Elo: <span class = 'favorite-elo'>2667<\/span>","<br> <b><a href=/fighters/jairzinhorozenstruik.html>Jairzinho Rozenstruik<\/a><\/b> (30) <span class = 'emoji'>🇸🇷<\/span><br>Debut 🔰<br>Elo: 2476","<br> <b><span title='Performance of the Night' style='cursor: pointer;'>⭐ <\/span><a href=/fighters/alekseioleinik.html>Aleksei Oleinik<\/a><\/b> (40) <span class = 'emoji'>🇷🇺<\/span><br><span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: crimson; color: white; font-weight: bold;'>L<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: crimson; color: white; font-weight: bold;'>L<\/span> • 4-2<br>Elo: <span class = 'favorite-elo'>2804<\/span> • UFC rank: #10","<br> <b><a href=/fighters/andreiarlovski.html>Andrei Arlovski<\/a><\/b> (38) <span class = 'emoji'>🇧🇾 🇺🇸<\/span><br><span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: crimson; color: white; font-weight: bold;'>L<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: crimson; color: white; font-weight: bold;'>L<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: crimson; color: white; font-weight: bold;'>L<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: crimson; color: white; font-weight: bold;'>L<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: crimson; color: white; font-weight: bold;'>L<\/span> • 14-9<br>Elo: 2659 • UFC rank: #13","<br> <b><span title='Performance of the Night' style='cursor: pointer;'>⭐ <\/span>Junior Albini<\/b> (26) <span class = 'emoji'>🇧🇷<\/span><br>Debut 🔰<br>Elo: 2590"],"result_description":["<span style='font-size: 0.8em;'>HEAVYWEIGHT<\/span><br>TKO<br>R1<br>03:38","<span style='font-size: 0.8em;'>HEAVYWEIGHT<\/span><br>TKO<br>R2<br>00:54","<span style='font-size: 0.8em;'>HEAVYWEIGHT<\/span><br>SUB<br>R1<br>01:45","<span style='font-size: 0.8em;'>HEAVYWEIGHT<\/span><br>DEC<br>R3<br>05:00","<span style='font-size: 0.8em;'>HEAVYWEIGHT<\/span><br>KO<br>R1<br>02:51"],"opponent_fighter_name":["<br><span class='emoji'>🇧🇷<\/span> <b>Junior Albini<\/b> (28)<br>1-3 • <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: crimson; color: white; font-weight: bold;'>L<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: crimson; color: white; font-weight: bold;'>L<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: crimson; color: white; font-weight: bold;'>L<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span><br>Elo: 2444","<br><span class='emoji'>🇧🇷<\/span> <b>Junior Albini<\/b> (27)<br>1-2 • <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: crimson; color: white; font-weight: bold;'>L<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: crimson; color: white; font-weight: bold;'>L<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span><br>Elo: <span class = 'favorite-elo'>2571<\/span>","<br><span class='emoji'>🇧🇷<\/span> <b>Junior Albini<\/b> (27)<br>1-1 • <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: crimson; color: white; font-weight: bold;'>L<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span><br>UFC rank: #14 • Elo: 2623","<br><span class='emoji'>🇧🇷<\/span> <b>Junior Albini<\/b> (26)<br>1-0 • <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span><br>UFC rank: #12 • Elo: <span class = 'favorite-elo'>2748<\/span>","<br><span class='emoji'>🇺🇸<\/span> <b><a href=/fighters/timjohnson.html>Tim Johnson<\/a><\/b> (32)<br>3-2 • <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: crimson; color: white; font-weight: bold;'>L<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: crimson; color: white; font-weight: bold;'>L<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span><br>UFC rank: #12 • Elo: <span class = 'favorite-elo'>2822<\/span>"],"City":["<br>Target Center<br>Minneapolis, Minnesota<br>United States <span class='emoji'>🇺🇸<\/span>","<br>Centro de Formação Olímpica do Nordeste<br>Fortaleza<br>Brazil <span class='emoji'>🇧🇷<\/span>","<br>Jeunesse Arena<br>Rio de Janeiro<br>Brazil <span class='emoji'>🇧🇷<\/span>","<br>Ted Constant Convocation Center<br>Norfolk, Virginia<br>United States <span class='emoji'>🇺🇸<\/span>","<br>Nassau Veterans Memorial Coliseum<br>Uniondale, New York<br>United States <span class='emoji'>🇺🇸<\/span>"]},"columns":[{"id":"event_date","name":"","type":"character","html":true,"width":200,"className":"side_info"},{"id":"fighter_name","name":"","type":"character","html":true,"width":240,"align":"right"},{"id":"result_description","name":"","type":"character","html":true,"width":50,"align":"center","className":"result_description"},{"id":"opponent_fighter_name","name":"","type":"character","html":true,"width":240,"align":"left"},{"id":"City","name":"","type":"character","cell":["<div style=\"white-space: nowrap; overflow: visible;\"><br>Target Center<br>Minneapolis, Minnesota<br>United States <span class='emoji'>🇺🇸<\/span><\/div>","<div style=\"white-space: nowrap; overflow: visible;\"><br>Centro de Formação Olímpica do Nordeste<br>Fortaleza<br>Brazil <span class='emoji'>🇧🇷<\/span><\/div>","<div style=\"white-space: nowrap; overflow: visible;\"><br>Jeunesse Arena<br>Rio de Janeiro<br>Brazil <span class='emoji'>🇧🇷<\/span><\/div>","<div style=\"white-space: nowrap; overflow: visible;\"><br>Ted Constant Convocation Center<br>Norfolk, Virginia<br>United States <span class='emoji'>🇺🇸<\/span><\/div>","<div style=\"white-space: nowrap; overflow: visible;\"><br>Nassau Veterans Memorial Coliseum<br>Uniondale, New York<br>United States <span class='emoji'>🇺🇸<\/span><\/div>"],"html":true,"width":200,"className":"side_info"}],"sortable":false,"pagination":false,"defaultPageSize":100,"showPageInfo":false,"nowrap":true,"className":"event_bouts","inline":true,"theme":{"headerStyle":{"borderBottom":"none"}},"dataKey":"97fc764bad916f9f416dd01cef633bfb"},"children":[]},"class":"reactR_markup"},"evals":[],"jsHooks":[]}</script>
-
-<footer>
-  <div class="footer-container">
-    <p class="copyright-text">
-        <a href="/glossary.html">Glossary</a>
-      <a href="mailto:rostertracker@gmail.com">Contact</a>
-    </p>
-<!--     <p class="browser-badge">
-      <a href="https://www.mozilla.org/en-US/firefox/">
-        <img src="C:/Users/mart/Dropbox/R/roster.watch/firefox.png" title="Best viewed with Firefox" alt="Best viewed with Firefox"><br>
-        <small class="copyright-text">Best viewed with Firefox</small>
-      </a>
-    </p> 
- -->  </div>
- <div class="footer-container">
-    <p class="copyright-text">
-      Copyright © <span id="currentYear"></span> All Rights Reserved by 
-      <a href="#">roster.watch</a>
-    </p>
-<!--     <p class="browser-badge">
-      <a href="https://www.mozilla.org/en-US/firefox/">
-        <img src="C:/Users/mart/Dropbox/R/roster.watch/firefox.png" title="Best viewed with Firefox" alt="Best viewed with Firefox"><br>
-        <small class="copyright-text">Best viewed with Firefox</small>
-      </a>
-    </p> 
- -->  </div>
-</footer>
-
-<style>
-.footer-container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1rem;
-}
-
-.copyright-text {
-  margin: 0 auto;
-}
-
-.browser-badge {
-  margin-left: auto;
-}
-</style>
-
-<script>
-  document.getElementById('currentYear').textContent = new Date().getFullYear();
-</script>
-
-
-
-</div>
-
-<script>
-
-// add bootstrap table styles to pandoc tables
-function bootstrapStylePandocTables() {
-  $('tr.odd').parent('tbody').parent('table').addClass('table table-condensed');
-}
-$(document).ready(function () {
-  bootstrapStylePandocTables();
-});
-
-
-</script>
-
-<!-- tabsets -->
-
-<script>
-$(document).ready(function () {
-  window.buildTabsets("TOC");
-});
-
-$(document).ready(function () {
-  $('.tabset-dropdown > .nav-tabs > li').click(function () {
-    $(this).parent().toggleClass('nav-tabs-open');
-  });
-});
-</script>
-
-<!-- code folding -->
-
-
-<!-- dynamically load mathjax for compatibility with self-contained -->
-<script>
-  (function () {
-    var script = document.createElement("script");
-    script.type = "text/javascript";
-    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
-    document.getElementsByTagName("head")[0].appendChild(script);
-  })();
-</script>
-
-</body>
-</html>
+<!doctype html><html lang=en><head><meta charset=UTF-8><meta name=viewport content="width=device-width,initial-scale=1"><title>Junior Albini · roster.watch</title><link rel=stylesheet href=/style.css><link rel=apple-touch-icon sizes=180x180 href=/apple-touch-icon.png><link rel=icon type=image/png sizes=32x32 href=/favicon-32x32.png><link rel=icon type=image/png sizes=16x16 href=/favicon-16x16.png><link rel=manifest href=/site.webmanifest><meta name=description content="An up-to-date list of the full active UFC roster including biographical data, rankings, records, and more."><script data-goatcounter=https://rosterwatch.goatcounter.com/count async src=//gc.zgo.at/count.js></script><script defer src=/script.js data-website-id=f0f3ed7e-e89c-4a29-a745-475e0b10271a></script><script src=/age.js></script></head><body><div class=container><header><a class=logo href=/><img src=/images/logo.svg alt=logo></a><nav><ul class=nav__links><li><a href=/>Current Roster</a></li><li><a href=/former.html>Former Roster</a></li><li class=dropdown><a href=# onclick=return!1>Weight Classes</a><ul class=dropdown-content><li><a href=/heavyweight.html>Heavyweight</a></li><li><a href=/lightheavyweight.html>Light Heavyweight</a></li><li><a href=/middleweight.html>Middleweight</a></li><li><a href=/welterweight.html>Welterweight</a></li><li><a href=/lightweight.html>Lightweight</a></li><li><a href=/featherweight.html>Featherweight</a></li><li><a href=/bantamweight.html>Bantamweight</a></li><li><a href=/flyweight.html>Flyweight</a></li><li><a href=/womensbantamweight.html>Women's Bantamweight</a></li><li><a href=/womensflyweight.html>Women's Flyweight</a></li><li><a href=/womensstrawweight.html>Women's Strawweight</a></li></ul></li><li><a href=/events>Events</a></li><li><a href=/log.html>Log</a></li><li><a href=/fightlog.html>Fight Log</a></li><li><a href=javascript:void(0) onclick=getRandomPage()>Random Page</a></li><li><a href=https://rosterwatch.printify.me/>Merch</a></li><li><a href="https://www.patreon.com/bePatron?u=88266864">Support on Patreon</a></li></ul></nav><div class="menu cta">Menu</div></header><div class=overlay><a class=close>×</a><div class=overlay__content><a href=/>Current Roster</a>
+<a href=/former.html>Former Roster</a><div class=dropdown-mobile><a href=# onclick=return!1>Weight Classes</a><div class=dropdown-content-mobile><a href=/heavyweight.html>Heavyweight</a>
+<a href=/lightheavyweight.html>Light Heavyweight</a>
+<a href=/middleweight.html>Middleweight</a>
+<a href=/welterweight.html>Welterweight</a>
+<a href=/lightweight.html>Lightweight</a>
+<a href=/featherweight.html>Featherweight</a>
+<a href=/bantamweight.html>Bantamweight</a>
+<a href=/flyweight.html>Flyweight</a>
+<a href=/womensbantamweight.html>Women's Bantamweight</a>
+<a href=/womensflyweight.html>Women's Flyweight</a>
+<a href=/womensstrawweight.html>Women's Strawweight</a></div></div><a href=/events>Events</a>
+<a href=/log.html>Log</a>
+<a href=/fightlog.html>Fight Log</a>
+<a href=javascript:void(0) onclick=getRandomPage()>Random Page</a>
+<a href=https://rosterwatch.printify.me/>Merch</a>
+<a href="https://www.patreon.com/bePatron?u=88266864">Support on Patreon</a></div></div><script type=text/javascript src=/mobile.js></script><script>function getRandomPage(){fetch("/sitemap.xml").then(e=>e.text()).then(e=>{const n=new DOMParser,s=n.parseFromString(e,"application/xml"),t=Array.from(s.getElementsByTagName("loc")).map(e=>e.textContent),o=t[Math.floor(Math.random()*t.length)];window.location.href=o})}</script><main><div class=fighter-header><div class=fighter-name><div><h1>Junior Albini</h1><span class=emoji>🇧🇷</span></div><time class=dob data-dob=1991-03-15><span class=age></span><div class=date_of_birth>(1991-03-15)</div></time></div></div><h2>Statistics</h2><article class=fighter-info><div class=two-column-layout><div class=fighter-details><div class=fighter-stats><p><strong>UFC Record:</strong> 1-4</p><p><strong>By Method:</strong></p><ul><li>KO/TKO: 1-2</li><li>Submission: 0-1</li><li>Decision: 0-1</li></ul><p><strong>By Elo:</strong></p><ul><li>As Favorite: 0-2</li><li>As Underdog: 1-2</li></ul><p><strong>By Weight Class:</strong></p><ul><li>Heavyweight: 1-4</li></ul><p><strong>By Round:</strong></p><ul><li>Round 1: 1-2</li><li>Round 2: 0-1</li><li>Round 3: 0-1</li></ul></div></div><div class=rankings><p><strong>UFC Roster Status:</strong> Inactive</p><p><strong>Last 5:</strong>
+<span class="wldn-letter letter-W">W</span>
+<span class="wldn-letter letter-L">L</span>
+<span class="wldn-letter letter-L">L</span>
+<span class="wldn-letter letter-L">L</span>
+<span class="wldn-letter letter-L">L</span></p><p><strong>Peak Elo:</strong> 2750 <span class=peak-date>(2017-07-22)</span></p><p><strong>Avg Opponent Elo:</strong> 2685 (#975)</p><p><strong>Bonuses:</strong> 1 (0 FOTN, 1
+Performance)</p><p><strong>Avg Fight Time:</strong> 5m 50s</p><p><strong>Total Fight Time:</strong> 29m 8s</p><p><strong>Avg Time Between Fights:</strong> 164 days</p><p><strong>Avg Card Placement:</strong> 8.6</p><p><strong>Peak Rankings:</strong></p><div>#11 Heavyweight</div></div></div></article><div class=chart-section><h2>Elo Rating & UFC Rankings</h2><div class=chart-container><div id=fighter-performance-chart data-rankings='{"Heavyweight":[{"date":"2017-07-26","rank":14},{"date":"2017-08-02","rank":13},{"date":"2017-08-07","rank":13},{"date":"2017-09-04","rank":12},{"date":"2017-09-13","rank":12},{"date":"2017-09-20","rank":11},{"date":"2017-09-25","rank":11},{"date":"2017-10-09","rank":11},{"date":"2017-10-23","rank":11},{"date":"2017-10-30","rank":11},{"date":"2017-11-08","rank":12},{"date":"2017-11-13","rank":13},{"date":"2017-11-20","rank":13},{"date":"2017-11-29","rank":13},{"date":"2017-12-06","rank":13},{"date":"2017-12-13","rank":13},{"date":"2017-12-18","rank":13},{"date":"2018-01-01","rank":13},{"date":"2018-01-17","rank":13},{"date":"2018-01-24","rank":13},{"date":"2018-01-29","rank":13},{"date":"2018-02-07","rank":14},{"date":"2018-02-12","rank":14},{"date":"2018-02-21","rank":14},{"date":"2018-02-26","rank":14},{"date":"2018-03-05","rank":13},{"date":"2018-03-21","rank":14},{"date":"2018-04-11","rank":14},{"date":"2018-04-18","rank":14},{"date":"2018-04-23","rank":14},{"date":"2018-05-23","rank":15},{"date":"2018-05-30","rank":15},{"date":"2018-06-06","rank":15},{"date":"2018-06-13","rank":15},{"date":"2018-06-26","rank":15}]}' data-elo='[{"bout_order":1,"city":"Minneapolis, Minnesota","country":"United States","country_emoji":"🇺🇸","event_date":"2019-06-29","event_name":"UFC on ESPN: Ngannou vs. dos Santos","event_slug":"20190629","fighter":"Junior Albini","fighter_age":28,"fighter_country":"🇧🇷","fighter_last5":"LLLW","fighter_plot_rtg":2401,"fighter_record":"1-3","fighter_rtg":2445,"method":"TKO","opponent_age":32,"opponent_country":"🇺🇸","opponent_last5":"WW","opponent_name":"Maurice Greene","opponent_record":"2-0","opponent_rtg":2666,"opponent_slug":"mauricegreene","result":"Loss","round":1,"time":"03:38","venue":"Target Center","weight_class":"Heavyweight"},{"bout_order":1,"city":"Fortaleza","country":"Brazil","country_emoji":"🇧🇷","event_date":"2019-02-02","event_name":"UFC Fight Night: Assunção vs. Moraes 2","event_slug":"20190202","fighter":"Junior Albini","fighter_age":27,"fighter_country":"🇧🇷","fighter_last5":"LLW","fighter_plot_rtg":2445,"fighter_record":"1-2","fighter_rtg":2572,"method":"TKO","opponent_age":30,"opponent_country":"🇸🇷","opponent_last5":"","opponent_name":"Jairzinho Rozenstruik","opponent_record":"","opponent_rtg":2476,"opponent_slug":"jairzinhorozenstruik","result":"Loss","round":2,"time":"00:54","venue":"Centro de Formação Olímpica do Nordeste","weight_class":"Heavyweight"},{"bout_order":1,"city":"Rio de Janeiro","country":"Brazil","country_emoji":"🇧🇷","event_date":"2018-05-12","event_name":"UFC 224: Nunes vs. Pennington","event_slug":"20180512","fighter":"Junior Albini","fighter_age":27,"fighter_country":"🇧🇷","fighter_last5":"LW","fighter_plot_rtg":2572,"fighter_rank":14,"fighter_record":"1-1","fighter_rtg":2624,"method":"SUB","opp_bonus":true,"opp_perf_of_the_night":true,"opponent_age":40,"opponent_country":"🇷🇺","opponent_last5":"WLWWL","opponent_name":"Aleksei Oleinik","opponent_rank":10,"opponent_record":"4-2","opponent_rtg":2804,"opponent_slug":"alekseioleinik","result":"Loss","round":1,"time":"01:45","venue":"Jeunesse Arena","weight_class":"Heavyweight"},{"bout_order":1,"city":"Norfolk, Virginia","country":"United States","country_emoji":"🇺🇸","event_date":"2017-11-11","event_name":"UFC Fight Night: Poirier vs. Pettis","event_slug":"20171111","fighter":"Junior Albini","fighter_age":26,"fighter_country":"🇧🇷","fighter_last5":"W","fighter_plot_rtg":2624,"fighter_rank":12,"fighter_record":"1-0","fighter_rtg":2750,"method":"DEC","opponent_age":38,"opponent_country":"🇧🇾 🇺🇸","opponent_last5":"LLLLL","opponent_name":"Andrei Arlovski","opponent_rank":13,"opponent_record":"14-9","opponent_rtg":2659,"opponent_slug":"andreiarlovski","result":"Loss","round":3,"time":"05:00","venue":"Ted Constant Convocation Center","weight_class":"Heavyweight"},{"bout_order":1,"city":"Uniondale, New York","country":"United States","country_emoji":"🇺🇸","event_date":"2017-07-22","event_name":"UFC on Fox: Weidman vs. Gastelum","event_slug":"20170722","fighter":"Junior Albini","fighter_age":26,"fighter_country":"🇧🇷","fighter_last5":"","fighter_plot_rtg":2750,"fighter_record":"","fighter_rtg":2592,"method":"KO","opponent_age":32,"opponent_country":"🇺🇸","opponent_last5":"WLWLW","opponent_name":"Tim Johnson","opponent_rank":12,"opponent_record":"3-2","opponent_rtg":2821,"opponent_slug":"timjohnson","perf_of_the_night":true,"result":"Win","round":1,"time":"02:51","venue":"Nassau Veterans Memorial Coliseum","weight_class":"Heavyweight"}]'></div></div></div><script src=https://cdn.plot.ly/plotly-3.1.0.min.js></script><script>const chartElement=document.getElementById("fighter-performance-chart"),eloDataRaw=chartElement.dataset.elo,rankingsDataRaw=chartElement.dataset.rankings,eloData=eloDataRaw?JSON.parse(eloDataRaw):[],seen=new Map,eloDataFiltered=eloData.filter(e=>{const t=`${e.event_date}_${e.fighter_plot_rtg}`;return!seen.has(t)&&(seen.set(t,!0),!0)}),rankingsData=rankingsDataRaw?JSON.parse(rankingsDataRaw):[],hasElo=eloDataFiltered&&eloDataFiltered.length>1,hasRankings=rankingsData&&Object.keys(rankingsData).length>0,createEloTrace=(e="x",t="y")=>({x:eloDataFiltered.map(e=>e.event_date),y:eloDataFiltered.map(e=>e.fighter_plot_rtg),customdata:eloDataFiltered.map(e=>[e.opponent_name,e.result]),type:"scatter",mode:"lines+markers",line:{color:"#d4636a",width:3,shape:"vh"},marker:{size:10,color:"#d4636a"},hovertemplate:"%{x|%Y-%m-%d}<br>%{y} Elo<br>vs %{customdata[0]}<br>%{customdata[1]}<extra></extra>",name:"Elo",xaxis:e,yaxis:t}),createRankingsTraces=(e,t="x",n="y")=>{const s=["#65c1eb","#85ceb7","#fda481"],o={"Pound-for-Pound":"#FBBF24","Men's Pound-for-Pound":"#a4b3d5","Women's Pound-for-Pound":"#eca1cf"},a=["Pound-for-Pound","Men's Pound-for-Pound","Women's Pound-for-Pound","Flyweight","Bantamweight","Featherweight","Lightweight","Welterweight","Middleweight","Light Heavyweight","Heavyweight","Women's Flyweight","Women's Featherweight","Women's Strawweight","Women's Bantamweight"],r=a.filter(e=>rankingsData[e]);let i=0;return r.map(e=>{const a=rankingsData[e];let r;return o[e]?r=o[e]:(r=s[i%s.length],i++),{x:a.map(e=>e.date),y:a.map(e=>e.rank),type:"scatter",mode:"markers",marker:{size:10,opacity:.8,color:r},hovertemplate:a.map(t=>`${t.date}<br>${t.rank===0?"Champion":"#"+t.rank}<br>${e}<extra></extra>`),name:e,xaxis:t,yaxis:n}})};let traces=[],layout={margin:{t:0,b:0,l:30,r:0},width:600,paper_bgcolor:"#f7f5f0",plot_bgcolor:"#f7f5f0"},title="",height=450;hasElo&&hasRankings?(traces=[createEloTrace("x","y"),...createRankingsTraces(rankingsData,"x2","y2")],title="Elo Rating & UFC Rankings",height=800,layout={...layout,grid:{rows:2,columns:1,subplots:[["xy"],["x2y2"]],roworder:"top to bottom",ygap:.1},showlegend:!0,legend:{orientation:"h",xanchor:"center",x:.5,y:-.03},xaxis:{gridcolor:"#e1e1e1",title:"",matches:"x2"},yaxis:{gridcolor:"#e1e1e1",title:""},xaxis2:{gridcolor:"#e1e1e1",title:"",matches:"x"},yaxis2:{range:[15.5,-.5],tickvals:[15,14,13,12,11,10,9,8,7,6,5,4,3,2,1,0],ticktext:["15","14","13","12","11","10","9","8","7","6","5","4","3","2","1","C"],gridcolor:"#e1e1e1",zeroline:!1,title:""}},document.querySelector(".chart-section h2").textContent=title,chartElement.style.height=height+"px",layout.height=height,Plotly.newPlot("fighter-performance-chart",traces,layout,{displayModeBar:!1,responsive:!0})):hasElo?(traces=[createEloTrace()],title="Elo Rating",layout={...layout,showlegend:!1,legend:{orientation:"h",xanchor:"center",x:.5,y:-.1},margin:{t:0,b:50,l:30,r:0},xaxis:{gridcolor:"#e1e1e1",title:""},yaxis:{gridcolor:"#e1e1e1",title:""}},document.querySelector(".chart-section h2").textContent=title,chartElement.style.height=height+"px",layout.height=height,Plotly.newPlot("fighter-performance-chart",traces,layout,{displayModeBar:!1,responsive:!0})):hasRankings&&(traces=createRankingsTraces(rankingsData),title="UFC Rankings",layout={...layout,showlegend:!0,legend:{orientation:"h",xanchor:"center",x:.5,y:-.1},margin:{t:0,b:50,l:30,r:0},xaxis:{gridcolor:"#e1e1e1",title:""},yaxis:{range:[15.5,-.5],tickvals:[15,14,13,12,11,10,9,8,7,6,5,4,3,2,1,0],ticktext:["15","14","13","12","11","10","9","8","7","6","5","4","3","2","1","C"],gridcolor:"#e1e1e1",zeroline:!1,title:""}},document.querySelector(".chart-section h2").textContent=title,chartElement.style.height=height+"px",layout.height=height,Plotly.newPlot("fighter-performance-chart",traces,layout,{displayModeBar:!1,responsive:!0}))</script><div class=fight-results><h2>Bout History</h2><div class=event_bouts><div class=bout-row><div class="side_info bout-event"><br><span class=event-date><a href=/events/20190629.html>2019-06-29</a></span><br><span class=event-name><a href=/events/20190629.html>UFC on ESPN: Ngannou vs. dos Santos</a></span></div><div class="bout-fighter bout-left"><br><b><a href=/fighters/mauricegreene.html>Maurice Greene</a></b> (32) <span class=emoji>🇺🇸</span><br><span class="wldn-letter letter-W">W</span>
+<span class="wldn-letter letter-W">W</span>
+• 2-0<br>Elo: 2666</div><div class=result_description><span class=weightclass>HEAVYWEIGHT</span><br>TKO<br>R1<br>03:38</div><div class="bout-fighter bout-right"><br><span class=emoji>🇧🇷 </span><b>Junior Albini</b> (28)<br>1-3 •
+<span class="wldn-letter letter-L">L</span>
+<span class="wldn-letter letter-L">L</span>
+<span class="wldn-letter letter-L">L</span>
+<span class="wldn-letter letter-W">W</span><br>Elo: 2445</div><div class="side_info bout-venue"><br>Target Center<br>Minneapolis, Minnesota<br>United States <span class=emoji>🇺🇸</span></div></div><div class=bout-row><div class="side_info bout-event"><br><span class=event-date><a href=/events/20190202.html>2019-02-02</a></span><br><span class=event-name><a href=/events/20190202.html>UFC Fight Night: Assunção vs. Moraes 2</a></span></div><div class="bout-fighter bout-left"><br><b><a href=/fighters/jairzinhorozenstruik.html>Jairzinho Rozenstruik</a></b> (30) <span class=emoji>🇸🇷</span><br>Debut 🔰<br>Elo: 2476</div><div class=result_description><span class=weightclass>HEAVYWEIGHT</span><br>TKO<br>R2<br>00:54</div><div class="bout-fighter bout-right"><br><span class=emoji>🇧🇷 </span><b>Junior Albini</b> (27)<br>1-2 •
+<span class="wldn-letter letter-L">L</span>
+<span class="wldn-letter letter-L">L</span>
+<span class="wldn-letter letter-W">W</span><br>Elo: <span class=favorite-elo>2572</span></div><div class="side_info bout-venue"><br>Centro de Formação Olímpica do Nordeste<br>Fortaleza<br>Brazil <span class=emoji>🇧🇷</span></div></div><div class=bout-row><div class="side_info bout-event"><br><span class=event-date><a href=/events/20180512.html>2018-05-12</a></span><br><span class=event-name><a href=/events/20180512.html>UFC 224: Nunes vs. Pennington</a></span></div><div class="bout-fighter bout-left"><br><span title='Performance of the Night' class=cursor-pointer>⭐
+</span><b><a href=/fighters/alekseioleinik.html>Aleksei Oleinik</a></b> (40) <span class=emoji>🇷🇺</span><br><span class="wldn-letter letter-W">W</span>
+<span class="wldn-letter letter-L">L</span>
+<span class="wldn-letter letter-W">W</span>
+<span class="wldn-letter letter-W">W</span>
+<span class="wldn-letter letter-L">L</span>
+• 4-2<br>Elo: 2804
+• UFC rank: #10</div><div class=result_description><span class=weightclass>HEAVYWEIGHT</span><br>SUB<br>R1<br>01:45</div><div class="bout-fighter bout-right"><br><span class=emoji>🇧🇷 </span><b>Junior Albini</b> (27)<br>1-1 •
+<span class="wldn-letter letter-L">L</span>
+<span class="wldn-letter letter-W">W</span><br>UFC rank: #14 •
+Elo: 2624</div><div class="side_info bout-venue"><br>Jeunesse Arena<br>Rio de Janeiro<br>Brazil <span class=emoji>🇧🇷</span></div></div><div class=bout-row><div class="side_info bout-event"><br><span class=event-date><a href=/events/20171111.html>2017-11-11</a></span><br><span class=event-name><a href=/events/20171111.html>UFC Fight Night: Poirier vs. Pettis</a></span></div><div class="bout-fighter bout-left"><br><b><a href=/fighters/andreiarlovski.html>Andrei Arlovski</a></b> (38) <span class=emoji>🇧🇾 🇺🇸</span><br><span class="wldn-letter letter-L">L</span>
+<span class="wldn-letter letter-L">L</span>
+<span class="wldn-letter letter-L">L</span>
+<span class="wldn-letter letter-L">L</span>
+<span class="wldn-letter letter-L">L</span>
+• 14-9<br>Elo: 2659
+• UFC rank: #13</div><div class=result_description><span class=weightclass>HEAVYWEIGHT</span><br>DEC<br>R3<br>05:00</div><div class="bout-fighter bout-right"><br><span class=emoji>🇧🇷 </span><b>Junior Albini</b> (26)<br>1-0 •
+<span class="wldn-letter letter-W">W</span><br>UFC rank: #12 •
+Elo: <span class=favorite-elo>2750</span></div><div class="side_info bout-venue"><br>Ted Constant Convocation Center<br>Norfolk, Virginia<br>United States <span class=emoji>🇺🇸</span></div></div><div class=bout-row><div class="side_info bout-event"><br><span class=event-date><a href=/events/20170722.html>2017-07-22</a></span><br><span class=event-name><a href=/events/20170722.html>UFC on Fox: Weidman vs. Gastelum</a></span></div><div class="bout-fighter bout-left"><br><span title='Performance of the Night' class=cursor-pointer>⭐
+</span><b>Junior Albini</b> (26) <span class=emoji>🇧🇷</span><br>Debut 🔰<br>Elo: 2592</div><div class=result_description><span class=weightclass>HEAVYWEIGHT</span><br>KO<br>R1<br>02:51</div><div class="bout-fighter bout-right"><br><span class=emoji>🇺🇸</span>
+<b><a href=/fighters/timjohnson.html>Tim Johnson</a></b> (32)<br>3-2 •
+<span class="wldn-letter letter-W">W</span>
+<span class="wldn-letter letter-L">L</span>
+<span class="wldn-letter letter-W">W</span>
+<span class="wldn-letter letter-L">L</span>
+<span class="wldn-letter letter-W">W</span><br>Elo: 2821
+• UFC rank: #12</div><div class="side_info bout-venue"><br>Nassau Veterans Memorial Coliseum<br>Uniondale, New York<br>United States <span class=emoji>🇺🇸</span></div></div></div></div></main><footer><div class=footer-container><p class=copyright-text><a href=/glossary.html>Glossary</a>
+<a href=mailto:rostertracker@gmail.com>Contact</a></p></div><div class=footer-container><p class=copyright-text>Copyright © <span id=currentYear></span> All Rights Reserved by
+<a href=#>roster.watch</a></p></div></footer><style>.footer-container{display:flex;justify-content:space-between;align-items:center;padding:1rem}.copyright-text{margin:0 auto}.browser-badge{margin-left:auto}</style><script>document.getElementById("currentYear").textContent=(new Date).getFullYear()</script></div></body></html>

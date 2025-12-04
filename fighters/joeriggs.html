@@ -1,492 +1,122 @@
-<!DOCTYPE html>
-
-<html lang="en" xml:lang="en">
-
-<head>
-
-<meta charset="utf-8" />
-<meta name="generator" content="pandoc" />
-<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
-
-
-
-
-<title>Joe Riggs UFC Record &amp; Stats: Interactive Charts · roster.watch</title>
-
-<script src="fighter_libs/header-attrs-2.29/header-attrs.js"></script>
-<script src="fighter_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<link href="fighter_libs/bootstrap-3.3.5/css/bootstrap.min.css" rel="stylesheet" />
-<script src="fighter_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
-<script src="fighter_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
-<script src="fighter_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
-<style>h1 {font-size: 34px;}
-       h1.title {font-size: 38px;}
-       h2 {font-size: 30px;}
-       h3 {font-size: 24px;}
-       h4 {font-size: 18px;}
-       h5 {font-size: 16px;}
-       h6 {font-size: 12px;}
-       code {color: inherit; background-color: rgba(0, 0, 0, 0.04);}
-       pre:not([class]) { background-color: white }</style>
-<script src="fighter_libs/navigation-1.1/tabsets.js"></script>
-<link href="fighter_libs/highlightjs-9.12.0/default.css" rel="stylesheet" />
-<script src="fighter_libs/highlightjs-9.12.0/highlight.js"></script>
-<link href="fighter_libs/htmltools-fill-0.5.8.1/fill.css" rel="stylesheet" />
-<script src="fighter_libs/htmlwidgets-1.6.4/htmlwidgets.js"></script>
-<script src="fighter_libs/plotly-binding-4.11.0/plotly.js"></script>
-<script src="fighter_libs/typedarray-0.1/typedarray.min.js"></script>
-<link href="fighter_libs/crosstalk-1.2.1/css/crosstalk.min.css" rel="stylesheet" />
-<script src="fighter_libs/crosstalk-1.2.1/js/crosstalk.min.js"></script>
-<link href="fighter_libs/plotly-htmlwidgets-css-2.11.1/plotly-htmlwidgets.css" rel="stylesheet" />
-<script src="fighter_libs/plotly-main-2.11.1/plotly-latest.min.js"></script>
-<script src="fighter_libs/core-js-2.5.3/shim.min.js"></script>
-<script src="fighter_libs/react-18.2.0/react.min.js"></script>
-<script src="fighter_libs/react-18.2.0/react-dom.min.js"></script>
-<script src="fighter_libs/reactwidget-2.0.0/react-tools.js"></script>
-<link href="fighter_libs/reactable-0.4.4/reactable.css" rel="stylesheet" />
-<script src="fighter_libs/reactable-binding-0.4.4/reactable.js"></script>
-<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-<link rel="manifest" href="/site.webmanifest">
-<meta name="description" content="An up-to-date list of the full active UFC roster including biographical data, rankings, records, and more.">
-<!-- <meta property="og:title" content="roster.watch" />
-<meta property="og:type" content="website" />
-<meta property="og:url" content="https://www.roster.watch/" />
-<meta property="og:image" content="https://www.roster.watch/og_image.png" />
-<meta property="og:description" content="An up-to-date list of the full active UFC roster including biographical data, rankings, record, and more." />
-<script src="https://unpkg.com/twemoji@latest/dist/twemoji.min.js" crossorigin="anonymous"></script> 
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7299518767310567"
-     crossorigin="anonymous"></script> -->
-<script data-goatcounter="https://rosterwatch.goatcounter.com/count"
-        async src="//gc.zgo.at/count.js"></script>
-<script defer src="/script.js" data-website-id="f0f3ed7e-e89c-4a29-a745-475e0b10271a"></script>
-
-<style type="text/css">
-  code{white-space: pre-wrap;}
-  span.smallcaps{font-variant: small-caps;}
-  span.underline{text-decoration: underline;}
-  div.column{display: inline-block; vertical-align: top; width: 50%;}
-  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
-  ul.task-list{list-style: none;}
-    </style>
-
-<style type="text/css">code{white-space: pre;}</style>
-<script type="text/javascript">
-if (window.hljs) {
-  hljs.configure({languages: []});
-  hljs.initHighlightingOnLoad();
-  if (document.readyState && document.readyState === "complete") {
-    window.setTimeout(function() { hljs.initHighlighting(); }, 0);
-  }
-}
-</script>
-
-
-
-
-
-
-<link rel="stylesheet" href="../style.css" type="text/css" />
-
-
-
-<style type = "text/css">
-.main-container {
-  max-width: 940px;
-  margin-left: auto;
-  margin-right: auto;
-}
-img {
-  max-width:100%;
-}
-.tabbed-pane {
-  padding-top: 12px;
-}
-.html-widget {
-  margin-bottom: 20px;
-}
-button.code-folding-btn:focus {
-  outline: none;
-}
-summary {
-  display: list-item;
-}
-details > summary > p:only-child {
-  display: inline;
-}
-pre code {
-  padding: 0;
-}
-</style>
-
-
-<style type="text/css">
-.dropdown-submenu {
-  position: relative;
-}
-.dropdown-submenu>.dropdown-menu {
-  top: 0;
-  left: 100%;
-  margin-top: -6px;
-  margin-left: -1px;
-  border-radius: 0 6px 6px 6px;
-}
-.dropdown-submenu:hover>.dropdown-menu {
-  display: block;
-}
-.dropdown-submenu>a:after {
-  display: block;
-  content: " ";
-  float: right;
-  width: 0;
-  height: 0;
-  border-color: transparent;
-  border-style: solid;
-  border-width: 5px 0 5px 5px;
-  border-left-color: #cccccc;
-  margin-top: 5px;
-  margin-right: -10px;
-}
-.dropdown-submenu:hover>a:after {
-  border-left-color: #adb5bd;
-}
-.dropdown-submenu.pull-left {
-  float: none;
-}
-.dropdown-submenu.pull-left>.dropdown-menu {
-  left: -100%;
-  margin-left: 10px;
-  border-radius: 6px 0 6px 6px;
-}
-</style>
-
-<script type="text/javascript">
-// manage active state of menu based on current page
-$(document).ready(function () {
-  // active menu anchor
-  href = window.location.pathname
-  href = href.substr(href.lastIndexOf('/') + 1)
-  if (href === "")
-    href = "index.html";
-  var menuAnchor = $('a[href="' + href + '"]');
-
-  // mark the anchor link active (and if it's in a dropdown, also mark that active)
-  var dropdown = menuAnchor.closest('li.dropdown');
-  if (window.bootstrap) { // Bootstrap 4+
-    menuAnchor.addClass('active');
-    dropdown.find('> .dropdown-toggle').addClass('active');
-  } else { // Bootstrap 3
-    menuAnchor.parent().addClass('active');
-    dropdown.addClass('active');
-  }
-
-  // Navbar adjustments
-  var navHeight = $(".navbar").first().height() + 15;
-  var style = document.createElement('style');
-  var pt = "padding-top: " + navHeight + "px; ";
-  var mt = "margin-top: -" + navHeight + "px; ";
-  var css = "";
-  // offset scroll position for anchor links (for fixed navbar)
-  for (var i = 1; i <= 6; i++) {
-    css += ".section h" + i + "{ " + pt + mt + "}\n";
-  }
-  style.innerHTML = "body {" + pt + "padding-bottom: 40px; }\n" + css;
-  document.head.appendChild(style);
-});
-</script>
-
-<!-- tabsets -->
-
-<style type="text/css">
-.tabset-dropdown > .nav-tabs {
-  display: inline-table;
-  max-height: 500px;
-  min-height: 44px;
-  overflow-y: auto;
-  border: 1px solid #ddd;
-  border-radius: 4px;
-}
-
-.tabset-dropdown > .nav-tabs > li.active:before, .tabset-dropdown > .nav-tabs.nav-tabs-open:before {
-  content: "\e259";
-  font-family: 'Glyphicons Halflings';
-  display: inline-block;
-  padding: 10px;
-  border-right: 1px solid #ddd;
-}
-
-.tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
-  content: "\e258";
-  font-family: 'Glyphicons Halflings';
-  border: none;
-}
-
-.tabset-dropdown > .nav-tabs > li.active {
-  display: block;
-}
-
-.tabset-dropdown > .nav-tabs > li > a,
-.tabset-dropdown > .nav-tabs > li > a:focus,
-.tabset-dropdown > .nav-tabs > li > a:hover {
-  border: none;
-  display: inline-block;
-  border-radius: 4px;
-  background-color: transparent;
-}
-
-.tabset-dropdown > .nav-tabs.nav-tabs-open > li {
-  display: block;
-  float: none;
-}
-
-.tabset-dropdown > .nav-tabs > li {
-  display: none;
-}
-</style>
-
-<!-- code folding -->
-
-
-
-
-</head>
-
-<body>
-
-
-<div class="container-fluid main-container">
-
-
-
-<header>
-    <a class="logo" href="/"><img src="/images/logo.svg" alt="logo"></a>
-    <nav>
-        <ul class="nav__links">
-            <li><a href="/">Current Roster</a></li>
-            <li><a href="/former.html">Former Roster</a></li>
-            <li class="dropdown">
-                <a href="#" onclick="return false;">Weight Classes</a>
-<ul class="dropdown-content">
-                    <li><a href="/heavyweight.html">Heavyweight</a></li>
-                    <li><a href="/lightheavyweight.html">Light Heavyweight</a></li>
-                    <li><a href="/middleweight.html">Middleweight</a></li>
-                    <li><a href="/welterweight.html">Welterweight</a></li>
-                    <li><a href="/lightweight.html">Lightweight</a></li>
-                    <li><a href="/featherweight.html">Featherweight</a></li>
-                    <li><a href="/bantamweight.html">Bantamweight</a></li>
-                    <li><a href="/flyweight.html">Flyweight</a></li>
-                    <li><a href="/womensbantamweight.html">Women's Bantamweight</a></li>
-                    <li><a href="/womensflyweight.html">Women's Flyweight</a></li>
-                    <li><a href="/womensstrawweight.html">Women's Strawweight</a></li>
-                </ul>
-            </li>
-            <li><a href="/events">Events</a></li>
-            <li><a href="/log.html">Log</a></li>
-            <li><a href="javascript:void(0)" onclick="getRandomPage()">Random Page</a></li>
-            <li><a href="https://rosterwatch.printify.me/">Merch</a></li>
-            <li><a href="https://www.patreon.com/bePatron?u=88266864">Support on Patreon</a></li>
-        </ul>
-    </nav>
-    <div class="menu cta">Menu</div>
-</header>
-
-<div class="overlay">
-    <a class="close">×</a>
-    <div class="overlay__content">
-        <a href="/">Current Roster</a>
-        <a href="/former.html">Former Roster</a>
-        <div class="dropdown-mobile">
-            <a href="#" onclick="return false;">Weight Classes</a>
-<div class="dropdown-content-mobile">
-                <a href="/heavyweight.html">Heavyweight</a>
-                <a href="/lightheavyweight.html">Light Heavyweight</a>
-                <a href="/middleweight.html">Middleweight</a>
-                <a href="/welterweight.html">Welterweight</a>
-                <a href="/lightweight.html">Lightweight</a>
-                <a href="/featherweight.html">Featherweight</a>
-                <a href="/bantamweight.html">Bantamweight</a>
-                <a href="/flyweight.html">Flyweight</a>
-                <a href="/womensbantamweight.html">Women's Bantamweight</a>
-                <a href="/womensflyweight.html">Women's Flyweight</a>
-                <a href="/womensstrawweight.html">Women's Strawweight</a>
-            </div>
-        </div>
-        <a href="/events">Events</a>
-        <a href="/log.html">Log</a>
-        <a href="javascript:void(0)" onclick="getRandomPage()">Random Page</a>
-        <a href="https://rosterwatch.printify.me/">Merch</a>
-        <a href="https://www.patreon.com/bePatron?u=88266864">Support on Patreon</a>
-    </div>
-</div>
-<script type="text/javascript" src="/mobile.js"></script>
-    <script>
-      function getRandomPage() {
-        fetch('/sitemap.xml')
-          .then(response => response.text())
-          .then(xmlText => {
-            const parser = new DOMParser();
-            const xmlDoc = parser.parseFromString(xmlText, 'application/xml');
-            const urls = Array.from(xmlDoc.getElementsByTagName('loc')).map(loc => loc.textContent);
-            const randomPage = urls[Math.floor(Math.random() * urls.length)];
-            window.location.href = randomPage;
-          });
-      }
-    </script>
-
-<div id="header">
-
-
-
-<h1 class="title toc-ignore">Joe Riggs UFC Record &amp; Stats:
-Interactive Charts · roster.watch</h1>
-
-</div>
-
-
-<script type="application/ld+json">{
-  "@context": "https://schema.org",
-  "@type": "Person",
-  "name": "Joe Riggs",
-  "birthDate": "1982-09-23",
-  "nationality": "United States",
-  "memberOf": {
-    "@type": "SportsOrganization",
-    "name": "UFC",
-    "sport": "Mixed Martial Arts"
-  },
-  "additionalProperty": [
-    {
-      "@type": "PropertyValue",
-      "name": "UFC Record",
-      "value": "5-7"
-    },
-    {
-      "@type": "PropertyValue",
-      "name": "Bonuses",
-      "value": "1"
-    }
-  ]
-}</script>
-<article class="event-info" style="display: flex; flex-direction: column; align-items: center; justify-content: center; width: 100%; height: auto;"><div class="fighter-info" style="text-align: center; margin-bottom: 20px;"><h2 style='font-weight: bold; font-size: 1.1em; margin: 0;'>Joe Riggs <span class='emoji'>🇺🇸</span></h2><time datetime='1982-09-23'><p><span>1982-09-23</span><script>document.currentScript.parentElement.innerHTML = (function(){  const dob = new Date('1982-09-23');  const today = new Date();  let years = today.getFullYear() - dob.getFullYear();  const monthDiff = today.getMonth() - dob.getMonth();  if (monthDiff < 0 || (monthDiff === 0 && today.getDate() < dob.getDate())) {    years--;  }  const yearAnniversary = new Date(dob);  yearAnniversary.setFullYear(dob.getFullYear() + years);  const dayDiff = Math.floor((today - yearAnniversary) / (1000 * 60 * 60 * 24));  const isBirthday = today.getMonth() === dob.getMonth() && today.getDate() === dob.getDate();  let ageString = `${years} year${years !== 1 ? 's' : ''}`;  if (dayDiff > 0) {    ageString += ` ${dayDiff} day${dayDiff !== 1 ? 's' : ''}`;  }  return `${ageString}${isBirthday ? ' 🎂' : ''} <br><span class='event-date'> (${dob.toISOString().split('T')[0]}) </span>`;}());</script></p></time></div><div style="display: flex; justify-content: center; align-items: flex-start; gap: 40px; max-width: 600px; width: 100%;"><div class="event-details" style="width: 50%;"><div class='event-stats'><p><strong>Record:</strong> 5-7<br></p><p><strong>By Method:</strong></p><ul><li> KO/TKO: 1-2</li><li> Submission: 2-4</li><li> Decision: 1-1</li></ul><p><strong>By Elo:</strong></p><ul><li>As Favorite: 3-2</li><li>As Underdog: 2-5</li></ul><p><strong>By Weight Class:</strong></p><ul><li>Middleweight: 2-3</li><li>Welterweight: 3-3</li></ul><p><strong>By Round:</strong></p><ul><li>Round 1: 1-6</li><li>Round 2: 3-0</li><li>Round 3: 1-1</li></ul></div></div><div class="rankings" style="width: 50%;"><p><strong>Status:</strong> Former UFC Fighter</p><p><strong>Last 5:</strong> <span style='display: inline-block;width: 1.25em;
-height: 1.25em;
-line-height: 1.25em; font-size: 0.8em;
- text-align: center; border-radius: 50%; background-color: crimson; color: white; font-weight: bold;'>L</span> <span style='display: inline-block;width: 1.25em;
-height: 1.25em;
-line-height: 1.25em; font-size: 0.8em;
- text-align: center; border-radius: 50%; background-color: crimson; color: white; font-weight: bold;'>L</span> <span style='display: inline-block;width: 1.25em;
-height: 1.25em;
-line-height: 1.25em; font-size: 0.8em;
- text-align: center; border-radius: 50%; background-color: crimson; color: white; font-weight: bold;'>L</span> <span style='display: inline-block;width: 1.25em;
-height: 1.25em;
-line-height: 1.25em; font-size: 0.8em;
- text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W</span> <span style='display: inline-block;width: 1.25em;
-height: 1.25em;
-line-height: 1.25em; font-size: 0.8em;
- text-align: center; border-radius: 50%; background-color: crimson; color: white; font-weight: bold;'>L</span></p><p><strong>Peak Elo:</strong> 2752<span class='event-date'> (2006-02-04)</span></p><p><strong>Bonuses:</strong> 1 (0 FOTN, 1 Performance)</p><p><strong>Avg Fight Time:</strong> 5m 34s</p><p><strong>Total Fight Time:</strong> 1h 6m 45s</p></div></div></article>
-<h2 style='font-size: 1em; margin: 0; text-align: center; font-weight: bold;'>Elo Rating</h2>
-<div style="display: flex; justify-content: center; width: 100%; margin-top: 20px; margin-bottom: 20px;">
-<div id="fighter-performance-chart" style="width: 100%; max-width: 600px; height: 450px;">
-<div class="plotly html-widget html-fill-item" id="htmlwidget-14430850ca21de293a66" style="width:100%;height:400px;"></div>
-<script type="application/json" data-for="htmlwidget-14430850ca21de293a66">{"x":{"visdat":{"3d8051187bcd":["function () ","plotlyVisDat"]},"cur_data":"3d8051187bcd","attrs":{"3d8051187bcd":{"x":{},"y":{},"mode":"lines+markers","line":{"color":"#d12d36","width":3,"shape":"hv"},"marker":{"size":10,"color":"#d12d36"},"hoverinfo":"text","text":{},"name":"Elo","alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"type":"scatter"}},"layout":{"height":450,"margin":{"b":40,"l":60,"t":0,"r":10},"yaxis":{"domain":[0,1],"automargin":true,"gridcolor":"#e1e1e1","title":""},"showlegend":false,"legend":{"orientation":"h","xanchor":"center","x":0.5,"y":-100},"xaxis":{"domain":[0,1],"automargin":true,"title":"","gridcolor":"#e1e1e1"},"hovermode":"closest"},"source":"A","config":{"modeBarButtonsToAdd":["hoverclosest","hovercompare"],"showSendToCloud":false,"displayModeBar":false},"data":[{"x":["2004-08-21","2005-04-16","2005-10-07","2005-11-19","2006-02-04","2006-05-27","2006-08-17","2006-12-13","2014-12-13","2015-04-25","2015-09-05","2016-02-21"],"y":[2684,2570,2701,2664,2752,2602,2653,2625,2581,2523,2630,2572],"mode":"lines+markers","line":{"color":"#d12d36","width":3,"shape":"hv"},"marker":{"color":"#d12d36","size":10,"line":{"color":"rgba(31,119,180,1)"}},"hoverinfo":["text","text","text","text","text","text","text","text","text","text","text","text"],"text":["2004-08-21 <br> 2684 Elo <br> Joe Doerksen <br> Win","2005-04-16 <br> 2570 Elo <br> Ivan Salaverry <br> Loss","2005-10-07 <br> 2701 Elo <br> Chris Lytle <br> Win","2005-11-19 <br> 2664 Elo <br> Matt Hughes <br> Loss","2006-02-04 <br> 2752 Elo <br> Nick Diaz <br> Win","2006-05-27 <br> 2602 Elo <br> Mike Swick <br> Loss","2006-08-17 <br> 2653 Elo <br> Jason Von Flue <br> Win","2006-12-13 <br> 2625 Elo <br> Diego Sanchez <br> Loss","2014-12-13 <br> 2581 Elo <br> Ben Saunders <br> Loss","2015-04-25 <br> 2523 Elo <br> Patrick Cote <br> Loss","2015-09-05 <br> 2630 Elo <br> Ronald Stallings <br> Win","2016-02-21 <br> 2572 Elo <br> Chris Camozzi <br> Loss"],"name":"Elo","type":"scatter","error_y":{"color":"rgba(31,119,180,1)"},"error_x":{"color":"rgba(31,119,180,1)"},"xaxis":"x","yaxis":"y","frame":null}],"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.20000000000000001,"selected":{"opacity":1},"debounce":0},"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot","plotly_sunburstclick"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script>
-</div>
-</div>
-<h2 style='font-size: 1em; margin: 0; text-align: center; font-weight: bold;'>Bout History</h2>
-<div class="reactable html-widget html-fill-item" id="htmlwidget-2f96ea40965604532ffa" style="width:auto;height:auto;"></div>
-<script type="application/json" data-for="htmlwidget-2f96ea40965604532ffa">{"x":{"tag":{"name":"Reactable","attribs":{"data":{"event_date":["<br><span class = 'event-date'>2016-02-21<\/span><br><a href='/events/20160221.html'>UFC Fight Night: Cowboy vs. Cowboy<\/a>","<br><span class = 'event-date'>2015-09-05<\/span><br><a href='/events/20150905.html'>UFC 191: Johnson vs Dodson 2<\/a>","<br><span class = 'event-date'>2015-04-25<\/span><br><a href='/events/20150425.html'>UFC 186: Johnson vs. Horiguchi<\/a>","<br><span class = 'event-date'>2014-12-13<\/span><br><a href='/events/20141213.html'>UFC on Fox: dos Santos vs. Miocic<\/a>","<br><span class = 'event-date'>2006-12-13<\/span><br><a href='/events/20061213.html'>UFC Fight Night: Sanchez vs. Riggs<\/a>","<br><span class = 'event-date'>2006-08-17<\/span><br><a href='/events/20060817.html'>UFC Fight Night: Sanchez vs. Parisyan<\/a>","<br><span class = 'event-date'>2006-05-27<\/span><br><a href='/events/20060527.html'>UFC 60: Hughes vs. Gracie<\/a>","<br><span class = 'event-date'>2006-02-04<\/span><br><a href='/events/20060204.html'>UFC 57: Liddell vs. Couture 3<\/a>","<br><span class = 'event-date'>2005-11-19<\/span><br><a href='/events/20051119.html'>UFC 56: Full Force<\/a>","<br><span class = 'event-date'>2005-10-07<\/span><br><a href='/events/20051007.html'>UFC 55: Fury<\/a>","<br><span class = 'event-date'>2005-04-16<\/span><br><a href='/events/20050416.html'>UFC 52: Couture vs. Liddell 2<\/a>","<br><span class = 'event-date'>2004-08-21<\/span><br><a href='/events/20040821.html'>UFC 49: Unfinished Business<\/a>"],"fighter_name":["<br> <b><span title='Performance of the Night' style='cursor: pointer;'>⭐ <\/span><a href=/fighters/chriscamozzi.html>Chris Camozzi<\/a><\/b> (29) <span class = 'emoji'>🇺🇸<\/span><br><span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: crimson; color: white; font-weight: bold;'>L<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: crimson; color: white; font-weight: bold;'>L<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: crimson; color: white; font-weight: bold;'>L<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: crimson; color: white; font-weight: bold;'>L<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> • 7-7<br>Elo: <span class = 'favorite-elo'>2788<\/span>","<br> <b>Joe Riggs<\/b> (32) <span class = 'emoji'>🇺🇸<\/span><br><span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: crimson; color: white; font-weight: bold;'>L<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: crimson; color: white; font-weight: bold;'>L<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: crimson; color: white; font-weight: bold;'>L<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: crimson; color: white; font-weight: bold;'>L<\/span> • 4-6<br>Elo: 2523","<br> <b><a href=/fighters/patrickcote.html>Patrick Cote<\/a><\/b> (35) <span class = 'emoji'>🇨🇦<\/span><br><span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: crimson; color: white; font-weight: bold;'>L<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: crimson; color: white; font-weight: bold;'>L<\/span> • 7-9<br>Elo: <span class = 'favorite-elo'>2736<\/span>","<br> <b><a href=/fighters/bensaunders.html>Ben Saunders<\/a><\/b> (31) <span class = 'emoji'>🇺🇸<\/span><br><span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: crimson; color: white; font-weight: bold;'>L<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: crimson; color: white; font-weight: bold;'>L<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: crimson; color: white; font-weight: bold;'>L<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> • 5-3<br>Elo: <span class = 'favorite-elo'>2775<\/span>","<br> <b><a href=/fighters/diegosanchez.html>Diego Sanchez<\/a><\/b> (24) <span class = 'emoji'>🇺🇸<\/span><br><span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> • 5-0<br>Elo: <span class = 'favorite-elo'>2969<\/span>","<br> <b><span title='Performance of the Night' style='cursor: pointer;'>⭐ <\/span>Joe Riggs<\/b> (23) <span class = 'emoji'>🇺🇸<\/span><br><span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: crimson; color: white; font-weight: bold;'>L<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: crimson; color: white; font-weight: bold;'>L<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: crimson; color: white; font-weight: bold;'>L<\/span> • 3-3<br>Elo: <span class = 'favorite-elo'>2602<\/span>","<br> <b><a href=/fighters/mikeswick.html>Mike Swick<\/a><\/b> (26) <span class = 'emoji'>🇺🇸<\/span><br><span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> • 3-0<br>Elo: 2563","<br> <b>Joe Riggs<\/b> (23) <span class = 'emoji'>🇺🇸<\/span><br><span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: crimson; color: white; font-weight: bold;'>L<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: crimson; color: white; font-weight: bold;'>L<\/span> • 2-2<br>Elo: <span class = 'favorite-elo'>2664<\/span>","<br> <b><a href=/fighters/matthughes.html>Matt Hughes<\/a><\/b> (32) <span class = 'emoji'>🇺🇸<\/span><br><span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: crimson; color: white; font-weight: bold;'>L<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> • 11-2<br>Elo: <span class = 'favorite-elo'>2961<\/span>","<br> <b>Joe Riggs<\/b> (23) <span class = 'emoji'>🇺🇸<\/span><br><span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: crimson; color: white; font-weight: bold;'>L<\/span> • 1-1<br>Elo: <span class = 'favorite-elo'>2632<\/span>","<br> <b><a href=/fighters/ivansalaverry.html>Ivan Salaverry<\/a><\/b> (34) <span class = 'emoji'>🇨🇦<\/span><br><span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: crimson; color: white; font-weight: bold;'>L<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> • 2-1<br>Elo: 2558","<br> <b>Joe Riggs<\/b> (21) <span class = 'emoji'>🇺🇸<\/span><br>Debut 🔰<br>Elo: 2547"],"result_description":["<span style='font-size: 0.8em;'>MIDDLEWEIGHT<\/span><br>TKO<br>R1<br>00:26","<span style='font-size: 0.8em;'>MIDDLEWEIGHT<\/span><br>DQ<br>R2<br>02:28","<span style='font-size: 0.8em;'>WELTERWEIGHT<\/span><br>DEC<br>R3<br>05:00","<span style='font-size: 0.8em;'>WELTERWEIGHT<\/span><br>SUB<br>R1<br>00:57","<span style='font-size: 0.8em;'>WELTERWEIGHT<\/span><br>KO<br>R1<br>01:45","<span style='font-size: 0.8em;'>WELTERWEIGHT<\/span><br>SUB<br>R1<br>02:01","<span style='font-size: 0.8em;'>MIDDLEWEIGHT<\/span><br>SUB<br>R1<br>02:19","<span style='font-size: 0.8em;'>WELTERWEIGHT<\/span><br>DEC<br>R3<br>05:00","<span style='font-size: 0.8em;'>CATCHWEIGHT<\/span><br>SUB<br>R1<br>03:28","<span style='font-size: 0.8em;'>WELTERWEIGHT<\/span><br>TKO<br>R2<br>02:00","<span style='font-size: 0.8em;'>MIDDLEWEIGHT<\/span><br>SUB<br>R1<br>02:42","<span style='font-size: 0.8em;'>MIDDLEWEIGHT<\/span><br>TKO<br>R2<br>03:39"],"opponent_fighter_name":["<br><span class='emoji'>🇺🇸<\/span> <b>Joe Riggs<\/b> (33)<br>5-6 • <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: crimson; color: white; font-weight: bold;'>L<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: crimson; color: white; font-weight: bold;'>L<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: crimson; color: white; font-weight: bold;'>L<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span><br>Elo: 2630","<br><span class='emoji'>🇺🇸<\/span> <b><a href=/fighters/ronaldstallings.html>Ronald Stallings<\/a><\/b> (32)<br>1-1 • <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: crimson; color: white; font-weight: bold;'>L<\/span><br>Elo: <span class = 'favorite-elo'>2547<\/span>","<br><span class='emoji'>🇺🇸<\/span> <b>Joe Riggs<\/b> (32)<br>4-5 • <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: crimson; color: white; font-weight: bold;'>L<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: crimson; color: white; font-weight: bold;'>L<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: crimson; color: white; font-weight: bold;'>L<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span><br>Elo: 2581","<br><span class='emoji'>🇺🇸<\/span> <b>Joe Riggs<\/b> (32)<br>4-4 • <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: crimson; color: white; font-weight: bold;'>L<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: crimson; color: white; font-weight: bold;'>L<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: crimson; color: white; font-weight: bold;'>L<\/span><br>Elo: 2645","<br><span class='emoji'>🇺🇸<\/span> <b>Joe Riggs<\/b> (24)<br>4-3 • <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: crimson; color: white; font-weight: bold;'>L<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: crimson; color: white; font-weight: bold;'>L<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span><br>Elo: 2653","<br><span class='emoji'>🇺🇸<\/span> <b><a href=/fighters/jasonvonflue.html>Jason Von Flue<\/a><\/b> (31)<br>1-1 • <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: crimson; color: white; font-weight: bold;'>L<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span><br>Elo: 2416","<br><span class='emoji'>🇺🇸<\/span> <b>Joe Riggs<\/b> (23)<br>3-2 • <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: crimson; color: white; font-weight: bold;'>L<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: crimson; color: white; font-weight: bold;'>L<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span><br>Elo: <span class = 'favorite-elo'>2752<\/span>","<br><span class='emoji'>🇺🇸<\/span> <b><a href=/fighters/nickdiaz.html>Nick Diaz<\/a><\/b> (22)<br>4-2 • <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: crimson; color: white; font-weight: bold;'>L<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: crimson; color: white; font-weight: bold;'>L<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span><br>Elo: 2621","<br><span class='emoji'>🇺🇸<\/span> <b>Joe Riggs<\/b> (23)<br>2-1 • <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: crimson; color: white; font-weight: bold;'>L<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span><br>Elo: 2701","<br><span class='emoji'>🇺🇸<\/span> <b><a href=/fighters/chrislytle.html>Chris Lytle<\/a><\/b> (31)<br>2-3 • <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: crimson; color: white; font-weight: bold;'>L<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: crimson; color: white; font-weight: bold;'>L<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: crimson; color: white; font-weight: bold;'>L<\/span><br>Elo: 2521","<br><span class='emoji'>🇺🇸<\/span> <b>Joe Riggs<\/b> (22)<br>1-0 • <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span><br>Elo: <span class = 'favorite-elo'>2711<\/span>","<br><span class='emoji'>🇨🇦<\/span> <b><a href=/fighters/joedoerksen.html>Joe Doerksen<\/a><\/b> (26)<br>🔰 Debut<br>Elo: <span class = 'favorite-elo'>2682<\/span>"],"City":["<br>Consol Energy Center<br>Pittsburgh, Pennsylvania<br>United States <span class='emoji'>🇺🇸<\/span>","<br>MGM Grand Garden Arena<br>Las Vegas, Nevada<br>United States <span class='emoji'>🇺🇸<\/span>","<br>Bell Centre<br>Montreal<br>Canada <span class='emoji'>🇨🇦<\/span>","<br>U.S. Airways Center<br>Phoenix, Arizona<br>United States <span class='emoji'>🇺🇸<\/span>","<br>MCAS Miramar<br>San Diego, California<br>United States <span class='emoji'>🇺🇸<\/span>","<br>Red Rock Resort Spa and Casino<br>Las Vegas, Nevada<br>United States <span class='emoji'>🇺🇸<\/span>","<br>Staples Center<br>Los Angeles, California<br>United States <span class='emoji'>🇺🇸<\/span>","<br>Mandalay Bay Events Center<br>Las Vegas, Nevada<br>United States <span class='emoji'>🇺🇸<\/span>","<br>MGM Grand Arena<br>Las Vegas, Nevada<br>United States <span class='emoji'>🇺🇸<\/span>","<br>Mohegan Sun Arena<br>Uncasville, Connecticut<br>United States <span class='emoji'>🇺🇸<\/span>","<br>MGM Grand Arena<br>Las Vegas, Nevada<br>United States <span class='emoji'>🇺🇸<\/span>","<br>MGM Grand Arena<br>Las Vegas, Nevada<br>United States <span class='emoji'>🇺🇸<\/span>"]},"columns":[{"id":"event_date","name":"","type":"character","html":true,"width":200,"className":"side_info"},{"id":"fighter_name","name":"","type":"character","html":true,"width":240,"align":"right"},{"id":"result_description","name":"","type":"character","html":true,"width":50,"align":"center","className":"result_description"},{"id":"opponent_fighter_name","name":"","type":"character","html":true,"width":240,"align":"left"},{"id":"City","name":"","type":"character","cell":["<div style=\"white-space: nowrap; overflow: visible;\"><br>Consol Energy Center<br>Pittsburgh, Pennsylvania<br>United States <span class='emoji'>🇺🇸<\/span><\/div>","<div style=\"white-space: nowrap; overflow: visible;\"><br>MGM Grand Garden Arena<br>Las Vegas, Nevada<br>United States <span class='emoji'>🇺🇸<\/span><\/div>","<div style=\"white-space: nowrap; overflow: visible;\"><br>Bell Centre<br>Montreal<br>Canada <span class='emoji'>🇨🇦<\/span><\/div>","<div style=\"white-space: nowrap; overflow: visible;\"><br>U.S. Airways Center<br>Phoenix, Arizona<br>United States <span class='emoji'>🇺🇸<\/span><\/div>","<div style=\"white-space: nowrap; overflow: visible;\"><br>MCAS Miramar<br>San Diego, California<br>United States <span class='emoji'>🇺🇸<\/span><\/div>","<div style=\"white-space: nowrap; overflow: visible;\"><br>Red Rock Resort Spa and Casino<br>Las Vegas, Nevada<br>United States <span class='emoji'>🇺🇸<\/span><\/div>","<div style=\"white-space: nowrap; overflow: visible;\"><br>Staples Center<br>Los Angeles, California<br>United States <span class='emoji'>🇺🇸<\/span><\/div>","<div style=\"white-space: nowrap; overflow: visible;\"><br>Mandalay Bay Events Center<br>Las Vegas, Nevada<br>United States <span class='emoji'>🇺🇸<\/span><\/div>","<div style=\"white-space: nowrap; overflow: visible;\"><br>MGM Grand Arena<br>Las Vegas, Nevada<br>United States <span class='emoji'>🇺🇸<\/span><\/div>","<div style=\"white-space: nowrap; overflow: visible;\"><br>Mohegan Sun Arena<br>Uncasville, Connecticut<br>United States <span class='emoji'>🇺🇸<\/span><\/div>","<div style=\"white-space: nowrap; overflow: visible;\"><br>MGM Grand Arena<br>Las Vegas, Nevada<br>United States <span class='emoji'>🇺🇸<\/span><\/div>","<div style=\"white-space: nowrap; overflow: visible;\"><br>MGM Grand Arena<br>Las Vegas, Nevada<br>United States <span class='emoji'>🇺🇸<\/span><\/div>"],"html":true,"width":200,"className":"side_info"}],"sortable":false,"pagination":false,"defaultPageSize":100,"showPageInfo":false,"nowrap":true,"className":"event_bouts","inline":true,"theme":{"headerStyle":{"borderBottom":"none"}},"dataKey":"7e6ec90bd516c69752e25140ffb07a18"},"children":[]},"class":"reactR_markup"},"evals":[],"jsHooks":[]}</script>
-
-<footer>
-  <div class="footer-container">
-    <p class="copyright-text">
-        <a href="/glossary.html">Glossary</a>
-      <a href="mailto:rostertracker@gmail.com">Contact</a>
-    </p>
-<!--     <p class="browser-badge">
-      <a href="https://www.mozilla.org/en-US/firefox/">
-        <img src="C:/Users/mart/Dropbox/R/roster.watch/firefox.png" title="Best viewed with Firefox" alt="Best viewed with Firefox"><br>
-        <small class="copyright-text">Best viewed with Firefox</small>
-      </a>
-    </p> 
- -->  </div>
- <div class="footer-container">
-    <p class="copyright-text">
-      Copyright © <span id="currentYear"></span> All Rights Reserved by 
-      <a href="#">roster.watch</a>
-    </p>
-<!--     <p class="browser-badge">
-      <a href="https://www.mozilla.org/en-US/firefox/">
-        <img src="C:/Users/mart/Dropbox/R/roster.watch/firefox.png" title="Best viewed with Firefox" alt="Best viewed with Firefox"><br>
-        <small class="copyright-text">Best viewed with Firefox</small>
-      </a>
-    </p> 
- -->  </div>
-</footer>
-
-<style>
-.footer-container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1rem;
-}
-
-.copyright-text {
-  margin: 0 auto;
-}
-
-.browser-badge {
-  margin-left: auto;
-}
-</style>
-
-<script>
-  document.getElementById('currentYear').textContent = new Date().getFullYear();
-</script>
-
-
-
-</div>
-
-<script>
-
-// add bootstrap table styles to pandoc tables
-function bootstrapStylePandocTables() {
-  $('tr.odd').parent('tbody').parent('table').addClass('table table-condensed');
-}
-$(document).ready(function () {
-  bootstrapStylePandocTables();
-});
-
-
-</script>
-
-<!-- tabsets -->
-
-<script>
-$(document).ready(function () {
-  window.buildTabsets("TOC");
-});
-
-$(document).ready(function () {
-  $('.tabset-dropdown > .nav-tabs > li').click(function () {
-    $(this).parent().toggleClass('nav-tabs-open');
-  });
-});
-</script>
-
-<!-- code folding -->
-
-
-<!-- dynamically load mathjax for compatibility with self-contained -->
-<script>
-  (function () {
-    var script = document.createElement("script");
-    script.type = "text/javascript";
-    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
-    document.getElementsByTagName("head")[0].appendChild(script);
-  })();
-</script>
-
-</body>
-</html>
+<!doctype html><html lang=en><head><meta charset=UTF-8><meta name=viewport content="width=device-width,initial-scale=1"><title>Joe Riggs · roster.watch</title><link rel=stylesheet href=/style.css><link rel=apple-touch-icon sizes=180x180 href=/apple-touch-icon.png><link rel=icon type=image/png sizes=32x32 href=/favicon-32x32.png><link rel=icon type=image/png sizes=16x16 href=/favicon-16x16.png><link rel=manifest href=/site.webmanifest><meta name=description content="An up-to-date list of the full active UFC roster including biographical data, rankings, records, and more."><script data-goatcounter=https://rosterwatch.goatcounter.com/count async src=//gc.zgo.at/count.js></script><script defer src=/script.js data-website-id=f0f3ed7e-e89c-4a29-a745-475e0b10271a></script><script src=/age.js></script></head><body><div class=container><header><a class=logo href=/><img src=/images/logo.svg alt=logo></a><nav><ul class=nav__links><li><a href=/>Current Roster</a></li><li><a href=/former.html>Former Roster</a></li><li class=dropdown><a href=# onclick=return!1>Weight Classes</a><ul class=dropdown-content><li><a href=/heavyweight.html>Heavyweight</a></li><li><a href=/lightheavyweight.html>Light Heavyweight</a></li><li><a href=/middleweight.html>Middleweight</a></li><li><a href=/welterweight.html>Welterweight</a></li><li><a href=/lightweight.html>Lightweight</a></li><li><a href=/featherweight.html>Featherweight</a></li><li><a href=/bantamweight.html>Bantamweight</a></li><li><a href=/flyweight.html>Flyweight</a></li><li><a href=/womensbantamweight.html>Women's Bantamweight</a></li><li><a href=/womensflyweight.html>Women's Flyweight</a></li><li><a href=/womensstrawweight.html>Women's Strawweight</a></li></ul></li><li><a href=/events>Events</a></li><li><a href=/log.html>Log</a></li><li><a href=/fightlog.html>Fight Log</a></li><li><a href=javascript:void(0) onclick=getRandomPage()>Random Page</a></li><li><a href=https://rosterwatch.printify.me/>Merch</a></li><li><a href="https://www.patreon.com/bePatron?u=88266864">Support on Patreon</a></li></ul></nav><div class="menu cta">Menu</div></header><div class=overlay><a class=close>×</a><div class=overlay__content><a href=/>Current Roster</a>
+<a href=/former.html>Former Roster</a><div class=dropdown-mobile><a href=# onclick=return!1>Weight Classes</a><div class=dropdown-content-mobile><a href=/heavyweight.html>Heavyweight</a>
+<a href=/lightheavyweight.html>Light Heavyweight</a>
+<a href=/middleweight.html>Middleweight</a>
+<a href=/welterweight.html>Welterweight</a>
+<a href=/lightweight.html>Lightweight</a>
+<a href=/featherweight.html>Featherweight</a>
+<a href=/bantamweight.html>Bantamweight</a>
+<a href=/flyweight.html>Flyweight</a>
+<a href=/womensbantamweight.html>Women's Bantamweight</a>
+<a href=/womensflyweight.html>Women's Flyweight</a>
+<a href=/womensstrawweight.html>Women's Strawweight</a></div></div><a href=/events>Events</a>
+<a href=/log.html>Log</a>
+<a href=/fightlog.html>Fight Log</a>
+<a href=javascript:void(0) onclick=getRandomPage()>Random Page</a>
+<a href=https://rosterwatch.printify.me/>Merch</a>
+<a href="https://www.patreon.com/bePatron?u=88266864">Support on Patreon</a></div></div><script type=text/javascript src=/mobile.js></script><script>function getRandomPage(){fetch("/sitemap.xml").then(e=>e.text()).then(e=>{const n=new DOMParser,s=n.parseFromString(e,"application/xml"),t=Array.from(s.getElementsByTagName("loc")).map(e=>e.textContent),o=t[Math.floor(Math.random()*t.length)];window.location.href=o})}</script><main><div class=fighter-header><div class=fighter-name><div><h1>Joe Riggs</h1><span class=emoji>🇺🇸</span></div><time class=dob data-dob=1982-09-23><span class=age></span><div class=date_of_birth>(1982-09-23)</div></time></div></div><h2>Statistics</h2><article class=fighter-info><div class=two-column-layout><div class=fighter-details><div class=fighter-stats><p><strong>UFC Record:</strong> 5-7</p><p><strong>By Method:</strong></p><ul><li>KO/TKO: 1-2</li><li>Submission: 2-4</li><li>Decision: 1-1</li><li>DQ: 1-0</li></ul><p><strong>By Elo:</strong></p><ul><li>As Favorite: 3-2</li><li>As Underdog: 2-5</li></ul><p><strong>By Weight Class:</strong></p><ul><li>Welterweight: 3-3</li><li>Middleweight: 2-3</li></ul><p><strong>By Round:</strong></p><ul><li>Round 1: 1-6</li><li>Round 2: 3-0</li><li>Round 3: 1-1</li></ul><p><strong>By Type:</strong></p><ul><li>Main Event: 0-1</li></ul></div></div><div class=rankings><p><strong>UFC Roster Status:</strong> Inactive</p><p><strong>Last 5:</strong>
+<span class="wldn-letter letter-L">L</span>
+<span class="wldn-letter letter-L">L</span>
+<span class="wldn-letter letter-L">L</span>
+<span class="wldn-letter letter-W">W</span>
+<span class="wldn-letter letter-L">L</span></p><p><strong>Peak Elo:</strong> 2797 <span class=peak-date>(2018-02-24)</span></p><p><strong>Avg Opponent Elo:</strong> 2678 (#1025)</p><p><strong>Bonuses:</strong> 1 (0 FOTN, 1
+Performance)</p><p><strong>Avg Fight Time:</strong> 5m 34s</p><p><strong>Total Fight Time:</strong> 1h 6m 45s</p><p><strong>Avg Time Between Fights:</strong> 133 days</p><p><strong>Avg Card Placement:</strong> 5.1</p></div></div></article><div class=chart-section><h2>Elo Rating & UFC Rankings</h2><div class=chart-container><div id=fighter-performance-chart data-rankings={} data-elo='[{"bout_order":1,"city":"Pittsburgh, Pennsylvania","country":"United States","country_emoji":"🇺🇸","event_date":"2016-02-21","event_name":"UFC Fight Night: Cowboy vs. Cowboy","event_slug":"20160221","fighter":"Joe Riggs","fighter_age":33,"fighter_country":"🇺🇸","fighter_last5":"WLLLW","fighter_plot_rtg":2572,"fighter_record":"5-6","fighter_rtg":2630,"method":"TKO","opp_bonus":true,"opp_perf_of_the_night":true,"opponent_age":29,"opponent_country":"🇺🇸","opponent_last5":"LLLLW","opponent_name":"Chris Camozzi","opponent_record":"7-7","opponent_rtg":2788,"opponent_slug":"chriscamozzi","result":"Loss","round":1,"time":"00:26","venue":"Consol Energy Center","weight_class":"Middleweight"},{"bout_order":1,"city":"Las Vegas, Nevada","country":"United States","country_emoji":"🇺🇸","event_date":"2015-09-05","event_name":"UFC 191: Johnson vs Dodson 2","event_slug":"20150905","fighter":"Joe Riggs","fighter_age":32,"fighter_country":"🇺🇸","fighter_last5":"LLLWL","fighter_plot_rtg":2630,"fighter_record":"4-6","fighter_rtg":2523,"method":"DQ","opponent_age":32,"opponent_country":"🇺🇸","opponent_last5":"LW","opponent_name":"Ronald Stallings","opponent_record":"1-1","opponent_rtg":2547,"opponent_slug":"ronaldstallings","result":"Win","round":2,"time":"02:28","venue":"MGM Grand Garden Arena","weight_class":"Middleweight"},{"bout_order":1,"city":"Montreal","country":"Canada","country_emoji":"🇨🇦","event_date":"2015-04-25","event_name":"UFC 186: Johnson vs. Horiguchi","event_slug":"20150425","fighter":"Joe Riggs","fighter_age":32,"fighter_country":"🇺🇸","fighter_last5":"LLWLW","fighter_plot_rtg":2523,"fighter_record":"4-5","fighter_rtg":2581,"method":"DEC","opponent_age":35,"opponent_country":"🇨🇦","opponent_last5":"LWWWL","opponent_name":"Patrick Cote","opponent_record":"7-9","opponent_rtg":2736,"opponent_slug":"patrickcote","result":"Loss","round":3,"time":"05:00","venue":"Bell Centre","weight_class":"Welterweight"},{"bout_order":1,"city":"Phoenix, Arizona","country":"United States","country_emoji":"🇺🇸","event_date":"2014-12-13","event_name":"UFC on Fox: dos Santos vs. Miocic","event_slug":"20141213","fighter":"Joe Riggs","fighter_age":32,"fighter_country":"🇺🇸","fighter_last5":"LWLWL","fighter_plot_rtg":2581,"fighter_record":"4-4","fighter_rtg":2645,"method":"SUB","opponent_age":31,"opponent_country":"🇺🇸","opponent_last5":"LWLLW","opponent_name":"Ben Saunders","opponent_record":"5-3","opponent_rtg":2775,"opponent_slug":"bensaunders","result":"Loss","round":1,"time":"00:57","venue":"U.S. Airways Center","weight_class":"Welterweight"},{"bout_order":1,"city":"San Diego, California","country":"United States","country_emoji":"🇺🇸","event_date":"2006-12-13","event_name":"UFC Fight Night: Sanchez vs. Riggs","event_slug":"20061213","fighter":"Joe Riggs","fighter_age":24,"fighter_country":"🇺🇸","fighter_last5":"WLWLW","fighter_plot_rtg":2625,"fighter_record":"4-3","fighter_rtg":2653,"method":"KO","opponent_age":24,"opponent_country":"🇺🇸","opponent_last5":"WWWWW","opponent_name":"Diego Sanchez","opponent_record":"5-0","opponent_rtg":2969,"opponent_slug":"diegosanchez","result":"Loss","round":1,"time":"01:45","venue":"MCAS Miramar","weight_class":"Welterweight"},{"bout_order":1,"city":"Las Vegas, Nevada","country":"United States","country_emoji":"🇺🇸","event_date":"2006-08-17","event_name":"UFC Fight Night: Sanchez vs. Parisyan","event_slug":"20060817","fighter":"Joe Riggs","fighter_age":23,"fighter_country":"🇺🇸","fighter_last5":"LWLWL","fighter_plot_rtg":2653,"fighter_record":"3-3","fighter_rtg":2602,"method":"SUB","opponent_age":31,"opponent_country":"🇺🇸","opponent_last5":"WL","opponent_name":"Jason Von Flue","opponent_record":"1-1","opponent_rtg":2416,"opponent_slug":"jasonvonflue","perf_of_the_night":true,"result":"Win","round":1,"time":"02:01","venue":"Red Rock Resort Spa and Casino","weight_class":"Welterweight"},{"bout_order":1,"city":"Los Angeles, California","country":"United States","country_emoji":"🇺🇸","event_date":"2006-05-27","event_name":"UFC 60: Hughes vs. Gracie","event_slug":"20060527","fighter":"Joe Riggs","fighter_age":23,"fighter_country":"🇺🇸","fighter_last5":"WLWLW","fighter_plot_rtg":2602,"fighter_record":"3-2","fighter_rtg":2752,"method":"SUB","opponent_age":26,"opponent_country":"🇺🇸","opponent_last5":"WWW","opponent_name":"Mike Swick","opponent_record":"3-0","opponent_rtg":2563,"opponent_slug":"mikeswick","result":"Loss","round":1,"time":"02:19","venue":"Staples Center","weight_class":"Middleweight"},{"bout_order":1,"city":"Las Vegas, Nevada","country":"United States","country_emoji":"🇺🇸","event_date":"2006-02-04","event_name":"UFC 57: Liddell vs. Couture 3","event_slug":"20060204","fighter":"Joe Riggs","fighter_age":23,"fighter_country":"🇺🇸","fighter_last5":"LWLW","fighter_plot_rtg":2752,"fighter_record":"2-2","fighter_rtg":2664,"method":"DEC","opponent_age":22,"opponent_country":"🇺🇸","opponent_last5":"WLWWL","opponent_name":"Nick Diaz","opponent_record":"4-2","opponent_rtg":2621,"opponent_slug":"nickdiaz","result":"Win","round":3,"time":"05:00","venue":"Mandalay Bay Events Center","weight_class":"Welterweight"},{"bout_order":1,"city":"Las Vegas, Nevada","country":"United States","country_emoji":"🇺🇸","event_date":"2005-11-19","event_name":"UFC 56: Full Force","event_slug":"20051119","fighter":"Joe Riggs","fighter_age":23,"fighter_country":"🇺🇸","fighter_last5":"WLW","fighter_plot_rtg":2664,"fighter_record":"2-1","fighter_rtg":2701,"method":"SUB","opponent_age":32,"opponent_country":"🇺🇸","opponent_last5":"WLWWW","opponent_name":"Matt Hughes","opponent_record":"11-2","opponent_rtg":2961,"opponent_slug":"matthughes","result":"Loss","round":1,"time":"03:28","venue":"MGM Grand Arena","weight_class":"Catchweight"},{"bout_order":1,"city":"Uncasville, Connecticut","country":"United States","country_emoji":"🇺🇸","event_date":"2005-10-07","event_name":"UFC 55: Fury","event_slug":"20051007","fighter":"Joe Riggs","fighter_age":23,"fighter_country":"🇺🇸","fighter_last5":"LW","fighter_plot_rtg":2701,"fighter_record":"1-1","fighter_rtg":2632,"method":"TKO","opponent_age":31,"opponent_country":"🇺🇸","opponent_last5":"LLWWL","opponent_name":"Chris Lytle","opponent_record":"2-3","opponent_rtg":2521,"opponent_slug":"chrislytle","result":"Win","round":2,"time":"02:00","venue":"Mohegan Sun Arena","weight_class":"Welterweight"},{"bout_order":1,"city":"Las Vegas, Nevada","country":"United States","country_emoji":"🇺🇸","event_date":"2005-04-16","event_name":"UFC 52: Couture vs. Liddell 2","event_slug":"20050416","fighter":"Joe Riggs","fighter_age":22,"fighter_country":"🇺🇸","fighter_last5":"W","fighter_plot_rtg":2570,"fighter_record":"1-0","fighter_rtg":2711,"method":"SUB","opponent_age":34,"opponent_country":"🇨🇦","opponent_last5":"WLW","opponent_name":"Ivan Salaverry","opponent_record":"2-1","opponent_rtg":2558,"opponent_slug":"ivansalaverry","result":"Loss","round":1,"time":"02:42","venue":"MGM Grand Arena","weight_class":"Middleweight"},{"bout_order":1,"city":"Las Vegas, Nevada","country":"United States","country_emoji":"🇺🇸","event_date":"2004-08-21","event_name":"UFC 49: Unfinished Business","event_slug":"20040821","fighter":"Joe Riggs","fighter_age":21,"fighter_country":"🇺🇸","fighter_last5":"","fighter_plot_rtg":2684,"fighter_record":"","fighter_rtg":2547,"method":"TKO","opponent_age":26,"opponent_country":"🇨🇦","opponent_last5":"","opponent_name":"Joe Doerksen","opponent_record":"","opponent_rtg":2682,"opponent_slug":"joedoerksen","result":"Win","round":2,"time":"03:39","venue":"MGM Grand Arena","weight_class":"Middleweight"}]'></div></div></div><script src=https://cdn.plot.ly/plotly-3.1.0.min.js></script><script>const chartElement=document.getElementById("fighter-performance-chart"),eloDataRaw=chartElement.dataset.elo,rankingsDataRaw=chartElement.dataset.rankings,eloData=eloDataRaw?JSON.parse(eloDataRaw):[],seen=new Map,eloDataFiltered=eloData.filter(e=>{const t=`${e.event_date}_${e.fighter_plot_rtg}`;return!seen.has(t)&&(seen.set(t,!0),!0)}),rankingsData=rankingsDataRaw?JSON.parse(rankingsDataRaw):[],hasElo=eloDataFiltered&&eloDataFiltered.length>1,hasRankings=rankingsData&&Object.keys(rankingsData).length>0,createEloTrace=(e="x",t="y")=>({x:eloDataFiltered.map(e=>e.event_date),y:eloDataFiltered.map(e=>e.fighter_plot_rtg),customdata:eloDataFiltered.map(e=>[e.opponent_name,e.result]),type:"scatter",mode:"lines+markers",line:{color:"#d4636a",width:3,shape:"vh"},marker:{size:10,color:"#d4636a"},hovertemplate:"%{x|%Y-%m-%d}<br>%{y} Elo<br>vs %{customdata[0]}<br>%{customdata[1]}<extra></extra>",name:"Elo",xaxis:e,yaxis:t}),createRankingsTraces=(e,t="x",n="y")=>{const s=["#65c1eb","#85ceb7","#fda481"],o={"Pound-for-Pound":"#FBBF24","Men's Pound-for-Pound":"#a4b3d5","Women's Pound-for-Pound":"#eca1cf"},a=["Pound-for-Pound","Men's Pound-for-Pound","Women's Pound-for-Pound","Flyweight","Bantamweight","Featherweight","Lightweight","Welterweight","Middleweight","Light Heavyweight","Heavyweight","Women's Flyweight","Women's Featherweight","Women's Strawweight","Women's Bantamweight"],r=a.filter(e=>rankingsData[e]);let i=0;return r.map(e=>{const a=rankingsData[e];let r;return o[e]?r=o[e]:(r=s[i%s.length],i++),{x:a.map(e=>e.date),y:a.map(e=>e.rank),type:"scatter",mode:"markers",marker:{size:10,opacity:.8,color:r},hovertemplate:a.map(t=>`${t.date}<br>${t.rank===0?"Champion":"#"+t.rank}<br>${e}<extra></extra>`),name:e,xaxis:t,yaxis:n}})};let traces=[],layout={margin:{t:0,b:0,l:30,r:0},width:600,paper_bgcolor:"#f7f5f0",plot_bgcolor:"#f7f5f0"},title="",height=450;hasElo&&hasRankings?(traces=[createEloTrace("x","y"),...createRankingsTraces(rankingsData,"x2","y2")],title="Elo Rating & UFC Rankings",height=800,layout={...layout,grid:{rows:2,columns:1,subplots:[["xy"],["x2y2"]],roworder:"top to bottom",ygap:.1},showlegend:!0,legend:{orientation:"h",xanchor:"center",x:.5,y:-.03},xaxis:{gridcolor:"#e1e1e1",title:"",matches:"x2"},yaxis:{gridcolor:"#e1e1e1",title:""},xaxis2:{gridcolor:"#e1e1e1",title:"",matches:"x"},yaxis2:{range:[15.5,-.5],tickvals:[15,14,13,12,11,10,9,8,7,6,5,4,3,2,1,0],ticktext:["15","14","13","12","11","10","9","8","7","6","5","4","3","2","1","C"],gridcolor:"#e1e1e1",zeroline:!1,title:""}},document.querySelector(".chart-section h2").textContent=title,chartElement.style.height=height+"px",layout.height=height,Plotly.newPlot("fighter-performance-chart",traces,layout,{displayModeBar:!1,responsive:!0})):hasElo?(traces=[createEloTrace()],title="Elo Rating",layout={...layout,showlegend:!1,legend:{orientation:"h",xanchor:"center",x:.5,y:-.1},margin:{t:0,b:50,l:30,r:0},xaxis:{gridcolor:"#e1e1e1",title:""},yaxis:{gridcolor:"#e1e1e1",title:""}},document.querySelector(".chart-section h2").textContent=title,chartElement.style.height=height+"px",layout.height=height,Plotly.newPlot("fighter-performance-chart",traces,layout,{displayModeBar:!1,responsive:!0})):hasRankings&&(traces=createRankingsTraces(rankingsData),title="UFC Rankings",layout={...layout,showlegend:!0,legend:{orientation:"h",xanchor:"center",x:.5,y:-.1},margin:{t:0,b:50,l:30,r:0},xaxis:{gridcolor:"#e1e1e1",title:""},yaxis:{range:[15.5,-.5],tickvals:[15,14,13,12,11,10,9,8,7,6,5,4,3,2,1,0],ticktext:["15","14","13","12","11","10","9","8","7","6","5","4","3","2","1","C"],gridcolor:"#e1e1e1",zeroline:!1,title:""}},document.querySelector(".chart-section h2").textContent=title,chartElement.style.height=height+"px",layout.height=height,Plotly.newPlot("fighter-performance-chart",traces,layout,{displayModeBar:!1,responsive:!0}))</script><div class=fight-results><h2>Bout History</h2><div class=event_bouts><div class=bout-row><div class="side_info bout-event"><br><span class=event-date><a href=/events/20160221.html>2016-02-21</a></span><br><span class=event-name><a href=/events/20160221.html>UFC Fight Night: Cowboy vs. Cowboy</a></span></div><div class="bout-fighter bout-left"><br><span title='Performance of the Night' class=cursor-pointer>⭐
+</span><b><a href=/fighters/chriscamozzi.html>Chris Camozzi</a></b> (29) <span class=emoji>🇺🇸</span><br><span class="wldn-letter letter-L">L</span>
+<span class="wldn-letter letter-L">L</span>
+<span class="wldn-letter letter-L">L</span>
+<span class="wldn-letter letter-L">L</span>
+<span class="wldn-letter letter-W">W</span>
+• 7-7<br>Elo: 2788</div><div class=result_description><span class=weightclass>MIDDLEWEIGHT</span><br>TKO<br>R1<br>00:26</div><div class="bout-fighter bout-right"><br><span class=emoji>🇺🇸 </span><b>Joe Riggs</b> (33)<br>5-6 •
+<span class="wldn-letter letter-W">W</span>
+<span class="wldn-letter letter-L">L</span>
+<span class="wldn-letter letter-L">L</span>
+<span class="wldn-letter letter-L">L</span>
+<span class="wldn-letter letter-W">W</span><br>Elo: 2630</div><div class="side_info bout-venue"><br>Consol Energy Center<br>Pittsburgh, Pennsylvania<br>United States <span class=emoji>🇺🇸</span></div></div><div class=bout-row><div class="side_info bout-event"><br><span class=event-date><a href=/events/20150905.html>2015-09-05</a></span><br><span class=event-name><a href=/events/20150905.html>UFC 191: Johnson vs Dodson 2</a></span></div><div class="bout-fighter bout-left"><br><b>Joe Riggs</b> (32) <span class=emoji>🇺🇸</span><br><span class="wldn-letter letter-L">L</span>
+<span class="wldn-letter letter-L">L</span>
+<span class="wldn-letter letter-L">L</span>
+<span class="wldn-letter letter-W">W</span>
+<span class="wldn-letter letter-L">L</span>
+• 4-6<br>Elo: 2523</div><div class=result_description><span class=weightclass>MIDDLEWEIGHT</span><br>DQ<br>R2<br>02:28</div><div class="bout-fighter bout-right"><br><span class=emoji>🇺🇸</span>
+<b><a href=/fighters/ronaldstallings.html>Ronald Stallings</a></b> (32)<br>1-1 •
+<span class="wldn-letter letter-L">L</span>
+<span class="wldn-letter letter-W">W</span><br>Elo: 2547</div><div class="side_info bout-venue"><br>MGM Grand Garden Arena<br>Las Vegas, Nevada<br>United States <span class=emoji>🇺🇸</span></div></div><div class=bout-row><div class="side_info bout-event"><br><span class=event-date><a href=/events/20150425.html>2015-04-25</a></span><br><span class=event-name><a href=/events/20150425.html>UFC 186: Johnson vs. Horiguchi</a></span></div><div class="bout-fighter bout-left"><br><b><a href=/fighters/patrickcote.html>Patrick Cote</a></b> (35) <span class=emoji>🇨🇦</span><br><span class="wldn-letter letter-L">L</span>
+<span class="wldn-letter letter-W">W</span>
+<span class="wldn-letter letter-W">W</span>
+<span class="wldn-letter letter-W">W</span>
+<span class="wldn-letter letter-L">L</span>
+• 7-9<br>Elo: 2736</div><div class=result_description><span class=weightclass>WELTERWEIGHT</span><br>DEC<br>R3<br>05:00</div><div class="bout-fighter bout-right"><br><span class=emoji>🇺🇸 </span><b>Joe Riggs</b> (32)<br>4-5 •
+<span class="wldn-letter letter-L">L</span>
+<span class="wldn-letter letter-L">L</span>
+<span class="wldn-letter letter-W">W</span>
+<span class="wldn-letter letter-L">L</span>
+<span class="wldn-letter letter-W">W</span><br>Elo: 2581</div><div class="side_info bout-venue"><br>Bell Centre<br>Montreal<br>Canada <span class=emoji>🇨🇦</span></div></div><div class=bout-row><div class="side_info bout-event"><br><span class=event-date><a href=/events/20141213.html>2014-12-13</a></span><br><span class=event-name><a href=/events/20141213.html>UFC on Fox: dos Santos vs. Miocic</a></span></div><div class="bout-fighter bout-left"><br><b><a href=/fighters/bensaunders.html>Ben Saunders</a></b> (31) <span class=emoji>🇺🇸</span><br><span class="wldn-letter letter-L">L</span>
+<span class="wldn-letter letter-W">W</span>
+<span class="wldn-letter letter-L">L</span>
+<span class="wldn-letter letter-L">L</span>
+<span class="wldn-letter letter-W">W</span>
+• 5-3<br>Elo: 2775</div><div class=result_description><span class=weightclass>WELTERWEIGHT</span><br>SUB<br>R1<br>00:57</div><div class="bout-fighter bout-right"><br><span class=emoji>🇺🇸 </span><b>Joe Riggs</b> (32)<br>4-4 •
+<span class="wldn-letter letter-L">L</span>
+<span class="wldn-letter letter-W">W</span>
+<span class="wldn-letter letter-L">L</span>
+<span class="wldn-letter letter-W">W</span>
+<span class="wldn-letter letter-L">L</span><br>Elo: 2645</div><div class="side_info bout-venue"><br>U.S. Airways Center<br>Phoenix, Arizona<br>United States <span class=emoji>🇺🇸</span></div></div><div class=bout-row><div class="side_info bout-event"><br><span class=event-date><a href=/events/20061213.html>2006-12-13</a></span><br><span class=event-name><a href=/events/20061213.html>UFC Fight Night: Sanchez vs. Riggs</a></span></div><div class="bout-fighter bout-left"><br><b><a href=/fighters/diegosanchez.html>Diego Sanchez</a></b> (24) <span class=emoji>🇺🇸</span><br><span class="wldn-letter letter-W">W</span>
+<span class="wldn-letter letter-W">W</span>
+<span class="wldn-letter letter-W">W</span>
+<span class="wldn-letter letter-W">W</span>
+<span class="wldn-letter letter-W">W</span>
+• 5-0<br>Elo: 2969</div><div class=result_description><span class=weightclass>WELTERWEIGHT</span><br>KO<br>R1<br>01:45</div><div class="bout-fighter bout-right"><br><span class=emoji>🇺🇸 </span><b>Joe Riggs</b> (24)<br>4-3 •
+<span class="wldn-letter letter-W">W</span>
+<span class="wldn-letter letter-L">L</span>
+<span class="wldn-letter letter-W">W</span>
+<span class="wldn-letter letter-L">L</span>
+<span class="wldn-letter letter-W">W</span><br>Elo: 2653</div><div class="side_info bout-venue"><br>MCAS Miramar<br>San Diego, California<br>United States <span class=emoji>🇺🇸</span></div></div><div class=bout-row><div class="side_info bout-event"><br><span class=event-date><a href=/events/20060817.html>2006-08-17</a></span><br><span class=event-name><a href=/events/20060817.html>UFC Fight Night: Sanchez vs. Parisyan</a></span></div><div class="bout-fighter bout-left"><br><span title='Performance of the Night' class=cursor-pointer>⭐
+</span><b>Joe Riggs</b> (23) <span class=emoji>🇺🇸</span><br><span class="wldn-letter letter-L">L</span>
+<span class="wldn-letter letter-W">W</span>
+<span class="wldn-letter letter-L">L</span>
+<span class="wldn-letter letter-W">W</span>
+<span class="wldn-letter letter-L">L</span>
+• 3-3<br>Elo: <span class=favorite-elo>2602</span></div><div class=result_description><span class=weightclass>WELTERWEIGHT</span><br>SUB<br>R1<br>02:01</div><div class="bout-fighter bout-right"><br><span class=emoji>🇺🇸</span>
+<b><a href=/fighters/jasonvonflue.html>Jason Von Flue</a></b> (31)<br>1-1 •
+<span class="wldn-letter letter-W">W</span>
+<span class="wldn-letter letter-L">L</span><br>Elo: 2416</div><div class="side_info bout-venue"><br>Red Rock Resort Spa and Casino<br>Las Vegas, Nevada<br>United States <span class=emoji>🇺🇸</span></div></div><div class=bout-row><div class="side_info bout-event"><br><span class=event-date><a href=/events/20060527.html>2006-05-27</a></span><br><span class=event-name><a href=/events/20060527.html>UFC 60: Hughes vs. Gracie</a></span></div><div class="bout-fighter bout-left"><br><b><a href=/fighters/mikeswick.html>Mike Swick</a></b> (26) <span class=emoji>🇺🇸</span><br><span class="wldn-letter letter-W">W</span>
+<span class="wldn-letter letter-W">W</span>
+<span class="wldn-letter letter-W">W</span>
+• 3-0<br>Elo: 2563</div><div class=result_description><span class=weightclass>MIDDLEWEIGHT</span><br>SUB<br>R1<br>02:19</div><div class="bout-fighter bout-right"><br><span class=emoji>🇺🇸 </span><b>Joe Riggs</b> (23)<br>3-2 •
+<span class="wldn-letter letter-W">W</span>
+<span class="wldn-letter letter-L">L</span>
+<span class="wldn-letter letter-W">W</span>
+<span class="wldn-letter letter-L">L</span>
+<span class="wldn-letter letter-W">W</span><br>Elo: <span class=favorite-elo>2752</span></div><div class="side_info bout-venue"><br>Staples Center<br>Los Angeles, California<br>United States <span class=emoji>🇺🇸</span></div></div><div class=bout-row><div class="side_info bout-event"><br><span class=event-date><a href=/events/20060204.html>2006-02-04</a></span><br><span class=event-name><a href=/events/20060204.html>UFC 57: Liddell vs. Couture 3</a></span></div><div class="bout-fighter bout-left"><br><b>Joe Riggs</b> (23) <span class=emoji>🇺🇸</span><br><span class="wldn-letter letter-L">L</span>
+<span class="wldn-letter letter-W">W</span>
+<span class="wldn-letter letter-L">L</span>
+<span class="wldn-letter letter-W">W</span>
+• 2-2<br>Elo: <span class=favorite-elo>2664</span></div><div class=result_description><span class=weightclass>WELTERWEIGHT</span><br>DEC<br>R3<br>05:00</div><div class="bout-fighter bout-right"><br><span class=emoji>🇺🇸</span>
+<b><a href=/fighters/nickdiaz.html>Nick Diaz</a></b> (22)<br>4-2 •
+<span class="wldn-letter letter-W">W</span>
+<span class="wldn-letter letter-L">L</span>
+<span class="wldn-letter letter-W">W</span>
+<span class="wldn-letter letter-W">W</span>
+<span class="wldn-letter letter-L">L</span><br>Elo: 2621</div><div class="side_info bout-venue"><br>Mandalay Bay Events Center<br>Las Vegas, Nevada<br>United States <span class=emoji>🇺🇸</span></div></div><div class=bout-row><div class="side_info bout-event"><br><span class=event-date><a href=/events/20051119.html>2005-11-19</a></span><br><span class=event-name><a href=/events/20051119.html>UFC 56: Full Force</a></span></div><div class="bout-fighter bout-left"><br><b><a href=/fighters/matthughes.html>Matt Hughes</a></b> (32) <span class=emoji>🇺🇸</span><br><span class="wldn-letter letter-W">W</span>
+<span class="wldn-letter letter-L">L</span>
+<span class="wldn-letter letter-W">W</span>
+<span class="wldn-letter letter-W">W</span>
+<span class="wldn-letter letter-W">W</span>
+• 11-2<br>Elo: 2961</div><div class=result_description><span class=weightclass>CATCHWEIGHT</span><br>SUB<br>R1<br>03:28</div><div class="bout-fighter bout-right"><br><span class=emoji>🇺🇸 </span><b>Joe Riggs</b> (23)<br>2-1 •
+<span class="wldn-letter letter-W">W</span>
+<span class="wldn-letter letter-L">L</span>
+<span class="wldn-letter letter-W">W</span><br>Elo: 2701</div><div class="side_info bout-venue"><br>MGM Grand Arena<br>Las Vegas, Nevada<br>United States <span class=emoji>🇺🇸</span></div></div><div class=bout-row><div class="side_info bout-event"><br><span class=event-date><a href=/events/20051007.html>2005-10-07</a></span><br><span class=event-name><a href=/events/20051007.html>UFC 55: Fury</a></span></div><div class="bout-fighter bout-left"><br><b>Joe Riggs</b> (23) <span class=emoji>🇺🇸</span><br><span class="wldn-letter letter-L">L</span>
+<span class="wldn-letter letter-W">W</span>
+• 1-1<br>Elo: <span class=favorite-elo>2632</span></div><div class=result_description><span class=weightclass>WELTERWEIGHT</span><br>TKO<br>R2<br>02:00</div><div class="bout-fighter bout-right"><br><span class=emoji>🇺🇸</span>
+<b><a href=/fighters/chrislytle.html>Chris Lytle</a></b> (31)<br>2-3 •
+<span class="wldn-letter letter-L">L</span>
+<span class="wldn-letter letter-L">L</span>
+<span class="wldn-letter letter-W">W</span>
+<span class="wldn-letter letter-W">W</span>
+<span class="wldn-letter letter-L">L</span><br>Elo: 2521</div><div class="side_info bout-venue"><br>Mohegan Sun Arena<br>Uncasville, Connecticut<br>United States <span class=emoji>🇺🇸</span></div></div><div class=bout-row><div class="side_info bout-event"><br><span class=event-date><a href=/events/20050416.html>2005-04-16</a></span><br><span class=event-name><a href=/events/20050416.html>UFC 52: Couture vs. Liddell 2</a></span></div><div class="bout-fighter bout-left"><br><b><a href=/fighters/ivansalaverry.html>Ivan Salaverry</a></b> (34) <span class=emoji>🇨🇦</span><br><span class="wldn-letter letter-W">W</span>
+<span class="wldn-letter letter-L">L</span>
+<span class="wldn-letter letter-W">W</span>
+• 2-1<br>Elo: 2558</div><div class=result_description><span class=weightclass>MIDDLEWEIGHT</span><br>SUB<br>R1<br>02:42</div><div class="bout-fighter bout-right"><br><span class=emoji>🇺🇸 </span><b>Joe Riggs</b> (22)<br>1-0 •
+<span class="wldn-letter letter-W">W</span><br>Elo: <span class=favorite-elo>2711</span></div><div class="side_info bout-venue"><br>MGM Grand Arena<br>Las Vegas, Nevada<br>United States <span class=emoji>🇺🇸</span></div></div><div class=bout-row><div class="side_info bout-event"><br><span class=event-date><a href=/events/20040821.html>2004-08-21</a></span><br><span class=event-name><a href=/events/20040821.html>UFC 49: Unfinished Business</a></span></div><div class="bout-fighter bout-left"><br><b>Joe Riggs</b> (21) <span class=emoji>🇺🇸</span><br>Debut 🔰<br>Elo: 2547</div><div class=result_description><span class=weightclass>MIDDLEWEIGHT</span><br>TKO<br>R2<br>03:39</div><div class="bout-fighter bout-right"><br><span class=emoji>🇨🇦</span>
+<b><a href=/fighters/joedoerksen.html>Joe Doerksen</a></b> (26)<br>🔰 Debut<br>Elo: 2682</div><div class="side_info bout-venue"><br>MGM Grand Arena<br>Las Vegas, Nevada<br>United States <span class=emoji>🇺🇸</span></div></div></div></div></main><footer><div class=footer-container><p class=copyright-text><a href=/glossary.html>Glossary</a>
+<a href=mailto:rostertracker@gmail.com>Contact</a></p></div><div class=footer-container><p class=copyright-text>Copyright © <span id=currentYear></span> All Rights Reserved by
+<a href=#>roster.watch</a></p></div></footer><style>.footer-container{display:flex;justify-content:space-between;align-items:center;padding:1rem}.copyright-text{margin:0 auto}.browser-badge{margin-left:auto}</style><script>document.getElementById("currentYear").textContent=(new Date).getFullYear()</script></div></body></html>

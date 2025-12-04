@@ -1,497 +1,167 @@
-<!DOCTYPE html>
-
-<html lang="en" xml:lang="en">
-
-<head>
-
-<meta charset="utf-8" />
-<meta name="generator" content="pandoc" />
-<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
-
-
-
-
-<title>Louis Smolka UFC Record &amp; Stats: Interactive Charts · roster.watch</title>
-
-<script src="fighter_libs/header-attrs-2.29/header-attrs.js"></script>
-<script src="fighter_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<link href="fighter_libs/bootstrap-3.3.5/css/bootstrap.min.css" rel="stylesheet" />
-<script src="fighter_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
-<script src="fighter_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
-<script src="fighter_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
-<style>h1 {font-size: 34px;}
-       h1.title {font-size: 38px;}
-       h2 {font-size: 30px;}
-       h3 {font-size: 24px;}
-       h4 {font-size: 18px;}
-       h5 {font-size: 16px;}
-       h6 {font-size: 12px;}
-       code {color: inherit; background-color: rgba(0, 0, 0, 0.04);}
-       pre:not([class]) { background-color: white }</style>
-<script src="fighter_libs/navigation-1.1/tabsets.js"></script>
-<link href="fighter_libs/highlightjs-9.12.0/default.css" rel="stylesheet" />
-<script src="fighter_libs/highlightjs-9.12.0/highlight.js"></script>
-<link href="fighter_libs/htmltools-fill-0.5.8.1/fill.css" rel="stylesheet" />
-<script src="fighter_libs/htmlwidgets-1.6.4/htmlwidgets.js"></script>
-<script src="fighter_libs/plotly-binding-4.11.0/plotly.js"></script>
-<script src="fighter_libs/typedarray-0.1/typedarray.min.js"></script>
-<link href="fighter_libs/crosstalk-1.2.1/css/crosstalk.min.css" rel="stylesheet" />
-<script src="fighter_libs/crosstalk-1.2.1/js/crosstalk.min.js"></script>
-<link href="fighter_libs/plotly-htmlwidgets-css-2.11.1/plotly-htmlwidgets.css" rel="stylesheet" />
-<script src="fighter_libs/plotly-main-2.11.1/plotly-latest.min.js"></script>
-<script src="fighter_libs/core-js-2.5.3/shim.min.js"></script>
-<script src="fighter_libs/react-18.2.0/react.min.js"></script>
-<script src="fighter_libs/react-18.2.0/react-dom.min.js"></script>
-<script src="fighter_libs/reactwidget-2.0.0/react-tools.js"></script>
-<link href="fighter_libs/reactable-0.4.4/reactable.css" rel="stylesheet" />
-<script src="fighter_libs/reactable-binding-0.4.4/reactable.js"></script>
-<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-<link rel="manifest" href="/site.webmanifest">
-<meta name="description" content="An up-to-date list of the full active UFC roster including biographical data, rankings, records, and more.">
-<!-- <meta property="og:title" content="roster.watch" />
-<meta property="og:type" content="website" />
-<meta property="og:url" content="https://www.roster.watch/" />
-<meta property="og:image" content="https://www.roster.watch/og_image.png" />
-<meta property="og:description" content="An up-to-date list of the full active UFC roster including biographical data, rankings, record, and more." />
-<script src="https://unpkg.com/twemoji@latest/dist/twemoji.min.js" crossorigin="anonymous"></script> 
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7299518767310567"
-     crossorigin="anonymous"></script> -->
-<script data-goatcounter="https://rosterwatch.goatcounter.com/count"
-        async src="//gc.zgo.at/count.js"></script>
-<script defer src="/script.js" data-website-id="f0f3ed7e-e89c-4a29-a745-475e0b10271a"></script>
-
-<style type="text/css">
-  code{white-space: pre-wrap;}
-  span.smallcaps{font-variant: small-caps;}
-  span.underline{text-decoration: underline;}
-  div.column{display: inline-block; vertical-align: top; width: 50%;}
-  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
-  ul.task-list{list-style: none;}
-    </style>
-
-<style type="text/css">code{white-space: pre;}</style>
-<script type="text/javascript">
-if (window.hljs) {
-  hljs.configure({languages: []});
-  hljs.initHighlightingOnLoad();
-  if (document.readyState && document.readyState === "complete") {
-    window.setTimeout(function() { hljs.initHighlighting(); }, 0);
-  }
-}
-</script>
-
-
-
-
-
-
-<link rel="stylesheet" href="../style.css" type="text/css" />
-
-
-
-<style type = "text/css">
-.main-container {
-  max-width: 940px;
-  margin-left: auto;
-  margin-right: auto;
-}
-img {
-  max-width:100%;
-}
-.tabbed-pane {
-  padding-top: 12px;
-}
-.html-widget {
-  margin-bottom: 20px;
-}
-button.code-folding-btn:focus {
-  outline: none;
-}
-summary {
-  display: list-item;
-}
-details > summary > p:only-child {
-  display: inline;
-}
-pre code {
-  padding: 0;
-}
-</style>
-
-
-<style type="text/css">
-.dropdown-submenu {
-  position: relative;
-}
-.dropdown-submenu>.dropdown-menu {
-  top: 0;
-  left: 100%;
-  margin-top: -6px;
-  margin-left: -1px;
-  border-radius: 0 6px 6px 6px;
-}
-.dropdown-submenu:hover>.dropdown-menu {
-  display: block;
-}
-.dropdown-submenu>a:after {
-  display: block;
-  content: " ";
-  float: right;
-  width: 0;
-  height: 0;
-  border-color: transparent;
-  border-style: solid;
-  border-width: 5px 0 5px 5px;
-  border-left-color: #cccccc;
-  margin-top: 5px;
-  margin-right: -10px;
-}
-.dropdown-submenu:hover>a:after {
-  border-left-color: #adb5bd;
-}
-.dropdown-submenu.pull-left {
-  float: none;
-}
-.dropdown-submenu.pull-left>.dropdown-menu {
-  left: -100%;
-  margin-left: 10px;
-  border-radius: 6px 0 6px 6px;
-}
-</style>
-
-<script type="text/javascript">
-// manage active state of menu based on current page
-$(document).ready(function () {
-  // active menu anchor
-  href = window.location.pathname
-  href = href.substr(href.lastIndexOf('/') + 1)
-  if (href === "")
-    href = "index.html";
-  var menuAnchor = $('a[href="' + href + '"]');
-
-  // mark the anchor link active (and if it's in a dropdown, also mark that active)
-  var dropdown = menuAnchor.closest('li.dropdown');
-  if (window.bootstrap) { // Bootstrap 4+
-    menuAnchor.addClass('active');
-    dropdown.find('> .dropdown-toggle').addClass('active');
-  } else { // Bootstrap 3
-    menuAnchor.parent().addClass('active');
-    dropdown.addClass('active');
-  }
-
-  // Navbar adjustments
-  var navHeight = $(".navbar").first().height() + 15;
-  var style = document.createElement('style');
-  var pt = "padding-top: " + navHeight + "px; ";
-  var mt = "margin-top: -" + navHeight + "px; ";
-  var css = "";
-  // offset scroll position for anchor links (for fixed navbar)
-  for (var i = 1; i <= 6; i++) {
-    css += ".section h" + i + "{ " + pt + mt + "}\n";
-  }
-  style.innerHTML = "body {" + pt + "padding-bottom: 40px; }\n" + css;
-  document.head.appendChild(style);
-});
-</script>
-
-<!-- tabsets -->
-
-<style type="text/css">
-.tabset-dropdown > .nav-tabs {
-  display: inline-table;
-  max-height: 500px;
-  min-height: 44px;
-  overflow-y: auto;
-  border: 1px solid #ddd;
-  border-radius: 4px;
-}
-
-.tabset-dropdown > .nav-tabs > li.active:before, .tabset-dropdown > .nav-tabs.nav-tabs-open:before {
-  content: "\e259";
-  font-family: 'Glyphicons Halflings';
-  display: inline-block;
-  padding: 10px;
-  border-right: 1px solid #ddd;
-}
-
-.tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
-  content: "\e258";
-  font-family: 'Glyphicons Halflings';
-  border: none;
-}
-
-.tabset-dropdown > .nav-tabs > li.active {
-  display: block;
-}
-
-.tabset-dropdown > .nav-tabs > li > a,
-.tabset-dropdown > .nav-tabs > li > a:focus,
-.tabset-dropdown > .nav-tabs > li > a:hover {
-  border: none;
-  display: inline-block;
-  border-radius: 4px;
-  background-color: transparent;
-}
-
-.tabset-dropdown > .nav-tabs.nav-tabs-open > li {
-  display: block;
-  float: none;
-}
-
-.tabset-dropdown > .nav-tabs > li {
-  display: none;
-}
-</style>
-
-<!-- code folding -->
-
-
-
-
-</head>
-
-<body>
-
-
-<div class="container-fluid main-container">
-
-
-
-<header>
-    <a class="logo" href="/"><img src="/images/logo.svg" alt="logo"></a>
-    <nav>
-        <ul class="nav__links">
-            <li><a href="/">Current Roster</a></li>
-            <li><a href="/former.html">Former Roster</a></li>
-            <li class="dropdown">
-                <a href="#" onclick="return false;">Weight Classes</a>
-<ul class="dropdown-content">
-                    <li><a href="/heavyweight.html">Heavyweight</a></li>
-                    <li><a href="/lightheavyweight.html">Light Heavyweight</a></li>
-                    <li><a href="/middleweight.html">Middleweight</a></li>
-                    <li><a href="/welterweight.html">Welterweight</a></li>
-                    <li><a href="/lightweight.html">Lightweight</a></li>
-                    <li><a href="/featherweight.html">Featherweight</a></li>
-                    <li><a href="/bantamweight.html">Bantamweight</a></li>
-                    <li><a href="/flyweight.html">Flyweight</a></li>
-                    <li><a href="/womensbantamweight.html">Women's Bantamweight</a></li>
-                    <li><a href="/womensflyweight.html">Women's Flyweight</a></li>
-                    <li><a href="/womensstrawweight.html">Women's Strawweight</a></li>
-                </ul>
-            </li>
-            <li><a href="/events">Events</a></li>
-            <li><a href="/log.html">Log</a></li>
-            <li><a href="javascript:void(0)" onclick="getRandomPage()">Random Page</a></li>
-            <li><a href="https://rosterwatch.printify.me/">Merch</a></li>
-            <li><a href="https://www.patreon.com/bePatron?u=88266864">Support on Patreon</a></li>
-        </ul>
-    </nav>
-    <div class="menu cta">Menu</div>
-</header>
-
-<div class="overlay">
-    <a class="close">×</a>
-    <div class="overlay__content">
-        <a href="/">Current Roster</a>
-        <a href="/former.html">Former Roster</a>
-        <div class="dropdown-mobile">
-            <a href="#" onclick="return false;">Weight Classes</a>
-<div class="dropdown-content-mobile">
-                <a href="/heavyweight.html">Heavyweight</a>
-                <a href="/lightheavyweight.html">Light Heavyweight</a>
-                <a href="/middleweight.html">Middleweight</a>
-                <a href="/welterweight.html">Welterweight</a>
-                <a href="/lightweight.html">Lightweight</a>
-                <a href="/featherweight.html">Featherweight</a>
-                <a href="/bantamweight.html">Bantamweight</a>
-                <a href="/flyweight.html">Flyweight</a>
-                <a href="/womensbantamweight.html">Women's Bantamweight</a>
-                <a href="/womensflyweight.html">Women's Flyweight</a>
-                <a href="/womensstrawweight.html">Women's Strawweight</a>
-            </div>
-        </div>
-        <a href="/events">Events</a>
-        <a href="/log.html">Log</a>
-        <a href="javascript:void(0)" onclick="getRandomPage()">Random Page</a>
-        <a href="https://rosterwatch.printify.me/">Merch</a>
-        <a href="https://www.patreon.com/bePatron?u=88266864">Support on Patreon</a>
-    </div>
-</div>
-<script type="text/javascript" src="/mobile.js"></script>
-    <script>
-      function getRandomPage() {
-        fetch('/sitemap.xml')
-          .then(response => response.text())
-          .then(xmlText => {
-            const parser = new DOMParser();
-            const xmlDoc = parser.parseFromString(xmlText, 'application/xml');
-            const urls = Array.from(xmlDoc.getElementsByTagName('loc')).map(loc => loc.textContent);
-            const randomPage = urls[Math.floor(Math.random() * urls.length)];
-            window.location.href = randomPage;
-          });
-      }
-    </script>
-
-<div id="header">
-
-
-
-<h1 class="title toc-ignore">Louis Smolka UFC Record &amp; Stats:
-Interactive Charts · roster.watch</h1>
-
-</div>
-
-
-<script type="application/ld+json">{
-  "@context": "https://schema.org",
-  "@type": "Person",
-  "name": "Louis Smolka",
-  "birthDate": "1991-07-16",
-  "nationality": "United States",
-  "memberOf": {
-    "@type": "SportsOrganization",
-    "name": "UFC",
-    "sport": "Mixed Martial Arts"
-  },
-  "additionalProperty": [
-    {
-      "@type": "PropertyValue",
-      "name": "UFC Record",
-      "value": "8-9"
-    },
-    {
-      "@type": "PropertyValue",
-      "name": "Peak UFC Ranking",
-      "value": "#9 Flyweight"
-    },
-    {
-      "@type": "PropertyValue",
-      "name": "Bonuses",
-      "value": "3"
-    }
-  ]
-}</script>
-<article class="event-info" style="display: flex; flex-direction: column; align-items: center; justify-content: center; width: 100%; height: auto;"><div class="fighter-info" style="text-align: center; margin-bottom: 20px;"><h2 style='font-weight: bold; font-size: 1.1em; margin: 0;'>Louis Smolka <span class='emoji'>🇺🇸</span></h2><time datetime='1991-07-16'><p><span>1991-07-16</span><script>document.currentScript.parentElement.innerHTML = (function(){  const dob = new Date('1991-07-16');  const today = new Date();  let years = today.getFullYear() - dob.getFullYear();  const monthDiff = today.getMonth() - dob.getMonth();  if (monthDiff < 0 || (monthDiff === 0 && today.getDate() < dob.getDate())) {    years--;  }  const yearAnniversary = new Date(dob);  yearAnniversary.setFullYear(dob.getFullYear() + years);  const dayDiff = Math.floor((today - yearAnniversary) / (1000 * 60 * 60 * 24));  const isBirthday = today.getMonth() === dob.getMonth() && today.getDate() === dob.getDate();  let ageString = `${years} year${years !== 1 ? 's' : ''}`;  if (dayDiff > 0) {    ageString += ` ${dayDiff} day${dayDiff !== 1 ? 's' : ''}`;  }  return `${ageString}${isBirthday ? ' 🎂' : ''} <br><span class='event-date'> (${dob.toISOString().split('T')[0]}) </span>`;}());</script></p></time></div><div style="display: flex; justify-content: center; align-items: flex-start; gap: 40px; max-width: 600px; width: 100%;"><div class="event-details" style="width: 50%;"><div class='event-stats'><p><strong>Record:</strong> 8-9<br></p><p><strong>By Method:</strong></p><ul><li> KO/TKO: 4-2</li><li> Submission: 2-3</li><li> Decision: 2-4</li></ul><p><strong>By Elo:</strong></p><ul><li>As Favorite: 7-5</li><li>As Underdog: 1-4</li></ul><p><strong>By Weight Class:</strong></p><ul><li>Bantamweight: 3-4</li><li>Flyweight: 5-4</li></ul><p><strong>By Round:</strong></p><ul><li>Round 1: 1-4</li><li>Round 2: 4-0</li><li>Round 3: 3-5</li></ul></div></div><div class="rankings" style="width: 50%;"><p><strong>Status:</strong> Former UFC Fighter</p><p><strong>Last 5:</strong> <span style='display: inline-block;width: 1.25em;
-height: 1.25em;
-line-height: 1.25em; font-size: 0.8em;
- text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W</span> <span style='display: inline-block;width: 1.25em;
-height: 1.25em;
-line-height: 1.25em; font-size: 0.8em;
- text-align: center; border-radius: 50%; background-color: crimson; color: white; font-weight: bold;'>L</span> <span style='display: inline-block;width: 1.25em;
-height: 1.25em;
-line-height: 1.25em; font-size: 0.8em;
- text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W</span> <span style='display: inline-block;width: 1.25em;
-height: 1.25em;
-line-height: 1.25em; font-size: 0.8em;
- text-align: center; border-radius: 50%; background-color: crimson; color: white; font-weight: bold;'>L</span> <span style='display: inline-block;width: 1.25em;
-height: 1.25em;
-line-height: 1.25em; font-size: 0.8em;
- text-align: center; border-radius: 50%; background-color: crimson; color: white; font-weight: bold;'>L</span></p><p><strong>Peak Elo:</strong> 2913<span class='event-date'> (2016-07-13)</span></p><p><strong>Bonuses:</strong> 3 (1 FOTN, 2 Performance)</p><p><strong>Avg Fight Time:</strong> 9m 24s</p><p><strong>Total Fight Time:</strong> 2h 39m 48s</p><br><strong>Peak Rankings: </strong><br>#9 Flyweight</div></div></article>
-<h2 style='font-size: 1em; margin: 0; text-align: center; font-weight: bold;'>Elo Rating & UFC Rankings</h2>
-<div style="display: flex; justify-content: center; width: 100%; margin-top: 20px; margin-bottom: 20px;">
-<div id="fighter-performance-chart" style="width: 100%; max-width: 600px; height: 750px;">
-<div class="plotly html-widget html-fill-item" id="htmlwidget-b00965733a41bcbb103d" style="width:100%;height:400px;"></div>
-<script type="application/json" data-for="htmlwidget-b00965733a41bcbb103d">{"x":{"data":[{"x":["2014-01-15","2014-05-10","2014-11-07","2015-07-11","2015-10-24","2016-07-13","2016-10-01","2016-12-30","2017-04-15","2017-12-30","2018-11-24","2019-03-09","2019-09-14","2020-05-30","2020-12-05","2021-12-04","2022-05-14"],"y":[2706,2646,2710,2806,2861,2913,2735,2617,2594,2519,2690,2564,2646,2607,2727,2587,2526],"mode":"lines+markers","line":{"color":"#d12d36","width":3,"shape":"hv"},"marker":{"color":"#d12d36","size":10,"line":{"color":"rgba(31,119,180,1)"}},"hoverinfo":["text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text"],"text":["2014-01-15 <br> 2706 Elo <br> Alp Ozkilic <br> Win","2014-05-10 <br> 2646 Elo <br> Chris Cariaso <br> Loss","2014-11-07 <br> 2710 Elo <br> Richie Vaculik <br> Win","2015-07-11 <br> 2806 Elo <br> Neil Seery <br> Win","2015-10-24 <br> 2861 Elo <br> Paddy Holohan <br> Win","2016-07-13 <br> 2913 Elo <br> Ben Nguyen <br> Win","2016-10-01 <br> 2735 Elo <br> Brandon Moreno <br> Loss","2016-12-30 <br> 2617 Elo <br> Ray Borg <br> Loss","2017-04-15 <br> 2594 Elo <br> Tim Elliott <br> Loss","2017-12-30 <br> 2519 Elo <br> Matheus Nicolau <br> Loss","2018-11-24 <br> 2690 Elo <br> Sumudaerji <br> Win","2019-03-09 <br> 2564 Elo <br> Matt Schnell <br> Loss","2019-09-14 <br> 2646 Elo <br> Ryan MacDonald <br> Win","2020-05-30 <br> 2607 Elo <br> Casey Kenney <br> Loss","2020-12-05 <br> 2727 Elo <br> Jose Alberto Quinonez <br> Win","2021-12-04 <br> 2587 Elo <br> Vince Morales <br> Loss","2022-05-14 <br> 2526 Elo <br> Davey Grant <br> Loss"],"name":"Elo","type":"scatter","error_y":{"color":"rgba(31,119,180,1)"},"error_x":{"color":"rgba(31,119,180,1)"},"xaxis":"x","yaxis":"y","frame":null},{"x":["2015-10-26","2015-11-09","2015-11-16","2015-11-23","2015-11-30","2015-12-14","2015-12-21","2016-01-04","2016-01-19","2016-02-01","2016-02-08","2016-02-23","2016-02-29","2016-03-07","2016-03-21","2016-04-12","2016-04-18","2016-04-25","2016-05-10","2016-05-16","2016-05-31","2016-06-06","2016-06-20","2016-07-11","2016-07-15","2016-07-27","2016-08-03","2016-08-09","2016-08-24","2016-08-31","2016-09-05","2016-09-14","2016-09-21","2016-09-26","2016-10-05","2016-10-12","2016-11-07","2016-11-16","2016-11-21","2016-11-30","2016-12-05","2016-12-14","2016-12-19","2017-01-02","2017-01-18","2017-02-01","2017-02-08","2017-02-13","2017-02-21","2017-03-06","2017-03-15","2017-03-22","2017-04-12","2017-04-19","2017-04-26","2017-05-17","2017-05-31","2017-06-07","2017-06-14","2017-06-21","2017-06-28","2017-07-10","2017-07-18","2017-07-26","2017-08-02","2017-08-07","2017-09-04","2017-09-13","2017-09-20","2017-09-25","2017-10-09","2017-10-23","2017-10-30","2017-11-08","2017-11-13","2017-11-20","2017-11-29","2017-12-06","2017-12-13","2017-12-18","2018-01-01","2019-04-01","2019-04-03"],"y":[13,14,13,13,13,13,13,13,13,13,13,13,13,13,13,13,12,12,12,12,12,12,12,12,9,9,9,9,9,9,9,9,9,9,13,13,12,12,11,11,12,12,12,13,14,13,13,13,12,12,12,12,12,12,13,13,13,13,13,13,13,13,14,14,14,14,14,14,14,14,13,13,13,13,13,13,13,13,13,13,15,13,13],"mode":"markers","marker":{"color":"rgba(252,141,98,1)","size":10,"opacity":0.80000000000000004,"line":{"color":"rgba(252,141,98,1)"}},"hoverinfo":["text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text"],"text":["2015-10-26 <br> 13 <br> Flyweight","2015-11-09 <br> 14 <br> Flyweight","2015-11-16 <br> 13 <br> Flyweight","2015-11-23 <br> 13 <br> Flyweight","2015-11-30 <br> 13 <br> Flyweight","2015-12-14 <br> 13 <br> Flyweight","2015-12-21 <br> 13 <br> Flyweight","2016-01-04 <br> 13 <br> Flyweight","2016-01-19 <br> 13 <br> Flyweight","2016-02-01 <br> 13 <br> Flyweight","2016-02-08 <br> 13 <br> Flyweight","2016-02-23 <br> 13 <br> Flyweight","2016-02-29 <br> 13 <br> Flyweight","2016-03-07 <br> 13 <br> Flyweight","2016-03-21 <br> 13 <br> Flyweight","2016-04-12 <br> 13 <br> Flyweight","2016-04-18 <br> 12 <br> Flyweight","2016-04-25 <br> 12 <br> Flyweight","2016-05-10 <br> 12 <br> Flyweight","2016-05-16 <br> 12 <br> Flyweight","2016-05-31 <br> 12 <br> Flyweight","2016-06-06 <br> 12 <br> Flyweight","2016-06-20 <br> 12 <br> Flyweight","2016-07-11 <br> 12 <br> Flyweight","2016-07-15 <br> 9 <br> Flyweight","2016-07-27 <br> 9 <br> Flyweight","2016-08-03 <br> 9 <br> Flyweight","2016-08-09 <br> 9 <br> Flyweight","2016-08-24 <br> 9 <br> Flyweight","2016-08-31 <br> 9 <br> Flyweight","2016-09-05 <br> 9 <br> Flyweight","2016-09-14 <br> 9 <br> Flyweight","2016-09-21 <br> 9 <br> Flyweight","2016-09-26 <br> 9 <br> Flyweight","2016-10-05 <br> 13 <br> Flyweight","2016-10-12 <br> 13 <br> Flyweight","2016-11-07 <br> 12 <br> Flyweight","2016-11-16 <br> 12 <br> Flyweight","2016-11-21 <br> 11 <br> Flyweight","2016-11-30 <br> 11 <br> Flyweight","2016-12-05 <br> 12 <br> Flyweight","2016-12-14 <br> 12 <br> Flyweight","2016-12-19 <br> 12 <br> Flyweight","2017-01-02 <br> 13 <br> Flyweight","2017-01-18 <br> 14 <br> Flyweight","2017-02-01 <br> 13 <br> Flyweight","2017-02-08 <br> 13 <br> Flyweight","2017-02-13 <br> 13 <br> Flyweight","2017-02-21 <br> 12 <br> Flyweight","2017-03-06 <br> 12 <br> Flyweight","2017-03-15 <br> 12 <br> Flyweight","2017-03-22 <br> 12 <br> Flyweight","2017-04-12 <br> 12 <br> Flyweight","2017-04-19 <br> 12 <br> Flyweight","2017-04-26 <br> 13 <br> Flyweight","2017-05-17 <br> 13 <br> Flyweight","2017-05-31 <br> 13 <br> Flyweight","2017-06-07 <br> 13 <br> Flyweight","2017-06-14 <br> 13 <br> Flyweight","2017-06-21 <br> 13 <br> Flyweight","2017-06-28 <br> 13 <br> Flyweight","2017-07-10 <br> 13 <br> Flyweight","2017-07-18 <br> 14 <br> Flyweight","2017-07-26 <br> 14 <br> Flyweight","2017-08-02 <br> 14 <br> Flyweight","2017-08-07 <br> 14 <br> Flyweight","2017-09-04 <br> 14 <br> Flyweight","2017-09-13 <br> 14 <br> Flyweight","2017-09-20 <br> 14 <br> Flyweight","2017-09-25 <br> 14 <br> Flyweight","2017-10-09 <br> 13 <br> Flyweight","2017-10-23 <br> 13 <br> Flyweight","2017-10-30 <br> 13 <br> Flyweight","2017-11-08 <br> 13 <br> Flyweight","2017-11-13 <br> 13 <br> Flyweight","2017-11-20 <br> 13 <br> Flyweight","2017-11-29 <br> 13 <br> Flyweight","2017-12-06 <br> 13 <br> Flyweight","2017-12-13 <br> 13 <br> Flyweight","2017-12-18 <br> 13 <br> Flyweight","2018-01-01 <br> 15 <br> Flyweight","2019-04-01 <br> 13 <br> Flyweight","2019-04-03 <br> 13 <br> Flyweight"],"type":"scatter","name":"Flyweight","textfont":{"color":"rgba(252,141,98,1)"},"error_y":{"color":"rgba(252,141,98,1)"},"error_x":{"color":"rgba(252,141,98,1)"},"line":{"color":"rgba(252,141,98,1)"},"xaxis":"x","yaxis":"y2","frame":null}],"layout":{"xaxis":{"domain":[0,1],"automargin":true,"anchor":"y2","gridcolor":"#e1e1e1","title":""},"yaxis2":{"domain":[0,0.38],"automargin":true,"range":[15.5,-0.5],"tickvals":[15,14,13,12,11,10,9,8,7,6,5,4,3,2,1,0],"ticktext":["15","14","13","12","11","10","9","8","7","6","5","4","3","2","1","C"],"gridcolor":"#e1e1e1","zeroline":false,"anchor":"x"},"yaxis":{"domain":[0.42000000000000004,1],"automargin":true,"gridcolor":"#e1e1e1","anchor":"x"},"annotations":[],"shapes":[],"images":[],"margin":{"b":40,"l":60,"t":0,"r":10},"hovermode":"closest","showlegend":true,"height":750,"legend":{"orientation":"h","xanchor":"center","x":0.5,"y":-100}},"attrs":{"3d803d782f5d":{"x":{},"y":{},"mode":"lines+markers","line":{"color":"#d12d36","width":3,"shape":"hv"},"marker":{"size":10,"color":"#d12d36"},"hoverinfo":"text","text":{},"name":"Elo","alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"type":"scatter"},"3d8069453875":{"x":{},"y":{},"mode":"markers","marker":{"size":10,"opacity":0.80000000000000004},"hoverinfo":"text","text":{},"color":{},"alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"type":"scatter"}},"source":"A","config":{"modeBarButtonsToAdd":["hoverclosest","hovercompare"],"showSendToCloud":false,"displayModeBar":false},"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.20000000000000001,"selected":{"opacity":1},"debounce":0},"subplot":true,"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot","plotly_sunburstclick"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script>
-</div>
-</div>
-<h2 style='font-size: 1em; margin: 0; text-align: center; font-weight: bold;'>Bout History</h2>
-<div class="reactable html-widget html-fill-item" id="htmlwidget-bac1de27e30612fdfcb3" style="width:auto;height:auto;"></div>
-<script type="application/json" data-for="htmlwidget-bac1de27e30612fdfcb3">{"x":{"tag":{"name":"Reactable","attribs":{"data":{"event_date":["<br><span class = 'event-date'>2022-05-14<\/span><br><a href='/events/20220514.html'>UFC on ESPN: Błachowicz vs. Rakić<\/a>","<br><span class = 'event-date'>2021-12-04<\/span><br><a href='/events/20211204.html'>UFC on ESPN: Font vs. Aldo<\/a>","<br><span class = 'event-date'>2020-12-05<\/span><br><a href='/events/20201205.html'>UFC on ESPN: Hermansson vs. Vettori<\/a>","<br><span class = 'event-date'>2020-05-30<\/span><br><a href='/events/20200530.html'>UFC on ESPN: Woodley vs. Burns<\/a>","<br><span class = 'event-date'>2019-09-14<\/span><br><a href='/events/20190914.html'>UFC Fight Night: Cowboy vs. Gaethje<\/a>","<br><span class = 'event-date'>2019-03-09<\/span><br><a href='/events/20190309.html'>UFC Fight Night: Lewis vs. dos Santos<\/a>","<br><span class = 'event-date'>2018-11-24<\/span><br><a href='/events/20181124.html'>UFC Fight Night: Blaydes vs. Ngannou 2<\/a>","<br><span class = 'event-date'>2017-12-30<\/span><br><a href='/events/20171230.html'>UFC 219: Cyborg vs. Holm<\/a>","<br><span class = 'event-date'>2017-04-15<\/span><br><a href='/events/20170415.html'>UFC on Fox: Johnson vs. Reis<\/a>","<br><span class = 'event-date'>2016-12-30<\/span><br><a href='/events/20161230.html'>UFC 207: Nunes vs. Rousey<\/a>","<br><span class = 'event-date'>2016-10-01<\/span><br><a href='/events/20161001.html'>UFC Fight Night: Lineker vs. Dodson<\/a>","<br><span class = 'event-date'>2016-07-13<\/span><br><a href='/events/20160713.html'>UFC Fight Night: McDonald vs. Lineker<\/a>","<br><span class = 'event-date'>2015-10-24<\/span><br><a href='/events/20151024.html'>UFC Fight Night: Holohan vs. Smolka<\/a>","<br><span class = 'event-date'>2015-07-11<\/span><br><a href='/events/20150711.html'>UFC 189: Mendes vs. McGregor<\/a>","<br><span class = 'event-date'>2014-11-07<\/span><br><a href='/events/20141107.html'>UFC Fight Night: Rockhold vs. Bisping<\/a>","<br><span class = 'event-date'>2014-05-10<\/span><br><a href='/events/20140510.html'>UFC Fight Night: Brown vs. Silva<\/a>","<br><span class = 'event-date'>2014-01-15<\/span><br><a href='/events/20140115.html'>UFC Fight Night: Rockhold vs. Philippou<\/a>"],"fighter_name":["<br> <b><a href=/fighters/daveygrant.html>Davey Grant<\/a><\/b> (36) <span class = 'emoji'>🇬🇧 🏴󠁧󠁢󠁥󠁮󠁧󠁿<\/span><br><span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: crimson; color: white; font-weight: bold;'>L<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: crimson; color: white; font-weight: bold;'>L<\/span> • 4-5<br>Elo: <span class = 'favorite-elo'>2729<\/span>","<br> <b><a href=/fighters/vincemorales.html>Vince Morales<\/a><\/b> (31) <span class = 'emoji'>🇺🇸<\/span><br><span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: crimson; color: white; font-weight: bold;'>L<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: crimson; color: white; font-weight: bold;'>L<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: crimson; color: white; font-weight: bold;'>L<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> • 2-3<br>Elo: 2581","<br> <b>Louis Smolka<\/b> (29) <span class = 'emoji'>🇺🇸<\/span><br><span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: crimson; color: white; font-weight: bold;'>L<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: crimson; color: white; font-weight: bold;'>L<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: crimson; color: white; font-weight: bold;'>L<\/span> • 7-7<br>Elo: 2607","<br> <b><a href=/fighters/caseykenney.html>Casey Kenney<\/a><\/b> (29) <span class = 'emoji'>🇺🇸<\/span><br><span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: crimson; color: white; font-weight: bold;'>L<\/span> • 2-1<br>Elo: <span class = 'favorite-elo'>2895<\/span>","<br> <b>Louis Smolka<\/b> (28) <span class = 'emoji'>🇺🇸<\/span><br><span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: crimson; color: white; font-weight: bold;'>L<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: crimson; color: white; font-weight: bold;'>L<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: crimson; color: white; font-weight: bold;'>L<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: crimson; color: white; font-weight: bold;'>L<\/span> • 6-6<br>Elo: <span class = 'favorite-elo'>2564<\/span>","<br> <b><a href=/fighters/mattschnell.html>Matt Schnell<\/a><\/b> (29) <span class = 'emoji'>🇺🇸<\/span><br><span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: crimson; color: white; font-weight: bold;'>L<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: crimson; color: white; font-weight: bold;'>L<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> • 2-2<br>Elo: 2597 • UFC rank: #15","<br> <b>Louis Smolka<\/b> (27) <span class = 'emoji'>🇺🇸<\/span><br><span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: crimson; color: white; font-weight: bold;'>L<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: crimson; color: white; font-weight: bold;'>L<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: crimson; color: white; font-weight: bold;'>L<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: crimson; color: white; font-weight: bold;'>L<\/span> • 5-5<br>Elo: <span class = 'favorite-elo'>2651<\/span>","<br> <b><a href=/fighters/matheusnicolau.html>Matheus Nicolau<\/a><\/b> (24) <span class = 'emoji'>🇧🇷<\/span><br><span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> • 2-0<br>Elo: <span class = 'favorite-elo'>2684<\/span>","<br> <b><a href=/fighters/timelliott.html>Tim Elliott<\/a><\/b> (30) <span class = 'emoji'>🇺🇸<\/span><br><span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: crimson; color: white; font-weight: bold;'>L<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: crimson; color: white; font-weight: bold;'>L<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: crimson; color: white; font-weight: bold;'>L<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: crimson; color: white; font-weight: bold;'>L<\/span> • 2-5<br>Elo: <span class = 'favorite-elo'>2974<\/span> • UFC rank: #9","<br> <b><a href=/fighters/rayborg.html>Ray Borg<\/a><\/b> (23) <span class = 'emoji'>🇺🇸<\/span><br><span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: crimson; color: white; font-weight: bold;'>L<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: crimson; color: white; font-weight: bold;'>L<\/span> • 3-2<br>Elo: 2671 • UFC rank: #13","<br> <b><span title='Performance of the Night' style='cursor: pointer;'>⭐ <\/span><a href=/fighters/brandonmoreno.html>Brandon Moreno<\/a><\/b> (22) <span class = 'emoji'>🇲🇽<\/span><br>Debut 🔰<br>Elo: 2548","<br> <b><span title='Performance of the Night' style='cursor: pointer;'>⭐ <\/span>Louis Smolka<\/b> (24) <span class = 'emoji'>🇺🇸<\/span><br><span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: crimson; color: white; font-weight: bold;'>L<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> • 4-1<br>Elo: <span class = 'favorite-elo'>2861<\/span> • UFC rank: #12","<br> <b>Louis Smolka<\/b> (24) <span class = 'emoji'>🇺🇸<\/span><br><span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: crimson; color: white; font-weight: bold;'>L<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> • 3-1<br>Elo: <span class = 'favorite-elo'>2806<\/span>","<br> <b>Louis Smolka<\/b> (23) <span class = 'emoji'>🇺🇸<\/span><br><span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: crimson; color: white; font-weight: bold;'>L<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> • 2-1<br>Elo: <span class = 'favorite-elo'>2710<\/span>","<br> <b><span title='Performance of the Night' style='cursor: pointer;'>⭐ <\/span>Louis Smolka<\/b> (23) <span class = 'emoji'>🇺🇸<\/span><br><span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: crimson; color: white; font-weight: bold;'>L<\/span> • 1-1<br>Elo: <span class = 'favorite-elo'>2646<\/span>","<br> <b><a href=/fighters/chriscariaso.html>Chris Cariaso<\/a><\/b> (32) <span class = 'emoji'>🇺🇸<\/span><br><span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: crimson; color: white; font-weight: bold;'>L<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: crimson; color: white; font-weight: bold;'>L<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> • 6-3<br>Elo: 2615 • UFC rank: #10","<br> <b>Louis Smolka<\/b> (22) <span class = 'emoji'>🇺🇸<\/span><br>Debut 🔰<br>Elo: <span class = 'favorite-elo'>2610<\/span>"],"result_description":["<span style='font-size: 0.8em;'>BANTAMWEIGHT<\/span><br>KO<br>R3<br>00:49","<span style='font-size: 0.8em;'>BANTAMWEIGHT<\/span><br>KO<br>R1<br>02:02","<span style='font-size: 0.8em;'>BANTAMWEIGHT<\/span><br>TKO<br>R2<br>02:15","<span style='font-size: 0.8em;'>BANTAMWEIGHT<\/span><br>SUB<br>R1<br>03:03","<span style='font-size: 0.8em;'>BANTAMWEIGHT<\/span><br>TKO<br>R1<br>04:43","<span style='font-size: 0.8em;'>BANTAMWEIGHT<\/span><br>SUB<br>R1<br>03:18","<span style='font-size: 0.8em;'>BANTAMWEIGHT<\/span><br>SUB<br>R2<br>02:07","<span style='font-size: 0.8em;'>FLYWEIGHT<\/span><br>DEC<br>R3<br>05:00","<span style='font-size: 0.8em;'>FLYWEIGHT<\/span><br><span title='Fight of the Night' style='cursor: pointer;'>⭐<\/span>DEC<span title='Fight of the Night' style='cursor: pointer;'>⭐<\/span><br>R3<br>05:00","<span style='font-size: 0.8em;'>CATCHWEIGHT (129.5 LB)<\/span><br>DEC<br>R3<br>05:00","<span style='font-size: 0.8em;'>FLYWEIGHT<\/span><br>SUB<br>R1<br>02:23","<span style='font-size: 0.8em;'>FLYWEIGHT<\/span><br>TKO<br>R2<br>04:41","<span style='font-size: 0.8em;'>FLYWEIGHT<\/span><br>SUB<br>R2<br>04:09","<span style='font-size: 0.8em;'>FLYWEIGHT<\/span><br>DEC<br>R3<br>05:00","<span style='font-size: 0.8em;'>FLYWEIGHT<\/span><br>TKO<br>R3<br>00:18","<span style='font-size: 0.8em;'>FLYWEIGHT<\/span><br>DEC<br>R3<br>05:00","<span style='font-size: 0.8em;'>FLYWEIGHT<\/span><br>DEC<br>R3<br>05:00"],"opponent_fighter_name":["<br><span class='emoji'>🇺🇸<\/span> <b>Louis Smolka<\/b> (30)<br>8-8 • <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: crimson; color: white; font-weight: bold;'>L<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: crimson; color: white; font-weight: bold;'>L<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: crimson; color: white; font-weight: bold;'>L<\/span><br>Elo: 2587","<br><span class='emoji'>🇺🇸<\/span> <b>Louis Smolka<\/b> (30)<br>8-7 • <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: crimson; color: white; font-weight: bold;'>L<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: crimson; color: white; font-weight: bold;'>L<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span><br>Elo: <span class = 'favorite-elo'>2727<\/span>","<br><span class='emoji'>🇲🇽<\/span> <b><a href=/fighters/josealbertoquinonez.html>Jose Alberto Quinonez<\/a><\/b> (30)<br>5-3 • <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: crimson; color: white; font-weight: bold;'>L<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: crimson; color: white; font-weight: bold;'>L<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span><br>Elo: <span class = 'favorite-elo'>2676<\/span>","<br><span class='emoji'>🇺🇸<\/span> <b>Louis Smolka<\/b> (28)<br>7-6 • <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: crimson; color: white; font-weight: bold;'>L<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: crimson; color: white; font-weight: bold;'>L<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: crimson; color: white; font-weight: bold;'>L<\/span><br>Elo: 2646","<br><span class='emoji'>🇺🇸<\/span> <b><a href=/fighters/ryanmacdonald.html>Ryan MacDonald<\/a><\/b> (26)<br>0-1 • <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: crimson; color: white; font-weight: bold;'>L<\/span><br>Elo: 2500","<br><span class='emoji'>🇺🇸<\/span> <b>Louis Smolka<\/b> (27)<br>6-5 • <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: crimson; color: white; font-weight: bold;'>L<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: crimson; color: white; font-weight: bold;'>L<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: crimson; color: white; font-weight: bold;'>L<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: crimson; color: white; font-weight: bold;'>L<\/span><br>Elo: <span class = 'favorite-elo'>2690<\/span>","<br><span class='emoji'>🇨🇳<\/span> <b><a href=/fighters/sumudaerji.html>Sumudaerji<\/a><\/b> (22)<br>🔰 Debut<br>Elo: 2406","<br><span class='emoji'>🇺🇸<\/span> <b>Louis Smolka<\/b> (26)<br>5-4 • <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: crimson; color: white; font-weight: bold;'>L<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: crimson; color: white; font-weight: bold;'>L<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: crimson; color: white; font-weight: bold;'>L<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span><br>UFC rank: #13 • Elo: 2594","<br><span class='emoji'>🇺🇸<\/span> <b>Louis Smolka<\/b> (25)<br>5-3 • <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: crimson; color: white; font-weight: bold;'>L<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: crimson; color: white; font-weight: bold;'>L<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span><br>UFC rank: #12 • Elo: 2617","<br><span class='emoji'>🇺🇸<\/span> <b>Louis Smolka<\/b> (25)<br>5-2 • <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: crimson; color: white; font-weight: bold;'>L<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span><br>UFC rank: #12 • Elo: <span class = 'favorite-elo'>2735<\/span>","<br><span class='emoji'>🇺🇸<\/span> <b>Louis Smolka<\/b> (25)<br>5-1 • <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: crimson; color: white; font-weight: bold;'>L<\/span><br>UFC rank: #9 • Elo: <span class = 'favorite-elo'>2913<\/span>","<br><span class='emoji'>🇺🇸 🇻🇳<\/span> <b><a href=/fighters/bennguyen.html>Ben Nguyen<\/a><\/b> (27)<br>2-0 • <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span><br>Elo: 2677","<br><span class='emoji'>🇮🇪<\/span> <b><a href=/fighters/paddyholohan.html>Paddy Holohan<\/a><\/b> (27)<br>3-1 • <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: crimson; color: white; font-weight: bold;'>L<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span><br>Elo: 2637","<br><span class='emoji'>🇮🇪<\/span> <b><a href=/fighters/neilseery.html>Neil Seery<\/a><\/b> (35)<br>2-1 • <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: crimson; color: white; font-weight: bold;'>L<\/span><br>Elo: 2698","<br><span class='emoji'>🇦🇺<\/span> <b><a href=/fighters/richievaculik.html>Richie Vaculik<\/a><\/b> (31)<br>1-1 • <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: crimson; color: white; font-weight: bold;'>L<\/span><br>Elo: 2514","<br><span class='emoji'>🇺🇸<\/span> <b>Louis Smolka<\/b> (22)<br>1-0 • <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span><br>Elo: <span class = 'favorite-elo'>2706<\/span>","<br><span class='emoji'>🇹🇷 🇺🇸<\/span> <b><a href=/fighters/alpozkilic.html>Alp Ozkilic<\/a><\/b> (27)<br>1-0 • <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span><br>Elo: 2596"],"City":["<br>UFC Apex<br>Las Vegas, Nevada<br>United States <span class='emoji'>🇺🇸<\/span>","<br>UFC Apex<br>Las Vegas, Nevada<br>United States <span class='emoji'>🇺🇸<\/span>","<br>UFC Apex<br>Las Vegas, Nevada<br>United States <span class='emoji'>🇺🇸<\/span>","<br>UFC Apex<br>Las Vegas, Nevada<br>United States <span class='emoji'>🇺🇸<\/span>","<br>Rogers Arena<br>Vancouver<br>Canada <span class='emoji'>🇨🇦<\/span>","<br>Intrust Bank Arena<br>Wichita, Kansas<br>United States <span class='emoji'>🇺🇸<\/span>","<br>Cadillac Arena<br>Beijing<br>China <span class='emoji'>🇨🇳<\/span>","<br>T-Mobile Arena<br>Las Vegas, Nevada<br>United States <span class='emoji'>🇺🇸<\/span>","<br>Sprint Center<br>Kansas City, Missouri<br>United States <span class='emoji'>🇺🇸<\/span>","<br>T-Mobile Arena<br>Las Vegas, Nevada<br>United States <span class='emoji'>🇺🇸<\/span>","<br>Moda Center<br>Portland, Oregon<br>United States <span class='emoji'>🇺🇸<\/span>","<br>Denny Sanford Premier Center<br>Sioux Falls, South Dakota<br>United States <span class='emoji'>🇺🇸<\/span>","<br>3Arena<br>Dublin<br>Ireland <span class='emoji'>🇮🇪<\/span>","<br>MGM Grand Garden Arena<br>Las Vegas, Nevada<br>United States <span class='emoji'>🇺🇸<\/span>","<br>Allphones Arena<br>Sydney<br>Australia <span class='emoji'>🇦🇺<\/span>","<br>U.S. Bank Arena<br>Cincinnati, Ohio<br>United States <span class='emoji'>🇺🇸<\/span>","<br>The Arena at Gwinnett Center<br>Duluth, Georgia<br>United States <span class='emoji'>🇺🇸<\/span>"]},"columns":[{"id":"event_date","name":"","type":"character","html":true,"width":200,"className":"side_info"},{"id":"fighter_name","name":"","type":"character","html":true,"width":240,"align":"right"},{"id":"result_description","name":"","type":"character","html":true,"width":50,"align":"center","className":"result_description"},{"id":"opponent_fighter_name","name":"","type":"character","html":true,"width":240,"align":"left"},{"id":"City","name":"","type":"character","cell":["<div style=\"white-space: nowrap; overflow: visible;\"><br>UFC Apex<br>Las Vegas, Nevada<br>United States <span class='emoji'>🇺🇸<\/span><\/div>","<div style=\"white-space: nowrap; overflow: visible;\"><br>UFC Apex<br>Las Vegas, Nevada<br>United States <span class='emoji'>🇺🇸<\/span><\/div>","<div style=\"white-space: nowrap; overflow: visible;\"><br>UFC Apex<br>Las Vegas, Nevada<br>United States <span class='emoji'>🇺🇸<\/span><\/div>","<div style=\"white-space: nowrap; overflow: visible;\"><br>UFC Apex<br>Las Vegas, Nevada<br>United States <span class='emoji'>🇺🇸<\/span><\/div>","<div style=\"white-space: nowrap; overflow: visible;\"><br>Rogers Arena<br>Vancouver<br>Canada <span class='emoji'>🇨🇦<\/span><\/div>","<div style=\"white-space: nowrap; overflow: visible;\"><br>Intrust Bank Arena<br>Wichita, Kansas<br>United States <span class='emoji'>🇺🇸<\/span><\/div>","<div style=\"white-space: nowrap; overflow: visible;\"><br>Cadillac Arena<br>Beijing<br>China <span class='emoji'>🇨🇳<\/span><\/div>","<div style=\"white-space: nowrap; overflow: visible;\"><br>T-Mobile Arena<br>Las Vegas, Nevada<br>United States <span class='emoji'>🇺🇸<\/span><\/div>","<div style=\"white-space: nowrap; overflow: visible;\"><br>Sprint Center<br>Kansas City, Missouri<br>United States <span class='emoji'>🇺🇸<\/span><\/div>","<div style=\"white-space: nowrap; overflow: visible;\"><br>T-Mobile Arena<br>Las Vegas, Nevada<br>United States <span class='emoji'>🇺🇸<\/span><\/div>","<div style=\"white-space: nowrap; overflow: visible;\"><br>Moda Center<br>Portland, Oregon<br>United States <span class='emoji'>🇺🇸<\/span><\/div>","<div style=\"white-space: nowrap; overflow: visible;\"><br>Denny Sanford Premier Center<br>Sioux Falls, South Dakota<br>United States <span class='emoji'>🇺🇸<\/span><\/div>","<div style=\"white-space: nowrap; overflow: visible;\"><br>3Arena<br>Dublin<br>Ireland <span class='emoji'>🇮🇪<\/span><\/div>","<div style=\"white-space: nowrap; overflow: visible;\"><br>MGM Grand Garden Arena<br>Las Vegas, Nevada<br>United States <span class='emoji'>🇺🇸<\/span><\/div>","<div style=\"white-space: nowrap; overflow: visible;\"><br>Allphones Arena<br>Sydney<br>Australia <span class='emoji'>🇦🇺<\/span><\/div>","<div style=\"white-space: nowrap; overflow: visible;\"><br>U.S. Bank Arena<br>Cincinnati, Ohio<br>United States <span class='emoji'>🇺🇸<\/span><\/div>","<div style=\"white-space: nowrap; overflow: visible;\"><br>The Arena at Gwinnett Center<br>Duluth, Georgia<br>United States <span class='emoji'>🇺🇸<\/span><\/div>"],"html":true,"width":200,"className":"side_info"}],"sortable":false,"pagination":false,"defaultPageSize":100,"showPageInfo":false,"nowrap":true,"className":"event_bouts","inline":true,"theme":{"headerStyle":{"borderBottom":"none"}},"dataKey":"b30ae75d022d4aef2ef1189d63b2fb82"},"children":[]},"class":"reactR_markup"},"evals":[],"jsHooks":[]}</script>
-
-<footer>
-  <div class="footer-container">
-    <p class="copyright-text">
-        <a href="/glossary.html">Glossary</a>
-      <a href="mailto:rostertracker@gmail.com">Contact</a>
-    </p>
-<!--     <p class="browser-badge">
-      <a href="https://www.mozilla.org/en-US/firefox/">
-        <img src="C:/Users/mart/Dropbox/R/roster.watch/firefox.png" title="Best viewed with Firefox" alt="Best viewed with Firefox"><br>
-        <small class="copyright-text">Best viewed with Firefox</small>
-      </a>
-    </p> 
- -->  </div>
- <div class="footer-container">
-    <p class="copyright-text">
-      Copyright © <span id="currentYear"></span> All Rights Reserved by 
-      <a href="#">roster.watch</a>
-    </p>
-<!--     <p class="browser-badge">
-      <a href="https://www.mozilla.org/en-US/firefox/">
-        <img src="C:/Users/mart/Dropbox/R/roster.watch/firefox.png" title="Best viewed with Firefox" alt="Best viewed with Firefox"><br>
-        <small class="copyright-text">Best viewed with Firefox</small>
-      </a>
-    </p> 
- -->  </div>
-</footer>
-
-<style>
-.footer-container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1rem;
-}
-
-.copyright-text {
-  margin: 0 auto;
-}
-
-.browser-badge {
-  margin-left: auto;
-}
-</style>
-
-<script>
-  document.getElementById('currentYear').textContent = new Date().getFullYear();
-</script>
-
-
-
-</div>
-
-<script>
-
-// add bootstrap table styles to pandoc tables
-function bootstrapStylePandocTables() {
-  $('tr.odd').parent('tbody').parent('table').addClass('table table-condensed');
-}
-$(document).ready(function () {
-  bootstrapStylePandocTables();
-});
-
-
-</script>
-
-<!-- tabsets -->
-
-<script>
-$(document).ready(function () {
-  window.buildTabsets("TOC");
-});
-
-$(document).ready(function () {
-  $('.tabset-dropdown > .nav-tabs > li').click(function () {
-    $(this).parent().toggleClass('nav-tabs-open');
-  });
-});
-</script>
-
-<!-- code folding -->
-
-
-<!-- dynamically load mathjax for compatibility with self-contained -->
-<script>
-  (function () {
-    var script = document.createElement("script");
-    script.type = "text/javascript";
-    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
-    document.getElementsByTagName("head")[0].appendChild(script);
-  })();
-</script>
-
-</body>
-</html>
+<!doctype html><html lang=en><head><meta charset=UTF-8><meta name=viewport content="width=device-width,initial-scale=1"><title>Louis Smolka · roster.watch</title><link rel=stylesheet href=/style.css><link rel=apple-touch-icon sizes=180x180 href=/apple-touch-icon.png><link rel=icon type=image/png sizes=32x32 href=/favicon-32x32.png><link rel=icon type=image/png sizes=16x16 href=/favicon-16x16.png><link rel=manifest href=/site.webmanifest><meta name=description content="An up-to-date list of the full active UFC roster including biographical data, rankings, records, and more."><script data-goatcounter=https://rosterwatch.goatcounter.com/count async src=//gc.zgo.at/count.js></script><script defer src=/script.js data-website-id=f0f3ed7e-e89c-4a29-a745-475e0b10271a></script><script src=/age.js></script></head><body><div class=container><header><a class=logo href=/><img src=/images/logo.svg alt=logo></a><nav><ul class=nav__links><li><a href=/>Current Roster</a></li><li><a href=/former.html>Former Roster</a></li><li class=dropdown><a href=# onclick=return!1>Weight Classes</a><ul class=dropdown-content><li><a href=/heavyweight.html>Heavyweight</a></li><li><a href=/lightheavyweight.html>Light Heavyweight</a></li><li><a href=/middleweight.html>Middleweight</a></li><li><a href=/welterweight.html>Welterweight</a></li><li><a href=/lightweight.html>Lightweight</a></li><li><a href=/featherweight.html>Featherweight</a></li><li><a href=/bantamweight.html>Bantamweight</a></li><li><a href=/flyweight.html>Flyweight</a></li><li><a href=/womensbantamweight.html>Women's Bantamweight</a></li><li><a href=/womensflyweight.html>Women's Flyweight</a></li><li><a href=/womensstrawweight.html>Women's Strawweight</a></li></ul></li><li><a href=/events>Events</a></li><li><a href=/log.html>Log</a></li><li><a href=/fightlog.html>Fight Log</a></li><li><a href=javascript:void(0) onclick=getRandomPage()>Random Page</a></li><li><a href=https://rosterwatch.printify.me/>Merch</a></li><li><a href="https://www.patreon.com/bePatron?u=88266864">Support on Patreon</a></li></ul></nav><div class="menu cta">Menu</div></header><div class=overlay><a class=close>×</a><div class=overlay__content><a href=/>Current Roster</a>
+<a href=/former.html>Former Roster</a><div class=dropdown-mobile><a href=# onclick=return!1>Weight Classes</a><div class=dropdown-content-mobile><a href=/heavyweight.html>Heavyweight</a>
+<a href=/lightheavyweight.html>Light Heavyweight</a>
+<a href=/middleweight.html>Middleweight</a>
+<a href=/welterweight.html>Welterweight</a>
+<a href=/lightweight.html>Lightweight</a>
+<a href=/featherweight.html>Featherweight</a>
+<a href=/bantamweight.html>Bantamweight</a>
+<a href=/flyweight.html>Flyweight</a>
+<a href=/womensbantamweight.html>Women's Bantamweight</a>
+<a href=/womensflyweight.html>Women's Flyweight</a>
+<a href=/womensstrawweight.html>Women's Strawweight</a></div></div><a href=/events>Events</a>
+<a href=/log.html>Log</a>
+<a href=/fightlog.html>Fight Log</a>
+<a href=javascript:void(0) onclick=getRandomPage()>Random Page</a>
+<a href=https://rosterwatch.printify.me/>Merch</a>
+<a href="https://www.patreon.com/bePatron?u=88266864">Support on Patreon</a></div></div><script type=text/javascript src=/mobile.js></script><script>function getRandomPage(){fetch("/sitemap.xml").then(e=>e.text()).then(e=>{const n=new DOMParser,s=n.parseFromString(e,"application/xml"),t=Array.from(s.getElementsByTagName("loc")).map(e=>e.textContent),o=t[Math.floor(Math.random()*t.length)];window.location.href=o})}</script><main><div class=fighter-header><div class=fighter-name><div><h1>Louis Smolka</h1><span class=emoji>🇺🇸</span></div><time class=dob data-dob=1991-07-16><span class=age></span><div class=date_of_birth>(1991-07-16)</div></time></div></div><h2>Statistics</h2><article class=fighter-info><div class=two-column-layout><div class=fighter-details><div class=fighter-stats><p><strong>UFC Record:</strong> 8-9</p><p><strong>By Method:</strong></p><ul><li>KO/TKO: 4-2</li><li>Submission: 2-3</li><li>Decision: 2-4</li></ul><p><strong>By Elo:</strong></p><ul><li>As Favorite: 7-5</li><li>As Underdog: 1-4</li></ul><p><strong>By Weight Class:</strong></p><ul><li>Flyweight: 5-4</li><li>Bantamweight: 3-4</li></ul><p><strong>By Round:</strong></p><ul><li>Round 1: 1-4</li><li>Round 2: 4-0</li><li>Round 3: 3-5</li></ul><p><strong>By Type:</strong></p><ul><li>Main Event: 1-0</li></ul></div></div><div class=rankings><p><strong>UFC Roster Status:</strong> Inactive</p><p><strong>Last 5:</strong>
+<span class="wldn-letter letter-W">W</span>
+<span class="wldn-letter letter-L">L</span>
+<span class="wldn-letter letter-W">W</span>
+<span class="wldn-letter letter-L">L</span>
+<span class="wldn-letter letter-L">L</span></p><p><strong>Peak Elo:</strong> 2913 <span class=peak-date>(2016-07-13)</span></p><p><strong>Avg Opponent Elo:</strong> 2647 (#1251)</p><p><strong>Bonuses:</strong> 3 (1 FOTN, 2
+Performance)</p><p><strong>Avg Fight Time:</strong> 9m 24s</p><p><strong>Total Fight Time:</strong> 2h 39m 48s</p><p><strong>Avg Time Between Fights:</strong> 185 days</p><p><strong>Avg Card Placement:</strong> 7.8</p><p><strong>Peak Rankings:</strong></p><div>#9 Flyweight</div></div></div></article><div class=chart-section><h2>Elo Rating & UFC Rankings</h2><div class=chart-container><div id=fighter-performance-chart data-rankings='{"Flyweight":[{"date":"2015-10-26","rank":13},{"date":"2015-11-09","rank":14},{"date":"2015-11-16","rank":13},{"date":"2015-11-23","rank":13},{"date":"2015-11-30","rank":13},{"date":"2015-12-14","rank":13},{"date":"2015-12-21","rank":13},{"date":"2016-01-04","rank":13},{"date":"2016-01-19","rank":13},{"date":"2016-02-01","rank":13},{"date":"2016-02-08","rank":13},{"date":"2016-02-23","rank":13},{"date":"2016-02-29","rank":13},{"date":"2016-03-07","rank":13},{"date":"2016-03-21","rank":13},{"date":"2016-04-12","rank":13},{"date":"2016-04-18","rank":12},{"date":"2016-04-25","rank":12},{"date":"2016-05-10","rank":12},{"date":"2016-05-16","rank":12},{"date":"2016-05-31","rank":12},{"date":"2016-06-06","rank":12},{"date":"2016-06-20","rank":12},{"date":"2016-07-11","rank":12},{"date":"2016-07-15","rank":9},{"date":"2016-07-27","rank":9},{"date":"2016-08-03","rank":9},{"date":"2016-08-09","rank":9},{"date":"2016-08-24","rank":9},{"date":"2016-08-31","rank":9},{"date":"2016-09-05","rank":9},{"date":"2016-09-14","rank":9},{"date":"2016-09-21","rank":9},{"date":"2016-09-26","rank":9},{"date":"2016-10-05","rank":13},{"date":"2016-10-12","rank":13},{"date":"2016-11-07","rank":12},{"date":"2016-11-16","rank":12},{"date":"2016-11-21","rank":11},{"date":"2016-11-30","rank":11},{"date":"2016-12-05","rank":12},{"date":"2016-12-14","rank":12},{"date":"2016-12-19","rank":12},{"date":"2017-01-02","rank":13},{"date":"2017-01-18","rank":14},{"date":"2017-02-01","rank":13},{"date":"2017-02-08","rank":13},{"date":"2017-02-13","rank":13},{"date":"2017-02-21","rank":12},{"date":"2017-03-06","rank":12},{"date":"2017-03-15","rank":12},{"date":"2017-03-22","rank":12},{"date":"2017-04-12","rank":12},{"date":"2017-04-19","rank":12},{"date":"2017-04-26","rank":13},{"date":"2017-05-17","rank":13},{"date":"2017-05-31","rank":13},{"date":"2017-06-07","rank":13},{"date":"2017-06-14","rank":13},{"date":"2017-06-21","rank":13},{"date":"2017-06-28","rank":13},{"date":"2017-07-10","rank":13},{"date":"2017-07-18","rank":14},{"date":"2017-07-26","rank":14},{"date":"2017-08-02","rank":14},{"date":"2017-08-07","rank":14},{"date":"2017-09-04","rank":14},{"date":"2017-09-13","rank":14},{"date":"2017-09-20","rank":14},{"date":"2017-09-25","rank":14},{"date":"2017-10-09","rank":13},{"date":"2017-10-23","rank":13},{"date":"2017-10-30","rank":13},{"date":"2017-11-08","rank":13},{"date":"2017-11-13","rank":13},{"date":"2017-11-20","rank":13},{"date":"2017-11-29","rank":13},{"date":"2017-12-06","rank":13},{"date":"2017-12-13","rank":13},{"date":"2017-12-18","rank":13},{"date":"2018-01-01","rank":15},{"date":"2019-04-01","rank":13},{"date":"2019-04-03","rank":13}]}' data-elo='[{"bout_order":1,"city":"Las Vegas, Nevada","country":"United States","country_emoji":"🇺🇸","event_date":"2022-05-14","event_name":"UFC on ESPN: Błachowicz vs. Rakić","event_slug":"20220514","fighter":"Louis Smolka","fighter_age":30,"fighter_country":"🇺🇸","fighter_last5":"LWLWL","fighter_plot_rtg":2526,"fighter_record":"8-8","fighter_rtg":2588,"method":"KO","opponent_age":36,"opponent_country":"🇬🇧 🏴󠁧󠁢󠁥󠁮󠁧󠁿","opponent_last5":"WWWLL","opponent_name":"Davey Grant","opponent_record":"4-5","opponent_rtg":2729,"opponent_slug":"daveygrant","result":"Loss","round":3,"time":"00:49","venue":"UFC Apex","weight_class":"Bantamweight"},{"bout_order":1,"city":"Las Vegas, Nevada","country":"United States","country_emoji":"🇺🇸","event_date":"2021-12-04","event_name":"UFC on ESPN: Font vs. Aldo","event_slug":"20211204","fighter":"Louis Smolka","fighter_age":30,"fighter_country":"🇺🇸","fighter_last5":"WLWLW","fighter_plot_rtg":2588,"fighter_record":"8-7","fighter_rtg":2727,"method":"KO","opponent_age":31,"opponent_country":"🇺🇸","opponent_last5":"LWLLW","opponent_name":"Vince Morales","opponent_record":"2-3","opponent_rtg":2582,"opponent_slug":"vincemorales","result":"Loss","round":1,"time":"02:02","venue":"UFC Apex","weight_class":"Bantamweight"},{"bout_order":1,"city":"Las Vegas, Nevada","country":"United States","country_emoji":"🇺🇸","event_date":"2020-12-05","event_name":"UFC on ESPN: Hermansson vs. Vettori","event_slug":"20201205","fighter":"Louis Smolka","fighter_age":29,"fighter_country":"🇺🇸","fighter_last5":"LWLWL","fighter_plot_rtg":2727,"fighter_record":"7-7","fighter_rtg":2607,"method":"TKO","opponent_age":30,"opponent_country":"🇲🇽","opponent_last5":"WWLWL","opponent_name":"Jose Alberto Quinonez","opponent_record":"5-3","opponent_rtg":2678,"opponent_slug":"josealbertoquinonez","result":"Win","round":2,"time":"02:15","venue":"UFC Apex","weight_class":"Bantamweight"},{"bout_order":1,"city":"Las Vegas, Nevada","country":"United States","country_emoji":"🇺🇸","event_date":"2020-05-30","event_name":"UFC on ESPN: Woodley vs. Burns","event_slug":"20200530","fighter":"Louis Smolka","fighter_age":28,"fighter_country":"🇺🇸","fighter_last5":"WLWLL","fighter_plot_rtg":2607,"fighter_record":"7-6","fighter_rtg":2646,"method":"SUB","opponent_age":29,"opponent_country":"🇺🇸","opponent_last5":"WWL","opponent_name":"Casey Kenney","opponent_record":"2-1","opponent_rtg":2896,"opponent_slug":"caseykenney","result":"Loss","round":1,"time":"03:03","venue":"UFC Apex","weight_class":"Bantamweight"},{"bout_order":1,"city":"Vancouver","country":"Canada","country_emoji":"🇨🇦","event_date":"2019-09-14","event_name":"UFC Fight Night: Cowboy vs. Gaethje","event_slug":"20190914","fighter":"Louis Smolka","fighter_age":28,"fighter_country":"🇺🇸","fighter_last5":"LWLLL","fighter_plot_rtg":2646,"fighter_record":"6-6","fighter_rtg":2564,"method":"TKO","opponent_age":26,"opponent_country":"🇺🇸","opponent_last5":"L","opponent_name":"Ryan MacDonald","opponent_record":"0-1","opponent_rtg":2500,"opponent_slug":"ryanmacdonald","result":"Win","round":1,"time":"04:43","venue":"Rogers Arena","weight_class":"Bantamweight"},{"bout_order":1,"city":"Wichita, Kansas","country":"United States","country_emoji":"🇺🇸","event_date":"2019-03-09","event_name":"UFC Fight Night: Lewis vs. dos Santos","event_slug":"20190309","fighter":"Louis Smolka","fighter_age":27,"fighter_country":"🇺🇸","fighter_last5":"WLLLL","fighter_plot_rtg":2564,"fighter_record":"6-5","fighter_rtg":2690,"method":"SUB","opponent_age":29,"opponent_country":"🇺🇸","opponent_last5":"LLWW","opponent_name":"Matt Schnell","opponent_rank":15,"opponent_record":"2-2","opponent_rtg":2597,"opponent_slug":"mattschnell","result":"Loss","round":1,"time":"03:18","venue":"Intrust Bank Arena","weight_class":"Bantamweight"},{"bout_order":1,"city":"Beijing","country":"China","country_emoji":"🇨🇳","event_date":"2018-11-24","event_name":"UFC Fight Night: Blaydes vs. Ngannou 2","event_slug":"20181124","fighter":"Louis Smolka","fighter_age":27,"fighter_country":"🇺🇸","fighter_last5":"LLLLW","fighter_plot_rtg":2690,"fighter_record":"5-5","fighter_rtg":2651,"method":"SUB","opponent_age":22,"opponent_country":"🇨🇳","opponent_last5":"","opponent_name":"Sumudaerji","opponent_record":"","opponent_rtg":2404,"opponent_slug":"sumudaerji","result":"Win","round":2,"time":"02:07","venue":"Cadillac Arena","weight_class":"Bantamweight"},{"bout_order":1,"city":"Las Vegas, Nevada","country":"United States","country_emoji":"🇺🇸","event_date":"2017-12-30","event_name":"UFC 219: Cyborg vs. Holm","event_slug":"20171230","fighter":"Louis Smolka","fighter_age":26,"fighter_country":"🇺🇸","fighter_last5":"LLLWW","fighter_plot_rtg":2520,"fighter_rank":13,"fighter_record":"5-4","fighter_rtg":2594,"method":"DEC","opponent_age":24,"opponent_country":"🇧🇷","opponent_last5":"WW","opponent_name":"Matheus Nicolau","opponent_record":"2-0","opponent_rtg":2684,"opponent_slug":"matheusnicolau","result":"Loss","round":3,"time":"05:00","venue":"T-Mobile Arena","weight_class":"Flyweight"},{"bout_order":1,"city":"Kansas City, Missouri","country":"United States","country_emoji":"🇺🇸","event_date":"2017-04-15","event_name":"UFC on Fox: Johnson vs. Reis","event_slug":"20170415","fight_of_the_night":true,"fighter":"Louis Smolka","fighter_age":25,"fighter_country":"🇺🇸","fighter_last5":"LLWWW","fighter_plot_rtg":2594,"fighter_rank":12,"fighter_record":"5-3","fighter_rtg":2616,"method":"DEC","opponent_age":30,"opponent_country":"🇺🇸","opponent_last5":"WLLLL","opponent_name":"Tim Elliott","opponent_rank":9,"opponent_record":"2-5","opponent_rtg":2978,"opponent_slug":"timelliott","result":"Loss","round":3,"time":"05:00","venue":"Sprint Center","weight_class":"Flyweight"},{"bout_order":1,"city":"Las Vegas, Nevada","country":"United States","country_emoji":"🇺🇸","event_date":"2016-12-30","event_name":"UFC 207: Nunes vs. Rousey","event_slug":"20161230","fighter":"Louis Smolka","fighter_age":25,"fighter_country":"🇺🇸","fighter_last5":"LWWWW","fighter_plot_rtg":2616,"fighter_rank":12,"fighter_record":"5-2","fighter_rtg":2735,"method":"DEC","opponent_age":23,"opponent_country":"🇺🇸","opponent_last5":"LWWWL","opponent_name":"Ray Borg","opponent_rank":13,"opponent_record":"3-2","opponent_rtg":2671,"opponent_slug":"rayborg","result":"Loss","round":3,"time":"05:00","venue":"T-Mobile Arena","weight_class":"Catchweight (129.5 lb)"},{"bout_order":1,"city":"Portland, Oregon","country":"United States","country_emoji":"🇺🇸","event_date":"2016-10-01","event_name":"UFC Fight Night: Lineker vs. Dodson","event_slug":"20161001","fighter":"Louis Smolka","fighter_age":25,"fighter_country":"🇺🇸","fighter_last5":"WWWWL","fighter_plot_rtg":2735,"fighter_rank":9,"fighter_record":"5-1","fighter_rtg":2913,"method":"SUB","opp_bonus":true,"opp_perf_of_the_night":true,"opponent_age":22,"opponent_country":"🇲🇽","opponent_last5":"","opponent_name":"Brandon Moreno","opponent_record":"","opponent_rtg":2548,"opponent_slug":"brandonmoreno","result":"Loss","round":1,"time":"02:23","venue":"Moda Center","weight_class":"Flyweight"},{"bout_order":1,"city":"Sioux Falls, South Dakota","country":"United States","country_emoji":"🇺🇸","event_date":"2016-07-13","event_name":"UFC Fight Night: McDonald vs. Lineker","event_slug":"20160713","fighter":"Louis Smolka","fighter_age":24,"fighter_country":"🇺🇸","fighter_last5":"WWWLW","fighter_plot_rtg":2913,"fighter_rank":12,"fighter_record":"4-1","fighter_rtg":2861,"method":"TKO","opponent_age":27,"opponent_country":"🇺🇸 🇻🇳","opponent_last5":"WW","opponent_name":"Ben Nguyen","opponent_record":"2-0","opponent_rtg":2677,"opponent_slug":"bennguyen","perf_of_the_night":true,"result":"Win","round":2,"time":"04:41","venue":"Denny Sanford Premier Center","weight_class":"Flyweight"},{"bout_order":1,"city":"Dublin","country":"Ireland","country_emoji":"🇮🇪","event_date":"2015-10-24","event_name":"UFC Fight Night: Holohan vs. Smolka","event_slug":"20151024","fighter":"Louis Smolka","fighter_age":24,"fighter_country":"🇺🇸","fighter_last5":"WWLW","fighter_plot_rtg":2861,"fighter_record":"3-1","fighter_rtg":2806,"method":"SUB","opponent_age":27,"opponent_country":"🇮🇪","opponent_last5":"WLWW","opponent_name":"Paddy Holohan","opponent_record":"3-1","opponent_rtg":2637,"opponent_slug":"paddyholohan","result":"Win","round":2,"time":"04:09","venue":"3Arena","weight_class":"Flyweight"},{"bout_order":1,"city":"Las Vegas, Nevada","country":"United States","country_emoji":"🇺🇸","event_date":"2015-07-11","event_name":"UFC 189: Mendes vs. McGregor","event_slug":"20150711","fighter":"Louis Smolka","fighter_age":23,"fighter_country":"🇺🇸","fighter_last5":"WLW","fighter_plot_rtg":2806,"fighter_record":"2-1","fighter_rtg":2710,"method":"DEC","opponent_age":35,"opponent_country":"🇮🇪","opponent_last5":"LWW","opponent_name":"Neil Seery","opponent_record":"2-1","opponent_rtg":2698,"opponent_slug":"neilseery","result":"Win","round":3,"time":"05:00","venue":"MGM Grand Garden Arena","weight_class":"Flyweight"},{"bout_order":1,"city":"Sydney","country":"Australia","country_emoji":"🇦🇺","event_date":"2014-11-07","event_name":"UFC Fight Night: Rockhold vs. Bisping","event_slug":"20141107","fighter":"Louis Smolka","fighter_age":23,"fighter_country":"🇺🇸","fighter_last5":"LW","fighter_plot_rtg":2710,"fighter_record":"1-1","fighter_rtg":2646,"method":"TKO","opponent_age":31,"opponent_country":"🇦🇺","opponent_last5":"LW","opponent_name":"Richie Vaculik","opponent_record":"1-1","opponent_rtg":2514,"opponent_slug":"richievaculik","perf_of_the_night":true,"result":"Win","round":3,"time":"00:18","venue":"Allphones Arena","weight_class":"Flyweight"},{"bout_order":1,"city":"Cincinnati, Ohio","country":"United States","country_emoji":"🇺🇸","event_date":"2014-05-10","event_name":"UFC Fight Night: Brown vs. Silva","event_slug":"20140510","fighter":"Louis Smolka","fighter_age":22,"fighter_country":"🇺🇸","fighter_last5":"W","fighter_plot_rtg":2646,"fighter_record":"1-0","fighter_rtg":2706,"method":"DEC","opponent_age":32,"opponent_country":"🇺🇸","opponent_last5":"WLLWW","opponent_name":"Chris Cariaso","opponent_rank":10,"opponent_record":"6-3","opponent_rtg":2615,"opponent_slug":"chriscariaso","result":"Loss","round":3,"time":"05:00","venue":"U.S. Bank Arena","weight_class":"Flyweight"},{"bout_order":1,"city":"Duluth, Georgia","country":"United States","country_emoji":"🇺🇸","event_date":"2014-01-15","event_name":"UFC Fight Night: Rockhold vs. Philippou","event_slug":"20140115","fighter":"Louis Smolka","fighter_age":22,"fighter_country":"🇺🇸","fighter_last5":"","fighter_plot_rtg":2706,"fighter_record":"","fighter_rtg":2610,"method":"DEC","opponent_age":27,"opponent_country":"🇹🇷 🇺🇸","opponent_last5":"W","opponent_name":"Alp Ozkilic","opponent_record":"1-0","opponent_rtg":2596,"opponent_slug":"alpozkilic","result":"Win","round":3,"time":"05:00","venue":"The Arena at Gwinnett Center","weight_class":"Flyweight"}]'></div></div></div><script src=https://cdn.plot.ly/plotly-3.1.0.min.js></script><script>const chartElement=document.getElementById("fighter-performance-chart"),eloDataRaw=chartElement.dataset.elo,rankingsDataRaw=chartElement.dataset.rankings,eloData=eloDataRaw?JSON.parse(eloDataRaw):[],seen=new Map,eloDataFiltered=eloData.filter(e=>{const t=`${e.event_date}_${e.fighter_plot_rtg}`;return!seen.has(t)&&(seen.set(t,!0),!0)}),rankingsData=rankingsDataRaw?JSON.parse(rankingsDataRaw):[],hasElo=eloDataFiltered&&eloDataFiltered.length>1,hasRankings=rankingsData&&Object.keys(rankingsData).length>0,createEloTrace=(e="x",t="y")=>({x:eloDataFiltered.map(e=>e.event_date),y:eloDataFiltered.map(e=>e.fighter_plot_rtg),customdata:eloDataFiltered.map(e=>[e.opponent_name,e.result]),type:"scatter",mode:"lines+markers",line:{color:"#d4636a",width:3,shape:"vh"},marker:{size:10,color:"#d4636a"},hovertemplate:"%{x|%Y-%m-%d}<br>%{y} Elo<br>vs %{customdata[0]}<br>%{customdata[1]}<extra></extra>",name:"Elo",xaxis:e,yaxis:t}),createRankingsTraces=(e,t="x",n="y")=>{const s=["#65c1eb","#85ceb7","#fda481"],o={"Pound-for-Pound":"#FBBF24","Men's Pound-for-Pound":"#a4b3d5","Women's Pound-for-Pound":"#eca1cf"},a=["Pound-for-Pound","Men's Pound-for-Pound","Women's Pound-for-Pound","Flyweight","Bantamweight","Featherweight","Lightweight","Welterweight","Middleweight","Light Heavyweight","Heavyweight","Women's Flyweight","Women's Featherweight","Women's Strawweight","Women's Bantamweight"],r=a.filter(e=>rankingsData[e]);let i=0;return r.map(e=>{const a=rankingsData[e];let r;return o[e]?r=o[e]:(r=s[i%s.length],i++),{x:a.map(e=>e.date),y:a.map(e=>e.rank),type:"scatter",mode:"markers",marker:{size:10,opacity:.8,color:r},hovertemplate:a.map(t=>`${t.date}<br>${t.rank===0?"Champion":"#"+t.rank}<br>${e}<extra></extra>`),name:e,xaxis:t,yaxis:n}})};let traces=[],layout={margin:{t:0,b:0,l:30,r:0},width:600,paper_bgcolor:"#f7f5f0",plot_bgcolor:"#f7f5f0"},title="",height=450;hasElo&&hasRankings?(traces=[createEloTrace("x","y"),...createRankingsTraces(rankingsData,"x2","y2")],title="Elo Rating & UFC Rankings",height=800,layout={...layout,grid:{rows:2,columns:1,subplots:[["xy"],["x2y2"]],roworder:"top to bottom",ygap:.1},showlegend:!0,legend:{orientation:"h",xanchor:"center",x:.5,y:-.03},xaxis:{gridcolor:"#e1e1e1",title:"",matches:"x2"},yaxis:{gridcolor:"#e1e1e1",title:""},xaxis2:{gridcolor:"#e1e1e1",title:"",matches:"x"},yaxis2:{range:[15.5,-.5],tickvals:[15,14,13,12,11,10,9,8,7,6,5,4,3,2,1,0],ticktext:["15","14","13","12","11","10","9","8","7","6","5","4","3","2","1","C"],gridcolor:"#e1e1e1",zeroline:!1,title:""}},document.querySelector(".chart-section h2").textContent=title,chartElement.style.height=height+"px",layout.height=height,Plotly.newPlot("fighter-performance-chart",traces,layout,{displayModeBar:!1,responsive:!0})):hasElo?(traces=[createEloTrace()],title="Elo Rating",layout={...layout,showlegend:!1,legend:{orientation:"h",xanchor:"center",x:.5,y:-.1},margin:{t:0,b:50,l:30,r:0},xaxis:{gridcolor:"#e1e1e1",title:""},yaxis:{gridcolor:"#e1e1e1",title:""}},document.querySelector(".chart-section h2").textContent=title,chartElement.style.height=height+"px",layout.height=height,Plotly.newPlot("fighter-performance-chart",traces,layout,{displayModeBar:!1,responsive:!0})):hasRankings&&(traces=createRankingsTraces(rankingsData),title="UFC Rankings",layout={...layout,showlegend:!0,legend:{orientation:"h",xanchor:"center",x:.5,y:-.1},margin:{t:0,b:50,l:30,r:0},xaxis:{gridcolor:"#e1e1e1",title:""},yaxis:{range:[15.5,-.5],tickvals:[15,14,13,12,11,10,9,8,7,6,5,4,3,2,1,0],ticktext:["15","14","13","12","11","10","9","8","7","6","5","4","3","2","1","C"],gridcolor:"#e1e1e1",zeroline:!1,title:""}},document.querySelector(".chart-section h2").textContent=title,chartElement.style.height=height+"px",layout.height=height,Plotly.newPlot("fighter-performance-chart",traces,layout,{displayModeBar:!1,responsive:!0}))</script><div class=fight-results><h2>Bout History</h2><div class=event_bouts><div class=bout-row><div class="side_info bout-event"><br><span class=event-date><a href=/events/20220514.html>2022-05-14</a></span><br><span class=event-name><a href=/events/20220514.html>UFC on ESPN: Błachowicz vs. Rakić</a></span></div><div class="bout-fighter bout-left"><br><b><a href=/fighters/daveygrant.html>Davey Grant</a></b> (36) <span class=emoji>🇬🇧 🏴󠁧󠁢󠁥󠁮󠁧󠁿</span><br><span class="wldn-letter letter-W">W</span>
+<span class="wldn-letter letter-W">W</span>
+<span class="wldn-letter letter-W">W</span>
+<span class="wldn-letter letter-L">L</span>
+<span class="wldn-letter letter-L">L</span>
+• 4-5<br>Elo: 2729</div><div class=result_description><span class=weightclass>BANTAMWEIGHT</span><br>KO<br>R3<br>00:49</div><div class="bout-fighter bout-right"><br><span class=emoji>🇺🇸 </span><b>Louis Smolka</b> (30)<br>8-8 •
+<span class="wldn-letter letter-L">L</span>
+<span class="wldn-letter letter-W">W</span>
+<span class="wldn-letter letter-L">L</span>
+<span class="wldn-letter letter-W">W</span>
+<span class="wldn-letter letter-L">L</span><br>Elo: 2588</div><div class="side_info bout-venue"><br>UFC Apex<br>Las Vegas, Nevada<br>United States <span class=emoji>🇺🇸</span></div></div><div class=bout-row><div class="side_info bout-event"><br><span class=event-date><a href=/events/20211204.html>2021-12-04</a></span><br><span class=event-name><a href=/events/20211204.html>UFC on ESPN: Font vs. Aldo</a></span></div><div class="bout-fighter bout-left"><br><b><a href=/fighters/vincemorales.html>Vince Morales</a></b> (31) <span class=emoji>🇺🇸</span><br><span class="wldn-letter letter-L">L</span>
+<span class="wldn-letter letter-W">W</span>
+<span class="wldn-letter letter-L">L</span>
+<span class="wldn-letter letter-L">L</span>
+<span class="wldn-letter letter-W">W</span>
+• 2-3<br>Elo: 2582</div><div class=result_description><span class=weightclass>BANTAMWEIGHT</span><br>KO<br>R1<br>02:02</div><div class="bout-fighter bout-right"><br><span class=emoji>🇺🇸 </span><b>Louis Smolka</b> (30)<br>8-7 •
+<span class="wldn-letter letter-W">W</span>
+<span class="wldn-letter letter-L">L</span>
+<span class="wldn-letter letter-W">W</span>
+<span class="wldn-letter letter-L">L</span>
+<span class="wldn-letter letter-W">W</span><br>Elo: <span class=favorite-elo>2727</span></div><div class="side_info bout-venue"><br>UFC Apex<br>Las Vegas, Nevada<br>United States <span class=emoji>🇺🇸</span></div></div><div class=bout-row><div class="side_info bout-event"><br><span class=event-date><a href=/events/20201205.html>2020-12-05</a></span><br><span class=event-name><a href=/events/20201205.html>UFC on ESPN: Hermansson vs. Vettori</a></span></div><div class="bout-fighter bout-left"><br><b>Louis Smolka</b> (29) <span class=emoji>🇺🇸</span><br><span class="wldn-letter letter-L">L</span>
+<span class="wldn-letter letter-W">W</span>
+<span class="wldn-letter letter-L">L</span>
+<span class="wldn-letter letter-W">W</span>
+<span class="wldn-letter letter-L">L</span>
+• 7-7<br>Elo: 2607</div><div class=result_description><span class=weightclass>BANTAMWEIGHT</span><br>TKO<br>R2<br>02:15</div><div class="bout-fighter bout-right"><br><span class=emoji>🇲🇽</span>
+<b><a href=/fighters/josealbertoquinonez.html>Jose Alberto Quinonez</a></b> (30)<br>5-3 •
+<span class="wldn-letter letter-W">W</span>
+<span class="wldn-letter letter-W">W</span>
+<span class="wldn-letter letter-L">L</span>
+<span class="wldn-letter letter-W">W</span>
+<span class="wldn-letter letter-L">L</span><br>Elo: 2678</div><div class="side_info bout-venue"><br>UFC Apex<br>Las Vegas, Nevada<br>United States <span class=emoji>🇺🇸</span></div></div><div class=bout-row><div class="side_info bout-event"><br><span class=event-date><a href=/events/20200530.html>2020-05-30</a></span><br><span class=event-name><a href=/events/20200530.html>UFC on ESPN: Woodley vs. Burns</a></span></div><div class="bout-fighter bout-left"><br><b><a href=/fighters/caseykenney.html>Casey Kenney</a></b> (29) <span class=emoji>🇺🇸</span><br><span class="wldn-letter letter-W">W</span>
+<span class="wldn-letter letter-W">W</span>
+<span class="wldn-letter letter-L">L</span>
+• 2-1<br>Elo: 2896</div><div class=result_description><span class=weightclass>BANTAMWEIGHT</span><br>SUB<br>R1<br>03:03</div><div class="bout-fighter bout-right"><br><span class=emoji>🇺🇸 </span><b>Louis Smolka</b> (28)<br>7-6 •
+<span class="wldn-letter letter-W">W</span>
+<span class="wldn-letter letter-L">L</span>
+<span class="wldn-letter letter-W">W</span>
+<span class="wldn-letter letter-L">L</span>
+<span class="wldn-letter letter-L">L</span><br>Elo: 2646</div><div class="side_info bout-venue"><br>UFC Apex<br>Las Vegas, Nevada<br>United States <span class=emoji>🇺🇸</span></div></div><div class=bout-row><div class="side_info bout-event"><br><span class=event-date><a href=/events/20190914.html>2019-09-14</a></span><br><span class=event-name><a href=/events/20190914.html>UFC Fight Night: Cowboy vs. Gaethje</a></span></div><div class="bout-fighter bout-left"><br><b>Louis Smolka</b> (28) <span class=emoji>🇺🇸</span><br><span class="wldn-letter letter-L">L</span>
+<span class="wldn-letter letter-W">W</span>
+<span class="wldn-letter letter-L">L</span>
+<span class="wldn-letter letter-L">L</span>
+<span class="wldn-letter letter-L">L</span>
+• 6-6<br>Elo: <span class=favorite-elo>2564</span></div><div class=result_description><span class=weightclass>BANTAMWEIGHT</span><br>TKO<br>R1<br>04:43</div><div class="bout-fighter bout-right"><br><span class=emoji>🇺🇸</span>
+<b><a href=/fighters/ryanmacdonald.html>Ryan MacDonald</a></b> (26)<br>0-1 •
+<span class="wldn-letter letter-L">L</span><br>Elo: 2500</div><div class="side_info bout-venue"><br>Rogers Arena<br>Vancouver<br>Canada <span class=emoji>🇨🇦</span></div></div><div class=bout-row><div class="side_info bout-event"><br><span class=event-date><a href=/events/20190309.html>2019-03-09</a></span><br><span class=event-name><a href=/events/20190309.html>UFC Fight Night: Lewis vs. dos Santos</a></span></div><div class="bout-fighter bout-left"><br><b><a href=/fighters/mattschnell.html>Matt Schnell</a></b> (29) <span class=emoji>🇺🇸</span><br><span class="wldn-letter letter-L">L</span>
+<span class="wldn-letter letter-L">L</span>
+<span class="wldn-letter letter-W">W</span>
+<span class="wldn-letter letter-W">W</span>
+• 2-2<br>Elo: 2597
+• UFC rank: #15</div><div class=result_description><span class=weightclass>BANTAMWEIGHT</span><br>SUB<br>R1<br>03:18</div><div class="bout-fighter bout-right"><br><span class=emoji>🇺🇸 </span><b>Louis Smolka</b> (27)<br>6-5 •
+<span class="wldn-letter letter-W">W</span>
+<span class="wldn-letter letter-L">L</span>
+<span class="wldn-letter letter-L">L</span>
+<span class="wldn-letter letter-L">L</span>
+<span class="wldn-letter letter-L">L</span><br>Elo: <span class=favorite-elo>2690</span></div><div class="side_info bout-venue"><br>Intrust Bank Arena<br>Wichita, Kansas<br>United States <span class=emoji>🇺🇸</span></div></div><div class=bout-row><div class="side_info bout-event"><br><span class=event-date><a href=/events/20181124.html>2018-11-24</a></span><br><span class=event-name><a href=/events/20181124.html>UFC Fight Night: Blaydes vs. Ngannou 2</a></span></div><div class="bout-fighter bout-left"><br><b>Louis Smolka</b> (27) <span class=emoji>🇺🇸</span><br><span class="wldn-letter letter-L">L</span>
+<span class="wldn-letter letter-L">L</span>
+<span class="wldn-letter letter-L">L</span>
+<span class="wldn-letter letter-L">L</span>
+<span class="wldn-letter letter-W">W</span>
+• 5-5<br>Elo: <span class=favorite-elo>2651</span></div><div class=result_description><span class=weightclass>BANTAMWEIGHT</span><br>SUB<br>R2<br>02:07</div><div class="bout-fighter bout-right"><br><span class=emoji>🇨🇳</span>
+<b><a href=/fighters/sumudaerji.html>Sumudaerji</a></b> (22)<br>🔰 Debut<br>Elo: 2404</div><div class="side_info bout-venue"><br>Cadillac Arena<br>Beijing<br>China <span class=emoji>🇨🇳</span></div></div><div class=bout-row><div class="side_info bout-event"><br><span class=event-date><a href=/events/20171230.html>2017-12-30</a></span><br><span class=event-name><a href=/events/20171230.html>UFC 219: Cyborg vs. Holm</a></span></div><div class="bout-fighter bout-left"><br><b><a href=/fighters/matheusnicolau.html>Matheus Nicolau</a></b> (24) <span class=emoji>🇧🇷</span><br><span class="wldn-letter letter-W">W</span>
+<span class="wldn-letter letter-W">W</span>
+• 2-0<br>Elo: 2684</div><div class=result_description><span class=weightclass>FLYWEIGHT</span><br>DEC<br>R3<br>05:00</div><div class="bout-fighter bout-right"><br><span class=emoji>🇺🇸 </span><b>Louis Smolka</b> (26)<br>5-4 •
+<span class="wldn-letter letter-L">L</span>
+<span class="wldn-letter letter-L">L</span>
+<span class="wldn-letter letter-L">L</span>
+<span class="wldn-letter letter-W">W</span>
+<span class="wldn-letter letter-W">W</span><br>UFC rank: #13 •
+Elo: 2594</div><div class="side_info bout-venue"><br>T-Mobile Arena<br>Las Vegas, Nevada<br>United States <span class=emoji>🇺🇸</span></div></div><div class=bout-row><div class="side_info bout-event"><br><span class=event-date><a href=/events/20170415.html>2017-04-15</a></span><br><span class=event-name><a href=/events/20170415.html>UFC on Fox: Johnson vs. Reis</a></span></div><div class="bout-fighter bout-left"><br><b><a href=/fighters/timelliott.html>Tim Elliott</a></b> (30) <span class=emoji>🇺🇸</span><br><span class="wldn-letter letter-W">W</span>
+<span class="wldn-letter letter-L">L</span>
+<span class="wldn-letter letter-L">L</span>
+<span class="wldn-letter letter-L">L</span>
+<span class="wldn-letter letter-L">L</span>
+• 2-5<br>Elo: 2978
+• UFC rank: #9</div><div class=result_description><span class=weightclass>FLYWEIGHT</span><br><div class=fotn><span title='Fight of the Night' class=cursor-pointer>⭐</span>DEC<span title='Fight of the Night' class=cursor-pointer>⭐</span></div><br>R3<br>05:00</div><div class="bout-fighter bout-right"><br><span class=emoji>🇺🇸 </span><b>Louis Smolka</b> (25)<br>5-3 •
+<span class="wldn-letter letter-L">L</span>
+<span class="wldn-letter letter-L">L</span>
+<span class="wldn-letter letter-W">W</span>
+<span class="wldn-letter letter-W">W</span>
+<span class="wldn-letter letter-W">W</span><br>UFC rank: #12 •
+Elo: 2616</div><div class="side_info bout-venue"><br>Sprint Center<br>Kansas City, Missouri<br>United States <span class=emoji>🇺🇸</span></div></div><div class=bout-row><div class="side_info bout-event"><br><span class=event-date><a href=/events/20161230.html>2016-12-30</a></span><br><span class=event-name><a href=/events/20161230.html>UFC 207: Nunes vs. Rousey</a></span></div><div class="bout-fighter bout-left"><br><b><a href=/fighters/rayborg.html>Ray Borg</a></b> (23) <span class=emoji>🇺🇸</span><br><span class="wldn-letter letter-L">L</span>
+<span class="wldn-letter letter-W">W</span>
+<span class="wldn-letter letter-W">W</span>
+<span class="wldn-letter letter-W">W</span>
+<span class="wldn-letter letter-L">L</span>
+• 3-2<br>Elo: 2671
+• UFC rank: #13</div><div class=result_description><span class=weightclass>CATCHWEIGHT (129.5 LB)</span><br>DEC<br>R3<br>05:00</div><div class="bout-fighter bout-right"><br><span class=emoji>🇺🇸 </span><b>Louis Smolka</b> (25)<br>5-2 •
+<span class="wldn-letter letter-L">L</span>
+<span class="wldn-letter letter-W">W</span>
+<span class="wldn-letter letter-W">W</span>
+<span class="wldn-letter letter-W">W</span>
+<span class="wldn-letter letter-W">W</span><br>UFC rank: #12 •
+Elo: <span class=favorite-elo>2735</span></div><div class="side_info bout-venue"><br>T-Mobile Arena<br>Las Vegas, Nevada<br>United States <span class=emoji>🇺🇸</span></div></div><div class=bout-row><div class="side_info bout-event"><br><span class=event-date><a href=/events/20161001.html>2016-10-01</a></span><br><span class=event-name><a href=/events/20161001.html>UFC Fight Night: Lineker vs. Dodson</a></span></div><div class="bout-fighter bout-left"><br><span title='Performance of the Night' class=cursor-pointer>⭐
+</span><b><a href=/fighters/brandonmoreno.html>Brandon Moreno</a></b> (22) <span class=emoji>🇲🇽</span><br>Debut 🔰<br>Elo: 2548</div><div class=result_description><span class=weightclass>FLYWEIGHT</span><br>SUB<br>R1<br>02:23</div><div class="bout-fighter bout-right"><br><span class=emoji>🇺🇸 </span><b>Louis Smolka</b> (25)<br>5-1 •
+<span class="wldn-letter letter-W">W</span>
+<span class="wldn-letter letter-W">W</span>
+<span class="wldn-letter letter-W">W</span>
+<span class="wldn-letter letter-W">W</span>
+<span class="wldn-letter letter-L">L</span><br>UFC rank: #9 •
+Elo: <span class=favorite-elo>2913</span></div><div class="side_info bout-venue"><br>Moda Center<br>Portland, Oregon<br>United States <span class=emoji>🇺🇸</span></div></div><div class=bout-row><div class="side_info bout-event"><br><span class=event-date><a href=/events/20160713.html>2016-07-13</a></span><br><span class=event-name><a href=/events/20160713.html>UFC Fight Night: McDonald vs. Lineker</a></span></div><div class="bout-fighter bout-left"><br><span title='Performance of the Night' class=cursor-pointer>⭐
+</span><b>Louis Smolka</b> (24) <span class=emoji>🇺🇸</span><br><span class="wldn-letter letter-W">W</span>
+<span class="wldn-letter letter-W">W</span>
+<span class="wldn-letter letter-W">W</span>
+<span class="wldn-letter letter-L">L</span>
+<span class="wldn-letter letter-W">W</span>
+• 4-1<br>UFC rank: #12 •
+Elo: <span class=favorite-elo>2861</span></div><div class=result_description><span class=weightclass>FLYWEIGHT</span><br>TKO<br>R2<br>04:41</div><div class="bout-fighter bout-right"><br><span class=emoji>🇺🇸 🇻🇳</span>
+<b><a href=/fighters/bennguyen.html>Ben Nguyen</a></b> (27)<br>2-0 •
+<span class="wldn-letter letter-W">W</span>
+<span class="wldn-letter letter-W">W</span><br>Elo: 2677</div><div class="side_info bout-venue"><br>Denny Sanford Premier Center<br>Sioux Falls, South Dakota<br>United States <span class=emoji>🇺🇸</span></div></div><div class=bout-row><div class="side_info bout-event"><br><span class=event-date><a href=/events/20151024.html>2015-10-24</a></span><br><span class=event-name><a href=/events/20151024.html>UFC Fight Night: Holohan vs. Smolka</a></span></div><div class="bout-fighter bout-left"><br><b>Louis Smolka</b> (24) <span class=emoji>🇺🇸</span><br><span class="wldn-letter letter-W">W</span>
+<span class="wldn-letter letter-W">W</span>
+<span class="wldn-letter letter-L">L</span>
+<span class="wldn-letter letter-W">W</span>
+• 3-1<br>Elo: <span class=favorite-elo>2806</span></div><div class=result_description><span class=weightclass>FLYWEIGHT</span><br>SUB<br>R2<br>04:09</div><div class="bout-fighter bout-right"><br><span class=emoji>🇮🇪</span>
+<b><a href=/fighters/paddyholohan.html>Paddy Holohan</a></b> (27)<br>3-1 •
+<span class="wldn-letter letter-W">W</span>
+<span class="wldn-letter letter-L">L</span>
+<span class="wldn-letter letter-W">W</span>
+<span class="wldn-letter letter-W">W</span><br>Elo: 2637</div><div class="side_info bout-venue"><br>3Arena<br>Dublin<br>Ireland <span class=emoji>🇮🇪</span></div></div><div class=bout-row><div class="side_info bout-event"><br><span class=event-date><a href=/events/20150711.html>2015-07-11</a></span><br><span class=event-name><a href=/events/20150711.html>UFC 189: Mendes vs. McGregor</a></span></div><div class="bout-fighter bout-left"><br><b>Louis Smolka</b> (23) <span class=emoji>🇺🇸</span><br><span class="wldn-letter letter-W">W</span>
+<span class="wldn-letter letter-L">L</span>
+<span class="wldn-letter letter-W">W</span>
+• 2-1<br>Elo: <span class=favorite-elo>2710</span></div><div class=result_description><span class=weightclass>FLYWEIGHT</span><br>DEC<br>R3<br>05:00</div><div class="bout-fighter bout-right"><br><span class=emoji>🇮🇪</span>
+<b><a href=/fighters/neilseery.html>Neil Seery</a></b> (35)<br>2-1 •
+<span class="wldn-letter letter-L">L</span>
+<span class="wldn-letter letter-W">W</span>
+<span class="wldn-letter letter-W">W</span><br>Elo: 2698</div><div class="side_info bout-venue"><br>MGM Grand Garden Arena<br>Las Vegas, Nevada<br>United States <span class=emoji>🇺🇸</span></div></div><div class=bout-row><div class="side_info bout-event"><br><span class=event-date><a href=/events/20141107.html>2014-11-07</a></span><br><span class=event-name><a href=/events/20141107.html>UFC Fight Night: Rockhold vs. Bisping</a></span></div><div class="bout-fighter bout-left"><br><span title='Performance of the Night' class=cursor-pointer>⭐
+</span><b>Louis Smolka</b> (23) <span class=emoji>🇺🇸</span><br><span class="wldn-letter letter-L">L</span>
+<span class="wldn-letter letter-W">W</span>
+• 1-1<br>Elo: <span class=favorite-elo>2646</span></div><div class=result_description><span class=weightclass>FLYWEIGHT</span><br>TKO<br>R3<br>00:18</div><div class="bout-fighter bout-right"><br><span class=emoji>🇦🇺</span>
+<b><a href=/fighters/richievaculik.html>Richie Vaculik</a></b> (31)<br>1-1 •
+<span class="wldn-letter letter-L">L</span>
+<span class="wldn-letter letter-W">W</span><br>Elo: 2514</div><div class="side_info bout-venue"><br>Allphones Arena<br>Sydney<br>Australia <span class=emoji>🇦🇺</span></div></div><div class=bout-row><div class="side_info bout-event"><br><span class=event-date><a href=/events/20140510.html>2014-05-10</a></span><br><span class=event-name><a href=/events/20140510.html>UFC Fight Night: Brown vs. Silva</a></span></div><div class="bout-fighter bout-left"><br><b><a href=/fighters/chriscariaso.html>Chris Cariaso</a></b> (32) <span class=emoji>🇺🇸</span><br><span class="wldn-letter letter-W">W</span>
+<span class="wldn-letter letter-L">L</span>
+<span class="wldn-letter letter-L">L</span>
+<span class="wldn-letter letter-W">W</span>
+<span class="wldn-letter letter-W">W</span>
+• 6-3<br>Elo: 2615
+• UFC rank: #10</div><div class=result_description><span class=weightclass>FLYWEIGHT</span><br>DEC<br>R3<br>05:00</div><div class="bout-fighter bout-right"><br><span class=emoji>🇺🇸 </span><b>Louis Smolka</b> (22)<br>1-0 •
+<span class="wldn-letter letter-W">W</span><br>Elo: <span class=favorite-elo>2706</span></div><div class="side_info bout-venue"><br>U.S. Bank Arena<br>Cincinnati, Ohio<br>United States <span class=emoji>🇺🇸</span></div></div><div class=bout-row><div class="side_info bout-event"><br><span class=event-date><a href=/events/20140115.html>2014-01-15</a></span><br><span class=event-name><a href=/events/20140115.html>UFC Fight Night: Rockhold vs. Philippou</a></span></div><div class="bout-fighter bout-left"><br><b>Louis Smolka</b> (22) <span class=emoji>🇺🇸</span><br>Debut 🔰<br>Elo: <span class=favorite-elo>2610</span></div><div class=result_description><span class=weightclass>FLYWEIGHT</span><br>DEC<br>R3<br>05:00</div><div class="bout-fighter bout-right"><br><span class=emoji>🇹🇷 🇺🇸</span>
+<b><a href=/fighters/alpozkilic.html>Alp Ozkilic</a></b> (27)<br>1-0 •
+<span class="wldn-letter letter-W">W</span><br>Elo: 2596</div><div class="side_info bout-venue"><br>The Arena at Gwinnett Center<br>Duluth, Georgia<br>United States <span class=emoji>🇺🇸</span></div></div></div></div></main><footer><div class=footer-container><p class=copyright-text><a href=/glossary.html>Glossary</a>
+<a href=mailto:rostertracker@gmail.com>Contact</a></p></div><div class=footer-container><p class=copyright-text>Copyright © <span id=currentYear></span> All Rights Reserved by
+<a href=#>roster.watch</a></p></div></footer><style>.footer-container{display:flex;justify-content:space-between;align-items:center;padding:1rem}.copyright-text{margin:0 auto}.browser-badge{margin-left:auto}</style><script>document.getElementById("currentYear").textContent=(new Date).getFullYear()</script></div></body></html>

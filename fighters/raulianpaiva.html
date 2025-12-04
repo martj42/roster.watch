@@ -1,497 +1,75 @@
-<!DOCTYPE html>
-
-<html lang="en" xml:lang="en">
-
-<head>
-
-<meta charset="utf-8" />
-<meta name="generator" content="pandoc" />
-<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
-
-
-
-
-<title>Raulian Paiva UFC Record &amp; Stats: Interactive Charts · roster.watch</title>
-
-<script src="fighter_libs/header-attrs-2.29/header-attrs.js"></script>
-<script src="fighter_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<link href="fighter_libs/bootstrap-3.3.5/css/bootstrap.min.css" rel="stylesheet" />
-<script src="fighter_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
-<script src="fighter_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
-<script src="fighter_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
-<style>h1 {font-size: 34px;}
-       h1.title {font-size: 38px;}
-       h2 {font-size: 30px;}
-       h3 {font-size: 24px;}
-       h4 {font-size: 18px;}
-       h5 {font-size: 16px;}
-       h6 {font-size: 12px;}
-       code {color: inherit; background-color: rgba(0, 0, 0, 0.04);}
-       pre:not([class]) { background-color: white }</style>
-<script src="fighter_libs/navigation-1.1/tabsets.js"></script>
-<link href="fighter_libs/highlightjs-9.12.0/default.css" rel="stylesheet" />
-<script src="fighter_libs/highlightjs-9.12.0/highlight.js"></script>
-<link href="fighter_libs/htmltools-fill-0.5.8.1/fill.css" rel="stylesheet" />
-<script src="fighter_libs/htmlwidgets-1.6.4/htmlwidgets.js"></script>
-<script src="fighter_libs/plotly-binding-4.11.0/plotly.js"></script>
-<script src="fighter_libs/typedarray-0.1/typedarray.min.js"></script>
-<link href="fighter_libs/crosstalk-1.2.1/css/crosstalk.min.css" rel="stylesheet" />
-<script src="fighter_libs/crosstalk-1.2.1/js/crosstalk.min.js"></script>
-<link href="fighter_libs/plotly-htmlwidgets-css-2.11.1/plotly-htmlwidgets.css" rel="stylesheet" />
-<script src="fighter_libs/plotly-main-2.11.1/plotly-latest.min.js"></script>
-<script src="fighter_libs/core-js-2.5.3/shim.min.js"></script>
-<script src="fighter_libs/react-18.2.0/react.min.js"></script>
-<script src="fighter_libs/react-18.2.0/react-dom.min.js"></script>
-<script src="fighter_libs/reactwidget-2.0.0/react-tools.js"></script>
-<link href="fighter_libs/reactable-0.4.4/reactable.css" rel="stylesheet" />
-<script src="fighter_libs/reactable-binding-0.4.4/reactable.js"></script>
-<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-<link rel="manifest" href="/site.webmanifest">
-<meta name="description" content="An up-to-date list of the full active UFC roster including biographical data, rankings, records, and more.">
-<!-- <meta property="og:title" content="roster.watch" />
-<meta property="og:type" content="website" />
-<meta property="og:url" content="https://www.roster.watch/" />
-<meta property="og:image" content="https://www.roster.watch/og_image.png" />
-<meta property="og:description" content="An up-to-date list of the full active UFC roster including biographical data, rankings, record, and more." />
-<script src="https://unpkg.com/twemoji@latest/dist/twemoji.min.js" crossorigin="anonymous"></script> 
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7299518767310567"
-     crossorigin="anonymous"></script> -->
-<script data-goatcounter="https://rosterwatch.goatcounter.com/count"
-        async src="//gc.zgo.at/count.js"></script>
-<script defer src="/script.js" data-website-id="f0f3ed7e-e89c-4a29-a745-475e0b10271a"></script>
-
-<style type="text/css">
-  code{white-space: pre-wrap;}
-  span.smallcaps{font-variant: small-caps;}
-  span.underline{text-decoration: underline;}
-  div.column{display: inline-block; vertical-align: top; width: 50%;}
-  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
-  ul.task-list{list-style: none;}
-    </style>
-
-<style type="text/css">code{white-space: pre;}</style>
-<script type="text/javascript">
-if (window.hljs) {
-  hljs.configure({languages: []});
-  hljs.initHighlightingOnLoad();
-  if (document.readyState && document.readyState === "complete") {
-    window.setTimeout(function() { hljs.initHighlighting(); }, 0);
-  }
-}
-</script>
-
-
-
-
-
-
-<link rel="stylesheet" href="../style.css" type="text/css" />
-
-
-
-<style type = "text/css">
-.main-container {
-  max-width: 940px;
-  margin-left: auto;
-  margin-right: auto;
-}
-img {
-  max-width:100%;
-}
-.tabbed-pane {
-  padding-top: 12px;
-}
-.html-widget {
-  margin-bottom: 20px;
-}
-button.code-folding-btn:focus {
-  outline: none;
-}
-summary {
-  display: list-item;
-}
-details > summary > p:only-child {
-  display: inline;
-}
-pre code {
-  padding: 0;
-}
-</style>
-
-
-<style type="text/css">
-.dropdown-submenu {
-  position: relative;
-}
-.dropdown-submenu>.dropdown-menu {
-  top: 0;
-  left: 100%;
-  margin-top: -6px;
-  margin-left: -1px;
-  border-radius: 0 6px 6px 6px;
-}
-.dropdown-submenu:hover>.dropdown-menu {
-  display: block;
-}
-.dropdown-submenu>a:after {
-  display: block;
-  content: " ";
-  float: right;
-  width: 0;
-  height: 0;
-  border-color: transparent;
-  border-style: solid;
-  border-width: 5px 0 5px 5px;
-  border-left-color: #cccccc;
-  margin-top: 5px;
-  margin-right: -10px;
-}
-.dropdown-submenu:hover>a:after {
-  border-left-color: #adb5bd;
-}
-.dropdown-submenu.pull-left {
-  float: none;
-}
-.dropdown-submenu.pull-left>.dropdown-menu {
-  left: -100%;
-  margin-left: 10px;
-  border-radius: 6px 0 6px 6px;
-}
-</style>
-
-<script type="text/javascript">
-// manage active state of menu based on current page
-$(document).ready(function () {
-  // active menu anchor
-  href = window.location.pathname
-  href = href.substr(href.lastIndexOf('/') + 1)
-  if (href === "")
-    href = "index.html";
-  var menuAnchor = $('a[href="' + href + '"]');
-
-  // mark the anchor link active (and if it's in a dropdown, also mark that active)
-  var dropdown = menuAnchor.closest('li.dropdown');
-  if (window.bootstrap) { // Bootstrap 4+
-    menuAnchor.addClass('active');
-    dropdown.find('> .dropdown-toggle').addClass('active');
-  } else { // Bootstrap 3
-    menuAnchor.parent().addClass('active');
-    dropdown.addClass('active');
-  }
-
-  // Navbar adjustments
-  var navHeight = $(".navbar").first().height() + 15;
-  var style = document.createElement('style');
-  var pt = "padding-top: " + navHeight + "px; ";
-  var mt = "margin-top: -" + navHeight + "px; ";
-  var css = "";
-  // offset scroll position for anchor links (for fixed navbar)
-  for (var i = 1; i <= 6; i++) {
-    css += ".section h" + i + "{ " + pt + mt + "}\n";
-  }
-  style.innerHTML = "body {" + pt + "padding-bottom: 40px; }\n" + css;
-  document.head.appendChild(style);
-});
-</script>
-
-<!-- tabsets -->
-
-<style type="text/css">
-.tabset-dropdown > .nav-tabs {
-  display: inline-table;
-  max-height: 500px;
-  min-height: 44px;
-  overflow-y: auto;
-  border: 1px solid #ddd;
-  border-radius: 4px;
-}
-
-.tabset-dropdown > .nav-tabs > li.active:before, .tabset-dropdown > .nav-tabs.nav-tabs-open:before {
-  content: "\e259";
-  font-family: 'Glyphicons Halflings';
-  display: inline-block;
-  padding: 10px;
-  border-right: 1px solid #ddd;
-}
-
-.tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
-  content: "\e258";
-  font-family: 'Glyphicons Halflings';
-  border: none;
-}
-
-.tabset-dropdown > .nav-tabs > li.active {
-  display: block;
-}
-
-.tabset-dropdown > .nav-tabs > li > a,
-.tabset-dropdown > .nav-tabs > li > a:focus,
-.tabset-dropdown > .nav-tabs > li > a:hover {
-  border: none;
-  display: inline-block;
-  border-radius: 4px;
-  background-color: transparent;
-}
-
-.tabset-dropdown > .nav-tabs.nav-tabs-open > li {
-  display: block;
-  float: none;
-}
-
-.tabset-dropdown > .nav-tabs > li {
-  display: none;
-}
-</style>
-
-<!-- code folding -->
-
-
-
-
-</head>
-
-<body>
-
-
-<div class="container-fluid main-container">
-
-
-
-<header>
-    <a class="logo" href="/"><img src="/images/logo.svg" alt="logo"></a>
-    <nav>
-        <ul class="nav__links">
-            <li><a href="/">Current Roster</a></li>
-            <li><a href="/former.html">Former Roster</a></li>
-            <li class="dropdown">
-                <a href="#" onclick="return false;">Weight Classes</a>
-<ul class="dropdown-content">
-                    <li><a href="/heavyweight.html">Heavyweight</a></li>
-                    <li><a href="/lightheavyweight.html">Light Heavyweight</a></li>
-                    <li><a href="/middleweight.html">Middleweight</a></li>
-                    <li><a href="/welterweight.html">Welterweight</a></li>
-                    <li><a href="/lightweight.html">Lightweight</a></li>
-                    <li><a href="/featherweight.html">Featherweight</a></li>
-                    <li><a href="/bantamweight.html">Bantamweight</a></li>
-                    <li><a href="/flyweight.html">Flyweight</a></li>
-                    <li><a href="/womensbantamweight.html">Women's Bantamweight</a></li>
-                    <li><a href="/womensflyweight.html">Women's Flyweight</a></li>
-                    <li><a href="/womensstrawweight.html">Women's Strawweight</a></li>
-                </ul>
-            </li>
-            <li><a href="/events">Events</a></li>
-            <li><a href="/log.html">Log</a></li>
-            <li><a href="javascript:void(0)" onclick="getRandomPage()">Random Page</a></li>
-            <li><a href="https://rosterwatch.printify.me/">Merch</a></li>
-            <li><a href="https://www.patreon.com/bePatron?u=88266864">Support on Patreon</a></li>
-        </ul>
-    </nav>
-    <div class="menu cta">Menu</div>
-</header>
-
-<div class="overlay">
-    <a class="close">×</a>
-    <div class="overlay__content">
-        <a href="/">Current Roster</a>
-        <a href="/former.html">Former Roster</a>
-        <div class="dropdown-mobile">
-            <a href="#" onclick="return false;">Weight Classes</a>
-<div class="dropdown-content-mobile">
-                <a href="/heavyweight.html">Heavyweight</a>
-                <a href="/lightheavyweight.html">Light Heavyweight</a>
-                <a href="/middleweight.html">Middleweight</a>
-                <a href="/welterweight.html">Welterweight</a>
-                <a href="/lightweight.html">Lightweight</a>
-                <a href="/featherweight.html">Featherweight</a>
-                <a href="/bantamweight.html">Bantamweight</a>
-                <a href="/flyweight.html">Flyweight</a>
-                <a href="/womensbantamweight.html">Women's Bantamweight</a>
-                <a href="/womensflyweight.html">Women's Flyweight</a>
-                <a href="/womensstrawweight.html">Women's Strawweight</a>
-            </div>
-        </div>
-        <a href="/events">Events</a>
-        <a href="/log.html">Log</a>
-        <a href="javascript:void(0)" onclick="getRandomPage()">Random Page</a>
-        <a href="https://rosterwatch.printify.me/">Merch</a>
-        <a href="https://www.patreon.com/bePatron?u=88266864">Support on Patreon</a>
-    </div>
-</div>
-<script type="text/javascript" src="/mobile.js"></script>
-    <script>
-      function getRandomPage() {
-        fetch('/sitemap.xml')
-          .then(response => response.text())
-          .then(xmlText => {
-            const parser = new DOMParser();
-            const xmlDoc = parser.parseFromString(xmlText, 'application/xml');
-            const urls = Array.from(xmlDoc.getElementsByTagName('loc')).map(loc => loc.textContent);
-            const randomPage = urls[Math.floor(Math.random() * urls.length)];
-            window.location.href = randomPage;
-          });
-      }
-    </script>
-
-<div id="header">
-
-
-
-<h1 class="title toc-ignore">Raulian Paiva UFC Record &amp; Stats:
-Interactive Charts · roster.watch</h1>
-
-</div>
-
-
-<script type="application/ld+json">{
-  "@context": "https://schema.org",
-  "@type": "Person",
-  "name": "Raulian Paiva",
-  "birthDate": "1995-10-17",
-  "nationality": "Brazil",
-  "memberOf": {
-    "@type": "SportsOrganization",
-    "name": "UFC",
-    "sport": "Mixed Martial Arts"
-  },
-  "additionalProperty": [
-    {
-      "@type": "PropertyValue",
-      "name": "UFC Record",
-      "value": "3-4"
-    },
-    {
-      "@type": "PropertyValue",
-      "name": "Peak UFC Ranking",
-      "value": "#15 Bantamweight, #10 Flyweight"
-    },
-    {
-      "@type": "PropertyValue",
-      "name": "Bonuses",
-      "value": "1"
-    }
-  ]
-}</script>
-<article class="event-info" style="display: flex; flex-direction: column; align-items: center; justify-content: center; width: 100%; height: auto;"><div class="fighter-info" style="text-align: center; margin-bottom: 20px;"><h2 style='font-weight: bold; font-size: 1.1em; margin: 0;'>Raulian Paiva <span class='emoji'>🇧🇷</span></h2><time datetime='1995-10-17'><p><span>1995-10-17</span><script>document.currentScript.parentElement.innerHTML = (function(){  const dob = new Date('1995-10-17');  const today = new Date();  let years = today.getFullYear() - dob.getFullYear();  const monthDiff = today.getMonth() - dob.getMonth();  if (monthDiff < 0 || (monthDiff === 0 && today.getDate() < dob.getDate())) {    years--;  }  const yearAnniversary = new Date(dob);  yearAnniversary.setFullYear(dob.getFullYear() + years);  const dayDiff = Math.floor((today - yearAnniversary) / (1000 * 60 * 60 * 24));  const isBirthday = today.getMonth() === dob.getMonth() && today.getDate() === dob.getDate();  let ageString = `${years} year${years !== 1 ? 's' : ''}`;  if (dayDiff > 0) {    ageString += ` ${dayDiff} day${dayDiff !== 1 ? 's' : ''}`;  }  return `${ageString}${isBirthday ? ' 🎂' : ''} <br><span class='event-date'> (${dob.toISOString().split('T')[0]}) </span>`;}());</script></p></time></div><div style="display: flex; justify-content: center; align-items: flex-start; gap: 40px; max-width: 600px; width: 100%;"><div class="event-details" style="width: 50%;"><div class='event-stats'><p><strong>Record:</strong> 3-4<br></p><p><strong>By Method:</strong></p><ul><li> KO/TKO: 1-2</li><li> Submission: 0-0</li><li> Decision: 2-2</li></ul><p><strong>By Elo:</strong></p><ul><li>As Favorite: 1-2</li><li>As Underdog: 2-2</li></ul><p><strong>By Weight Class:</strong></p><ul><li>Bantamweight: 1-2</li><li>Flyweight: 1-2</li></ul><p><strong>By Round:</strong></p><ul><li>Round 1: 0-2</li><li>Round 2: 1-0</li><li>Round 3: 2-2</li></ul></div></div><div class="rankings" style="width: 50%;"><p><strong>Status:</strong> Former UFC Fighter</p><p><strong>Last 5:</strong> <span style='display: inline-block;width: 1.25em;
-height: 1.25em;
-line-height: 1.25em; font-size: 0.8em;
- text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W</span> <span style='display: inline-block;width: 1.25em;
-height: 1.25em;
-line-height: 1.25em; font-size: 0.8em;
- text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W</span> <span style='display: inline-block;width: 1.25em;
-height: 1.25em;
-line-height: 1.25em; font-size: 0.8em;
- text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W</span> <span style='display: inline-block;width: 1.25em;
-height: 1.25em;
-line-height: 1.25em; font-size: 0.8em;
- text-align: center; border-radius: 50%; background-color: crimson; color: white; font-weight: bold;'>L</span> <span style='display: inline-block;width: 1.25em;
-height: 1.25em;
-line-height: 1.25em; font-size: 0.8em;
- text-align: center; border-radius: 50%; background-color: crimson; color: white; font-weight: bold;'>L</span></p><p><strong>Peak Elo:</strong> 2915<span class='event-date'> (2021-07-24)</span></p><p><strong>Bonuses:</strong> 1 (1 FOTN, 0 Performance)</p><p><strong>Avg Fight Time:</strong> 11m 3s</p><p><strong>Total Fight Time:</strong> 1h 17m 20s</p><br><strong>Peak Rankings: </strong><br>#10 Flyweight<br>#15 Bantamweight</div></div></article>
-<h2 style='font-size: 1em; margin: 0; text-align: center; font-weight: bold;'>Elo Rating & UFC Rankings</h2>
-<div style="display: flex; justify-content: center; width: 100%; margin-top: 20px; margin-bottom: 20px;">
-<div id="fighter-performance-chart" style="width: 100%; max-width: 600px; height: 750px;">
-<div class="plotly html-widget html-fill-item" id="htmlwidget-4360f18e8e03a9f6879c" style="width:100%;height:400px;"></div>
-<script type="application/json" data-for="htmlwidget-4360f18e8e03a9f6879c">{"x":{"data":[{"x":["2019-02-09","2019-08-10","2020-02-15","2020-07-11","2021-07-24","2021-12-11","2022-06-25"],"y":[2616,2555,2654,2814,2915,2812,2686],"mode":"lines+markers","line":{"color":"#d12d36","width":3,"shape":"hv"},"marker":{"color":"#d12d36","size":10,"line":{"color":"rgba(31,119,180,1)"}},"hoverinfo":["text","text","text","text","text","text","text"],"text":["2019-02-09 <br> 2616 Elo <br> Kai Kara-France <br> Loss","2019-08-10 <br> 2555 Elo <br> Rogerio Bontorin <br> Loss","2020-02-15 <br> 2654 Elo <br> Mark De La Rosa <br> Win","2020-07-11 <br> 2814 Elo <br> Zhalgas Zhumagulov <br> Win","2021-07-24 <br> 2915 Elo <br> Kyler Phillips <br> Win","2021-12-11 <br> 2812 Elo <br> Sean O'Malley <br> Loss","2022-06-25 <br> 2686 Elo <br> Sergey Morozov <br> Loss"],"name":"Elo","type":"scatter","error_y":{"color":"rgba(31,119,180,1)"},"error_x":{"color":"rgba(31,119,180,1)"},"xaxis":"x","yaxis":"y","frame":null},{"x":["2021-08-23","2021-09-20","2021-09-27","2021-10-04","2021-10-11"],"y":[15,15,15,15,15],"mode":"markers","marker":{"color":"rgba(102,194,165,1)","size":10,"opacity":0.80000000000000004,"line":{"color":"rgba(102,194,165,1)"}},"hoverinfo":["text","text","text","text","text"],"text":["2021-08-23 <br> 15 <br> Bantamweight","2021-09-20 <br> 15 <br> Bantamweight","2021-09-27 <br> 15 <br> Bantamweight","2021-10-04 <br> 15 <br> Bantamweight","2021-10-11 <br> 15 <br> Bantamweight"],"type":"scatter","name":"Bantamweight","textfont":{"color":"rgba(102,194,165,1)"},"error_y":{"color":"rgba(102,194,165,1)"},"error_x":{"color":"rgba(102,194,165,1)"},"line":{"color":"rgba(102,194,165,1)"},"xaxis":"x","yaxis":"y2","frame":null},{"x":["2019-04-01","2019-04-03","2019-04-15","2019-04-22","2019-04-30","2019-05-06","2019-05-13","2019-05-21","2019-06-03","2019-07-08","2019-07-15","2019-07-22","2019-07-29","2019-08-05","2019-08-12","2019-08-19","2019-09-02","2019-09-09","2019-09-16","2019-09-23","2019-10-28","2019-11-04","2019-11-11","2019-11-18","2019-12-10","2019-12-16","2019-12-24","2020-01-20","2020-01-27","2020-02-10","2020-02-17","2020-02-24","2020-03-02","2020-03-09","2020-03-16","2020-05-11","2020-05-19","2020-06-02","2020-06-08","2020-06-15","2020-06-22","2020-06-29","2020-07-14","2020-07-27","2020-08-03","2020-08-10","2020-08-17","2020-08-24","2020-08-31","2020-09-07","2020-09-15","2020-09-21","2020-09-28","2020-10-05","2020-10-12","2020-10-19","2020-10-26","2020-11-02","2020-11-09","2020-11-16","2020-11-23","2020-11-30","2020-12-07","2020-12-14","2020-12-21","2021-01-18","2021-01-25","2021-02-08","2021-02-15","2021-02-22","2021-03-01","2021-03-08","2021-03-15","2021-03-23","2021-03-29","2021-04-12","2021-04-19","2021-04-26","2021-05-03","2021-05-10","2021-05-17","2021-05-24","2021-06-07","2021-06-14","2021-06-21","2021-06-28","2021-07-12","2021-07-19"],"y":[14,14,14,14,14,14,13,12,11,11,13,13,13,13,15,15,15,15,15,15,15,15,15,15,15,15,14,14,14,14,13,13,13,13,13,13,13,14,14,14,14,14,12,12,12,12,11,11,11,11,11,11,12,12,11,11,11,11,11,10,10,10,10,10,10,10,10,11,11,11,11,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12],"mode":"markers","marker":{"color":"rgba(141,160,203,1)","size":10,"opacity":0.80000000000000004,"line":{"color":"rgba(141,160,203,1)"}},"hoverinfo":["text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text"],"text":["2019-04-01 <br> 14 <br> Flyweight","2019-04-03 <br> 14 <br> Flyweight","2019-04-15 <br> 14 <br> Flyweight","2019-04-22 <br> 14 <br> Flyweight","2019-04-30 <br> 14 <br> Flyweight","2019-05-06 <br> 14 <br> Flyweight","2019-05-13 <br> 13 <br> Flyweight","2019-05-21 <br> 12 <br> Flyweight","2019-06-03 <br> 11 <br> Flyweight","2019-07-08 <br> 11 <br> Flyweight","2019-07-15 <br> 13 <br> Flyweight","2019-07-22 <br> 13 <br> Flyweight","2019-07-29 <br> 13 <br> Flyweight","2019-08-05 <br> 13 <br> Flyweight","2019-08-12 <br> 15 <br> Flyweight","2019-08-19 <br> 15 <br> Flyweight","2019-09-02 <br> 15 <br> Flyweight","2019-09-09 <br> 15 <br> Flyweight","2019-09-16 <br> 15 <br> Flyweight","2019-09-23 <br> 15 <br> Flyweight","2019-10-28 <br> 15 <br> Flyweight","2019-11-04 <br> 15 <br> Flyweight","2019-11-11 <br> 15 <br> Flyweight","2019-11-18 <br> 15 <br> Flyweight","2019-12-10 <br> 15 <br> Flyweight","2019-12-16 <br> 15 <br> Flyweight","2019-12-24 <br> 14 <br> Flyweight","2020-01-20 <br> 14 <br> Flyweight","2020-01-27 <br> 14 <br> Flyweight","2020-02-10 <br> 14 <br> Flyweight","2020-02-17 <br> 13 <br> Flyweight","2020-02-24 <br> 13 <br> Flyweight","2020-03-02 <br> 13 <br> Flyweight","2020-03-09 <br> 13 <br> Flyweight","2020-03-16 <br> 13 <br> Flyweight","2020-05-11 <br> 13 <br> Flyweight","2020-05-19 <br> 13 <br> Flyweight","2020-06-02 <br> 14 <br> Flyweight","2020-06-08 <br> 14 <br> Flyweight","2020-06-15 <br> 14 <br> Flyweight","2020-06-22 <br> 14 <br> Flyweight","2020-06-29 <br> 14 <br> Flyweight","2020-07-14 <br> 12 <br> Flyweight","2020-07-27 <br> 12 <br> Flyweight","2020-08-03 <br> 12 <br> Flyweight","2020-08-10 <br> 12 <br> Flyweight","2020-08-17 <br> 11 <br> Flyweight","2020-08-24 <br> 11 <br> Flyweight","2020-08-31 <br> 11 <br> Flyweight","2020-09-07 <br> 11 <br> Flyweight","2020-09-15 <br> 11 <br> Flyweight","2020-09-21 <br> 11 <br> Flyweight","2020-09-28 <br> 12 <br> Flyweight","2020-10-05 <br> 12 <br> Flyweight","2020-10-12 <br> 11 <br> Flyweight","2020-10-19 <br> 11 <br> Flyweight","2020-10-26 <br> 11 <br> Flyweight","2020-11-02 <br> 11 <br> Flyweight","2020-11-09 <br> 11 <br> Flyweight","2020-11-16 <br> 10 <br> Flyweight","2020-11-23 <br> 10 <br> Flyweight","2020-11-30 <br> 10 <br> Flyweight","2020-12-07 <br> 10 <br> Flyweight","2020-12-14 <br> 10 <br> Flyweight","2020-12-21 <br> 10 <br> Flyweight","2021-01-18 <br> 10 <br> Flyweight","2021-01-25 <br> 10 <br> Flyweight","2021-02-08 <br> 11 <br> Flyweight","2021-02-15 <br> 11 <br> Flyweight","2021-02-22 <br> 11 <br> Flyweight","2021-03-01 <br> 11 <br> Flyweight","2021-03-08 <br> 12 <br> Flyweight","2021-03-15 <br> 12 <br> Flyweight","2021-03-23 <br> 12 <br> Flyweight","2021-03-29 <br> 12 <br> Flyweight","2021-04-12 <br> 12 <br> Flyweight","2021-04-19 <br> 12 <br> Flyweight","2021-04-26 <br> 12 <br> Flyweight","2021-05-03 <br> 12 <br> Flyweight","2021-05-10 <br> 12 <br> Flyweight","2021-05-17 <br> 12 <br> Flyweight","2021-05-24 <br> 12 <br> Flyweight","2021-06-07 <br> 12 <br> Flyweight","2021-06-14 <br> 12 <br> Flyweight","2021-06-21 <br> 12 <br> Flyweight","2021-06-28 <br> 12 <br> Flyweight","2021-07-12 <br> 12 <br> Flyweight","2021-07-19 <br> 12 <br> Flyweight"],"type":"scatter","name":"Flyweight","textfont":{"color":"rgba(141,160,203,1)"},"error_y":{"color":"rgba(141,160,203,1)"},"error_x":{"color":"rgba(141,160,203,1)"},"line":{"color":"rgba(141,160,203,1)"},"xaxis":"x","yaxis":"y2","frame":null}],"layout":{"xaxis":{"domain":[0,1],"automargin":true,"anchor":"y2","gridcolor":"#e1e1e1","title":""},"yaxis2":{"domain":[0,0.38],"automargin":true,"range":[15.5,-0.5],"tickvals":[15,14,13,12,11,10,9,8,7,6,5,4,3,2,1,0],"ticktext":["15","14","13","12","11","10","9","8","7","6","5","4","3","2","1","C"],"gridcolor":"#e1e1e1","zeroline":false,"anchor":"x"},"yaxis":{"domain":[0.42000000000000004,1],"automargin":true,"gridcolor":"#e1e1e1","anchor":"x"},"annotations":[],"shapes":[],"images":[],"margin":{"b":40,"l":60,"t":0,"r":10},"hovermode":"closest","showlegend":true,"height":750,"legend":{"orientation":"h","xanchor":"center","x":0.5,"y":-100}},"attrs":{"3d8061494341":{"x":{},"y":{},"mode":"lines+markers","line":{"color":"#d12d36","width":3,"shape":"hv"},"marker":{"size":10,"color":"#d12d36"},"hoverinfo":"text","text":{},"name":"Elo","alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"type":"scatter"},"3d803e7659ab":{"x":{},"y":{},"mode":"markers","marker":{"size":10,"opacity":0.80000000000000004},"hoverinfo":"text","text":{},"color":{},"alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"type":"scatter"}},"source":"A","config":{"modeBarButtonsToAdd":["hoverclosest","hovercompare"],"showSendToCloud":false,"displayModeBar":false},"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.20000000000000001,"selected":{"opacity":1},"debounce":0},"subplot":true,"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot","plotly_sunburstclick"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script>
-</div>
-</div>
-<h2 style='font-size: 1em; margin: 0; text-align: center; font-weight: bold;'>Bout History</h2>
-<div class="reactable html-widget html-fill-item" id="htmlwidget-76a5569938ca732e41be" style="width:auto;height:auto;"></div>
-<script type="application/json" data-for="htmlwidget-76a5569938ca732e41be">{"x":{"tag":{"name":"Reactable","attribs":{"data":{"event_date":["<br><span class = 'event-date'>2022-06-25<\/span><br><a href='/events/20220625.html'>UFC on ESPN: Tsarukyan vs. Gamrot<\/a>","<br><span class = 'event-date'>2021-12-11<\/span><br><a href='/events/20211211.html'>UFC 269: Oliveira vs. Poirier<\/a>","<br><span class = 'event-date'>2021-07-24<\/span><br><a href='/events/20210724.html'>UFC on ESPN: Sandhagen vs. Dillashaw<\/a>","<br><span class = 'event-date'>2020-07-11<\/span><br><a href='/events/20200711.html'>UFC 251: Usman vs. Masvidal<\/a>","<br><span class = 'event-date'>2020-02-15<\/span><br><a href='/events/20200215.html'>UFC Fight Night: Anderson vs. Błachowicz 2<\/a>","<br><span class = 'event-date'>2019-08-10<\/span><br><a href='/events/20190810.html'>UFC Fight Night: Shevchenko vs. Carmouche 2<\/a>","<br><span class = 'event-date'>2019-02-09<\/span><br><a href='/events/20190209.html'>UFC 234: Adesanya vs. Silva<\/a>"],"fighter_name":["<br> <b><a href=/fighters/sergeymorozov.html>Sergey Morozov<\/a><\/b> (33) <span class = 'emoji'>🇰🇿<\/span><br><span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: crimson; color: white; font-weight: bold;'>L<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: crimson; color: white; font-weight: bold;'>L<\/span> • 1-2<br>Elo: 2718","<br> <b><span title='Performance of the Night' style='cursor: pointer;'>⭐ <\/span><a href=/fighters/seanomalley.html>Sean O'Malley<\/a><\/b> (27) <span class = 'emoji'>🇺🇸<\/span><br><span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: crimson; color: white; font-weight: bold;'>L<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> • 6-1<br>Elo: 2904","<br> <b>Raulian Paiva<\/b> (25) <span class = 'emoji'>🇧🇷<\/span><br><span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: crimson; color: white; font-weight: bold;'>L<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: crimson; color: white; font-weight: bold;'>L<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> • 2-2<br>Elo: 2814 • UFC rank: #12","<br> <b>Raulian Paiva<\/b> (24) <span class = 'emoji'>🇧🇷<\/span><br><span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: crimson; color: white; font-weight: bold;'>L<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: crimson; color: white; font-weight: bold;'>L<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> • 1-2<br>Elo: 2654 • UFC rank: #14","<br> <b>Raulian Paiva<\/b> (24) <span class = 'emoji'>🇧🇷<\/span><br><span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: crimson; color: white; font-weight: bold;'>L<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: crimson; color: white; font-weight: bold;'>L<\/span> • 0-2<br>Elo: <span class = 'favorite-elo'>2555<\/span> • UFC rank: #14","<br> <b><a href=/fighters/rogeriobontorin.html>Rogerio Bontorin<\/a><\/b> (27) <span class = 'emoji'>🇧🇷<\/span><br><span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> • 1-0<br>Elo: <span class = 'favorite-elo'>2759<\/span> • UFC rank: #8","<br> <b><a href=/fighters/kaikarafrance.html>Kai Kara-France<\/a><\/b> (25) <span class = 'emoji'>🇳🇿<\/span><br><span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> • 1-0<br>Elo: <span class = 'favorite-elo'>2733<\/span> • UFC rank: #15"],"result_description":["<span style='font-size: 0.8em;'>BANTAMWEIGHT<\/span><br>DEC<br>R3<br>05:00","<span style='font-size: 0.8em;'>BANTAMWEIGHT<\/span><br>TKO<br>R1<br>04:42","<span style='font-size: 0.8em;'>BANTAMWEIGHT<\/span><br><span title='Fight of the Night' style='cursor: pointer;'>⭐<\/span>DEC<span title='Fight of the Night' style='cursor: pointer;'>⭐<\/span><br>R3<br>05:00","<span style='font-size: 0.8em;'>CATCHWEIGHT (129 LB)<\/span><br>DEC<br>R3<br>05:00","<span style='font-size: 0.8em;'>FLYWEIGHT<\/span><br>KO<br>R2<br>04:42","<span style='font-size: 0.8em;'>FLYWEIGHT<\/span><br>TKO<br>R1<br>02:56","<span style='font-size: 0.8em;'>FLYWEIGHT<\/span><br>DEC<br>R3<br>05:00"],"opponent_fighter_name":["<br><span class='emoji'>🇧🇷<\/span> <b>Raulian Paiva<\/b> (26)<br>3-3 • <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: crimson; color: white; font-weight: bold;'>L<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: crimson; color: white; font-weight: bold;'>L<\/span><br>Elo: <span class = 'favorite-elo'>2812<\/span>","<br><span class='emoji'>🇧🇷<\/span> <b>Raulian Paiva<\/b> (26)<br>3-2 • <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: crimson; color: white; font-weight: bold;'>L<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: crimson; color: white; font-weight: bold;'>L<\/span><br>Elo: <span class = 'favorite-elo'>2915<\/span>","<br><span class='emoji'>🇺🇸<\/span> <b><a href=/fighters/kylerphillips.html>Kyler Phillips<\/a><\/b> (26)<br>3-0 • <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span><br>UFC rank: #14 • Elo: <span class = 'favorite-elo'>2944<\/span>","<br><span class='emoji'>🇰🇿<\/span> <b><a href=/fighters/zhalgaszhumagulov.html>Zhalgas Zhumagulov<\/a><\/b> (31)<br>🔰 Debut<br>Elo: <span class = 'favorite-elo'>2894<\/span>","<br><span class='emoji'>🇺🇸<\/span> <b><a href=/fighters/markdelarosa.html>Mark De La Rosa<\/a><\/b> (25)<br>2-3 • <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: crimson; color: white; font-weight: bold;'>L<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: crimson; color: white; font-weight: bold;'>L<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: crimson; color: white; font-weight: bold;'>L<\/span><br>UFC rank: #13 • Elo: 2551","<br><span class='emoji'>🇧🇷<\/span> <b>Raulian Paiva<\/b> (23)<br>0-1 • <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: crimson; color: white; font-weight: bold;'>L<\/span><br>UFC rank: #13 • Elo: 2616","<br><span class='emoji'>🇧🇷<\/span> <b>Raulian Paiva<\/b> (23)<br>🔰 Debut<br>Elo: 2618"],"City":["<br>UFC Apex<br>Las Vegas, Nevada<br>United States <span class='emoji'>🇺🇸<\/span>","<br>T-Mobile Arena<br>Las Vegas, Nevada<br>United States <span class='emoji'>🇺🇸<\/span>","<br>UFC Apex<br>Las Vegas, Nevada<br>United States <span class='emoji'>🇺🇸<\/span>","<br>du Forum<br>Abu Dhabi<br>United Arab Emirates <span class='emoji'>🇦🇪<\/span>","<br>Santa Ana Star Center<br>Rio Rancho, New Mexico<br>United States <span class='emoji'>🇺🇸<\/span>","<br>Antel Arena<br>Montevideo<br>Uruguay <span class='emoji'>🇺🇾<\/span>","<br>Rod Laver Arena<br>Melbourne<br>Australia <span class='emoji'>🇦🇺<\/span>"]},"columns":[{"id":"event_date","name":"","type":"character","html":true,"width":200,"className":"side_info"},{"id":"fighter_name","name":"","type":"character","html":true,"width":240,"align":"right"},{"id":"result_description","name":"","type":"character","html":true,"width":50,"align":"center","className":"result_description"},{"id":"opponent_fighter_name","name":"","type":"character","html":true,"width":240,"align":"left"},{"id":"City","name":"","type":"character","cell":["<div style=\"white-space: nowrap; overflow: visible;\"><br>UFC Apex<br>Las Vegas, Nevada<br>United States <span class='emoji'>🇺🇸<\/span><\/div>","<div style=\"white-space: nowrap; overflow: visible;\"><br>T-Mobile Arena<br>Las Vegas, Nevada<br>United States <span class='emoji'>🇺🇸<\/span><\/div>","<div style=\"white-space: nowrap; overflow: visible;\"><br>UFC Apex<br>Las Vegas, Nevada<br>United States <span class='emoji'>🇺🇸<\/span><\/div>","<div style=\"white-space: nowrap; overflow: visible;\"><br>du Forum<br>Abu Dhabi<br>United Arab Emirates <span class='emoji'>🇦🇪<\/span><\/div>","<div style=\"white-space: nowrap; overflow: visible;\"><br>Santa Ana Star Center<br>Rio Rancho, New Mexico<br>United States <span class='emoji'>🇺🇸<\/span><\/div>","<div style=\"white-space: nowrap; overflow: visible;\"><br>Antel Arena<br>Montevideo<br>Uruguay <span class='emoji'>🇺🇾<\/span><\/div>","<div style=\"white-space: nowrap; overflow: visible;\"><br>Rod Laver Arena<br>Melbourne<br>Australia <span class='emoji'>🇦🇺<\/span><\/div>"],"html":true,"width":200,"className":"side_info"}],"sortable":false,"pagination":false,"defaultPageSize":100,"showPageInfo":false,"nowrap":true,"className":"event_bouts","inline":true,"theme":{"headerStyle":{"borderBottom":"none"}},"dataKey":"df497ef1d33cc8d5c863a03fed584ed9"},"children":[]},"class":"reactR_markup"},"evals":[],"jsHooks":[]}</script>
-
-<footer>
-  <div class="footer-container">
-    <p class="copyright-text">
-        <a href="/glossary.html">Glossary</a>
-      <a href="mailto:rostertracker@gmail.com">Contact</a>
-    </p>
-<!--     <p class="browser-badge">
-      <a href="https://www.mozilla.org/en-US/firefox/">
-        <img src="C:/Users/mart/Dropbox/R/roster.watch/firefox.png" title="Best viewed with Firefox" alt="Best viewed with Firefox"><br>
-        <small class="copyright-text">Best viewed with Firefox</small>
-      </a>
-    </p> 
- -->  </div>
- <div class="footer-container">
-    <p class="copyright-text">
-      Copyright © <span id="currentYear"></span> All Rights Reserved by 
-      <a href="#">roster.watch</a>
-    </p>
-<!--     <p class="browser-badge">
-      <a href="https://www.mozilla.org/en-US/firefox/">
-        <img src="C:/Users/mart/Dropbox/R/roster.watch/firefox.png" title="Best viewed with Firefox" alt="Best viewed with Firefox"><br>
-        <small class="copyright-text">Best viewed with Firefox</small>
-      </a>
-    </p> 
- -->  </div>
-</footer>
-
-<style>
-.footer-container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1rem;
-}
-
-.copyright-text {
-  margin: 0 auto;
-}
-
-.browser-badge {
-  margin-left: auto;
-}
-</style>
-
-<script>
-  document.getElementById('currentYear').textContent = new Date().getFullYear();
-</script>
-
-
-
-</div>
-
-<script>
-
-// add bootstrap table styles to pandoc tables
-function bootstrapStylePandocTables() {
-  $('tr.odd').parent('tbody').parent('table').addClass('table table-condensed');
-}
-$(document).ready(function () {
-  bootstrapStylePandocTables();
-});
-
-
-</script>
-
-<!-- tabsets -->
-
-<script>
-$(document).ready(function () {
-  window.buildTabsets("TOC");
-});
-
-$(document).ready(function () {
-  $('.tabset-dropdown > .nav-tabs > li').click(function () {
-    $(this).parent().toggleClass('nav-tabs-open');
-  });
-});
-</script>
-
-<!-- code folding -->
-
-
-<!-- dynamically load mathjax for compatibility with self-contained -->
-<script>
-  (function () {
-    var script = document.createElement("script");
-    script.type = "text/javascript";
-    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
-    document.getElementsByTagName("head")[0].appendChild(script);
-  })();
-</script>
-
-</body>
-</html>
+<!doctype html><html lang=en><head><meta charset=UTF-8><meta name=viewport content="width=device-width,initial-scale=1"><title>Raulian Paiva · roster.watch</title><link rel=stylesheet href=/style.css><link rel=apple-touch-icon sizes=180x180 href=/apple-touch-icon.png><link rel=icon type=image/png sizes=32x32 href=/favicon-32x32.png><link rel=icon type=image/png sizes=16x16 href=/favicon-16x16.png><link rel=manifest href=/site.webmanifest><meta name=description content="An up-to-date list of the full active UFC roster including biographical data, rankings, records, and more."><script data-goatcounter=https://rosterwatch.goatcounter.com/count async src=//gc.zgo.at/count.js></script><script defer src=/script.js data-website-id=f0f3ed7e-e89c-4a29-a745-475e0b10271a></script><script src=/age.js></script></head><body><div class=container><header><a class=logo href=/><img src=/images/logo.svg alt=logo></a><nav><ul class=nav__links><li><a href=/>Current Roster</a></li><li><a href=/former.html>Former Roster</a></li><li class=dropdown><a href=# onclick=return!1>Weight Classes</a><ul class=dropdown-content><li><a href=/heavyweight.html>Heavyweight</a></li><li><a href=/lightheavyweight.html>Light Heavyweight</a></li><li><a href=/middleweight.html>Middleweight</a></li><li><a href=/welterweight.html>Welterweight</a></li><li><a href=/lightweight.html>Lightweight</a></li><li><a href=/featherweight.html>Featherweight</a></li><li><a href=/bantamweight.html>Bantamweight</a></li><li><a href=/flyweight.html>Flyweight</a></li><li><a href=/womensbantamweight.html>Women's Bantamweight</a></li><li><a href=/womensflyweight.html>Women's Flyweight</a></li><li><a href=/womensstrawweight.html>Women's Strawweight</a></li></ul></li><li><a href=/events>Events</a></li><li><a href=/log.html>Log</a></li><li><a href=/fightlog.html>Fight Log</a></li><li><a href=javascript:void(0) onclick=getRandomPage()>Random Page</a></li><li><a href=https://rosterwatch.printify.me/>Merch</a></li><li><a href="https://www.patreon.com/bePatron?u=88266864">Support on Patreon</a></li></ul></nav><div class="menu cta">Menu</div></header><div class=overlay><a class=close>×</a><div class=overlay__content><a href=/>Current Roster</a>
+<a href=/former.html>Former Roster</a><div class=dropdown-mobile><a href=# onclick=return!1>Weight Classes</a><div class=dropdown-content-mobile><a href=/heavyweight.html>Heavyweight</a>
+<a href=/lightheavyweight.html>Light Heavyweight</a>
+<a href=/middleweight.html>Middleweight</a>
+<a href=/welterweight.html>Welterweight</a>
+<a href=/lightweight.html>Lightweight</a>
+<a href=/featherweight.html>Featherweight</a>
+<a href=/bantamweight.html>Bantamweight</a>
+<a href=/flyweight.html>Flyweight</a>
+<a href=/womensbantamweight.html>Women's Bantamweight</a>
+<a href=/womensflyweight.html>Women's Flyweight</a>
+<a href=/womensstrawweight.html>Women's Strawweight</a></div></div><a href=/events>Events</a>
+<a href=/log.html>Log</a>
+<a href=/fightlog.html>Fight Log</a>
+<a href=javascript:void(0) onclick=getRandomPage()>Random Page</a>
+<a href=https://rosterwatch.printify.me/>Merch</a>
+<a href="https://www.patreon.com/bePatron?u=88266864">Support on Patreon</a></div></div><script type=text/javascript src=/mobile.js></script><script>function getRandomPage(){fetch("/sitemap.xml").then(e=>e.text()).then(e=>{const n=new DOMParser,s=n.parseFromString(e,"application/xml"),t=Array.from(s.getElementsByTagName("loc")).map(e=>e.textContent),o=t[Math.floor(Math.random()*t.length)];window.location.href=o})}</script><main><div class=fighter-header><div class=fighter-name><div><h1>Raulian Paiva</h1><span class=emoji>🇧🇷</span></div><time class=dob data-dob=1995-10-17><span class=age></span><div class=date_of_birth>(1995-10-17)</div></time></div></div><h2>Statistics</h2><article class=fighter-info><div class=two-column-layout><div class=fighter-details><div class=fighter-stats><p><strong>UFC Record:</strong> 3-4</p><p><strong>By Method:</strong></p><ul><li>KO/TKO: 1-2</li><li>Submission: 0-0</li><li>Decision: 2-2</li></ul><p><strong>By Elo:</strong></p><ul><li>As Favorite: 1-2</li><li>As Underdog: 2-2</li></ul><p><strong>By Weight Class:</strong></p><ul><li>Flyweight: 1-2</li><li>Bantamweight: 1-2</li></ul><p><strong>By Round:</strong></p><ul><li>Round 1: 0-2</li><li>Round 2: 1-0</li><li>Round 3: 2-2</li></ul></div></div><div class=rankings><p><strong>UFC Roster Status:</strong> Inactive</p><p><strong>Last 5:</strong>
+<span class="wldn-letter letter-W">W</span>
+<span class="wldn-letter letter-W">W</span>
+<span class="wldn-letter letter-W">W</span>
+<span class="wldn-letter letter-L">L</span>
+<span class="wldn-letter letter-L">L</span></p><p><strong>Peak Elo:</strong> 2916 <span class=peak-date>(2021-07-24)</span></p><p><strong>Avg Opponent Elo:</strong> 2786 (#438)</p><p><strong>Bonuses:</strong> 1 (1 FOTN, 0
+Performance)</p><p><strong>Avg Fight Time:</strong> 11m 3s</p><p><strong>Total Fight Time:</strong> 1h 17m 20s</p><p><strong>Avg Time Between Fights:</strong> 186 days</p><p><strong>Avg Card Placement:</strong> 8.3</p><p><strong>Peak Rankings:</strong></p><div>#10 Flyweight</div><div>#15 Bantamweight</div></div></div></article><div class=chart-section><h2>Elo Rating & UFC Rankings</h2><div class=chart-container><div id=fighter-performance-chart data-rankings='{"Bantamweight":[{"date":"2021-08-23","rank":15},{"date":"2021-09-20","rank":15},{"date":"2021-09-27","rank":15},{"date":"2021-10-04","rank":15},{"date":"2021-10-11","rank":15}],"Flyweight":[{"date":"2019-04-01","rank":14},{"date":"2019-04-03","rank":14},{"date":"2019-04-15","rank":14},{"date":"2019-04-22","rank":14},{"date":"2019-04-30","rank":14},{"date":"2019-05-06","rank":14},{"date":"2019-05-13","rank":13},{"date":"2019-05-21","rank":12},{"date":"2019-06-03","rank":11},{"date":"2019-07-08","rank":11},{"date":"2019-07-15","rank":13},{"date":"2019-07-22","rank":13},{"date":"2019-07-29","rank":13},{"date":"2019-08-05","rank":13},{"date":"2019-08-12","rank":15},{"date":"2019-08-19","rank":15},{"date":"2019-09-02","rank":15},{"date":"2019-09-09","rank":15},{"date":"2019-09-16","rank":15},{"date":"2019-09-23","rank":15},{"date":"2019-10-28","rank":15},{"date":"2019-11-04","rank":15},{"date":"2019-11-11","rank":15},{"date":"2019-11-18","rank":15},{"date":"2019-12-10","rank":15},{"date":"2019-12-16","rank":15},{"date":"2019-12-24","rank":14},{"date":"2020-01-20","rank":14},{"date":"2020-01-27","rank":14},{"date":"2020-02-10","rank":14},{"date":"2020-02-17","rank":13},{"date":"2020-02-24","rank":13},{"date":"2020-03-02","rank":13},{"date":"2020-03-09","rank":13},{"date":"2020-03-16","rank":13},{"date":"2020-05-11","rank":13},{"date":"2020-05-19","rank":13},{"date":"2020-06-02","rank":14},{"date":"2020-06-08","rank":14},{"date":"2020-06-15","rank":14},{"date":"2020-06-22","rank":14},{"date":"2020-06-29","rank":14},{"date":"2020-07-14","rank":12},{"date":"2020-07-27","rank":12},{"date":"2020-08-03","rank":12},{"date":"2020-08-10","rank":12},{"date":"2020-08-17","rank":11},{"date":"2020-08-24","rank":11},{"date":"2020-08-31","rank":11},{"date":"2020-09-07","rank":11},{"date":"2020-09-15","rank":11},{"date":"2020-09-21","rank":11},{"date":"2020-09-28","rank":12},{"date":"2020-10-05","rank":12},{"date":"2020-10-12","rank":11},{"date":"2020-10-19","rank":11},{"date":"2020-10-26","rank":11},{"date":"2020-11-02","rank":11},{"date":"2020-11-09","rank":11},{"date":"2020-11-16","rank":10},{"date":"2020-11-23","rank":10},{"date":"2020-11-30","rank":10},{"date":"2020-12-07","rank":10},{"date":"2020-12-14","rank":10},{"date":"2020-12-21","rank":10},{"date":"2021-01-18","rank":10},{"date":"2021-01-25","rank":10},{"date":"2021-02-08","rank":11},{"date":"2021-02-15","rank":11},{"date":"2021-02-22","rank":11},{"date":"2021-03-01","rank":11},{"date":"2021-03-08","rank":12},{"date":"2021-03-15","rank":12},{"date":"2021-03-23","rank":12},{"date":"2021-03-29","rank":12},{"date":"2021-04-12","rank":12},{"date":"2021-04-19","rank":12},{"date":"2021-04-26","rank":12},{"date":"2021-05-03","rank":12},{"date":"2021-05-10","rank":12},{"date":"2021-05-17","rank":12},{"date":"2021-05-24","rank":12},{"date":"2021-06-07","rank":12},{"date":"2021-06-14","rank":12},{"date":"2021-06-21","rank":12},{"date":"2021-06-28","rank":12},{"date":"2021-07-12","rank":12},{"date":"2021-07-19","rank":12}]}' data-elo='[{"bout_order":1,"city":"Las Vegas, Nevada","country":"United States","country_emoji":"🇺🇸","event_date":"2022-06-25","event_name":"UFC on ESPN: Tsarukyan vs. Gamrot","event_slug":"20220625","fighter":"Raulian Paiva","fighter_age":26,"fighter_country":"🇧🇷","fighter_last5":"LWWWL","fighter_plot_rtg":2686,"fighter_record":"3-3","fighter_rtg":2813,"method":"DEC","opponent_age":33,"opponent_country":"🇰🇿","opponent_last5":"LWL","opponent_name":"Sergey Morozov","opponent_record":"1-2","opponent_rtg":2719,"opponent_slug":"sergeymorozov","result":"Loss","round":3,"time":"05:00","venue":"UFC Apex","weight_class":"Bantamweight"},{"bout_order":1,"city":"Las Vegas, Nevada","country":"United States","country_emoji":"🇺🇸","event_date":"2021-12-11","event_name":"UFC 269: Oliveira vs. Poirier","event_slug":"20211211","fighter":"Raulian Paiva","fighter_age":26,"fighter_country":"🇧🇷","fighter_last5":"WWWLL","fighter_plot_rtg":2813,"fighter_record":"3-2","fighter_rtg":2916,"method":"TKO","opp_bonus":true,"opp_perf_of_the_night":true,"opponent_age":27,"opponent_country":"🇺🇸","opponent_last5":"WWLWW","opponent_name":"Sean O&#39;Malley","opponent_record":"6-1","opponent_rtg":2905,"opponent_slug":"seanomalley","result":"Loss","round":1,"time":"04:42","venue":"T-Mobile Arena","weight_class":"Bantamweight"},{"bout_order":1,"city":"Las Vegas, Nevada","country":"United States","country_emoji":"🇺🇸","event_date":"2021-07-24","event_name":"UFC on ESPN: Sandhagen vs. Dillashaw","event_slug":"20210724","fight_of_the_night":true,"fighter":"Raulian Paiva","fighter_age":25,"fighter_country":"🇧🇷","fighter_last5":"WWLL","fighter_plot_rtg":2916,"fighter_rank":12,"fighter_record":"2-2","fighter_rtg":2814,"method":"DEC","opponent_age":26,"opponent_country":"🇺🇸","opponent_last5":"WWW","opponent_name":"Kyler Phillips","opponent_rank":14,"opponent_record":"3-0","opponent_rtg":2944,"opponent_slug":"kylerphillips","result":"Win","round":3,"time":"05:00","venue":"UFC Apex","weight_class":"Bantamweight"},{"bout_order":1,"city":"Abu Dhabi","country":"United Arab Emirates","country_emoji":"🇦🇪","event_date":"2020-07-11","event_name":"UFC 251: Usman vs. Masvidal","event_slug":"20200711","fighter":"Raulian Paiva","fighter_age":24,"fighter_country":"🇧🇷","fighter_last5":"WLL","fighter_plot_rtg":2814,"fighter_rank":14,"fighter_record":"1-2","fighter_rtg":2654,"method":"DEC","opponent_age":31,"opponent_country":"🇰🇿","opponent_last5":"","opponent_name":"Zhalgas Zhumagulov","opponent_record":"","opponent_rtg":2892,"opponent_slug":"zhalgaszhumagulov","result":"Win","round":3,"time":"05:00","venue":"du Forum","weight_class":"Catchweight (129 lb)"},{"bout_order":1,"city":"Rio Rancho, New Mexico","country":"United States","country_emoji":"🇺🇸","event_date":"2020-02-15","event_name":"UFC Fight Night: Anderson vs. Błachowicz 2","event_slug":"20200215","fighter":"Raulian Paiva","fighter_age":24,"fighter_country":"🇧🇷","fighter_last5":"LL","fighter_plot_rtg":2654,"fighter_rank":14,"fighter_record":"0-2","fighter_rtg":2556,"method":"KO","opponent_age":25,"opponent_country":"🇺🇸","opponent_last5":"LWWLL","opponent_name":"Mark De La Rosa","opponent_rank":13,"opponent_record":"2-3","opponent_rtg":2551,"opponent_slug":"markdelarosa","result":"Win","round":2,"time":"04:42","venue":"Santa Ana Star Center","weight_class":"Flyweight"},{"bout_order":1,"city":"Montevideo","country":"Uruguay","country_emoji":"🇺🇾","event_date":"2019-08-10","event_name":"UFC Fight Night: Shevchenko vs. Carmouche 2","event_slug":"20190810","fighter":"Raulian Paiva","fighter_age":23,"fighter_country":"🇧🇷","fighter_last5":"L","fighter_plot_rtg":2556,"fighter_rank":13,"fighter_record":"0-1","fighter_rtg":2617,"method":"TKO","opponent_age":27,"opponent_country":"🇧🇷","opponent_last5":"W","opponent_name":"Rogerio Bontorin","opponent_rank":8,"opponent_record":"1-0","opponent_rtg":2760,"opponent_slug":"rogeriobontorin","result":"Loss","round":1,"time":"02:56","venue":"Antel Arena","weight_class":"Flyweight"},{"bout_order":1,"city":"Melbourne","country":"Australia","country_emoji":"🇦🇺","event_date":"2019-02-09","event_name":"UFC 234: Adesanya vs. Silva","event_slug":"20190209","fighter":"Raulian Paiva","fighter_age":23,"fighter_country":"🇧🇷","fighter_last5":"","fighter_plot_rtg":2617,"fighter_record":"","fighter_rtg":2619,"method":"DEC","opponent_age":25,"opponent_country":"🇳🇿","opponent_last5":"W","opponent_name":"Kai Kara-France","opponent_rank":15,"opponent_record":"1-0","opponent_rtg":2734,"opponent_slug":"kaikarafrance","result":"Loss","round":3,"time":"05:00","venue":"Rod Laver Arena","weight_class":"Flyweight"}]'></div></div></div><script src=https://cdn.plot.ly/plotly-3.1.0.min.js></script><script>const chartElement=document.getElementById("fighter-performance-chart"),eloDataRaw=chartElement.dataset.elo,rankingsDataRaw=chartElement.dataset.rankings,eloData=eloDataRaw?JSON.parse(eloDataRaw):[],seen=new Map,eloDataFiltered=eloData.filter(e=>{const t=`${e.event_date}_${e.fighter_plot_rtg}`;return!seen.has(t)&&(seen.set(t,!0),!0)}),rankingsData=rankingsDataRaw?JSON.parse(rankingsDataRaw):[],hasElo=eloDataFiltered&&eloDataFiltered.length>1,hasRankings=rankingsData&&Object.keys(rankingsData).length>0,createEloTrace=(e="x",t="y")=>({x:eloDataFiltered.map(e=>e.event_date),y:eloDataFiltered.map(e=>e.fighter_plot_rtg),customdata:eloDataFiltered.map(e=>[e.opponent_name,e.result]),type:"scatter",mode:"lines+markers",line:{color:"#d4636a",width:3,shape:"vh"},marker:{size:10,color:"#d4636a"},hovertemplate:"%{x|%Y-%m-%d}<br>%{y} Elo<br>vs %{customdata[0]}<br>%{customdata[1]}<extra></extra>",name:"Elo",xaxis:e,yaxis:t}),createRankingsTraces=(e,t="x",n="y")=>{const s=["#65c1eb","#85ceb7","#fda481"],o={"Pound-for-Pound":"#FBBF24","Men's Pound-for-Pound":"#a4b3d5","Women's Pound-for-Pound":"#eca1cf"},a=["Pound-for-Pound","Men's Pound-for-Pound","Women's Pound-for-Pound","Flyweight","Bantamweight","Featherweight","Lightweight","Welterweight","Middleweight","Light Heavyweight","Heavyweight","Women's Flyweight","Women's Featherweight","Women's Strawweight","Women's Bantamweight"],r=a.filter(e=>rankingsData[e]);let i=0;return r.map(e=>{const a=rankingsData[e];let r;return o[e]?r=o[e]:(r=s[i%s.length],i++),{x:a.map(e=>e.date),y:a.map(e=>e.rank),type:"scatter",mode:"markers",marker:{size:10,opacity:.8,color:r},hovertemplate:a.map(t=>`${t.date}<br>${t.rank===0?"Champion":"#"+t.rank}<br>${e}<extra></extra>`),name:e,xaxis:t,yaxis:n}})};let traces=[],layout={margin:{t:0,b:0,l:30,r:0},width:600,paper_bgcolor:"#f7f5f0",plot_bgcolor:"#f7f5f0"},title="",height=450;hasElo&&hasRankings?(traces=[createEloTrace("x","y"),...createRankingsTraces(rankingsData,"x2","y2")],title="Elo Rating & UFC Rankings",height=800,layout={...layout,grid:{rows:2,columns:1,subplots:[["xy"],["x2y2"]],roworder:"top to bottom",ygap:.1},showlegend:!0,legend:{orientation:"h",xanchor:"center",x:.5,y:-.03},xaxis:{gridcolor:"#e1e1e1",title:"",matches:"x2"},yaxis:{gridcolor:"#e1e1e1",title:""},xaxis2:{gridcolor:"#e1e1e1",title:"",matches:"x"},yaxis2:{range:[15.5,-.5],tickvals:[15,14,13,12,11,10,9,8,7,6,5,4,3,2,1,0],ticktext:["15","14","13","12","11","10","9","8","7","6","5","4","3","2","1","C"],gridcolor:"#e1e1e1",zeroline:!1,title:""}},document.querySelector(".chart-section h2").textContent=title,chartElement.style.height=height+"px",layout.height=height,Plotly.newPlot("fighter-performance-chart",traces,layout,{displayModeBar:!1,responsive:!0})):hasElo?(traces=[createEloTrace()],title="Elo Rating",layout={...layout,showlegend:!1,legend:{orientation:"h",xanchor:"center",x:.5,y:-.1},margin:{t:0,b:50,l:30,r:0},xaxis:{gridcolor:"#e1e1e1",title:""},yaxis:{gridcolor:"#e1e1e1",title:""}},document.querySelector(".chart-section h2").textContent=title,chartElement.style.height=height+"px",layout.height=height,Plotly.newPlot("fighter-performance-chart",traces,layout,{displayModeBar:!1,responsive:!0})):hasRankings&&(traces=createRankingsTraces(rankingsData),title="UFC Rankings",layout={...layout,showlegend:!0,legend:{orientation:"h",xanchor:"center",x:.5,y:-.1},margin:{t:0,b:50,l:30,r:0},xaxis:{gridcolor:"#e1e1e1",title:""},yaxis:{range:[15.5,-.5],tickvals:[15,14,13,12,11,10,9,8,7,6,5,4,3,2,1,0],ticktext:["15","14","13","12","11","10","9","8","7","6","5","4","3","2","1","C"],gridcolor:"#e1e1e1",zeroline:!1,title:""}},document.querySelector(".chart-section h2").textContent=title,chartElement.style.height=height+"px",layout.height=height,Plotly.newPlot("fighter-performance-chart",traces,layout,{displayModeBar:!1,responsive:!0}))</script><div class=fight-results><h2>Bout History</h2><div class=event_bouts><div class=bout-row><div class="side_info bout-event"><br><span class=event-date><a href=/events/20220625.html>2022-06-25</a></span><br><span class=event-name><a href=/events/20220625.html>UFC on ESPN: Tsarukyan vs. Gamrot</a></span></div><div class="bout-fighter bout-left"><br><b><a href=/fighters/sergeymorozov.html>Sergey Morozov</a></b> (33) <span class=emoji>🇰🇿</span><br><span class="wldn-letter letter-L">L</span>
+<span class="wldn-letter letter-W">W</span>
+<span class="wldn-letter letter-L">L</span>
+• 1-2<br>Elo: 2719</div><div class=result_description><span class=weightclass>BANTAMWEIGHT</span><br>DEC<br>R3<br>05:00</div><div class="bout-fighter bout-right"><br><span class=emoji>🇧🇷 </span><b>Raulian Paiva</b> (26)<br>3-3 •
+<span class="wldn-letter letter-L">L</span>
+<span class="wldn-letter letter-W">W</span>
+<span class="wldn-letter letter-W">W</span>
+<span class="wldn-letter letter-W">W</span>
+<span class="wldn-letter letter-L">L</span><br>Elo: <span class=favorite-elo>2813</span></div><div class="side_info bout-venue"><br>UFC Apex<br>Las Vegas, Nevada<br>United States <span class=emoji>🇺🇸</span></div></div><div class=bout-row><div class="side_info bout-event"><br><span class=event-date><a href=/events/20211211.html>2021-12-11</a></span><br><span class=event-name><a href=/events/20211211.html>UFC 269: Oliveira vs. Poirier</a></span></div><div class="bout-fighter bout-left"><br><span title='Performance of the Night' class=cursor-pointer>⭐
+</span><b><a href=/fighters/seanomalley.html>Sean O'Malley</a></b> (27) <span class=emoji>🇺🇸</span><br><span class="wldn-letter letter-W">W</span>
+<span class="wldn-letter letter-W">W</span>
+<span class="wldn-letter letter-L">L</span>
+<span class="wldn-letter letter-W">W</span>
+<span class="wldn-letter letter-W">W</span>
+• 6-1<br>Elo: 2905</div><div class=result_description><span class=weightclass>BANTAMWEIGHT</span><br>TKO<br>R1<br>04:42</div><div class="bout-fighter bout-right"><br><span class=emoji>🇧🇷 </span><b>Raulian Paiva</b> (26)<br>3-2 •
+<span class="wldn-letter letter-W">W</span>
+<span class="wldn-letter letter-W">W</span>
+<span class="wldn-letter letter-W">W</span>
+<span class="wldn-letter letter-L">L</span>
+<span class="wldn-letter letter-L">L</span><br>Elo: <span class=favorite-elo>2916</span></div><div class="side_info bout-venue"><br>T-Mobile Arena<br>Las Vegas, Nevada<br>United States <span class=emoji>🇺🇸</span></div></div><div class=bout-row><div class="side_info bout-event"><br><span class=event-date><a href=/events/20210724.html>2021-07-24</a></span><br><span class=event-name><a href=/events/20210724.html>UFC on ESPN: Sandhagen vs. Dillashaw</a></span></div><div class="bout-fighter bout-left"><br><b>Raulian Paiva</b> (25) <span class=emoji>🇧🇷</span><br><span class="wldn-letter letter-W">W</span>
+<span class="wldn-letter letter-W">W</span>
+<span class="wldn-letter letter-L">L</span>
+<span class="wldn-letter letter-L">L</span>
+• 2-2<br>UFC rank: #12 •
+Elo: 2814</div><div class=result_description><span class=weightclass>BANTAMWEIGHT</span><br><div class=fotn><span title='Fight of the Night' class=cursor-pointer>⭐</span>DEC<span title='Fight of the Night' class=cursor-pointer>⭐</span></div><br>R3<br>05:00</div><div class="bout-fighter bout-right"><br><span class=emoji>🇺🇸</span>
+<b><a href=/fighters/kylerphillips.html>Kyler Phillips</a></b> (26)<br>3-0 •
+<span class="wldn-letter letter-W">W</span>
+<span class="wldn-letter letter-W">W</span>
+<span class="wldn-letter letter-W">W</span><br>Elo: 2944
+• UFC rank: #14</div><div class="side_info bout-venue"><br>UFC Apex<br>Las Vegas, Nevada<br>United States <span class=emoji>🇺🇸</span></div></div><div class=bout-row><div class="side_info bout-event"><br><span class=event-date><a href=/events/20200711.html>2020-07-11</a></span><br><span class=event-name><a href=/events/20200711.html>UFC 251: Usman vs. Masvidal</a></span></div><div class="bout-fighter bout-left"><br><b>Raulian Paiva</b> (24) <span class=emoji>🇧🇷</span><br><span class="wldn-letter letter-W">W</span>
+<span class="wldn-letter letter-L">L</span>
+<span class="wldn-letter letter-L">L</span>
+• 1-2<br>UFC rank: #14 •
+Elo: 2654</div><div class=result_description><span class=weightclass>CATCHWEIGHT (129 LB)</span><br>DEC<br>R3<br>05:00</div><div class="bout-fighter bout-right"><br><span class=emoji>🇰🇿</span>
+<b><a href=/fighters/zhalgaszhumagulov.html>Zhalgas Zhumagulov</a></b> (31)<br>🔰 Debut<br>Elo: 2892</div><div class="side_info bout-venue"><br>du Forum<br>Abu Dhabi<br>United Arab Emirates <span class=emoji>🇦🇪</span></div></div><div class=bout-row><div class="side_info bout-event"><br><span class=event-date><a href=/events/20200215.html>2020-02-15</a></span><br><span class=event-name><a href=/events/20200215.html>UFC Fight Night: Anderson vs. Błachowicz 2</a></span></div><div class="bout-fighter bout-left"><br><b>Raulian Paiva</b> (24) <span class=emoji>🇧🇷</span><br><span class="wldn-letter letter-L">L</span>
+<span class="wldn-letter letter-L">L</span>
+• 0-2<br>UFC rank: #14 •
+Elo: <span class=favorite-elo>2556</span></div><div class=result_description><span class=weightclass>FLYWEIGHT</span><br>KO<br>R2<br>04:42</div><div class="bout-fighter bout-right"><br><span class=emoji>🇺🇸</span>
+<b><a href=/fighters/markdelarosa.html>Mark De La Rosa</a></b> (25)<br>2-3 •
+<span class="wldn-letter letter-L">L</span>
+<span class="wldn-letter letter-W">W</span>
+<span class="wldn-letter letter-W">W</span>
+<span class="wldn-letter letter-L">L</span>
+<span class="wldn-letter letter-L">L</span><br>Elo: 2551
+• UFC rank: #13</div><div class="side_info bout-venue"><br>Santa Ana Star Center<br>Rio Rancho, New Mexico<br>United States <span class=emoji>🇺🇸</span></div></div><div class=bout-row><div class="side_info bout-event"><br><span class=event-date><a href=/events/20190810.html>2019-08-10</a></span><br><span class=event-name><a href=/events/20190810.html>UFC Fight Night: Shevchenko vs. Carmouche 2</a></span></div><div class="bout-fighter bout-left"><br><b><a href=/fighters/rogeriobontorin.html>Rogerio Bontorin</a></b> (27) <span class=emoji>🇧🇷</span><br><span class="wldn-letter letter-W">W</span>
+• 1-0<br>Elo: 2760
+• UFC rank: #8</div><div class=result_description><span class=weightclass>FLYWEIGHT</span><br>TKO<br>R1<br>02:56</div><div class="bout-fighter bout-right"><br><span class=emoji>🇧🇷 </span><b>Raulian Paiva</b> (23)<br>0-1 •
+<span class="wldn-letter letter-L">L</span><br>UFC rank: #13 •
+Elo: 2617</div><div class="side_info bout-venue"><br>Antel Arena<br>Montevideo<br>Uruguay <span class=emoji>🇺🇾</span></div></div><div class=bout-row><div class="side_info bout-event"><br><span class=event-date><a href=/events/20190209.html>2019-02-09</a></span><br><span class=event-name><a href=/events/20190209.html>UFC 234: Adesanya vs. Silva</a></span></div><div class="bout-fighter bout-left"><br><b><a href=/fighters/kaikarafrance.html>Kai Kara-France</a></b> (25) <span class=emoji>🇳🇿</span><br><span class="wldn-letter letter-W">W</span>
+• 1-0<br>Elo: 2734
+• UFC rank: #15</div><div class=result_description><span class=weightclass>FLYWEIGHT</span><br>DEC<br>R3<br>05:00</div><div class="bout-fighter bout-right"><br><span class=emoji>🇧🇷 </span><b>Raulian Paiva</b> (23)<br>🔰 Debut<br>Elo: 2619</div><div class="side_info bout-venue"><br>Rod Laver Arena<br>Melbourne<br>Australia <span class=emoji>🇦🇺</span></div></div></div></div></main><footer><div class=footer-container><p class=copyright-text><a href=/glossary.html>Glossary</a>
+<a href=mailto:rostertracker@gmail.com>Contact</a></p></div><div class=footer-container><p class=copyright-text>Copyright © <span id=currentYear></span> All Rights Reserved by
+<a href=#>roster.watch</a></p></div></footer><style>.footer-container{display:flex;justify-content:space-between;align-items:center;padding:1rem}.copyright-text{margin:0 auto}.browser-badge{margin-left:auto}</style><script>document.getElementById("currentYear").textContent=(new Date).getFullYear()</script></div></body></html>

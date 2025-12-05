@@ -684,7 +684,6 @@ ul {
 
 .side_info {
   width: 200px;
-  font-size: 0.9em;
 }
 
 .bout-venue {
@@ -732,43 +731,47 @@ ul {
 }
 
 @media (max-width: 768px) {
-    .bout-row {
-        overflow-x: auto;
-        -webkit-overflow-scrolling: touch;
-        scroll-snap-type: x mandatory;
-        white-space: normal;
-        justify-content: normal;
-    }
+  .bout-row {
+    overflow-x: scroll;
+    -webkit-overflow-scrolling: touch;
+    scroll-snap-type: x mandatory;
+    white-space: normal;
+    justify-content: normal;
+  }
 
-    .bout-row::before {
-        content: '';
-        flex: 1;
-        min-width: 20px;
-    }
+  .bout-row::before {
+    content: '';
+    flex: 1;
+    min-width: 20px;
+  }
 
-    .bout-fighter,
-    .result_description,
-    .side_info {
-        flex-shrink: 0;
-    }
-    .side_info {
-        width: auto;
-    }
-    .result_description {
-        position: relative;
-        scroll-snap-align: center;
-    }
+  .bout-fighter,
+  .result_description,
+  .side_info {
+    flex-shrink: 0;
+  }
 
-    .weightclass {
-        position: absolute;
-        left: 50%;
-        transform: translateX(-50%);
-        top: 0;
-        /* adjust as needed */
-    }
+  .side_info {
+    width: auto;
+    scroll-snap-align: center;
+
+  }
+
+  .result_description {
+    position: relative;
+    scroll-snap-align: center;
+  }
+
+  .weightclass {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 0;
+    /* adjust as needed */
+  }
 }
 
 .container {
-    padding-right: 15px;
-    padding-left: 15px;
+  padding-right: 15px;
+  padding-left: 15px;
 }

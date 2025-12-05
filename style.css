@@ -682,6 +682,10 @@ ul {
   white-space: nowrap;
 }
 
+.event-name{
+  white-space: normal;
+}
+
 .side_info {
   width: 200px;
 }

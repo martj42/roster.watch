@@ -630,6 +630,7 @@ p {
 
 ul {
   margin: 0;
+  list-style-position: inside;
 }
 
 .wldn-letter {

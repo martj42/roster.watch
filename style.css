@@ -226,36 +226,26 @@ footer {
   list-style: none;
   display: flex;
   width: 100%;
-  /* Full width */
 
 }
 
 .nav__links li {
   padding: 0;
-  /* Remove existing padding */
-
 }
 
 .nav__links li a {
   display: block;
-  /* Full block element */
   width: 100%;
-  /* Full width */
   padding: 10px 20px;
-  /* Maintained horizontal padding */
   text-align: center;
-  /* Center text */
   box-sizing: border-box;
-  /* Include padding in width */
   transition: color 0.3s ease 0s, background-color 0.3s ease 0s;
-  /* Added background transition */
 
 }
 
 .nav__links li a:hover {
   color: #edf0f1;
   background-color: #3a3b42;
-  /* Similar to dropdown hover effect */
 }
 
 .cta {
@@ -270,8 +260,6 @@ footer {
 .cta:hover {
   background-color: #24252a;
 }
-
-/* Mobile Nav */
 
 .menu {
   display: none;
@@ -349,16 +337,12 @@ footer {
 header {
   display: flex;
   align-items: center;
-  /* Align items to the middle of the tallest item */
   justify-content: space-between;
-  /* Optional: Space out the children */
 }
 
 .logo img {
   height: 50px;
-  /* Adjust as needed */
   vertical-align: middle;
-  /* Align the logo vertically */
   align-items: center;
 }
 
@@ -368,7 +352,6 @@ nav ul {
   padding: 0;
   margin: 0;
   align-items: center;
-  /* Align items to the middle of the tallest item */
 }
 
 .patreon-box,
@@ -386,7 +369,6 @@ nav ul {
 .patreon-box a.cta-button {
   color: white;
   background-color: #f96854;
-  /* Button color */
   padding: 10px 20px;
   text-decoration: none;
   border-radius: 5px;
@@ -396,7 +378,6 @@ nav ul {
 
 .patreon-box a.cta-button:hover {
   background-color: #f96854;
-  /* Hover effect */
 }
 
 .reactable.html-widget {
@@ -405,7 +386,6 @@ nav ul {
 }
 
 a {
-  /*color: #36c;*/
   color: inherit;
   text-decoration: underline;
   text-decoration-style: dotted;
@@ -421,7 +401,6 @@ a {
 
 .side_info .rt-td-inner .rt-text-content {
   word-wrap: break-word;
-  /* or overflow-wrap: break-word; */
   overflow: auto;
   white-space: normal;
 }
@@ -471,24 +450,18 @@ a .nav-arrow {
   box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
   z-index: 1000;
   left: 50%;
-  /* Center under parent */
   transform: translateX(-50%);
-  /* Offset to truly center */
   padding: 0;
-  /* Remove any default padding */
   list-style-type: none;
-  /* Remove bullet points */
 
 }
 
 .dropdown-content a {
   color: #edf0f1;
   padding: 12px 0;
-  /* Vertical padding only, no left/right */
   text-decoration: none;
   display: block;
   white-space: nowrap;
-  /* Keep on one line */
 }
 
 .dropdown-content-mobile {
@@ -499,21 +472,16 @@ a .nav-arrow {
   box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
   z-index: 1000;
   left: 50%;
-  /* Center under parent */
   transform: translateX(-50%);
-  /* Offset to truly center */
   padding: 0;
-  /* Remove any default padding */
 }
 
 .dropdown-content-mobile a {
   color: #edf0f1;
   padding: 12px 0 12px 16px;
-  /* Top, right, bottom, left */
   text-decoration: none;
   display: block;
   white-space: nowrap;
-  /* Keep on one line */
 }
 
 .dropdown-content li {
@@ -524,7 +492,6 @@ a .nav-arrow {
 .dropdown-content li a {
   color: #edf0f1;
   padding: 12px 16px;
-  /* Add horizontal padding too */
   text-decoration: none;
   display: block;
   white-space: nowrap;
@@ -532,7 +499,6 @@ a .nav-arrow {
 
 .dropdown-content li a:hover {
   background-color: #3a3b42;
-  /* Add hover effect */
 }
 
 .new,
@@ -630,7 +596,6 @@ p {
 
 ul {
   margin: 0;
-  list-style-position: inside;
 }
 
 .wldn-letter {
@@ -683,7 +648,7 @@ ul {
   white-space: nowrap;
 }
 
-.event-name{
+.event-name {
   white-space: normal;
 }
 
@@ -716,12 +681,12 @@ ul {
 .result_description {
   width: 60px;
   text-align: center;
-  display: inline;
+  display: inline-block;
 }
 
 .weightclass {
   font-size: 0.8em;
-  position: absolute;
+  position: relative;
   left: 50%;
   transform: translateX(-50%);
   display: inline-flex;
@@ -731,50 +696,65 @@ ul {
 }
 
 .fotn {
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
+  display: flex;
+  justify-content: center;
+  white-space: nowrap;
+  overflow: visible;
+  width: 100%;
 }
 
+
 @media (max-width: 768px) {
-  .bout-row {
-    overflow-x: scroll;
+  .event_bouts {
+    overflow-x: auto;
     -webkit-overflow-scrolling: touch;
     scroll-snap-type: x mandatory;
-    white-space: normal;
-    justify-content: normal;
   }
 
-  .bout-row::before {
-    content: '';
-    flex: 1;
-    min-width: 20px;
+  .bout-row {
+    display: flex;
+    min-width: max-content;
   }
 
-  .bout-fighter,
   .result_description,
   .side_info {
     flex-shrink: 0;
-  }
-
-  .side_info {
-    width: auto;
     scroll-snap-align: center;
-
-  }
-
-  .result_description {
-    position: relative;
-    scroll-snap-align: center;
-  }
-
-  .weightclass {
-    top: 0;
-    /* adjust as needed */
   }
 }
 
 .container {
   padding-right: 15px;
   padding-left: 15px;
+}
+
+.hof {
+  text-align: center;
+
+  margin: 0px 0 0 0;
+  font-weight: 800;
+  font-size: 1rem;
+  font-family: "Helvetica Neue", Roboto, Arial, sans-serif;
+  letter-spacing: 0.02em;
+
+  /* gold foil texture + gradient */
+  background-image:
+    url("data:image/svg+xml;utf8,\
+    <svg xmlns='http://www.w3.org/2000/svg' width='200' height='200'>\
+      <filter id='noise'>\
+        <feTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='4' stitchTiles='stitch'/>\
+        <feColorMatrix type='matrix' values='1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 3 -1'/>\
+      </filter>\
+      <rect width='100%' height='100%' filter='url(%23noise)'/>\
+    </svg>"),
+    linear-gradient(135deg, #fff9d4 0%, #ffd76b 35%, #e2a400 70%, #c28a00 100%);
+
+  background-size: cover, cover;
+  background-blend-mode: multiply;
+
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.25);
 }

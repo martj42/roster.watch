@@ -19,6 +19,7 @@
 
 .emoji {
   font-family: Twemoji, sans-serif !important;
+  cursor: pointer;
 }
 
 body {

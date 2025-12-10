@@ -1,438 +1,108 @@
-<!DOCTYPE html>
-
-<html lang="en" xml:lang="en">
-
-<head>
-
-<meta charset="utf-8" />
-<meta name="generator" content="pandoc" />
-<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
-
-
-
-
-<title>UFC 81: Breaking Point · roster.watch</title>
-
-<script src="event_libs/header-attrs-2.29/header-attrs.js"></script>
-<script src="event_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<link href="event_libs/bootstrap-3.3.5/css/bootstrap.min.css" rel="stylesheet" />
-<script src="event_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
-<script src="event_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
-<script src="event_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
-<style>h1 {font-size: 34px;}
-       h1.title {font-size: 38px;}
-       h2 {font-size: 30px;}
-       h3 {font-size: 24px;}
-       h4 {font-size: 18px;}
-       h5 {font-size: 16px;}
-       h6 {font-size: 12px;}
-       code {color: inherit; background-color: rgba(0, 0, 0, 0.04);}
-       pre:not([class]) { background-color: white }</style>
-<script src="event_libs/navigation-1.1/tabsets.js"></script>
-<link href="event_libs/highlightjs-9.12.0/default.css" rel="stylesheet" />
-<script src="event_libs/highlightjs-9.12.0/highlight.js"></script>
-<script src="event_libs/core-js-2.5.3/shim.min.js"></script>
-<script src="event_libs/react-18.2.0/react.min.js"></script>
-<script src="event_libs/react-18.2.0/react-dom.min.js"></script>
-<script src="event_libs/reactwidget-2.0.0/react-tools.js"></script>
-<link href="event_libs/htmltools-fill-0.5.8.1/fill.css" rel="stylesheet" />
-<script src="event_libs/htmlwidgets-1.6.4/htmlwidgets.js"></script>
-<link href="event_libs/reactable-0.4.4/reactable.css" rel="stylesheet" />
-<script src="event_libs/reactable-binding-0.4.4/reactable.js"></script>
-<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-<link rel="manifest" href="/site.webmanifest">
-<meta name="description" content="An up-to-date list of the full active UFC roster including biographical data, rankings, records, and more.">
-<!-- <meta property="og:title" content="roster.watch" />
-<meta property="og:type" content="website" />
-<meta property="og:url" content="https://www.roster.watch/" />
-<meta property="og:image" content="https://www.roster.watch/og_image.png" />
-<meta property="og:description" content="An up-to-date list of the full active UFC roster including biographical data, rankings, record, and more." />
-<script src="https://unpkg.com/twemoji@latest/dist/twemoji.min.js" crossorigin="anonymous"></script> 
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7299518767310567"
-     crossorigin="anonymous"></script> -->
-<script data-goatcounter="https://rosterwatch.goatcounter.com/count"
-        async src="//gc.zgo.at/count.js"></script>
-<script defer src="/script.js" data-website-id="f0f3ed7e-e89c-4a29-a745-475e0b10271a"></script>
-
-<style type="text/css">
-  code{white-space: pre-wrap;}
-  span.smallcaps{font-variant: small-caps;}
-  span.underline{text-decoration: underline;}
-  div.column{display: inline-block; vertical-align: top; width: 50%;}
-  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
-  ul.task-list{list-style: none;}
-    </style>
-
-<style type="text/css">code{white-space: pre;}</style>
-<script type="text/javascript">
-if (window.hljs) {
-  hljs.configure({languages: []});
-  hljs.initHighlightingOnLoad();
-  if (document.readyState && document.readyState === "complete") {
-    window.setTimeout(function() { hljs.initHighlighting(); }, 0);
-  }
-}
-</script>
-
-
-
-
-
-
-<link rel="stylesheet" href="../style.css" type="text/css" />
-
-
-
-<style type = "text/css">
-.main-container {
-  max-width: 940px;
-  margin-left: auto;
-  margin-right: auto;
-}
-img {
-  max-width:100%;
-}
-.tabbed-pane {
-  padding-top: 12px;
-}
-.html-widget {
-  margin-bottom: 20px;
-}
-button.code-folding-btn:focus {
-  outline: none;
-}
-summary {
-  display: list-item;
-}
-details > summary > p:only-child {
-  display: inline;
-}
-pre code {
-  padding: 0;
-}
-</style>
-
-
-<style type="text/css">
-.dropdown-submenu {
-  position: relative;
-}
-.dropdown-submenu>.dropdown-menu {
-  top: 0;
-  left: 100%;
-  margin-top: -6px;
-  margin-left: -1px;
-  border-radius: 0 6px 6px 6px;
-}
-.dropdown-submenu:hover>.dropdown-menu {
-  display: block;
-}
-.dropdown-submenu>a:after {
-  display: block;
-  content: " ";
-  float: right;
-  width: 0;
-  height: 0;
-  border-color: transparent;
-  border-style: solid;
-  border-width: 5px 0 5px 5px;
-  border-left-color: #cccccc;
-  margin-top: 5px;
-  margin-right: -10px;
-}
-.dropdown-submenu:hover>a:after {
-  border-left-color: #adb5bd;
-}
-.dropdown-submenu.pull-left {
-  float: none;
-}
-.dropdown-submenu.pull-left>.dropdown-menu {
-  left: -100%;
-  margin-left: 10px;
-  border-radius: 6px 0 6px 6px;
-}
-</style>
-
-<script type="text/javascript">
-// manage active state of menu based on current page
-$(document).ready(function () {
-  // active menu anchor
-  href = window.location.pathname
-  href = href.substr(href.lastIndexOf('/') + 1)
-  if (href === "")
-    href = "index.html";
-  var menuAnchor = $('a[href="' + href + '"]');
-
-  // mark the anchor link active (and if it's in a dropdown, also mark that active)
-  var dropdown = menuAnchor.closest('li.dropdown');
-  if (window.bootstrap) { // Bootstrap 4+
-    menuAnchor.addClass('active');
-    dropdown.find('> .dropdown-toggle').addClass('active');
-  } else { // Bootstrap 3
-    menuAnchor.parent().addClass('active');
-    dropdown.addClass('active');
-  }
-
-  // Navbar adjustments
-  var navHeight = $(".navbar").first().height() + 15;
-  var style = document.createElement('style');
-  var pt = "padding-top: " + navHeight + "px; ";
-  var mt = "margin-top: -" + navHeight + "px; ";
-  var css = "";
-  // offset scroll position for anchor links (for fixed navbar)
-  for (var i = 1; i <= 6; i++) {
-    css += ".section h" + i + "{ " + pt + mt + "}\n";
-  }
-  style.innerHTML = "body {" + pt + "padding-bottom: 40px; }\n" + css;
-  document.head.appendChild(style);
-});
-</script>
-
-<!-- tabsets -->
-
-<style type="text/css">
-.tabset-dropdown > .nav-tabs {
-  display: inline-table;
-  max-height: 500px;
-  min-height: 44px;
-  overflow-y: auto;
-  border: 1px solid #ddd;
-  border-radius: 4px;
-}
-
-.tabset-dropdown > .nav-tabs > li.active:before, .tabset-dropdown > .nav-tabs.nav-tabs-open:before {
-  content: "\e259";
-  font-family: 'Glyphicons Halflings';
-  display: inline-block;
-  padding: 10px;
-  border-right: 1px solid #ddd;
-}
-
-.tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
-  content: "\e258";
-  font-family: 'Glyphicons Halflings';
-  border: none;
-}
-
-.tabset-dropdown > .nav-tabs > li.active {
-  display: block;
-}
-
-.tabset-dropdown > .nav-tabs > li > a,
-.tabset-dropdown > .nav-tabs > li > a:focus,
-.tabset-dropdown > .nav-tabs > li > a:hover {
-  border: none;
-  display: inline-block;
-  border-radius: 4px;
-  background-color: transparent;
-}
-
-.tabset-dropdown > .nav-tabs.nav-tabs-open > li {
-  display: block;
-  float: none;
-}
-
-.tabset-dropdown > .nav-tabs > li {
-  display: none;
-}
-</style>
-
-<!-- code folding -->
-
-
-
-
-</head>
-
-<body>
-
-
-<div class="container-fluid main-container">
-
-
-
-<header>
-    <a class="logo" href="/"><img src="/images/logo.svg" alt="logo"></a>
-    <nav>
-        <ul class="nav__links">
-            <li><a href="/">Current Roster</a></li>
-            <li><a href="/former.html">Former Roster</a></li>
-            <li class="dropdown">
-                <a href="#" onclick="return false;">Weight Classes</a>
-<ul class="dropdown-content">
-                    <li><a href="/heavyweight.html">Heavyweight</a></li>
-                    <li><a href="/lightheavyweight.html">Light Heavyweight</a></li>
-                    <li><a href="/middleweight.html">Middleweight</a></li>
-                    <li><a href="/welterweight.html">Welterweight</a></li>
-                    <li><a href="/lightweight.html">Lightweight</a></li>
-                    <li><a href="/featherweight.html">Featherweight</a></li>
-                    <li><a href="/bantamweight.html">Bantamweight</a></li>
-                    <li><a href="/flyweight.html">Flyweight</a></li>
-                    <li><a href="/womensbantamweight.html">Women's Bantamweight</a></li>
-                    <li><a href="/womensflyweight.html">Women's Flyweight</a></li>
-                    <li><a href="/womensstrawweight.html">Women's Strawweight</a></li>
-                </ul>
-            </li>
-            <li><a href="/events">Events</a></li>
-            <li><a href="/log.html">Log</a></li>
-            <li><a href="/glossary.html">Glossary</a></li>
-            <li><a href="javascript:void(0)" onclick="getRandomPage()">Random Page</a></li>
-            <li><a href="mailto:rostertracker@gmail.com">Contact</a></li>
-            <li><a href="https://www.patreon.com/bePatron?u=88266864">Support on Patreon</a></li>
-        </ul>
-    </nav>
-    <div class="menu cta">Menu</div>
-</header>
-
-<div class="overlay">
-    <a class="close">×</a>
-    <div class="overlay__content">
-        <a href="/">Current Roster</a>
-        <a href="/former.html">Former Roster</a>
-        <div class="dropdown-mobile">
-            <a href="#" onclick="return false;">Weight Classes</a>
-<div class="dropdown-content-mobile">
-                <a href="/heavyweight.html">Heavyweight</a>
-                <a href="/lightheavyweight.html">Light Heavyweight</a>
-                <a href="/middleweight.html">Middleweight</a>
-                <a href="/welterweight.html">Welterweight</a>
-                <a href="/lightweight.html">Lightweight</a>
-                <a href="/featherweight.html">Featherweight</a>
-                <a href="/bantamweight.html">Bantamweight</a>
-                <a href="/flyweight.html">Flyweight</a>
-                <a href="/womensbantamweight.html">Women's Bantamweight</a>
-                <a href="/womensflyweight.html">Women's Flyweight</a>
-                <a href="/womensstrawweight.html">Women's Strawweight</a>
-            </div>
-        </div>
-        <a href="/events">Events</a>
-        <a href="/log.html">Log</a>
-        <a href="/glossary.html">Glossary</a>
-        <a href="javascript:void(0)" onclick="getRandomPage()">Random Page</a>
-        <a href="mailto:rostertracker@gmail.com">Contact</a>
-        <a href="https://www.patreon.com/bePatron?u=88266864">Support on Patreon</a>
-    </div>
-</div>
-<script type="text/javascript" src="/mobile.js"></script>
-    <script>
-      function getRandomPage() {
-        fetch('/sitemap.xml')
-          .then(response => response.text())
-          .then(xmlText => {
-            const parser = new DOMParser();
-            const xmlDoc = parser.parseFromString(xmlText, 'application/xml');
-            const urls = Array.from(xmlDoc.getElementsByTagName('loc')).map(loc => loc.textContent);
-            const randomPage = urls[Math.floor(Math.random() * urls.length)];
-            window.location.href = randomPage;
-          });
-      }
-    </script>
-
-<div id="header">
-
-
-
-<h1 class="title toc-ignore">UFC 81: Breaking Point · roster.watch</h1>
-
-</div>
-
-
-<article class="event-info" style="display: flex; align-items: flex-start; justify-content: center; width: 100%; height: auto;"><div class="event-details" style="margin-right: 20px;"><h2 style='font-weight: bold; font-size: 1.1em; margin: 0;'>UFC 81: Breaking Point</h2><time datetime='2008-02-02'><p><span>2008-02-02</span><script>document.currentScript.parentElement.innerHTML = `${document.currentScript.previousElementSibling.textContent} (${function(){  const eventDate = new Date('2008-02-02');  const today = new Date();  const diffTime = eventDate - today;  const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));if (diffDays === 0) return 'today';  const dayText = Math.abs(diffDays) === 1 ? 'day' : 'days';  return diffDays > 0 ? `in ${diffDays} ${dayText}` : `${Math.abs(diffDays)} ${dayText} ago`;}()})`;</script></p></time><div class='location'><h2 style='font-size: 1em; margin: 0;'>Las Vegas, Nevada, United States <span class = 'emoji'>🇺🇸</span></h2><p>Mandalay Bay Events Center</p></div><div class='event-stats'><p><strong>Bouts:</strong> 9</p><p><strong>Debutants:</strong> 4</p><p><strong>Average Elo:</strong> 2592 (All-time #611)</p></div><div class='location-history'><p>Event #41 in Las Vegas</p><p>Event #41 in Nevada</p><p>Event #94 in United States</p></div></div><div class="event-poster" style="width: 220px; height: auto;"><img src=https://upload.wikimedia.org/wikipedia/en/thumb/3/36/UFC_81_Official_Promotional_Poster.jpg/220px-UFC_81_Official_Promotional_Poster.jpg alt="UFC 81: Breaking Point event poster" style="height: auto !important; max-height: none !important;"></div></article>
-<div style="display: flex; justify-content: space-between; align-items: center; max-width:620px; margin: 0 auto;"><a class ="previous-event" href=/events/20080123.html><span class="nav-arrow">← </span>UFC Fight Night: Swick vs. Burkman</a><a class ="next-event" href=/events/20080301.html>UFC 82: Pride of a Champion<span class="nav-arrow"> →</span></a></div>
-<div class="reactable html-widget html-fill-item" id="htmlwidget-0ef99c6e22bb6cfe64b9" style="width:auto;height:auto;"></div>
-<script type="application/json" data-for="htmlwidget-0ef99c6e22bb6cfe64b9">{"x":{"tag":{"name":"Reactable","attribs":{"data":{"fighter_name":["<br> <b><a href=/fighters/antoniorodrigonogueira.html>Antonio Rodrigo Nogueira<\/a><\/b> (31) <span class ='emoji'>🇧🇷<\/span><br><span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> • 1-0<br>Elo: <span class = 'favorite-elo'>3115<\/span>","<br> <b><span title='Performance of the Night' style='cursor: pointer;'>⭐ <\/span><a href=/fighters/frankmir.html>Frank Mir<\/a><\/b> (28) <span class ='emoji'>🇺🇸<\/span><br><span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: crimson; color: white; font-weight: bold;'>L<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: crimson; color: white; font-weight: bold;'>L<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> • 8-3<br>Elo: <span class = 'favorite-elo'>2650<\/span>","<br> <b><a href=/fighters/natemarquardt.html>Nate Marquardt<\/a><\/b> (28) <span class ='emoji'>🇺🇸<\/span><br><span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: crimson; color: white; font-weight: bold;'>L<\/span> • 4-1<br>Elo: 2745","<br> <b><a href=/fighters/ricardoalmeida.html>Ricardo Almeida<\/a><\/b> (31) <span class ='emoji'>🇺🇸<\/span><br><span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: crimson; color: white; font-weight: bold;'>L<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: crimson; color: white; font-weight: bold;'>L<\/span> • 1-2<br>Elo: 2406","<br> <b><a href=/fighters/tysongriffin.html>Tyson Griffin<\/a><\/b> (23) <span class ='emoji'>🇺🇸<\/span><br><span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: crimson; color: white; font-weight: bold;'>L<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> • 3-1<br>Elo: <span class = 'favorite-elo'>2750<\/span>","<br> <b><span title='Performance of the Night' style='cursor: pointer;'>⭐ <\/span><a href=/fighters/chrislytle.html>Chris Lytle<\/a><\/b> (33) <span class ='emoji'>🇺🇸<\/span><br><span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: crimson; color: white; font-weight: bold;'>L<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: crimson; color: white; font-weight: bold;'>L<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: crimson; color: white; font-weight: bold;'>L<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: crimson; color: white; font-weight: bold;'>L<\/span> • 3-7<br>Elo: <span class = 'favorite-elo'>2614<\/span>","<br> <b><a href=/fighters/timboetsch.html>Tim Boetsch<\/a><\/b> (27) <span class ='emoji'>🇺🇸<\/span><br>Debut 🔰<br>Elo: 2522","<br> <b><a href=/fighters/marvineastman.html>Marvin Eastman<\/a><\/b> (36) <span class ='emoji'>🇺🇸<\/span><br><span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: crimson; color: white; font-weight: bold;'>L<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: crimson; color: white; font-weight: bold;'>L<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: crimson; color: white; font-weight: bold;'>L<\/span> • 0-3<br>Elo: 2477","<br> <b><a href=/fighters/robemerson.html>Rob Emerson<\/a><\/b> (26) <span class ='emoji'>🇺🇸<\/span><br><span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: slategray; color: white; font-weight: bold;'>N<\/span> • 0-0 (1 NC)<br>Elo: 2161"],"result_description":["<span style='font-size: 0.8em;'>HEAVYWEIGHT<\/span><br>SUB<br>R3<br>01:28","<span style='font-size: 0.8em;'>HEAVYWEIGHT<\/span><br>SUB<br>R1<br>01:30","<span style='font-size: 0.8em;'>MIDDLEWEIGHT<\/span><br>SUB<br>R2<br>01:37","<span style='font-size: 0.8em;'>MIDDLEWEIGHT<\/span><br>SUB<br>R1<br>01:08","<span style='font-size: 0.8em;'>LIGHTWEIGHT<\/span><br>DEC<br>R3<br>05:00","<span style='font-size: 0.8em;'>WELTERWEIGHT<\/span><br>TKO<br>R1<br>00:33","<span style='font-size: 0.8em;'>LIGHT HEAVYWEIGHT<\/span><br>TKO<br>R1<br>04:52","<span style='font-size: 0.8em;'>MIDDLEWEIGHT<\/span><br>DEC<br>R3<br>05:00","<span style='font-size: 0.8em;'>LIGHTWEIGHT<\/span><br>DEC<br>R3<br>05:00"],"opponent_fighter_name":["<br><span class ='emoji'>🇺🇸<\/span> <b><a href=/fighters/timsylvia.html>Tim Sylvia<\/a><\/b> (33)<br>9-3 • <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: crimson; color: white; font-weight: bold;'>L<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span><br>Elo: 2969","<br><span class ='emoji'>🇺🇸<\/span> <b><a href=/fighters/brocklesnar.html>Brock Lesnar<\/a><\/b> (30)<br>🔰 Debut<br>Elo: 2275","<br><span class ='emoji'>🇺🇸<\/span> <b><a href=/fighters/jeremyhorn.html>Jeremy Horn<\/a><\/b> (32)<br>6-4 • <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: crimson; color: white; font-weight: bold;'>L<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: crimson; color: white; font-weight: bold;'>L<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span><br>Elo: <span class = 'favorite-elo'>2756<\/span>","<br><span class ='emoji'>🇺🇸<\/span> <b><a href=/fighters/robyundt.html>Rob Yundt<\/a><\/b> (27)<br>🔰 Debut<br>Elo: <span class = 'favorite-elo'>2534<\/span>","<br><span class ='emoji'>🇧🇷<\/span> <b><a href=/fighters/gleisontibau.html>Gleison Tibau<\/a><\/b> (24)<br>3-1 • <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: crimson; color: white; font-weight: bold;'>L<\/span><br>Elo: 2562","<br><span class ='emoji'>🇺🇸<\/span> <b><a href=/fighters/kylebradley.html>Kyle Bradley<\/a><\/b> (25)<br>🔰 Debut<br>Elo: 2480","<br><span class ='emoji'>🇺🇸<\/span> <b><a href=/fighters/davidheath.html>David Heath<\/a><\/b> (31)<br>2-2 • <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: crimson; color: white; font-weight: bold;'>L<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: crimson; color: white; font-weight: bold;'>L<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span><br>Elo: <span class = 'favorite-elo'>2530<\/span>","<br><span class ='emoji'>🇺🇸<\/span> <b><a href=/fighters/terrymartin.html>Terry Martin<\/a><\/b> (27)<br>2-3 • <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: crimson; color: white; font-weight: bold;'>L<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: green; color: white; font-weight: bold;'>W<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: crimson; color: white; font-weight: bold;'>L<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: crimson; color: white; font-weight: bold;'>L<\/span><br>Elo: <span class = 'favorite-elo'>2594<\/span>","<br><span class ='emoji'>🇯🇵<\/span> <b><a href=/fighters/keitanakamura.html>Keita Nakamura<\/a><\/b> (23)<br>0-2 • <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: crimson; color: white; font-weight: bold;'>L<\/span> <span style='display: inline-block;width: 1.25em;\nheight: 1.25em;\nline-height: 1.25em; font-size: 0.8em;\n text-align: center; border-radius: 50%; background-color: crimson; color: white; font-weight: bold;'>L<\/span><br>Elo: <span class = 'favorite-elo'>2526<\/span>"]},"columns":[{"id":"fighter_name","name":"","type":"character","html":true,"width":240,"align":"right"},{"id":"result_description","name":"","type":"character","html":true,"width":50,"align":"center","className":"result_description"},{"id":"opponent_fighter_name","name":"","type":"character","html":true,"width":240,"align":"left"}],"sortable":false,"pagination":false,"defaultPageSize":100,"showPageInfo":false,"nowrap":true,"className":"event_bouts","inline":true,"theme":{"headerStyle":{"borderBottom":"none"}},"dataKey":"183fca179df0a288726adfb0eb872c04"},"children":[]},"class":"reactR_markup"},"evals":[],"jsHooks":[]}</script>
-    <script>
-        document.addEventListener('keydown', function(event) {
-            if (event.key === 'ArrowRight') {
-                document.querySelector('a.next-event')?.click(); 
-            } else if (event.key === 'ArrowLeft') {
-                document.querySelector('a.previous-event')?.click();
-            }
-        });
-    </script>
-
-<footer>
-  <div class="footer-container">
-    <p class="copyright-text">
-      Copyright © <span id="currentYear"></span> All Rights Reserved by 
-      <a href="#">roster.watch</a>
-    </p>
-<!--     <p class="browser-badge">
-      <a href="https://www.mozilla.org/en-US/firefox/">
-        <img src="C:/Users/mart/Dropbox/R/roster.watch/firefox.png" title="Best viewed with Firefox" alt="Best viewed with Firefox"><br>
-        <small class="copyright-text">Best viewed with Firefox</small>
-      </a>
-    </p> 
- -->  </div>
-</footer>
-
-<style>
-.footer-container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1rem;
-}
-
-.copyright-text {
-  margin: 0 auto;
-}
-
-.browser-badge {
-  margin-left: auto;
-}
-</style>
-
-<script>
-  document.getElementById('currentYear').textContent = new Date().getFullYear();
-</script>
-
-
-
-</div>
-
-<script>
-
-// add bootstrap table styles to pandoc tables
-function bootstrapStylePandocTables() {
-  $('tr.odd').parent('tbody').parent('table').addClass('table table-condensed');
-}
-$(document).ready(function () {
-  bootstrapStylePandocTables();
-});
-
-
-</script>
-
-<!-- tabsets -->
-
-<script>
-$(document).ready(function () {
-  window.buildTabsets("TOC");
-});
-
-$(document).ready(function () {
-  $('.tabset-dropdown > .nav-tabs > li').click(function () {
-    $(this).parent().toggleClass('nav-tabs-open');
-  });
-});
-</script>
-
-<!-- code folding -->
-
-
-<!-- dynamically load mathjax for compatibility with self-contained -->
-<script>
-  (function () {
-    var script = document.createElement("script");
-    script.type = "text/javascript";
-    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
-    document.getElementsByTagName("head")[0].appendChild(script);
-  })();
-</script>
-
-</body>
-</html>
+<!doctype html><html lang=en><head><meta charset=UTF-8><meta name=viewport content="width=device-width,initial-scale=1"><title>UFC 81: Breaking Point · roster.watch</title><meta name=description content="UFC fighter statistics, records, rankings, and complete fight history."><link rel=stylesheet href=/style.css><link rel=apple-touch-icon sizes=180x180 href=/apple-touch-icon.png><link rel=icon type=image/png sizes=32x32 href=/favicon-32x32.png><link rel=icon type=image/png sizes=16x16 href=/favicon-16x16.png><link rel=manifest href=/site.webmanifest><meta name=description content="An up-to-date list of the full active UFC roster including biographical data, rankings, records, and more."><script data-goatcounter=https://rosterwatch.goatcounter.com/count async src=//gc.zgo.at/count.js></script><script defer src=/script.js data-website-id=f0f3ed7e-e89c-4a29-a745-475e0b10271a></script><script defer src=/age.js></script><script defer>document.addEventListener("DOMContentLoaded",()=>{document.querySelectorAll(".bout-row").forEach(e=>{const t=e.querySelector(".result_description");if(!t)return;const n=t.offsetLeft+t.offsetWidth/2-e.clientWidth/2;e.scrollLeft=n})})</script></head><body><div class=container><header><a class=logo href=/><img src=/images/logo.svg alt=logo></a><nav><ul class=nav__links><li><a href=/>Current Roster</a></li><li><a href=/former.html>Former Roster</a></li><li class=dropdown><a href=# onclick=return!1>Weight Classes</a><ul class=dropdown-content><li><a href=/heavyweight.html>Heavyweight</a></li><li><a href=/lightheavyweight.html>Light Heavyweight</a></li><li><a href=/middleweight.html>Middleweight</a></li><li><a href=/welterweight.html>Welterweight</a></li><li><a href=/lightweight.html>Lightweight</a></li><li><a href=/featherweight.html>Featherweight</a></li><li><a href=/bantamweight.html>Bantamweight</a></li><li><a href=/flyweight.html>Flyweight</a></li><li><a href=/womensbantamweight.html>Women's Bantamweight</a></li><li><a href=/womensflyweight.html>Women's Flyweight</a></li><li><a href=/womensstrawweight.html>Women's Strawweight</a></li></ul></li><li><a href=/events>Events</a></li><li><a href=/log.html>Log</a></li><li><a href=/fightlog.html>Fight Log</a></li><li><a href=javascript:void(0) onclick=getRandomPage()>Random Page</a></li><li><a href=https://rosterwatch.printify.me/>Merch</a></li><li><a href="https://www.patreon.com/bePatron?u=88266864">Support on Patreon</a></li></ul></nav><div class="menu cta">Menu</div></header><div class=overlay><a class=close>×</a><div class=overlay__content><a href=/>Current Roster</a>
+<a href=/former.html>Former Roster</a><div class=dropdown-mobile><a href=# onclick=return!1>Weight Classes</a><div class=dropdown-content-mobile><a href=/heavyweight.html>Heavyweight</a>
+<a href=/lightheavyweight.html>Light Heavyweight</a>
+<a href=/middleweight.html>Middleweight</a>
+<a href=/welterweight.html>Welterweight</a>
+<a href=/lightweight.html>Lightweight</a>
+<a href=/featherweight.html>Featherweight</a>
+<a href=/bantamweight.html>Bantamweight</a>
+<a href=/flyweight.html>Flyweight</a>
+<a href=/womensbantamweight.html>Women's Bantamweight</a>
+<a href=/womensflyweight.html>Women's Flyweight</a>
+<a href=/womensstrawweight.html>Women's Strawweight</a></div></div><a href=/events>Events</a>
+<a href=/log.html>Log</a>
+<a href=/fightlog.html>Fight Log</a>
+<a href=javascript:void(0) onclick=getRandomPage()>Random Page</a>
+<a href=https://rosterwatch.printify.me/>Merch</a>
+<a href="https://www.patreon.com/bePatron?u=88266864">Support on Patreon</a></div></div><script type=text/javascript src=/mobile.js></script><script>function getRandomPage(){fetch("/sitemap.xml").then(e=>e.text()).then(e=>{const n=new DOMParser,s=n.parseFromString(e,"application/xml"),t=Array.from(s.getElementsByTagName("loc")).map(e=>e.textContent),o=t[Math.floor(Math.random()*t.length)];window.location.href=o})}</script><main><article class=fighter-info><div class=two-column-layout><div class=event-details><h1>UFC 81: Breaking Point</h1><br><time datetime=2008-02-02><span>2008-02-02</span>
+<script>document.currentScript.parentElement.innerHTML=`${document.currentScript.previousElementSibling.textContent} (${function(){const n=new Date("2008-02-02"),s=new Date,o=n-s,e=Math.ceil(o/(1e3*60*60*24));if(e===0)return"today";const t=(e<0?-e:e)===1?"day":"days";return e>0?`in ${e} ${t}`:`${e<0?-e:e} ${t} ago`}()})`,document.addEventListener("keydown",function(e){e.key==="ArrowRight"?document.querySelector("a.next-event")?.click():e.key==="ArrowLeft"&&document.querySelector("a.previous-event")?.click()}),document.addEventListener("DOMContentLoaded",()=>{document.querySelectorAll(".bout-row").forEach(e=>{const t=e.querySelector(".result_description");if(!t)return;const n=t.offsetLeft+t.offsetWidth/2-e.clientWidth/2;e.scrollLeft=n})})</script></time><div class=location><h3>Las Vegas, Nevada, United States
+<span class=emoji>🇺🇸</span></h3><span>Mandalay Bay Events Center</span></div><div class=event-stats><p><strong>Bouts:</strong> 9</p><p><strong>Debutants:</strong> 4</p><p><strong>Average Elo:</strong> 2593 (All-time #635)</p></div><div class=location-history><p>Event #41 in Las Vegas</p><p>Event #41 in Nevada</p><p>Event #94 in United States</p></div></div><div class=event-poster><img src=https://upload.wikimedia.org/wikipedia/en/thumb/3/36/UFC_81_Official_Promotional_Poster.jpg/220px-UFC_81_Official_Promotional_Poster.jpg alt="event poster"></div></div></article><div style="display:flex;justify-content:space-between;align-items:center;max-width:620px;margin:0 auto"><a class=previous-event href=20080123.html><span class=nav-arrow>← </span><span class=event-full>UFC Fight Night: Swick vs. Burkman</span>
+<span class=event-short>UFC Fight Night</span>
+</a><a class=next-event href=20080301.html><span class=event-full>UFC 82: Pride of a Champion</span>
+<span class=event-short>UFC 82</span>
+<span class=nav-arrow>→</span></a></div><div class=event_bouts><div class=bout-row><div class="bout-fighter bout-left"><br><b><a href=/fighters/antoniorodrigonogueira.html>Antonio Rodrigo Nogueira</a>
+</b>(31)
+<span class=emoji title=Brazil>🇧🇷</span><br><span class="wldn-letter letter-W">W</span>
+• 1-0<br>Elo: <span class=favorite-elo>3115</span></div><div class=result_description><span class=weightclass><img src=/images/old_belt.png title='Interim Title Fight' height=14px class=cursor-pointer>
+HEAVYWEIGHT
+<img src=/images/old_belt.png title='Interim Title Fight' height=14px class=cursor-pointer></span><br>SUB<br>R3<br>1:28</div><div class="bout-fighter bout-right"><br><span class=emoji title="United States">🇺🇸</span>
+<b><a href=/fighters/timsylvia.html>Tim Sylvia</a></b> (33)<br>9-3 •
+<span class="wldn-letter letter-W">W</span>
+<span class="wldn-letter letter-W">W</span>
+<span class="wldn-letter letter-W">W</span>
+<span class="wldn-letter letter-L">L</span>
+<span class="wldn-letter letter-W">W</span><br>Elo: 2969</div></div><div class=bout-row><div class="bout-fighter bout-left"><br><span title='Performance of the Night' class=cursor-pointer>⭐
+</span><b><a href=/fighters/frankmir.html>Frank Mir</a>
+</b>(28)
+<span class=emoji title="United States">🇺🇸</span><br><span class="wldn-letter letter-W">W</span>
+<span class="wldn-letter letter-L">L</span>
+<span class="wldn-letter letter-W">W</span>
+<span class="wldn-letter letter-L">L</span>
+<span class="wldn-letter letter-W">W</span>
+• 8-3<br>Elo: <span class=favorite-elo>2650</span></div><div class=result_description><span class=weightclass>HEAVYWEIGHT</span><br>SUB<br>R1<br>1:30</div><div class="bout-fighter bout-right"><br><span class=emoji title="United States">🇺🇸</span>
+<b><a href=/fighters/brocklesnar.html>Brock Lesnar</a></b> (30)<br>🔰 Debut<br>Elo: 2275</div></div><div class=bout-row><div class="bout-fighter bout-left"><br><b><a href=/fighters/natemarquardt.html>Nate Marquardt</a>
+</b>(28)
+<span class=emoji title="United States">🇺🇸</span><br><span class="wldn-letter letter-L">L</span>
+<span class="wldn-letter letter-W">W</span>
+<span class="wldn-letter letter-W">W</span>
+<span class="wldn-letter letter-W">W</span>
+<span class="wldn-letter letter-W">W</span>
+• 4-1<br>Elo: 2745</div><div class=result_description><span class=weightclass>MIDDLEWEIGHT</span><br>SUB<br>R2<br>1:37</div><div class="bout-fighter bout-right"><br><span class=emoji title="United States">🇺🇸</span>
+<b><a href=/fighters/jeremyhorn.html>Jeremy Horn</a></b> (32)<br>6-4 •
+<span class="wldn-letter letter-W">W</span>
+<span class="wldn-letter letter-L">L</span>
+<span class="wldn-letter letter-L">L</span>
+<span class="wldn-letter letter-W">W</span>
+<span class="wldn-letter letter-W">W</span><br>Elo: 2756</div></div><div class=bout-row><div class="bout-fighter bout-left"><br><b><a href=/fighters/ricardoalmeida.html>Ricardo Almeida</a>
+</b>(31)
+<span class=emoji title="United States">🇺🇸</span><br><span class="wldn-letter letter-L">L</span>
+<span class="wldn-letter letter-W">W</span>
+<span class="wldn-letter letter-L">L</span>
+• 1-2<br>Elo: 2406</div><div class=result_description><span class=weightclass>MIDDLEWEIGHT</span><br>SUB<br>R1<br>1:08</div><div class="bout-fighter bout-right"><br><span class=emoji title="United States">🇺🇸</span>
+<b><a href=/fighters/robyundt.html>Rob Yundt</a></b> (27)<br>🔰 Debut<br>Elo: 2534</div></div><div class=bout-row><div class="bout-fighter bout-left"><br><b><a href=/fighters/tysongriffin.html>Tyson Griffin</a>
+</b>(23)
+<span class=emoji title="United States">🇺🇸</span><br><span class="wldn-letter letter-W">W</span>
+<span class="wldn-letter letter-W">W</span>
+<span class="wldn-letter letter-L">L</span>
+<span class="wldn-letter letter-W">W</span>
+• 3-1<br>Elo: <span class=favorite-elo>2750</span></div><div class=result_description><span class=weightclass>LIGHTWEIGHT</span><br>DEC<br>R3<br>5:00</div><div class="bout-fighter bout-right"><br><span class=emoji title=Brazil>🇧🇷</span>
+<b><a href=/fighters/gleisontibau.html>Gleison Tibau</a></b> (24)<br>3-1 •
+<span class="wldn-letter letter-L">L</span>
+<span class="wldn-letter letter-W">W</span>
+<span class="wldn-letter letter-W">W</span>
+<span class="wldn-letter letter-W">W</span><br>Elo: 2562</div></div><div class=bout-row><div class="bout-fighter bout-left"><br><span title='Performance of the Night' class=cursor-pointer>⭐
+</span><b><a href=/fighters/chrislytle.html>Chris Lytle</a>
+</b>(33)
+<span class=emoji title="United States">🇺🇸</span><br><span class="wldn-letter letter-L">L</span>
+<span class="wldn-letter letter-W">W</span>
+<span class="wldn-letter letter-L">L</span>
+<span class="wldn-letter letter-L">L</span>
+<span class="wldn-letter letter-L">L</span>
+• 3-7<br>Elo: <span class=favorite-elo>2614</span></div><div class=result_description><span class=weightclass>WELTERWEIGHT</span><br>TKO<br>R1<br>0:33</div><div class="bout-fighter bout-right"><br><span class=emoji title="United States">🇺🇸</span>
+<b><a href=/fighters/kylebradley.html>Kyle Bradley</a></b> (25)<br>🔰 Debut<br>Elo: 2480</div></div><div class=bout-row><div class="bout-fighter bout-left"><br><b><a href=/fighters/timboetsch.html>Tim Boetsch</a>
+</b>(27)
+<span class=emoji title="United States">🇺🇸</span><br>Debut 🔰<br>Elo: 2522</div><div class=result_description><span class=weightclass>LIGHT HEAVYWEIGHT</span><br>TKO<br>R1<br>4:52</div><div class="bout-fighter bout-right"><br><span class=emoji title="United States">🇺🇸</span>
+<b><a href=/fighters/davidheath.html>David Heath</a></b> (31)<br>2-2 •
+<span class="wldn-letter letter-W">W</span>
+<span class="wldn-letter letter-W">W</span>
+<span class="wldn-letter letter-L">L</span>
+<span class="wldn-letter letter-L">L</span><br>Elo: 2530</div></div><div class=bout-row><div class="bout-fighter bout-left"><br><b><a href=/fighters/marvineastman.html>Marvin Eastman</a>
+</b>(36)
+<span class=emoji title="United States">🇺🇸</span><br><span class="wldn-letter letter-L">L</span>
+<span class="wldn-letter letter-L">L</span>
+<span class="wldn-letter letter-L">L</span>
+• 0-3<br>Elo: 2477</div><div class=result_description><span class=weightclass>MIDDLEWEIGHT</span><br>DEC<br>R3<br>5:00</div><div class="bout-fighter bout-right"><br><span class=emoji title="United States">🇺🇸</span>
+<b><a href=/fighters/terrymartin.html>Terry Martin</a></b> (27)<br>2-3 •
+<span class="wldn-letter letter-L">L</span>
+<span class="wldn-letter letter-L">L</span>
+<span class="wldn-letter letter-W">W</span>
+<span class="wldn-letter letter-W">W</span>
+<span class="wldn-letter letter-L">L</span><br>Elo: 2594</div></div><div class=bout-row><div class="bout-fighter bout-left"><br><b><a href=/fighters/robemerson.html>Rob Emerson</a>
+</b>(26)
+<span class=emoji title="United States">🇺🇸</span><br><span class="wldn-letter letter-N">N</span>
+• 0-0 (1 NC)<br>Elo: 2161</div><div class=result_description><span class=weightclass>LIGHTWEIGHT</span><br>DEC<br>R3<br>5:00</div><div class="bout-fighter bout-right"><br><span class=emoji title=Japan>🇯🇵</span>
+<b><a href=/fighters/keitanakamura.html>Keita Nakamura</a></b> (23)<br>0-2 •
+<span class="wldn-letter letter-L">L</span>
+<span class="wldn-letter letter-L">L</span><br>Elo: 2526</div></div></div></main><footer><div class=footer-container><p class=copyright-text><a href=/glossary.html>Glossary</a>
+<a href=mailto:rostertracker@gmail.com>Contact</a></p></div><div class=footer-container><p class=copyright-text>Copyright © <span id=currentYear></span> All Rights Reserved by
+<a href=#>roster.watch</a></p></div></footer><style>.footer-container{display:flex;justify-content:space-between;align-items:center;padding:1rem}.copyright-text{margin:0 auto}.browser-badge{margin-left:auto}</style><script>document.getElementById("currentYear").textContent=(new Date).getFullYear()</script></div></body></html>

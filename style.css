@@ -567,6 +567,12 @@ h2 {
   margin: 20px 0 0 0;
   text-align: center;
   font-weight: bold;
+  background-color: #24252a;
+  border-radius: 5px;
+  width: 200px;
+  align-self: center;
+  margin: auto;
+  color: #fff;
 }
 
 h3 {
@@ -739,6 +745,7 @@ ul {
   .event-short {
     display: inline;
   }
+
 }
 
 .container {

@@ -1,0 +1,5614 @@
+<!DOCTYPE html>
+
+<html lang="en" xml:lang="en">
+
+<head>
+
+<meta charset="utf-8" />
+<meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+
+
+
+
+<title>UFC Roster Watch Adds &amp; Removals · roster.watch</title>
+
+<script src="site_libs/header-attrs-2.30/header-attrs.js"></script>
+<script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="site_libs/bootstrap-3.3.5/css/bootstrap.min.css" rel="stylesheet" />
+<script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<style>h1 {font-size: 34px;}
+       h1.title {font-size: 38px;}
+       h2 {font-size: 30px;}
+       h3 {font-size: 24px;}
+       h4 {font-size: 18px;}
+       h5 {font-size: 16px;}
+       h6 {font-size: 12px;}
+       code {color: inherit; background-color: rgba(0, 0, 0, 0.04);}
+       pre:not([class]) { background-color: white }</style>
+<script src="site_libs/navigation-1.1/tabsets.js"></script>
+<link href="site_libs/highlightjs-9.12.0/default.css" rel="stylesheet" />
+<script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/site.webmanifest">
+<meta name="description" content="An up-to-date list of the full active UFC roster including biographical data, rankings, records, and more.">
+<!-- <meta property="og:title" content="roster.watch" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://www.roster.watch/" />
+<meta property="og:image" content="https://www.roster.watch/og_image.png" />
+<meta property="og:description" content="An up-to-date list of the full active UFC roster including biographical data, rankings, record, and more." />
+<script src="https://unpkg.com/twemoji@latest/dist/twemoji.min.js" crossorigin="anonymous"></script> 
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7299518767310567"
+     crossorigin="anonymous"></script> -->
+<script data-goatcounter="https://rosterwatch.goatcounter.com/count"
+        async src="//gc.zgo.at/count.js"></script>
+<script defer src="/script.js" data-website-id="f0f3ed7e-e89c-4a29-a745-475e0b10271a"></script>
+<!-- <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7299518767310567"
+     crossorigin="anonymous"></script> -->
+
+<style type="text/css">
+  code{white-space: pre-wrap;}
+  span.smallcaps{font-variant: small-caps;}
+  span.underline{text-decoration: underline;}
+  div.column{display: inline-block; vertical-align: top; width: 50%;}
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  ul.task-list{list-style: none;}
+    </style>
+
+<style type="text/css">code{white-space: pre;}</style>
+<script type="text/javascript">
+if (window.hljs) {
+  hljs.configure({languages: []});
+  hljs.initHighlightingOnLoad();
+  if (document.readyState && document.readyState === "complete") {
+    window.setTimeout(function() { hljs.initHighlighting(); }, 0);
+  }
+}
+</script>
+
+
+
+
+
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+
+
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+img {
+  max-width:100%;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+.html-widget {
+  margin-bottom: 20px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+summary {
+  display: list-item;
+}
+details > summary > p:only-child {
+  display: inline;
+}
+pre code {
+  padding: 0;
+}
+</style>
+
+
+<style type="text/css">
+.dropdown-submenu {
+  position: relative;
+}
+.dropdown-submenu>.dropdown-menu {
+  top: 0;
+  left: 100%;
+  margin-top: -6px;
+  margin-left: -1px;
+  border-radius: 0 6px 6px 6px;
+}
+.dropdown-submenu:hover>.dropdown-menu {
+  display: block;
+}
+.dropdown-submenu>a:after {
+  display: block;
+  content: " ";
+  float: right;
+  width: 0;
+  height: 0;
+  border-color: transparent;
+  border-style: solid;
+  border-width: 5px 0 5px 5px;
+  border-left-color: #cccccc;
+  margin-top: 5px;
+  margin-right: -10px;
+}
+.dropdown-submenu:hover>a:after {
+  border-left-color: #adb5bd;
+}
+.dropdown-submenu.pull-left {
+  float: none;
+}
+.dropdown-submenu.pull-left>.dropdown-menu {
+  left: -100%;
+  margin-left: 10px;
+  border-radius: 6px 0 6px 6px;
+}
+</style>
+
+<script type="text/javascript">
+// manage active state of menu based on current page
+$(document).ready(function () {
+  // active menu anchor
+  href = window.location.pathname
+  href = href.substr(href.lastIndexOf('/') + 1)
+  if (href === "")
+    href = "index.html";
+  var menuAnchor = $('a[href="' + href + '"]');
+
+  // mark the anchor link active (and if it's in a dropdown, also mark that active)
+  var dropdown = menuAnchor.closest('li.dropdown');
+  if (window.bootstrap) { // Bootstrap 4+
+    menuAnchor.addClass('active');
+    dropdown.find('> .dropdown-toggle').addClass('active');
+  } else { // Bootstrap 3
+    menuAnchor.parent().addClass('active');
+    dropdown.addClass('active');
+  }
+
+  // Navbar adjustments
+  var navHeight = $(".navbar").first().height() + 15;
+  var style = document.createElement('style');
+  var pt = "padding-top: " + navHeight + "px; ";
+  var mt = "margin-top: -" + navHeight + "px; ";
+  var css = "";
+  // offset scroll position for anchor links (for fixed navbar)
+  for (var i = 1; i <= 6; i++) {
+    css += ".section h" + i + "{ " + pt + mt + "}\n";
+  }
+  style.innerHTML = "body {" + pt + "padding-bottom: 40px; }\n" + css;
+  document.head.appendChild(style);
+});
+</script>
+
+<!-- tabsets -->
+
+<style type="text/css">
+.tabset-dropdown > .nav-tabs {
+  display: inline-table;
+  max-height: 500px;
+  min-height: 44px;
+  overflow-y: auto;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs > li.active:before, .tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "\e259";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
+  content: "\e258";
+  font-family: 'Glyphicons Halflings';
+  border: none;
+}
+
+.tabset-dropdown > .nav-tabs > li.active {
+  display: block;
+}
+
+.tabset-dropdown > .nav-tabs > li > a,
+.tabset-dropdown > .nav-tabs > li > a:focus,
+.tabset-dropdown > .nav-tabs > li > a:hover {
+  border: none;
+  display: inline-block;
+  border-radius: 4px;
+  background-color: transparent;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li {
+  display: block;
+  float: none;
+}
+
+.tabset-dropdown > .nav-tabs > li {
+  display: none;
+}
+</style>
+
+<!-- code folding -->
+
+
+
+
+</head>
+
+<body>
+
+
+<div class="container-fluid main-container">
+
+
+
+<header>
+    <a class="logo" href="/"><img src="/images/logo.svg" alt="logo"></a>
+    <nav>
+        <ul class="nav__links">
+            <li><a href="/">Current Roster</a></li>
+            <li><a href="/former.html">Former Roster</a></li>
+            <li class="dropdown">
+                <a href="#" onclick="return false;">Weight Classes</a>
+<ul class="dropdown-content">
+                    <li><a href="/heavyweight.html">Heavyweight</a></li>
+                    <li><a href="/lightheavyweight.html">Light Heavyweight</a></li>
+                    <li><a href="/middleweight.html">Middleweight</a></li>
+                    <li><a href="/welterweight.html">Welterweight</a></li>
+                    <li><a href="/lightweight.html">Lightweight</a></li>
+                    <li><a href="/featherweight.html">Featherweight</a></li>
+                    <li><a href="/bantamweight.html">Bantamweight</a></li>
+                    <li><a href="/flyweight.html">Flyweight</a></li>
+                    <li><a href="/womensbantamweight.html">Women's Bantamweight</a></li>
+                    <li><a href="/womensflyweight.html">Women's Flyweight</a></li>
+                    <li><a href="/womensstrawweight.html">Women's Strawweight</a></li>
+                </ul>
+            </li>
+            <li><a href="/events">Events</a></li>
+            <li><a href="/log.html">Log</a></li>
+            <li><a href="/fightlog.html">Fight Log</a></li>
+            <li><a href="javascript:void(0)" onclick="getRandomPage()">Random Page</a></li>
+            <li><a href="https://rosterwatch.printify.me/">Merch</a></li>
+            <li><a href="https://www.patreon.com/bePatron?u=88266864">Support on Patreon</a></li>
+        </ul>
+    </nav>
+    <div class="menu cta">Menu</div>
+</header>
+
+<div class="overlay">
+    <a class="close">×</a>
+    <div class="overlay__content">
+        <a href="/">Current Roster</a>
+        <a href="/former.html">Former Roster</a>
+        <div class="dropdown-mobile">
+            <a href="#" onclick="return false;">Weight Classes</a>
+<div class="dropdown-content-mobile">
+                <a href="/heavyweight.html">Heavyweight</a>
+                <a href="/lightheavyweight.html">Light Heavyweight</a>
+                <a href="/middleweight.html">Middleweight</a>
+                <a href="/welterweight.html">Welterweight</a>
+                <a href="/lightweight.html">Lightweight</a>
+                <a href="/featherweight.html">Featherweight</a>
+                <a href="/bantamweight.html">Bantamweight</a>
+                <a href="/flyweight.html">Flyweight</a>
+                <a href="/womensbantamweight.html">Women's Bantamweight</a>
+                <a href="/womensflyweight.html">Women's Flyweight</a>
+                <a href="/womensstrawweight.html">Women's Strawweight</a>
+            </div>
+        </div>
+        <a href="/events">Events</a>
+        <a href="/log.html">Log</a>
+        <a href="/fightlog.html">Fight Log</a>
+        <a href="javascript:void(0)" onclick="getRandomPage()">Random Page</a>
+        <a href="https://rosterwatch.printify.me/">Merch</a>
+        <a href="https://www.patreon.com/bePatron?u=88266864">Support on Patreon</a>
+    </div>
+</div>
+<script type="text/javascript" src="/mobile.js"></script>
+    <script>
+      function getRandomPage() {
+        fetch('/sitemap.xml')
+          .then(response => response.text())
+          .then(xmlText => {
+            const parser = new DOMParser();
+            const xmlDoc = parser.parseFromString(xmlText, 'application/xml');
+            const urls = Array.from(xmlDoc.getElementsByTagName('loc')).map(loc => loc.textContent);
+            const randomPage = urls[Math.floor(Math.random() * urls.length)];
+            window.location.href = randomPage;
+          });
+      }
+    </script>
+<div class="patreon-box"
+  <p>✨ Appreciate the content? Support us on Patreon!</p>
+  <a href="https://www.patreon.com/bePatron?u=88266864" class="cta-button">Become a Patron</a>
+</div>
+
+<!--<div class="patreon-box"
+  <p><strong>The new <span style = "color:#05f">firewall</span> for the <span style = "color:#05f">modern Internet</span>.</strong></p>
+  <p>NextDNS protects you from all kinds of <strong>security threats</strong>, blocks <strong>ads and trackers on websites and in apps</strong> and provides a <strong>safe and supervised Internet for kids</strong> — on <strong>all devices</strong> and on <strong>all networks</strong>.</p>
+  <a href="https://nextdns.io/?from=c4nybned" class="cta-button">Try it now!</a>
+</div>
+
+<script>
+fetch('https://ipinfo.io/json?token=59a347f61d88b8')
+  .then(res => res.json())
+  .then(data => {
+    console.log('Your country code:', data.country);
+    const allowedCountries = ['CY', 'FI', 'LV', 'PL', 'RS', 'LT', 'SI', 'IL', 'TR', 'IT', 'ES', 'BE', 'GR', 'GE', 'EE', 'GB', 'CZ', 'FR', 'BA', 'PT', 'DE', 'ME', 'SE', 'IS'];
+    if (allowedCountries.includes(data.country)) {
+          document.querySelector('.eurobasket-ad').style.display = 'block';
+          document.querySelector('.patreon-box').style.display = 'none';
+
+    } else {
+          document.querySelector('.patreon-box').style.display = 'block';
+    }
+  })
+  .catch(err => console.log('Geolocation failed', err));
+</script>
+
+<div class="patreon-box">
+<a href="https://rosterwatch.printify.me/">
+  <img src="/images/merch.png"></a>
+</div>
+
+<div class="eurobasket-ad" style="display:none;">
+Hey, you! Do you like basketball as well as MMA? Well, then, here's something for you - come and join our <b>EuroBasket 2025</b> prediction game at <a href="https://www.playmaker.ee">www.playmaker.ee.</a> Invite your friends too. It will be great.
+</div>
+<div class="patreon-box">
+<p>📢 Click <a href='https://www.roster.watch/log.html'>HERE</a> to sign up for e-mail notifications on UFC roster updates.</p>
+</div>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7299518767310567"
+     crossorigin="anonymous"></script>
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-7299518767310567"
+     data-ad-slot="4004899314"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+-->
+
+<div id="header">
+
+
+
+<h1 class="title toc-ignore">UFC Roster Watch Adds &amp; Removals ·
+roster.watch</h1>
+
+</div>
+
+
+<iframe src="https://docs.google.com/forms/d/e/1FAIpQLSf9tb6tcUwdlkBga3JyvDW99GElBP0kCZRyZXJfZSvFM9uvEQ/viewform?embedded=true" width="640" height="410" frameborder="0" marginheight="0" marginwidth="0">
+Loading…
+</iframe>
+<h4>2025-12-16</h4>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/viacheslavborshchev.html">Viacheslav Borshchev</a>
+</p>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/lukaszbrzeski.html">Lukasz Brzeski</a>
+</p>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/marekbujlo.html">Marek Bujlo</a>
+</p>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/yusakukinoshita.html">Yusaku Kinoshita</a>
+</p>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/marcinprachnio.html">Marcin Prachnio</a>
+</p>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/ricardoramos.html">Ricardo Ramos</a>
+</p>
+<h4>2025-12-10</h4>
+<p>
+✅ Fighter added: 
+<a href="/fighters/isaacthomson.html">Isaac Thomson</a>
+</p>
+<p>
+✅ Fighter added: 
+<a href="/fighters/lancegibsonjr.html">Lance Gibson Jr.</a>
+</p>
+<h4>2025-12-09</h4>
+<p>
+❌ Fighter removed: 
+Sangwook Kim
+</p>
+<h4>2025-12-08</h4>
+<p>
+✅ Fighter added: 
+<a href="/fighters/allenfryejr.html">Allen Frye Jr.</a>
+</p>
+<h4>2025-12-03</h4>
+<p>
+✅ Fighter added: 
+<a href="/fighters/amandanunes.html">Amanda Nunes</a>
+</p>
+<h4>2025-11-27</h4>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/muhammadmokaev.html">Muhammad Mokaev</a>
+</p>
+<h4>2025-11-21</h4>
+<p>
+✅ Fighter added: 
+<a href="/fighters/yaroslavamosov.html">Yaroslav Amosov</a>
+</p>
+<h4>2025-11-13</h4>
+<p>
+✅ Fighter added: 
+<a href="/fighters/ethynewing.html">Ethyn Ewing</a>
+</p>
+<h4>2025-11-10</h4>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/chrisbarnett.html">Chris Barnett</a>
+</p>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/kiefercrosbie.html">Kiefer Crosbie</a>
+</p>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/kurtholobaugh.html">Kurt Holobaugh</a>
+</p>
+<p>
+✅ Fighter added: 
+<a href="/fighters/gabrielbonfim.html">Gabriel Bonfim</a>
+</p>
+<h4>2025-11-07</h4>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/yanalashmouz.html">Yanal Ashmouz</a>
+</p>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/rolandobedoya.html">Rolando Bedoya</a>
+</p>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/quangle.html">Quang Le</a>
+</p>
+<h4>2025-11-05</h4>
+<p>
+✅ Fighter added: 
+<a href="/fighters/marekbujlo.html">Marek Bujlo</a>
+</p>
+<p>
+✅ Fighter added: 
+<a href="/fighters/denzelfreeman.html">Denzel Freeman</a>
+</p>
+<p>
+✅ Fighter added: 
+<a href="/fighters/saygidizagakhmaev.html">Saygid Izagakhmaev</a>
+</p>
+<p>
+✅ Fighter added: 
+<a href="/fighters/shemrock.html">Shem Rock</a>
+</p>
+<h4>2025-11-03</h4>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/isaacdulgarian.html">Isaac Dulgarian</a>
+</p>
+<h4>2025-10-30</h4>
+<p>
+✅ Fighter added: 
+<a href="/fighters/sedriquesdumas.html">Sedriques Dumas</a>
+</p>
+<h4>2025-10-27</h4>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/hamdyabdelwahab.html">Hamdy Abdelwahab</a>
+</p>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/azatmaksum.html">Azat Maksum</a>
+</p>
+<h4>2025-10-25</h4>
+<p>
+✅ Fighter added: 
+<a href="/fighters/nasrathaqparast.html">Nasrat Haqparast</a>
+</p>
+<h4>2025-10-23</h4>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/dannybarlow.html">Danny Barlow</a>
+</p>
+<h4>2025-10-16</h4>
+<p>
+✅ Fighter added: 
+<a href="/fighters/jalinturner.html">Jalin Turner</a>
+</p>
+<h4>2025-10-15</h4>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/andremuniz.html">Andre Muniz</a>
+</p>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/justintafa.html">Justin Tafa</a>
+</p>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/broganwalker.html">Brogan Walker</a>
+</p>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/irinaalekseeva.html">Irina Alekseeva</a>
+</p>
+<p>
+✅ Fighter added: 
+Levi Rodrigues Jr.
+</p>
+<p>
+✅ Fighter added: 
+Juan Diaz
+</p>
+<p>
+✅ Fighter added: 
+Marwan Rahiki
+</p>
+<p>
+✅ Fighter added: 
+Michael Oliveira
+</p>
+<p>
+✅ Fighter added: 
+<a href="/fighters/wesschultz.html">Wes Schultz</a>
+</p>
+<h4>2025-10-14</h4>
+<p>
+✅ Fighter added: 
+<a href="/fighters/maxgimenis.html">Max Gimenis</a>
+</p>
+<h4>2025-10-08</h4>
+<p>
+✅ Fighter added: 
+Magomed Zaynukov
+</p>
+<p>
+✅ Fighter added: 
+Juan Martinetti
+</p>
+<p>
+✅ Fighter added: 
+<a href="/fighters/imanolrodriguez.html">Imanol Rodriguez</a>
+</p>
+<p>
+✅ Fighter added: 
+Luis Dias de Assis
+</p>
+<p>
+✅ Fighter added: 
+Luke Fernandez
+</p>
+<p>
+✅ Fighter added: 
+Mark Vologdin
+</p>
+<h4>2025-10-02</h4>
+<p>
+✅ Fighter added: 
+<a href="/fighters/lukeriley.html">Luke Riley</a>
+</p>
+<h4>2025-10-01</h4>
+<p>
+✅ Fighter added: 
+<a href="/fighters/damianpinas.html">Damian Pinas</a>
+</p>
+<p>
+✅ Fighter added: 
+Louis Jourdain
+</p>
+<p>
+✅ Fighter added: 
+Kurtis Campbell
+</p>
+<p>
+✅ Fighter added: 
+Christopher Alvidrez
+</p>
+<p>
+✅ Fighter added: 
+<a href="/fighters/trestonvines.html">Treston Vines</a>
+</p>
+<h4>2025-09-24</h4>
+<p>
+✅ Fighter added: 
+Rafael Tobias
+</p>
+<p>
+✅ Fighter added: 
+Javier Reyes
+</p>
+<p>
+✅ Fighter added: 
+Jeisla Chaves
+</p>
+<p>
+✅ Fighter added: 
+Sofia Montenegro
+</p>
+<p>
+✅ Fighter added: 
+Murtazali Magomedov
+</p>
+<p>
+✅ Fighter added: 
+Mantas Kondratavicius
+</p>
+<h4>2025-09-23</h4>
+<p>
+✅ Fighter added: 
+<a href="/fighters/guilhermepat.html">Guilherme Pat</a>
+</p>
+<h4>2025-09-19</h4>
+<p>
+✅ Fighter added: 
+<a href="/fighters/biamesquita.html">Bia Mesquita</a>
+</p>
+<h4>2025-09-17</h4>
+<p>
+✅ Fighter added: 
+<a href="/fighters/melissacroden.html">Melissa Croden</a>
+</p>
+<p>
+✅ Fighter added: 
+Hecher Sosa
+</p>
+<p>
+✅ Fighter added: 
+<a href="/fighters/iwobaraniewski.html">Iwo Baraniewski</a>
+</p>
+<p>
+✅ Fighter added: 
+Thomas Gantt
+</p>
+<p>
+✅ Fighter added: 
+Cody Chovancek
+</p>
+<h4>2025-09-11</h4>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/marynamoroz.html">Maryna Moroz</a>
+</p>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/maheshate.html">Maheshate</a>
+</p>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/austinhubbard.html">Austin Hubbard</a>
+</p>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/prestonparsons.html">Preston Parsons</a>
+</p>
+<h4>2025-09-10</h4>
+<p>
+✅ Fighter added: 
+Shanelle Dyer
+</p>
+<p>
+✅ Fighter added: 
+<a href="/fighters/stevenasplund.html">Steven Asplund</a>
+</p>
+<p>
+✅ Fighter added: 
+Lerryan Douglas
+</p>
+<p>
+✅ Fighter added: 
+Samuel Sanches
+</p>
+<p>
+✅ Fighter added: 
+Carol Foro
+</p>
+<h4>2025-09-09</h4>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/westinwilson.html">Westin Wilson</a>
+</p>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/melissamartinez.html">Melissa Martinez</a>
+</p>
+<h4>2025-09-03</h4>
+<p>
+✅ Fighter added: 
+Tommy McMillen
+</p>
+<p>
+✅ Fighter added: 
+Mandel Nallo
+</p>
+<p>
+✅ Fighter added: 
+<a href="/fighters/cezaryoleksiejczuk.html">Cezary Oleksiejczuk</a>
+</p>
+<p>
+✅ Fighter added: 
+Jean-Paul Lebosnoyani
+</p>
+<h4>2025-08-26</h4>
+<p>
+✅ Fighter added: 
+<a href="/fighters/dontejohnson.html">Donte Johnson</a>
+</p>
+<p>
+✅ Fighter added: 
+Manoel Sousa
+</p>
+<p>
+✅ Fighter added: 
+<a href="/fighters/abdulrakhmanyakhyaev.html">Abdul Rakhman Yakhyaev</a>
+</p>
+<p>
+✅ Fighter added: 
+Marcio Barbosa
+</p>
+<p>
+✅ Fighter added: 
+<a href="/fighters/ryangandra.html">Ryan Gandra</a>
+</p>
+<h4>2025-08-25</h4>
+<p>
+✅ Fighter added: 
+Losene Keita
+</p>
+<h4>2025-08-21</h4>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/bryanbattle.html">Bryan Battle</a>
+</p>
+<p>
+✅ Fighter added: 
+<a href="/fighters/jakubwiklacz.html">Jakub Wiklacz</a>
+</p>
+<h4>2025-08-19</h4>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/julijastoliarenko.html">Julija Stoliarenko</a>
+</p>
+<p>
+✅ Fighter added: 
+Ty Miller
+</p>
+<p>
+✅ Fighter added: 
+<a href="/fighters/camrowston.html">Cam Rowston</a>
+</p>
+<p>
+✅ Fighter added: 
+Jose Delano
+</p>
+<p>
+✅ Fighter added: 
+Louis Lee Scott
+</p>
+<p>
+✅ Fighter added: 
+<a href="/fighters/joshhokit.html">Josh Hokit</a>
+</p>
+<p>
+✅ Fighter added: 
+Ramiro Jimenez
+</p>
+<p>
+✅ Fighter added: 
+<a href="/fighters/kyledaukaus.html">Kyle Daukaus</a>
+</p>
+<p>
+✅ Fighter added: 
+<a href="/fighters/uransatybaldiev.html">Uran Satybaldiev</a>
+</p>
+<p>
+✅ Fighter added: 
+<a href="/fighters/taiyilakenueraji.html">Taiyilake Nueraji</a>
+</p>
+<h4>2025-08-15</h4>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/alvinhines.html">Alvin Hines</a>
+</p>
+<h4>2025-08-14</h4>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/conormcgregor.html">Conor McGregor</a>
+</p>
+<p>
+✅ Fighter added: 
+<a href="/fighters/terrancesaeteurn.html">Terrance Saeteurn</a>
+</p>
+<h4>2025-08-13</h4>
+<p>
+✅ Fighter added: 
+<a href="/fighters/alibiidiris.html">Alibi Idiris</a>
+</p>
+<h4>2025-08-12</h4>
+<p>
+✅ Fighter added: 
+<a href="/fighters/baisangursusurkaev.html">Baisangur Susurkaev</a>
+</p>
+<h4>2025-08-07</h4>
+<p>
+❌ Fighter removed: 
+Yoon Sung Jang
+</p>
+<h4>2025-08-06</h4>
+<p>
+✅ Fighter added: 
+Yoon Sung Jang
+</p>
+<p>
+✅ Fighter added: 
+<a href="/fighters/josephmorales.html">Joseph Morales</a>
+</p>
+<h4>2025-07-31</h4>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/martinbuday.html">Martin Buday</a>
+</p>
+<h4>2025-07-30</h4>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/shiming.html">Shi Ming</a>
+</p>
+<p>
+❌ Fighter removed: 
+Marcio Barbosa
+</p>
+<p>
+❌ Fighter removed: 
+Ilian Bouafia
+</p>
+<p>
+❌ Fighter removed: 
+Jack Congdon
+</p>
+<p>
+❌ Fighter removed: 
+Vitor Costa
+</p>
+<p>
+❌ Fighter removed: 
+Tommy Cuozzi
+</p>
+<p>
+❌ Fighter removed: 
+Radley Da Silva
+</p>
+<p>
+❌ Fighter removed: 
+Jose Delano
+</p>
+<p>
+❌ Fighter removed: 
+Jimmy Drago
+</p>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/elishaellison.html">Elisha Ellison</a>
+</p>
+<p>
+❌ Fighter removed: 
+Manuel Exposito
+</p>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/ryangandra.html">Ryan Gandra</a>
+</p>
+<p>
+❌ Fighter removed: 
+Theodore Haig
+</p>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/joshhokit.html">Josh Hokit</a>
+</p>
+<p>
+❌ Fighter removed: 
+Ramiro Jimenez
+</p>
+<p>
+❌ Fighter removed: 
+Jon Kunneman
+</p>
+<p>
+❌ Fighter removed: 
+Jean Paul Lebosnoyani
+</p>
+<p>
+❌ Fighter removed: 
+Alik Lorenz
+</p>
+<p>
+❌ Fighter removed: 
+George Mangos
+</p>
+<p>
+❌ Fighter removed: 
+David Mgoyan
+</p>
+<p>
+❌ Fighter removed: 
+Ty Miller
+</p>
+<p>
+❌ Fighter removed: 
+Mandel Nallo
+</p>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/cezaryoleksiejczuk.html">Cezary Oleksiejczuk</a>
+</p>
+<p>
+❌ Fighter removed: 
+Cristian Perez
+</p>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/brandopericic.html">Brando Pericic</a>
+</p>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/damianpinas.html">Damian Pinas</a>
+</p>
+<p>
+❌ Fighter removed: 
+Kaushik Saikumar
+</p>
+<p>
+❌ Fighter removed: 
+Neemias Santana
+</p>
+<p>
+❌ Fighter removed: 
+Frank Silva
+</p>
+<p>
+❌ Fighter removed: 
+Manoel Sousa
+</p>
+<p>
+❌ Fighter removed: 
+Guilherme Uriel
+</p>
+<p>
+❌ Fighter removed: 
+Samuel Vasconcelos Da Silva
+</p>
+<p>
+❌ Fighter removed: 
+Damon Wilson
+</p>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/abdulrakhmanyakhyaev.html">Abdul-Rakhman Yakhyaev</a>
+</p>
+<p>
+✅ Fighter added: 
+<a href="/fighters/michellemontague.html">Michelle Montague</a>
+</p>
+<p>
+✅ Fighter added: 
+Jack Congdon
+</p>
+<p>
+✅ Fighter added: 
+Theodore Haig
+</p>
+<p>
+✅ Fighter added: 
+Jean Paul Lebosnoyani
+</p>
+<p>
+✅ Fighter added: 
+David Mgoyan
+</p>
+<p>
+✅ Fighter added: 
+<a href="/fighters/cezaryoleksiejczuk.html">Cezary Oleksiejczuk</a>
+</p>
+<p>
+✅ Fighter added: 
+Frank Silva
+</p>
+<p>
+✅ Fighter added: 
+Samuel Vasconcelos Da Silva
+</p>
+<h4>2025-07-29</h4>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/dustinpoirier.html">Dustin Poirier</a>
+</p>
+<h4>2025-07-24</h4>
+<p>
+✅ Fighter added: 
+<a href="/fighters/alicepereira.html">Alice Pereira</a>
+</p>
+<h4>2025-07-22</h4>
+<p>
+✅ Fighter added: 
+Marcio Barbosa
+</p>
+<p>
+✅ Fighter added: 
+Vitor Costa
+</p>
+<p>
+✅ Fighter added: 
+<a href="/fighters/elishaellison.html">Elisha Ellison</a>
+</p>
+<p>
+✅ Fighter added: 
+<a href="/fighters/ryangandra.html">Ryan Gandra</a>
+</p>
+<p>
+✅ Fighter added: 
+Alik Lorenz
+</p>
+<p>
+✅ Fighter added: 
+Cristian Perez
+</p>
+<p>
+✅ Fighter added: 
+<a href="/fighters/brandopericic.html">Brando Pericic</a>
+</p>
+<p>
+✅ Fighter added: 
+<a href="/fighters/robertruchala.html">Robert Ruchala</a>
+</p>
+<p>
+✅ Fighter added: 
+Manoel Sousa
+</p>
+<p>
+✅ Fighter added: 
+Damon Wilson
+</p>
+<p>
+✅ Fighter added: 
+<a href="/fighters/abdulrakhmanyakhyaev.html">Abdul-Rakhman Yakhyaev</a>
+</p>
+<h4>2025-07-15</h4>
+<p>
+✅ Fighter added: 
+<a href="/fighters/islamdulatov.html">Islam Dulatov</a>
+</p>
+<p>
+✅ Fighter added: 
+<a href="/fighters/nikolayveretennikov.html">Nikolay Veretennikov</a>
+</p>
+<h4>2025-07-14</h4>
+<p>
+✅ Fighter added: 
+Tommy Cuozzi
+</p>
+<p>
+✅ Fighter added: 
+Jose Delano
+</p>
+<p>
+✅ Fighter added: 
+Manuel Exposito
+</p>
+<p>
+✅ Fighter added: 
+<a href="/fighters/joshhokit.html">Josh Hokit</a>
+</p>
+<p>
+✅ Fighter added: 
+Ramiro Jimenez
+</p>
+<p>
+✅ Fighter added: 
+Jon Kunneman
+</p>
+<p>
+✅ Fighter added: 
+Kaushik Saikumar
+</p>
+<p>
+✅ Fighter added: 
+Guilherme Uriel
+</p>
+<h4>2025-07-10</h4>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/trevingiles.html">Trevin Giles</a>
+</p>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/angeloosa.html">Ange Loosa</a>
+</p>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/jordanvucenic.html">Jordan Vucenic</a>
+</p>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/vivianearaujo.html">Viviane Araujo</a>
+</p>
+<h4>2025-07-09</h4>
+<p>
+✅ Fighter added: 
+<a href="/fighters/marcusbuchecha.html">Marcus Buchecha</a>
+</p>
+<h4>2025-07-08</h4>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/mattbrown.html">Matt Brown</a>
+</p>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/felipedossantos.html">Felipe dos Santos</a>
+</p>
+<p>
+✅ Fighter added: 
+<a href="/fighters/tucotokkos.html">Tuco Tokkos</a>
+</p>
+<p>
+✅ Fighter added: 
+<a href="/fighters/laurenmurphy.html">Lauren Murphy</a>
+</p>
+<h4>2025-07-01</h4>
+<p>
+✅ Fighter added: 
+Kennedy Freeman
+</p>
+<p>
+✅ Fighter added: 
+Ilian Bouafia
+</p>
+<p>
+✅ Fighter added: 
+Radley Da Silva
+</p>
+<p>
+✅ Fighter added: 
+Jimmy Drago
+</p>
+<p>
+✅ Fighter added: 
+George Mangos
+</p>
+<p>
+✅ Fighter added: 
+Ty Miller
+</p>
+<p>
+✅ Fighter added: 
+<a href="/fighters/damianpinas.html">Damian Pinas</a>
+</p>
+<p>
+✅ Fighter added: 
+Neemias Santana
+</p>
+<h4>2025-06-27</h4>
+<p>
+❌ Fighter removed: 
+Chris Ewert
+</p>
+<h4>2025-06-26</h4>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/cheyannevlismas.html">Cheyanne Vlismas</a>
+</p>
+<h4>2025-06-25</h4>
+<p>
+✅ Fighter added: 
+Chris Ewert
+</p>
+<h4>2025-06-24</h4>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/jonjones.html">Jon Jones</a>
+</p>
+<h4>2025-06-23</h4>
+<p>
+✅ Fighter added: 
+<a href="/fighters/alvinhines.html">Alvin Hines</a>
+</p>
+<p>
+✅ Fighter added: 
+<a href="/fighters/jacksonmcvey.html">Jackson McVey</a>
+</p>
+<h4>2025-06-18</h4>
+<p>
+✅ Fighter added: 
+<a href="/fighters/aaronpico.html">Aaron Pico</a>
+</p>
+<h4>2025-06-17</h4>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/bradkatona.html">Brad Katona</a>
+</p>
+<p>
+✅ Fighter added: 
+<a href="/fighters/seokhyeonko.html">Seokhyeon Ko</a>
+</p>
+<h4>2025-06-12</h4>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/josealdo.html">Jose Aldo</a>
+</p>
+<p>
+✅ Fighter added: 
+Mandel Nallo
+</p>
+<h4>2025-06-11</h4>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/arianedasilva.html">Ariane da Silva</a>
+</p>
+<h4>2025-06-10</h4>
+<p>
+✅ Fighter added: 
+<a href="/fighters/krismoutinho.html">Kris Moutinho</a>
+</p>
+<h4>2025-06-06</h4>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/hakeemdawodu.html">Hakeem Dawodu</a>
+</p>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/krongracie.html">Kron Gracie</a>
+</p>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/connormatthews.html">Connor Matthews</a>
+</p>
+<h4>2025-06-04</h4>
+<p>
+✅ Fighter added: 
+<a href="/fighters/andreasgustafsson.html">Andreas Gustafsson</a>
+</p>
+<p>
+✅ Fighter added: 
+<a href="/fighters/tofiqmusayev.html">Tofiq Musayev</a>
+</p>
+<h4>2025-06-03</h4>
+<p>
+✅ Fighter added: 
+<a href="/fighters/markchoinski.html">Mark Choinski</a>
+</p>
+<h4>2025-05-22</h4>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/carloshernandez.html">Carlos Hernandez</a>
+</p>
+<h4>2025-05-20</h4>
+<p>
+✅ Fighter added: 
+<a href="/fighters/patchymix.html">Patchy Mix</a>
+</p>
+<h4>2025-05-15</h4>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/dominickcruz.html">Dominick Cruz</a>
+</p>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/jimmyflick.html">Jimmy Flick</a>
+</p>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/brunosilva.html">Bruno Silva</a>
+</p>
+<p>
+✅ Fighter added: 
+Shogo Sato
+</p>
+<p>
+✅ Fighter added: 
+Zhang Qinghe
+</p>
+<h4>2025-05-14</h4>
+<p>
+✅ Fighter added: 
+<a href="/fighters/maironsantos.html">Mairon Santos</a>
+</p>
+<p>
+✅ Fighter added: 
+<a href="/fighters/joosangyoo.html">Joo Sang Yoo</a>
+</p>
+<h4>2025-05-08</h4>
+<p>
+✅ Fighter added: 
+Mansher Khera
+</p>
+<h4>2025-05-07</h4>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/dontalemayes.html">Don'Tale Mayes</a>
+</p>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/ivanapetrovic.html">Ivana Petrovic</a>
+</p>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/marinarodriguez.html">Marina Rodriguez</a>
+</p>
+<h4>2025-05-06</h4>
+<p>
+✅ Fighter added: 
+<a href="/fighters/kyleprepolec.html">Kyle Prepolec</a>
+</p>
+<p>
+✅ Fighter added: 
+<a href="/fighters/navajostirling.html">Navajo Stirling</a>
+</p>
+<h4>2025-05-03</h4>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/bradtavares.html">Brad Tavares</a>
+</p>
+<h4>2025-05-01</h4>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/danargueta.html">Dan Argueta</a>
+</p>
+<h4>2025-04-30</h4>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/vincpichel.html">Vinc Pichel</a>
+</p>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/anthonysmith.html">Anthony Smith</a>
+</p>
+<h4>2025-04-29</h4>
+<p>
+✅ Fighter added: 
+<a href="/fighters/masonjones.html">Mason Jones</a>
+</p>
+<p>
+✅ Fighter added: 
+<a href="/fighters/jeremystephens.html">Jeremy Stephens</a>
+</p>
+<h4>2025-04-28</h4>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/kevinjousset.html">Kevin Jousset</a>
+</p>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/guramkutateladze.html">Guram Kutateladze</a>
+</p>
+<h4>2025-04-24</h4>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/lucasalexander.html">Lucas Alexander</a>
+</p>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/pedrofalcao.html">Pedro Falcao</a>
+</p>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/caolanloughran.html">Caolan Loughran</a>
+</p>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/cortaviousromious.html">Cortavious Romious</a>
+</p>
+<h4>2025-04-23</h4>
+<p>
+✅ Fighter added: 
+Agulali
+</p>
+<p>
+✅ Fighter added: 
+Ahejiang Ailinuer
+</p>
+<p>
+✅ Fighter added: 
+Jin Aoi
+</p>
+<p>
+✅ Fighter added: 
+Namsrai Batbayar
+</p>
+<p>
+✅ Fighter added: 
+Deni Daffa
+</p>
+<p>
+✅ Fighter added: 
+Yuji Yannick Ephoeviga
+</p>
+<p>
+✅ Fighter added: 
+Rui Imura
+</p>
+<p>
+✅ Fighter added: 
+Kuya Ito
+</p>
+<p>
+✅ Fighter added: 
+Daichi Kamiya
+</p>
+<p>
+✅ Fighter added: 
+Aziz Khaydarov
+</p>
+<p>
+✅ Fighter added: 
+Lawrence Lui
+</p>
+<p>
+✅ Fighter added: 
+Dominic Mar Fan
+</p>
+<p>
+✅ Fighter added: 
+Keiichiro Nakamura
+</p>
+<p>
+✅ Fighter added: 
+Adilet Nurmatov
+</p>
+<p>
+✅ Fighter added: 
+Eoh Jin Park
+</p>
+<p>
+✅ Fighter added: 
+Sulang Rangbo
+</p>
+<p>
+✅ Fighter added: 
+Yawei Ren
+</p>
+<p>
+✅ Fighter added: 
+Mridul Saikia
+</p>
+<p>
+✅ Fighter added: 
+Dong Hyun Seo
+</p>
+<p>
+✅ Fighter added: 
+Sebastian Szalay
+</p>
+<p>
+✅ Fighter added: 
+Haitao Ti
+</p>
+<p>
+✅ Fighter added: 
+Rio Tirto
+</p>
+<p>
+✅ Fighter added: 
+Van Y Nghiem
+</p>
+<p>
+✅ Fighter added: 
+Wataru Yamauchi
+</p>
+<p>
+✅ Fighter added: 
+Chang Min Yoon
+</p>
+<p>
+✅ Fighter added: 
+Kai Yoshida
+</p>
+<p>
+✅ Fighter added: 
+Arisa Matsuda
+</p>
+<h4>2025-04-22</h4>
+<p>
+✅ Fighter added: 
+<a href="/fighters/malcolmwellmaker.html">Malcolm Wellmaker</a>
+</p>
+<p>
+✅ Fighter added: 
+<a href="/fighters/gaugeyoung.html">Gauge Young</a>
+</p>
+<p>
+✅ Fighter added: 
+<a href="/fighters/matheuscamilo.html">Matheus Camilo</a>
+</p>
+<h4>2025-04-10</h4>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/seungwoochoi.html">SeungWoo Choi</a>
+</p>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/dianabelbita.html">Diana Belbita</a>
+</p>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/istelanunes.html">Istela Nunes</a>
+</p>
+<h4>2025-04-09</h4>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/gabrielmiranda.html">Gabriel Miranda</a>
+</p>
+<h4>2025-04-08</h4>
+<p>
+✅ Fighter added: 
+<a href="/fighters/marcotulio.html">Marco Tulio</a>
+</p>
+<h4>2025-04-04</h4>
+<p>
+✅ Fighter added: 
+Jack Becker
+</p>
+<p>
+✅ Fighter added: 
+Kitt Campbell
+</p>
+<h4>2025-04-03</h4>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/cjvergara.html">CJ Vergara</a>
+</p>
+<h4>2025-04-01</h4>
+<p>
+✅ Fighter added: 
+<a href="/fighters/pedrofalcao.html">Pedro Falcao</a>
+</p>
+<p>
+✅ Fighter added: 
+<a href="/fighters/torrezfinney.html">Torrez Finney</a>
+</p>
+<p>
+✅ Fighter added: 
+<a href="/fighters/danielfrunza.html">Daniel Frunza</a>
+</p>
+<p>
+✅ Fighter added: 
+<a href="/fighters/luisgurule.html">Luis Gurule</a>
+</p>
+<h4>2025-03-26</h4>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/abdulrazakalhassan.html">Abdul Razak Alhassan</a>
+</p>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/mollymccann.html">Molly McCann</a>
+</p>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/antoninashevchenko.html">Antonina Shevchenko</a>
+</p>
+<h4>2025-03-25</h4>
+<p>
+✅ Fighter added: 
+<a href="/fighters/atebagautier.html">Ateba Gautier</a>
+</p>
+<p>
+✅ Fighter added: 
+<a href="/fighters/davidmartinez.html">David Martinez</a>
+</p>
+<h4>2025-03-21</h4>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/montanadelarosa.html">Montana De La Rosa</a>
+</p>
+<h4>2025-03-18</h4>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/marcosrogeriodelima.html">Marcos Rogerio de Lima</a>
+</p>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/jalinturner.html">Jalin Turner</a>
+</p>
+<p>
+❌ Fighter removed: 
+So Yul Kim
+</p>
+<p>
+✅ Fighter added: 
+<a href="/fighters/andreypulyaev.html">Andrey Pulyaev</a>
+</p>
+<p>
+✅ Fighter added: 
+<a href="/fighters/alexiathainara.html">Alexia Thainara</a>
+</p>
+<h4>2025-03-14</h4>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/armenpetrosyan.html">Armen Petrosyan</a>
+</p>
+<h4>2025-03-13</h4>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/landonquinones.html">Landon Quinones</a>
+</p>
+<h4>2025-03-11</h4>
+<p>
+✅ Fighter added: 
+<a href="/fighters/ajcunningham.html">AJ Cunningham</a>
+</p>
+<p>
+✅ Fighter added: 
+<a href="/fighters/josiasmusasa.html">Josias Musasa</a>
+</p>
+<p>
+✅ Fighter added: 
+<a href="/fighters/diyarnurgozhay.html">Diyar Nurgozhay</a>
+</p>
+<p>
+✅ Fighter added: 
+<a href="/fighters/kevinvallejos.html">Kevin Vallejos</a>
+</p>
+<p>
+✅ Fighter added: 
+<a href="/fighters/yuneisyduben.html">Yuneisy Duben</a>
+</p>
+<h4>2025-03-06</h4>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/julianmarquez.html">Julian Marquez</a>
+</p>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/andrealee.html">Andrea Lee</a>
+</p>
+<h4>2025-03-04</h4>
+<p>
+✅ Fighter added: 
+<a href="/fighters/rizvankuniev.html">Rizvan Kuniev</a>
+</p>
+<h4>2025-03-01</h4>
+<p>
+✅ Fighter added: 
+<a href="/fighters/patriciofreire.html">Patricio Freire</a>
+</p>
+<h4>2025-02-28</h4>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/natanlevy.html">Natan Levy</a>
+</p>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/rooseveltroberts.html">Roosevelt Roberts</a>
+</p>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/matthewsemelsberger.html">Matthew Semelsberger</a>
+</p>
+<h4>2025-02-27</h4>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/julioarce.html">Julio Arce</a>
+</p>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/joshculibao.html">Josh Culibao</a>
+</p>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/taylorlapilus.html">Taylor Lapilus</a>
+</p>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/jonathanpearce.html">Jonathan Pearce</a>
+</p>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/codystamann.html">Cody Stamann</a>
+</p>
+<h4>2025-02-26</h4>
+<p>
+✅ Fighter added: 
+<a href="/fighters/mariopinto.html">Mario Pinto</a>
+</p>
+<h4>2025-02-25</h4>
+<p>
+❌ Fighter removed: 
+Mashrabjon Ruzibaev
+</p>
+<h4>2025-02-21</h4>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/dylanbudka.html">Dylan Budka</a>
+</p>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/joesolecki.html">Joe Solecki</a>
+</p>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/juliaavila.html">Julia Avila</a>
+</p>
+<h4>2025-02-19</h4>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/billalgeo.html">Bill Algeo</a>
+</p>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/warlleyalves.html">Warlley Alves</a>
+</p>
+<h4>2025-02-18</h4>
+<p>
+✅ Fighter added: 
+<a href="/fighters/nickklein.html">Nick Klein</a>
+</p>
+<h4>2025-02-14</h4>
+<p>
+✅ Fighter added: 
+<a href="/fighters/ericmcconico.html">Eric McConico</a>
+</p>
+<p>
+✅ Fighter added: 
+<a href="/fighters/juliuswalker.html">Julius Walker</a>
+</p>
+<h4>2025-02-12</h4>
+<p>
+✅ Fighter added: 
+Mashrabjon Ruziboev
+</p>
+<h4>2025-02-11</h4>
+<p>
+✅ Fighter added: 
+<a href="/fighters/josedelgado.html">Jose Delgado</a>
+</p>
+<p>
+✅ Fighter added: 
+<a href="/fighters/elijahsmith.html">Elijah Smith</a>
+</p>
+<h4>2025-02-04</h4>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/jamalpogues.html">Jamal Pogues</a>
+</p>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/jairzinhorozenstruik.html">Jairzinho Rozenstruik</a>
+</p>
+<p>
+✅ Fighter added: 
+<a href="/fighters/jonathanmicallef.html">Jonathan Micallef</a>
+</p>
+<p>
+✅ Fighter added: 
+<a href="/fighters/quillansalkilld.html">Quillan Salkilld</a>
+</p>
+<p>
+✅ Fighter added: 
+<a href="/fighters/kodysteele.html">Kody Steele</a>
+</p>
+<p>
+✅ Fighter added: 
+<a href="/fighters/tallisonteixeira.html">Tallison Teixeira</a>
+</p>
+<h4>2025-01-30</h4>
+<p>
+✅ Fighter added: 
+<a href="/fighters/colbythicknesse.html">Colby Thicknesse</a>
+</p>
+<h4>2025-01-28</h4>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/tonyferguson.html">Tony Ferguson</a>
+</p>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/alexandergustafsson.html">Alexander Gustafsson</a>
+</p>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/chrisweidman.html">Chris Weidman</a>
+</p>
+<p>
+✅ Fighter added: 
+<a href="/fighters/bogdangrad.html">Bogdan Grad</a>
+</p>
+<h4>2025-01-25</h4>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/magomedgadzhiyasulov.html">Magomed Gadzhiyasulov</a>
+</p>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/josejohnson.html">Jose Johnson</a>
+</p>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/ihorpotieria.html">Ihor Potieria</a>
+</p>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/viktoriiadudakova.html">Viktoriia Dudakova</a>
+</p>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/josefineknutsson.html">Josefine Knutsson</a>
+</p>
+<h4>2025-01-16</h4>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/michalfiglak.html">Michal Figlak</a>
+</p>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/clayguida.html">Clay Guida</a>
+</p>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/jamesllontop.html">James Llontop</a>
+</p>
+<h4>2025-01-15</h4>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/hollyholm.html">Holly Holm</a>
+</p>
+<h4>2025-01-14</h4>
+<p>
+✅ Fighter added: 
+<a href="/fighters/azamatbekoev.html">Azamat Bekoev</a>
+</p>
+<p>
+✅ Fighter added: 
+<a href="/fighters/billyelekana.html">Billy Elekana</a>
+</p>
+<h4>2025-01-10</h4>
+<p>
+✅ Fighter added: 
+<a href="/fighters/aleksandretopuria.html">Aleksandre Topuria</a>
+</p>
+<h4>2025-01-08</h4>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/urijahfaber.html">Urijah Faber</a>
+</p>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/victorhugo.html">Victor Hugo</a>
+</p>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/kyunghokang.html">Kyung Ho Kang</a>
+</p>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/dannyroberts.html">Danny Roberts</a>
+</p>
+<p>
+✅ Fighter added: 
+<a href="/fighters/brunolopes.html">Bruno Lopes</a>
+</p>
+<p>
+✅ Fighter added: 
+<a href="/fighters/jacobesmith.html">Jacobe Smith</a>
+</p>
+<p>
+✅ Fighter added: 
+<a href="/fighters/nicollecaliari.html">Nicolle Caliari</a>
+</p>
+<p>
+✅ Fighter added: 
+<a href="/fighters/fatimakline.html">Fatima Kline</a>
+</p>
+<h4>2024-12-21</h4>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/abuazaitar.html">Abu Azaitar</a>
+</p>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/jaredgooden.html">Jared Gooden</a>
+</p>
+<h4>2024-12-14</h4>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/gabrielbenitez.html">Gabriel Benitez</a>
+</p>
+<h4>2024-12-11</h4>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/jackshore.html">Jack Shore</a>
+</p>
+<h4>2024-12-05</h4>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/damonjackson.html">Damon Jackson</a>
+</p>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/stipemiocic.html">Stipe Miocic</a>
+</p>
+<h4>2024-11-21</h4>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/zacharyscroggin.html">Zachary Scroggin</a>
+</p>
+<h4>2024-11-20</h4>
+<p>
+✅ Fighter added: 
+<a href="/fighters/donghunchoi.html">DongHun Choi</a>
+</p>
+<p>
+✅ Fighter added: 
+<a href="/fighters/ozzydiaz.html">Ozzy Diaz</a>
+</p>
+<p>
+✅ Fighter added: 
+<a href="/fighters/baergengjieleyisi.html">Baergeng Jieleyisi</a>
+</p>
+<p>
+✅ Fighter added: 
+<a href="/fighters/loneerkavanagh.html">Lone'er Kavanagh</a>
+</p>
+<p>
+✅ Fighter added: 
+<a href="/fighters/quangle.html">Quang Le</a>
+</p>
+<p>
+✅ Fighter added: 
+<a href="/fighters/joseochoa.html">Jose Ochoa</a>
+</p>
+<p>
+✅ Fighter added: 
+<a href="/fighters/kirusahota.html">Kiru Sahota</a>
+</p>
+<p>
+✅ Fighter added: 
+<a href="/fighters/nyamjargaltumendemberel.html">Nyamjargal Tumendemberel</a>
+</p>
+<p>
+✅ Fighter added: 
+<a href="/fighters/suyoungyou.html">SuYoung You</a>
+</p>
+<p>
+✅ Fighter added: 
+<a href="/fighters/fengxiaocan.html">Feng Xiaocan</a>
+</p>
+<p>
+✅ Fighter added: 
+<a href="/fighters/shiming.html">Shi Ming</a>
+</p>
+<h4>2024-11-13</h4>
+<p>
+✅ Fighter added: 
+<a href="/fighters/robertoromero.html">Roberto Romero</a>
+</p>
+<h4>2024-11-08</h4>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/caiomachado.html">Caio Machado</a>
+</p>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/rodrigonascimento.html">Rodrigo Nascimento</a>
+</p>
+<h4>2024-11-06</h4>
+<p>
+✅ Fighter added: 
+<a href="/fighters/zacharyscroggin.html">Zachary Scroggin</a>
+</p>
+<h4>2024-11-05</h4>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/alexandrromanov.html">Alexandr Romanov</a>
+</p>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/germainederandamie.html">Germaine de Randamie</a>
+</p>
+<p>
+✅ Fighter added: 
+<a href="/fighters/mansurabdulmalik.html">Mansur Abdul-Malik</a>
+</p>
+<p>
+✅ Fighter added: 
+<a href="/fighters/cortaviousromious.html">Cortavious Romious</a>
+</p>
+<h4>2024-10-29</h4>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/jessebutler.html">Jesse Butler</a>
+</p>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/robelisdespaigne.html">Robelis Despaigne</a>
+</p>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/charalamposgrigoriou.html">Charalampos Grigoriou</a>
+</p>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/matheusnicolau.html">Matheus Nicolau</a>
+</p>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/danielpineda.html">Daniel Pineda</a>
+</p>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/viniciussalvador.html">Vinicius Salvador</a>
+</p>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/jessicapenne.html">Jessica Penne</a>
+</p>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/tamiresvidal.html">Tamires Vidal</a>
+</p>
+<h4>2024-10-22</h4>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/jakehadley.html">Jake Hadley</a>
+</p>
+<p>
+✅ Fighter added: 
+<a href="/fighters/rafaelcerqueira.html">Rafael Cerqueira</a>
+</p>
+<p>
+✅ Fighter added: 
+<a href="/fighters/ismailnaurdiev.html">Ismail Naurdiev</a>
+</p>
+<p>
+✅ Fighter added: 
+<a href="/fighters/carlosleal.html">Carlos Leal</a>
+</p>
+<h4>2024-10-18</h4>
+<p>
+✅ Fighter added: 
+<a href="/fighters/klaudiasygula.html">Klaudia Sygula</a>
+</p>
+<h4>2024-10-17</h4>
+<p>
+✅ Fighter added: 
+<a href="/fighters/cameronsmotherman.html">Cameron Smotherman</a>
+</p>
+<h4>2024-10-15</h4>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/corymckenna.html">Cory McKenna</a>
+</p>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/joshfremd.html">Josh Fremd</a>
+</p>
+<p>
+✅ Fighter added: 
+<a href="/fighters/aliceardelean.html">Alice Ardelean</a>
+</p>
+<h4>2024-10-13</h4>
+<p>
+✅ Fighter added: 
+<a href="/fighters/kaiasakura.html">Kai Asakura</a>
+</p>
+<h4>2024-10-11</h4>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/blakebilder.html">Blake Bilder</a>
+</p>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/tjbrown.html">TJ Brown</a>
+</p>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/jarjisdanho.html">Jarjis Danho</a>
+</p>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/yanisghemmouri.html">Yanis Ghemmouri</a>
+</p>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/christosgiagos.html">Christos Giagos</a>
+</p>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/herbertburns.html">Herbert Burns</a>
+</p>
+<h4>2024-10-09</h4>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/briankelleher.html">Brian Kelleher</a>
+</p>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/rickyglenn.html">Ricky Glenn</a>
+</p>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/jarnoerrens.html">Jarno Errens</a>
+</p>
+<p>
+✅ Fighter added: 
+<a href="/fighters/seansharaf.html">Sean Sharaf</a>
+</p>
+<p>
+✅ Fighter added: 
+<a href="/fighters/lucasrocha.html">Lucas Rocha</a>
+</p>
+<p>
+✅ Fighter added: 
+<a href="/fighters/codyhaddon.html">Cody Haddon</a>
+</p>
+<h4>2024-10-08</h4>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/danyellewolf.html">Danyelle Wolf</a>
+</p>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/victorialeonardo.html">Victoria Leonardo</a>
+</p>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/briannafortino.html">Brianna Fortino</a>
+</p>
+<p>
+❌ Fighter removed: 
+Kay Kruschewsky
+</p>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/dawoonjung.html">Da Woon Jung</a>
+</p>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/victoraltamirano.html">Victor Altamirano</a>
+</p>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/karlwilliams.html">Karl Williams</a>
+</p>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/ovincesaintpreux.html">Ovince Saint Preux</a>
+</p>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/kleydsonrodrigues.html">Kleydson Rodrigues</a>
+</p>
+<h4>2024-10-02</h4>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/alexandermunoz.html">Alexander Munoz</a>
+</p>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/luispajuelo.html">Luis Pajuelo</a>
+</p>
+<h4>2024-09-26</h4>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/brendonmarotte.html">Brendon Marotte</a>
+</p>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/zygimantasramaska.html">Zygimantas Ramaska</a>
+</p>
+<h4>2024-09-24</h4>
+<p>
+✅ Fighter added: 
+<a href="/fighters/reinierderidder.html">Reinier de Ridder</a>
+</p>
+<p>
+✅ Fighter added: 
+<a href="/fighters/vincemorales.html">Vince Morales</a>
+</p>
+<p>
+✅ Fighter added: 
+<a href="/fighters/rooseveltroberts.html">Roosevelt Roberts</a>
+</p>
+<h4>2024-09-09</h4>
+<p>
+❌ Fighter removed: 
+Phil Latu
+</p>
+<h4>2024-09-03</h4>
+<p>
+✅ Fighter added: 
+<a href="/fighters/rongzhu.html">Rongzhu</a>
+</p>
+<p>
+✅ Fighter added: 
+<a href="/fighters/yizha.html">Yizha</a>
+</p>
+<h4>2024-08-28</h4>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/panniekianzad.html">Pannie Kianzad</a>
+</p>
+<p>
+✅ Fighter added: 
+<a href="/fighters/ramazantemirov.html">Ramazan Temirov</a>
+</p>
+<h4>2024-08-22</h4>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/caseykenney.html">Casey Kenney</a>
+</p>
+<p>
+✅ Fighter added: 
+Phil Latu
+</p>
+<h4>2024-08-21</h4>
+<p>
+✅ Fighter added: 
+<a href="/fighters/nathanfletcher.html">Nathan Fletcher</a>
+</p>
+<p>
+✅ Fighter added: 
+<a href="/fighters/kaanofli.html">Kaan Ofli</a>
+</p>
+<p>
+✅ Fighter added: 
+<a href="/fighters/zygimantasramaska.html">Zygimantas Ramaska</a>
+</p>
+<h4>2024-08-20</h4>
+<p>
+✅ Fighter added: 
+<a href="/fighters/wangcong.html">Wang Cong</a>
+</p>
+<p>
+✅ Fighter added: 
+<a href="/fighters/josemedina.html">Jose Medina</a>
+</p>
+<h4>2024-08-19</h4>
+<p>
+✅ Fighter added: 
+<a href="/fighters/ryanloder.html">Ryan Loder</a>
+</p>
+<p>
+✅ Fighter added: 
+Robert Valentin Frey
+</p>
+<h4>2024-08-13</h4>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/denistiuliulin.html">Denis Tiuliulin</a>
+</p>
+<p>
+✅ Fighter added: 
+<a href="/fighters/stewartnicoll.html">Stewart Nicoll</a>
+</p>
+<h4>2024-08-07</h4>
+<p>
+✅ Fighter added: 
+<a href="/fighters/ivanerslan.html">Ivan Erslan</a>
+</p>
+<p>
+✅ Fighter added: 
+<a href="/fighters/jacquelinecavalcanti.html">Jacqueline Cavalcanti</a>
+</p>
+<h4>2024-08-06</h4>
+<p>
+✅ Fighter added: 
+<a href="/fighters/stephanieluciano.html">Stephanie Luciano</a>
+</p>
+<h4>2024-07-31</h4>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/mariyaagapova.html">Mariya Agapova</a>
+</p>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/sergeymorozov.html">Sergey Morozov</a>
+</p>
+<h4>2024-07-30</h4>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/joshquinlan.html">Josh Quinlan</a>
+</p>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/luciepudilova.html">Lucie Pudilova</a>
+</p>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/miguelbaeza.html">Miguel Baeza</a>
+</p>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/muhammadmokaev.html">Muhammad Mokaev</a>
+</p>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/emilyducote.html">Emily Ducote</a>
+</p>
+<h4>2024-07-26</h4>
+<p>
+✅ Fighter added: 
+<a href="/fighters/jordanvucenic.html">Jordan Vucenic</a>
+</p>
+<h4>2024-07-15</h4>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/michellewatersongomez.html">Michelle Waterson-Gomez</a>
+</p>
+<h4>2024-07-02</h4>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/andreiarlovski.html">Andrei Arlovski</a>
+</p>
+<h4>2024-06-29</h4>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/daviddvorak.html">David Dvorak</a>
+</p>
+<p>
+❌ Fighter removed: 
+Joilton Lutterbach
+</p>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/natemaness.html">Nate Maness</a>
+</p>
+<h4>2024-06-25</h4>
+<p>
+✅ Fighter added: 
+<a href="/fighters/reitsuruya.html">Rei Tsuruya</a>
+</p>
+<h4>2024-06-21</h4>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/chrisgruetzemacher.html">Chris Gruetzemacher</a>
+</p>
+<h4>2024-06-18</h4>
+<p>
+✅ Fighter added: 
+<a href="/fighters/felipelima.html">Felipe Lima</a>
+</p>
+<p>
+✅ Fighter added: 
+<a href="/fighters/magomedgadzhiyasulov.html">Magomed Gadzhiyasulov</a>
+</p>
+<p>
+✅ Fighter added: 
+<a href="/fighters/changholee.html">ChangHo Lee</a>
+</p>
+<p>
+✅ Fighter added: 
+<a href="/fighters/danielrodriguez.html">Daniel Rodriguez</a>
+</p>
+<p>
+✅ Fighter added: 
+<a href="/fighters/xiaolong.html">Xiao Long</a>
+</p>
+<h4>2024-06-11</h4>
+<p>
+✅ Fighter added: 
+<a href="/fighters/timmycuamba.html">Timmy Cuamba</a>
+</p>
+<p>
+✅ Fighter added: 
+<a href="/fighters/carlijudice.html">Carli Judice</a>
+</p>
+<p>
+✅ Fighter added: 
+<a href="/fighters/juliapolastri.html">Julia Polastri</a>
+</p>
+<h4>2024-06-07</h4>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/marcdiakiese.html">Marc Diakiese</a>
+</p>
+<h4>2024-05-31</h4>
+<p>
+✅ Fighter added: 
+Joilton Lutterbach
+</p>
+<h4>2024-05-28</h4>
+<p>
+✅ Fighter added: 
+<a href="/fighters/mickeygall.html">Mickey Gall</a>
+</p>
+<p>
+✅ Fighter added: 
+<a href="/fighters/mitchraposo.html">Mitch Raposo</a>
+</p>
+<h4>2024-05-14</h4>
+<p>
+✅ Fighter added: 
+<a href="/fighters/oumarsy.html">Oumar Sy</a>
+</p>
+<h4>2024-05-13</h4>
+<p>
+❌ Fighter removed: 
+Kiran Singh
+</p>
+<h4>2024-05-10</h4>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/liangna.html">Liang Na</a>
+</p>
+<h4>2024-05-07</h4>
+<p>
+✅ Fighter added: 
+<a href="/fighters/antoniotrocoli.html">Antonio Trocoli</a>
+</p>
+<p>
+✅ Fighter added: 
+<a href="/fighters/teciapennington.html">Tecia Pennington</a>
+</p>
+<h4>2024-05-02</h4>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/makhmudmuradov.html">Makhmud Muradov</a>
+</p>
+<h4>2024-05-01</h4>
+<p>
+✅ Fighter added: 
+<a href="/fighters/josealdo.html">Jose Aldo</a>
+</p>
+<p>
+✅ Fighter added: 
+<a href="/fighters/mauricioruffy.html">Mauricio Ruffy</a>
+</p>
+<p>
+✅ Fighter added: 
+<a href="/fighters/dionebarbosa.html">Dione Barbosa</a>
+</p>
+<p>
+✅ Fighter added: 
+<a href="/fighters/ernestakareckaite.html">Ernesta Kareckaite</a>
+</p>
+<h4>2024-04-25</h4>
+<p>
+✅ Fighter added: 
+<a href="/fighters/jhonatadiniz.html">Jhonata Diniz</a>
+</p>
+<p>
+✅ Fighter added: 
+<a href="/fighters/jamesllontop.html">James Llontop</a>
+</p>
+<h4>2024-04-24</h4>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/genarovaldez.html">Genaro Valdez</a>
+</p>
+<h4>2024-04-23</h4>
+<p>
+✅ Fighter added: 
+<a href="/fighters/pujatomar.html">Puja Tomar</a>
+</p>
+<h4>2024-04-22</h4>
+<p>
+✅ Fighter added: 
+<a href="/fighters/chrispadilla.html">Chris Padilla</a>
+</p>
+<h4>2024-04-17</h4>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/dannyhenry.html">Danny Henry</a>
+</p>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/valwoodburn.html">Val Woodburn</a>
+</p>
+<h4>2024-04-10</h4>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/cynthiacalvillo.html">Cynthia Calvillo</a>
+</p>
+<h4>2024-04-09</h4>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/antonturkalj.html">Anton Turkalj</a>
+</p>
+<h4>2024-04-02</h4>
+<p>
+✅ Fighter added: 
+<a href="/fighters/dylanbudka.html">Dylan Budka</a>
+</p>
+<p>
+✅ Fighter added: 
+<a href="/fighters/jeanmatsumoto.html">Jean Matsumoto</a>
+</p>
+<p>
+✅ Fighter added: 
+<a href="/fighters/cynthiacalvillo.html">Cynthia Calvillo</a>
+</p>
+<p>
+✅ Fighter added: 
+<a href="/fighters/germainederandamie.html">Germaine de Randamie</a>
+</p>
+<h4>2024-03-26</h4>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/ajdobson.html">AJ Dobson</a>
+</p>
+<p>
+✅ Fighter added: 
+<a href="/fighters/iboaslan.html">Ibo Aslan</a>
+</p>
+<p>
+✅ Fighter added: 
+<a href="/fighters/connormatthews.html">Connor Matthews</a>
+</p>
+<p>
+✅ Fighter added: 
+<a href="/fighters/angelpacheco.html">Angel Pacheco</a>
+</p>
+<h4>2024-03-25</h4>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/igorseverino.html">Igor Severino</a>
+</p>
+<h4>2024-03-22</h4>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/joannewood.html">Joanne Wood</a>
+</p>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/bryanbarberena.html">Bryan Barberena</a>
+</p>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/carloscandelario.html">Carlos Candelario</a>
+</p>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/philipelins.html">Philipe Lins</a>
+</p>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/joshparisian.html">Josh Parisian</a>
+</p>
+<h4>2024-03-21</h4>
+<p>
+✅ Fighter added: 
+Kiran Singh
+</p>
+<h4>2024-03-19</h4>
+<p>
+✅ Fighter added: 
+<a href="/fighters/andrelima.html">Andre Lima</a>
+</p>
+<p>
+✅ Fighter added: 
+<a href="/fighters/stevennguyen.html">Steven Nguyen</a>
+</p>
+<p>
+✅ Fighter added: 
+<a href="/fighters/luispajuelo.html">Luis Pajuelo</a>
+</p>
+<p>
+✅ Fighter added: 
+<a href="/fighters/igorseverino.html">Igor Severino</a>
+</p>
+<p>
+✅ Fighter added: 
+<a href="/fighters/youssefzalal.html">Youssef Zalal</a>
+</p>
+<h4>2024-03-12</h4>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/denysbondar.html">Denys Bondar</a>
+</p>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/daniellacerda.html">Daniel Lacerda</a>
+</p>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/markmadsen.html">Mark Madsen</a>
+</p>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/mateusmendonca.html">Mateus Mendonca</a>
+</p>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/tysonpedro.html">Tyson Pedro</a>
+</p>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/jamiepickett.html">Jamie Pickett</a>
+</p>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/mikebreeden.html">Mike Breeden</a>
+</p>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/ferniegarcia.html">Fernie Garcia</a>
+</p>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/luissaldana.html">Luis Saldana</a>
+</p>
+<p>
+✅ Fighter added: 
+<a href="/fighters/charalamposgrigoriou.html">Charalampos Grigoriou</a>
+</p>
+<p>
+✅ Fighter added: 
+<a href="/fighters/mitchramirez.html">Mitch Ramirez</a>
+</p>
+<p>
+✅ Fighter added: 
+<a href="/fighters/ovincesaintpreux.html">Ovince Saint Preux</a>
+</p>
+<p>
+✅ Fighter added: 
+<a href="/fighters/dannysilva.html">Danny Silva</a>
+</p>
+<h4>2024-03-08</h4>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/claudioribeiro.html">Claudio Ribeiro</a>
+</p>
+<h4>2024-03-01</h4>
+<p>
+✅ Fighter added: 
+<a href="/fighters/valterwalker.html">Valter Walker</a>
+</p>
+<h4>2024-02-29</h4>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/khuseinaskhabov.html">Khusein Askhabov</a>
+</p>
+<p>
+✅ Fighter added: 
+<a href="/fighters/benardosopaj.html">Benardo Sopaj</a>
+</p>
+<h4>2024-02-27</h4>
+<p>
+✅ Fighter added: 
+<a href="/fighters/abdulkareemalselwady.html">Abdul-Kareem Al-Selwady</a>
+</p>
+<p>
+✅ Fighter added: 
+<a href="/fighters/viniciusoliveira.html">Vinicius Oliveira</a>
+</p>
+<h4>2024-02-20</h4>
+<p>
+✅ Fighter added: 
+<a href="/fighters/ronaldorodriguez.html">Ronaldo Rodriguez</a>
+</p>
+<h4>2024-02-16</h4>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/zacpauga.html">Zac Pauga</a>
+</p>
+<h4>2024-02-15</h4>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/stephanieegger.html">Stephanie Egger</a>
+</p>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/devinclark.html">Devin Clark</a>
+</p>
+<h4>2024-02-14</h4>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/abubakarnurmagomedov.html">Abubakar Nurmagomedov</a>
+</p>
+<h4>2024-02-13</h4>
+<p>
+✅ Fighter added: 
+<a href="/fighters/dannybarlow.html">Danny Barlow</a>
+</p>
+<p>
+✅ Fighter added: 
+<a href="/fighters/obanelliott.html">Oban Elliott</a>
+</p>
+<p>
+✅ Fighter added: 
+<a href="/fighters/brendsonribeiro.html">Brendson Ribeiro</a>
+</p>
+<p>
+✅ Fighter added: 
+<a href="/fighters/carlosvera.html">Carlos Vera</a>
+</p>
+<p>
+✅ Fighter added: 
+<a href="/fighters/zhangmingyang.html">Zhang Mingyang</a>
+</p>
+<h4>2024-02-06</h4>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/philhawes.html">Phil Hawes</a>
+</p>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/juancamiloronderos.html">Juancamilo Ronderos</a>
+</p>
+<p>
+✅ Fighter added: 
+<a href="/fighters/hyderamil.html">Hyder Amil</a>
+</p>
+<p>
+✅ Fighter added: 
+<a href="/fighters/bolajioki.html">Bolaji Oki</a>
+</p>
+<p>
+✅ Fighter added: 
+<a href="/fighters/carlosprates.html">Carlos Prates</a>
+</p>
+<h4>2024-02-05</h4>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/albertduraev.html">Albert Duraev</a>
+</p>
+<h4>2024-02-01</h4>
+<p>
+✅ Fighter added: 
+<a href="/fighters/bekzatalmakhan.html">Bekzat Almakhan</a>
+</p>
+<h4>2024-01-31</h4>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/malcolmgordon.html">Malcolm Gordon</a>
+</p>
+<h4>2024-01-30</h4>
+<p>
+✅ Fighter added: 
+<a href="/fighters/marquelmederos.html">MarQuel Mederos</a>
+</p>
+<p>
+✅ Fighter added: 
+<a href="/fighters/thomaspetersen.html">Thomas Petersen</a>
+</p>
+<h4>2024-01-25</h4>
+<p>
+✅ Fighter added: 
+<a href="/fighters/kaylaharrison.html">Kayla Harrison</a>
+</p>
+<h4>2024-01-24</h4>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/yohanlainesse.html">Yohan Lainesse</a>
+</p>
+<h4>2024-01-23</h4>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/carlaesparza.html">Carla Esparza</a>
+</p>
+<h4>2024-01-16</h4>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/laurenmurphy.html">Lauren Murphy</a>
+</p>
+<p>
+✅ Fighter added: 
+<a href="/fighters/serhiysidey.html">Serhiy Sidey</a>
+</p>
+<p>
+✅ Fighter added: 
+<a href="/fighters/ramontaveras.html">Ramon Taveras</a>
+</p>
+<h4>2024-01-09</h4>
+<p>
+✅ Fighter added: 
+<a href="/fighters/tomnolan.html">Tom Nolan</a>
+</p>
+<p>
+✅ Fighter added: 
+<a href="/fighters/jeansilva.html">Jean Silva</a>
+</p>
+<h4>2024-01-04</h4>
+<p>
+✅ Fighter added: 
+<a href="/fighters/michaelpage.html">Michael Page</a>
+</p>
+<h4>2024-01-03</h4>
+<p>
+✅ Fighter added: 
+<a href="/fighters/robelisdespaigne.html">Robelis Despaigne</a>
+</p>
+<h4>2023-12-22</h4>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/parkerporter.html">Parker Porter</a>
+</p>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/shannonross.html">Shannon Ross</a>
+</p>
+<h4>2023-12-13</h4>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/nickaguirre.html">Nick Aguirre</a>
+</p>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/austinlingo.html">Austin Lingo</a>
+</p>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/terrencemitchell.html">Terrence Mitchell</a>
+</p>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/johnnymunoz.html">Johnny Munoz</a>
+</p>
+<h4>2023-12-12</h4>
+<p>
+✅ Fighter added: 
+<a href="/fighters/shamilgaziev.html">Shamil Gaziev</a>
+</p>
+<h4>2023-12-07</h4>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/carlosvera.html">Carlos Vera</a>
+</p>
+<h4>2023-12-05</h4>
+<p>
+✅ Fighter added: 
+<a href="/fighters/talitaalencar.html">Talita Alencar</a>
+</p>
+<p>
+✅ Fighter added: 
+<a href="/fighters/rayannedossantos.html">Rayanne Amanda</a>
+</p>
+<h4>2023-12-04</h4>
+<p>
+✅ Fighter added: 
+<a href="/fighters/carlosvera.html">Carlos Vera</a>
+</p>
+<h4>2023-11-28</h4>
+<p>
+✅ Fighter added: 
+<a href="/fighters/rodolfobellato.html">Rodolfo Bellato</a>
+</p>
+<p>
+✅ Fighter added: 
+<a href="/fighters/jaredgooden.html">Jared Gooden</a>
+</p>
+<p>
+✅ Fighter added: 
+<a href="/fighters/zacharyreese.html">Zach Reese</a>
+</p>
+<h4>2023-11-16</h4>
+<p>
+✅ Fighter added: 
+<a href="/fighters/myktybekorolbai.html">Myktybek Orolbai</a>
+</p>
+<h4>2023-11-15</h4>
+<p>
+✅ Fighter added: 
+<a href="/fighters/cesaralmeida.html">Cesar Almeida</a>
+</p>
+<p>
+✅ Fighter added: 
+<a href="/fighters/josejohnson.html">Jose Johnson</a>
+</p>
+<p>
+✅ Fighter added: 
+<a href="/fighters/caiomachado.html">Caio Machado</a>
+</p>
+<p>
+✅ Fighter added: 
+<a href="/fighters/paytontalbott.html">Payton Talbott</a>
+</p>
+<p>
+✅ Fighter added: 
+<a href="/fighters/mayrabuenosilva.html">Mayra Bueno Silva</a>
+</p>
+<h4>2023-11-08</h4>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/kanakomurata.html">Kanako Murata</a>
+</p>
+<h4>2023-11-07</h4>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/tailasantos.html">Taila Santos</a>
+</p>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/mayrabuenosilva.html">Mayra Bueno Silva</a>
+</p>
+<p>
+✅ Fighter added: 
+<a href="/fighters/kevinborjas.html">Kevin Borjas</a>
+</p>
+<p>
+✅ Fighter added: 
+<a href="/fighters/dennisbuzukja.html">Dennis Buzukja</a>
+</p>
+<h4>2023-11-02</h4>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/jinhyufrey.html">Jinh Yu Frey</a>
+</p>
+<h4>2023-11-01</h4>
+<p>
+✅ Fighter added: 
+<a href="/fighters/kaynankruschewsky.html">Kaynan Kruschewsky</a>
+</p>
+<h4>2023-10-31</h4>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/blooddiamond.html">Blood Diamond</a>
+</p>
+<p>
+✅ Fighter added: 
+<a href="/fighters/victorhugo.html">Victor Hugo</a>
+</p>
+<p>
+✅ Fighter added: 
+<a href="/fighters/eduardamoura.html">Eduarda Moura</a>
+</p>
+<h4>2023-10-26</h4>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/ashleyyoder.html">Ashley Yoder</a>
+</p>
+<h4>2023-10-25</h4>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/waltharris.html">Walt Harris</a>
+</p>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/danielrodriguez.html">Daniel Rodriguez</a>
+</p>
+<h4>2023-10-18</h4>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/jennifermaia.html">Jennifer Maia</a>
+</p>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/jpbuys.html">JP Buys</a>
+</p>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/carldeaton.html">Carl Deaton</a>
+</p>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/andrefialho.html">Andre Fialho</a>
+</p>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/ajfletcher.html">AJ Fletcher</a>
+</p>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/kamuelakirk.html">Kamuela Kirk</a>
+</p>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/tuckerlutz.html">Tucker Lutz</a>
+</p>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/johnmakdessi.html">John Makdessi</a>
+</p>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/shaneyoung.html">Shane Young</a>
+</p>
+<h4>2023-10-12</h4>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/hannahgoldy.html">Hannah Goldy</a>
+</p>
+<h4>2023-10-10</h4>
+<p>
+✅ Fighter added: 
+<a href="/fighters/brendonmarotte.html">Brendon Marotte</a>
+</p>
+<h4>2023-10-09</h4>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/jakecollier.html">Jake Collier</a>
+</p>
+<h4>2023-09-22</h4>
+<p>
+✅ Fighter added: 
+<a href="/fighters/kauefernandes.html">Kaue Fernandes</a>
+</p>
+<h4>2023-09-20</h4>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/ronnielawrence.html">Ronnie Lawrence</a>
+</p>
+<h4>2023-09-19</h4>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/ovincesaintpreux.html">Ovince Saint Preux</a>
+</p>
+<h4>2023-09-18</h4>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/cortneycasey.html">Cortney Casey</a>
+</p>
+<h4>2023-09-15</h4>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/teciapennington.html">Tecia Torres</a>
+</p>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/derekbrunson.html">Derek Brunson</a>
+</p>
+<h4>2023-09-13</h4>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/zarahfairn.html">Zarah Fairn</a>
+</p>
+<h4>2023-09-12</h4>
+<p>
+✅ Fighter added: 
+<a href="/fighters/charliecampbell.html">Charlie Campbell</a>
+</p>
+<p>
+✅ Fighter added: 
+<a href="/fighters/josefineknutsson.html">Josefine Knutsson</a>
+</p>
+<p>
+✅ Fighter added: 
+<a href="/fighters/marnicmann.html">Marnic Mann</a>
+</p>
+<p>
+✅ Fighter added: 
+<a href="/fighters/mohammadyahya.html">Mohammad Yahya</a>
+</p>
+<h4>2023-09-05</h4>
+<p>
+✅ Fighter added: 
+<a href="/fighters/felipedossantos.html">Felipe dos Santos</a>
+</p>
+<p>
+✅ Fighter added: 
+<a href="/fighters/landonquinones.html">Landon Quinones</a>
+</p>
+<p>
+✅ Fighter added: 
+So Yul Kim
+</p>
+<h4>2023-08-30</h4>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/istelanunes.html">Istela Nunes</a>
+</p>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/jacquelinecavalcanti.html">Jacqueline Cavalcanti</a>
+</p>
+<p>
+✅ Fighter added: 
+<a href="/fighters/istelanunes.html">Istela Nunes</a>
+</p>
+<h4>2023-08-29</h4>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/chansungjung.html">Chan Sung Jung</a>
+</p>
+<p>
+✅ Fighter added: 
+<a href="/fighters/rhysmckee.html">Rhys McKee</a>
+</p>
+<h4>2023-08-26</h4>
+<p>
+✅ Fighter added: 
+<a href="/fighters/kiefercrosbie.html">Kiefer Crosbie</a>
+</p>
+<p>
+✅ Fighter added: 
+<a href="/fighters/kevinjousset.html">Kevin Jousset</a>
+</p>
+<h4>2023-08-24</h4>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/ashleeevanssmith.html">Ashlee Evans-Smith</a>
+</p>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/johnhathaway.html">John Hathaway</a>
+</p>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/tafonnchukwi.html">Tafon Nchukwi</a>
+</p>
+<h4>2023-08-23</h4>
+<p>
+✅ Fighter added: 
+<a href="/fighters/robertbryczek.html">Robert Bryczek</a>
+</p>
+<h4>2023-08-22</h4>
+<p>
+✅ Fighter added: 
+<a href="/fighters/ravenaoliveira.html">Ravena Oliveira Morais</a>
+</p>
+<p>
+✅ Fighter added: 
+<a href="/fighters/billyraygoff.html">Billy Goff</a>
+</p>
+<h4>2023-08-21</h4>
+<p>
+✅ Fighter added: 
+<a href="/fighters/jacquelinecavalcanti.html">Jacqueline Cavalcanti</a>
+</p>
+<h4>2023-08-20</h4>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/chrisdaukaus.html">Chris Daukaus</a>
+</p>
+<p>
+✅ Fighter added: 
+<a href="/fighters/bradkatona.html">Brad Katona</a>
+</p>
+<h4>2023-08-18</h4>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/tannerboser.html">Tanner Boser</a>
+</p>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/aleksacamur.html">Aleksa Camur</a>
+</p>
+<h4>2023-08-16</h4>
+<p>
+✅ Fighter added: 
+<a href="/fighters/codygibson.html">Cody Gibson</a>
+</p>
+<h4>2023-08-15</h4>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/ianheinisch.html">Ian Heinisch</a>
+</p>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/jameskrause.html">James Krause</a>
+</p>
+<p>
+✅ Fighter added: 
+<a href="/fighters/kurtholobaugh.html">Kurt Holobaugh</a>
+</p>
+<p>
+✅ Fighter added: 
+<a href="/fighters/austinhubbard.html">Austin Hubbard</a>
+</p>
+<h4>2023-08-12</h4>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/kevinlee.html">Kevin Lee</a>
+</p>
+<h4>2023-08-11</h4>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/mandybohm.html">Mandy Bohm</a>
+</p>
+<h4>2023-08-10</h4>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/charlesrosa.html">Charles Rosa</a>
+</p>
+<h4>2023-08-03</h4>
+<p>
+✅ Fighter added: 
+<a href="/fighters/morgancharriere.html">Morgan Charriere</a>
+</p>
+<p>
+✅ Fighter added: 
+<a href="/fighters/manolozecchini.html">Manolo Zecchini</a>
+</p>
+<h4>2023-08-01</h4>
+<p>
+✅ Fighter added: 
+<a href="/fighters/diegolopes.html">Diego Lopes</a>
+</p>
+<p>
+✅ Fighter added: 
+<a href="/fighters/kylerphillips.html">Kyler Phillips</a>
+</p>
+<h4>2023-07-25</h4>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/tysonnam.html">Tyson Nam</a>
+</p>
+<p>
+✅ Fighter added: 
+<a href="/fighters/darriusflowers.html">Darrius Flowers</a>
+</p>
+<h4>2023-07-22</h4>
+<p>
+✅ Fighter added: 
+<a href="/fighters/yanisghemmouri.html">Yanis Ghemmouri</a>
+</p>
+<p>
+✅ Fighter added: 
+<a href="/fighters/caolanloughran.html">Caolan Loughran</a>
+</p>
+<h4>2023-07-20</h4>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/damirismagulov.html">Damir Ismagulov</a>
+</p>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/blagoyivanov.html">Blagoy Ivanov</a>
+</p>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/robbielawler.html">Robbie Lawler</a>
+</p>
+<h4>2023-07-18</h4>
+<p>
+✅ Fighter added: 
+<a href="/fighters/danielbarez.html">Daniel Barez</a>
+</p>
+<p>
+✅ Fighter added: 
+<a href="/fighters/mickparkin.html">Mick Parkin</a>
+</p>
+<p>
+✅ Fighter added: 
+<a href="/fighters/jonnyparsons.html">Jonny Parsons</a>
+</p>
+<p>
+✅ Fighter added: 
+<a href="/fighters/bogdanguskov.html">Bogdan Guskov</a>
+</p>
+<p>
+✅ Fighter added: 
+<a href="/fighters/montserratrendon.html">Montserrat Rendon</a>
+</p>
+<h4>2023-07-14</h4>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/zhalgaszhumagulov.html">Zhalgas Zhumagulov</a>
+</p>
+<h4>2023-07-13</h4>
+<p>
+✅ Fighter added: 
+<a href="/fighters/melissamullins.html">Melissa Dixon</a>
+</p>
+<h4>2023-07-11</h4>
+<p>
+✅ Fighter added: 
+<a href="/fighters/bassilhafez.html">Bassil Hafez</a>
+</p>
+<p>
+✅ Fighter added: 
+<a href="/fighters/viktoriiadudakova.html">Viktoriia Dudakova</a>
+</p>
+<p>
+✅ Fighter added: 
+<a href="/fighters/ashleeevanssmith.html">Ashlee Evans-Smith</a>
+</p>
+<h4>2023-07-07</h4>
+<p>
+❌ Fighter removed: 
+Josiah Harrell
+</p>
+<p>
+✅ Fighter added: 
+Josiah Harrell
+</p>
+<h4>2023-07-06</h4>
+<p>
+✅ Fighter added: 
+<a href="/fighters/charlesradtke.html">Charlie Radtke</a>
+</p>
+<h4>2023-07-05</h4>
+<p>
+✅ Fighter added: 
+<a href="/fighters/edgarchairez.html">Edgar Chairez</a>
+</p>
+<p>
+✅ Fighter added: 
+<a href="/fighters/valwoodburn.html">Val Woodburn</a>
+</p>
+<h4>2023-06-27</h4>
+<p>
+✅ Fighter added: 
+<a href="/fighters/kevinlee.html">Kevin Lee</a>
+</p>
+<h4>2023-06-22</h4>
+<p>
+✅ Fighter added: 
+<a href="/fighters/terrencemitchell.html">Terrence Mitchell</a>
+</p>
+<p>
+✅ Fighter added: 
+<a href="/fighters/westinwilson.html">Westin Wilson</a>
+</p>
+<h4>2023-06-21</h4>
+<p>
+✅ Fighter added: 
+<a href="/fighters/nursultonruziboev.html">Nursulton Ruziboev</a>
+</p>
+<p>
+✅ Fighter added: 
+<a href="/fighters/noracornolle.html">Nora Cornolle</a>
+</p>
+<h4>2023-06-20</h4>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/amandanunes.html">Amanda Nunes</a>
+</p>
+<p>
+✅ Fighter added: 
+<a href="/fighters/austenlane.html">Austen Lane</a>
+</p>
+<p>
+✅ Fighter added: 
+<a href="/fighters/joshuavan.html">Joshua Van</a>
+</p>
+<h4>2023-06-17</h4>
+<p>
+✅ Fighter added: 
+<a href="/fighters/chepemariscal.html">Chepe Mariscal</a>
+</p>
+<h4>2023-06-13</h4>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/martinsano.html">Martin Sano</a>
+</p>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/braxtonsmith.html">Braxton Smith</a>
+</p>
+<p>
+✅ Fighter added: 
+<a href="/fighters/felipebunes.html">Felipe Bunes</a>
+</p>
+<p>
+✅ Fighter added: 
+<a href="/fighters/dariazhelezniakova.html">Dariya Zheleznykova</a>
+</p>
+<h4>2023-06-12</h4>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/mariaoliveira.html">Maria Oliveira</a>
+</p>
+<h4>2023-06-11</h4>
+<p>
+✅ Fighter added: 
+<a href="/fighters/steveerceg.html">Steve Erceg</a>
+</p>
+<h4>2023-06-08</h4>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/beamalecki.html">Bea Malecki</a>
+</p>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/orioncosce.html">Orion Cosce</a>
+</p>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/nickfiore.html">Nick Fiore</a>
+</p>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/erickgonzalez.html">Erick Gonzalez</a>
+</p>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/maximgrishin.html">Maxim Grishin</a>
+</p>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/journeynewson.html">Journey Newson</a>
+</p>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/aaronphillips.html">Aaron Phillips</a>
+</p>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/takashisato.html">Takashi Sato</a>
+</p>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/donshainis.html">Don Shainis</a>
+</p>
+<h4>2023-06-07</h4>
+<p>
+✅ Fighter added: 
+<a href="/fighters/shaunabannon.html">Shauna Bannon</a>
+</p>
+<p>
+✅ Fighter added: 
+<a href="/fighters/luanasantos.html">Luana Santos</a>
+</p>
+<h4>2023-06-05</h4>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/ilirlatifi.html">Ilir Latifi</a>
+</p>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/makwanamirkhani.html">Makwan Amirkhani</a>
+</p>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/batgereldanaa.html">Batgerel Danaa</a>
+</p>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/tonygravely.html">Tony Gravely</a>
+</p>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/trevinjones.html">Trevin Jones</a>
+</p>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/omarmorales.html">Omar Morales</a>
+</p>
+<p>
+✅ Fighter added: 
+<a href="/fighters/muingafurov.html">Muin Gafurov</a>
+</p>
+<p>
+✅ Fighter added: 
+<a href="/fighters/muhammadnaimov.html">Muhammad Naimov</a>
+</p>
+<h4>2023-06-03</h4>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/mounirlazzez.html">Mounir Lazzez</a>
+</p>
+<p>
+✅ Fighter added: 
+<a href="/fighters/jessebutler.html">Jesse Butler</a>
+</p>
+<h4>2023-05-30</h4>
+<p>
+✅ Fighter added: 
+<a href="/fighters/elizeuzaleskidossantos.html">Elizeu Zaleski dos Santos</a>
+</p>
+<h4>2023-05-26</h4>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/jaredvanderaa.html">Jared Vanderaa</a>
+</p>
+<h4>2023-05-23</h4>
+<p>
+✅ Fighter added: 
+<a href="/fighters/vagnerrocha.html">Vagner Rocha</a>
+</p>
+<h4>2023-05-20</h4>
+<p>
+❌ Fighter removed: 
+Mark Climaco
+</p>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/yizha.html">Yi Zha</a>
+</p>
+<h4>2023-05-17</h4>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/josephholmes.html">Joseph Holmes</a>
+</p>
+<h4>2023-05-16</h4>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/chasesherman.html">Chase Sherman</a>
+</p>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/jessicaroseclark.html">Jessica-Rose Clark</a>
+</p>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/jiyeonkim.html">Ji Yeon Kim</a>
+</p>
+<p>
+✅ Fighter added: 
+<a href="/fighters/ilirlatifi.html">Ilir Latifi</a>
+</p>
+<h4>2023-05-03</h4>
+<p>
+✅ Fighter added: 
+<a href="/fighters/ketlensouza.html">Ketlen Souza</a>
+</p>
+<h4>2023-05-02</h4>
+<p>
+✅ Fighter added: 
+<a href="/fighters/ikramaliskerov.html">Ikram Aliskerov</a>
+</p>
+<p>
+✅ Fighter added: 
+<a href="/fighters/rafaelestevam.html">Rafael Estevam</a>
+</p>
+<h4>2023-04-26</h4>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/juanespino.html">Juan Espino</a>
+</p>
+<p>
+✅ Fighter added: 
+<a href="/fighters/marcusmcghee.html">Marcus McGhee</a>
+</p>
+<p>
+✅ Fighter added: 
+<a href="/fighters/treywaters.html">Trey Waters</a>
+</p>
+<p>
+✅ Fighter added: 
+<a href="/fighters/jameylynhorth.html">Jamey-Lyn Horth</a>
+</p>
+<h4>2023-04-24</h4>
+<p>
+✅ Fighter added: 
+<a href="/fighters/ivanapetrovic.html">Ivana Petrovic</a>
+</p>
+<h4>2023-04-21</h4>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/zakcummings.html">Zak Cummings</a>
+</p>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/jorgemasvidal.html">Jorge Masvidal</a>
+</p>
+<h4>2023-04-19</h4>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/edherman.html">Ed Herman</a>
+</p>
+<h4>2023-04-18</h4>
+<p>
+✅ Fighter added: 
+<a href="/fighters/juniortafa.html">Junior Tafa</a>
+</p>
+<h4>2023-04-13</h4>
+<p>
+✅ Fighter added: 
+<a href="/fighters/asualmabayev.html">Assu Almabayev</a>
+</p>
+<p>
+✅ Fighter added: 
+<a href="/fighters/azatmaksum.html">Azat Maksum</a>
+</p>
+<p>
+✅ Fighter added: 
+<a href="/fighters/braxtonsmith.html">Braxton Smith</a>
+</p>
+<h4>2023-04-12</h4>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/cynthiacalvillo.html">Cynthia Calvillo</a>
+</p>
+<p>
+✅ Fighter added: 
+<a href="/fighters/brunabrasil.html">Bruna Brasil</a>
+</p>
+<h4>2023-04-05</h4>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/kylerphillips.html">Kyler Phillips</a>
+</p>
+<h4>2023-04-04</h4>
+<p>
+✅ Fighter added: 
+<a href="/fighters/christianrodriguez.html">Christian Rodriguez</a>
+</p>
+<h4>2023-03-30</h4>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/stevenpeterson.html">Steven Peterson</a>
+</p>
+<h4>2023-03-29</h4>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/guidocannetti.html">Guido Cannetti</a>
+</p>
+<h4>2023-03-28</h4>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/manamartinez.html">Mana Martinez</a>
+</p>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/rafaelalves.html">Rafael Alves</a>
+</p>
+<h4>2023-03-27</h4>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/leonardosantos.html">Leonardo Santos</a>
+</p>
+<h4>2023-03-23</h4>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/augustosakai.html">Augusto Sakai</a>
+</p>
+<h4>2023-03-14</h4>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/raphaelassuncao.html">Raphael Assuncao</a>
+</p>
+<p>
+✅ Fighter added: 
+<a href="/fighters/henrycejudo.html">Henry Cejudo</a>
+</p>
+<p>
+✅ Fighter added: 
+<a href="/fighters/sampatterson.html">Sam Patterson</a>
+</p>
+<p>
+✅ Fighter added: 
+<a href="/fighters/jafelfilho.html">Jafel Filho</a>
+</p>
+<p>
+✅ Fighter added: 
+<a href="/fighters/chrisduncan.html">Chris Duncan</a>
+</p>
+<p>
+✅ Fighter added: 
+<a href="/fighters/joannewood.html">Joanne Wood</a>
+</p>
+<h4>2023-03-13</h4>
+<p>
+✅ Fighter added: 
+<a href="/fighters/gabrielsantos.html">Gabriel Santos</a>
+</p>
+<h4>2023-03-08</h4>
+<p>
+✅ Fighter added: 
+Mark Climaco
+</p>
+<h4>2023-03-07</h4>
+<p>
+✅ Fighter added: 
+<a href="/fighters/karlwilliams.html">Karl Williams</a>
+</p>
+<p>
+✅ Fighter added: 
+<a href="/fighters/vitorpetrino.html">Vitor Petrino</a>
+</p>
+<p>
+✅ Fighter added: 
+<a href="/fighters/sedriquesdumas.html">Sedriques Dumas</a>
+</p>
+<h4>2023-03-01</h4>
+<p>
+✅ Fighter added: 
+<a href="/fighters/loikradzhabov.html">Loik Radzhabov</a>
+</p>
+<h4>2023-02-28</h4>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/zubairatukhugov.html">Zubaira Tukhugov</a>
+</p>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/darrentill.html">Darren Till</a>
+</p>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/josejohnson.html">Jose Johnson</a>
+</p>
+<p>
+✅ Fighter added: 
+<a href="/fighters/estebanribovics.html">Esteban Ribovics</a>
+</p>
+<p>
+✅ Fighter added: 
+<a href="/fighters/bonickal.html">Bo Nickal</a>
+</p>
+<p>
+✅ Fighter added: 
+<a href="/fighters/faridbasharat.html">Farid Basharat</a>
+</p>
+<h4>2023-02-21</h4>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/linalansberg.html">Lina Lansberg</a>
+</p>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/jordanwright.html">Jordan Wright</a>
+</p>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/williamknight.html">William Knight</a>
+</p>
+<p>
+✅ Fighter added: 
+<a href="/fighters/tatianasuarez.html">Tatiana Suarez</a>
+</p>
+<p>
+✅ Fighter added: 
+<a href="/fighters/haileycowan.html">Hailey Cowan</a>
+</p>
+<p>
+✅ Fighter added: 
+<a href="/fighters/trevorpeek.html">Trevor Peek</a>
+</p>
+<p>
+✅ Fighter added: 
+<a href="/fighters/victormartinez.html">Victor Martinez</a>
+</p>
+<p>
+✅ Fighter added: 
+<a href="/fighters/josejohnson.html">Jose Johnson</a>
+</p>
+<p>
+✅ Fighter added: 
+<a href="/fighters/nurulloaliev.html">Nurullo Aliev</a>
+</p>
+<h4>2023-02-19</h4>
+<p>
+✅ Fighter added: 
+<a href="/fighters/carldeaton.html">Carl Deaton</a>
+</p>
+<h4>2023-02-17</h4>
+<p>
+✅ Fighter added: 
+<a href="/fighters/rolandobedoya.html">Rolando Bedoya</a>
+</p>
+<h4>2023-02-16</h4>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/saidyokubkakhramonov.html">Saidyokub Kakhramonov</a>
+</p>
+<p>
+✅ Fighter added: 
+<a href="/fighters/yizha.html">Yi Zha</a>
+</p>
+<p>
+✅ Fighter added: 
+<a href="/fighters/seunggukchoi.html">SeungGuk Choi</a>
+</p>
+<h4>2023-02-14</h4>
+<p>
+✅ Fighter added: 
+<a href="/fighters/nazimsadykhov.html">Nazim Sadykhov</a>
+</p>
+<p>
+✅ Fighter added: 
+<a href="/fighters/juancamiloronderos.html">Juancamilo Ronderos</a>
+</p>
+<p>
+✅ Fighter added: 
+<a href="/fighters/jamalpogues.html">Jamal Pogues</a>
+</p>
+<p>
+✅ Fighter added: 
+<a href="/fighters/claytoncarpenter.html">Clayton Carpenter</a>
+</p>
+<p>
+✅ Fighter added: 
+<a href="/fighters/khuseinaskhabov.html">Khusein Askhabov</a>
+</p>
+<h4>2023-02-07</h4>
+<p>
+✅ Fighter added: 
+<a href="/fighters/hyunsungpark.html">HyunSung Park</a>
+</p>
+<p>
+✅ Fighter added: 
+<a href="/fighters/rinyanakamura.html">Rinya Nakamura</a>
+</p>
+<p>
+✅ Fighter added: 
+<a href="/fighters/jeongyeonglee.html">JeongYeong Lee</a>
+</p>
+<p>
+✅ Fighter added: 
+<a href="/fighters/toshiomikazama.html">Toshiomi Kazama</a>
+</p>
+<p>
+✅ Fighter added: 
+<a href="/fighters/anshuljubli.html">Anshul Jubli</a>
+</p>
+<p>
+✅ Fighter added: 
+<a href="/fighters/shannonross.html">Shannon Ross</a>
+</p>
+<p>
+✅ Fighter added: 
+<a href="/fighters/jackjenkins.html">Jack Jenkins</a>
+</p>
+<p>
+✅ Fighter added: 
+<a href="/fighters/modestasbukauskas.html">Modestas Bukauskas</a>
+</p>
+<p>
+✅ Fighter added: 
+<a href="/fighters/blakebilder.html">Blake Bilder</a>
+</p>
+<h4>2023-01-31</h4>
+<p>
+✅ Fighter added: 
+<a href="/fighters/yusakukinoshita.html">Yusaku Kinoshita</a>
+</p>
+<p>
+✅ Fighter added: 
+<a href="/fighters/jesusaguilar.html">Jesus Aguilar</a>
+</p>
+<h4>2023-01-27</h4>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/gloverteixeira.html">Glover Teixeira</a>
+</p>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/shamilabdurakhimov.html">Shamil Abdurakhimov</a>
+</p>
+<h4>2023-01-25</h4>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/kyledaukaus.html">Kyle Daukaus</a>
+</p>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/mauriciorua.html">Mauricio Rua</a>
+</p>
+<h4>2023-01-20</h4>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/victorrodriguez.html">Victor Rodriguez</a>
+</p>
+<h4>2023-01-19</h4>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/sijaraeubanks.html">Sijara Eubanks</a>
+</p>
+<h4>2023-01-18</h4>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/michaeltrizano.html">Michael Trizano</a>
+</p>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/liudviksholinian.html">Liudvik Sholinian</a>
+</p>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/marcelorojo.html">Marcelo Rojo</a>
+</p>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/jayperrin.html">Jay Perrin</a>
+</p>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/alejandroperez.html">Alejandro Perez</a>
+</p>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/raulianpaiva.html">Raulian Paiva</a>
+</p>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/gadzhiomargadzhiev.html">Gadzhi Omargadzhiev</a>
+</p>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/kevinnatividad.html">Kevin Natividad</a>
+</p>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/vincemorales.html">Vince Morales</a>
+</p>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/brandondavis.html">Brandon Davis</a>
+</p>
+<h4>2023-01-17</h4>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/carlosmota.html">Carlos Mota</a>
+</p>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/jeffmolina.html">Jeff Molina</a>
+</p>
+<p>
+✅ Fighter added: 
+<a href="/fighters/elvesbrener.html">Elves Brenner</a>
+</p>
+<p>
+✅ Fighter added: 
+<a href="/fighters/danielmarcos.html">Daniel Marcos</a>
+</p>
+<p>
+✅ Fighter added: 
+<a href="/fighters/brunnoferreira.html">Brunno Ferreira</a>
+</p>
+<p>
+✅ Fighter added: 
+<a href="/fighters/ismaelbonfim.html">Ismael Bonfim</a>
+</p>
+<p>
+✅ Fighter added: 
+<a href="/fighters/gabrielbonfim.html">Gabriel Bonfim</a>
+</p>
+<h4>2023-01-16</h4>
+<p>
+✅ Fighter added: 
+<a href="/fighters/christianleroyduncan.html">Christian Duncan</a>
+</p>
+<h4>2023-01-15</h4>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/francisngannou.html">Francis Ngannou</a>
+</p>
+<h4>2023-01-10</h4>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/mikejackson.html">Mike Jackson</a>
+</p>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/leahletson.html">Leah Letson</a>
+</p>
+<p>
+✅ Fighter added: 
+<a href="/fighters/nickaguirre.html">Nick Aguirre</a>
+</p>
+<p>
+✅ Fighter added: 
+<a href="/fighters/claudioribeiro.html">Claudio Ribeiro</a>
+</p>
+<p>
+✅ Fighter added: 
+<a href="/fighters/mateuszrebecki.html">Mateusz Rebecki</a>
+</p>
+<p>
+✅ Fighter added: 
+<a href="/fighters/mateusmendonca.html">Mateus Mendonca</a>
+</p>
+<p>
+✅ Fighter added: 
+<a href="/fighters/jimmyflick.html">Jimmy Flick</a>
+</p>
+<h4>2023-01-09</h4>
+<p>
+✅ Fighter added: 
+<a href="/fighters/franciscoprado.html">Francisco Prado</a>
+</p>
+<p>
+✅ Fighter added: 
+<a href="/fighters/melquizaelcosta.html">Melquizael Costa</a>
+</p>
+<h4>2023-01-04</h4>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/franciscotrinaldo.html">Francisco Trinaldo</a>
+</p>
+<p>
+✅ Fighter added: 
+<a href="/fighters/sharamagomedov.html">Shara Magomedov</a>
+</p>
+<h4>2023-01-03</h4>
+<p>
+✅ Fighter added: 
+<a href="/fighters/nickfiore.html">Nick Fiore</a>
+</p>
+<h4>2022-12-22</h4>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/deronwinn.html">Deron Winn</a>
+</p>
+<h4>2022-12-14</h4>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/dalchalungiambula.html">Dalcha Lungiambula</a>
+</p>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/benitolopez.html">Benito Lopez</a>
+</p>
+<h4>2022-12-13</h4>
+<p>
+✅ Fighter added: 
+<a href="/fighters/kinggreen.html">Bobby Green</a>
+</p>
+<p>
+✅ Fighter added: 
+<a href="/fighters/alessandrocosta.html">Alessandro Costa</a>
+</p>
+<h4>2022-12-07</h4>
+<p>
+✅ Fighter added: 
+<a href="/fighters/luanlacerda.html">Luan Lacerda</a>
+</p>
+<h4>2022-12-06</h4>
+<p>
+✅ Fighter added: 
+<a href="/fighters/eriksilva.html">Erik Silva</a>
+</p>
+<p>
+✅ Fighter added: 
+<a href="/fighters/viniciussalvador.html">Vinicius Salvador</a>
+</p>
+<p>
+✅ Fighter added: 
+<a href="/fighters/cameronsaaiman.html">Cameron Saaiman</a>
+</p>
+<p>
+✅ Fighter added: 
+<a href="/fighters/raulrosasjr.html">Raul Rosas Jr.</a>
+</p>
+<h4>2022-12-05</h4>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/scottholtzman.html">Scott Holtzman</a>
+</p>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/tjdillashaw.html">TJ Dillashaw</a>
+</p>
+<h4>2022-12-02</h4>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/darrickminner.html">Darrick Minner</a>
+</p>
+<p>
+✅ Fighter added: 
+<a href="/fighters/yanalashmouz.html">Yanal Ashmoz</a>
+</p>
+<h4>2022-12-01</h4>
+<p>
+✅ Fighter added: 
+<a href="/fighters/stevenkoslow.html">Steven Koslow</a>
+</p>
+<h4>2022-11-29</h4>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/natediaz.html">Nate Diaz</a>
+</p>
+<p>
+✅ Fighter added: 
+<a href="/fighters/francismarshall.html">Francis Marshall</a>
+</p>
+<h4>2022-11-21</h4>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/ramonapascual.html">Ramona Pascual</a>
+</p>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/frankieedgar.html">Frankie Edgar</a>
+</p>
+<h4>2022-11-18</h4>
+<p>
+✅ Fighter added: 
+<a href="/fighters/gastonbolanos.html">Gaston Bolanos</a>
+</p>
+<h4>2022-11-15</h4>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/shannayoung.html">Shanna Young</a>
+</p>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/silvanagomezjuarez.html">Silvana Gomez Juarez</a>
+</p>
+<p>
+✅ Fighter added: 
+<a href="/fighters/terezableda.html">Tereza Bleda</a>
+</p>
+<p>
+✅ Fighter added: 
+<a href="/fighters/milesjohns.html">Miles Johns</a>
+</p>
+<h4>2022-11-08</h4>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/joannajedrzejczyk.html">Joanna Jedrzejczyk</a>
+</p>
+<p>
+✅ Fighter added: 
+<a href="/fighters/isaacdulgarian.html">Isaac Dulgarian</a>
+</p>
+<h4>2022-11-07</h4>
+<p>
+✅ Fighter added: 
+<a href="/fighters/gabriellafernandes.html">Gabriella Fernandes</a>
+</p>
+<h4>2022-11-04</h4>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/sergeykhandozhko.html">Sergey Khandozhko</a>
+</p>
+<h4>2022-11-01</h4>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/jasonwitt.html">Jason Witt</a>
+</p>
+<h4>2022-10-31</h4>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/darianweeks.html">Darian Weeks</a>
+</p>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/cameronvancamp.html">Cameron VanCamp</a>
+</p>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/jesseronson.html">Jesse Ronson</a>
+</p>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/charlieontiveros.html">Charlie Ontiveros</a>
+</p>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/magomedmustafaev.html">Magomed Mustafaev</a>
+</p>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/nickmaximov.html">Nick Maximov</a>
+</p>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/louiscosce.html">Louis Cosce</a>
+</p>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/mishacirkunov.html">Misha Cirkunov</a>
+</p>
+<h4>2022-10-30</h4>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/krzysztofjotko.html">Krzysztof Jotko</a>
+</p>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/askaraskarov.html">Askar Askarov</a>
+</p>
+<h4>2022-10-29</h4>
+<p>
+✅ Fighter added: 
+<a href="/fighters/carlosmota.html">Carlos Mota</a>
+</p>
+<h4>2022-10-27</h4>
+<p>
+✅ Fighter added: 
+<a href="/fighters/waldocortesacosta.html">Waldo Cortes-Acosta</a>
+</p>
+<h4>2022-10-20</h4>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/ilirlatifi.html">Ilir Latifi</a>
+</p>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/kinggreen.html">Bobby Green</a>
+</p>
+<h4>2022-10-19</h4>
+<p>
+❌ Fighter removed: 
+Yamato Nishikawa
+</p>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/randycosta.html">Randy Costa</a>
+</p>
+<h4>2022-10-11</h4>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/alekseioleinik.html">Aleksei Oleinik</a>
+</p>
+<h4>2022-10-10</h4>
+<p>
+✅ Fighter added: 
+<a href="/fighters/lucasalexander.html">Lucas Alexander</a>
+</p>
+<h4>2022-09-27</h4>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/saramcmann.html">Sara McMann</a>
+</p>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/aspenladd.html">Aspen Ladd</a>
+</p>
+<p>
+✅ Fighter added: 
+Yamato Nishikawa
+</p>
+<h4>2022-09-22</h4>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/elizeuzaleskidossantos.html">Elizeu Zaleski dos Santos</a>
+</p>
+<h4>2022-09-21</h4>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/saramcmann.html">Sara McMann</a>
+</p>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/alenamedovski.html">Alen Amedovski</a>
+</p>
+<p>
+✅ Fighter added: 
+<a href="/fighters/jaquelineamorim.html">Jaqueline Amorim</a>
+</p>
+<p>
+✅ Fighter added: 
+<a href="/fighters/saramcmann.html">Sara McMann</a>
+</p>
+<h4>2022-09-18</h4>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/josealdo.html">Jose Aldo</a>
+</p>
+<h4>2022-09-15</h4>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/masonjones.html">Mason Jones</a>
+</p>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/mickeygall.html">Mickey Gall</a>
+</p>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/hunterazure.html">Hunter Azure</a>
+</p>
+<p>
+✅ Fighter added: 
+<a href="/fighters/donshainis.html">Don Shainis</a>
+</p>
+<h4>2022-09-14</h4>
+<p>
+✅ Fighter added: 
+<a href="/fighters/denisegomes.html">Denise Gomes</a>
+</p>
+<p>
+✅ Fighter added: 
+<a href="/fighters/danielzellhuber.html">Daniel Zellhuber</a>
+</p>
+<p>
+✅ Fighter added: 
+<a href="/fighters/joepyfer.html">Joe Pyfer</a>
+</p>
+<h4>2022-09-13</h4>
+<p>
+❌ Fighter removed: 
+Slim Trabelsi
+</p>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/khalidtaha.html">Khalid Taha</a>
+</p>
+<h4>2022-09-12</h4>
+<p>
+✅ Fighter added: 
+Slim Trabelsi
+</p>
+<h4>2022-09-09</h4>
+<p>
+✅ Fighter added: 
+<a href="/fighters/irinaalekseeva.html">Irina Alekseeva</a>
+</p>
+<h4>2022-09-08</h4>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/thiagosantos.html">Thiago Santos</a>
+</p>
+<p>
+✅ Fighter added: 
+<a href="/fighters/antonturkalj.html">Anton Turkalj</a>
+</p>
+<h4>2022-09-06</h4>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/alessiodichirico.html">Alessio Di Chirico</a>
+</p>
+<p>
+✅ Fighter added: 
+<a href="/fighters/danyellewolf.html">Danyelle Wolf</a>
+</p>
+<p>
+✅ Fighter added: 
+<a href="/fighters/chadanheliger.html">Chad Anheliger</a>
+</p>
+<h4>2022-08-30</h4>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/yananwu.html">Wu Yanan</a>
+</p>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/claudiosilva.html">Claudio Silva</a>
+</p>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/harryhunsucker.html">Harry Hunsucker</a>
+</p>
+<p>
+✅ Fighter added: 
+<a href="/fighters/faresziam.html">Fares Ziam</a>
+</p>
+<p>
+✅ Fighter added: 
+<a href="/fighters/cristianquinonez.html">Cristian Quinonez</a>
+</p>
+<h4>2022-08-26</h4>
+<p>
+✅ Fighter added: 
+<a href="/fighters/williamgomis.html">William Gomis</a>
+</p>
+<p>
+✅ Fighter added: 
+<a href="/fighters/jarnoerrens.html">Jarno Errens</a>
+</p>
+<h4>2022-08-25</h4>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/franciscofigueiredo.html">Francisco Figueiredo</a>
+</p>
+<h4>2022-08-24</h4>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/youssefzalal.html">Youssef Zalal</a>
+</p>
+<h4>2022-08-23</h4>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/lukerockhold.html">Luke Rockhold</a>
+</p>
+<h4>2022-08-18</h4>
+<p>
+❌ Fighter removed: 
+Cedric Doumbe
+</p>
+<h4>2022-08-17</h4>
+<p>
+✅ Fighter added: 
+<a href="/fighters/thembagorimbo.html">Themba Gorimbo</a>
+</p>
+<p>
+✅ Fighter added: 
+<a href="/fighters/michalfiglak.html">Michal Figlak</a>
+</p>
+<h4>2022-08-16</h4>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/shaneburgos.html">Shane Burgos</a>
+</p>
+<p>
+✅ Fighter added: 
+<a href="/fighters/luciepudilova.html">Lucie Pudilova</a>
+</p>
+<p>
+✅ Fighter added: 
+<a href="/fighters/jayperrin.html">Jay Perrin</a>
+</p>
+<p>
+✅ Fighter added: 
+<a href="/fighters/gabrielmiranda.html">Gabriel Miranda</a>
+</p>
+<p>
+✅ Fighter added: 
+<a href="/fighters/angeloosa.html">Ange Loosa</a>
+</p>
+<h4>2022-08-15</h4>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/ninanunes.html">Nina Nunes</a>
+</p>
+<h4>2022-08-11</h4>
+<p>
+✅ Fighter added: 
+<a href="/fighters/tamiresvidal.html">Tamires Vidal</a>
+</p>
+<h4>2022-08-10</h4>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/uriahhall.html">Uriah Hall</a>
+</p>
+<h4>2022-08-09</h4>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/mirandagranger.html">Miranda Granger</a>
+</p>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/samalvey.html">Sam Alvey</a>
+</p>
+<p>
+✅ Fighter added: 
+<a href="/fighters/lukaszbrzeski.html">Lukasz Brzeski</a>
+</p>
+<h4>2022-08-08</h4>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/alanpatrick.html">Alan Patrick</a>
+</p>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/ramazanemeev.html">Ramazan Emeev</a>
+</p>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/dannychavez.html">Danny Chavez</a>
+</p>
+<h4>2022-08-05</h4>
+<p>
+✅ Fighter added: 
+<a href="/fighters/damonblackshear.html">Da'Mon Blackshear</a>
+</p>
+<h4>2022-08-02</h4>
+<p>
+✅ Fighter added: 
+<a href="/fighters/joshquinlan.html">Josh Quinlan</a>
+</p>
+<h4>2022-07-27</h4>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/shamilgamzatov.html">Shamil Gamzatov</a>
+</p>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/donaldcerrone.html">Donald Cerrone</a>
+</p>
+<p>
+✅ Fighter added: 
+Cedric Doumbe
+</p>
+<h4>2022-07-26</h4>
+<p>
+✅ Fighter added: 
+<a href="/fighters/ihorpotieria.html">Ihor Potieria</a>
+</p>
+<h4>2022-07-25</h4>
+<p>
+✅ Fighter added: 
+<a href="/fighters/adamfugitt.html">Adam Fugitt</a>
+</p>
+<h4>2022-07-21</h4>
+<p>
+✅ Fighter added: 
+<a href="/fighters/mohammedusman.html">Mohammed Usman</a>
+</p>
+<p>
+✅ Fighter added: 
+<a href="/fighters/taylorlapilus.html">Taylor Lapilus</a>
+</p>
+<h4>2022-07-20</h4>
+<p>
+✅ Fighter added: 
+<a href="/fighters/zacpauga.html">Zac Pauga</a>
+</p>
+<h4>2022-07-19</h4>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/dwightgrant.html">Dwight Grant</a>
+</p>
+<h4>2022-07-15</h4>
+<p>
+✅ Fighter added: 
+<a href="/fighters/iasminlucindo.html">Iasmin Lucindo</a>
+</p>
+<h4>2022-07-12</h4>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/karlroberson.html">Karl Roberson</a>
+</p>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/alanbaudot.html">Alan Baudot</a>
+</p>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/joannewood.html">Joanne Wood</a>
+</p>
+<h4>2022-07-09</h4>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/jessicaeye.html">Jessica Eye</a>
+</p>
+<h4>2022-07-07</h4>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/tonykelley.html">Tony Kelley</a>
+</p>
+<p>
+✅ Fighter added: 
+<a href="/fighters/rickyturcios.html">Ricky Turcios</a>
+</p>
+<h4>2022-07-06</h4>
+<p>
+✅ Fighter added: 
+<a href="/fighters/broganwalker.html">Brogan Walker</a>
+</p>
+<p>
+✅ Fighter added: 
+<a href="/fighters/julianamiller.html">Juliana Miller</a>
+</p>
+<p>
+✅ Fighter added: 
+<a href="/fighters/garrettarmfield.html">Garrett Armfield</a>
+</p>
+<h4>2022-06-29</h4>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/eddiewineland.html">Eddie Wineland</a>
+</p>
+<h4>2022-06-28</h4>
+<p>
+✅ Fighter added: 
+<a href="/fighters/hamdyabdelwahab.html">Hamdy Abdelwahab</a>
+</p>
+<h4>2022-06-23</h4>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/hannahcifers.html">Hannah Cifers</a>
+</p>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/rogeriobontorin.html">Rogerio Bontorin</a>
+</p>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/zarrukhadashev.html">Zarrukh Adashev</a>
+</p>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/gloriadepaula.html">Gloria de Paula</a>
+</p>
+<h4>2022-06-22</h4>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/timurvaliev.html">Timur Valiev</a>
+</p>
+<h4>2022-06-15</h4>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/askarmozharov.html">Askar Mozharov</a>
+</p>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/polianabotelho.html">Poliana Botelho</a>
+</p>
+<h4>2022-06-14</h4>
+<p>
+✅ Fighter added: 
+<a href="/fighters/jackdellamaddalena.html">Jack Della Maddalena</a>
+</p>
+<h4>2022-06-13</h4>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/chasskelly.html">Chas Skelly</a>
+</p>
+<h4>2022-06-09</h4>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/niklasstolze.html">Niklas Stolze</a>
+</p>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/tjlaramie.html">TJ Laramie</a>
+</p>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/tristanconnelly.html">Tristan Connelly</a>
+</p>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/felipecolares.html">Felipe Colares</a>
+</p>
+<h4>2022-06-07</h4>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/feliceherrig.html">Felice Herrig</a>
+</p>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/louissmolka.html">Louis Smolka</a>
+</p>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/andreasmichailidis.html">Andreas Michailidis</a>
+</p>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/alexdasilva.html">Alex Da Silva</a>
+</p>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/frankcamacho.html">Frank Camacho</a>
+</p>
+<p>
+✅ Fighter added: 
+<a href="/fighters/joannajedrzejczyk.html">Joanna Jedrzejczyk</a>
+</p>
+<p>
+✅ Fighter added: 
+<a href="/fighters/maheshate.html">Maheshate</a>
+</p>
+<h4>2022-06-04</h4>
+<p>
+✅ Fighter added: 
+<a href="/fighters/emilyducote.html">Emily Ducote</a>
+</p>
+<p>
+✅ Fighter added: 
+<a href="/fighters/chelseachandler.html">Chelsea Chandler</a>
+</p>
+<h4>2022-06-02</h4>
+<p>
+✅ Fighter added: 
+<a href="/fighters/melissamartinez.html">Melissa Martinez</a>
+</p>
+<h4>2022-06-01</h4>
+<p>
+✅ Fighter added: 
+<a href="/fighters/tainaralisboa.html">Tainara Lisboa</a>
+</p>
+<h4>2022-05-31</h4>
+<p>
+✅ Fighter added: 
+<a href="/fighters/ailinperez.html">Ailin Perez</a>
+</p>
+<p>
+✅ Fighter added: 
+<a href="/fighters/danargueta.html">Dan Argueta</a>
+</p>
+<p>
+✅ Fighter added: 
+<a href="/fighters/karinesilva.html">Karine Silva</a>
+</p>
+<p>
+✅ Fighter added: 
+<a href="/fighters/feliceherrig.html">Felice Herrig</a>
+</p>
+<p>
+✅ Fighter added: 
+<a href="/fighters/lucasalmeida.html">Lucas Almeida</a>
+</p>
+<h4>2022-05-26</h4>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/ashleeevanssmith.html">Ashlee Evans-Smith</a>
+</p>
+<h4>2022-05-15</h4>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/marlonmoraes.html">Marlon Moraes</a>
+</p>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/gregorgillespie.html">Gregor Gillespie</a>
+</p>
+<h4>2022-05-13</h4>
+<p>
+✅ Fighter added: 
+<a href="/fighters/yazminjauregui.html">Yazmin Jauregui</a>
+</p>
+<h4>2022-05-10</h4>
+<p>
+✅ Fighter added: 
+<a href="/fighters/manueltorres.html">Manuel Torres</a>
+</p>
+<p>
+✅ Fighter added: 
+<a href="/fighters/jakehadley.html">Jake Hadley</a>
+</p>
+<h4>2022-05-05</h4>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/ikevillanueva.html">Ike Villanueva</a>
+</p>
+<h4>2022-05-04</h4>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/faresziam.html">Fares Ziam</a>
+</p>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/luigivendramini.html">Luigi Vendramini</a>
+</p>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/rodrigovargas.html">Kazula Vargas</a>
+</p>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/markstriegl.html">Mark Striegl</a>
+</p>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/jessestrader.html">Jesse Strader</a>
+</p>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/brunosouza.html">Bruno Souza</a>
+</p>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/devontesmith.html">Devonte Smith</a>
+</p>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/rongzhu.html">Rong Zhu</a>
+</p>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/krismoutinho.html">Kris Moutinho</a>
+</p>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/brandonjenkins.html">Brandon Jenkins</a>
+</p>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/austinhubbard.html">Austin Hubbard</a>
+</p>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/mikegrundy.html">Mike Grundy</a>
+</p>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/michealgillmore.html">Micheal Gillmore</a>
+</p>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/cameronelse.html">Cameron Else</a>
+</p>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/kevincroom.html">Kevin Croom</a>
+</p>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/deanbarry.html">Dean Barry</a>
+</p>
+<h4>2022-05-03</h4>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/ginamazany.html">Gina Mazany</a>
+</p>
+<p>
+✅ Fighter added: 
+<a href="/fighters/cameronvancamp.html">Cameron VanCamp</a>
+</p>
+<p>
+✅ Fighter added: 
+<a href="/fighters/kleydsonrodrigues.html">Kleydson Rodrigues</a>
+</p>
+<p>
+✅ Fighter added: 
+<a href="/fighters/ferniegarcia.html">Fernie Garcia</a>
+</p>
+<h4>2022-04-26</h4>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/milesjohns.html">Miles Johns</a>
+</p>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/sabinamazo.html">Sabina Mazo</a>
+</p>
+<p>
+✅ Fighter added: 
+<a href="/fighters/ginamazany.html">Gina Mazany</a>
+</p>
+<p>
+✅ Fighter added: 
+<a href="/fighters/yohanlainesse.html">Yohan Lainesse</a>
+</p>
+<p>
+✅ Fighter added: 
+<a href="/fighters/carloscandelario.html">Carlos Candelario</a>
+</p>
+<h4>2022-04-22</h4>
+<p>
+✅ Fighter added: 
+<a href="/fighters/charlesjohnson.html">Charles Johnson</a>
+</p>
+<h4>2022-04-20</h4>
+<p>
+✅ Fighter added: 
+<a href="/fighters/chasesherman.html">Chase Sherman</a>
+</p>
+<p>
+✅ Fighter added: 
+<a href="/fighters/evanelder.html">Evan Elder</a>
+</p>
+<p>
+✅ Fighter added: 
+<a href="/fighters/louiscosce.html">Louis Cosce</a>
+</p>
+<p>
+✅ Fighter added: 
+<a href="/fighters/deanbarry.html">Dean Barry</a>
+</p>
+<h4>2022-04-13</h4>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/kayhansen.html">Kay Hansen</a>
+</p>
+<h4>2022-04-12</h4>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/chasesherman.html">Chase Sherman</a>
+</p>
+<p>
+✅ Fighter added: 
+<a href="/fighters/gadzhiomargadzhiev.html">Gadzhi Omargadzhiev</a>
+</p>
+<p>
+✅ Fighter added: 
+<a href="/fighters/martinbuday.html">Martin Buday</a>
+</p>
+<p>
+✅ Fighter added: 
+<a href="/fighters/caioborralho.html">Caio Borralho</a>
+</p>
+<h4>2022-04-11</h4>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/alexoliveira.html">Alex Oliveira</a>
+</p>
+<h4>2022-04-05</h4>
+<p>
+✅ Fighter added: 
+<a href="/fighters/pierarodriguez.html">Piera Rodriguez</a>
+</p>
+<p>
+✅ Fighter added: 
+<a href="/fighters/darianweeks.html">Darian Weeks</a>
+</p>
+<p>
+✅ Fighter added: 
+<a href="/fighters/mikemalott.html">Mike Malott</a>
+</p>
+<h4>2022-03-31</h4>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/benrothwell.html">Ben Rothwell</a>
+</p>
+<h4>2022-03-22</h4>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/cameronvancamp.html">Cameron VanCamp</a>
+</p>
+<h4>2022-03-17</h4>
+<p>
+✅ Fighter added: 
+<a href="/fighters/sabinamazo.html">Sabina Mazo</a>
+</p>
+<h4>2022-03-16</h4>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/sabinamazo.html">Sabina Mazo</a>
+</p>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/greghardy.html">Greg Hardy</a>
+</p>
+<h4>2022-03-15</h4>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/jaredgooden.html">Jared Gooden</a>
+</p>
+<h4>2022-03-14</h4>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/daviramos.html">Davi Ramos</a>
+</p>
+<h4>2022-03-13</h4>
+<p>
+✅ Fighter added: 
+<a href="/fighters/denistiuliulin.html">Denis Tiuliulin</a>
+</p>
+<h4>2022-03-08</h4>
+<p>
+✅ Fighter added: 
+<a href="/fighters/azamatmurzakanov.html">Azamat Murzakanov</a>
+</p>
+<p>
+✅ Fighter added: 
+<a href="/fighters/ajfletcher.html">AJ Fletcher</a>
+</p>
+<p>
+✅ Fighter added: 
+<a href="/fighters/codybrundage.html">Cody Brundage</a>
+</p>
+<p>
+✅ Fighter added: 
+<a href="/fighters/javidbasharat.html">Javid Basharat</a>
+</p>
+<h4>2022-03-03</h4>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/irwinrivera.html">Irwin Rivera</a>
+</p>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/teemupackalen.html">Teemu Packalen</a>
+</p>
+<h4>2022-02-25</h4>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/fabiocherant.html">Fabio Cherant</a>
+</p>
+<h4>2022-02-23</h4>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/alexisdavis.html">Alexis Davis</a>
+</p>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/danilomarques.html">Danilo Marques</a>
+</p>
+<h4>2022-02-22</h4>
+<p>
+✅ Fighter added: 
+<a href="/fighters/armenpetrosyan.html">Armen Petrosyan</a>
+</p>
+<p>
+✅ Fighter added: 
+<a href="/fighters/carloshernandez.html">Carlos Hernandez</a>
+</p>
+<p>
+✅ Fighter added: 
+<a href="/fighters/victoraltamirano.html">Victor Altamirano</a>
+</p>
+<h4>2022-02-21</h4>
+<p>
+✅ Fighter added: 
+<a href="/fighters/ramonapascual.html">Ramona Pascual</a>
+</p>
+<h4>2022-02-17</h4>
+<p>
+❌ Fighter removed: 
+Jennifer Gonzalez
+</p>
+<h4>2022-02-16</h4>
+<p>
+✅ Fighter added: 
+<a href="/fighters/joshfremd.html">Josh Fremd</a>
+</p>
+<h4>2022-02-14</h4>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/roxannemodafferi.html">Roxanne Modafferi</a>
+</p>
+<h4>2022-02-10</h4>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/davidzawada.html">David Zawada</a>
+</p>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/dhiegolima.html">Dhiego Lima</a>
+</p>
+<h4>2022-02-09</h4>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/jordanwilliams.html">Jordan Williams</a>
+</p>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/seansoriano.html">Sean Soriano</a>
+</p>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/gaetanopirrello.html">Gaetano Pirrello</a>
+</p>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/domingopilarte.html">Domingo Pilarte</a>
+</p>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/sashapalatnikov.html">Sasha Palatnikov</a>
+</p>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/yaozonghu.html">Hu Yaozong</a>
+</p>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/andreewell.html">Andre Ewell</a>
+</p>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/dakotabush.html">Dakota Bush</a>
+</p>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/collinanglin.html">Collin Anglin</a>
+</p>
+<h4>2022-02-08</h4>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/mallorymartin.html">Mallory Martin</a>
+</p>
+<p>
+✅ Fighter added: 
+<a href="/fighters/ajdobson.html">AJ Dobson</a>
+</p>
+<h4>2022-02-07</h4>
+<p>
+✅ Fighter added: 
+<a href="/fighters/tatsurotaira.html">Tatsuro Taira</a>
+</p>
+<p>
+✅ Fighter added: 
+<a href="/fighters/treyogden.html">Trey Ogden</a>
+</p>
+<h4>2022-02-04</h4>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/gustavolopez.html">Gustavo Lopez</a>
+</p>
+<h4>2022-02-02</h4>
+<p>
+✅ Fighter added: 
+<a href="/fighters/chidinjokuani.html">Chidi Njokuani</a>
+</p>
+<p>
+✅ Fighter added: 
+<a href="/fighters/jailtonalmeida.html">Jailton Almeida</a>
+</p>
+<h4>2022-01-27</h4>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/jeremystephens.html">Jeremy Stephens</a>
+</p>
+<h4>2022-01-25</h4>
+<p>
+✅ Fighter added: 
+Jennifer Gonzalez
+</p>
+<h4>2022-01-18</h4>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/carlosfelipe.html">Carlos Felipe</a>
+</p>
+<p>
+✅ Fighter added: 
+<a href="/fighters/jasminejasudavicius.html">Jasmine Jasudavicius</a>
+</p>
+<p>
+✅ Fighter added: 
+<a href="/fighters/genarovaldez.html">Genaro Valdez</a>
+</p>
+<p>
+✅ Fighter added: 
+<a href="/fighters/saimonoliveira.html">Saimon Oliveira</a>
+</p>
+<p>
+✅ Fighter added: 
+<a href="/fighters/michaelmorales.html">Michael Morales</a>
+</p>
+<h4>2022-01-17</h4>
+<p>
+✅ Fighter added: 
+<a href="/fighters/peterodriguez.html">Pete Rodriguez</a>
+</p>
+<p>
+✅ Fighter added: 
+<a href="/fighters/josephholmes.html">Joseph Holmes</a>
+</p>
+<h4>2022-01-13</h4>
+<p>
+✅ Fighter added: 
+<a href="/fighters/andrefialho.html">Andre Fialho</a>
+</p>
+<h4>2022-01-11</h4>
+<p>
+✅ Fighter added: 
+<a href="/fighters/silvanagomezjuarez.html">Silvana Gomez Juarez</a>
+</p>
+<p>
+✅ Fighter added: 
+<a href="/fighters/joandersonbrito.html">Joanderson Brito</a>
+</p>
+<p>
+✅ Fighter added: 
+<a href="/fighters/viacheslavborshchev.html">Viacheslav Borshchev</a>
+</p>
+<h4>2022-01-06</h4>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/mattsayles.html">Matt Sayles</a>
+</p>
+<h4>2021-12-17</h4>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/claudiagadelha.html">Claudia Gadelha</a>
+</p>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/makipitolo.html">Maki Pitolo</a>
+</p>
+<h4>2021-12-16</h4>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/guanwang.html">Wang Guan</a>
+</p>
+<h4>2021-12-14</h4>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/stefansekulic.html">Stefan Sekulic</a>
+</p>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/michelprazeres.html">Michel Prazeres</a>
+</p>
+<p>
+✅ Fighter added: 
+<a href="/fighters/harryhunsucker.html">Harry Hunsucker</a>
+</p>
+<h4>2021-12-10</h4>
+<p>
+✅ Fighter added: 
+<a href="/fighters/victorhenry.html">Victor Henry</a>
+</p>
+<h4>2021-12-02</h4>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/impakasanganay.html">Impa Kasanganay</a>
+</p>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/feliciaspencer.html">Felicia Spencer</a>
+</p>
+<h4>2021-11-30</h4>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/mikeperry.html">Mike Perry</a>
+</p>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/livinhasouza.html">Livinha Souza</a>
+</p>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/khamaworthy.html">Khama Worthy</a>
+</p>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/gianvillante.html">Gian Villante</a>
+</p>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/johnallan.html">John Allan</a>
+</p>
+<h4>2021-11-29</h4>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/germainederandamie.html">Germaine de Randamie</a>
+</p>
+<h4>2021-11-23</h4>
+<p>
+✅ Fighter added: 
+<a href="/fighters/muhammadmokaev.html">Muhammad Mokaev</a>
+</p>
+<h4>2021-11-21</h4>
+<p>
+✅ Fighter added: 
+<a href="/fighters/terrancemckinney.html">Terrance McKinney</a>
+</p>
+<p>
+✅ Fighter added: 
+<a href="/fighters/tuckerlutz.html">Tucker Lutz</a>
+</p>
+<p>
+✅ Fighter added: 
+<a href="/fighters/natanlevy.html">Natan Levy</a>
+</p>
+<h4>2021-11-16</h4>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/lianajojua.html">Liana Jojua</a>
+</p>
+<h4>2021-11-10</h4>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/randamarkos.html">Randa Markos</a>
+</p>
+<h4>2021-11-08</h4>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/feliceherrig.html">Felice Herrig</a>
+</p>
+<h4>2021-11-02</h4>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/laureanostaropoli.html">Laureano Staropoli</a>
+</p>
+<p>
+✅ Fighter added: 
+<a href="/fighters/alexpereira.html">Alex Pereira</a>
+</p>
+<p>
+✅ Fighter added: 
+<a href="/fighters/aliaquinta.html">Al Iaquinta</a>
+</p>
+<p>
+✅ Fighter added: 
+<a href="/fighters/chriscurtis.html">Chris Curtis</a>
+</p>
+<h4>2021-11-01</h4>
+<p>
+✅ Fighter added: 
+<a href="/fighters/cjvergara.html">CJ Vergara</a>
+</p>
+<p>
+✅ Fighter added: 
+<a href="/fighters/brunosouza.html">Bruno Souza</a>
+</p>
+<p>
+✅ Fighter added: 
+<a href="/fighters/allannascimento.html">Allan Nascimento</a>
+</p>
+<p>
+✅ Fighter added: 
+<a href="/fighters/albertduraev.html">Albert Duraev</a>
+</p>
+<p>
+✅ Fighter added: 
+<a href="/fighters/johnallan.html">John Allan</a>
+</p>
+<h4>2021-10-27</h4>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/andrewsanchez.html">Andrew Sanchez</a>
+</p>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/kevinlee.html">Kevin Lee</a>
+</p>
+<p>
+✅ Fighter added: 
+Mike Diamond
+</p>
+<h4>2021-10-25</h4>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/joannajedrzejczyk.html">Joanna Jedrzejczyk</a>
+</p>
+<p>
+✅ Fighter added: 
+<a href="/fighters/mariaoliveira.html">Maria Oliveira</a>
+</p>
+<h4>2021-10-20</h4>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/modestasbukauskas.html">Modestas Bukauskas</a>
+</p>
+<p>
+✅ Fighter added: 
+<a href="/fighters/davidonama.html">David Onama</a>
+</p>
+<h4>2021-10-13</h4>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/luispena.html">Luis Pena</a>
+</p>
+<p>
+✅ Fighter added: 
+<a href="/fighters/brandondavis.html">Brandon Davis</a>
+</p>
+<h4>2021-10-07</h4>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/johnnyeduardo.html">Johnny Eduardo</a>
+</p>
+<p>
+✅ Fighter added: 
+<a href="/fighters/erickgonzalez.html">Erick Gonzalez</a>
+</p>
+<h4>2021-10-06</h4>
+<p>
+✅ Fighter added: 
+<a href="/fighters/jamiepickett.html">Jamie Pickett</a>
+</p>
+<p>
+✅ Fighter added: 
+<a href="/fighters/charlieontiveros.html">Charlie Ontiveros</a>
+</p>
+<h4>2021-10-05</h4>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/rinatfakhretdinov.html">Rinat Fakhretdinov</a>
+</p>
+<p>
+✅ Fighter added: 
+<a href="/fighters/rinatfakhretdinov.html">Rinat Fakhretdinov</a>
+</p>
+<h4>2021-10-04</h4>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/bethecorreia.html">Bethe Correia</a>
+</p>
+<p>
+✅ Fighter added: 
+<a href="/fighters/benoitsaintdenis.html">Benoit Saint-Denis</a>
+</p>
+<h4>2021-10-01</h4>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/sarahalpar.html">Sarah Alpar</a>
+</p>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/mikerodriguez.html">Mike Rodriguez</a>
+</p>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/antonioarroyo.html">Antonio Arroyo</a>
+</p>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/thomasalmeida.html">Thomas Almeida</a>
+</p>
+<p>
+✅ Fighter added: 
+<a href="/fighters/mikebreeden.html">Mike Breeden</a>
+</p>
+<h4>2021-09-23</h4>
+<p>
+✅ Fighter added: 
+<a href="/fighters/nickmaximov.html">Nick Maximov</a>
+</p>
+<p>
+✅ Fighter added: 
+<a href="/fighters/nickdiaz.html">Nick Diaz</a>
+</p>
+<h4>2021-09-22</h4>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/emilywhitmire.html">Emily Whitmire</a>
+</p>
+<h4>2021-09-16</h4>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/jameysimmons.html">Jamey Simmons</a>
+</p>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/drakorodriguez.html">Drako Rodriguez</a>
+</p>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/rooseveltroberts.html">Roosevelt Roberts</a>
+</p>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/andersondossantos.html">Anderson Dos Santos</a>
+</p>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/carloscondit.html">Carlos Condit</a>
+</p>
+<h4>2021-09-15</h4>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/josephbenavidez.html">Joseph Benavidez</a>
+</p>
+<p>
+✅ Fighter added: 
+<a href="/fighters/brandonjenkins.html">Brandon Jenkins</a>
+</p>
+<p>
+✅ Fighter added: 
+<a href="/fighters/raquelpennington.html">Raquel Pennington</a>
+</p>
+<p>
+✅ Fighter added: 
+<a href="/fighters/nikolasmotta.html">Nikolas Motta</a>
+</p>
+<h4>2021-09-12</h4>
+<p>
+✅ Fighter added: 
+<a href="/fighters/cameronvancamp.html">Cameron VanCamp</a>
+</p>
+<h4>2021-09-02</h4>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/antoniobraganeto.html">Antonio Braga Neto</a>
+</p>
+<p>
+✅ Fighter added: 
+<a href="/fighters/treseangore.html">Tresean Gore</a>
+</p>
+<h4>2021-08-31</h4>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/liliyashakirova.html">Liliya Shakirova</a>
+</p>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/cmpunk.html">CM Punk</a>
+</p>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/darrenstewart.html">Darren Stewart</a>
+</p>
+<h4>2021-08-26</h4>
+<p>
+✅ Fighter added: 
+<a href="/fighters/liudviksholinian.html">Liudvik Sholinian</a>
+</p>
+<p>
+✅ Fighter added: 
+<a href="/fighters/danielsantos.html">Daniel Santos</a>
+</p>
+<h4>2021-08-25</h4>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/zviadlazishvili.html">Zviad Lazishvili</a>
+</p>
+<h4>2021-08-24</h4>
+<p>
+✅ Fighter added: 
+<a href="/fighters/vanessademopoulos.html">Vanessa Demopoulos</a>
+</p>
+<h4>2021-08-23</h4>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/christianaguilera.html">Christian Aguilera</a>
+</p>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/jimmierivera.html">Jimmie Rivera</a>
+</p>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/demianmaia.html">Demian Maia</a>
+</p>
+<h4>2021-08-20</h4>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/ryanbenoit.html">Ryan Benoit</a>
+</p>
+<h4>2021-08-19</h4>
+<p>
+✅ Fighter added: 
+<a href="/fighters/zviadlazishvili.html">Zviad Lazishvili</a>
+</p>
+<p>
+✅ Fighter added: 
+<a href="/fighters/bryanbattle.html">Bryan Battle</a>
+</p>
+<h4>2021-08-18</h4>
+<p>
+❌ Fighter removed: 
+<a href="/fighters/jeromerivera.html">Jerome Rivera</a>
+</p>
+<p>
+✅ Fighter added: 
+<a href="/fighters/gilberturbina.html">Gilbert Urbina</a>
+</p>
+<p>
+✅ Fighter added: 
+<a href="/fighters/andrepetroski.html">Andre Petroski</a>
+</p>
+<p>
+✅ Fighter added: 
+<a href="/fighters/saidyokubkakhramonov.html">Saidyokub Kakhramonov</a>
+</p>
+<p>
+✅ Fighter added: 
+<a href="/fighters/michealgillmore.html">Micheal Gillmore</a>
+</p>
+<p>Updated: 2025-12-16 17:03:18 PST</p>
+
+<footer>
+  <div class="footer-container">
+    <p class="copyright-text">
+        <a href="/glossary.html">Glossary</a>
+      <a href="mailto:rostertracker@gmail.com">Contact</a>
+    </p>
+<!--     <p class="browser-badge">
+      <a href="https://www.mozilla.org/en-US/firefox/">
+        <img src="firefox.png" title="Best viewed with Firefox" alt="Best viewed with Firefox"><br>
+        <small class="copyright-text">Best viewed with Firefox</small>
+      </a>
+    </p> 
+ -->  </div>
+ <div class="footer-container">
+    <p class="copyright-text">
+      Copyright © <span id="currentYear"></span> All Rights Reserved by 
+      <a href="#">roster.watch</a>
+    </p>
+<!--     <p class="browser-badge">
+      <a href="https://www.mozilla.org/en-US/firefox/">
+        <img src="firefox.png" title="Best viewed with Firefox" alt="Best viewed with Firefox"><br>
+        <small class="copyright-text">Best viewed with Firefox</small>
+      </a>
+    </p> 
+ -->  </div>
+</footer>
+
+<style>
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+}
+
+.copyright-text {
+  margin: 0 auto;
+}
+
+.browser-badge {
+  margin-left: auto;
+}
+</style>
+
+<script>
+  document.getElementById('currentYear').textContent = new Date().getFullYear();
+</script>
+
+
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.odd').parent('tbody').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- tabsets -->
+
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open');
+  });
+});
+</script>
+
+<!-- code folding -->
+
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_1" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 240 240">
+  <!-- Generator: Adobe Illustrator 29.6.1, SVG Export Plug-In . SVG Version: 2.1.1 Build 9)  -->
+  <defs>
+    <style>
+      .st0 {
+        fill: none;
+        stroke: #fff;
+        stroke-miterlimit: 10;
+        stroke-width: 10px;
+      }
+    </style>
+  </defs>
+  <polygon class="st0" points="140.71 70 99.29 70 70 99.29 70 140.71 99.29 170 140.71 170 170 140.71 170 99.29 140.71 70"/>
+  <polygon class="st0" points="153.14 40 86.86 40 40 86.86 40 153.14 86.86 200 153.14 200 200 153.14 200 86.86 153.14 40"/>
+  <polygon class="st0" points="161.42 20 78.58 20 20 78.58 20 161.42 78.58 220 161.42 220 220 161.42 220 78.58 161.42 20"/>
+  <line class="st0" x1="40" y1="153.14" x2="70" y2="140.71"/>
+  <line class="st0" x1="40" y1="86.86" x2="70" y2="99.29"/>
+  <line class="st0" x1="86.86" y1="40" x2="99.29" y2="70"/>
+  <line class="st0" x1="153.14" y1="40" x2="140.71" y2="70"/>
+  <line class="st0" x1="200" y1="86.86" x2="170" y2="99.29"/>
+  <line class="st0" x1="200" y1="153.14" x2="170" y2="140.71"/>
+  <line class="st0" x1="153.14" y1="200" x2="140.71" y2="170"/>
+  <line class="st0" x1="86.86" y1="200" x2="99.29" y2="170"/>
+</svg>

@@ -1,0 +1,2951 @@
+<!DOCTYPE html>
+
+<html lang="en" xml:lang="en">
+
+<head>
+
+<meta charset="utf-8" />
+<meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+
+
+
+
+<title>UFC Roster Watch Fight Adds &amp; Removals · roster.watch</title>
+
+<script src="site_libs/header-attrs-2.30/header-attrs.js"></script>
+<script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="site_libs/bootstrap-3.3.5/css/bootstrap.min.css" rel="stylesheet" />
+<script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<style>h1 {font-size: 34px;}
+       h1.title {font-size: 38px;}
+       h2 {font-size: 30px;}
+       h3 {font-size: 24px;}
+       h4 {font-size: 18px;}
+       h5 {font-size: 16px;}
+       h6 {font-size: 12px;}
+       code {color: inherit; background-color: rgba(0, 0, 0, 0.04);}
+       pre:not([class]) { background-color: white }</style>
+<script src="site_libs/navigation-1.1/tabsets.js"></script>
+<link href="site_libs/highlightjs-9.12.0/default.css" rel="stylesheet" />
+<script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/site.webmanifest">
+<meta name="description" content="An up-to-date list of the full active UFC roster including biographical data, rankings, records, and more.">
+<!-- <meta property="og:title" content="roster.watch" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://www.roster.watch/" />
+<meta property="og:image" content="https://www.roster.watch/og_image.png" />
+<meta property="og:description" content="An up-to-date list of the full active UFC roster including biographical data, rankings, record, and more." />
+<script src="https://unpkg.com/twemoji@latest/dist/twemoji.min.js" crossorigin="anonymous"></script> 
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7299518767310567"
+     crossorigin="anonymous"></script> -->
+<script data-goatcounter="https://rosterwatch.goatcounter.com/count"
+        async src="//gc.zgo.at/count.js"></script>
+<script defer src="/script.js" data-website-id="f0f3ed7e-e89c-4a29-a745-475e0b10271a"></script>
+<!-- <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7299518767310567"
+     crossorigin="anonymous"></script> -->
+
+<style type="text/css">
+  code{white-space: pre-wrap;}
+  span.smallcaps{font-variant: small-caps;}
+  span.underline{text-decoration: underline;}
+  div.column{display: inline-block; vertical-align: top; width: 50%;}
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  ul.task-list{list-style: none;}
+    </style>
+
+<style type="text/css">code{white-space: pre;}</style>
+<script type="text/javascript">
+if (window.hljs) {
+  hljs.configure({languages: []});
+  hljs.initHighlightingOnLoad();
+  if (document.readyState && document.readyState === "complete") {
+    window.setTimeout(function() { hljs.initHighlighting(); }, 0);
+  }
+}
+</script>
+
+
+
+
+
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+
+
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+img {
+  max-width:100%;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+.html-widget {
+  margin-bottom: 20px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+summary {
+  display: list-item;
+}
+details > summary > p:only-child {
+  display: inline;
+}
+pre code {
+  padding: 0;
+}
+</style>
+
+
+<style type="text/css">
+.dropdown-submenu {
+  position: relative;
+}
+.dropdown-submenu>.dropdown-menu {
+  top: 0;
+  left: 100%;
+  margin-top: -6px;
+  margin-left: -1px;
+  border-radius: 0 6px 6px 6px;
+}
+.dropdown-submenu:hover>.dropdown-menu {
+  display: block;
+}
+.dropdown-submenu>a:after {
+  display: block;
+  content: " ";
+  float: right;
+  width: 0;
+  height: 0;
+  border-color: transparent;
+  border-style: solid;
+  border-width: 5px 0 5px 5px;
+  border-left-color: #cccccc;
+  margin-top: 5px;
+  margin-right: -10px;
+}
+.dropdown-submenu:hover>a:after {
+  border-left-color: #adb5bd;
+}
+.dropdown-submenu.pull-left {
+  float: none;
+}
+.dropdown-submenu.pull-left>.dropdown-menu {
+  left: -100%;
+  margin-left: 10px;
+  border-radius: 6px 0 6px 6px;
+}
+</style>
+
+<script type="text/javascript">
+// manage active state of menu based on current page
+$(document).ready(function () {
+  // active menu anchor
+  href = window.location.pathname
+  href = href.substr(href.lastIndexOf('/') + 1)
+  if (href === "")
+    href = "index.html";
+  var menuAnchor = $('a[href="' + href + '"]');
+
+  // mark the anchor link active (and if it's in a dropdown, also mark that active)
+  var dropdown = menuAnchor.closest('li.dropdown');
+  if (window.bootstrap) { // Bootstrap 4+
+    menuAnchor.addClass('active');
+    dropdown.find('> .dropdown-toggle').addClass('active');
+  } else { // Bootstrap 3
+    menuAnchor.parent().addClass('active');
+    dropdown.addClass('active');
+  }
+
+  // Navbar adjustments
+  var navHeight = $(".navbar").first().height() + 15;
+  var style = document.createElement('style');
+  var pt = "padding-top: " + navHeight + "px; ";
+  var mt = "margin-top: -" + navHeight + "px; ";
+  var css = "";
+  // offset scroll position for anchor links (for fixed navbar)
+  for (var i = 1; i <= 6; i++) {
+    css += ".section h" + i + "{ " + pt + mt + "}\n";
+  }
+  style.innerHTML = "body {" + pt + "padding-bottom: 40px; }\n" + css;
+  document.head.appendChild(style);
+});
+</script>
+
+<!-- tabsets -->
+
+<style type="text/css">
+.tabset-dropdown > .nav-tabs {
+  display: inline-table;
+  max-height: 500px;
+  min-height: 44px;
+  overflow-y: auto;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs > li.active:before, .tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "\e259";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
+  content: "\e258";
+  font-family: 'Glyphicons Halflings';
+  border: none;
+}
+
+.tabset-dropdown > .nav-tabs > li.active {
+  display: block;
+}
+
+.tabset-dropdown > .nav-tabs > li > a,
+.tabset-dropdown > .nav-tabs > li > a:focus,
+.tabset-dropdown > .nav-tabs > li > a:hover {
+  border: none;
+  display: inline-block;
+  border-radius: 4px;
+  background-color: transparent;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li {
+  display: block;
+  float: none;
+}
+
+.tabset-dropdown > .nav-tabs > li {
+  display: none;
+}
+</style>
+
+<!-- code folding -->
+
+
+
+
+</head>
+
+<body>
+
+
+<div class="container-fluid main-container">
+
+
+
+<header>
+    <a class="logo" href="/"><img src="/images/logo.svg" alt="logo"></a>
+    <nav>
+        <ul class="nav__links">
+            <li><a href="/">Current Roster</a></li>
+            <li><a href="/former.html">Former Roster</a></li>
+            <li class="dropdown">
+                <a href="#" onclick="return false;">Weight Classes</a>
+<ul class="dropdown-content">
+                    <li><a href="/heavyweight.html">Heavyweight</a></li>
+                    <li><a href="/lightheavyweight.html">Light Heavyweight</a></li>
+                    <li><a href="/middleweight.html">Middleweight</a></li>
+                    <li><a href="/welterweight.html">Welterweight</a></li>
+                    <li><a href="/lightweight.html">Lightweight</a></li>
+                    <li><a href="/featherweight.html">Featherweight</a></li>
+                    <li><a href="/bantamweight.html">Bantamweight</a></li>
+                    <li><a href="/flyweight.html">Flyweight</a></li>
+                    <li><a href="/womensbantamweight.html">Women's Bantamweight</a></li>
+                    <li><a href="/womensflyweight.html">Women's Flyweight</a></li>
+                    <li><a href="/womensstrawweight.html">Women's Strawweight</a></li>
+                </ul>
+            </li>
+            <li><a href="/events">Events</a></li>
+            <li><a href="/log.html">Log</a></li>
+            <li><a href="/fightlog.html">Fight Log</a></li>
+            <li><a href="javascript:void(0)" onclick="getRandomPage()">Random Page</a></li>
+            <li><a href="https://rosterwatch.printify.me/">Merch</a></li>
+            <li><a href="https://www.patreon.com/bePatron?u=88266864">Support on Patreon</a></li>
+        </ul>
+    </nav>
+    <div class="menu cta">Menu</div>
+</header>
+
+<div class="overlay">
+    <a class="close">×</a>
+    <div class="overlay__content">
+        <a href="/">Current Roster</a>
+        <a href="/former.html">Former Roster</a>
+        <div class="dropdown-mobile">
+            <a href="#" onclick="return false;">Weight Classes</a>
+<div class="dropdown-content-mobile">
+                <a href="/heavyweight.html">Heavyweight</a>
+                <a href="/lightheavyweight.html">Light Heavyweight</a>
+                <a href="/middleweight.html">Middleweight</a>
+                <a href="/welterweight.html">Welterweight</a>
+                <a href="/lightweight.html">Lightweight</a>
+                <a href="/featherweight.html">Featherweight</a>
+                <a href="/bantamweight.html">Bantamweight</a>
+                <a href="/flyweight.html">Flyweight</a>
+                <a href="/womensbantamweight.html">Women's Bantamweight</a>
+                <a href="/womensflyweight.html">Women's Flyweight</a>
+                <a href="/womensstrawweight.html">Women's Strawweight</a>
+            </div>
+        </div>
+        <a href="/events">Events</a>
+        <a href="/log.html">Log</a>
+        <a href="/fightlog.html">Fight Log</a>
+        <a href="javascript:void(0)" onclick="getRandomPage()">Random Page</a>
+        <a href="https://rosterwatch.printify.me/">Merch</a>
+        <a href="https://www.patreon.com/bePatron?u=88266864">Support on Patreon</a>
+    </div>
+</div>
+<script type="text/javascript" src="/mobile.js"></script>
+    <script>
+      function getRandomPage() {
+        fetch('/sitemap.xml')
+          .then(response => response.text())
+          .then(xmlText => {
+            const parser = new DOMParser();
+            const xmlDoc = parser.parseFromString(xmlText, 'application/xml');
+            const urls = Array.from(xmlDoc.getElementsByTagName('loc')).map(loc => loc.textContent);
+            const randomPage = urls[Math.floor(Math.random() * urls.length)];
+            window.location.href = randomPage;
+          });
+      }
+    </script>
+<div class="patreon-box"
+  <p>✨ Appreciate the content? Support us on Patreon!</p>
+  <a href="https://www.patreon.com/bePatron?u=88266864" class="cta-button">Become a Patron</a>
+</div>
+
+<!--<div class="patreon-box"
+  <p><strong>The new <span style = "color:#05f">firewall</span> for the <span style = "color:#05f">modern Internet</span>.</strong></p>
+  <p>NextDNS protects you from all kinds of <strong>security threats</strong>, blocks <strong>ads and trackers on websites and in apps</strong> and provides a <strong>safe and supervised Internet for kids</strong> — on <strong>all devices</strong> and on <strong>all networks</strong>.</p>
+  <a href="https://nextdns.io/?from=c4nybned" class="cta-button">Try it now!</a>
+</div>
+
+<script>
+fetch('https://ipinfo.io/json?token=59a347f61d88b8')
+  .then(res => res.json())
+  .then(data => {
+    console.log('Your country code:', data.country);
+    const allowedCountries = ['CY', 'FI', 'LV', 'PL', 'RS', 'LT', 'SI', 'IL', 'TR', 'IT', 'ES', 'BE', 'GR', 'GE', 'EE', 'GB', 'CZ', 'FR', 'BA', 'PT', 'DE', 'ME', 'SE', 'IS'];
+    if (allowedCountries.includes(data.country)) {
+          document.querySelector('.eurobasket-ad').style.display = 'block';
+          document.querySelector('.patreon-box').style.display = 'none';
+
+    } else {
+          document.querySelector('.patreon-box').style.display = 'block';
+    }
+  })
+  .catch(err => console.log('Geolocation failed', err));
+</script>
+
+<div class="patreon-box">
+<a href="https://rosterwatch.printify.me/">
+  <img src="/images/merch.png"></a>
+</div>
+
+<div class="eurobasket-ad" style="display:none;">
+Hey, you! Do you like basketball as well as MMA? Well, then, here's something for you - come and join our <b>EuroBasket 2025</b> prediction game at <a href="https://www.playmaker.ee">www.playmaker.ee.</a> Invite your friends too. It will be great.
+</div>
+<div class="patreon-box">
+<p>📢 Click <a href='https://www.roster.watch/log.html'>HERE</a> to sign up for e-mail notifications on UFC roster updates.</p>
+</div>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7299518767310567"
+     crossorigin="anonymous"></script>
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-7299518767310567"
+     data-ad-slot="4004899314"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+-->
+
+<div id="header">
+
+
+
+<h1 class="title toc-ignore">UFC Roster Watch Fight Adds &amp; Removals
+· roster.watch</h1>
+
+</div>
+
+
+<!-- <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSf9tb6tcUwdlkBga3JyvDW99GElBP0kCZRyZXJfZSvFM9uvEQ/viewform?embedded=true" width="640" height="410" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe> -->
+<style type="text/css">
+@media (max-width: 768px) {
+
+  .status-text {
+    display: none;
+
+}
+</style>
+<h4>2025-12-15</h4>
+<p class="fight-entry">
+❌ 
+<span class="status-text">Fight removed: </span>
+<a href="/fighters/sergheispivac.html">Serghei Spivac</a>
+ vs. 
+<a href="/fighters/antedelija.html">Ante Delija</a>
+ 
+<span style="color: #666; font-size: 0.9em;">(<a href="/events/20260201.html" style="color: #666;">2026-02-01</a>)</span>
+</p>
+<p class="fight-entry">
+✅ 
+<span class="status-text">Fight added: </span>
+<a href="/fighters/sergheispivac.html">Serghei Spivac</a>
+ vs. 
+<a href="/fighters/antedelija.html">Ante Delija</a>
+ 
+<span style="color: #666; font-size: 0.9em;">(<a href="/events/20260221.html" style="color: #666;">2026-02-21</a>)</span>
+</p>
+<h4>2025-12-14</h4>
+<p class="fight-entry">
+✅ 
+<span class="status-text">Fight added: </span>
+<a href="/fighters/macychiasson.html">Macy Chiasson</a>
+ vs. 
+<a href="/fighters/ailinperez.html">Ailin Perez</a>
+ 
+<span style="color: #666; font-size: 0.9em;">(<a href="/events/20260228.html" style="color: #666;">2026-02-28</a>)</span>
+</p>
+<p class="fight-entry">
+✅ 
+<span class="status-text">Fight added: </span>
+<a href="/fighters/amiralbazi.html">Amir Albazi</a>
+ vs. 
+<a href="/fighters/kyojihoriguchi.html">Kyoji Horiguchi</a>
+ 
+<span style="color: #666; font-size: 0.9em;">(<a href="/events/20260207.html" style="color: #666;">2026-02-07</a>)</span>
+</p>
+<p class="fight-entry">
+✅ 
+<span class="status-text">Fight added: </span>
+<a href="/fighters/ryanspann.html">Ryan Spann</a>
+ vs. 
+<a href="/fighters/rizvankuniev.html">Rizvan Kuniev</a>
+ 
+<span style="color: #666; font-size: 0.9em;">(<a href="/events/20260207.html" style="color: #666;">2026-02-07</a>)</span>
+</p>
+<p class="fight-entry">
+✅ 
+<span class="status-text">Fight added: </span>
+<a href="/fighters/jeanmatsumoto.html">Jean Matsumoto</a>
+ vs. 
+<a href="/fighters/faridbasharat.html">Farid Basharat</a>
+ 
+<span style="color: #666; font-size: 0.9em;">(<a href="/events/20260207.html" style="color: #666;">2026-02-07</a>)</span>
+</p>
+<h4>2025-12-13</h4>
+<p class="fight-entry">
+✅ 
+<span class="status-text">Fight added: </span>
+<a href="/fighters/amandalemos.html">Amanda Lemos</a>
+ vs. 
+<a href="/fighters/gillianrobertson.html">Gillian Robertson</a>
+ 
+<span style="color: #666; font-size: 0.9em;">(2026-03-14)</span>
+</p>
+<h4>2025-12-12</h4>
+<p class="fight-entry">
+✅ 
+<span class="status-text">Fight added: </span>
+<a href="/fighters/wangcong.html">Wang Cong</a>
+ vs. 
+<a href="/fighters/eduardamoura.html">Eduarda Moura</a>
+ 
+<span style="color: #666; font-size: 0.9em;">(<a href="/events/20260207.html" style="color: #666;">2026-02-07</a>)</span>
+</p>
+<p class="fight-entry">
+✅ 
+<span class="status-text">Fight added: </span>
+<a href="/fighters/brandonmoreno.html">Brandon Moreno</a>
+ vs. 
+<a href="/fighters/asualmabayev.html">Asu Almabayev</a>
+ 
+<span style="color: #666; font-size: 0.9em;">(<a href="/events/20260228.html" style="color: #666;">2026-02-28</a>)</span>
+</p>
+<h4>2025-12-11</h4>
+<p class="fight-entry">
+✅ 
+<span class="status-text">Fight added: </span>
+<a href="/fighters/aldencoria.html">Alden Coria</a>
+ vs. 
+<a href="/fighters/luisgurule.html">Luis Gurule</a>
+ 
+<span style="color: #666; font-size: 0.9em;">(<a href="/events/20260221.html" style="color: #666;">2026-02-21</a>)</span>
+</p>
+<p class="fight-entry">
+✅ 
+<span class="status-text">Fight added: </span>
+<a href="/fighters/jacobesmith.html">Jacobe Smith</a>
+ vs. 
+<a href="/fighters/seokhyeonko.html">Seokhyeon Ko</a>
+ 
+<span style="color: #666; font-size: 0.9em;">(<a href="/events/20260221.html" style="color: #666;">2026-02-21</a>)</span>
+</p>
+<p class="fight-entry">
+✅ 
+<span class="status-text">Fight added: </span>
+<a href="/fighters/michaloleksiejczuk.html">Michal Oleksiejczuk</a>
+ vs. 
+<a href="/fighters/marcandrebarriault.html">Marc-Andre Barriault</a>
+ 
+<span style="color: #666; font-size: 0.9em;">(<a href="/events/20260207.html" style="color: #666;">2026-02-07</a>)</span>
+</p>
+<h4>2025-12-10</h4>
+<p class="fight-entry">
+✅ 
+<span class="status-text">Fight added: </span>
+<a href="/fighters/mariobautista.html">Mario Bautista</a>
+ vs. 
+<a href="/fighters/viniciusoliveira.html">Vinicius Oliveira</a>
+ 
+<span style="color: #666; font-size: 0.9em;">(<a href="/events/20260207.html" style="color: #666;">2026-02-07</a>)</span>
+</p>
+<p class="fight-entry">
+✅ 
+<span class="status-text">Fight added: </span>
+<a href="/fighters/zacharyreese.html">Zachary Reese</a>
+ vs. 
+<a href="/fighters/michelpereira.html">Michel Pereira</a>
+ 
+<span style="color: #666; font-size: 0.9em;">(<a href="/events/20260221.html" style="color: #666;">2026-02-21</a>)</span>
+</p>
+<p class="fight-entry">
+❌ 
+<span class="status-text">Fight removed: </span>
+<a href="/fighters/joandersonbrito.html">Joanderson Brito</a>
+ vs. 
+<a href="/fighters/melsikbaghdasaryan.html">Melsik Baghdasaryan</a>
+ 
+<span style="color: #666; font-size: 0.9em;">(<a href="/events/20251213.html" style="color: #666;">2025-12-13</a>)</span>
+</p>
+<p class="fight-entry">
+✅ 
+<span class="status-text">Fight added: </span>
+<a href="/fighters/joandersonbrito.html">Joanderson Brito</a>
+ vs. 
+<a href="/fighters/isaacthomson.html">Isaac Thomson</a>
+ 
+<span style="color: #666; font-size: 0.9em;">(<a href="/events/20251213.html" style="color: #666;">2025-12-13</a>)</span>
+</p>
+<h4>2025-12-09</h4>
+<p class="fight-entry">
+✅ 
+<span class="status-text">Fight added: </span>
+<a href="/fighters/kinggreen.html">King Green</a>
+ vs. 
+<a href="/fighters/lancegibsonjr.html">Lance Gibson Jr.</a>
+ 
+<span style="color: #666; font-size: 0.9em;">(<a href="/events/20251213.html" style="color: #666;">2025-12-13</a>)</span>
+</p>
+<h4>2025-12-08</h4>
+<p class="fight-entry">
+✅ 
+<span class="status-text">Fight added: </span>
+<a href="/fighters/wesschultz.html">Wes Schultz</a>
+ vs. 
+<a href="/fighters/damianpinas.html">Damian Pinas</a>
+ 
+<span style="color: #666; font-size: 0.9em;">(<a href="/events/20260228.html" style="color: #666;">2026-02-28</a>)</span>
+</p>
+<h4>2025-12-07</h4>
+<p class="fight-entry">
+✅ 
+<span class="status-text">Fight added: </span>
+<a href="/fighters/michaeljohnson.html">Michael Johnson</a>
+ vs. 
+<a href="/fighters/alexanderhernandez.html">Alexander Hernandez</a>
+ 
+<span style="color: #666; font-size: 0.9em;">(<a href="/events/20260124.html" style="color: #666;">2026-01-24</a>)</span>
+</p>
+<p class="fight-entry">
+✅ 
+<span class="status-text">Fight added: </span>
+<a href="/fighters/rickyturcios.html">Ricky Turcios</a>
+ vs. 
+<a href="/fighters/cameronsmotherman.html">Cameron Smotherman</a>
+ 
+<span style="color: #666; font-size: 0.9em;">(<a href="/events/20260124.html" style="color: #666;">2026-01-24</a>)</span>
+</p>
+<p class="fight-entry">
+✅ 
+<span class="status-text">Fight added: </span>
+<a href="/fighters/danhooker.html">Dan Hooker</a>
+ vs. 
+<a href="/fighters/benoitsaintdenis.html">Benoit Saint Denis</a>
+ 
+<span style="color: #666; font-size: 0.9em;">(<a href="/events/20260201.html" style="color: #666;">2026-02-01</a>)</span>
+</p>
+<p class="fight-entry">
+✅ 
+<span class="status-text">Fight added: </span>
+<a href="/fighters/rafaelfiziev.html">Rafael Fiziev</a>
+ vs. 
+<a href="/fighters/mauricioruffy.html">Mauricio Ruffy</a>
+ 
+<span style="color: #666; font-size: 0.9em;">(<a href="/events/20260201.html" style="color: #666;">2026-02-01</a>)</span>
+</p>
+<p class="fight-entry">
+✅ 
+<span class="status-text">Fight added: </span>
+<a href="/fighters/taituivasa.html">Tai Tuivasa</a>
+ vs. 
+<a href="/fighters/tallisonteixeira.html">Tallison Teixeira</a>
+ 
+<span style="color: #666; font-size: 0.9em;">(<a href="/events/20260201.html" style="color: #666;">2026-02-01</a>)</span>
+</p>
+<p class="fight-entry">
+✅ 
+<span class="status-text">Fight added: </span>
+<a href="/fighters/jimmycrute.html">Jimmy Crute</a>
+ vs. 
+<a href="/fighters/dustinjacoby.html">Dustin Jacoby</a>
+ 
+<span style="color: #666; font-size: 0.9em;">(<a href="/events/20260201.html" style="color: #666;">2026-02-01</a>)</span>
+</p>
+<p class="fight-entry">
+✅ 
+<span class="status-text">Fight added: </span>
+<a href="/fighters/quillansalkilld.html">Quillan Salkilld</a>
+ vs. 
+<a href="/fighters/rongzhu.html">Rongzhu</a>
+ 
+<span style="color: #666; font-size: 0.9em;">(<a href="/events/20260201.html" style="color: #666;">2026-02-01</a>)</span>
+</p>
+<p class="fight-entry">
+✅ 
+<span class="status-text">Fight added: </span>
+<a href="/fighters/jonathanmicallef.html">Jonathan Micallef</a>
+ vs. 
+<a href="/fighters/obanelliott.html">Oban Elliott</a>
+ 
+<span style="color: #666; font-size: 0.9em;">(<a href="/events/20260201.html" style="color: #666;">2026-02-01</a>)</span>
+</p>
+<p class="fight-entry">
+✅ 
+<span class="status-text">Fight added: </span>
+<a href="/fighters/kaanofli.html">Kaan Ofli</a>
+ vs. 
+<a href="/fighters/yizha.html">Yizha</a>
+ 
+<span style="color: #666; font-size: 0.9em;">(<a href="/events/20260201.html" style="color: #666;">2026-02-01</a>)</span>
+</p>
+<p class="fight-entry">
+✅ 
+<span class="status-text">Fight added: </span>
+<a href="/fighters/sergheispivac.html">Serghei Spivac</a>
+ vs. 
+<a href="/fighters/antedelija.html">Ante Delija</a>
+ 
+<span style="color: #666; font-size: 0.9em;">(<a href="/events/20260201.html" style="color: #666;">2026-02-01</a>)</span>
+</p>
+<p class="fight-entry">
+✅ 
+<span class="status-text">Fight added: </span>
+<a href="/fighters/juniortafa.html">Junior Tafa</a>
+ vs. 
+<a href="/fighters/billyelekana.html">Billy Elekana</a>
+ 
+<span style="color: #666; font-size: 0.9em;">(<a href="/events/20260201.html" style="color: #666;">2026-02-01</a>)</span>
+</p>
+<p class="fight-entry">
+✅ 
+<span class="status-text">Fight added: </span>
+<a href="/fighters/seanstrickland.html">Sean Strickland</a>
+ vs. 
+<a href="/fighters/anthonyhernandez.html">Anthony Hernandez</a>
+ 
+<span style="color: #666; font-size: 0.9em;">(<a href="/events/20260221.html" style="color: #666;">2026-02-21</a>)</span>
+</p>
+<p class="fight-entry">
+✅ 
+<span class="status-text">Fight added: </span>
+<a href="/fighters/odeosbourne.html">Ode Osbourne</a>
+ vs. 
+<a href="/fighters/alibiidiris.html">Alibi Idiris</a>
+ 
+<span style="color: #666; font-size: 0.9em;">(<a href="/events/20260221.html" style="color: #666;">2026-02-21</a>)</span>
+</p>
+<h4>2025-12-05</h4>
+<p class="fight-entry">
+✅ 
+<span class="status-text">Fight added: </span>
+<a href="/fighters/maxholloway.html">Max Holloway</a>
+ vs. 
+<a href="/fighters/charlesoliveira.html">Charles Oliveira</a>
+ 
+<span style="color: #666; font-size: 0.9em;">(<a href="/events/20260307.html" style="color: #666;">2026-03-07</a>)</span>
+</p>
+<h4>2025-12-03</h4>
+<p class="fight-entry">
+❌ 
+<span class="status-text">Fight removed: </span>
+<a href="/fighters/alexagrasso.html">Alexa Grasso</a>
+ vs. 
+<a href="/fighters/rosenamajunas.html">Rose Namajunas</a>
+ 
+<span style="color: #666; font-size: 0.9em;">(<a href="/events/20260124.html" style="color: #666;">2026-01-24</a>)</span>
+</p>
+<p class="fight-entry">
+✅ 
+<span class="status-text">Fight added: </span>
+<a href="/fighters/nataliasilva.html">Natalia Silva</a>
+ vs. 
+<a href="/fighters/rosenamajunas.html">Rose Namajunas</a>
+ 
+<span style="color: #666; font-size: 0.9em;">(<a href="/events/20260124.html" style="color: #666;">2026-01-24</a>)</span>
+</p>
+<p class="fight-entry">
+✅ 
+<span class="status-text">Fight added: </span>
+<a href="/fighters/jacobmalkoun.html">Jacob Malkoun</a>
+ vs. 
+<a href="/fighters/torrezfinney.html">Torrez Finney</a>
+ 
+<span style="color: #666; font-size: 0.9em;">(2026-01-31)</span>
+</p>
+<h4>2025-12-02</h4>
+<p class="fight-entry">
+✅ 
+<span class="status-text">Fight added: </span>
+<a href="/fighters/alexperez.html">Alex Perez</a>
+ vs. 
+<a href="/fighters/charlesjohnson.html">Charles Johnson</a>
+ 
+<span style="color: #666; font-size: 0.9em;">(<a href="/events/20260124.html" style="color: #666;">2026-01-24</a>)</span>
+</p>
+<p class="fight-entry">
+✅ 
+<span class="status-text">Fight added: </span>
+<a href="/fighters/joshhokit.html">Josh Hokit</a>
+ vs. 
+<a href="/fighters/denzelfreeman.html">Denzel Freeman</a>
+ 
+<span style="color: #666; font-size: 0.9em;">(<a href="/events/20260124.html" style="color: #666;">2026-01-24</a>)</span>
+</p>
+<p class="fight-entry">
+✅ 
+<span class="status-text">Fight added: </span>
+<a href="/fighters/camrowston.html">Cam Rowston</a>
+ vs. 
+<a href="/fighters/codybrundage.html">Cody Brundage</a>
+ 
+<span style="color: #666; font-size: 0.9em;">(2026-01-31)</span>
+</p>
+<p class="fight-entry">
+✅ 
+<span class="status-text">Fight added: </span>
+<a href="/fighters/uransatybaldiev.html">Uran Satybaldiev</a>
+ vs. 
+<a href="/fighters/juliuswalker.html">Julius Walker</a>
+ 
+<span style="color: #666; font-size: 0.9em;">(<a href="/events/20260207.html" style="color: #666;">2026-02-07</a>)</span>
+</p>
+<p class="fight-entry">
+✅ 
+<span class="status-text">Fight added: </span>
+<a href="/fighters/kevinborjas.html">Kevin Borjas</a>
+ vs. 
+<a href="/fighters/imanolrodriguez.html">Imanol Rodriguez</a>
+ 
+<span style="color: #666; font-size: 0.9em;">(<a href="/events/20260228.html" style="color: #666;">2026-02-28</a>)</span>
+</p>
+<p class="fight-entry">
+✅ 
+<span class="status-text">Fight added: </span>
+<a href="/fighters/edgarchairez.html">Edgar Chairez</a>
+ vs. 
+<a href="/fighters/felipebunes.html">Felipe Bunes</a>
+ 
+<span style="color: #666; font-size: 0.9em;">(<a href="/events/20260228.html" style="color: #666;">2026-02-28</a>)</span>
+</p>
+<p class="fight-entry">
+✅ 
+<span class="status-text">Fight added: </span>
+<a href="/fighters/imanolrodriguez.html">Imanol Rodriguez</a>
+ vs. 
+<a href="/fighters/kevinborjas.html">Kevin Borjas</a>
+ 
+<span style="color: #666; font-size: 0.9em;">(<a href="/events/20260228.html" style="color: #666;">2026-02-28</a>)</span>
+</p>
+<h4>2025-11-27</h4>
+<p class="fight-entry">
+✅ 
+<span class="status-text">Fight added: </span>
+<a href="/fighters/justingaethje.html">Justin Gaethje</a>
+ vs. 
+<a href="/fighters/paddypimblett.html">Paddy Pimblett</a>
+ 
+<span style="color: #666; font-size: 0.9em;">(<a href="/events/20260124.html" style="color: #666;">2026-01-24</a>)</span>
+</p>
+<p class="fight-entry">
+✅ 
+<span class="status-text">Fight added: </span>
+<a href="/fighters/kaylaharrison.html">Kayla Harrison</a>
+ vs. 
+<a href="/fighters/amandanunes.html">Amanda Nunes</a>
+ 
+<span style="color: #666; font-size: 0.9em;">(<a href="/events/20260124.html" style="color: #666;">2026-01-24</a>)</span>
+</p>
+<p class="fight-entry">
+✅ 
+<span class="status-text">Fight added: </span>
+<a href="/fighters/seanomalley.html">Sean O'Malley</a>
+ vs. 
+<a href="/fighters/songyadong.html">Song Yadong</a>
+ 
+<span style="color: #666; font-size: 0.9em;">(<a href="/events/20260124.html" style="color: #666;">2026-01-24</a>)</span>
+</p>
+<p class="fight-entry">
+✅ 
+<span class="status-text">Fight added: </span>
+<a href="/fighters/waldocortesacosta.html">Waldo Cortes-Acosta</a>
+ vs. 
+<a href="/fighters/derricklewis.html">Derrick Lewis</a>
+ 
+<span style="color: #666; font-size: 0.9em;">(<a href="/events/20260124.html" style="color: #666;">2026-01-24</a>)</span>
+</p>
+<p class="fight-entry">
+✅ 
+<span class="status-text">Fight added: </span>
+<a href="/fighters/arnoldallen.html">Arnold Allen</a>
+ vs. 
+<a href="/fighters/jeansilva.html">Jean Silva</a>
+ 
+<span style="color: #666; font-size: 0.9em;">(<a href="/events/20260124.html" style="color: #666;">2026-01-24</a>)</span>
+</p>
+<p class="fight-entry">
+✅ 
+<span class="status-text">Fight added: </span>
+<a href="/fighters/alexagrasso.html">Alexa Grasso</a>
+ vs. 
+<a href="/fighters/rosenamajunas.html">Rose Namajunas</a>
+ 
+<span style="color: #666; font-size: 0.9em;">(<a href="/events/20260124.html" style="color: #666;">2026-01-24</a>)</span>
+</p>
+<p class="fight-entry">
+✅ 
+<span class="status-text">Fight added: </span>
+<a href="/fighters/umarnurmagomedov.html">Umar Nurmagomedov</a>
+ vs. 
+<a href="/fighters/deivesonfigueiredo.html">Deiveson Figueiredo</a>
+ 
+<span style="color: #666; font-size: 0.9em;">(<a href="/events/20260124.html" style="color: #666;">2026-01-24</a>)</span>
+</p>
+<p class="fight-entry">
+✅ 
+<span class="status-text">Fight added: </span>
+<a href="/fighters/atebagautier.html">Ateba Gautier</a>
+ vs. 
+<a href="/fighters/andreypulyaev.html">Andrey Pulyaev</a>
+ 
+<span style="color: #666; font-size: 0.9em;">(<a href="/events/20260124.html" style="color: #666;">2026-01-24</a>)</span>
+</p>
+<p class="fight-entry">
+✅ 
+<span class="status-text">Fight added: </span>
+<a href="/fighters/alexandervolkanovski.html">Alexander Volkanovski</a>
+ vs. 
+<a href="/fighters/diegolopes.html">Diego Lopes</a>
+ 
+<span style="color: #666; font-size: 0.9em;">(2026-01-31)</span>
+</p>
+<h4>2025-11-23</h4>
+<p class="fight-entry">
+✅ 
+<span class="status-text">Fight added: </span>
+<a href="/fighters/neilmagny.html">Neil Magny</a>
+ vs. 
+<a href="/fighters/yaroslavamosov.html">Yaroslav Amosov</a>
+ 
+<span style="color: #666; font-size: 0.9em;">(<a href="/events/20251213.html" style="color: #666;">2025-12-13</a>)</span>
+</p>
+<h4>2025-11-20</h4>
+<p class="fight-entry">
+❌ 
+<span class="status-text">Fight removed: </span>
+<a href="/fighters/sergheispivac.html">Serghei Spivac</a>
+ vs. 
+<a href="/fighters/shamilgaziev.html">Shamil Gaziev</a>
+ 
+<span style="color: #666; font-size: 0.9em;">(<a href="/events/20251122.html" style="color: #666;">2025-11-22</a>)</span>
+</p>
+<p class="fight-entry">
+✅ 
+<span class="status-text">Fight added: </span>
+<a href="/fighters/waldocortesacosta.html">Waldo Cortes-Acosta</a>
+ vs. 
+<a href="/fighters/shamilgaziev.html">Shamil Gaziev</a>
+ 
+<span style="color: #666; font-size: 0.9em;">(<a href="/events/20251122.html" style="color: #666;">2025-11-22</a>)</span>
+</p>
+<h4>2025-11-18</h4>
+<p class="fight-entry">
+✅ 
+<span class="status-text">Fight added: </span>
+<a href="/fighters/nikitakrylov.html">Nikita Krylov</a>
+ vs. 
+<a href="/fighters/modestasbukauskas.html">Modestas Bukauskas</a>
+ 
+<span style="color: #666; font-size: 0.9em;">(<a href="/events/20260124.html" style="color: #666;">2026-01-24</a>)</span>
+</p>
+<h4>2025-11-13</h4>
+<p class="fight-entry">
+❌ 
+<span class="status-text">Fight removed: </span>
+<a href="/fighters/malcolmwellmaker.html">Malcolm Wellmaker</a>
+ vs. 
+<a href="/fighters/codyhaddon.html">Cody Haddon</a>
+ 
+<span style="color: #666; font-size: 0.9em;">(<a href="/events/20251115.html" style="color: #666;">2025-11-15</a>)</span>
+</p>
+<p class="fight-entry">
+✅ 
+<span class="status-text">Fight added: </span>
+<a href="/fighters/malcolmwellmaker.html">Malcolm Wellmaker</a>
+ vs. 
+<a href="/fighters/ethynewing.html">Ethyn Ewing</a>
+ 
+<span style="color: #666; font-size: 0.9em;">(<a href="/events/20251115.html" style="color: #666;">2025-11-15</a>)</span>
+</p>
+<h4>2025-11-08</h4>
+<p class="fight-entry">
+✅ 
+<span class="status-text">Fight added: </span>
+<a href="/fighters/viacheslavborshchev.html">Viacheslav Borshchev</a>
+ vs. 
+<a href="/fighters/matheuscamilo.html">Matheus Camilo</a>
+ 
+<span style="color: #666; font-size: 0.9em;">(<a href="/events/20251115.html" style="color: #666;">2025-11-15</a>)</span>
+</p>
+<p class="fight-entry">
+✅ 
+<span class="status-text">Fight added: </span>
+<a href="/fighters/kennedynzechukwu.html">Kennedy Nzechukwu</a>
+ vs. 
+<a href="/fighters/marcusbuchecha.html">Marcus Buchecha</a>
+ 
+<span style="color: #666; font-size: 0.9em;">(<a href="/events/20251213.html" style="color: #666;">2025-12-13</a>)</span>
+</p>
+<h4>2025-11-06</h4>
+<p class="fight-entry">
+❌ 
+<span class="status-text">Fight removed: </span>
+<a href="/fighters/jacksonmcvey.html">Jackson McVey</a>
+ vs. 
+<a href="/fighters/dontejohnson.html">Donte Johnson</a>
+ 
+<span style="color: #666; font-size: 0.9em;">(<a href="/events/20251108.html" style="color: #666;">2025-11-08</a>)</span>
+</p>
+<p class="fight-entry">
+✅ 
+<span class="status-text">Fight added: </span>
+<a href="/fighters/jacksonmcvey.html">Jackson McVey</a>
+ vs. 
+<a href="/fighters/zacharyreese.html">Zachary Reese</a>
+ 
+<span style="color: #666; font-size: 0.9em;">(<a href="/events/20251108.html" style="color: #666;">2025-11-08</a>)</span>
+</p>
+<p class="fight-entry">
+✅ 
+<span class="status-text">Fight added: </span>
+<a href="/fighters/morgancharriere.html">Morgan Charriere</a>
+ vs. 
+<a href="/fighters/melquizaelcosta.html">Melquizael Costa</a>
+ 
+<span style="color: #666; font-size: 0.9em;">(<a href="/events/20251213.html" style="color: #666;">2025-12-13</a>)</span>
+</p>
+<h4>2025-11-04</h4>
+<p class="fight-entry">
+❌ 
+<span class="status-text">Fight removed: </span>
+<a href="/fighters/adrianyanez.html">Adrian Yanez</a>
+ vs. 
+<a href="/fighters/cristianquinonez.html">Cristian Quinonez</a>
+ 
+<span style="color: #666; font-size: 0.9em;">(<a href="/events/20251108.html" style="color: #666;">2025-11-08</a>)</span>
+</p>
+<p class="fight-entry">
+❌ 
+<span class="status-text">Fight removed: </span>
+<a href="/fighters/robertvalentin.html">Robert Valentin</a>
+ vs. 
+<a href="/fighters/jacksonmcvey.html">Jackson McVey</a>
+ 
+<span style="color: #666; font-size: 0.9em;">(<a href="/events/20251108.html" style="color: #666;">2025-11-08</a>)</span>
+</p>
+<p class="fight-entry">
+✅ 
+<span class="status-text">Fight added: </span>
+<a href="/fighters/jacksonmcvey.html">Jackson McVey</a>
+ vs. 
+<a href="/fighters/dontejohnson.html">Donte Johnson</a>
+ 
+<span style="color: #666; font-size: 0.9em;">(<a href="/events/20251108.html" style="color: #666;">2025-11-08</a>)</span>
+</p>
+<h4>2025-11-03</h4>
+<p class="fight-entry">
+✅ 
+<span class="status-text">Fight added: </span>
+<a href="/fighters/gigachikadze.html">Giga Chikadze</a>
+ vs. 
+<a href="/fighters/kevinvallejos.html">Kevin Vallejos</a>
+ 
+<span style="color: #666; font-size: 0.9em;">(<a href="/events/20251213.html" style="color: #666;">2025-12-13</a>)</span>
+</p>
+<h4>2025-11-01</h4>
+<p class="fight-entry">
+❌ 
+<span class="status-text">Fight removed: </span>
+<a href="/fighters/iasminlucindo.html">Iasmin Lucindo</a>
+ vs. 
+<a href="/fighters/gillianrobertson.html">Gillian Robertson</a>
+ 
+<span style="color: #666; font-size: 0.9em;">(<a href="/events/20251213.html" style="color: #666;">2025-12-13</a>)</span>
+</p>
+<p class="fight-entry">
+✅ 
+<span class="status-text">Fight added: </span>
+<a href="/fighters/amandalemos.html">Amanda Lemos</a>
+ vs. 
+<a href="/fighters/gillianrobertson.html">Gillian Robertson</a>
+ 
+<span style="color: #666; font-size: 0.9em;">(<a href="/events/20251213.html" style="color: #666;">2025-12-13</a>)</span>
+</p>
+<h4>2025-10-29</h4>
+<p class="fight-entry">
+❌ 
+<span class="status-text">Fight removed: </span>
+<a href="/fighters/luanasantos.html">Luana Santos</a>
+ vs. 
+<a href="/fighters/melissacroden.html">Melissa Croden</a>
+ 
+<span style="color: #666; font-size: 0.9em;">(<a href="/events/20251108.html" style="color: #666;">2025-11-08</a>)</span>
+</p>
+<p class="fight-entry">
+✅ 
+<span class="status-text">Fight added: </span>
+<a href="/fighters/luanasantos.html">Luana Santos</a>
+ vs. 
+<a href="/fighters/melissacroden.html">Melissa Croden</a>
+ 
+<span style="color: #666; font-size: 0.9em;">(<a href="/events/20251213.html" style="color: #666;">2025-12-13</a>)</span>
+</p>
+<h4>2025-10-28</h4>
+<p class="fight-entry">
+❌ 
+<span class="status-text">Fight removed: </span>
+<a href="/fighters/felipelima.html">Felipe Lima</a>
+ vs. 
+<a href="/fighters/danielmarcos.html">Daniel Marcos</a>
+ 
+<span style="color: #666; font-size: 0.9em;">(<a href="/events/20251122.html" style="color: #666;">2025-11-22</a>)</span>
+</p>
+<p class="fight-entry">
+✅ 
+<span class="status-text">Fight added: </span>
+<a href="/fighters/milesjohns.html">Miles Johns</a>
+ vs. 
+<a href="/fighters/danielmarcos.html">Daniel Marcos</a>
+ 
+<span style="color: #666; font-size: 0.9em;">(<a href="/events/20251108.html" style="color: #666;">2025-11-08</a>)</span>
+</p>
+<h4>2025-10-25</h4>
+<p class="fight-entry">
+✅ 
+<span class="status-text">Fight added: </span>
+<a href="/fighters/nurulloaliev.html">Nurullo Aliev</a>
+ vs. 
+<a href="/fighters/shemrock.html">Shem Rock</a>
+ 
+<span style="color: #666; font-size: 0.9em;">(<a href="/events/20251122.html" style="color: #666;">2025-11-22</a>)</span>
+</p>
+<p class="fight-entry">
+❌ 
+<span class="status-text">Fight removed: </span>
+<a href="/fighters/allannascimento.html">Allan Nascimento</a>
+ vs. 
+<a href="/fighters/rafaelestevam.html">Rafael Estevam</a>
+ 
+<span style="color: #666; font-size: 0.9em;">(<a href="/events/20251101.html" style="color: #666;">2025-11-01</a>)</span>
+</p>
+<p class="fight-entry">
+✅ 
+<span class="status-text">Fight added: </span>
+<a href="/fighters/allannascimento.html">Allan Nascimento</a>
+ vs. 
+<a href="/fighters/codydurden.html">Cody Durden</a>
+ 
+<span style="color: #666; font-size: 0.9em;">(<a href="/events/20251101.html" style="color: #666;">2025-11-01</a>)</span>
+</p>
+<p class="fight-entry">
+✅ 
+<span class="status-text">Fight added: </span>
+<a href="/fighters/joandersonbrito.html">Joanderson Brito</a>
+ vs. 
+<a href="/fighters/melsikbaghdasaryan.html">Melsik Baghdasaryan</a>
+ 
+<span style="color: #666; font-size: 0.9em;">(<a href="/events/20251213.html" style="color: #666;">2025-12-13</a>)</span>
+</p>
+<h4>2025-10-23</h4>
+<p class="fight-entry">
+❌ 
+<span class="status-text">Fight removed: </span>
+<a href="/fighters/dariazhelezniakova.html">Daria Zhelezniakova</a>
+ vs. 
+<a href="/fighters/luanasantos.html">Luana Santos</a>
+ 
+<span style="color: #666; font-size: 0.9em;">(<a href="/events/20251108.html" style="color: #666;">2025-11-08</a>)</span>
+</p>
+<p class="fight-entry">
+❌ 
+<span class="status-text">Fight removed: </span>
+<a href="/fighters/abdulkareemalselwady.html">Abdul-Kareem Al-Selwady</a>
+ vs. 
+<a href="/fighters/matheuscamilo.html">Matheus Camilo</a>
+ 
+<span style="color: #666; font-size: 0.9em;">(<a href="/events/20251025.html" style="color: #666;">2025-10-25</a>)</span>
+</p>
+<p class="fight-entry">
+✅ 
+<span class="status-text">Fight added: </span>
+<a href="/fighters/luanasantos.html">Luana Santos</a>
+ vs. 
+<a href="/fighters/melissacroden.html">Melissa Croden</a>
+ 
+<span style="color: #666; font-size: 0.9em;">(<a href="/events/20251108.html" style="color: #666;">2025-11-08</a>)</span>
+</p>
+<h4>2025-10-22</h4>
+<p class="fight-entry">
+❌ 
+<span class="status-text">Fight removed: </span>
+<a href="/fighters/muhammadnaimov.html">Muhammad Naimov</a>
+ vs. 
+<a href="/fighters/maironsantos.html">Mairon Santos</a>
+ 
+<span style="color: #666; font-size: 0.9em;">(<a href="/events/20251122.html" style="color: #666;">2025-11-22</a>)</span>
+</p>
+<p class="fight-entry">
+❌ 
+<span class="status-text">Fight removed: </span>
+<a href="/fighters/milesjohns.html">Miles Johns</a>
+ vs. 
+<a href="/fighters/muingafurov.html">Muin Gafurov</a>
+ 
+<span style="color: #666; font-size: 0.9em;">(<a href="/events/20251101.html" style="color: #666;">2025-11-01</a>)</span>
+</p>
+<p class="fight-entry">
+✅ 
+<span class="status-text">Fight added: </span>
+<a href="/fighters/chepemariscal.html">Chepe Mariscal</a>
+ vs. 
+<a href="/fighters/patsabatini.html">Pat Sabatini</a>
+ 
+<span style="color: #666; font-size: 0.9em;">(<a href="/events/20251115.html" style="color: #666;">2025-11-15</a>)</span>
+</p>
+<p class="fight-entry">
+✅ 
+<span class="status-text">Fight added: </span>
+<a href="/fighters/edsonbarboza.html">Edson Barboza</a>
+ vs. 
+<a href="/fighters/jalinturner.html">Jalin Turner</a>
+ 
+<span style="color: #666; font-size: 0.9em;">(<a href="/events/20251206.html" style="color: #666;">2025-12-06</a>)</span>
+</p>
+<p class="fight-entry">
+✅ 
+<span class="status-text">Fight added: </span>
+<a href="/fighters/iboaslan.html">Ibo Aslan</a>
+ vs. 
+<a href="/fighters/iwobaraniewski.html">Iwo Baraniewski</a>
+ 
+<span style="color: #666; font-size: 0.9em;">(<a href="/events/20251206.html" style="color: #666;">2025-12-06</a>)</span>
+</p>
+<p class="fight-entry">
+✅ 
+<span class="status-text">Fight added: </span>
+<a href="/fighters/muhammadnaimov.html">Muhammad Naimov</a>
+ vs. 
+<a href="/fighters/maironsantos.html">Mairon Santos</a>
+ 
+<span style="color: #666; font-size: 0.9em;">(<a href="/events/20251206.html" style="color: #666;">2025-12-06</a>)</span>
+</p>
+<h4>2025-10-17</h4>
+<p class="fight-entry">
+❌ 
+<span class="status-text">Fight removed: </span>
+<a href="/fighters/dontejohnson.html">Donte Johnson</a>
+ vs. 
+<a href="/fighters/nickklein.html">Nick Klein</a>
+ 
+<span style="color: #666; font-size: 0.9em;">(<a href="/events/20251101.html" style="color: #666;">2025-11-01</a>)</span>
+</p>
+<p class="fight-entry">
+✅ 
+<span class="status-text">Fight added: </span>
+<a href="/fighters/dontejohnson.html">Donte Johnson</a>
+ vs. 
+<a href="/fighters/sedriquesdumas.html">Sedriques Dumas</a>
+ 
+<span style="color: #666; font-size: 0.9em;">(<a href="/events/20251101.html" style="color: #666;">2025-11-01</a>)</span>
+</p>
+<p class="fight-entry">
+✅ 
+<span class="status-text">Fight added: </span>
+<a href="/fighters/robertvalentin.html">Robert Valentin</a>
+ vs. 
+<a href="/fighters/jacksonmcvey.html">Jackson McVey</a>
+ 
+<span style="color: #666; font-size: 0.9em;">(<a href="/events/20251108.html" style="color: #666;">2025-11-08</a>)</span>
+</p>
+<p class="fight-entry">
+✅ 
+<span class="status-text">Fight added: </span>
+<a href="/fighters/nasrathaqparast.html">Nasrat Haqparast</a>
+ vs. 
+<a href="/fighters/quillansalkilld.html">Quillan Salkilld</a>
+ 
+<span style="color: #666; font-size: 0.9em;">(<a href="/events/20251025.html" style="color: #666;">2025-10-25</a>)</span>
+</p>
+<p class="fight-entry">
+✅ 
+<span class="status-text">Fight added: </span>
+<a href="/fighters/muslimsalikhov.html">Muslim Salikhov</a>
+ vs. 
+<a href="/fighters/urosmedic.html">Uros Medic</a>
+ 
+<span style="color: #666; font-size: 0.9em;">(<a href="/events/20251108.html" style="color: #666;">2025-11-08</a>)</span>
+</p>
+<p class="fight-entry">
+✅ 
+<span class="status-text">Fight added: </span>
+<a href="/fighters/mattschnell.html">Matt Schnell</a>
+ vs. 
+<a href="/fighters/josephmorales.html">Joseph Morales</a>
+ 
+<span style="color: #666; font-size: 0.9em;">(<a href="/events/20251108.html" style="color: #666;">2025-11-08</a>)</span>
+</p>
+<p class="fight-entry">
+✅ 
+<span class="status-text">Fight added: </span>
+<a href="/fighters/marcotulio.html">Marco Tulio</a>
+ vs. 
+<a href="/fighters/christianleroyduncan.html">Christian Leroy Duncan</a>
+ 
+<span style="color: #666; font-size: 0.9em;">(<a href="/events/20251108.html" style="color: #666;">2025-11-08</a>)</span>
+</p>
+<p class="fight-entry">
+✅ 
+<span class="status-text">Fight added: </span>
+<a href="/fighters/malcolmwellmaker.html">Malcolm Wellmaker</a>
+ vs. 
+<a href="/fighters/codyhaddon.html">Cody Haddon</a>
+ 
+<span style="color: #666; font-size: 0.9em;">(<a href="/events/20251115.html" style="color: #666;">2025-11-15</a>)</span>
+</p>
+<h4>2025-10-16</h4>
+<p class="fight-entry">
+✅ 
+<span class="status-text">Fight added: </span>
+<a href="/fighters/saygidizagakhmaev.html">Saygid Izagakhmaev</a>
+ vs. 
+<a href="/fighters/nicolasdalby.html">Nicolas Dalby</a>
+ 
+<span style="color: #666; font-size: 0.9em;">(<a href="/events/20251122.html" style="color: #666;">2025-11-22</a>)</span>
+</p>
+<p class="fight-entry">
+✅ 
+<span class="status-text">Fight added: </span>
+<a href="/fighters/valterwalker.html">Valter Walker</a>
+ vs. 
+<a href="/fighters/louiesutherland.html">Louie Sutherland</a>
+ 
+<span style="color: #666; font-size: 0.9em;">(<a href="/events/20251025.html" style="color: #666;">2025-10-25</a>)</span>
+</p>
+<p class="fight-entry">
+✅ 
+<span class="status-text">Fight added: </span>
+<a href="/fighters/muhammadnaimov.html">Muhammad Naimov</a>
+ vs. 
+<a href="/fighters/maironsantos.html">Mairon Santos</a>
+ 
+<span style="color: #666; font-size: 0.9em;">(<a href="/events/20251122.html" style="color: #666;">2025-11-22</a>)</span>
+</p>
+<h4>2025-10-15</h4>
+<p class="fight-entry">
+✅ 
+<span class="status-text">Fight added: </span>
+<a href="/fighters/milesjohns.html">Miles Johns</a>
+ vs. 
+<a href="/fighters/muingafurov.html">Muin Gafurov</a>
+ 
+<span style="color: #666; font-size: 0.9em;">(<a href="/events/20251101.html" style="color: #666;">2025-11-01</a>)</span>
+</p>
+<p class="fight-entry">
+✅ 
+<span class="status-text">Fight added: </span>
+<a href="/fighters/marvinvettori.html">Marvin Vettori</a>
+ vs. 
+<a href="/fighters/brunnoferreira.html">Brunno Ferreira</a>
+ 
+<span style="color: #666; font-size: 0.9em;">(<a href="/events/20251206.html" style="color: #666;">2025-12-06</a>)</span>
+</p>
+<h4>2025-10-14</h4>
+<p class="fight-entry">
+❌ 
+<span class="status-text">Fight removed: </span>
+<a href="/fighters/malcolmwellmaker.html">Malcolm Wellmaker</a>
+ vs. 
+<a href="/fighters/serhiysidey.html">Serhiy Sidey</a>
+ 
+<span style="color: #666; font-size: 0.9em;">(<a href="/events/20251115.html" style="color: #666;">2025-11-15</a>)</span>
+</p>
+<p class="fight-entry">
+❌ 
+<span class="status-text">Fight removed: </span>
+<a href="/fighters/austinbashi.html">Austin Bashi</a>
+ vs. 
+<a href="/fighters/jamallemmers.html">Jamall Emmers</a>
+ 
+<span style="color: #666; font-size: 0.9em;">(<a href="/events/20251108.html" style="color: #666;">2025-11-08</a>)</span>
+</p>
+<p class="fight-entry">
+✅ 
+<span class="status-text">Fight added: </span>
+<a href="/fighters/ismaelbonfim.html">Ismael Bonfim</a>
+ vs. 
+<a href="/fighters/chrispadilla.html">Chris Padilla</a>
+ 
+<span style="color: #666; font-size: 0.9em;">(<a href="/events/20251108.html" style="color: #666;">2025-11-08</a>)</span>
+</p>
+<p class="fight-entry">
+✅ 
+<span class="status-text">Fight added: </span>
+<a href="/fighters/jamallemmers.html">Jamall Emmers</a>
+ vs. 
+<a href="/fighters/hyderamil.html">Hyder Amil</a>
+ 
+<span style="color: #666; font-size: 0.9em;">(<a href="/events/20251108.html" style="color: #666;">2025-11-08</a>)</span>
+</p>
+<p class="fight-entry">
+✅ 
+<span class="status-text">Fight added: </span>
+<a href="/fighters/seanbrady.html">Sean Brady</a>
+ vs. 
+<a href="/fighters/michaelmorales.html">Michael Morales</a>
+ 
+<span style="color: #666; font-size: 0.9em;">(<a href="/events/20251115.html" style="color: #666;">2025-11-15</a>)</span>
+</p>
+<p class="fight-entry">
+✅ 
+<span class="status-text">Fight added: </span>
+<a href="/fighters/merabdvalishvili.html">Merab Dvalishvili</a>
+ vs. 
+<a href="/fighters/petryan.html">Petr Yan</a>
+ 
+<span style="color: #666; font-size: 0.9em;">(<a href="/events/20251206.html" style="color: #666;">2025-12-06</a>)</span>
+</p>
+<p class="fight-entry">
+✅ 
+<span class="status-text">Fight added: </span>
+<a href="/fighters/alexandrepantoja.html">Alexandre Pantoja</a>
+ vs. 
+<a href="/fighters/joshuavan.html">Joshua Van</a>
+ 
+<span style="color: #666; font-size: 0.9em;">(<a href="/events/20251206.html" style="color: #666;">2025-12-06</a>)</span>
+</p>
+<p class="fight-entry">
+✅ 
+<span class="status-text">Fight added: </span>
+<a href="/fighters/henrycejudo.html">Henry Cejudo</a>
+ vs. 
+<a href="/fighters/paytontalbott.html">Payton Talbott</a>
+ 
+<span style="color: #666; font-size: 0.9em;">(<a href="/events/20251206.html" style="color: #666;">2025-12-06</a>)</span>
+</p>
+<p class="fight-entry">
+✅ 
+<span class="status-text">Fight added: </span>
+<a href="/fighters/janblachowicz.html">Jan Blachowicz</a>
+ vs. 
+<a href="/fighters/bogdanguskov.html">Bogdan Guskov</a>
+ 
+<span style="color: #666; font-size: 0.9em;">(<a href="/events/20251206.html" style="color: #666;">2025-12-06</a>)</span>
+</p>
+<p class="fight-entry">
+✅ 
+<span class="status-text">Fight added: </span>
+<a href="/fighters/faresziam.html">Fares Ziam</a>
+ vs. 
+<a href="/fighters/nazimsadykhov.html">Nazim Sadykhov</a>
+ 
+<span style="color: #666; font-size: 0.9em;">(<a href="/events/20251206.html" style="color: #666;">2025-12-06</a>)</span>
+</p>
+<p class="fight-entry">
+✅ 
+<span class="status-text">Fight added: </span>
+<a href="/fighters/brandonmoreno.html">Brandon Moreno</a>
+ vs. 
+<a href="/fighters/tatsurotaira.html">Tatsuro Taira</a>
+ 
+<span style="color: #666; font-size: 0.9em;">(<a href="/events/20251206.html" style="color: #666;">2025-12-06</a>)</span>
+</p>
+<p class="fight-entry">
+✅ 
+<span class="status-text">Fight added: </span>
+<a href="/fighters/grantdawson.html">Grant Dawson</a>
+ vs. 
+<a href="/fighters/manueltorres.html">Manuel Torres</a>
+ 
+<span style="color: #666; font-size: 0.9em;">(<a href="/events/20251206.html" style="color: #666;">2025-12-06</a>)</span>
+</p>
+<p class="fight-entry">
+✅ 
+<span class="status-text">Fight added: </span>
+<a href="/fighters/terrancemckinney.html">Terrance McKinney</a>
+ vs. 
+<a href="/fighters/chrisduncan.html">Chris Duncan</a>
+ 
+<span style="color: #666; font-size: 0.9em;">(<a href="/events/20251206.html" style="color: #666;">2025-12-06</a>)</span>
+</p>
+<h4>2025-10-11</h4>
+<p class="fight-entry">
+✅ 
+<span class="status-text">Fight added: </span>
+<a href="/fighters/charlesradtke.html">Charles Radtke</a>
+ vs. 
+<a href="/fighters/danielfrunza.html">Daniel Frunza</a>
+ 
+<span style="color: #666; font-size: 0.9em;">(<a href="/events/20251101.html" style="color: #666;">2025-11-01</a>)</span>
+</p>
+<h4>2025-10-10</h4>
+<p class="fight-entry">
+❌ 
+<span class="status-text">Fight removed: </span>
+<a href="/fighters/valterwalker.html">Valter Walker</a>
+ vs. 
+<a href="/fighters/mohammedusman.html">Mohammed Usman</a>
+ 
+<span style="color: #666; font-size: 0.9em;">(<a href="/events/20251011.html" style="color: #666;">2025-10-11</a>)</span>
+</p>
+<p class="fight-entry">
+✅ 
+<span class="status-text">Fight added: </span>
+<a href="/fighters/malcolmwellmaker.html">Malcolm Wellmaker</a>
+ vs. 
+<a href="/fighters/serhiysidey.html">Serhiy Sidey</a>
+ 
+<span style="color: #666; font-size: 0.9em;">(<a href="/events/20251115.html" style="color: #666;">2025-11-15</a>)</span>
+</p>
+<h4>2025-10-09</h4>
+<p class="fight-entry">
+✅ 
+<span class="status-text">Fight added: </span>
+<a href="/fighters/montserratconejoruiz.html">Montserrat Conejo Ruiz</a>
+ vs. 
+<a href="/fighters/aliceardelean.html">Alice Ardelean</a>
+ 
+<span style="color: #666; font-size: 0.9em;">(<a href="/events/20251101.html" style="color: #666;">2025-11-01</a>)</span>
+</p>
+<h4>2025-10-08</h4>
+<p class="fight-entry">
+✅ 
+<span class="status-text">Fight added: </span>
+<a href="/fighters/joshhokit.html">Josh Hokit</a>
+ vs. 
+<a href="/fighters/maxgimenis.html">Max Gimenis</a>
+ 
+<span style="color: #666; font-size: 0.9em;">(<a href="/events/20251108.html" style="color: #666;">2025-11-08</a>)</span>
+</p>
+<h4>2025-10-03</h4>
+<p class="fight-entry">
+✅ 
+<span class="status-text">Fight added: </span>
+<a href="/fighters/volkanoezdemir.html">Volkan Oezdemir</a>
+ vs. 
+<a href="/fighters/alonzomenifield.html">Alonzo Menifield</a>
+ 
+<span style="color: #666; font-size: 0.9em;">(<a href="/events/20251122.html" style="color: #666;">2025-11-22</a>)</span>
+</p>
+<p class="fight-entry">
+✅ 
+<span class="status-text">Fight added: </span>
+<a href="/fighters/kyojihoriguchi.html">Kyoji Horiguchi</a>
+ vs. 
+<a href="/fighters/tagirulanbekov.html">Tagir Ulanbekov</a>
+ 
+<span style="color: #666; font-size: 0.9em;">(<a href="/events/20251122.html" style="color: #666;">2025-11-22</a>)</span>
+</p>
+<p class="fight-entry">
+✅ 
+<span class="status-text">Fight added: </span>
+<a href="/fighters/bekzatalmakhan.html">Bekzat Almakhan</a>
+ vs. 
+<a href="/fighters/aleksandretopuria.html">Aleksandre Topuria</a>
+ 
+<span style="color: #666; font-size: 0.9em;">(<a href="/events/20251122.html" style="color: #666;">2025-11-22</a>)</span>
+</p>
+<p class="fight-entry">
+✅ 
+<span class="status-text">Fight added: </span>
+<a href="/fighters/lukeriley.html">Luke Riley</a>
+ vs. 
+<a href="/fighters/bogdangrad.html">Bogdan Grad</a>
+ 
+<span style="color: #666; font-size: 0.9em;">(<a href="/events/20251122.html" style="color: #666;">2025-11-22</a>)</span>
+</p>
+<p class="fight-entry">
+✅ 
+<span class="status-text">Fight added: </span>
+<a href="/fighters/ryanloder.html">Ryan Loder</a>
+ vs. 
+<a href="/fighters/ismailnaurdiev.html">Ismail Naurdiev</a>
+ 
+<span style="color: #666; font-size: 0.9em;">(<a href="/events/20251122.html" style="color: #666;">2025-11-22</a>)</span>
+</p>
+<h4>2025-10-02</h4>
+<p class="fight-entry">
+✅ 
+<span class="status-text">Fight added: </span>
+<a href="/fighters/armantsarukyan.html">Arman Tsarukyan</a>
+ vs. 
+<a href="/fighters/danhooker.html">Dan Hooker</a>
+ 
+<span style="color: #666; font-size: 0.9em;">(<a href="/events/20251122.html" style="color: #666;">2025-11-22</a>)</span>
+</p>
+<p class="fight-entry">
+✅ 
+<span class="status-text">Fight added: </span>
+<a href="/fighters/belalmuhammad.html">Belal Muhammad</a>
+ vs. 
+<a href="/fighters/ianmachadogarry.html">Ian Machado Garry</a>
+ 
+<span style="color: #666; font-size: 0.9em;">(<a href="/events/20251122.html" style="color: #666;">2025-11-22</a>)</span>
+</p>
+<h4>2025-10-01</h4>
+<p class="fight-entry">
+✅ 
+<span class="status-text">Fight added: </span>
+<a href="/fighters/atebagautier.html">Ateba Gautier</a>
+ vs. 
+<a href="/fighters/trestonvines.html">Treston Vines</a>
+ 
+<span style="color: #666; font-size: 0.9em;">(<a href="/events/20251004.html" style="color: #666;">2025-10-04</a>)</span>
+</p>
+<p class="fight-entry">
+✅ 
+<span class="status-text">Fight added: </span>
+<a href="/fighters/beneildariush.html">Beneil Dariush</a>
+ vs. 
+<a href="/fighters/benoitsaintdenis.html">Benoit Saint Denis</a>
+ 
+<span style="color: #666; font-size: 0.9em;">(<a href="/events/20251115.html" style="color: #666;">2025-11-15</a>)</span>
+</p>
+<h4>2025-09-30</h4>
+<p class="fight-entry">
+❌ 
+<span class="status-text">Fight removed: </span>
+<a href="/fighters/atebagautier.html">Ateba Gautier</a>
+ vs. 
+<a href="/fighters/ozzydiaz.html">Ozzy Diaz</a>
+ 
+<span style="color: #666; font-size: 0.9em;">(<a href="/events/20251004.html" style="color: #666;">2025-10-04</a>)</span>
+</p>
+<h4>2025-09-29</h4>
+<p class="fight-entry">
+✅ 
+<span class="status-text">Fight added: </span>
+<a href="/fighters/jackhermansson.html">Jack Hermansson</a>
+ vs. 
+<a href="/fighters/myktybekorolbai.html">Myktybek Orolbai</a>
+ 
+<span style="color: #666; font-size: 0.9em;">(<a href="/events/20251122.html" style="color: #666;">2025-11-22</a>)</span>
+</p>
+<p class="fight-entry">
+✅ 
+<span class="status-text">Fight added: </span>
+<a href="/fighters/marekbujlo.html">Marek Bujlo</a>
+ vs. 
+<a href="/fighters/denzelfreeman.html">Denzel Freeman</a>
+ 
+<span style="color: #666; font-size: 0.9em;">(<a href="/events/20251122.html" style="color: #666;">2025-11-22</a>)</span>
+</p>
+<h4>2025-09-27</h4>
+<p class="fight-entry">
+✅ 
+<span class="status-text">Fight added: </span>
+<a href="/fighters/vicenteluque.html">Vicente Luque</a>
+ vs. 
+<a href="/fighters/joelalvarez.html">Joel Alvarez</a>
+ 
+<span style="color: #666; font-size: 0.9em;">(<a href="/events/20251011.html" style="color: #666;">2025-10-11</a>)</span>
+</p>
+<p class="fight-entry">
+❌ 
+<span class="status-text">Fight removed: </span>
+<a href="/fighters/gabrielbonfim.html">Gabriel Bonfim</a>
+ vs. 
+<a href="/fighters/randybrown.html">Randy Brown</a>
+ 
+<span style="color: #666; font-size: 0.9em;">(<a href="/events/20251011.html" style="color: #666;">2025-10-11</a>)</span>
+</p>
+<p class="fight-entry">
+❌ 
+<span class="status-text">Fight removed: </span>
+<a href="/fighters/louiesutherland.html">Louie Sutherland</a>
+ vs. 
+<a href="/fighters/justintafa.html">Justin Tafa</a>
+ 
+<span style="color: #666; font-size: 0.9em;">(<a href="/events/20250928.html" style="color: #666;">2025-09-28</a>)</span>
+</p>
+<p class="fight-entry">
+✅ 
+<span class="status-text">Fight added: </span>
+<a href="/fighters/jeremiahwells.html">Jeremiah Wells</a>
+ vs. 
+<a href="/fighters/thembagorimbo.html">Themba Gorimbo</a>
+ 
+<span style="color: #666; font-size: 0.9em;">(<a href="/events/20251101.html" style="color: #666;">2025-11-01</a>)</span>
+</p>
+<p class="fight-entry">
+✅ 
+<span class="status-text">Fight added: </span>
+<a href="/fighters/gabrielbonfim.html">Gabriel Bonfim</a>
+ vs. 
+<a href="/fighters/randybrown.html">Randy Brown</a>
+ 
+<span style="color: #666; font-size: 0.9em;">(<a href="/events/20251108.html" style="color: #666;">2025-11-08</a>)</span>
+</p>
+<p class="fight-entry">
+❌ 
+<span class="status-text">Fight removed: </span>
+<a href="/fighters/vicenteluque.html">Vicente Luque</a>
+ vs. 
+<a href="/fighters/santiagoponzinibbio.html">Santiago Ponzinibbio</a>
+ 
+<span style="color: #666; font-size: 0.9em;">(<a href="/events/20251011.html" style="color: #666;">2025-10-11</a>)</span>
+</p>
+<p class="fight-entry">
+✅ 
+<span class="status-text">Fight added: </span>
+<a href="/fighters/adrianyanez.html">Adrian Yanez</a>
+ vs. 
+<a href="/fighters/cristianquinonez.html">Cristian Quinonez</a>
+ 
+<span style="color: #666; font-size: 0.9em;">(<a href="/events/20251108.html" style="color: #666;">2025-11-08</a>)</span>
+</p>
+<p class="fight-entry">
+✅ 
+<span class="status-text">Fight added: </span>
+<a href="/fighters/seansharaf.html">Sean Sharaf</a>
+ vs. 
+<a href="/fighters/stevenasplund.html">Steven Asplund</a>
+ 
+<span style="color: #666; font-size: 0.9em;">(<a href="/events/20251213.html" style="color: #666;">2025-12-13</a>)</span>
+</p>
+<h4>2025-09-26</h4>
+<p class="fight-entry">
+❌ 
+<span class="status-text">Fight removed: </span>
+<a href="/fighters/marekbujlo.html">Marek Bujlo</a>
+ vs. 
+Jose Luiz
+ 
+<span style="color: #666; font-size: 0.9em;">(<a href="/events/20251122.html" style="color: #666;">2025-11-22</a>)</span>
+</p>
+<p class="fight-entry">
+❌ 
+<span class="status-text">Fight removed: </span>
+<a href="/fighters/jonathanmicallef.html">Jonathan Micallef</a>
+ vs. 
+<a href="/fighters/obanelliott.html">Oban Elliott</a>
+ 
+<span style="color: #666; font-size: 0.9em;">(<a href="/events/20250928.html" style="color: #666;">2025-09-28</a>)</span>
+</p>
+<p class="fight-entry">
+✅ 
+<span class="status-text">Fight added: </span>
+<a href="/fighters/talitaalencar.html">Talita Alencar</a>
+ vs. 
+<a href="/fighters/arianecarnelossi.html">Ariane Carnelossi</a>
+ 
+<span style="color: #666; font-size: 0.9em;">(<a href="/events/20251101.html" style="color: #666;">2025-11-01</a>)</span>
+</p>
+<p class="fight-entry">
+✅ 
+<span class="status-text">Fight added: </span>
+<a href="/fighters/teciapennington.html">Tecia Pennington</a>
+ vs. 
+<a href="/fighters/denisegomes.html">Denise Gomes</a>
+ 
+<span style="color: #666; font-size: 0.9em;">(<a href="/events/20251108.html" style="color: #666;">2025-11-08</a>)</span>
+</p>
+<p class="fight-entry">
+✅ 
+<span class="status-text">Fight added: </span>
+<a href="/fighters/rickysimon.html">Ricky Simon</a>
+ vs. 
+<a href="/fighters/raonibarcelos.html">Raoni Barcelos</a>
+ 
+<span style="color: #666; font-size: 0.9em;">(<a href="/events/20251108.html" style="color: #666;">2025-11-08</a>)</span>
+</p>
+<h4>2025-09-25</h4>
+<p class="fight-entry">
+✅ 
+<span class="status-text">Fight added: </span>
+<a href="/fighters/saimonoliveira.html">Saimon Oliveira</a>
+ vs. 
+<a href="/fighters/luanlacerda.html">Luan Lacerda</a>
+ 
+<span style="color: #666; font-size: 0.9em;">(<a href="/events/20251011.html" style="color: #666;">2025-10-11</a>)</span>
+</p>
+<h4>2025-09-24</h4>
+<p class="fight-entry">
+✅ 
+<span class="status-text">Fight added: </span>
+<a href="/fighters/charlesoliveira.html">Charles Oliveira</a>
+ vs. 
+<a href="/fighters/mateuszgamrot.html">Mateusz Gamrot</a>
+ 
+<span style="color: #666; font-size: 0.9em;">(<a href="/events/20251011.html" style="color: #666;">2025-10-11</a>)</span>
+</p>
+<h4>2025-09-22</h4>
+<p class="fight-entry">
+✅ 
+<span class="status-text">Fight added: </span>
+<a href="/fighters/marekbujlo.html">Marek Bujlo</a>
+ vs. 
+Jose Luiz
+ 
+<span style="color: #666; font-size: 0.9em;">(<a href="/events/20251122.html" style="color: #666;">2025-11-22</a>)</span>
+</p>
+<h4>2025-09-20</h4>
+<p class="fight-entry">
+❌ 
+<span class="status-text">Fight removed: </span>
+<a href="/fighters/charlesoliveira.html">Charles Oliveira</a>
+ vs. 
+<a href="/fighters/rafaelfiziev.html">Rafael Fiziev</a>
+ 
+<span style="color: #666; font-size: 0.9em;">(<a href="/events/20251011.html" style="color: #666;">2025-10-11</a>)</span>
+</p>
+<p class="fight-entry">
+✅ 
+<span class="status-text">Fight added: </span>
+<a href="/fighters/stevegarcia.html">Steve Garcia</a>
+ vs. 
+<a href="/fighters/davidonama.html">David Onama</a>
+ 
+<span style="color: #666; font-size: 0.9em;">(<a href="/events/20251101.html" style="color: #666;">2025-11-01</a>)</span>
+</p>
+<p class="fight-entry">
+✅ 
+<span class="status-text">Fight added: </span>
+<a href="/fighters/waldocortesacosta.html">Waldo Cortes-Acosta</a>
+ vs. 
+<a href="/fighters/antedelija.html">Ante Delija</a>
+ 
+<span style="color: #666; font-size: 0.9em;">(<a href="/events/20251101.html" style="color: #666;">2025-11-01</a>)</span>
+</p>
+<p class="fight-entry">
+✅ 
+<span class="status-text">Fight added: </span>
+<a href="/fighters/philrowe.html">Phil Rowe</a>
+ vs. 
+<a href="/fighters/seokhyeonko.html">Seokhyeon Ko</a>
+ 
+<span style="color: #666; font-size: 0.9em;">(<a href="/events/20251101.html" style="color: #666;">2025-11-01</a>)</span>
+</p>
+<p class="fight-entry">
+✅ 
+<span class="status-text">Fight added: </span>
+<a href="/fighters/allenfryejr.html">Allen Frye Jr.</a>
+ vs. 
+<a href="/fighters/guilhermepat.html">Guilherme Pat</a>
+ 
+<span style="color: #666; font-size: 0.9em;">(<a href="/events/20251213.html" style="color: #666;">2025-12-13</a>)</span>
+</p>
+<h4>2025-09-19</h4>
+<p class="fight-entry">
+❌ 
+<span class="status-text">Fight removed: </span>
+<a href="/fighters/juniortafa.html">Junior Tafa</a>
+ vs. 
+<a href="/fighters/iboaslan.html">Ibo Aslan</a>
+ 
+<span style="color: #666; font-size: 0.9em;">(<a href="/events/20250928.html" style="color: #666;">2025-09-28</a>)</span>
+</p>
+<p class="fight-entry">
+✅ 
+<span class="status-text">Fight added: </span>
+<a href="/fighters/cesaralmeida.html">Cesar Almeida</a>
+ vs. 
+<a href="/fighters/cezaryoleksiejczuk.html">Cezary Oleksiejczuk</a>
+ 
+<span style="color: #666; font-size: 0.9em;">(<a href="/events/20251213.html" style="color: #666;">2025-12-13</a>)</span>
+</p>
+<h4>2025-09-18</h4>
+<p class="fight-entry">
+✅ 
+<span class="status-text">Fight added: </span>
+<a href="/fighters/mansurabdulmalik.html">Mansur Abdul-Malik</a>
+ vs. 
+<a href="/fighters/antoniotrocoli.html">Antonio Trocoli</a>
+ 
+<span style="color: #666; font-size: 0.9em;">(<a href="/events/20251206.html" style="color: #666;">2025-12-06</a>)</span>
+</p>
+<p class="fight-entry">
+✅ 
+<span class="status-text">Fight added: </span>
+<a href="/fighters/terezableda.html">Tereza Bleda</a>
+ vs. 
+<a href="/fighters/jameylynhorth.html">Jamey-Lyn Horth</a>
+ 
+<span style="color: #666; font-size: 0.9em;">(<a href="/events/20251213.html" style="color: #666;">2025-12-13</a>)</span>
+</p>
+<h4>2025-09-17</h4>
+<p class="fight-entry">
+✅ 
+<span class="status-text">Fight added: </span>
+<a href="/fighters/bonickal.html">Bo Nickal</a>
+ vs. 
+<a href="/fighters/rodolfovieira.html">Rodolfo Vieira</a>
+ 
+<span style="color: #666; font-size: 0.9em;">(<a href="/events/20251115.html" style="color: #666;">2025-11-15</a>)</span>
+</p>
+<p class="fight-entry">
+✅ 
+<span class="status-text">Fight added: </span>
+<a href="/fighters/romankopylov.html">Roman Kopylov</a>
+ vs. 
+<a href="/fighters/gregoryrodrigues.html">Gregory Rodrigues</a>
+ 
+<span style="color: #666; font-size: 0.9em;">(<a href="/events/20251115.html" style="color: #666;">2025-11-15</a>)</span>
+</p>
+<h4>2025-09-16</h4>
+<p class="fight-entry">
+❌ 
+<span class="status-text">Fight removed: </span>
+<a href="/fighters/reinierderidder.html">Reinier de Ridder</a>
+ vs. 
+<a href="/fighters/anthonyhernandez.html">Anthony Hernandez</a>
+ 
+<span style="color: #666; font-size: 0.9em;">(<a href="/events/20251018.html" style="color: #666;">2025-10-18</a>)</span>
+</p>
+<p class="fight-entry">
+✅ 
+<span class="status-text">Fight added: </span>
+<a href="/fighters/reinierderidder.html">Reinier de Ridder</a>
+ vs. 
+<a href="/fighters/brendanallen.html">Brendan Allen</a>
+ 
+<span style="color: #666; font-size: 0.9em;">(<a href="/events/20251018.html" style="color: #666;">2025-10-18</a>)</span>
+</p>
+<p class="fight-entry">
+✅ 
+<span class="status-text">Fight added: </span>
+<a href="/fighters/geraldmeerschaert.html">Gerald Meerschaert</a>
+ vs. 
+<a href="/fighters/kyledaukaus.html">Kyle Daukaus</a>
+ 
+<span style="color: #666; font-size: 0.9em;">(<a href="/events/20251115.html" style="color: #666;">2025-11-15</a>)</span>
+</p>
+<h4>2025-09-12</h4>
+<p class="fight-entry">
+✅ 
+<span class="status-text">Fight added: </span>
+<a href="/fighters/sergheispivac.html">Serghei Spivac</a>
+ vs. 
+<a href="/fighters/shamilgaziev.html">Shamil Gaziev</a>
+ 
+<span style="color: #666; font-size: 0.9em;">(<a href="/events/20251122.html" style="color: #666;">2025-11-22</a>)</span>
+</p>
+<p class="fight-entry">
+✅ 
+<span class="status-text">Fight added: </span>
+<a href="/fighters/josedelgado.html">Jose Delgado</a>
+ vs. 
+<a href="/fighters/nathanielwood.html">Nathaniel Wood</a>
+ 
+<span style="color: #666; font-size: 0.9em;">(<a href="/events/20251025.html" style="color: #666;">2025-10-25</a>)</span>
+</p>
+<h4>2025-09-11</h4>
+<p class="fight-entry">
+❌ 
+<span class="status-text">Fight removed: </span>
+<a href="/fighters/mayceebarber.html">Maycee Barber</a>
+ vs. 
+<a href="/fighters/karinesilva.html">Karine Silva</a>
+ 
+<span style="color: #666; font-size: 0.9em;">(<a href="/events/20251115.html" style="color: #666;">2025-11-15</a>)</span>
+</p>
+<p class="fight-entry">
+✅ 
+<span class="status-text">Fight added: </span>
+<a href="/fighters/mayceebarber.html">Maycee Barber</a>
+ vs. 
+<a href="/fighters/karinesilva.html">Karine Silva</a>
+ 
+<span style="color: #666; font-size: 0.9em;">(<a href="/events/20251206.html" style="color: #666;">2025-12-06</a>)</span>
+</p>
+<p class="fight-entry">
+✅ 
+<span class="status-text">Fight added: </span>
+<a href="/fighters/mayceebarber.html">Maycee Barber</a>
+ vs. 
+<a href="/fighters/karinesilva.html">Karine Silva</a>
+ 
+<span style="color: #666; font-size: 0.9em;">(<a href="/events/20251115.html" style="color: #666;">2025-11-15</a>)</span>
+</p>
+<p class="fight-entry">
+✅ 
+<span class="status-text">Fight added: </span>
+<a href="/fighters/angelahill.html">Angela Hill</a>
+ vs. 
+<a href="/fighters/fatimakline.html">Fatima Kline</a>
+ 
+<span style="color: #666; font-size: 0.9em;">(<a href="/events/20251115.html" style="color: #666;">2025-11-15</a>)</span>
+</p>
+<h4>2025-09-10</h4>
+<p class="fight-entry">
+✅ 
+<span class="status-text">Fight added: </span>
+<a href="/fighters/baisangursusurkaev.html">Baisangur Susurkaev</a>
+ vs. 
+<a href="/fighters/ericmcconico.html">Eric McConico</a>
+ 
+<span style="color: #666; font-size: 0.9em;">(<a href="/events/20251115.html" style="color: #666;">2025-11-15</a>)</span>
+</p>
+<h4>2025-09-07</h4>
+<p class="fight-entry">
+✅ 
+<span class="status-text">Fight added: </span>
+<a href="/fighters/dariazhelezniakova.html">Daria Zhelezniakova</a>
+ vs. 
+<a href="/fighters/luanasantos.html">Luana Santos</a>
+ 
+<span style="color: #666; font-size: 0.9em;">(<a href="/events/20251108.html" style="color: #666;">2025-11-08</a>)</span>
+</p>
+<h4>2025-09-06</h4>
+<p class="fight-entry">
+✅ 
+<span class="status-text">Fight added: </span>
+<a href="/fighters/tomnolan.html">Tom Nolan</a>
+ vs. 
+<a href="/fighters/charliecampbell.html">Charlie Campbell</a>
+ 
+<span style="color: #666; font-size: 0.9em;">(<a href="/events/20250928.html" style="color: #666;">2025-09-28</a>)</span>
+</p>
+<p class="fight-entry">
+✅ 
+<span class="status-text">Fight added: </span>
+<a href="/fighters/kylenelson.html">Kyle Nelson</a>
+ vs. 
+<a href="/fighters/mattfrevola.html">Matt Frevola</a>
+ 
+<span style="color: #666; font-size: 0.9em;">(<a href="/events/20251018.html" style="color: #666;">2025-10-18</a>)</span>
+</p>
+<p class="fight-entry">
+✅ 
+<span class="status-text">Fight added: </span>
+<a href="/fighters/codygibson.html">Cody Gibson</a>
+ vs. 
+<a href="/fighters/aoriqileng.html">Aoriqileng</a>
+ 
+<span style="color: #666; font-size: 0.9em;">(<a href="/events/20251018.html" style="color: #666;">2025-10-18</a>)</span>
+</p>
+<p class="fight-entry">
+✅ 
+<span class="status-text">Fight added: </span>
+<a href="/fighters/felipelima.html">Felipe Lima</a>
+ vs. 
+<a href="/fighters/danielmarcos.html">Daniel Marcos</a>
+ 
+<span style="color: #666; font-size: 0.9em;">(<a href="/events/20251122.html" style="color: #666;">2025-11-22</a>)</span>
+</p>
+<h4>2025-09-05</h4>
+<p class="fight-entry">
+❌ 
+<span class="status-text">Fight removed: </span>
+<a href="/fighters/patriciofreire.html">Patricio Freire</a>
+ vs. 
+Losene Keita
+ 
+<span style="color: #666; font-size: 0.9em;">(<a href="/events/20250906.html" style="color: #666;">2025-09-06</a>)</span>
+</p>
+<p class="fight-entry">
+✅ 
+<span class="status-text">Fight added: </span>
+<a href="/fighters/robfont.html">Rob Font</a>
+ vs. 
+<a href="/fighters/davidmartinez.html">David Martinez</a>
+ 
+<span style="color: #666; font-size: 0.9em;">(<a href="/events/20250913.html" style="color: #666;">2025-09-13</a>)</span>
+</p>
+<p class="fight-entry">
+✅ 
+<span class="status-text">Fight added: </span>
+<a href="/fighters/mateuszrebecki.html">Mateusz Rebecki</a>
+ vs. 
+<a href="/fighters/ludovitklein.html">Ludovit Klein</a>
+ 
+<span style="color: #666; font-size: 0.9em;">(<a href="/events/20251025.html" style="color: #666;">2025-10-25</a>)</span>
+</p>
+<p class="fight-entry">
+✅ 
+<span class="status-text">Fight added: </span>
+<a href="/fighters/iasminlucindo.html">Iasmin Lucindo</a>
+ vs. 
+<a href="/fighters/gillianrobertson.html">Gillian Robertson</a>
+ 
+<span style="color: #666; font-size: 0.9em;">(<a href="/events/20251213.html" style="color: #666;">2025-12-13</a>)</span>
+</p>
+<h4>2025-09-04</h4>
+<p class="fight-entry">
+✅ 
+<span class="status-text">Fight added: </span>
+<a href="/fighters/santiagoluna.html">Santiago Luna</a>
+ vs. 
+<a href="/fighters/quangle.html">Quang Le</a>
+ 
+<span style="color: #666; font-size: 0.9em;">(<a href="/events/20250913.html" style="color: #666;">2025-09-13</a>)</span>
+</p>
+<p class="fight-entry">
+✅ 
+<span class="status-text">Fight added: </span>
+<a href="/fighters/punahelesoriano.html">Punahele Soriano</a>
+ vs. 
+<a href="/fighters/nikolayveretennikov.html">Nikolay Veretennikov</a>
+ 
+<span style="color: #666; font-size: 0.9em;">(<a href="/events/20251004.html" style="color: #666;">2025-10-04</a>)</span>
+</p>
+<p class="fight-entry">
+✅ 
+<span class="status-text">Fight added: </span>
+<a href="/fighters/dontejohnson.html">Donte Johnson</a>
+ vs. 
+<a href="/fighters/nickklein.html">Nick Klein</a>
+ 
+<span style="color: #666; font-size: 0.9em;">(<a href="/events/20251101.html" style="color: #666;">2025-11-01</a>)</span>
+</p>
+<p class="fight-entry">
+✅ 
+<span class="status-text">Fight added: </span>
+<a href="/fighters/austinbashi.html">Austin Bashi</a>
+ vs. 
+<a href="/fighters/jamallemmers.html">Jamall Emmers</a>
+ 
+<span style="color: #666; font-size: 0.9em;">(<a href="/events/20251108.html" style="color: #666;">2025-11-08</a>)</span>
+</p>
+<p class="fight-entry">
+✅ 
+<span class="status-text">Fight added: </span>
+<a href="/fighters/alexperez.html">Alex Perez</a>
+ vs. 
+<a href="/fighters/asualmabayev.html">Asu Almabayev</a>
+ 
+<span style="color: #666; font-size: 0.9em;">(<a href="/events/20251122.html" style="color: #666;">2025-11-22</a>)</span>
+</p>
+<h4>2025-09-03</h4>
+<p class="fight-entry">
+✅ 
+<span class="status-text">Fight added: </span>
+<a href="/fighters/kauefernandes.html">Kaue Fernandes</a>
+ vs. 
+<a href="/fighters/harryhardwick.html">Harry Hardwick</a>
+ 
+<span style="color: #666; font-size: 0.9em;">(<a href="/events/20250906.html" style="color: #666;">2025-09-06</a>)</span>
+</p>
+<h4>2025-09-02</h4>
+<p class="fight-entry">
+❌ 
+<span class="status-text">Fight removed: </span>
+<a href="/fighters/faresziam.html">Fares Ziam</a>
+ vs. 
+<a href="/fighters/kauefernandes.html">Kaue Fernandes</a>
+ 
+<span style="color: #666; font-size: 0.9em;">(<a href="/events/20250906.html" style="color: #666;">2025-09-06</a>)</span>
+</p>
+<p class="fight-entry">
+✅ 
+<span class="status-text">Fight added: </span>
+<a href="/fighters/brandonroyval.html">Brandon Royval</a>
+ vs. 
+<a href="/fighters/manelkape.html">Manel Kape</a>
+ 
+<span style="color: #666; font-size: 0.9em;">(<a href="/events/20251213.html" style="color: #666;">2025-12-13</a>)</span>
+</p>
+<h4>2025-09-01</h4>
+<p class="fight-entry">
+✅ 
+<span class="status-text">Fight added: </span>
+<a href="/fighters/allannascimento.html">Allan Nascimento</a>
+ vs. 
+<a href="/fighters/rafaelestevam.html">Rafael Estevam</a>
+ 
+<span style="color: #666; font-size: 0.9em;">(<a href="/events/20251101.html" style="color: #666;">2025-11-01</a>)</span>
+</p>
+<p class="fight-entry">
+✅ 
+<span class="status-text">Fight added: </span>
+<a href="/fighters/abdulrakhmanyakhyaev.html">Abdul Rakhman Yakhyaev</a>
+ vs. 
+<a href="/fighters/rafaelcerqueira.html">Rafael Cerqueira</a>
+ 
+<span style="color: #666; font-size: 0.9em;">(<a href="/events/20251122.html" style="color: #666;">2025-11-22</a>)</span>
+</p>
+<h4>2025-08-30</h4>
+<p class="fight-entry">
+❌ 
+<span class="status-text">Fight removed: </span>
+<a href="/fighters/davidmartinez.html">David Martinez</a>
+ vs. 
+<a href="/fighters/quangle.html">Quang Le</a>
+ 
+<span style="color: #666; font-size: 0.9em;">(<a href="/events/20250913.html" style="color: #666;">2025-09-13</a>)</span>
+</p>
+<h4>2025-08-28</h4>
+<p class="fight-entry">
+✅ 
+<span class="status-text">Fight added: </span>
+<a href="/fighters/kaanofli.html">Kaan Ofli</a>
+ vs. 
+<a href="/fighters/ricardoramos.html">Ricardo Ramos</a>
+ 
+<span style="color: #666; font-size: 0.9em;">(<a href="/events/20251011.html" style="color: #666;">2025-10-11</a>)</span>
+</p>
+<p class="fight-entry">
+✅ 
+<span class="status-text">Fight added: </span>
+<a href="/fighters/jacquelinecavalcanti.html">Jacqueline Cavalcanti</a>
+ vs. 
+<a href="/fighters/mayrabuenosilva.html">Mayra Bueno Silva</a>
+ 
+<span style="color: #666; font-size: 0.9em;">(<a href="/events/20251108.html" style="color: #666;">2025-11-08</a>)</span>
+</p>
+<h4>2025-08-27</h4>
+<p class="fight-entry">
+✅ 
+<span class="status-text">Fight added: </span>
+<a href="/fighters/billyelekana.html">Billy Elekana</a>
+ vs. 
+<a href="/fighters/kevinchristian.html">Kevin Christian</a>
+ 
+<span style="color: #666; font-size: 0.9em;">(<a href="/events/20251101.html" style="color: #666;">2025-11-01</a>)</span>
+</p>
+<p class="fight-entry">
+❌ 
+<span class="status-text">Fight removed: </span>
+<a href="/fighters/joosangyoo.html">JooSang Yoo</a>
+ vs. 
+<a href="/fighters/danielsantos.html">Daniel Santos</a>
+ 
+<span style="color: #666; font-size: 0.9em;">(<a href="/events/20250928.html" style="color: #666;">2025-09-28</a>)</span>
+</p>
+<p class="fight-entry">
+✅ 
+<span class="status-text">Fight added: </span>
+<a href="/fighters/tracycortez.html">Tracy Cortez</a>
+ vs. 
+<a href="/fighters/erinblanchfield.html">Erin Blanchfield</a>
+ 
+<span style="color: #666; font-size: 0.9em;">(<a href="/events/20251115.html" style="color: #666;">2025-11-15</a>)</span>
+</p>
+<h4>2025-08-26</h4>
+<p class="fight-entry">
+✅ 
+<span class="status-text">Fight added: </span>
+<a href="/fighters/neilmagny.html">Neil Magny</a>
+ vs. 
+<a href="/fighters/jakematthews.html">Jake Matthews</a>
+ 
+<span style="color: #666; font-size: 0.9em;">(<a href="/events/20250928.html" style="color: #666;">2025-09-28</a>)</span>
+</p>
+<p class="fight-entry">
+✅ 
+<span class="status-text">Fight added: </span>
+<a href="/fighters/obanelliott.html">Oban Elliott</a>
+ vs. 
+<a href="/fighters/jonathanmicallef.html">Jonathan Micallef</a>
+ 
+<span style="color: #666; font-size: 0.9em;">(<a href="/events/20250928.html" style="color: #666;">2025-09-28</a>)</span>
+</p>
+<p class="fight-entry">
+✅ 
+<span class="status-text">Fight added: </span>
+<a href="/fighters/drewdober.html">Drew Dober</a>
+ vs. 
+<a href="/fighters/kyleprepolec.html">Kyle Prepolec</a>
+ 
+<span style="color: #666; font-size: 0.9em;">(<a href="/events/20251018.html" style="color: #666;">2025-10-18</a>)</span>
+</p>
+<p class="fight-entry">
+✅ 
+<span class="status-text">Fight added: </span>
+<a href="/fighters/daveygrant.html">Davey Grant</a>
+ vs. 
+<a href="/fighters/charlesjourdain.html">Charles Jourdain</a>
+ 
+<span style="color: #666; font-size: 0.9em;">(<a href="/events/20251018.html" style="color: #666;">2025-10-18</a>)</span>
+</p>
+<h4>2025-08-25</h4>
+<p class="fight-entry">
+✅ 
+<span class="status-text">Fight added: </span>
+<a href="/fighters/camrowston.html">Cam Rowston</a>
+ vs. 
+<a href="/fighters/andrepetroski.html">Andre Petroski</a>
+ 
+<span style="color: #666; font-size: 0.9em;">(<a href="/events/20250928.html" style="color: #666;">2025-09-28</a>)</span>
+</p>
+<h4>2025-08-24</h4>
+<p class="fight-entry">
+✅ 
+<span class="status-text">Fight added: </span>
+<a href="/fighters/youssefzalal.html">Youssef Zalal</a>
+ vs. 
+<a href="/fighters/joshemmett.html">Josh Emmett</a>
+ 
+<span style="color: #666; font-size: 0.9em;">(<a href="/events/20251004.html" style="color: #666;">2025-10-04</a>)</span>
+</p>
+<h4>2025-08-22</h4>
+<p class="fight-entry">
+✅ 
+<span class="status-text">Fight added: </span>
+<a href="/fighters/dustinstoltzfus.html">Dustin Stoltzfus</a>
+ vs. 
+<a href="/fighters/kelvingastelum.html">Kelvin Gastelum</a>
+ 
+<span style="color: #666; font-size: 0.9em;">(<a href="/events/20250913.html" style="color: #666;">2025-09-13</a>)</span>
+</p>
+<p class="fight-entry">
+✅ 
+<span class="status-text">Fight added: </span>
+<a href="/fighters/ramontaveras.html">Ramon Taveras</a>
+ vs. 
+<a href="/fighters/jackjenkins.html">Jack Jenkins</a>
+ 
+<span style="color: #666; font-size: 0.9em;">(<a href="/events/20250928.html" style="color: #666;">2025-09-28</a>)</span>
+</p>
+<h4>2025-08-20</h4>
+<p class="fight-entry">
+✅ 
+<span class="status-text">Fight added: </span>
+<a href="/fighters/elishaellison.html">Elisha Ellison</a>
+ vs. 
+<a href="/fighters/brandopericic.html">Brando Pericic</a>
+ 
+<span style="color: #666; font-size: 0.9em;">(<a href="/events/20250928.html" style="color: #666;">2025-09-28</a>)</span>
+</p>
+<p class="fight-entry">
+✅ 
+<span class="status-text">Fight added: </span>
+<a href="/fighters/monteljackson.html">Montel Jackson</a>
+ vs. 
+<a href="/fighters/deivesonfigueiredo.html">Deiveson Figueiredo</a>
+ 
+<span style="color: #666; font-size: 0.9em;">(<a href="/events/20251011.html" style="color: #666;">2025-10-11</a>)</span>
+</p>
+<p class="fight-entry">
+✅ 
+<span class="status-text">Fight added: </span>
+<a href="/fighters/anthonyhernandez.html">Anthony Hernandez</a>
+ vs. 
+<a href="/fighters/reinierderidder.html">Reinier de Ridder</a>
+ 
+<span style="color: #666; font-size: 0.9em;">(<a href="/events/20251018.html" style="color: #666;">2025-10-18</a>)</span>
+</p>
+<p class="fight-entry">
+✅ 
+<span class="status-text">Fight added: </span>
+<a href="/fighters/mikemalott.html">Mike Malott</a>
+ vs. 
+<a href="/fighters/kevinholland.html">Kevin Holland</a>
+ 
+<span style="color: #666; font-size: 0.9em;">(<a href="/events/20251018.html" style="color: #666;">2025-10-18</a>)</span>
+</p>
+<h4>2025-08-18</h4>
+<p class="fight-entry">
+✅ 
+<span class="status-text">Fight added: </span>
+<a href="/fighters/rolandobedoya.html">Rolando Bedoya</a>
+ vs. 
+<a href="/fighters/jamiemullarkey.html">Jamie Mullarkey</a>
+ 
+<span style="color: #666; font-size: 0.9em;">(<a href="/events/20250928.html" style="color: #666;">2025-09-28</a>)</span>
+</p>
+<h4>2025-08-17</h4>
+<p class="fight-entry">
+✅ 
+<span class="status-text">Fight added: </span>
+Losene Keita
+ vs. 
+<a href="/fighters/patriciofreire.html">Patricio Freire</a>
+ 
+<span style="color: #666; font-size: 0.9em;">(<a href="/events/20250906.html" style="color: #666;">2025-09-06</a>)</span>
+</p>
+<h4>2025-08-15</h4>
+<p class="fight-entry">
+✅ 
+<span class="status-text">Fight added: </span>
+<a href="/fighters/daniildonchenko.html">Daniil Donchenko</a>
+ vs. 
+<a href="/fighters/rodrigosezinando.html">Rodrigo Sezinando</a>
+ 
+<span style="color: #666; font-size: 0.9em;">(<a href="/events/20250913.html" style="color: #666;">2025-09-13</a>)</span>
+</p>
+<p class="fight-entry">
+❌ 
+<span class="status-text">Fight removed: </span>
+<a href="/fighters/bryanbattle.html">Bryan Battle</a>
+ vs. 
+<a href="/fighters/nursultonruziboev.html">Nursulton Ruziboev</a>
+ 
+<span style="color: #666; font-size: 0.9em;">(<a href="/events/20250816.html" style="color: #666;">2025-08-16</a>)</span>
+</p>
+<h4>2025-08-14</h4>
+<p class="fight-entry">
+✅ 
+<span class="status-text">Fight added: </span>
+<a href="/fighters/daniildonchenko.html">Daniil Donchenko</a>
+ vs. 
+<a href="/fighters/rodrigosezinando.html">Rodrigo Sezinando</a>
+ 
+<span style="color: #666; font-size: 0.9em;">(<a href="/events/20250816.html" style="color: #666;">2025-08-16</a>)</span>
+</p>
+<p class="fight-entry">
+✅ 
+<span class="status-text">Fight added: </span>
+<a href="/fighters/joosangyoo.html">JooSang Yoo</a>
+ vs. 
+<a href="/fighters/danielsantos.html">Daniel Santos</a>
+ 
+<span style="color: #666; font-size: 0.9em;">(<a href="/events/20250928.html" style="color: #666;">2025-09-28</a>)</span>
+</p>
+<p class="fight-entry">
+✅ 
+<span class="status-text">Fight added: </span>
+<a href="/fighters/ericnolan.html">Eric Nolan</a>
+ vs. 
+<a href="/fighters/baisangursusurkaev.html">Baisangur Susurkaev</a>
+ 
+<span style="color: #666; font-size: 0.9em;">(<a href="/events/20250816.html" style="color: #666;">2025-08-16</a>)</span>
+</p>
+<p class="fight-entry">
+✅ 
+<span class="status-text">Fight added: </span>
+<a href="/fighters/davidmartinez.html">David Martinez</a>
+ vs. 
+<a href="/fighters/quangle.html">Quang Le</a>
+ 
+<span style="color: #666; font-size: 0.9em;">(<a href="/events/20250913.html" style="color: #666;">2025-09-13</a>)</span>
+</p>
+<p class="fight-entry">
+✅ 
+<span class="status-text">Fight added: </span>
+<a href="/fighters/jakubwiklacz.html">Jakub Wiklacz</a>
+ vs. 
+<a href="/fighters/patchymix.html">Patchy Mix</a>
+ 
+<span style="color: #666; font-size: 0.9em;">(<a href="/events/20251004.html" style="color: #666;">2025-10-04</a>)</span>
+</p>
+<p class="fight-entry">
+❌ 
+<span class="status-text">Fight removed: </span>
+<a href="/fighters/carlosvera.html">Carlos Vera</a>
+ vs. 
+<a href="/fighters/davidmartinez.html">David Martinez</a>
+ 
+<span style="color: #666; font-size: 0.9em;">(<a href="/events/20250913.html" style="color: #666;">2025-09-13</a>)</span>
+</p>
+<p class="fight-entry">
+❌ 
+<span class="status-text">Fight removed: </span>
+<a href="/fighters/diegoferreira.html">Diego Ferreira</a>
+ vs. 
+<a href="/fighters/kinggreen.html">King Green</a>
+ 
+<span style="color: #666; font-size: 0.9em;">(<a href="/events/20250816.html" style="color: #666;">2025-08-16</a>)</span>
+</p>
+<p class="fight-entry">
+❌ 
+<span class="status-text">Fight removed: </span>
+<a href="/fighters/daniildonchenko.html">Daniil Donchenko</a>
+ vs. 
+<a href="/fighters/rodrigosezinando.html">Rodrigo Sezinando</a>
+ 
+<span style="color: #666; font-size: 0.9em;">(<a href="/events/20250816.html" style="color: #666;">2025-08-16</a>)</span>
+</p>
+<h4>2025-08-12</h4>
+<p class="fight-entry">
+✅ 
+<span class="status-text">Fight added: </span>
+<a href="/fighters/santiagoponzinibbio.html">Santiago Ponzinibbio</a>
+ vs. 
+<a href="/fighters/vicenteluque.html">Vicente Luque</a>
+ 
+<span style="color: #666; font-size: 0.9em;">(<a href="/events/20251011.html" style="color: #666;">2025-10-11</a>)</span>
+</p>
+<p class="fight-entry">
+❌ 
+<span class="status-text">Fight removed: </span>
+<a href="/fighters/danielsantos.html">Daniel Santos</a>
+ vs. 
+<a href="/fighters/doohochoi.html">Dooho Choi</a>
+ 
+<span style="color: #666; font-size: 0.9em;">(<a href="/events/20250928.html" style="color: #666;">2025-09-28</a>)</span>
+</p>
+<p class="fight-entry">
+✅ 
+<span class="status-text">Fight added: </span>
+<a href="/fighters/normadumont.html">Norma Dumont</a>
+ vs. 
+<a href="/fighters/ketlenvieira.html">Ketlen Vieira</a>
+ 
+<span style="color: #666; font-size: 0.9em;">(<a href="/events/20251101.html" style="color: #666;">2025-11-01</a>)</span>
+</p>
+<p class="fight-entry">
+❌ 
+<span class="status-text">Fight removed: </span>
+<a href="/fighters/normadumont.html">Norma Dumont</a>
+ vs. 
+<a href="/fighters/raquelpennington.html">Raquel Pennington</a>
+ 
+<span style="color: #666; font-size: 0.9em;">(<a href="/events/20250913.html" style="color: #666;">2025-09-13</a>)</span>
+</p>
+<h4>2025-08-10</h4>
+<p class="fight-entry">
+✅ 
+<span class="status-text">Fight added: </span>
+<a href="/fighters/josephmorales.html">Joseph Morales</a>
+ vs. 
+<a href="/fighters/alibiidiris.html">Alibi Idiris</a>
+ 
+<span style="color: #666; font-size: 0.9em;">(<a href="/events/20250816.html" style="color: #666;">2025-08-16</a>)</span>
+</p>
+<h4>2025-08-09</h4>
+<p class="fight-entry">
+✅ 
+<span class="status-text">Fight added: </span>
+<a href="/fighters/austinvanderford.html">Austin Vanderford</a>
+ vs. 
+<a href="/fighters/ramizbrahimaj.html">Ramiz Brahimaj</a>
+ 
+<span style="color: #666; font-size: 0.9em;">(<a href="/events/20251004.html" style="color: #666;">2025-10-04</a>)</span>
+</p>
+<p class="fight-entry">
+✅ 
+<span class="status-text">Fight added: </span>
+<a href="/fighters/mizuki.html">Mizuki</a>
+ vs. 
+<a href="/fighters/jaquelineamorim.html">Jaqueline Amorim</a>
+ 
+<span style="color: #666; font-size: 0.9em;">(<a href="/events/20251025.html" style="color: #666;">2025-10-25</a>)</span>
+</p>
+<h4>2025-08-06</h4>
+<p class="fight-entry">
+✅ 
+<span class="status-text">Fight added: </span>
+<a href="/fighters/kyledaukaus.html">Kyle Daukaus</a>
+ vs. 
+<a href="/fighters/michelpereira.html">Michel Pereira</a>
+ 
+<span style="color: #666; font-size: 0.9em;">(<a href="/events/20250823.html" style="color: #666;">2025-08-23</a>)</span>
+</p>
+<p class="fight-entry">
+✅ 
+<span class="status-text">Fight added: </span>
+<a href="/fighters/broganwalker.html">Brogan Walker</a>
+ vs. 
+<a href="/fighters/veronicahardy.html">Veronica Hardy</a>
+ 
+<span style="color: #666; font-size: 0.9em;">(<a href="/events/20251004.html" style="color: #666;">2025-10-04</a>)</span>
+</p>
+<p class="fight-entry">
+❌ 
+<span class="status-text">Fight removed: </span>
+Kennedy Freeman
+ vs. 
+<a href="/fighters/yuneisyduben.html">Yuneisy Duben</a>
+ 
+<span style="color: #666; font-size: 0.9em;">(<a href="/events/20250906.html" style="color: #666;">2025-09-06</a>)</span>
+</p>
+<p class="fight-entry">
+❌ 
+<span class="status-text">Fight removed: </span>
+<a href="/fighters/marcotulio.html">Marco Tulio</a>
+ vs. 
+<a href="/fighters/michelpereira.html">Michel Pereira</a>
+ 
+<span style="color: #666; font-size: 0.9em;">(<a href="/events/20250823.html" style="color: #666;">2025-08-23</a>)</span>
+</p>
+<h4>2025-08-05</h4>
+<p class="fight-entry">
+✅ 
+<span class="status-text">Fight added: </span>
+<a href="/fighters/ericmcconico.html">Eric McConico</a>
+ vs. 
+<a href="/fighters/codybrundage.html">Cody Brundage</a>
+ 
+<span style="color: #666; font-size: 0.9em;">(<a href="/events/20250809.html" style="color: #666;">2025-08-09</a>)</span>
+</p>
+<p class="fight-entry">
+✅ 
+<span class="status-text">Fight added: </span>
+<a href="/fighters/ivanerslan.html">Ivan Erslan</a>
+ vs. 
+<a href="/fighters/jimmycrute.html">Jimmy Crute</a>
+ 
+<span style="color: #666; font-size: 0.9em;">(<a href="/events/20250928.html" style="color: #666;">2025-09-28</a>)</span>
+</p>
+<p class="fight-entry">
+✅ 
+<span class="status-text">Fight added: </span>
+<a href="/fighters/iboaslan.html">Ibo Aslan</a>
+ vs. 
+<a href="/fighters/juniortafa.html">Junior Tafa</a>
+ 
+<span style="color: #666; font-size: 0.9em;">(<a href="/events/20250928.html" style="color: #666;">2025-09-28</a>)</span>
+</p>
+<h4>2025-08-03</h4>
+<p class="fight-entry">
+✅ 
+<span class="status-text">Fight added: </span>
+<a href="/fighters/aldencoria.html">Alden Coria</a>
+ vs. 
+<a href="/fighters/alessandrocosta.html">Alessandro Costa</a>
+ 
+<span style="color: #666; font-size: 0.9em;">(<a href="/events/20250913.html" style="color: #666;">2025-09-13</a>)</span>
+</p>
+<h4>2025-08-02</h4>
+<p class="fight-entry">
+✅ 
+<span class="status-text">Fight added: </span>
+<a href="/fighters/kiefercrosbie.html">Kiefer Crosbie</a>
+ vs. 
+<a href="/fighters/taiyilakenueraji.html">Taiyilake Nueraji</a>
+ 
+<span style="color: #666; font-size: 0.9em;">(<a href="/events/20250823.html" style="color: #666;">2025-08-23</a>)</span>
+</p>
+<p class="fight-entry">
+✅ 
+<span class="status-text">Fight added: </span>
+<a href="/fighters/westinwilson.html">Westin Wilson</a>
+ vs. 
+<a href="/fighters/yizha.html">Yizha</a>
+ 
+<span style="color: #666; font-size: 0.9em;">(<a href="/events/20250823.html" style="color: #666;">2025-08-23</a>)</span>
+</p>
+<p class="fight-entry">
+✅ 
+<span class="status-text">Fight added: </span>
+<a href="/fighters/robertbryczek.html">Robert Bryczek</a>
+ vs. 
+<a href="/fighters/bradtavares.html">Brad Tavares</a>
+ 
+<span style="color: #666; font-size: 0.9em;">(<a href="/events/20250906.html" style="color: #666;">2025-09-06</a>)</span>
+</p>
+<p class="fight-entry">
+❌ 
+<span class="status-text">Fight removed: </span>
+<a href="/fighters/kiefercrosbie.html">Kiefer Crosbie</a>
+ vs. 
+<a href="/fighters/songkenan.html">Song Kenan</a>
+ 
+<span style="color: #666; font-size: 0.9em;">(<a href="/events/20250823.html" style="color: #666;">2025-08-23</a>)</span>
+</p>
+<h4>2025-08-01</h4>
+<p class="fight-entry">
+✅ 
+<span class="status-text">Fight added: </span>
+<a href="/fighters/mauricioruffy.html">Mauricio Ruffy</a>
+ vs. 
+<a href="/fighters/benoitsaintdenis.html">Benoit Saint Denis</a>
+ 
+<span style="color: #666; font-size: 0.9em;">(<a href="/events/20250906.html" style="color: #666;">2025-09-06</a>)</span>
+</p>
+<p class="fight-entry">
+✅ 
+<span class="status-text">Fight added: </span>
+<a href="/fighters/evanelder.html">Evan Elder</a>
+ vs. 
+<a href="/fighters/tomnolan.html">Tom Nolan</a>
+ 
+<span style="color: #666; font-size: 0.9em;">(<a href="/events/20250928.html" style="color: #666;">2025-09-28</a>)</span>
+</p>
+<p class="fight-entry">
+✅ 
+<span class="status-text">Fight added: </span>
+<a href="/fighters/biamesquita.html">Bia Mesquita</a>
+ vs. 
+<a href="/fighters/irinaalekseeva.html">Irina Alekseeva</a>
+ 
+<span style="color: #666; font-size: 0.9em;">(<a href="/events/20251011.html" style="color: #666;">2025-10-11</a>)</span>
+</p>
+<h4>2025-07-31</h4>
+<p class="fight-entry">
+✅ 
+<span class="status-text">Fight added: </span>
+<a href="/fighters/carlosvera.html">Carlos Vera</a>
+ vs. 
+<a href="/fighters/davidmartinez.html">David Martinez</a>
+ 
+<span style="color: #666; font-size: 0.9em;">(<a href="/events/20250913.html" style="color: #666;">2025-09-13</a>)</span>
+</p>
+<p class="fight-entry">
+❌ 
+<span class="status-text">Fight removed: </span>
+<a href="/fighters/jjaldrich.html">JJ Aldrich</a>
+ vs. 
+<a href="/fighters/karinesilva.html">Karine Silva</a>
+ 
+<span style="color: #666; font-size: 0.9em;">(<a href="/events/20250816.html" style="color: #666;">2025-08-16</a>)</span>
+</p>
+<h4>2025-07-30</h4>
+<p class="fight-entry">
+✅ 
+<span class="status-text">Fight added: </span>
+<a href="/fighters/dominickreyes.html">Dominick Reyes</a>
+ vs. 
+<a href="/fighters/carlosulberg.html">Carlos Ulberg</a>
+ 
+<span style="color: #666; font-size: 0.9em;">(<a href="/events/20250928.html" style="color: #666;">2025-09-28</a>)</span>
+</p>
+<p class="fight-entry">
+❌ 
+<span class="status-text">Fight removed: </span>
+<a href="/fighters/alessandrocosta.html">Alessandro Costa</a>
+ vs. 
+<a href="/fighters/edgarchairez.html">Edgar Chairez</a>
+ 
+<span style="color: #666; font-size: 0.9em;">(<a href="/events/20250913.html" style="color: #666;">2025-09-13</a>)</span>
+</p>
+<h4>2025-07-25</h4>
+<p class="fight-entry">
+✅ 
+<span class="status-text">Fight added: </span>
+<a href="/fighters/ozzydiaz.html">Ozzy Diaz</a>
+ vs. 
+<a href="/fighters/atebagautier.html">Ateba Gautier</a>
+ 
+<span style="color: #666; font-size: 0.9em;">(<a href="/events/20251004.html" style="color: #666;">2025-10-04</a>)</span>
+</p>
+<p class="fight-entry">
+✅ 
+<span class="status-text">Fight added: </span>
+<a href="/fighters/hamdyabdelwahab.html">Hamdy Abdelwahab</a>
+ vs. 
+<a href="/fighters/chrisbarnett.html">Chris Barnett</a>
+ 
+<span style="color: #666; font-size: 0.9em;">(<a href="/events/20251025.html" style="color: #666;">2025-10-25</a>)</span>
+</p>
+<p class="fight-entry">
+✅ 
+<span class="status-text">Fight added: </span>
+<a href="/fighters/junyongpark.html">JunYong Park</a>
+ vs. 
+<a href="/fighters/ikramaliskerov.html">Ikram Aliskerov</a>
+ 
+<span style="color: #666; font-size: 0.9em;">(<a href="/events/20251025.html" style="color: #666;">2025-10-25</a>)</span>
+</p>
+<p class="fight-entry">
+✅ 
+<span class="status-text">Fight added: </span>
+Karolina
+ vs. 
+Kowalkiewicz Julia Polastri
+ 
+<span style="color: #666; font-size: 0.9em;">(<a href="/events/20251011.html" style="color: #666;">2025-10-11</a>)</span>
+</p>
+<h4>2025-07-24</h4>
+<p class="fight-entry">
+✅ 
+<span class="status-text">Fight added: </span>
+<a href="/fighters/sedriquesdumas.html">Sedriques Dumas</a>
+ vs. 
+<a href="/fighters/zacharyreese.html">Zachary Reese</a>
+ 
+<span style="color: #666; font-size: 0.9em;">(<a href="/events/20250913.html" style="color: #666;">2025-09-13</a>)</span>
+</p>
+<p class="fight-entry">
+✅ 
+<span class="status-text">Fight added: </span>
+<a href="/fighters/thomaspetersen.html">Thomas Petersen</a>
+ vs. 
+<a href="/fighters/vitorpetrino.html">Vitor Petrino</a>
+ 
+<span style="color: #666; font-size: 0.9em;">(<a href="/events/20251011.html" style="color: #666;">2025-10-11</a>)</span>
+</p>
+<p class="fight-entry">
+✅ 
+<span class="status-text">Fight added: </span>
+<a href="/fighters/jasminejasudavicius.html">Jasmine Jasudavicius</a>
+ vs. 
+<a href="/fighters/manonfiorot.html">Manon Fiorot</a>
+ 
+<span style="color: #666; font-size: 0.9em;">(<a href="/events/20251018.html" style="color: #666;">2025-10-18</a>)</span>
+</p>
+<h4>2025-07-23</h4>
+<p class="fight-entry">
+✅ 
+<span class="status-text">Fight added: </span>
+<a href="/fighters/khalilrountreejr.html">Khalil Rountree Jr.</a>
+ vs. 
+<a href="/fighters/jiriprochazka.html">Jiri Prochazka</a>
+ 
+<span style="color: #666; font-size: 0.9em;">(<a href="/events/20251004.html" style="color: #666;">2025-10-04</a>)</span>
+</p>
+<p class="fight-entry">
+✅ 
+<span class="status-text">Fight added: </span>
+<a href="/fighters/andremuniz.html">Andre Muniz</a>
+ vs. 
+<a href="/fighters/edmenshahbazyan.html">Edmen Shahbazyan</a>
+ 
+<span style="color: #666; font-size: 0.9em;">(<a href="/events/20251004.html" style="color: #666;">2025-10-04</a>)</span>
+</p>
+<p class="fight-entry">
+✅ 
+<span class="status-text">Fight added: </span>
+<a href="/fighters/mariopinto.html">Mario Pinto</a>
+ vs. 
+<a href="/fighters/jhonatadiniz.html">Jhonata Diniz</a>
+ 
+<span style="color: #666; font-size: 0.9em;">(<a href="/events/20251011.html" style="color: #666;">2025-10-11</a>)</span>
+</p>
+<p class="fight-entry">
+✅ 
+<span class="status-text">Fight added: </span>
+<a href="/fighters/cirylgane.html">Ciryl Gane</a>
+ vs. 
+<a href="/fighters/tomaspinall.html">Tom Aspinall</a>
+ 
+<span style="color: #666; font-size: 0.9em;">(<a href="/events/20251025.html" style="color: #666;">2025-10-25</a>)</span>
+</p>
+<h4>2025-07-22</h4>
+<p class="fight-entry">
+✅ 
+<span class="status-text">Fight added: </span>
+<a href="/fighters/mitchraposo.html">Mitch Raposo</a>
+ vs. 
+<a href="/fighters/azatmaksum.html">Azat Maksum</a>
+ 
+<span style="color: #666; font-size: 0.9em;">(<a href="/events/20251025.html" style="color: #666;">2025-10-25</a>)</span>
+</p>
+<p class="fight-entry">
+❌ 
+<span class="status-text">Fight removed: </span>
+<a href="/fighters/torrezfinney.html">Torrez Finney</a>
+ vs. 
+<a href="/fighters/azamatbekoev.html">Azamat Bekoev</a>
+ 
+<span style="color: #666; font-size: 0.9em;">(<a href="/events/20250802.html" style="color: #666;">2025-08-02</a>)</span>
+</p>
+<h4>2025-07-20</h4>
+<p class="fight-entry">
+✅ 
+<span class="status-text">Fight added: </span>
+<a href="/fighters/yanasantos.html">Yana Santos</a>
+ vs. 
+<a href="/fighters/macychiasson.html">Macy Chiasson</a>
+ 
+<span style="color: #666; font-size: 0.9em;">(<a href="/events/20251004.html" style="color: #666;">2025-10-04</a>)</span>
+</p>
+<h4>2025-07-19</h4>
+<p class="fight-entry">
+✅ 
+<span class="status-text">Fight added: </span>
+<a href="/fighters/hyunsungpark.html">HyunSung Park</a>
+ vs. 
+<a href="/fighters/steveerceg.html">Steve Erceg</a>
+ 
+<span style="color: #666; font-size: 0.9em;">(<a href="/events/20250809.html" style="color: #666;">2025-08-09</a>)</span>
+</p>
+<p class="fight-entry">
+✅ 
+<span class="status-text">Fight added: </span>
+<a href="/fighters/treywaters.html">Trey Waters</a>
+ vs. 
+<a href="/fighters/sampatterson.html">Sam Patterson</a>
+ 
+<span style="color: #666; font-size: 0.9em;">(<a href="/events/20250906.html" style="color: #666;">2025-09-06</a>)</span>
+</p>
+<p class="fight-entry">
+✅ 
+<span class="status-text">Fight added: </span>
+<a href="/fighters/stewartnicoll.html">Stewart Nicoll</a>
+ vs. 
+<a href="/fighters/lucasrocha.html">Lucas Rocha</a>
+ 
+<span style="color: #666; font-size: 0.9em;">(<a href="/events/20251011.html" style="color: #666;">2025-10-11</a>)</span>
+</p>
+<p class="fight-entry">
+✅ 
+<span class="status-text">Fight added: </span>
+<a href="/fighters/azamatmurzakanov.html">Azamat Murzakanov</a>
+ vs. 
+<a href="/fighters/aleksandarrakic.html">Aleksandar Rakic</a>
+ 
+<span style="color: #666; font-size: 0.9em;">(<a href="/events/20251025.html" style="color: #666;">2025-10-25</a>)</span>
+</p>
+<h4>2025-07-18</h4>
+<p class="fight-entry">
+✅ 
+<span class="status-text">Fight added: </span>
+<a href="/fighters/abusmagomedov.html">Abus Magomedov</a>
+ vs. 
+<a href="/fighters/joepyfer.html">Joe Pyfer</a>
+ 
+<span style="color: #666; font-size: 0.9em;">(<a href="/events/20251004.html" style="color: #666;">2025-10-04</a>)</span>
+</p>
+<p class="fight-entry">
+❌ 
+<span class="status-text">Fight removed: </span>
+<a href="/fighters/steveerceg.html">Steve Erceg</a>
+ vs. 
+<a href="/fighters/alexperez.html">Alex Perez</a>
+ 
+<span style="color: #666; font-size: 0.9em;">(<a href="/events/20250809.html" style="color: #666;">2025-08-09</a>)</span>
+</p>
+<p class="fight-entry">
+✅ 
+<span class="status-text">Fight added: </span>
+<a href="/fighters/ravenaoliveira.html">Ravena Oliveira</a>
+ vs. 
+<a href="/fighters/stephanieluciano.html">Stephanie Luciano</a>
+ 
+<span style="color: #666; font-size: 0.9em;">(<a href="/events/20251018.html" style="color: #666;">2025-10-18</a>)</span>
+</p>
+<h4>2025-07-17</h4>
+<p class="fight-entry">
+✅ 
+<span class="status-text">Fight added: </span>
+<a href="/fighters/jailtonalmeida.html">Jailton Almeida</a>
+ vs. 
+<a href="/fighters/alexandervolkov.html">Alexander Volkov</a>
+ 
+<span style="color: #666; font-size: 0.9em;">(<a href="/events/20251025.html" style="color: #666;">2025-10-25</a>)</span>
+</p>
+<h4>2025-07-16</h4>
+<p class="fight-entry">
+✅ 
+<span class="status-text">Fight added: </span>
+<a href="/fighters/danielsantos.html">Daniel Santos</a>
+ vs. 
+<a href="/fighters/doohochoi.html">Dooho Choi</a>
+ 
+<span style="color: #666; font-size: 0.9em;">(<a href="/events/20250928.html" style="color: #666;">2025-09-28</a>)</span>
+</p>
+<p>Updated: 2025-12-15 02:11:03 PST</p>
+
+<footer>
+  <div class="footer-container">
+    <p class="copyright-text">
+        <a href="/glossary.html">Glossary</a>
+      <a href="mailto:rostertracker@gmail.com">Contact</a>
+    </p>
+<!--     <p class="browser-badge">
+      <a href="https://www.mozilla.org/en-US/firefox/">
+        <img src="firefox.png" title="Best viewed with Firefox" alt="Best viewed with Firefox"><br>
+        <small class="copyright-text">Best viewed with Firefox</small>
+      </a>
+    </p> 
+ -->  </div>
+ <div class="footer-container">
+    <p class="copyright-text">
+      Copyright © <span id="currentYear"></span> All Rights Reserved by 
+      <a href="#">roster.watch</a>
+    </p>
+<!--     <p class="browser-badge">
+      <a href="https://www.mozilla.org/en-US/firefox/">
+        <img src="firefox.png" title="Best viewed with Firefox" alt="Best viewed with Firefox"><br>
+        <small class="copyright-text">Best viewed with Firefox</small>
+      </a>
+    </p> 
+ -->  </div>
+</footer>
+
+<style>
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+}
+
+.copyright-text {
+  margin: 0 auto;
+}
+
+.browser-badge {
+  margin-left: auto;
+}
+</style>
+
+<script>
+  document.getElementById('currentYear').textContent = new Date().getFullYear();
+</script>
+
+
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.odd').parent('tbody').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- tabsets -->
+
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open');
+  });
+});
+</script>
+
+<!-- code folding -->
+
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>

@@ -20,7 +20,7 @@
 .emoji {
   font-family: Twemoji, sans-serif !important;
   cursor: pointer;
-  display: inline-block;
+  /* display: inline-block; */
 }
 
 body {

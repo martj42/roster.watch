@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-<url><loc>https://www.roster.watch/404.html</loc></url>
 <url><loc>https://www.roster.watch/bantamweight.html</loc></url>
 <url><loc>https://www.roster.watch/events/19931112.html</loc></url>
 <url><loc>https://www.roster.watch/events/19940311.html</loc></url>
@@ -2090,6 +2089,7 @@
 <url><loc>https://www.roster.watch/fighters/jorgesantiago.html</loc></url>
 <url><loc>https://www.roster.watch/fighters/josealbertoquinonez.html</loc></url>
 <url><loc>https://www.roster.watch/fighters/josealdo.html</loc></url>
+<url><loc>https://www.roster.watch/fighters/josedelano.html</loc></url>
 <url><loc>https://www.roster.watch/fighters/josedelgado.html</loc></url>
 <url><loc>https://www.roster.watch/fighters/josefineknutsson.html</loc></url>
 <url><loc>https://www.roster.watch/fighters/josehenriquesouza.html</loc></url>
@@ -3452,7 +3452,6 @@
 <url><loc>https://www.roster.watch/fightlog.html</loc></url>
 <url><loc>https://www.roster.watch/flyweight.html</loc></url>
 <url><loc>https://www.roster.watch/former.html</loc></url>
-<url><loc>https://www.roster.watch/geo-ad.html</loc></url>
 <url><loc>https://www.roster.watch/glossary.html</loc></url>
 <url><loc>https://www.roster.watch/heavyweight.html</loc></url>
 <url><loc>https://www.roster.watch</loc></url>

@@ -21,6 +21,7 @@
   font-family: Twemoji, sans-serif !important;
   cursor: pointer;
   display: inline;
+  margin-right: 3px;
 }
 
 body {

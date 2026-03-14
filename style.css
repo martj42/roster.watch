@@ -55,13 +55,17 @@ div.main-container {
 
 footer {
   background-color: #24252a;
+  padding: 8px;
+  display: grid;
+  gap:8px;
+  border-radius: 9px;
+  margin-bottom: 8px;
 }
 
 .footer-container {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding-top: 8px;
 }
 
 .copyright-text {
@@ -76,28 +80,12 @@ footer {
     text-align: center;
   }
 }
-
 img.emoji {
   height: 1.3em;
   width: 1.3em;
   margin: 0 .05em 0 .1em;
   vertical-align: -0.1em;
 }
-
-/* Three image containers (use 25% for four, and 50% for two, etc) */
-.column {
-  float: left;
-  width: 500px !important;
-  padding: 5px;
-}
-
-/* Clear floats after image containers */
-.row::after {
-  content: "";
-  clear: both;
-  display: table;
-}
-
 
 * {
   box-sizing: border-box;
@@ -106,11 +94,13 @@ img.emoji {
 }
 
 header {
+  margin-top: 8px;
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 0px 10%;
   background-color: #24252a;
+  border-radius: 9px;
 }
 
 .rt-tr-header,
@@ -511,12 +501,9 @@ h3 {
 .two-column-layout {
   display: flex;
   justify-content: flex-start;
-  /* better than center for desktop */
   align-items: flex-start;
   gap: 28px;
-  /* slightly smaller, optional */
   max-width: 1000px;
-  /* or whatever fits your design */
   margin: 0 auto;
 
 }
@@ -687,7 +674,6 @@ ul {
   font-family: "Helvetica Neue", Roboto, Arial, sans-serif;
   letter-spacing: 0.02em;
 
-  /* gold foil texture + gradient */
   background-image:
     url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='matrix' values='1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 3 -1'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E"),
     linear-gradient(135deg, #fff9d4 0%, #ffd76b 35%, #e2a400 70%, #c28a00 100%);
@@ -723,7 +709,6 @@ time {
   border-radius: 9px;
 }
 
-/* Mobile */
 @media (max-width: 768px) {
   .two-column-layout {
     flex-direction: column;
@@ -732,11 +717,7 @@ time {
 
   .event-poster {
     order: -1;
-    /* poster first */
     align-self: center;
-    /* center horizontally in column */
-    max-width: 300px;
-    /* optional: prevent it from being huge */
   }
 }
 

@@ -590,16 +590,21 @@ h3 {
 
 .two-column-layout {
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
+  /* better than center for desktop */
   align-items: flex-start;
-  gap: 40px;
-  max-width: 600px;
-  width: 100%;
+  gap: 28px;
+  /* slightly smaller, optional */
+  max-width: 1000px;
+  /* or whatever fits your design */
+  margin: 0 auto;
+
 }
 
 .fighter-details,
 .rankings {
   width: 50%;
+  white-space: nowrap;
 }
 
 p {
@@ -776,4 +781,95 @@ ul {
   color: transparent;
 
   text-shadow: 0 1px 2px rgba(0, 0, 0, 0.25);
+}
+
+.location h3 {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 2px;
+}
+
+.event-details h1 {
+  margin-bottom: 6px;
+}
+
+time {
+  color: #666;
+  font-size: 0.95rem;
+}
+
+.event-poster img {
+  margin-top: 15px;
+  border-radius: 9px;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .two-column-layout {
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .event-poster {
+    order: -1;
+    /* poster first */
+    align-self: center;
+    /* center horizontally in column */
+    max-width: 300px;
+    /* optional: prevent it from being huge */
+  }
+}
+
+.event-posters {
+  display: flex;
+  gap: 1.5rem;
+  justify-content: center;
+}
+
+.event-card {
+  width: fit-content;
+  color: inherit;
+  display: block;
+}
+
+.card-body {
+  display: flex;
+  flex-direction: column;
+}
+
+.event-card.next .label {
+  margin-left: auto;
+}
+
+.event-card.prev .label {
+  margin-right: auto;
+}
+
+.event-card .label {
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #888;
+}
+
+.event-card.next .label {
+  text-align: right;
+}
+
+.event-card.next .label::after {
+  content: " →";
+}
+
+.event-card.prev .label::before {
+  content: "← ";
+}
+
+.event-card .event-name {
+  font-weight: bold;
+  line-height: 1.2;
+}
+
+.event-card img {
+  margin-top: 8px;
+  border-radius: 9px;
 }

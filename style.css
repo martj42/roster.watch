@@ -142,8 +142,8 @@ header {
 .overlay__content a {
   font-weight: 600;
   color: #edf0f1;
-  text-decoration: none;
-
+  text-decoration: none !important;
+  text-transform: uppercase;
 }
 
 .nav__links {

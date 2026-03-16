@@ -57,7 +57,7 @@ footer {
   background-color: #24252a;
   padding: 8px;
   display: grid;
-  gap:8px;
+  gap: 8px;
   border-radius: 9px;
   margin-bottom: 8px;
 }
@@ -71,15 +71,18 @@ footer {
 .copyright-text {
   margin: 0 auto;
 }
-.copyright-text a + a {
+
+.copyright-text a+a {
   margin-left: 12px;
 }
+
 @media (max-width: 767px) {
   .footer-container {
     flex-direction: column;
     text-align: center;
   }
 }
+
 img.emoji {
   height: 1.3em;
   width: 1.3em;
@@ -107,7 +110,7 @@ header {
 .rt-tr-group-header {
   color: #edf0f1;
   background-color: #24252a;
-  font-family: "Montserrat", sans-serif;
+  /* font-family: "Montserrat", sans-serif; */
   font-weight: 500;
 
 }
@@ -126,15 +129,21 @@ header {
   cursor: pointer;
 }
 
-.nav__links a,
 .cta,
 .copyright-text,
-.copyright-text a,
-.overlay__content a {
-  font-family: "Montserrat", sans-serif;
+.copyright-text a {
+  /* font-family: "Montserrat", sans-serif; */
   font-weight: 500;
   color: #edf0f1;
   text-decoration: none;
+}
+
+.nav__links,
+.overlay__content a {
+  font-weight: 600;
+  color: #edf0f1;
+  text-decoration: none;
+
 }
 
 .nav__links {
@@ -782,7 +791,7 @@ time {
   margin-left: 3px;
 }
 
-.rankings-margin{
+.rankings-margin {
   margin-left: 1rem;
 }
 

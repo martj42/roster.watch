@@ -1,4 +1,3 @@
-document.addEventListener('DOMContentLoaded', () => {
   document.querySelectorAll('time.dob').forEach(el => {
     const dobStr = el.dataset.dob;
     if (!dobStr) return;
@@ -31,4 +30,3 @@ document.addEventListener('DOMContentLoaded', () => {
 
     el.querySelector('.age').innerHTML = html;
   });
-});

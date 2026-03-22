@@ -171,6 +171,7 @@ header {
   border-radius: 50px;
   cursor: pointer;
   transition: background-color 0.3s ease 0s;
+  text-transform: uppercase;
 }
 
 .cta:hover {
@@ -179,6 +180,10 @@ header {
 
 .menu {
   display: none;
+}
+
+.menu.cta {
+  font-weight: 600;
 }
 
 .overlay {
@@ -195,11 +200,16 @@ header {
 
 .overlay--active {
   width: 100%;
+  overflow-y: auto;
+  /* allow the whole overlay to scroll if needed */
 }
 
 .overlay__content {
   display: flex;
-  height: 100%;
+  height: auto;
+  /* was 100% — this was causing the squish/displacement */
+  min-height: 100%;
+  /* keeps it full height when content is short */
   flex-direction: column;
   align-items: center;
   justify-content: center;
@@ -210,6 +220,8 @@ header {
   font-size: 36px;
   display: block;
   transition: color 0.3s ease 0s;
+  text-align: center;
+  width: 100%;
 }
 
 .overlay a:hover,
@@ -219,10 +231,9 @@ header {
 
 .overlay .close {
   position: absolute;
-  top: 20px;
-  right: 45px;
   font-size: 60px;
   color: #edf0f1;
+  text-align: right;
 }
 
 @media screen and (max-height: 450px) {
@@ -232,8 +243,8 @@ header {
 
   .overlay .close {
     font-size: 40px;
-    top: 15px;
-    right: 35px;
+    text-align: right;
+
   }
 }
 
@@ -381,23 +392,27 @@ a .nav-arrow {
   white-space: nowrap;
 }
 
+.dropdown-mobile {
+  text-align: center;
+  width: 100%;
+}
+
 .dropdown-content-mobile {
   display: none;
-  position: absolute;
-  background-color: #24252a;
-  min-width: 160px;
-  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
-  z-index: 1000;
-  left: 50%;
-  transform: translateX(-50%);
+  position: static;
+  /* fully in flow */
+  width: 100%;
+  background-color: #1e1f23;
+  text-align: center;
   padding: 0;
 }
 
 .dropdown-content-mobile a {
   color: #edf0f1;
-  padding: 12px 0 12px 16px;
-  text-decoration: none;
+  padding: 10px 0;
+  font-size: 28px;
   display: block;
+  text-align: center;
   white-space: nowrap;
 }
 

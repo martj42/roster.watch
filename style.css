@@ -152,7 +152,7 @@ header {
 .nav__links li a {
   display: block;
   width: 100%;
-  padding: 10px 20px;
+  padding: 10px 10px;
   text-align: center;
   box-sizing: border-box;
   transition: color 0.3s ease 0s, background-color 0.3s ease 0s;
@@ -477,6 +477,18 @@ a .nav-arrow {
 
 .bmf {
   color: gray;
+}
+
+.Reactable{
+  border-radius: 9px;
+}
+
+.fighter-header,
+.fighter-info,
+.chart-section,
+.fight-results {
+  max-width: 1000px;
+  margin: 0 auto;
 }
 
 .fighter-name {

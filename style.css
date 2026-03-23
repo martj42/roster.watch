@@ -310,6 +310,7 @@ nav ul {
 .reactable.html-widget {
   overflow-x: auto;
   text-align: center;
+  border-radius: 9px;
 }
 
 a {
@@ -477,10 +478,6 @@ a .nav-arrow {
 
 .bmf {
   color: gray;
-}
-
-.Reactable{
-  border-radius: 9px;
 }
 
 .fighter-header,

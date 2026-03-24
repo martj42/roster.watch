@@ -664,7 +664,9 @@ ul {
 .event-short {
   display: none;
 }
-
+.event-stats{
+  max-width: 300px;
+}
 @media (max-width: 768px) {
   .event_bouts {
     overflow-x: auto;

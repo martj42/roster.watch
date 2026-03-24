@@ -667,6 +667,11 @@ ul {
 .event-stats{
   max-width: 300px;
 }
+
+.pred-info{
+  max-width: 600px;
+}
+
 @media (max-width: 768px) {
   .event_bouts {
     overflow-x: auto;

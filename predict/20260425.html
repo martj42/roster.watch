@@ -51,7 +51,7 @@ score is better.<br>All predictions close at the start of the first fight of the
         <td>${e.total_score.toFixed(1)}</td>
       </tr>
     `}).join("");document.getElementById("leaderboard-view").innerHTML=`
-    <table style="margin: 0 auto; border-collapse: collapse; width: 80%; max-width: 600px;">
+    <table style="margin: 0 auto; border-collapse: collapse; width: 80%; max-width: 600px; white-space: nowrap;">
       <thead><tr><th>Rank</th><th>User</th><th>Bouts</th><th>Average</th><th>Total</th></tr></thead>
       <tbody>${r}</tbody>
     </table>

@@ -13,7 +13,7 @@ Alessandro Costa,🇧🇷 🇲🇽,1996-01-28,male,flyweight,16,NA,16,16,NA,16,5
 Cody Durden,🇺🇸,1991-03-29,male,flyweight,16,NA,13,16,NA,16,15,6,1 KO 1 Sub 4 Dec,8,2 KO 4 Sub 2 Dec,0.4,-4,1,2473,2945,2020-08-01,D - Chris Gutierrez,2026-03-07,L - Nyamjargal Tumendemberel,NA,NA
 Tim Elliott,🇺🇸,1986-12-24,male,"flyweight, bantamweight",11,NA,5,16,NA,16,21,10,0 KO 3 Sub 7 Dec,11,0 KO 5 Sub 6 Dec,0.47619047619047616,2,6,2998,3001,2012-05-05,L - John Dodson,2025-08-16,W - Kai Asakura,Steve Erceg,2026-05-02
 Steve Erceg,🇦🇺,1995-07-27,male,"flyweight, bantamweight",12,NA,7,16,NA,16,7,4,1 KO 0 Sub 3 Dec,3,1 KO 0 Sub 2 Dec,0.5714285714285714,1,2,2859,2935,2023-06-10,W - David Dvorak,2025-08-09,W - Ode Osbourne,Tim Elliott,2026-05-02
-Rafael Estevam,🇧🇷,1996-08-10,male,"bantamweight, flyweight",16,NA,15,16,NA,16,3,3,0 KO 0 Sub 3 Dec,0,0 KO 0 Sub 0 Dec,1,3,0,2964,2964,2023-11-18,W - Charles Johnson,2025-08-02,W - Felipe Bunes,Ethyn Ewing,2026-04-04
+Rafael Estevam,🇧🇷,1996-08-10,male,flyweight,16,NA,15,16,NA,16,3,3,0 KO 0 Sub 3 Dec,0,0 KO 0 Sub 0 Dec,1,3,0,2964,2964,2023-11-18,W - Charles Johnson,2025-08-02,W - Felipe Bunes,Ethyn Ewing,2026-04-04
 Deiveson Figueiredo,🇧🇷,1987-12-18,male,bantamweight,7,NA,-1,16,NA,8,21,14,4 KO 4 Sub 6 Dec,6,2 KO 1 Sub 3 Dec,0.6666666666666666,-1,4,3098,3331,2017-06-03,W - Marco Beltran,2026-01-24,L - Umar Nurmagomedov,Song Yadong,2026-05-30
 Jafel Filho,🇧🇷,1993-05-05,male,flyweight,16,NA,16,16,NA,16,5,3,0 KO 3 Sub 0 Dec,2,0 KO 1 Sub 1 Dec,0.6,1,1,2799,2799,2023-03-18,L - Muhammad Mokaev,2025-10-11,W - Clayton Carpenter,Lucas Rocha,2026-04-25
 Luis Gurule,🇺🇸,1993-11-16,male,flyweight,16,NA,16,16,NA,16,3,0,0 KO 0 Sub 0 Dec,3,1 KO 0 Sub 2 Dec,0,-3,0,2470,2594,2025-04-05,L - Ode Osbourne,2026-02-21,L - Alden Coria,Daniel Barez,2026-05-16
@@ -384,7 +384,7 @@ Magomed Ankalaev,🇷🇺,1992-06-02,male,light heavyweight,1,NA,-1,14,NA,5,16,1
 Ibo Aslan,🇹🇷,1996-04-23,male,light heavyweight,16,NA,16,16,NA,16,5,2,2 KO 0 Sub 0 Dec,3,1 KO 1 Sub 1 Dec,0.4,-3,1,2467,2792,2024-03-30,W - Anton Turkalj,2025-12-06,L - Iwo Baraniewski,NA,NA
 Rodolfo Bellato,🇧🇷,1996-02-05,male,light heavyweight,16,NA,16,16,NA,16,5,2,2 KO 0 Sub 0 Dec,1,0 KO 0 Sub 1 Dec,0.4,1,2,2760,2811,2023-12-02,W - Ihor Potieria,2026-03-07,W - Luke Fernandez,Modestas Bukauskas,2026-05-16
 Jan Blachowicz,🇵🇱,1983-02-24,male,light heavyweight,5,NA,-1,16,NA,6,22,12,5 KO 2 Sub 5 Dec,8,1 KO 1 Sub 6 Dec,0.5454545454545454,0,6,3126,3488,2014-10-03,W - Ilir Latifi,2025-12-06,D - Bogdan Guskov,Bogdan Guskov,2026-05-09
-Darrius Flowers,🇺🇸,1994-08-25,male,"lightweight, welterweight",16,NA,16,16,NA,16,3,0,0 KO 0 Sub 0 Dec,3,0 KO 2 Sub 1 Dec,0,-3,0,2445,2607,2023-07-29,L - Jake Matthews,2024-07-13,L - Evan Elder,Lando Vannata,2026-04-04
+Darrius Flowers,🇺🇸,1994-08-25,male,"welterweight, lightweight",16,NA,16,16,NA,16,3,0,0 KO 0 Sub 0 Dec,3,0 KO 2 Sub 1 Dec,0,-3,0,2445,2607,2023-07-29,L - Jake Matthews,2024-07-13,L - Evan Elder,Lando Vannata,2026-04-04
 Gianni Vazquez,🇲🇽,1994-07-13,NA,NA,16,NA,16,16,NA,16,1,0,0 KO 0 Sub 0 Dec,1,0 KO 0 Sub 1 Dec,0,-1,0,2570,2570,2026-02-07,L - Javid Basharat,2026-02-07,L - Javid Basharat,NA,NA
 Jimmy Crute,🇦🇺,1996-03-04,male,light heavyweight,16,NA,12,16,NA,16,12,6,2 KO 4 Sub 0 Dec,4,2 KO 2 Sub 0 Dec,0.5,2,3,2849,2937,2018-12-01,W - Paul Craig,2025-09-28,W - Ivan Erslan,NA,NA
 Ion Cutelaba,🇲🇩,1993-12-14,male,light heavyweight,16,NA,15,16,NA,16,20,9,4 KO 2 Sub 3 Dec,10,3 KO 4 Sub 3 Dec,0.45,1,1,2937,2937,2016-06-18,L - Misha Cirkunov,2026-03-14,W - Oumar Sy,NA,NA
@@ -575,7 +575,7 @@ Saygid Izagakhmaev,🇷🇺,1994-09-03,male,welterweight,16,NA,16,16,NA,16,1,0,0
 Iwo Baraniewski,🇵🇱,1998-11-20,male,light heavyweight,16,NA,16,16,NA,16,2,2,2 KO 0 Sub 0 Dec,0,0 KO 0 Sub 0 Dec,1,2,2,2755,2755,2025-12-06,W - Ibo Aslan,2026-03-21,W - Austen Lane,Billy Elekana,2026-06-06
 Jalin Turner,🇺🇸,1995-05-18,male,lightweight,16,NA,9,16,NA,16,14,8,5 KO 3 Sub 0 Dec,6,2 KO 1 Sub 3 Dec,0.5714285714285714,1,2,3000,3138,2018-10-06,L - Vicente Luque,2025-12-06,W - Edson Barboza,NA,NA
 Shem Rock,🇧🇧 🇬🇧 🏴󠁧󠁢󠁳󠁣󠁴󠁿 🇳🇬 🏴󠁧󠁢󠁥󠁮󠁧󠁿,1993-11-05,male,lightweight,16,NA,16,16,NA,16,2,0,0 KO 0 Sub 0 Dec,2,0 KO 0 Sub 2 Dec,0,-2,0,2557,2623,2025-11-22,L - Nurullo Aliev,2026-03-21,L - Abdul-Kareem Al-Selwady,NA,NA
-Ethyn Ewing,🇺🇸,1998-02-16,male,"bantamweight, featherweight",16,NA,16,16,NA,16,1,1,0 KO 0 Sub 1 Dec,0,0 KO 0 Sub 0 Dec,1,1,0,2807,2807,2025-11-15,W - Malcolm Wellmaker,2025-11-15,W - Malcolm Wellmaker,Rafael Estevam,2026-04-04
+Ethyn Ewing,🇺🇸,1998-02-16,male,featherweight,16,NA,16,16,NA,16,1,1,0 KO 0 Sub 1 Dec,0,0 KO 0 Sub 0 Dec,1,1,0,2807,2807,2025-11-15,W - Malcolm Wellmaker,2025-11-15,W - Malcolm Wellmaker,Rafael Estevam,2026-04-04
 Alberto Montes,🇻🇪,1994-05-31,male,featherweight,16,NA,16,16,NA,16,1,1,0 KO 1 Sub 0 Dec,0,0 KO 0 Sub 0 Dec,1,1,1,2604,2604,2026-03-07,W - Ricky Turcios,2026-03-07,W - Ricky Turcios,NA,NA
 Ty Miller,🇺🇸,2000-06-04,male,welterweight,16,NA,16,16,NA,16,1,1,1 KO 0 Sub 0 Dec,0,0 KO 0 Sub 0 Dec,1,1,1,2714,2714,2026-01-24,W - Adam Fugitt,2026-01-24,W - Adam Fugitt,NA,NA
 Jose Delano,🇧🇷,1996-09-11,male,featherweight,16,NA,16,16,NA,16,NA,NA,NA,NA,NA,NA,NA,NA,2785,2785,NA,NA,NA,NA,Robert Ruchala,2026-04-04

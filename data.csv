@@ -9,7 +9,7 @@ Kevin Borjas,🇵🇪,1997-12-06,male,flyweight,16,NA,16,16,NA,16,5,1,0 KO 0 Sub
 Clayton Carpenter,🇺🇸,1996-06-09,male,flyweight,16,NA,16,16,NA,16,4,2,0 KO 2 Sub 0 Dec,2,0 KO 1 Sub 1 Dec,0.5,-2,1,2631,2811,2023-02-18,W - Juancamilo Ronderos,2025-10-11,L - Jafel Filho,Jose Ochoa,2026-05-09
 Edgar Chairez,🇲🇽,1996-01-27,male,flyweight,16,NA,16,16,NA,16,6,3,0 KO 2 Sub 1 Dec,2,0 KO 0 Sub 2 Dec,0.5,2,1,2679,2679,2023-07-08,L - Tatsuro Taira,2026-02-28,W - Felipe Bunes,Bruno Gustavo da Silva,2026-06-06
 DongHun Choi,🇰🇷,1999-01-02,male,flyweight,16,NA,16,16,NA,16,1,1,1 KO 0 Sub 0 Dec,0,0 KO 0 Sub 0 Dec,1,1,0,2667,2667,2024-11-23,W - Kiru Sahota,2024-11-23,W - Kiru Sahota,NA,NA
-Alessandro Costa,🇧🇷 🇲🇽,1996-01-28,male,flyweight,16,NA,16,16,NA,16,6,3,3 KO 0 Sub 0 Dec,3,2 KO 0 Sub 1 Dec,0.5,1,2,2666,2758,2022-12-17,L - Amir Albazi,2026-04-04,W - Stewart Nicoll,NA,NA
+Alessandro Costa,🇧🇷 🇲🇽,1996-01-28,male,flyweight,16,NA,16,16,NA,16,6,3,3 KO 0 Sub 0 Dec,3,2 KO 0 Sub 1 Dec,0.5,1,3,2666,2758,2022-12-17,L - Amir Albazi,2026-04-04,W - Stewart Nicoll,NA,NA
 Cody Durden,🇺🇸,1991-03-29,male,flyweight,16,NA,13,16,NA,16,15,6,1 KO 1 Sub 4 Dec,8,2 KO 4 Sub 2 Dec,0.4,-4,1,2473,2945,2020-08-01,D - Chris Gutierrez,2026-03-07,L - Nyamjargal Tumendemberel,NA,NA
 Tim Elliott,🇺🇸,1986-12-24,male,"flyweight, bantamweight",11,NA,5,16,NA,16,21,10,0 KO 3 Sub 7 Dec,11,0 KO 5 Sub 6 Dec,0.47619047619047616,2,6,2998,3001,2012-05-05,L - John Dodson,2025-08-16,W - Kai Asakura,Steve Erceg,2026-05-02
 Steve Erceg,🇦🇺,1995-07-27,male,"flyweight, bantamweight",12,NA,7,16,NA,16,7,4,1 KO 0 Sub 3 Dec,3,1 KO 0 Sub 2 Dec,0.5714285714285714,1,2,2859,2935,2023-06-10,W - David Dvorak,2025-08-09,W - Ode Osbourne,Tim Elliott,2026-05-02
@@ -522,7 +522,7 @@ Melissa Mullins,🇬🇧 🏴󠁧󠁢󠁥󠁮󠁧󠁿,1991-07-23,female,women's 
 Josiane Nunes,🇧🇷,1993-12-23,female,"women's bantamweight, women's featherweight",16,NA,13,16,NA,16,6,3,1 KO 0 Sub 2 Dec,3,1 KO 0 Sub 2 Dec,0.5,-3,1,2418,2712,2021-08-21,W - Bea Malecki,2025-03-15,L - Priscila Cachoeira,NA,NA
 Julianna Pena,🇲🇽 🇺🇸 🇻🇪,1989-08-19,female,women's bantamweight,1,NA,-1,9,<span class='down'>▼</span><span class='rank-change'>1</span>,3,12,8,2 KO 2 Sub 4 Dec,4,0 KO 3 Sub 1 Dec,0.6666666666666666,-1,2,2891,3009,2013-11-30,W - Jessica Rakoczy,2025-06-07,L - Kayla Harrison,NA,NA
 Raquel Pennington,🇲🇽 🇺🇸,1988-09-05,female,women's bantamweight,2,NA,-1,12,NA,5,19,13,0 KO 3 Sub 10 Dec,6,1 KO 0 Sub 5 Dec,0.6842105263157895,-1,1,2927,2979,2013-11-30,W - Roxanne Modafferi,2024-10-05,L - Julianna Pena,NA,NA
-Alice Pereira,🇧🇷,2005-12-20,female,women's bantamweight,16,NA,16,16,NA,16,2,1,1 KO 0 Sub 0 Dec,1,0 KO 0 Sub 1 Dec,0.5,1,0,2516,2516,2025-09-13,L - Montserrat Rendon,2026-04-04,W - Hailey Cowan,NA,NA
+Alice Pereira,🇧🇷,2005-12-20,female,women's bantamweight,16,NA,16,16,NA,16,2,1,1 KO 0 Sub 0 Dec,1,0 KO 0 Sub 1 Dec,0.5,1,1,2516,2516,2025-09-13,L - Montserrat Rendon,2026-04-04,W - Hailey Cowan,NA,NA
 Ailin Perez,🇦🇷,1994-10-05,female,women's bantamweight,6,NA,6,16,NA,16,7,6,0 KO 1 Sub 5 Dec,1,0 KO 1 Sub 0 Dec,0.8571428571428571,6,0,2849,2849,2022-09-03,L - Stephanie Egger,2026-02-28,W - Macy Chiasson,NA,NA
 Montserrat Rendon,🇲🇽,1989-03-16,female,women's bantamweight,16,NA,16,16,NA,16,4,2,0 KO 0 Sub 2 Dec,2,0 KO 1 Sub 1 Dec,0.5,-1,0,2390,2518,2023-09-23,W - Tamires Vidal,2026-03-14,L - Bia Mesquita,NA,NA
 Karol Rosa,🇨🇿,1994-12-30,female,women's bantamweight,8,NA,8,16,NA,16,12,8,0 KO 0 Sub 8 Dec,4,0 KO 0 Sub 4 Dec,0.6666666666666666,1,1,2706,2748,2019-08-31,W - Lara Fritzen,2025-08-02,W - Nora Cornolle,Luana Santos,2026-06-20
@@ -583,7 +583,7 @@ Ramiro Jimenez,🇲🇽,1999-01-16,male,featherweight,16,NA,16,16,NA,16,NA,NA,NA
 Manoel Sousa,🇧🇷,1997-06-04,male,lightweight,16,NA,16,16,NA,16,1,1,1 KO 0 Sub 0 Dec,0,0 KO 0 Sub 0 Dec,1,1,1,2942,2942,2026-03-14,W - Bolaji Oki,2026-03-14,W - Bolaji Oki,NA,NA
 Marcio Barbosa,🇧🇷,1998-05-22,male,featherweight,16,NA,16,16,NA,16,NA,NA,NA,NA,NA,NA,NA,NA,2767,2767,NA,NA,NA,NA,Dennis Buzukja,2026-04-18
 Ryan Gandra,🇧🇷,1995-05-08,male,middleweight,16,NA,16,16,NA,16,1,1,1 KO 0 Sub 0 Dec,0,0 KO 0 Sub 0 Dec,1,1,0,2723,2723,2026-02-28,W - Jose Medina,2026-02-28,W - Jose Medina,NA,NA
-Tommy McMillen,🇺🇸,1997-12-15,male,featherweight,16,NA,16,16,NA,16,1,1,1 KO 0 Sub 0 Dec,0,0 KO 0 Sub 0 Dec,1,1,0,2732,2732,2026-04-04,W - Manolo Zecchini,2026-04-04,W - Manolo Zecchini,NA,NA
+Tommy McMillen,🇺🇸,1997-12-15,male,featherweight,16,NA,16,16,NA,16,1,1,1 KO 0 Sub 0 Dec,0,0 KO 0 Sub 0 Dec,1,1,1,2732,2732,2026-04-04,W - Manolo Zecchini,2026-04-04,W - Manolo Zecchini,NA,NA
 Mandel Nallo,🇨🇦,1989-07-26,male,lightweight,16,NA,16,16,NA,16,NA,NA,NA,NA,NA,NA,NA,NA,2850,2850,NA,NA,NA,NA,Jai Herbert,2026-04-18
 Jean-Paul Lebosnoyani,🇺🇸,1999-01-27,male,welterweight,16,NA,16,16,NA,16,1,1,0 KO 0 Sub 1 Dec,0,0 KO 0 Sub 0 Dec,1,1,0,2733,2733,2026-02-21,W - Phil Rowe,2026-02-21,W - Phil Rowe,NA,NA
 Losene Keita,🇧🇪 🇬🇳,1997-12-30,male,featherweight,16,NA,16,16,NA,16,1,0,0 KO 0 Sub 0 Dec,1,0 KO 0 Sub 1 Dec,0,-1,0,2995,2995,2026-03-21,L - Nathaniel Wood,2026-03-21,L - Nathaniel Wood,NA,NA
@@ -618,7 +618,7 @@ Marwan Rahiki,🇲🇦,2002-05-10,male,featherweight,16,NA,16,16,NA,16,1,1,1 KO 
 Michael Oliveira,🇧🇷,1998-01-21,male,welterweight,16,NA,16,16,NA,16,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
 Wes Schultz,🇧🇷,1996-08-09,male,middleweight,16,NA,16,16,NA,16,1,0,0 KO 0 Sub 0 Dec,1,1 KO 0 Sub 0 Dec,0,-1,0,2484,2484,2026-02-28,L - Damian Pinas,2026-02-28,L - Damian Pinas,Ben Johnston,2026-05-02
 Yaroslav Amosov,🇺🇦,1993-09-09,male,welterweight,16,NA,16,16,NA,16,1,1,0 KO 1 Sub 0 Dec,0,0 KO 0 Sub 0 Dec,1,1,0,3179,3179,2025-12-13,W - Neil Magny,2025-12-13,W - Neil Magny,Joel Alvarez,2026-05-09
-Manolo Zecchini,🇮🇹,1996-10-22,male,featherweight,16,NA,16,16,NA,16,2,0,0 KO 0 Sub 0 Dec,2,2 KO 0 Sub 0 Dec,0,-2,0,2389,2423,2023-09-02,L - Morgan Charriere,2026-04-04,L - Tommy McMillen,NA,NA
+Manolo Zecchini,🇮🇹,1996-10-22,male,featherweight,16,NA,16,16,NA,16,2,0,0 KO 0 Sub 0 Dec,2,2 KO 0 Sub 0 Dec,0,-2,1,2389,2423,2023-09-02,L - Morgan Charriere,2026-04-04,L - Tommy McMillen,NA,NA
 Amanda Nunes,🇧🇷,1988-05-30,female,women's bantamweight,16,NA,-1,16,NA,1,18,16,7 KO 3 Sub 6 Dec,2,1 KO 1 Sub 0 Dec,0.8888888888888888,2,5,3172,3217,2013-08-03,W - Sheila Gaff,2023-06-10,W - Irene Aldana,NA,NA
 Lance Gibson Jr.,🇨🇦,1995-02-02,male,lightweight,16,NA,16,16,NA,16,2,1,1 KO 0 Sub 0 Dec,1,0 KO 0 Sub 1 Dec,0.5,1,0,2768,2768,2025-12-13,L - King Green,2026-03-28,W - Chase Hooper,NA,NA
 Isaac Thomson,🇦🇺,2002-05-03,male,featherweight,16,NA,16,16,NA,16,1,0,0 KO 0 Sub 0 Dec,1,0 KO 0 Sub 1 Dec,0,-1,0,2546,2546,2025-12-13,L - Joanderson Brito,2025-12-13,L - Joanderson Brito,NA,NA

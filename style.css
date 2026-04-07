@@ -556,7 +556,7 @@ ul {
   margin: 0;
 }
 
-.wldn-letter {
+.wl {
   display: inline-block;
   width: 1.25em;
   height: 1.25em;
@@ -568,21 +568,10 @@ ul {
   font-weight: bold;
 }
 
-.letter-W {
-  background-color: green;
-}
-
-.letter-L {
-  background-color: crimson;
-}
-
-.letter-N {
-  background-color: slategray;
-}
-
-.letter-D {
-  background-color: darkorange;
-}
+.w { background: green; }
+.l { background: crimson; }
+.n { background: slategray; }
+.d { background: darkorange; }
 
 .chart-container {
   display: flex;

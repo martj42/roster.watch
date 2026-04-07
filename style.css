@@ -689,8 +689,8 @@ ul {
 }
 
 .container {
-  padding-right: 15px;
-  padding-left: 15px;
+  padding-right: 5px;
+  padding-left: 5px;
 }
 
 .hof {
@@ -780,6 +780,16 @@ time {
   letter-spacing: 0.12em;
   text-transform: uppercase;
   color: #888;
+  font-size: 75%;
+  display: inline;
+  padding: .2em .6em .3em;
+  font-size: 75%;
+  font-weight: 700;
+  line-height: 1;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: baseline;
+  border-radius: .25em;
 }
 
 .event-card.next .label {

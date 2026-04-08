@@ -41,10 +41,6 @@ h1 {
   display: inline;
 }
 
-.my-tbl {
-  background-color: rgba(0, 0, 0, 0);
-}
-
 div.main-container {
   margin: auto;
   max-width: 1800px;
@@ -105,25 +101,6 @@ header {
   border-radius: 9px;
 }
 
-.rt-tr-header,
-.rt-tr-group-header {
-  color: #edf0f1;
-  background-color: #24252a;
-  /* font-family: "Montserrat", sans-serif; */
-  font-weight: 500;
-
-}
-
-.reactable-v2bp0c[aria-sort="ascending"],
-.reactable-v2bp0c[aria-sort="descending"],
-.reactable-v2bp0c:hover[aria-sort] {
-  color: #24252a;
-}
-
-.event_bouts .rt-thead {
-  display: none !important;
-}
-
 .logo {
   cursor: pointer;
 }
@@ -133,7 +110,7 @@ header {
 .copyright-text a {
   /* font-family: "Montserrat", sans-serif; */
   font-weight: 500;
-  color: #edf0f1;
+  color: #f7f5f0;
   text-decoration: none;
 }
 
@@ -155,12 +132,15 @@ header {
   text-align: center;
   box-sizing: border-box;
   transition: color 0.3s ease 0s, background-color 0.3s ease 0s;
+  border-radius: 9px;
 
 }
 
 .nav__links li a:hover {
   color: #edf0f1;
   background-color: #3a3b42;
+  border-radius: 9px;
+
 }
 
 .cta {
@@ -200,15 +180,12 @@ header {
 .overlay--active {
   width: 100%;
   overflow-y: auto;
-  /* allow the whole overlay to scroll if needed */
 }
 
 .overlay__content {
   display: flex;
   height: auto;
-  /* was 100% — this was causing the squish/displacement */
   min-height: 100%;
-  /* keeps it full height when content is short */
   flex-direction: column;
   align-items: center;
   justify-content: center;
@@ -221,17 +198,19 @@ header {
   transition: color 0.3s ease 0s;
   text-align: center;
   width: 100%;
+  border-radius: 9px;
+
 }
 
 .overlay a:hover,
 .overlay a:focus {
-  color: #edf0f1;
+  color: #f7f5f0;
 }
 
 .overlay .close {
   position: absolute;
   font-size: 60px;
-  color: #edf0f1;
+  color: #f7f5f0;
   text-align: right;
 }
 
@@ -283,7 +262,7 @@ nav ul {
 
 .patreon-box,
 .eurobasket-ad {
-  color: #24252A;
+  color: #24252a;
   padding: 15px;
   border-radius: 5px;
   font-size: 16px;
@@ -294,7 +273,7 @@ nav ul {
 }
 
 .patreon-box a.cta-button {
-  color: white;
+  color: #f7f5f0;
   background-color: #f96854;
   padding: 10px 20px;
   text-decoration: none;
@@ -323,7 +302,7 @@ a {
 .nav__links a,
 .overlay__content a {
   font-weight: 600;
-  color: #edf0f1;
+  color: #f7f5f0;
   text-transform: uppercase;
   text-decoration: none !important;
 
@@ -360,9 +339,8 @@ a .nav-arrow {
 
 .favorite-elo {
   font-weight: bold;
-  color: #222;
-  text-shadow: 0 0 5px rgba(255, 215, 0, 0.7),
-    0 0 8px rgba(255, 215, 0, 0.5);
+  text-shadow: 0 0 5px #ffd700,
+    0 0 8px darkgoldenrod;
   position: relative;
 }
 
@@ -386,7 +364,7 @@ a .nav-arrow {
 }
 
 .dropdown-content a {
-  color: #edf0f1;
+  color: #f7f5f0;
   padding: 12px 0;
   text-decoration: none;
   display: block;
@@ -401,15 +379,14 @@ a .nav-arrow {
 .dropdown-content-mobile {
   display: none;
   position: static;
-  /* fully in flow */
   width: 100%;
-  background-color: #1e1f23;
+  background-color: #24252a;
   text-align: center;
   padding: 0;
 }
 
 .dropdown-content-mobile a {
-  color: #edf0f1;
+  color: #f7f5f0;
   padding: 10px 0;
   font-size: 28px;
   display: block;
@@ -423,7 +400,7 @@ a .nav-arrow {
 }
 
 .dropdown-content li a {
-  color: #edf0f1;
+  color: #f7f5f0;
   padding: 12px 16px;
   text-decoration: none;
   display: block;
@@ -437,24 +414,24 @@ a .nav-arrow {
 .new,
 .out {
   font-size: 0.8em;
-  color: gray;
+  color: #666;
   font-weight: bold;
   padding: 2px;
 }
 
 .up {
-  color: green;
+  color: #57ad75;
   font-size: 1.2em;
 }
 
 .down {
-  color: #d30303;
+  color: #d4636a;
   font-size: 1.2em;
 }
 
 .rank-change {
   font-size: 0.8em;
-  color: gray;
+  color: #666;
   font-weight: bold;
   padding-right: 5px;
 
@@ -477,7 +454,7 @@ a .nav-arrow {
 }
 
 .bmf {
-  color: gray;
+  color: #666;
 }
 
 .fighter-header,
@@ -503,7 +480,7 @@ a .nav-arrow {
 
 .date_of_birth,
 .peak-date {
-  color: #555;
+  color: #666;
   font-size: 0.9rem;
 }
 
@@ -515,7 +492,7 @@ h2 {
   background-color: #24252a;
   border-radius: 5px;
   width: 200px;
-  color: #fff;
+  color: #f7f5f0;
 }
 
 h3 {
@@ -564,24 +541,24 @@ ul {
   font-size: 0.8em;
   text-align: center;
   border-radius: 50%;
-  color: white;
+  color: #f7f5f0;
   font-weight: bold;
 }
 
 .w {
-  background: green;
+  background: #57ad75;
 }
 
 .l {
-  background: crimson;
+  background: #d4636a;
 }
 
 .n {
-  background: slategray;
+  background: #666;
 }
 
 .d {
-  background: darkorange;
+  background: burlywood;
 }
 
 .chart-container {
@@ -783,7 +760,7 @@ time {
 .event-card .label {
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: #888;
+  color: #666;
   font-size: 75%;
   display: inline;
   padding: .2em .6em .3em;

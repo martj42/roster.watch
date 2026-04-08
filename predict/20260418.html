@@ -65,114 +65,114 @@ score is better.<br>All predictions close at the start of the first fight of the
         <tbody>${r}</tbody>
       </table>
   `}</script><script>function blockNonNumeric(e){const t=["Backspace","Delete","ArrowLeft","ArrowRight","Tab"];if(e.ctrlKey||e.metaKey)return;if(!e.key.match(/^\d$/)&&!t.includes(e.key)){e.preventDefault();return}const n=e.target.selectionStart===0&&e.target.selectionEnd===e.target.value.length;e.key.match(/^\d$/)&&!n&&parseInt(e.target.value+e.key)>100&&e.preventDefault()}async function loadPredictions(){const{data:{session:e}}=await sbClient.auth.getSession();if(!e)return;const{data:t,error:n}=await sbClient.from("predictions").select("bout_id, fighter_pct").eq("user_id",e.user.id);if(n)return;t.forEach(e=>{const t=document.querySelector(`.pair[data-bout-id="${e.bout_id}"]`);if(!t)return;const[s,o]=t.querySelectorAll("input"),n=t.dataset.fighterIsFirst==="true";s.value=n?e.fighter_pct:100-e.fighter_pct,o.value=n?100-e.fighter_pct:e.fighter_pct});const{data:s}=await sbClient.from("scores").select("bout_id, score").eq("user_id",e.user.id);s?.forEach(e=>{const t=document.querySelector(`.bout-score[data-bout-id="${e.bout_id}"]`);t&&(t.innerHTML=`<b>${e.score.toFixed(1)} Pts</b>`)})}async function savePrediction(e,t){if(!currentSession?.user){updateUI(null);return}const{error:n}=await sbClient.from("predictions").upsert({user_id:currentSession.user.id,bout_id:e,fighter_pct:t,updated_at:(new Date).toISOString()},{onConflict:"user_id,bout_id"});if(n){{console.error("save failed:",n);const t=document.querySelector(`.pair[data-bout-id="${e}"]`);if(t){const[e,n]=t.querySelectorAll("input");e.value="",n.value=""}}}else console.log("✅ saved:",e)}function setupPredictions(){document.querySelectorAll(".pair input").forEach(e=>e.value="");let e={};const t=document.querySelectorAll(".pair");t.forEach(t=>{const[s,o]=t.querySelectorAll("input"),n=t.dataset.boutId;if(!s||!o){console.warn("Missing input elements for bout:",n);return}function i(i,a){let r=parseInt(i.value);if(isNaN(r)){a.value="",clearTimeout(e[n]),e[n]=setTimeout(async()=>{const{data:{session:e}}=await sbClient.auth.getSession();if(!e)return;await sbClient.from("predictions").delete().match({user_id:e.user.id,bout_id:n})},800);return}r=Math.max(0,Math.min(100,r)),i.value=r,a.value=100-r,clearTimeout(e[n]),e[n]=setTimeout(()=>{const e=t.dataset.fighterIsFirst==="true";savePrediction(n,parseInt(e?s.value:o.value))},800)}[s,o].forEach(e=>e.addEventListener("keydown",blockNonNumeric)),s.addEventListener("input",()=>i(s,o)),o.addEventListener("input",()=>i(o,s))})}</script><div class=view-toggle , style=text-align:center;margin-bottom:10px;margin-top:10px><a href=# id=toggle-link onclick=toggleView(event)>View Leaderboard</a></div><div id=predictions-view><div class=event_bouts><div class=bout-row><div class="bout-fighter bout-left"><br><span class=emoji-margin-right><b><a href=/fighters/gilbertburns.html>Gilbert Burns</a>
-</b>(39)</span><div class=emoji title=Brazil>🇧🇷 &#65038;</div><br><span class="wldn-letter letter-L">L</span>
-<span class="wldn-letter letter-L">L</span>
-<span class="wldn-letter letter-L">L</span>
-<span class="wldn-letter letter-L">L</span>
-<span class="wldn-letter letter-W">W</span>
+</b>(39)</span><div class=emoji title=Brazil>🇧🇷 &#65038;</div><br><span class="wl l">L</span>
+<span class="wl l">L</span>
+<span class="wl l">L</span>
+<span class="wl l">L</span>
+<span class="wl w">W</span>
 • 15-9<br>UFC rank: #11 •
 Elo: 3020 (46%)</div><div class=result_description><span class=weightclass>WELTERWEIGHT</span><br><div class=pair data-bout-id=20260418_gilbertburns_mikemalott data-fighter-is-first=true><input type=text inputmode=numeric min=0 max=100>
 <input type=text inputmode=numeric min=0 max=100></div><div class=bout-score data-bout-id=20260418_gilbertburns_mikemalott></div></div><div class="bout-fighter bout-right"><br><div class=emoji title=Canada>🇨🇦 &#65038;</div><b><a href=/fighters/mikemalott.html>Mike Malott</a></b> (34)<br>6-1 •
-<span class="wldn-letter letter-W">W</span>
-<span class="wldn-letter letter-L">L</span>
-<span class="wldn-letter letter-W">W</span>
-<span class="wldn-letter letter-W">W</span>
-<span class="wldn-letter letter-W">W</span><br>Elo: <span class=favorite-elo>3048 (54%)</span></div></div><div class=bout-row><div class="bout-fighter bout-left"><br><span class=emoji-margin-right><b><a href=/fighters/kylerphillips.html>Kyler Phillips</a>
-</b>(30)</span><div class=emoji title="United States">🇺🇸 &#65038;</div><br><span class="wldn-letter letter-L">L</span>
-<span class="wldn-letter letter-L">L</span>
-<span class="wldn-letter letter-W">W</span>
-<span class="wldn-letter letter-W">W</span>
-<span class="wldn-letter letter-W">W</span>
+<span class="wl w">W</span>
+<span class="wl l">L</span>
+<span class="wl w">W</span>
+<span class="wl w">W</span>
+<span class="wl w">W</span><br>Elo: <span class=favorite-elo>3048 (54%)</span></div></div><div class=bout-row><div class="bout-fighter bout-left"><br><span class=emoji-margin-right><b><a href=/fighters/kylerphillips.html>Kyler Phillips</a>
+</b>(30)</span><div class=emoji title="United States">🇺🇸 &#65038;</div><br><span class="wl l">L</span>
+<span class="wl l">L</span>
+<span class="wl w">W</span>
+<span class="wl w">W</span>
+<span class="wl w">W</span>
 • 6-3<br>Elo: 2877 (33%)</div><div class=result_description><span class=weightclass>BANTAMWEIGHT</span><br><div class=pair data-bout-id=20260418_charlesjourdain_kylerphillips data-fighter-is-first=false><input type=text inputmode=numeric min=0 max=100>
 <input type=text inputmode=numeric min=0 max=100></div><div class=bout-score data-bout-id=20260418_charlesjourdain_kylerphillips></div></div><div class="bout-fighter bout-right"><br><div class=emoji title=Canada>🇨🇦 &#65038;</div><b><a href=/fighters/charlesjourdain.html>Charles Jourdain</a></b> (30)<br>8-7-1 •
-<span class="wldn-letter letter-W">W</span>
-<span class="wldn-letter letter-L">L</span>
-<span class="wldn-letter letter-L">L</span>
-<span class="wldn-letter letter-W">W</span>
-<span class="wldn-letter letter-W">W</span><br>Elo: <span class=favorite-elo>3000 (67%)</span></div></div><div class=bout-row><div class="bout-fighter bout-left"><br><span class=emoji-margin-right><b><a href=/fighters/jasminejasudavicius.html>Jasmine Jasudavicius</a>
-</b>(37)</span><div class=emoji title=Canada>🇨🇦 &#65038;</div><div class=emoji title=Lithuania>🇱🇹 &#65038;</div><br><span class="wldn-letter letter-L">L</span>
-<span class="wldn-letter letter-W">W</span>
-<span class="wldn-letter letter-W">W</span>
-<span class="wldn-letter letter-W">W</span>
-<span class="wldn-letter letter-W">W</span>
+<span class="wl w">W</span>
+<span class="wl l">L</span>
+<span class="wl l">L</span>
+<span class="wl w">W</span>
+<span class="wl w">W</span><br>Elo: <span class=favorite-elo>3000 (67%)</span></div></div><div class=bout-row><div class="bout-fighter bout-left"><br><span class=emoji-margin-right><b><a href=/fighters/jasminejasudavicius.html>Jasmine Jasudavicius</a>
+</b>(37)</span><div class=emoji title=Canada>🇨🇦 &#65038;</div><div class=emoji title=Lithuania>🇱🇹 &#65038;</div><br><span class="wl l">L</span>
+<span class="wl w">W</span>
+<span class="wl w">W</span>
+<span class="wl w">W</span>
+<span class="wl w">W</span>
 • 8-3<br>UFC rank: #7 •
 Elo: <span class=favorite-elo>2926 (71%)</span></div><div class=result_description><span class=weightclass>WOMEN'S FLYWEIGHT</span><br><div class=pair data-bout-id=20260418_jasminejasudavicius_karinesilva data-fighter-is-first=true><input type=text inputmode=numeric min=0 max=100>
 <input type=text inputmode=numeric min=0 max=100></div><div class=bout-score data-bout-id=20260418_jasminejasudavicius_karinesilva></div></div><div class="bout-fighter bout-right"><br><div class=emoji title=Brazil>🇧🇷 &#65038;</div><b><a href=/fighters/karinesilva.html>Karine Silva</a></b> (32)<br>5-2 •
-<span class="wldn-letter letter-W">W</span>
-<span class="wldn-letter letter-W">W</span>
-<span class="wldn-letter letter-L">L</span>
-<span class="wldn-letter letter-W">W</span>
-<span class="wldn-letter letter-L">L</span><br>Elo: 2768 (29%)
+<span class="wl w">W</span>
+<span class="wl w">W</span>
+<span class="wl l">L</span>
+<span class="wl w">W</span>
+<span class="wl l">L</span><br>Elo: 2768 (29%)
 • UFC rank: #9</div></div><div class=bout-row><div class="bout-fighter bout-left"><br><span class=emoji-margin-right><b><a href=/fighters/mandelnallo.html>Mandel Nallo</a>
 </b>(36)</span><div class=emoji title=Canada>🇨🇦 &#65038;</div><br>Debut 🔰<br>Elo: <span class=favorite-elo>2850 (64%)</span></div><div class=result_description><span class=weightclass>LIGHTWEIGHT</span><br><div class=pair data-bout-id=20260418_jaiherbert_mandelnallo data-fighter-is-first=false><input type=text inputmode=numeric min=0 max=100>
 <input type=text inputmode=numeric min=0 max=100></div><div class=bout-score data-bout-id=20260418_jaiherbert_mandelnallo></div></div><div class="bout-fighter bout-right"><br><div class=emoji title="United Kingdom">🇬🇧 &#65038;</div><div class=emoji title=England>🏴󠁧󠁢󠁥󠁮󠁧󠁿 &#65038;</div><div class=emoji title=Jamaica>🇯🇲 &#65038;</div><b><a href=/fighters/jaiherbert.html>Jai Herbert</a></b> (37)<br>3-5-1 •
-<span class="wldn-letter letter-W">W</span>
-<span class="wldn-letter letter-D">D</span>
-<span class="wldn-letter letter-L">L</span>
-<span class="wldn-letter letter-W">W</span>
-<span class="wldn-letter letter-L">L</span><br>Elo: 2749 (36%)</div></div><div class=bout-row><div class="bout-fighter bout-left"><br><span class=emoji-margin-right><b><a href=/fighters/thiagomoises.html>Thiago Moises</a>
-</b>(31)</span><div class=emoji title=Brazil>🇧🇷 &#65038;</div><br><span class="wldn-letter letter-L">L</span>
-<span class="wldn-letter letter-W">W</span>
-<span class="wldn-letter letter-L">L</span>
-<span class="wldn-letter letter-W">W</span>
-<span class="wldn-letter letter-L">L</span>
+<span class="wl w">W</span>
+<span class="wl d">D</span>
+<span class="wl l">L</span>
+<span class="wl w">W</span>
+<span class="wl l">L</span><br>Elo: 2749 (36%)</div></div><div class=bout-row><div class="bout-fighter bout-left"><br><span class=emoji-margin-right><b><a href=/fighters/thiagomoises.html>Thiago Moises</a>
+</b>(31)</span><div class=emoji title=Brazil>🇧🇷 &#65038;</div><br><span class="wl l">L</span>
+<span class="wl w">W</span>
+<span class="wl l">L</span>
+<span class="wl w">W</span>
+<span class="wl l">L</span>
 • 8-7<br>Elo: <span class=favorite-elo>2854 (80%)</span></div><div class=result_description><span class=weightclass>LIGHTWEIGHT</span><br><div class=pair data-bout-id=20260418_gaugeyoung_thiagomoises data-fighter-is-first=false><input type=text inputmode=numeric min=0 max=100>
 <input type=text inputmode=numeric min=0 max=100></div><div class=bout-score data-bout-id=20260418_gaugeyoung_thiagomoises></div></div><div class="bout-fighter bout-right"><br><div class=emoji title="United States">🇺🇸 &#65038;</div><b><a href=/fighters/gaugeyoung.html>Gauge Young</a></b> (25)<br>1-1 •
-<span class="wldn-letter letter-L">L</span>
-<span class="wldn-letter letter-W">W</span><br>Elo: 2614 (20%)</div></div><div class=bout-row><div class="bout-fighter bout-left"><br><span class=emoji-margin-right><b><a href=/fighters/dennisbuzukja.html>Dennis Buzukja</a>
-</b>(28)</span><div class=emoji title="United States">🇺🇸 &#65038;</div><br><span class="wldn-letter letter-L">L</span>
-<span class="wldn-letter letter-W">W</span>
-<span class="wldn-letter letter-L">L</span>
-<span class="wldn-letter letter-L">L</span>
+<span class="wl l">L</span>
+<span class="wl w">W</span><br>Elo: 2614 (20%)</div></div><div class=bout-row><div class="bout-fighter bout-left"><br><span class=emoji-margin-right><b><a href=/fighters/dennisbuzukja.html>Dennis Buzukja</a>
+</b>(28)</span><div class=emoji title="United States">🇺🇸 &#65038;</div><br><span class="wl l">L</span>
+<span class="wl w">W</span>
+<span class="wl l">L</span>
+<span class="wl l">L</span>
 • 1-3<br>Elo: 2572 (25%)</div><div class=result_description><span class=weightclass>FEATHERWEIGHT</span><br><div class=pair data-bout-id=20260418_dennisbuzukja_marciobarbosa data-fighter-is-first=true><input type=text inputmode=numeric min=0 max=100>
 <input type=text inputmode=numeric min=0 max=100></div><div class=bout-score data-bout-id=20260418_dennisbuzukja_marciobarbosa></div></div><div class="bout-fighter bout-right"><br><div class=emoji title=Brazil>🇧🇷 &#65038;</div><b><a href=/fighters/marciobarbosa.html>Marcio Barbosa</a></b> (27)<br>🔰 Debut<br>Elo: <span class=favorite-elo>2767 (75%)</span></div></div><div class=bout-row><div class="bout-fighter bout-left"><br><span class=emoji-margin-right><b><a href=/fighters/johncastaneda.html>John Castaneda</a>
-</b>(34)</span><div class=emoji title="United States">🇺🇸 &#65038;</div><br><span class="wldn-letter letter-L">L</span>
-<span class="wldn-letter letter-L">L</span>
-<span class="wldn-letter letter-W">W</span>
-<span class="wldn-letter letter-W">W</span>
-<span class="wldn-letter letter-L">L</span>
+</b>(34)</span><div class=emoji title="United States">🇺🇸 &#65038;</div><br><span class="wl l">L</span>
+<span class="wl l">L</span>
+<span class="wl w">W</span>
+<span class="wl w">W</span>
+<span class="wl l">L</span>
 • 4-4<br>Elo: <span class=favorite-elo>2806 (85%)</span></div><div class=result_description><span class=weightclass>BANTAMWEIGHT</span><br><div class=pair data-bout-id=20260418_johncastaneda_markvologdin data-fighter-is-first=true><input type=text inputmode=numeric min=0 max=100>
 <input type=text inputmode=numeric min=0 max=100></div><div class=bout-score data-bout-id=20260418_johncastaneda_markvologdin></div></div><div class="bout-fighter bout-right"><br><div class=emoji title=Russia>🇷🇺 &#65038;</div><b><a href=/fighters/markvologdin.html>Mark Vologdin</a></b> (26)<br>🔰 Debut<br>Elo: 2501 (15%)</div></div><div class=bout-row><div class="bout-fighter bout-left"><br><span class=emoji-margin-right><b><a href=/fighters/mitchraposo.html>Mitch Raposo</a>
-</b>(27)</span><div class=emoji title="United States">🇺🇸 &#65038;</div><br><span class="wldn-letter letter-W">W</span>
-<span class="wldn-letter letter-L">L</span>
-<span class="wldn-letter letter-L">L</span>
+</b>(27)</span><div class=emoji title="United States">🇺🇸 &#65038;</div><br><span class="wl w">W</span>
+<span class="wl l">L</span>
+<span class="wl l">L</span>
 • 1-2<br>Elo: 2620 (15%)</div><div class=result_description><span class=weightclass>FLYWEIGHT</span><br><div class=pair data-bout-id=20260418_allannascimento_mitchraposo data-fighter-is-first=false><input type=text inputmode=numeric min=0 max=100>
 <input type=text inputmode=numeric min=0 max=100></div><div class=bout-score data-bout-id=20260418_allannascimento_mitchraposo></div></div><div class="bout-fighter bout-right"><br><div class=emoji title=Brazil>🇧🇷 &#65038;</div><b><a href=/fighters/allannascimento.html>Allan Nascimento</a></b> (34)<br>4-1 •
-<span class="wldn-letter letter-L">L</span>
-<span class="wldn-letter letter-W">W</span>
-<span class="wldn-letter letter-W">W</span>
-<span class="wldn-letter letter-W">W</span>
-<span class="wldn-letter letter-W">W</span><br>Elo: <span class=favorite-elo>2916 (85%)</span></div></div><div class=bout-row><div class="bout-fighter bout-left"><br><span class=emoji-margin-right><b><a href=/fighters/melissacroden.html>Melissa Croden</a>
-</b>(35)</span><div class=emoji title=Canada>🇨🇦 &#65038;</div><br><span class="wldn-letter letter-L">L</span>
-<span class="wldn-letter letter-W">W</span>
+<span class="wl l">L</span>
+<span class="wl w">W</span>
+<span class="wl w">W</span>
+<span class="wl w">W</span>
+<span class="wl w">W</span><br>Elo: <span class=favorite-elo>2916 (85%)</span></div></div><div class=bout-row><div class="bout-fighter bout-left"><br><span class=emoji-margin-right><b><a href=/fighters/melissacroden.html>Melissa Croden</a>
+</b>(35)</span><div class=emoji title=Canada>🇨🇦 &#65038;</div><br><span class="wl l">L</span>
+<span class="wl w">W</span>
 • 1-1<br>Elo: 2509 (38%)</div><div class=result_description><span class=weightclass>WOMEN'S BANTAMWEIGHT</span><br><div class=pair data-bout-id=20260418_dariazhelezniakova_melissacroden data-fighter-is-first=false><input type=text inputmode=numeric min=0 max=100>
 <input type=text inputmode=numeric min=0 max=100></div><div class=bout-score data-bout-id=20260418_dariazhelezniakova_melissacroden></div></div><div class="bout-fighter bout-right"><br><div class=emoji title=Russia>🇷🇺 &#65038;</div><b><a href=/fighters/dariazhelezniakova.html>Daria Zhelezniakova</a></b> (30)<br>2-1 •
-<span class="wldn-letter letter-W">W</span>
-<span class="wldn-letter letter-L">L</span>
-<span class="wldn-letter letter-W">W</span><br>Elo: <span class=favorite-elo>2593 (62%)</span></div></div><div class=bout-row><div class="bout-fighter bout-left"><br><span class=emoji-margin-right><b><a href=/fighters/robertvalentin.html>Robert Valentin</a>
-</b>(31)</span><div class=emoji title=Switzerland>🇨🇭 &#65038;</div><br><span class="wldn-letter letter-L">L</span>
-<span class="wldn-letter letter-L">L</span>
-<span class="wldn-letter letter-L">L</span>
+<span class="wl w">W</span>
+<span class="wl l">L</span>
+<span class="wl w">W</span><br>Elo: <span class=favorite-elo>2593 (62%)</span></div></div><div class=bout-row><div class="bout-fighter bout-left"><br><span class=emoji-margin-right><b><a href=/fighters/robertvalentin.html>Robert Valentin</a>
+</b>(31)</span><div class=emoji title=Switzerland>🇨🇭 &#65038;</div><br><span class="wl l">L</span>
+<span class="wl l">L</span>
+<span class="wl l">L</span>
 • 0-3<br>Elo: 2514 (38%)</div><div class=result_description><span class=weightclass>MIDDLEWEIGHT</span><br><div class=pair data-bout-id=20260418_julienleblanc_robertvalentin data-fighter-is-first=false><input type=text inputmode=numeric min=0 max=100>
 <input type=text inputmode=numeric min=0 max=100></div><div class=bout-score data-bout-id=20260418_julienleblanc_robertvalentin></div></div><div class="bout-fighter bout-right"><br><div class=emoji title=Canada>🇨🇦 &#65038;</div><b><a href=/fighters/julienleblanc.html>Julien Leblanc</a></b> (34)<br>🔰 Debut<br>Elo: <span class=favorite-elo>2598 (62%)</span></div></div><div class=bout-row><div class="bout-fighter bout-left"><br><span class=emoji-margin-right><b><a href=/fighters/tannerboser.html>Tanner Boser</a>
-</b>(34)</span><div class=emoji title=Canada>🇨🇦 &#65038;</div><br><span class="wldn-letter letter-W">W</span>
-<span class="wldn-letter letter-L">L</span>
-<span class="wldn-letter letter-L">L</span>
-<span class="wldn-letter letter-W">W</span>
-<span class="wldn-letter letter-L">L</span>
+</b>(34)</span><div class=emoji title=Canada>🇨🇦 &#65038;</div><br><span class="wl w">W</span>
+<span class="wl l">L</span>
+<span class="wl l">L</span>
+<span class="wl w">W</span>
+<span class="wl l">L</span>
 • 5-5<br>Elo: 2670 (34%)</div><div class=result_description><span class=weightclass>HEAVYWEIGHT</span><br><div class=pair data-bout-id=20260418_gokhansaricam_tannerboser data-fighter-is-first=false><input type=text inputmode=numeric min=0 max=100>
 <input type=text inputmode=numeric min=0 max=100></div><div class=bout-score data-bout-id=20260418_gokhansaricam_tannerboser></div></div><div class="bout-fighter bout-right"><br><div class=emoji title=Belgium>🇧🇪 &#65038;</div><div class=emoji title=Turkey>🇹🇷 &#65038;</div><b><a href=/fighters/gokhansaricam.html>Gokhan Saricam</a></b> (35)<br>🔰 Debut<br>Elo: <span class=favorite-elo>2782 (66%)</span></div></div><div class=bout-row><div class="bout-fighter bout-left"><br><span class=emoji-margin-right><b><a href=/fighters/jjaldrich.html>JJ Aldrich</a>
-</b>(33)</span><div class=emoji title="United States">🇺🇸 &#65038;</div><br><span class="wldn-letter letter-W">W</span>
-<span class="wldn-letter letter-L">L</span>
-<span class="wldn-letter letter-W">W</span>
-<span class="wldn-letter letter-W">W</span>
-<span class="wldn-letter letter-L">L</span>
+</b>(33)</span><div class=emoji title="United States">🇺🇸 &#65038;</div><br><span class="wl w">W</span>
+<span class="wl l">L</span>
+<span class="wl w">W</span>
+<span class="wl w">W</span>
+<span class="wl l">L</span>
 • 10-6<br>UFC rank: #14 •
 Elo: 2596 (30%)</div><div class=result_description><span class=weightclass>WOMEN'S FLYWEIGHT</span><br><div class=pair data-bout-id=20260418_jameylynhorth_jjaldrich data-fighter-is-first=false><input type=text inputmode=numeric min=0 max=100>
 <input type=text inputmode=numeric min=0 max=100></div><div class=bout-score data-bout-id=20260418_jameylynhorth_jjaldrich></div></div><div class="bout-fighter bout-right"><br><div class=emoji title=Canada>🇨🇦 &#65038;</div><b><a href=/fighters/jameylynhorth.html>Jamey-Lyn Horth</a></b> (36)<br>4-2 •
-<span class="wldn-letter letter-L">L</span>
-<span class="wldn-letter letter-W">W</span>
-<span class="wldn-letter letter-L">L</span>
-<span class="wldn-letter letter-W">W</span>
-<span class="wldn-letter letter-W">W</span><br>Elo: <span class=favorite-elo>2747 (70%)</span></div></div></div></div><script>setupPredictions(),loadPredictions()</script><script>initAuth(),checkDeadline()</script><div id=leaderboard-view style=display:none>The leaderboard will be available after the first result of the event.</div><script>let leaderboardLoaded=!1;function toggleView(e){e.preventDefault();const n=document.getElementById("predictions-view"),t=document.getElementById("leaderboard-view"),s=document.getElementById("toggle-link");t.style.display==="none"?(n.style.display="none",t.style.display="block",t.style.textAlign="center",s.textContent="View Predictions",leaderboardLoaded||(loadEventLeaderboard(),leaderboardLoaded=!0)):(n.style.display="block",t.style.display="none",s.textContent="View Leaderboard")}</script><script type=application/ld+json>{"@context":"https://schema.org","@type":"SportsEvent","name":"UFC Fight Night: Burns vs. Malott","startDate":"2026-04-18","location":{"@type":"Place","name":"Canada Life Centre","address":{"@type":"PostalAddress","addressLocality":"Winnipeg, Canada","addressCountry":"Canada"}},"image":"https:\/\/upload.wikimedia.org\/wikipedia\/en\/thumb\/f\/f3\/UFC_Fight_Night_273_poster.jpeg\/250px-UFC_Fight_Night_273_poster.jpeg","organizer":{"@type":"SportsOrganization","name":"UFC","sport":"Mixed Martial Arts"},"eventStatus":"https://schema.org/EventScheduled"}</script><style>input[type=text]{width:30px;height:30px;text-align:center;-moz-appearance:textfield;appearance:textfield}input[type=text]::-webkit-inner-spin-button,input[type=text]::-webkit-outer-spin-button{display:none}</style><style>table{border-collapse:separate;border-spacing:0}th,td{padding:8px 12px;line-height:1.4}td{vertical-align:middle}td.num{text-align:right;font-variant-numeric:tabular-nums}</style></main><footer><div class=footer-container><p class=copyright-text><a href=/glossary.html>Glossary</a><a href=mailto:rostertracker@gmail.com>Contact</a></p></div><div class=footer-container><p class=copyright-text>Copyright &copy; <span id=currentYear></span> All Rights Reserved by
+<span class="wl l">L</span>
+<span class="wl w">W</span>
+<span class="wl l">L</span>
+<span class="wl w">W</span>
+<span class="wl w">W</span><br>Elo: <span class=favorite-elo>2747 (70%)</span></div></div></div></div><script>setupPredictions(),loadPredictions()</script><script>initAuth(),checkDeadline()</script><div id=leaderboard-view style=display:none>The leaderboard will be available after the first result of the event.</div><script>let leaderboardLoaded=!1;function toggleView(e){e.preventDefault();const n=document.getElementById("predictions-view"),t=document.getElementById("leaderboard-view"),s=document.getElementById("toggle-link");t.style.display==="none"?(n.style.display="none",t.style.display="block",t.style.textAlign="center",s.textContent="View Predictions",leaderboardLoaded||(loadEventLeaderboard(),leaderboardLoaded=!0)):(n.style.display="block",t.style.display="none",s.textContent="View Leaderboard")}</script><script type=application/ld+json>{"@context":"https://schema.org","@type":"SportsEvent","name":"UFC Fight Night: Burns vs. Malott","startDate":"2026-04-18","location":{"@type":"Place","name":"Canada Life Centre","address":{"@type":"PostalAddress","addressLocality":"Winnipeg, Canada","addressCountry":"Canada"}},"image":"https:\/\/upload.wikimedia.org\/wikipedia\/en\/thumb\/f\/f3\/UFC_Fight_Night_273_poster.jpeg\/250px-UFC_Fight_Night_273_poster.jpeg","organizer":{"@type":"SportsOrganization","name":"UFC","sport":"Mixed Martial Arts"},"eventStatus":"https://schema.org/EventScheduled"}</script><style>input[type=text]{width:30px;height:30px;text-align:center;-moz-appearance:textfield;appearance:textfield}input[type=text]::-webkit-inner-spin-button,input[type=text]::-webkit-outer-spin-button{display:none}</style><style>table{border-collapse:separate;border-spacing:0}th,td{padding:8px 12px;line-height:1.4}td{vertical-align:middle}td.num{text-align:right;font-variant-numeric:tabular-nums}</style></main><footer><div class=footer-container><p class=copyright-text><a href=/glossary.html>Glossary</a><a href=mailto:rostertracker@gmail.com>Contact</a></p></div><div class=footer-container><p class=copyright-text>Copyright &copy; <span id=currentYear></span> All Rights Reserved by
 <a href=#>roster.watch</a></p></div></footer><script>document.getElementById("currentYear").textContent=(new Date).getFullYear()</script></div></body></html>

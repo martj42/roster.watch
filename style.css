@@ -22,11 +22,23 @@
   display: inline-flex;
 }
 
+.announcement {
+  background: #fff3cd;
+  border: 1px solid #ffeaa7;
+  border-radius: 9px;
+  padding: 15px;
+  max-width: 640px;
+  margin: 10px auto;
+  font-family: 'Lora', serif;
+  font-size: 15px;
+  line-height: 1.7;
+}
+
 body {
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'Inter', 'Open Sans', sans-serif;
   background-color: #f7f5f0;
   font-size: 14px;
-  line-height: 1.42857143;
+  line-height: 1.5;
   color: #333;
   margin: auto;
   max-width: 1800px;
@@ -35,10 +47,11 @@ body {
 }
 
 h1 {
-  font-weight: bold;
-  font-size: 1.1em;
+  font-family: Kanit, 'Open Sans', sans-serif;
+  font-size: 1.25em;
   margin: 0 5px 0 0;
   display: inline;
+  font-weight: 600;
 }
 
 div.main-container {
@@ -108,7 +121,6 @@ header {
 .cta,
 .copyright-text,
 .copyright-text a {
-  /* font-family: "Montserrat", sans-serif; */
   font-weight: 500;
   color: #f7f5f0;
   text-decoration: none;
@@ -481,7 +493,7 @@ a .nav-arrow {
 .date_of_birth,
 .peak-date {
   color: #666;
-  font-size: 0.9rem;
+  font-size: 0.85rem;
 }
 
 h2 {
@@ -493,6 +505,7 @@ h2 {
   border-radius: 5px;
   width: 200px;
   color: #f7f5f0;
+  text-transform: uppercase;
 }
 
 h3 {
@@ -583,6 +596,13 @@ ul {
   border-bottom: 1px solid #eee;
   justify-content: center;
   white-space: nowrap;
+}
+
+.event-date {
+  font-variant-numeric: tabular-nums;
+  display: inline-block;
+  width: 6.5em;
+  /* fixed width forces alignment */
 }
 
 .event-name {
@@ -714,7 +734,7 @@ ul {
 
 time {
   color: #666;
-  font-size: 0.95rem;
+  font-size: 0.9rem;
 }
 
 .event-poster img {

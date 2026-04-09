@@ -1,5 +1,0 @@
-linters: linters_with_defaults(
-  default = NULL,
-  duplicate_argument_linter(),
-  unreachable_code_linter())
-encoding: "UTF-8"

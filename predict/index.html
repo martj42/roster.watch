@@ -34,13 +34,13 @@ experiment.</p></div><div class=pred-info><p>In addition to fellow human beings,
 <a href=/predict/20260620.html>UFC Fight Night 279</a></div><div class=event-item><span class=event-date>2026-06-27</span>
 <a href=/predict/20260627.html>UFC Fight Night 280</a></div></div><h2>Past Events</h2><div style=display:block;text-align:center;margin:20px><div style="width:fit-content;margin:0 auto"><div class=event-item><span class=event-date>2026-04-04</span>
 <a href=/predict/20260404.html>UFC Fight Night: Moicano vs. Duncan</a></div><div class=event-item><span class=event-date>2026-03-28</span>
-<a href=/predict/20260328.html>UFC Fight Night: Adesanya vs. Pyfer</a></div></div></div><script>const sbClient=window.supabase.createClient("https://muloimjjtysgmtbhneaq.supabase.co","sb_publishable_687KiI3wHcb4Z3Aqm8EgNg_Adsp3uoj");async function loadLeaderboard(){const{data:e,error:t}=await sbClient.from("leaderboard").select("rank, user_id, total_score, bouts_scored").order("rank",{ascending:!0});if(t||!e?.length)return;const n=e.map(e=>e.user_id),{data:s}=await sbClient.from("profiles").select("id, display_name").in("id",n),o=Object.fromEntries(s.map(e=>[e.id,e.display_name])),i=e.map((e)=>`
+<a href=/predict/20260328.html>UFC Fight Night: Adesanya vs. Pyfer</a></div></div></div><script>const sbClient=window.supabase.createClient("https://muloimjjtysgmtbhneaq.supabase.co","sb_publishable_687KiI3wHcb4Z3Aqm8EgNg_Adsp3uoj");async function loadLeaderboard(){const{data:e,error:t}=await sbClient.from("leaderboard").select("rank, user_id, avg_score, total_score, bouts_scored").order("rank",{ascending:!0});if(t||!e?.length)return;const n=e.map(e=>e.user_id),{data:s}=await sbClient.from("profiles").select("id, display_name").in("id",n),o=Object.fromEntries(s.map(e=>[e.id,e.display_name])),a=e.map(e=>({...e,avg:e.bouts_scored?e.total_score/e.bouts_scored:0})).sort((e,t)=>t.avg-e.avg),i=e.map((e)=>`
       <tr>
         <td>${e.rank}.</td>
         <td style="text-align: left; font-family: Kanit; font-size: 15px;">${o[e.user_id]||"Anonymous"}</td>
                 <td>${e.bouts_scored}</td>
-                <td>${(e.total_score/e.bouts_scored).toFixed(1)}</td>
-        <td style = "font-weight: 600">${e.total_score.toFixed(1)}</td>
+                <td>${e.total_score.toFixed(1)}</td>
+        <td style = "font-weight: 600">${e.avg_score.toFixed(1)}</td>
       </tr>
     `).join("");document.getElementById("leaderboard-view").innerHTML=`
       <table style="
@@ -52,7 +52,7 @@ experiment.</p></div><div class=pred-info><p>In addition to fellow human beings,
   overflow: hidden;
 ">
         <thead style="  color: #f7f5f0;
-  background-color: #24252a; border-radius: 9px;"><tr><th>rank</th><th style="text-align: left;">user</th><th>bouts</th><th>average</th><th>total</th></tr></thead>
+  background-color: #24252a; border-radius: 9px;"><tr><th>rank</th><th style="text-align: left;">user</th><th>bouts</th><th>total</th><th>average</th></tr></thead>
         <tbody>${i}</tbody>
       </table>
     `}loadLeaderboard()</script><h2>Leaderboard</h2><div id=leaderboard-view style=display:block;text-align:center;border-radius:9px></div><style>table{border-collapse:separate;border-spacing:0}th,td{padding:8px 12px;line-height:1.4}td{vertical-align:middle}td.num{text-align:right;font-variant-numeric:tabular-nums}</style></main><footer><div class=footer-container><p class=copyright-text><a href=/glossary.html>Glossary</a><a href=mailto:rostertracker@gmail.com>Contact</a></p></div><div class=footer-container><p class=copyright-text>Copyright &copy; <span id=currentYear></span> All Rights Reserved by

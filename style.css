@@ -58,7 +58,7 @@
 
 .pred-btn {
   background: #ffd700;
-  color: #f7f5f0;
+  color: #24252a;
   font-family: 'Lora', serif;
   font-size: 14px;
   font-weight: 700;
@@ -67,10 +67,6 @@
   border-radius: 7px;
   white-space: nowrap;
   letter-spacing: 0.02em;
-}
-
-.pred-btn:hover {
-  background: #ffd700;
 }
 
 body {
@@ -511,7 +507,7 @@ a .nav-arrow {
 .fighter-header,
 .fighter-info,
 .chart-section,
-.fight-results {
+.event_bouts {
   max-width: 1000px;
   margin: 0 auto;
 }
@@ -632,7 +628,7 @@ ul {
   display: flex;
   align-items: flex-start;
   padding: 0 0 12px 0;
-  border-bottom: 1px solid #eee;
+  border-bottom: 1px solid #e1e1e1;
   justify-content: center;
   white-space: nowrap;
 }

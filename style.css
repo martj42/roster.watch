@@ -34,6 +34,45 @@
   line-height: 1.7;
 }
 
+.prediction-ann {
+  background: #fff3cd;
+  border: 1px solid #ffeaa7;
+  border-radius: 9px;
+  padding: 15px 18px;
+  max-width: 640px;
+  margin: 10px auto;
+  font-family: 'Lora', serif;
+  font-size: 15px;
+  line-height: 1.7;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.pred-text {
+  flex: 1;
+  min-width: 180px;
+}
+
+.pred-btn {
+  background: #ffd700;
+  color: #f7f5f0;
+  font-family: 'Lora', serif;
+  font-size: 14px;
+  font-weight: 700;
+  text-decoration: none;
+  padding: 10px 18px;
+  border-radius: 7px;
+  white-space: nowrap;
+  letter-spacing: 0.02em;
+}
+
+.pred-btn:hover {
+  background: #ffd700;
+}
+
 body {
   font-family: 'Inter', 'Open Sans', sans-serif;
   background-color: #f7f5f0;
@@ -602,7 +641,6 @@ ul {
   font-variant-numeric: tabular-nums;
   display: inline-block;
   width: 6.5em;
-  /* fixed width forces alignment */
 }
 
 .event-name {
@@ -758,6 +796,7 @@ time {
   display: flex;
   gap: 28px;
   justify-content: center;
+  margin: 10px
 }
 
 .event-card {

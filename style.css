@@ -459,8 +459,7 @@ a .nav-arrow {
   background-color: #3a3b42;
 }
 
-.new,
-.out {
+.rank-flag {
   font-size: 0.8em;
   color: #666;
   font-weight: bold;

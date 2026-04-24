@@ -11,14 +11,14 @@
     font-family: 'Custom Flags';
     unicode-range: U+1F1E6-1F1FF, U+E0000-E007F !important;
     /* Exclude U+1F3F4 */
-  src: url("fonts/Custom Flags.woff2") format("woff2");
+    src: url("fonts/Custom Flags.woff2") format("woff2");
     font-display: swap;
   }
 }
 
 .emoji {
   font-family: 'Custom Flags', sans-serif !important;
-  cursor: pointer;
+  cursor: help;
   display: inline-flex;
   overflow: hidden;
   margin-right: 3px;
@@ -321,6 +321,7 @@ nav ul {
   width: fit-content;
   max-width: 650px;
   text-align: center;
+  padding-top: 0;
 }
 
 .patreon-box a.cta-button {
@@ -525,7 +526,7 @@ a .nav-arrow {
 }
 
 .cursor-pointer {
-  cursor: pointer;
+  cursor: help;
 }
 
 .date_of_birth,

@@ -2,16 +2,16 @@
   font-family: 'Custom Flags';
   unicode-range: U+1F1E6-1F1FF, U+1F3F4, U+E0000-E007F;
   /* Black flag + tag characters */
-    src: url("fonts/Custom Flags.woff2") format("woff2");
+  src: url("fonts/Custom Flags.woff2") format("woff2");
   font-display: swap;
 }
 
 @-moz-document url-prefix() {
   @font-face {
-  font-family: 'Custom Flags';
+    font-family: 'Custom Flags';
     unicode-range: U+1F1E6-1F1FF, U+E0000-E007F !important;
     /* Exclude U+1F3F4 */
-    src: url("fonts/Custom Flags.woff2") format("woff2");
+  src: url("fonts/Custom Flags.woff2") format("woff2");
     font-display: swap;
   }
 }
@@ -66,7 +66,7 @@
   font-weight: 700;
   text-decoration: none;
   padding: 10px 18px;
-  border-radius: 7px;
+  border-radius: 9px;
   white-space: nowrap;
   letter-spacing: 0.02em;
   text-transform: uppercase;
@@ -150,6 +150,7 @@ header {
   padding: 0px 10%;
   background-color: #24252a;
   border-radius: 9px;
+  white-space: nowrap;
 }
 
 .logo {

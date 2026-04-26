@@ -83,6 +83,7 @@ body {
   max-width: 1800px;
   margin-left: auto;
   margin-right: auto;
+
 }
 
 h1 {
@@ -152,6 +153,8 @@ header {
   background-color: #24252a;
   border-radius: 9px;
   white-space: nowrap;
+  width: fit-content;
+  min-width: 100%;
 }
 
 .logo {
@@ -170,7 +173,7 @@ header {
   list-style: none;
   display: flex;
   width: 100%;
-
+  gap: 2px;
 }
 
 .nav__links li {
@@ -893,7 +896,7 @@ time {
   margin-top: 8px;
 }
 
-@media (prefers-color-scheme: dark) {
+@media (prefers-color-scheme: daerk) {
   body {
     background: #222222;
     color: #f7f5f0;
@@ -947,5 +950,7 @@ time {
     color: #f7f5f0;
   }
 
-  /* etc. */
+  .gold-bg .rank-value {
+    color: #222222;
+  }
 }

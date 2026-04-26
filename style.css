@@ -896,7 +896,7 @@ time {
   margin-top: 8px;
 }
 
-@media (prefers-color-scheme: daerk) {
+@media (prefers-color-scheme: dark) {
   body {
     background: #222222;
     color: #f7f5f0;

@@ -16,6 +16,7 @@
   }
 }
 
+
 .emoji {
   font-family: 'Custom Flags', sans-serif !important;
   cursor: help;
@@ -796,13 +797,16 @@ time {
   display: flex;
   gap: 28px;
   justify-content: center;
-  margin: 10px
+  margin: 10px;
+  align-items: stretch;
 }
 
 .event-card {
-  width: fit-content;
+  width: 250px;
   color: inherit;
-  display: block;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .card-body {
@@ -854,6 +858,18 @@ time {
 .event-card img {
   margin-top: 8px;
   border-radius: 9px;
+  width: 100%;
+  display: block;
+}
+
+@media (max-width: 560px) {
+  .event-posters {
+    gap: 12px;
+  }
+
+  .event-card {
+    width: calc(50% - 6px);
+  }
 }
 
 .emoji-margin-right {
@@ -875,4 +891,61 @@ time {
   max-width: 620px;
   margin: 0 auto;
   margin-top: 8px;
+}
+
+@media (prefers-color-scheme: dark) {
+  body {
+    background: #222222;
+    color: #f7f5f0;
+  }
+
+  header,
+  footer,
+  h2,
+  thead tr th {
+    background-color: #673941 !important;
+  }
+
+  .bout-row {
+    border-bottom: 1px solid #333333;
+  }
+
+  #roster-tbl tbody tr.row-even {
+    background-color: #2c2c2c !important;
+    --row-bg: #2c2c2c !important;
+  }
+
+  #roster-tbl tbody tr.row-odd {
+    background-color: #222222 !important;
+    --row-bg: #222222 !important;
+  }
+
+  .sort-row {
+    color: #f7f5f0 !important;
+    background-color: #673941 !important;
+  }
+
+  .sort-row th[aria-sort] {
+    background: #f7f5f0 !important;
+    color: #222222 !important;
+    clip-path: inset(0 0 -100px 0 round 9px 9px 0 0);
+  }
+
+  .sort-row th:hover {
+    background: #f7f5f0 !important;
+    color: #222222 !important;
+    clip-path: inset(0 0 -100px 0 round 9px 9px 0 0);
+  }
+
+  .prediction-ann,
+  .announcement {
+    background: #673941;
+    border: 0;
+  }
+
+  .patreon-box {
+    color: #f7f5f0;
+  }
+
+  /* etc. */
 }

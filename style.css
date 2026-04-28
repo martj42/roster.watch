@@ -59,8 +59,14 @@
   white-space: nowrap;
   letter-spacing: 0.02em;
   text-transform: uppercase;
+  margin: 0 auto;
 }
-
+@media (max-width: 800px) {
+  .prediction-ann {
+    flex-direction: column;
+    align-items: center; /* or flex-start to left-align */
+  }
+}
 body {
   font-family: 'Inter', 'Open Sans', sans-serif;
   background-color: #f7f5f0;
@@ -213,10 +219,11 @@ header {
   width: 0;
   position: fixed;
   z-index: 3;
-  left: 0;
+  right: 0;
   top: 0;
   background-color: #24252a;
   overflow-x: hidden;
+  overflow-y: hidden;
   transition: width 0.5s ease 0s;
 }
 
@@ -228,7 +235,7 @@ header {
 .overlay__content {
   display: flex;
   height: auto;
-  min-height: 100%;
+  /* min-height: 100%; */
   flex-direction: column;
   align-items: center;
   justify-content: center;
@@ -236,11 +243,11 @@ header {
 
 .overlay a {
   padding: 15px;
-  font-size: 36px;
+  font-size: 24px;
   display: block;
   transition: color 0.3s ease 0s;
   text-align: center;
-  width: 100%;
+  /* width: 100%; */
   border-radius: 9px;
 
 }
@@ -251,16 +258,15 @@ header {
 }
 
 .overlay .close {
-  position: absolute;
-  font-size: 60px;
+  /* position: absolute; */
+  font-size: 40px;
   color: #f7f5f0;
   text-align: right;
+  padding: 0 15px
 }
 
 @media screen and (max-height: 450px) {
-  .overlay a {
-    font-size: 20px;
-  }
+
 
   .overlay .close {
     font-size: 40px;

@@ -225,6 +225,7 @@ header {
   overflow-x: hidden;
   overflow-y: hidden;
   transition: width 0.5s ease 0s;
+  /* white-space: nowrap; */
 }
 
 .overlay--active {
@@ -358,19 +359,6 @@ a {
 
 }
 
-.result_description .rt-td-inner .rt-text-content {
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-
-}
-
-.side_info .rt-td-inner .rt-text-content {
-  word-wrap: break-word;
-  overflow: auto;
-  white-space: normal;
-}
-
 a .nav-arrow {
   text-decoration: none !important;
   display: inline-block;
@@ -438,7 +426,7 @@ a .nav-arrow {
 .dropdown-content-mobile a {
   color: #f7f5f0;
   padding: 10px 0;
-  font-size: 28px;
+  font-size: 24px;
   display: block;
   text-align: center;
   white-space: nowrap;
@@ -639,10 +627,6 @@ ul {
   font-variant-numeric: tabular-nums;
   display: inline-block;
   width: 6.5em;
-}
-
-.event-name {
-  white-space: normal;
 }
 
 .side_info {

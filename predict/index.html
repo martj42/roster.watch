@@ -15,13 +15,13 @@
 <a href=/fightlog.html>Fight Log</a>
 <a href=/aijudge.html>AI Judge</a>
 <a href="https://www.patreon.com/bePatron?u=88266864" style=background-color:#f96854;color:#f7f5f0>Support</a>
-<a href=/sitemap.xml onclick="return getRandomPage(),!1" title="Random Page">🎲</a></div></div><script type=text/javascript src=/mobile.js></script><script>function getRandomPage(){fetch("/sitemap.xml").then(e=>e.text()).then(e=>{const n=new DOMParser,s=n.parseFromString(e,"application/xml"),t=Array.from(s.getElementsByTagName("loc")).map(e=>e.textContent),o=t[Math.floor(Math.random()*t.length)];window.location.href=o})}</script><main><article class=fighter-info><div class=event-details><div class=pred-info><p>Welcome to roster.watch prediction game!</p></div><div class=pred-info><p>This is how the game works:</p></div><div class=pred-info><p>For each upcoming fight listed on the events pages below, submit your estimated <i>probability</i> of each
+<a href=/sitemap.xml onclick="return getRandomPage(),!1" title="Random Page">🎲</a></div></div><script type=text/javascript src=/mobile.js></script><script>function getRandomPage(){fetch("/sitemap.xml").then(e=>e.text()).then(e=>{const n=new DOMParser,s=n.parseFromString(e,"application/xml"),t=Array.from(s.getElementsByTagName("loc")).map(e=>e.textContent),o=t[Math.floor(Math.random()*t.length)];window.location.href=o})}</script><main><h1>Prediction Game</h1><article class=fighter-info><div class=event-details><div class=pred-info><p>Welcome to roster.watch prediction game!</p></div><div class=pred-info><p>This is how the game works:</p></div><div class=pred-info><p>For each upcoming fight listed on the events pages below, submit your estimated <i>probability</i> of each
 fighter winning (e.g.
 65-35).</p></div><div class=pred-info><p>After the fights, your predictions are scored using the reversed <a href=https://en.wikipedia.org/wiki/Brier_score>Brier score</a>. A higher score is better. Scores are
 calculated as:</p><p><b>Score = 100 * (1 - (p - o)²)</b></p><p>where <i>p</i> is your predicted probability (as a decimal) and <i>o</i> is the outcome (1 if the fighter wins,
 0 if they lose).</p></div><div class=pred-info><p>If you estimate a fight at 65-35, you will score as follows:</p><p>100 * (1 - (0.65 - 1)²) = 87.75 points if the 65% fighter wins</p><p>100 * (1 - (0.35 - 1)²) = 57.75 points if the 35% fighter wins</p></div><div class=pred-info><p>Draws and no contests will not be scored.</p></div><div class=pred-info><p>It is generally assumed that the optimal way for the best Brier score is to submit what you believe is the
 true probability for each outcome rather than, say, 100-0 to who you think will win. But feel free to
-experiment.</p></div><div class=pred-info><p>In addition to fellow human beings, you will be competing against 4 automated baseline accounts:<ul><li><b>roster.watch Elo</b>: predicts using roster.watch Elo probabilities.</li><li><b>roster.watch Elo 100%</b>: predicts a 100% win probability for the fighter with the higher Elo rating.</li><li><b>50-50</b>: predicts every fight as 50-50.</li><li><b>User Average</b>: uses the average of all human predictions.</li></ul></p><div class=pred-info><p>Good luck!</p></div></div></div></article><h2>Upcoming Events</h2><div style=display:block;text-align:center;margin:20px><div style="width:fit-content;margin:0 auto"><div class=event-item><span class=event-date>2026-05-02</span>
+experiment.</p></div><div class=pred-info><p>In addition to fellow human beings, you will be competing against 4 automated baseline accounts:<ul><li><b>roster.watch Elo</b>: predicts using roster.watch Elo probabilities.</li><li><b>roster.watch Elo 100%</b>: predicts a 100% win probability for the fighter with the higher Elo rating.</li><li><b>50-50</b>: predicts every fight as 50-50.</li><li><b>User Average</b>: uses the average of all human predictions.</li></ul></p><div class=pred-info><p>Good luck!</p></div></div></div></article><h2>Upcoming Events</h2><div style=display:block;text-align:center;margin:20px;white-space:nowrap><div style="width:fit-content;margin:0 auto"><div class=event-item><span class=event-date>2026-05-02</span>
 <a href=/predict/20260502.html>UFC Fight Night: Della Maddalena vs. Prates</a></div><div class=event-item><span class=event-date>2026-05-09</span>
 <a href=/predict/20260509.html>UFC 328: Chimaev vs. Strickland</a></div><div class=event-item><span class=event-date>2026-05-16</span>
 <a href=/predict/20260516.html>UFC Fight Night: Allen vs. Costa</a></div><div class=event-item><span class=event-date>2026-05-30</span>
@@ -32,31 +32,10 @@ experiment.</p></div><div class=pred-info><p>In addition to fellow human beings,
 <a href=/predict/20260627.html>UFC Fight Night 280</a></div><div class=event-item><span class=event-date>2026-07-11</span>
 <a href=/predict/20260711.html>UFC 329</a></div><div class=event-item><span class=event-date>2026-07-18</span>
 <a href=/predict/20260718.html>UFC Fight Night 281</a></div><div class=event-item><span class=event-date>2026-08-01</span>
-<a href=/predict/20260801.html>UFC Fight Night 282</a></div></div><h2>Past Events</h2><div style=display:block;text-align:center;margin:20px><div style="width:fit-content;margin:0 auto"><div class=event-item><span class=event-date>2026-04-25</span>
+<a href=/predict/20260801.html>UFC Fight Night 282</a></div></div><h2>Past Events</h2><div style=display:block;text-align:center;margin:20px;white-space:nowrap><div style="width:fit-content;margin:0 auto"><div class=event-item><span class=event-date>2026-04-25</span>
 <a href=/predict/20260425.html>UFC Fight Night: Sterling vs. Zalal</a></div><div class=event-item><span class=event-date>2026-04-18</span>
 <a href=/predict/20260418.html>UFC Fight Night: Burns vs. Malott</a></div><div class=event-item><span class=event-date>2026-04-11</span>
 <a href=/predict/20260411.html>UFC 327: Procházka vs. Ulberg</a></div><div class=event-item><span class=event-date>2026-04-04</span>
 <a href=/predict/20260404.html>UFC Fight Night: Moicano vs. Duncan</a></div><div class=event-item><span class=event-date>2026-03-28</span>
-<a href=/predict/20260328.html>UFC Fight Night: Adesanya vs. Pyfer</a></div></div></div><script>const sbClient=window.supabase.createClient("https://muloimjjtysgmtbhneaq.supabase.co","sb_publishable_687KiI3wHcb4Z3Aqm8EgNg_Adsp3uoj");async function loadLeaderboard(){const{data:e,error:t}=await sbClient.from("leaderboard").select("rank, user_id, avg_score, total_score, bouts_scored").order("rank",{ascending:!0});if(t||!e?.length)return;const n=e.map(e=>e.user_id),{data:s}=await sbClient.from("profiles").select("id, display_name").in("id",n),o=Object.fromEntries(s.map(e=>[e.id,e.display_name])),a=e.map(e=>({...e,avg:e.bouts_scored?e.total_score/e.bouts_scored:0})).sort((e,t)=>t.avg-e.avg),i=e.map((e)=>`
-      <tr>
-        <td>${e.rank}.</td>
-        <td style="text-align: left; font-family: Kanit; font-size: 15px;">${o[e.user_id]||"Anonymous"}</td>
-                <td>${e.bouts_scored}</td>
-                <td>${e.total_score.toFixed(1)}</td>
-        <td style = "font-weight: 600">${e.avg_score.toFixed(1)}</td>
-      </tr>
-    `).join("");document.getElementById("leaderboard-view").innerHTML=`
-      <table style="
-  margin: 20px auto 0;
-  width: 80%;
-  max-width: 600px;
-  white-space: nowrap;
-  border-radius: 9px;
-  overflow: hidden;
-">
-        <thead style="  color: #f7f5f0;
-  background-color: #24252a; border-radius: 9px;"><tr><th>rank</th><th style="text-align: left;">user</th><th>bouts</th><th>total</th><th>average</th></tr></thead>
-        <tbody>${i}</tbody>
-      </table>
-    `}loadLeaderboard()</script><h2>Leaderboard</h2><div id=leaderboard-view style=display:block;text-align:center;border-radius:9px></div><style>table{border-collapse:separate;border-spacing:0}th,td{padding:8px 12px;line-height:1.4}td{vertical-align:middle}td.num{text-align:right;font-variant-numeric:tabular-nums}</style></main><footer><div class=footer-container><p class=copyright-text><a href=/glossary.html>Glossary</a><a href=mailto:rostertracker@gmail.com>Contact</a></p></div><div class=footer-container><p class=copyright-text>Copyright &copy; <span id=currentYear></span> All Rights Reserved by
+<a href=/predict/20260328.html>UFC Fight Night: Adesanya vs. Pyfer</a></div></div></div><style>table{border-collapse:separate;border-spacing:0}th,td{padding:8px 12px;line-height:1.4}td{vertical-align:middle}td.num{text-align:right;font-variant-numeric:tabular-nums}</style></main><footer><div class=footer-container><p class=copyright-text><a href=/glossary.html>Glossary</a><a href=mailto:rostertracker@gmail.com>Contact</a></p></div><div class=footer-container><p class=copyright-text>Copyright &copy; <span id=currentYear></span> All Rights Reserved by
 <a href=#>roster.watch</a></p></div></footer><script>document.getElementById("currentYear").textContent=(new Date).getFullYear()</script></div></body></html>

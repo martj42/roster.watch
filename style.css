@@ -188,11 +188,10 @@ header {
 
 }
 
-.nav__links li a:hover {
+.nav__links li a:not(.nav__link-no-hover):hover {
   color: #edf0f1;
   background-color: #3a3b42;
   border-radius: 9px;
-
 }
 
 .cta {
@@ -534,7 +533,7 @@ h2 {
   width: 200px;
   color: #f7f5f0;
   text-transform: uppercase;
-  border:solid 1px black;
+  border: solid 1px black;
 }
 
 h3 {
@@ -881,6 +880,7 @@ time {
 }
 
 @media (prefers-color-scheme: dark) {
+  
   body {
     background: #222222;
     color: #f7f5f0;

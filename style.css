@@ -156,8 +156,17 @@ header {
 
 .logo {
   cursor: pointer;
-}
+    text-decoration: none !important;
 
+}
+.name {
+  font-weight: 500;
+  font-size: 20px;
+  margin-left: 10px;
+  text-transform: uppercase;
+  font-family: Kanit, 'Open Sans', sans-serif;
+  vertical-align: middle;
+}
 .cta,
 .copyright-text,
 .copyright-text a {

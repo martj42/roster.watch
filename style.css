@@ -156,9 +156,10 @@ header {
 
 .logo {
   cursor: pointer;
-    text-decoration: none !important;
+  text-decoration: none !important;
 
 }
+
 .name {
   font-weight: 500;
   font-size: 20px;
@@ -166,7 +167,9 @@ header {
   text-transform: uppercase;
   font-family: Kanit, 'Open Sans', sans-serif;
   vertical-align: middle;
+  color: #f7f5f0;
 }
+
 .cta,
 .copyright-text,
 .copyright-text a {
@@ -889,7 +892,7 @@ time {
 }
 
 @media (prefers-color-scheme: dark) {
-  
+
   body {
     background: #222222;
     color: #f7f5f0;

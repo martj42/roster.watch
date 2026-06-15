@@ -887,8 +887,7 @@ time {
   justify-content: space-between;
   align-items: center;
   max-width: 620px;
-  margin: 0 auto;
-  margin-top: 8px;
+  margin: 8px auto;
 }
 
 @media (prefers-color-scheme: dark) {

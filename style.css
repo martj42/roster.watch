@@ -270,6 +270,7 @@ header {
 .overlay a:hover,
 .overlay a:focus {
   color: #f7f5f0;
+  border-radius: 9px;
 }
 
 .overlay .close {

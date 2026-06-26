@@ -383,6 +383,23 @@ a .nav-arrow {
   margin: 8px 0;
   display: flex;
   gap: 1rem;
+  text-align: left;
+}
+
+.event-date {
+  flex-shrink: 0;
+  width: 6rem;
+}
+
+.event-item a {
+  flex-shrink: 0;
+  width: 250px;
+  /* tune to longest name */
+}
+
+.event-winner {
+  margin-left: auto;
+  flex-shrink: 0;
 }
 
 .upcoming-events {

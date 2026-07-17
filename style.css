@@ -489,12 +489,12 @@ a .nav-arrow {
 
 .up {
   color: #57ad75;
-  font-size: 1.2em;
+  /* font-size: 1.2em; */
 }
 
 .down {
   color: #d4636a;
-  font-size: 1.2em;
+  /* font-size: 1.2em; */
 }
 
 .rank-change {

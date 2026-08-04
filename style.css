@@ -210,7 +210,7 @@ header {
   padding: 9px 25px;
   background-color: #24252a;
   border: none;
-  border-radius: 50px;
+  border-radius: 9px;
   cursor: pointer;
   transition: background-color 0.3s ease 0s;
   text-transform: uppercase;

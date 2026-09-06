@@ -883,7 +883,7 @@ time {
   }
 
   .event-card {
-    width: 250px;
+    width: calc(50% - 6px);
   }
 }
 

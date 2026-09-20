@@ -874,7 +874,7 @@ time {
   border-radius: 9px;
   width: 100%;
   display: block;
-  border: solid 2px black;
+  /* border: solid 2px black; */
 }
 
 @media (max-width: 560px) {

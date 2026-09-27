@@ -164,7 +164,7 @@ header {
   font-weight: 500;
   font-size: 20px;
   margin-left: 10px;
-  text-transform: uppercase;
+  /* text-transform: uppercase; */
   font-family: Kanit, 'Open Sans', sans-serif;
   vertical-align: middle;
   color: #f7f5f0;
@@ -914,12 +914,12 @@ time {
     color: #f7f5f0;
   }
 
-  header,
+  /* header,
   footer,
   h2,
   thead tr th {
-    background-color: #673941 !important;
-  }
+    background-color: #0d3e51 !important;
+  } */
 
   .bout-row {
     border-bottom: 1px solid #333333;
@@ -937,7 +937,7 @@ time {
 
   .sort-row {
     color: #f7f5f0 !important;
-    background-color: #673941 !important;
+    /* background-color: #0d3e51 !important; */
   }
 
   .sort-row th[aria-sort] {
@@ -954,7 +954,7 @@ time {
 
   .prediction-ann,
   .announcement {
-    background: #673941;
+    background: #24252a !important;
     border: 0;
   }
 

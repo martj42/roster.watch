@@ -83,6 +83,16 @@ body {
 
 }
 
+table {
+
+  border-spacing: 0;
+  border-radius: 9px;
+  border-collapse: separate;
+  font-size: 14px;
+  table-layout: fixed;
+    overflow: hidden;
+}
+
 h1 {
   font-family: Kanit, 'Open Sans', sans-serif;
   font-size: 1.25em;
